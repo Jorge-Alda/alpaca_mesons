@@ -1,0 +1,7 @@
+# Locally cached literature and generated Python artifacts
+memory/sources/
+__pycache__/
+*.py[cod]
+
+# Local environment
+.venv/
