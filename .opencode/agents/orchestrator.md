@@ -1,7 +1,7 @@
 ---
 description: Coordinates reproducible HEP-ph research tasks and delegates focused work.
 mode: primary
-model: openai/gpt-5.6-sol-medium
+model: openai/gpt-5.6-sol#medium
 temperature: 0.7
 tools:
   task: true
