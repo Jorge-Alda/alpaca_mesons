@@ -10,10 +10,13 @@ Use this repository as a reproducible research record. Load only the protocol se
 - Valid `status` values are `literature`, `derived`, `numerical`, `conjectured`, and `mixed`.
 - Valid `provenance` values are `literature`, `analytical-derivation`, `numerical-computation`, `assumption`, and `conjecture`.
 - Label assumptions and approximations explicitly; do not turn them into established results.
+- In Markdown files, always use `$...$` and `$$...$$` as LaTeX delimiters.
 
 ## Reproducibility
 
 - Put analytical and numerical work in executable Python scripts under `scripts/`, using `scipy` where appropriate.
+- When both analytical and numerical derivations are available, prefer the analytical derivation.
+- Do not treat an analytical derivation as a check: delegate its calculation to an executable Python script.
 - Pair every derivation script with a step-by-step explanation in `memory/`.
 - In each derivation record, identify every input and link it to the relevant memory file or cite the stated assumption.
 - Keep scripts deterministic, state units and conventions, and include a minimal invocation example.
