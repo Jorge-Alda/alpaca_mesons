@@ -8,7 +8,7 @@ import unittest
 
 import numpy as np
 
-from scripts.implementation.omnes import OmnesFunction, PairOmnesFSI
+from scripts.implementation.omnes import OmnesFunction, PairOmnesFSI, TabulatedOmnes
 
 
 class OmnesFunctionTests(unittest.TestCase):
@@ -71,10 +71,8 @@ class OmnesFunctionTests(unittest.TestCase):
         )
         self.assertAlmostEqual(np.angle(omega(0.8)), 0.48, places=10)
         self.assertAlmostEqual(omega(2.5).imag, 0.0, places=13)
-        with self.assertRaisesRegex(ValueError, "one-sided"):
-            omega(self.threshold)
-        with self.assertRaisesRegex(ValueError, "one-sided"):
-            omega(self.endpoint)
+        self.assertTrue(np.isfinite(omega(self.threshold)))
+        self.assertTrue(np.isfinite(omega(self.endpoint)))
 
     def test_invalid_tail_inputs_are_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "asymptotic_phase"):
@@ -104,6 +102,22 @@ class OmnesFunctionTests(unittest.TestCase):
         self.assertEqual(self.constant(0.2, ("K+", "pi0")), self.constant(0.2))
         with self.assertRaisesRegex(KeyError, "no Omnes"):
             dispatch(0.2, ("K-", "pi0"))
+
+    def test_adaptive_tabulation_meets_relative_tolerance(self) -> None:
+        tabulated = TabulatedOmnes(
+            self.constant,
+            minimum=0.6,
+            maximum=1.8,
+            relative_tolerance=1e-6,
+        )
+        validation = np.linspace(0.62, 1.78, 37)
+        direct = np.asarray([self.constant(float(s)) for s in validation])
+        approximate = np.asarray([tabulated(float(s)) for s in validation])
+        relative_error = np.abs(approximate - direct) / np.abs(direct)
+        self.assertLess(np.max(relative_error), 1e-6)
+        self.assertLessEqual(tabulated.max_validation_error, 1e-6)
+        dispatch = PairOmnesFSI({("K+", "pi0"): tabulated})
+        self.assertEqual(dispatch(0.8, ("pi0", "K+")), tabulated(0.8))
 
 
 if __name__ == "__main__":

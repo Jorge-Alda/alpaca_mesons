@@ -13,8 +13,10 @@ from scripts.implementation.kpi_s_wave_decay import (
     build_s_wave_model,
     kpi_thresholds,
     s_wave_decay_width,
+    s_wave_decay_width_fast,
     supported_channels,
 )
+from scripts.implementation.omnes import OmnesFunction, PairOmnesFSI, TabulatedOmnes
 from scripts.implementation.three_meson_width import B0_MQ, F_PI, _MESONS
 
 
@@ -120,6 +122,51 @@ class KPiSWaveDecayTests(unittest.TestCase):
         self.assertGreater(base, 0.0)
         self.assertAlmostEqual(doubled / base, 4.0, places=9)
         self.assertAlmostEqual(dressed / base, 4.0, places=9)
+
+    def test_fast_width_matches_direct_contact_integration(self) -> None:
+        channel = ("K+", "K-", "pi0")
+        direct = s_wave_decay_width(1.5, self.c_a, self.c_p, channel, 100.0)
+        fast = s_wave_decay_width_fast(
+            1.5,
+            self.c_a,
+            self.c_p,
+            channel,
+            100.0,
+            relative_tolerance=1e-8,
+        )
+        np.testing.assert_allclose(fast, direct, rtol=1e-8, atol=0.0)
+
+    def test_fast_width_with_tabulated_omnes(self) -> None:
+        threshold = 0.4
+        endpoint = 1.2
+        phase = lambda s: 0.4 * (s - threshold) / (endpoint - threshold)
+        direct_omega = OmnesFunction(
+            phase,
+            threshold,
+            endpoint,
+            asymptotic_phase=phase(endpoint),
+        )
+        tabulated = TabulatedOmnes(
+            direct_omega,
+            minimum=(0.493677 + 0.1349768) ** 2,
+            maximum=(1.2 - 0.493677) ** 2,
+            relative_tolerance=1e-6,
+        )
+        fsi = PairOmnesFSI(
+            {("K+", "pi0"): tabulated, ("K-", "pi0"): tabulated}
+        )
+        channel = ("K+", "K-", "pi0")
+        direct = s_wave_decay_width(1.2, self.c_a, self.c_p, channel, 100.0, fsi)
+        fast = s_wave_decay_width_fast(
+            1.2,
+            self.c_a,
+            self.c_p,
+            channel,
+            100.0,
+            fsi,
+            relative_tolerance=1e-6,
+        )
+        np.testing.assert_allclose(fast, direct, rtol=1e-6, atol=0.0)
 
 
 if __name__ == "__main__":

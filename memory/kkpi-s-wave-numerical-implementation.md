@@ -40,7 +40,8 @@ from scripts.implementation import (
     OmnesFunction,
     PairOmnesFSI,
     PelaezRodas2016ElasticPhase,
-    build_s_wave_model,
+    TabulatedOmnes,
+    s_wave_decay_width_fast,
 )
 
 phase = PelaezRodas2016ElasticPhase(isospin="1/2", fit="CFD")
@@ -55,29 +56,39 @@ omega = OmnesFunction(
     asymptotic_phase=phase(phase.maximum),
 )
 
+alp_mass = 1.2
+kpi_min = (0.493677 + 0.1349768) ** 2
+kpi_max = (alp_mass - 0.493677) ** 2
+omega_fast = TabulatedOmnes(
+    omega,
+    minimum=kpi_min,
+    maximum=kpi_max,
+    relative_tolerance=1e-6,
+)
+
 fsi = PairOmnesFSI(
     {
-        ("K+", "pi0"): omega,
-        ("K-", "pi0"): omega,
+        ("K+", "pi0"): omega_fast,
+        ("K-", "pi0"): omega_fast,
     }
 )
 
 c_q_A = np.diag([1.0, 1.0, 0.0])
 c_q_P = np.zeros((3, 3))
 
-model = build_s_wave_model(
-    alp_mass=1.2,
+width = s_wave_decay_width_fast(
+    alp_mass=alp_mass,
     c_q_A=c_q_A,
     c_q_P=c_q_P,
     channel=("K+", "K-", "pi0"),
     f_a=1000.0,
+    fsi=fsi,
+    relative_tolerance=1e-6,
 )
-
-amplitude = model.amplitude(s=0.55, t=0.55, fsi=fsi)
-print(amplitude)
+print(width)  # GeV
 ```
 
-Here `phase.threshold` and `phase.maximum` use the isospin-limit masses and elastic domain of the cited fit. The constant continuation is not supplied by Pelaez and Rodas; it is an explicit high-energy assumption required because the Omnes integral extends to infinity. This scalar example also omits the $I=3/2$ source component, physical charge-channel mixing, and inelastic coupled-channel dynamics. It should therefore be used only when those approximations are appropriate.
+Here `phase.threshold` and `phase.maximum` use the isospin-limit masses and elastic domain of the cited fit, while `kpi_min` and `kpi_max` cover the physical invariant range of each charged band. `TabulatedOmnes` validates its interpolation against omitted direct evaluations before the width is integrated. The constant continuation is not supplied by Pelaez and Rodas; it is an explicit high-energy assumption required because the Omnes integral extends to infinity. This scalar example also omits the $I=3/2$ source component, physical charge-channel mixing, and inelastic coupled-channel dynamics. It should therefore be used only when those approximations are appropriate.
 
 ## Assumptions and omissions
 

@@ -25,6 +25,7 @@ from typing import Callable
 
 import numpy as np
 from scipy.integrate import quad
+from scipy.interpolate import PPoly, PchipInterpolator
 
 # Physical generators, masses, f_pi, and B_0 m_q use the fit conventions and
 # inputs of Alda:2026bar at the precise point where they enter this module.
@@ -265,5 +266,147 @@ def s_wave_decay_width(
 
     integral, _ = quad(
         integrate_t, s_min, s_max, epsabs=0.0, epsrel=1e-8, limit=200
+    )
+    return max(0.0, integral / (256.0 * np.pi**3 * model.alp_mass**3))
+
+
+class _AdaptiveComplexCurve:
+    """Adaptive complex PCHIP with exact polynomial primitives."""
+
+    def __init__(
+        self,
+        function: Callable[[float], complex],
+        lower: float,
+        upper: float,
+        relative_tolerance: float,
+        initial_points: int = 17,
+        maximum_points: int = 4097,
+    ) -> None:
+        grid = np.linspace(lower, upper, initial_points)
+        values = np.asarray([function(float(x)) for x in grid], dtype=complex)
+        while True:
+            real = PchipInterpolator(grid, values.real)
+            imaginary = PchipInterpolator(grid, values.imag)
+            left = grid[:-1]
+            widths = np.diff(grid)
+            candidates = np.sort(
+                np.concatenate((left + widths / 3.0, left + 2.0 * widths / 3.0))
+            )
+            direct = np.asarray([function(float(x)) for x in candidates])
+            approximate = real(candidates) + 1j * imaginary(candidates)
+            scale = max(float(np.max(np.abs(values))), np.finfo(float).tiny)
+            failing = np.abs(approximate - direct) > relative_tolerance * np.maximum(
+                scale, np.abs(direct)
+            )
+            if not np.any(failing):
+                break
+            additions = candidates[failing]
+            if grid.size + additions.size > maximum_points:
+                raise RuntimeError(
+                    "dressed-band interpolation did not reach the requested "
+                    f"relative tolerance {relative_tolerance}"
+                )
+            grid = np.concatenate((grid, additions))
+            values = np.concatenate((values, direct[failing]))
+            order = np.argsort(grid)
+            grid = grid[order]
+            values = values[order]
+
+        self.grid_size = int(grid.size)
+        self._real = PchipInterpolator(grid, values.real)
+        self._imaginary = PchipInterpolator(grid, values.imag)
+        self._real_integral = self._real.antiderivative()
+        self._imaginary_integral = self._imaginary.antiderivative()
+
+        # Squaring the two piecewise cubics gives a degree-six polynomial for
+        # |B(t)|^2, whose antiderivative can be evaluated without quadrature.
+        intervals = self._real.c.shape[1]
+        power_coefficients = np.empty((7, intervals))
+        for index in range(intervals):
+            power_coefficients[:, index] = np.convolve(
+                self._real.c[:, index], self._real.c[:, index]
+            ) + np.convolve(
+                self._imaginary.c[:, index], self._imaginary.c[:, index]
+            )
+        self._power_integral = PPoly(
+            power_coefficients, self._real.x
+        ).antiderivative()
+
+    def integral(self, lower: float, upper: float) -> complex:
+        return complex(
+            self._real_integral(upper) - self._real_integral(lower),
+            self._imaginary_integral(upper) - self._imaginary_integral(lower),
+        )
+
+    def power_integral(self, lower: float, upper: float) -> float:
+        return float(self._power_integral(upper) - self._power_integral(lower))
+
+
+def s_wave_decay_width_fast(
+    alp_mass: float,
+    c_q_A: np.ndarray,
+    c_q_P: np.ndarray,
+    channel: tuple[str, str, str],
+    f_a: float,
+    fsi: ScalarFSI | None = None,
+    relative_tolerance: float = 1e-6,
+) -> float:
+    """Return the S-wave width using separability and cached band primitives.
+
+    For expensive dispersive input, pass ``TabulatedOmnes`` objects through
+    ``PairOmnesFSI``.  The direct width function remains the reference nested
+    integration; this function uses ``M(s,t)=A(s)+B(t)`` to perform the inner
+    integral from precomputed primitives of ``B`` and ``|B|^2``.
+    """
+    try:
+        tolerance = float(relative_tolerance)
+    except (TypeError, ValueError) as error:
+        raise TypeError("relative_tolerance must be a real scalar") from error
+    if not np.isfinite(tolerance) or tolerance <= 0.0:
+        raise ValueError("relative_tolerance must be finite and positive")
+    # Allocate the requested width-level error budget between band
+    # interpolation and the remaining outer quadrature.
+    working_tolerance = tolerance / 5.0
+
+    model = build_s_wave_model(alp_mass, c_q_A, c_q_P, channel, f_a)
+    m_k, m_pi, m_kbar = model.masses
+    if model.alp_mass <= sum(model.masses):
+        return 0.0
+    ma2 = model.alp_mass**2
+    s_min = (m_k + m_pi) ** 2
+    s_max = (model.alp_mass - m_kbar) ** 2
+    t_min_global = (m_pi + m_kbar) ** 2
+    t_max_global = (model.alp_mass - m_k) ** 2
+
+    def dressed_t(t: float) -> complex:
+        dressing = 1.0 if fsi is None else complex(fsi(t, model.t_kernel.pair))
+        return model.t_kernel(t) * dressing
+
+    t_curve = _AdaptiveComplexCurve(
+        dressed_t,
+        t_min_global,
+        t_max_global,
+        working_tolerance,
+    )
+
+    def outer_integrand(s: float) -> float:
+        dressing = 1.0 if fsi is None else complex(fsi(s, model.s_kernel.pair))
+        dressed_s = model.s_kernel(s) * dressing
+        t_min, t_max = _t_bounds(s, ma2, m_k, m_pi, m_kbar)
+        t_integral = t_curve.integral(t_min, t_max)
+        value = (
+            (t_max - t_min) * abs(dressed_s) ** 2
+            + t_curve.power_integral(t_min, t_max)
+            + 2.0 * np.real(dressed_s * np.conjugate(t_integral))
+        )
+        return max(0.0, float(value))
+
+    integral, _ = quad(
+        outer_integrand,
+        s_min,
+        s_max,
+        epsabs=0.0,
+        epsrel=working_tolerance,
+        limit=200,
     )
     return max(0.0, integral / (256.0 * np.pi**3 * model.alp_mass**3))
