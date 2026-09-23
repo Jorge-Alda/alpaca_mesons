@@ -17,7 +17,7 @@ from scripts.implementation.kpi_s_wave_decay import (
     supported_channels,
 )
 from scripts.implementation.omnes import OmnesFunction, PairOmnesFSI, TabulatedOmnes
-from scripts.implementation.three_meson_width import B0_MQ, F_PI, _MESONS
+from scripts.implementation.three_meson_width import B0_MQ, EPSILON_K, F_PI, _MESONS
 
 
 class KPiSWaveDecayTests(unittest.TestCase):
@@ -167,6 +167,46 @@ class KPiSWaveDecayTests(unittest.TestCase):
             relative_tolerance=1e-6,
         )
         np.testing.assert_allclose(fast, direct, rtol=1e-6, atol=0.0)
+
+    def test_physical_neutral_kaon_projection_for_charged_mode(self) -> None:
+        flavor = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("K0", "pi+", "K-"), 100.0
+        )
+        short = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("K-", "pi+", "k_s"), 100.0
+        )
+        long = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("k_l", "K-", "pi+"), 100.0
+        )
+        normalization = np.sqrt(2.0 * (1.0 + abs(EPSILON_K) ** 2))
+        p_mixing = (1.0 + EPSILON_K) / normalization
+        np.testing.assert_allclose(
+            short, abs(p_mixing) ** 2 * flavor, rtol=2e-12, atol=0.0
+        )
+        np.testing.assert_allclose(
+            long, abs(p_mixing) ** 2 * flavor, rtol=2e-12, atol=0.0
+        )
+
+    def test_two_physical_neutral_kaons_keep_multiplicity(self) -> None:
+        flavor = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("K0", "pi0", "K0bar"), 100.0
+        )
+        short_short = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("KS", "KS", "pi0"), 100.0
+        )
+        long_long = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("pi0", "KL", "KL"), 100.0
+        )
+        short_long = s_wave_decay_width(
+            1.6, self.c_a, self.c_p, ("KL", "pi0", "KS"), 100.0
+        )
+        normalization = np.sqrt(2.0 * (1.0 + abs(EPSILON_K) ** 2))
+        p_mixing = (1.0 + EPSILON_K) / normalization
+        q_mixing = (1.0 - EPSILON_K) / normalization
+        expected = 2.0 * abs(p_mixing * q_mixing) ** 2 * flavor
+        np.testing.assert_allclose(short_short, expected, rtol=2e-12, atol=0.0)
+        np.testing.assert_allclose(long_long, expected, rtol=2e-12, atol=0.0)
+        np.testing.assert_allclose(short_long, 0.0, atol=1e-38)
 
 
 if __name__ == "__main__":

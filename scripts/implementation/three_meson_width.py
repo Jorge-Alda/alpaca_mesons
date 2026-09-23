@@ -17,6 +17,9 @@ from scipy.integrate import quad
 F_PI = 0.093
 """Pion decay constant in GeV, in the convention of Alda:2026bar."""
 
+EPSILON_K = 2.228e-3 * np.exp(1j * np.deg2rad(43.52))
+"""Default indirect-CP-violation parameter from ParticleDataGroup:2024cfk."""
+
 # Appendix C fit values, converted from MeV^2 to GeV^2.  Keeping B_0 m_q as
 # one object avoids introducing scale-dependent quark masses into the LO input.
 B0_MQ = np.diag([0.006568, 0.011740, 0.235921])
@@ -26,7 +29,7 @@ B0_MQ = np.diag([0.006568, 0.011740, 0.235921])
 class _Meson:
     mass: float
     charge: int
-    strangeness: int
+    strangeness: int | None
     generator: np.ndarray
 
 
@@ -69,6 +72,36 @@ _MESONS = {
     ),
 }
 
+# Physical K_S and K_L are coherent flavor superpositions, including the
+# configured epsilon_K, and therefore do not carry a definite strangeness.
+
+
+def _kaon_mixing_coefficients(epsilon_k: complex) -> tuple[complex, complex]:
+    """Return normalized ``(p, q)`` for the adopted epsilon_K convention."""
+    try:
+        epsilon = complex(epsilon_k)
+    except (TypeError, ValueError) as error:
+        raise TypeError("epsilon_k must be a complex scalar") from error
+    if not np.isfinite(epsilon.real) or not np.isfinite(epsilon.imag):
+        raise ValueError("epsilon_k must be finite")
+    normalization = np.sqrt(2.0 * (1.0 + abs(epsilon) ** 2))
+    return (1.0 + epsilon) / normalization, (1.0 - epsilon) / normalization
+
+
+def _physical_neutral_kaon(name: str, epsilon_k: complex) -> _Meson:
+    """Construct a final-state KS or KL generator, including epsilon_K."""
+    p_mixing, q_mixing = _kaon_mixing_coefficients(epsilon_k)
+    sign = 1.0 if name == "KS" else -1.0
+    generator = (
+        np.conjugate(p_mixing) * _MESONS["K0"].generator
+        + sign * np.conjugate(q_mixing) * _MESONS["K0bar"].generator
+    )
+    return _Meson(0.497611, 0, None, generator)
+
+
+_MESONS["KS"] = _physical_neutral_kaon("KS", EPSILON_K)
+_MESONS["KL"] = _physical_neutral_kaon("KL", EPSILON_K)
+
 _ALIASES = {
     "pi+": "pi+",
     "pi-": "pi-",
@@ -80,6 +113,10 @@ _ALIASES = {
     "k0bar": "K0bar",
     "kbar0": "K0bar",
     "anti-k0": "K0bar",
+    "ks": "KS",
+    "k_s": "KS",
+    "kl": "KL",
+    "k_l": "KL",
     "eta": "eta",
     "eta'": "eta_prime",
     "eta_prime": "eta_prime",
@@ -151,25 +188,44 @@ def decay_width(
     meson_2: str,
     meson_3: str,
     f_a: float,
+    *,
+    epsilon_k: complex = EPSILON_K,
 ) -> float:
     """Return ``Gamma(a -> meson_1 meson_2 meson_3)`` in GeV.
 
     Supported canonical identifiers are ``pi+``, ``pi-``, ``pi0``, ``K+``,
-    ``K-``, ``K0``, ``K0bar``, ``eta``, and ``eta_prime``.  ``eta'`` and a
-    few common ASCII spellings are accepted as aliases.
+    ``K-``, ``K0``, ``K0bar``, ``KS``, ``KL``, ``eta``, and ``eta_prime``.
+    The physical neutral states use ``KS=p*K0+q*K0bar`` and
+    ``KL=p*K0-q*K0bar``, with ``p`` and ``q`` constructed from ``epsilon_k``.
+    The default is the phenomenological PDG value; pass ``epsilon_k=0`` for
+    the CP-conserving limit. ``eta'`` and common ASCII spellings are aliases.
 
-    Charge-, ``|S| > 1``-, and threshold-forbidden channels return ``0.0``
-    before the coupling matrices are inspected.  A channel with ``|S| = 1``
-    is allowed only when at least one coupling has a nonzero d-s entry.
+    Definite-flavor channels forbidden by charge, ``|S| > 1``, or threshold
+    return ``0.0`` before the coupling matrices are inspected. A definite
+    flavor channel with ``|S| = 1`` is allowed only when at least one coupling
+    has a nonzero d-s entry. Channels containing ``KS`` or ``KL`` have no
+    definite strangeness; their allowed components and interference are
+    selected directly by the flavor traces.
     """
     names = tuple(_canonical_name(name) for name in (meson_1, meson_2, meson_3))
-    mesons = tuple(_MESONS[name] for name in names)
+    has_physical_neutral_kaon = any(name in {"KS", "KL"} for name in names)
+    if has_physical_neutral_kaon:
+        mesons = tuple(
+            _physical_neutral_kaon(name, epsilon_k)
+            if name in {"KS", "KL"}
+            else _MESONS[name]
+            for name in names
+        )
+    else:
+        mesons = tuple(_MESONS[name] for name in names)
 
     if sum(meson.charge for meson in mesons) != 0:
         return 0.0
-    total_strangeness = sum(meson.strangeness for meson in mesons)
-    if abs(total_strangeness) > 1:
-        return 0.0
+    total_strangeness = None
+    if not has_physical_neutral_kaon:
+        total_strangeness = sum(int(meson.strangeness) for meson in mesons)
+        if abs(total_strangeness) > 1:
+            return 0.0
 
     try:
         ma = float(alp_mass)
@@ -182,7 +238,7 @@ def decay_width(
 
     c_a = None
     c_p = None
-    if abs(total_strangeness) == 1:
+    if total_strangeness is not None and abs(total_strangeness) == 1:
         c_a = _coupling_matrix(c_q_A, "c_q_A")
         c_p = _coupling_matrix(c_q_P, "c_q_P")
         if c_a[1, 2] == 0.0 and c_p[1, 2] == 0.0:

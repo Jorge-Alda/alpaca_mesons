@@ -3,7 +3,8 @@
 This module implements the independent-band matching discussed in
 ``memory/kpi-s-wave-chiral-matching.md``.  Despite the short name, the
 implemented final state is ``K Kbar pi`` (not a net-strangeness ``K pi pi``
-state).  Masses, ``f_a``, Mandelstam invariants, and returned widths use GeV.
+state), including ``KS`` and ``KL`` projections with indirect CP violation.
+Masses, ``f_a``, Mandelstam invariants, and returned widths use GeV.
 
 The optional ``fsi`` callable has signature ``fsi(s, pair) -> complex``, where
 ``pair`` is a canonical two-string tuple such as ``("K+", "pi0")``.  It must
@@ -17,10 +18,17 @@ This is a charge-resolved, diagonal-FSI independent-isobar approximation.  It
 does not solve the coupled charge-basis Omnes problem, include dynamical
 ``m_d-m_u`` corrections to K-pi scattering, electromagnetic corrections, or
 crossed-channel three-body rescattering.
+
+For ``KS`` or ``KL``, ``fsi=None`` gives the direct projection of the LO contact
+term with the selected ``epsilon_k``. A nontrivial scalar FSI keyed directly
+by a physical neutral-kaon pair is an additional effective physical-basis
+dressing assumption, not a coupled neutral-kaon propagation calculation.
 """
 
 from dataclasses import dataclass
+from collections import Counter
 from itertools import permutations
+from math import factorial
 from typing import Callable
 
 import numpy as np
@@ -29,7 +37,14 @@ from scipy.interpolate import PPoly, PchipInterpolator
 
 # Physical generators, masses, f_pi, and B_0 m_q use the fit conventions and
 # inputs of Alda:2026bar at the precise point where they enter this module.
-from .three_meson_width import B0_MQ, F_PI, _MESONS, _canonical_name
+from .three_meson_width import (
+    B0_MQ,
+    EPSILON_K,
+    F_PI,
+    _MESONS,
+    _canonical_name,
+    _physical_neutral_kaon,
+)
 
 
 ScalarFSI = Callable[[float, tuple[str, str]], complex]
@@ -74,17 +89,29 @@ class SWaveModel:
 
 
 # The ordering is (kaon, pion, antikaon), so s=(p_K+p_pi)^2 and
-# t=(p_pi+p_Kbar)^2.  These are all charge-conserving K Kbar pi flavor modes.
+# t=(p_pi+p_Kbar)^2. Physical neutral-kaon channels use epsilon_K-dependent
+# coherent generators. The tuple key retains multiplicities, unlike frozenset.
+def _channel_key(names: tuple[str, str, str]) -> tuple[str, str, str]:
+    return tuple(sorted(names))
+
+
 _CHANNELS = {
-    frozenset(("K+", "pi0", "K-")): ("K+", "pi0", "K-"),
-    frozenset(("K0", "pi0", "K0bar")): ("K0", "pi0", "K0bar"),
-    frozenset(("K+", "pi-", "K0bar")): ("K+", "pi-", "K0bar"),
-    frozenset(("K0", "pi+", "K-")): ("K0", "pi+", "K-"),
+    _channel_key(("K+", "pi0", "K-")): ("K+", "pi0", "K-"),
+    _channel_key(("K0", "pi0", "K0bar")): ("K0", "pi0", "K0bar"),
+    _channel_key(("K+", "pi-", "K0bar")): ("K+", "pi-", "K0bar"),
+    _channel_key(("K0", "pi+", "K-")): ("K0", "pi+", "K-"),
+    _channel_key(("KS", "pi0", "KS")): ("KS", "pi0", "KS"),
+    _channel_key(("KL", "pi0", "KL")): ("KL", "pi0", "KL"),
+    _channel_key(("KS", "pi0", "KL")): ("KS", "pi0", "KL"),
+    _channel_key(("KS", "pi+", "K-")): ("KS", "pi+", "K-"),
+    _channel_key(("KL", "pi+", "K-")): ("KL", "pi+", "K-"),
+    _channel_key(("K+", "pi-", "KS")): ("K+", "pi-", "KS"),
+    _channel_key(("K+", "pi-", "KL")): ("K+", "pi-", "KL"),
 }
 
 
 def supported_channels() -> tuple[tuple[str, str, str], ...]:
-    """Return canonical supported ``(K, pi, Kbar)`` channels."""
+    """Return canonical supported flavor and physical-kaon channels."""
     return tuple(_CHANNELS.values())
 
 
@@ -123,10 +150,18 @@ def _canonical_channel(channel: tuple[str, str, str]) -> tuple[str, str, str]:
         raise ValueError("channel must contain exactly three meson identifiers")
     names = tuple(_canonical_name(name) for name in channel)
     try:
-        return _CHANNELS[frozenset(names)]
+        return _CHANNELS[_channel_key(names)]
     except KeyError as error:
         choices = ", ".join(" ".join(item) for item in _CHANNELS.values())
         raise ValueError(f"unsupported K Kbar pi channel; use one of: {choices}") from error
+
+
+def _symmetry_factor(channel: tuple[str, str, str]) -> int:
+    """Return the product of factorials for repeated physical particles."""
+    result = 1
+    for multiplicity in Counter(channel).values():
+        result *= factorial(multiplicity)
+    return result
 
 
 def _kinetic_tensor(
@@ -194,8 +229,9 @@ def build_s_wave_model(
     c_q_P: np.ndarray,
     channel: tuple[str, str, str],
     f_a: float,
+    epsilon_k: complex = EPSILON_K,
 ) -> SWaveModel:
-    """Build a charge-resolved two-band model for one physical flavor mode.
+    """Build a charge-resolved two-band model for one supported mode.
 
     Couplings are diagonal hatted couplings in the no-mixing basis.  Physical
     neutral generators and nondegenerate ``B_0 m_q`` values retain source-level
@@ -213,7 +249,12 @@ def build_s_wave_model(
     names = _canonical_channel(channel)
     c_a = _diagonal_coupling(c_q_A, "c_q_A")
     c_p = _diagonal_coupling(c_q_P, "c_q_P")
-    mesons = tuple(_MESONS[name] for name in names)
+    mesons = tuple(
+        _physical_neutral_kaon(name, epsilon_k)
+        if name in {"KS", "KL"}
+        else _MESONS[name]
+        for name in names
+    )
     masses = tuple(meson.mass for meson in mesons)
     generators = tuple(meson.generator for meson in mesons)
     kernels = _kernels_from_inputs(
@@ -242,9 +283,17 @@ def s_wave_decay_width(
     channel: tuple[str, str, str],
     f_a: float,
     fsi: ScalarFSI | None = None,
+    epsilon_k: complex = EPSILON_K,
 ) -> float:
-    """Return the independent-band ``a -> K Kbar pi`` width in GeV."""
-    model = build_s_wave_model(alp_mass, c_q_A, c_q_P, channel, f_a)
+    """Return the independent-band ``a -> K Kbar pi`` width in GeV.
+
+    Repeated physical particles are accompanied by their factorial symmetry
+    factor. For physical neutral kaons, unity dressing directly projects the
+    flavor contact amplitude using the selected ``epsilon_k``.
+    """
+    model = build_s_wave_model(
+        alp_mass, c_q_A, c_q_P, channel, f_a, epsilon_k=epsilon_k
+    )
     m_k, m_pi, m_kbar = model.masses
     if model.alp_mass <= sum(model.masses):
         return 0.0
@@ -267,7 +316,16 @@ def s_wave_decay_width(
     integral, _ = quad(
         integrate_t, s_min, s_max, epsabs=0.0, epsrel=1e-8, limit=200
     )
-    return max(0.0, integral / (256.0 * np.pi**3 * model.alp_mass**3))
+    return max(
+        0.0,
+        integral
+        / (
+            _symmetry_factor(model.channel)
+            * 256.0
+            * np.pi**3
+            * model.alp_mass**3
+        ),
+    )
 
 
 class _AdaptiveComplexCurve:
@@ -350,6 +408,7 @@ def s_wave_decay_width_fast(
     f_a: float,
     fsi: ScalarFSI | None = None,
     relative_tolerance: float = 1e-6,
+    epsilon_k: complex = EPSILON_K,
 ) -> float:
     """Return the S-wave width using separability and cached band primitives.
 
@@ -368,7 +427,9 @@ def s_wave_decay_width_fast(
     # interpolation and the remaining outer quadrature.
     working_tolerance = tolerance / 5.0
 
-    model = build_s_wave_model(alp_mass, c_q_A, c_q_P, channel, f_a)
+    model = build_s_wave_model(
+        alp_mass, c_q_A, c_q_P, channel, f_a, epsilon_k=epsilon_k
+    )
     m_k, m_pi, m_kbar = model.masses
     if model.alp_mass <= sum(model.masses):
         return 0.0
@@ -409,4 +470,13 @@ def s_wave_decay_width_fast(
         epsrel=working_tolerance,
         limit=200,
     )
-    return max(0.0, integral / (256.0 * np.pi**3 * model.alp_mass**3))
+    return max(
+        0.0,
+        integral
+        / (
+            _symmetry_factor(model.channel)
+            * 256.0
+            * np.pi**3
+            * model.alp_mass**3
+        ),
+    )

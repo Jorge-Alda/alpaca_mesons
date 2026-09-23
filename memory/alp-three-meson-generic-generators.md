@@ -136,6 +136,8 @@ $$
 }
 $$
 
+If there is no flavour violation, the only processes allowed by charge and strangeness conservation with two identical mesons are those where all mesons have a diagonal generator ($\pi^0$, $\eta$ or $\eta^\prime$), but in that case $T_{iij}^A=0$. The axial part only contributes in $|\Delta S|=1$ decays, like $a \to \pi^0 \pi^0 K^0$.
+
 ## Three different mesons
 
 For pairwise distinct $i,j,k$, group the kinetic expansion by the differentiated field:

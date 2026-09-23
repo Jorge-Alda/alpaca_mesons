@@ -8,7 +8,7 @@ import unittest
 
 import numpy as np
 
-from scripts.implementation import decay_width
+from scripts.implementation import EPSILON_K, decay_width
 
 
 class ThreeMesonWidthTests(unittest.TestCase):
@@ -105,6 +105,60 @@ class ThreeMesonWidthTests(unittest.TestCase):
         ds_coupling[2, 1] = 0.4 - 0.1j
         width = decay_width(1.0, ds_coupling, self.zero, *channel, 100.0)
         self.assertGreater(width, 0.0)
+
+    def test_charged_mode_projects_equally_to_ks_and_kl(self) -> None:
+        coupling = np.diag([0.8, -0.3, 0.15])
+        flavor = decay_width(
+            1.6, coupling, self.zero, "pi+", "K-", "K0", 100.0
+        )
+        short = decay_width(
+            1.6, coupling, self.zero, "pi+", "K-", "k_s", 100.0
+        )
+        long = decay_width(
+            1.6, coupling, self.zero, "pi+", "K-", "k_l", 100.0
+        )
+        self.assertGreater(flavor, 0.0)
+        normalization = np.sqrt(2.0 * (1.0 + abs(EPSILON_K) ** 2))
+        p_mixing = (1.0 + EPSILON_K) / normalization
+        np.testing.assert_allclose(
+            short, abs(p_mixing) ** 2 * flavor, rtol=2e-12, atol=0.0
+        )
+        np.testing.assert_allclose(
+            long, abs(p_mixing) ** 2 * flavor, rtol=2e-12, atol=0.0
+        )
+        cp_limit = decay_width(
+            1.6,
+            coupling,
+            self.zero,
+            "pi+",
+            "K-",
+            "KS",
+            100.0,
+            epsilon_k=0.0,
+        )
+        np.testing.assert_allclose(cp_limit, 0.5 * flavor, rtol=2e-12, atol=0.0)
+
+    def test_two_neutral_kaons_include_interference_and_symmetry(self) -> None:
+        coupling = np.diag([0.8, -0.3, 0.15])
+        flavor = decay_width(
+            1.6, coupling, self.zero, "pi0", "K0", "K0bar", 100.0
+        )
+        short_short = decay_width(
+            1.6, coupling, self.zero, "pi0", "KS", "KS", 100.0
+        )
+        long_long = decay_width(
+            1.6, coupling, self.zero, "pi0", "KL", "KL", 100.0
+        )
+        short_long = decay_width(
+            1.6, coupling, self.zero, "pi0", "KS", "KL", 100.0
+        )
+        normalization = np.sqrt(2.0 * (1.0 + abs(EPSILON_K) ** 2))
+        p_mixing = (1.0 + EPSILON_K) / normalization
+        q_mixing = (1.0 - EPSILON_K) / normalization
+        expected = 2.0 * abs(p_mixing * q_mixing) ** 2 * flavor
+        np.testing.assert_allclose(short_short, expected, rtol=2e-12, atol=0.0)
+        np.testing.assert_allclose(long_long, expected, rtol=2e-12, atol=0.0)
+        self.assertEqual(short_long, 0.0)
 
 
 if __name__ == "__main__":

@@ -11,10 +11,11 @@ from .kpi_s_wave_decay import (
 )
 from .kpi_phases import PelaezRodas2016ElasticPhase
 from .omnes import OmnesFunction, PairOmnesFSI, TabulatedOmnes
-from .three_meson_width import decay_width
+from .three_meson_width import EPSILON_K, decay_width
 
 __all__ = [
     "AffineKernel",
+    "EPSILON_K",
     "SWaveModel",
     "OmnesFunction",
     "PairOmnesFSI",

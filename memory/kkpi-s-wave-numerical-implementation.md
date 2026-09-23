@@ -6,6 +6,7 @@ updated: 2026-09-23
 bibtex_keys:
   - Alda:2026bar
   - Omnes:1958hv
+  - ParticleDataGroup:2024cfk
 provenance: numerical-computation
 ---
 
@@ -13,7 +14,7 @@ provenance: numerical-computation
 
 ## Scope and inputs
 
-The implementation is [`scripts/implementation/kpi_s_wave_decay.py`](../scripts/implementation/kpi_s_wave_decay.py). It covers the four charge-conserving flavor modes $K^+\pi^0K^-$, $K^0\pi^0\bar K^0$, $K^+\pi^-\bar K^0$, and $K^0\pi^+K^-$. The ordering is always $(K,\pi,\bar K)$, with $s=(p_K+p_\pi)^2$ and $t=(p_\pi+p_{\bar K})^2$.
+The implementation is [`scripts/implementation/kpi_s_wave_decay.py`](../scripts/implementation/kpi_s_wave_decay.py). It covers the four charge-conserving flavor modes $K^+\pi^0K^-$, $K^0\pi^0\bar K^0$, $K^+\pi^-\bar K^0$, and $K^0\pi^+K^-$, as well as their physical-neutral-kaon projections $\pi^0K_SK_S$, $\pi^0K_LK_L$, $\pi^0K_SK_L$, $\pi^+K^-K_{S,L}$, and $\pi^-K^+K_{S,L}$. The projections include indirect CP violation through the configurable $\epsilon_K$ convention documented in [the PDG extract](extracts/ParticleDataGroup:2024cfk/neutral-kaon-mixing.md) [@ParticleDataGroup:2024cfk]. The internal ordering is $(K,\pi,\bar K)$, with $s=(p_K+p_\pi)^2$ and $t=(p_\pi+p_{\bar K})^2$.
 
 The script evaluates the flavor traces of the leading-order $a\Phi^3$ interaction with diagonal hatted couplings, nondegenerate fitted $B_0m_q$, physical neutral generators, and physical charged-neutral masses in the conventions of `Alda:2026bar` [@Alda:2026bar]. All energies are in GeV and widths are returned in GeV.
 
@@ -28,6 +29,8 @@ $$
 $$
 
 The default is $F_s=F_t=1$. The normalized scalar implementation in [the numerical Omnes record](kpi-omnes-numerical.md) can be supplied directly or dispatched by physical pair [@Omnes:1958hv].
+
+For $K_S$ and $K_L$, the default $F_s=F_t=1$ is the direct coherent projection of the LO flavor contact amplitude for the selected `epsilon_k`. Passing a nontrivial scalar function keyed by a physical pair such as `(KS, pi0)` is an additional effective physical-basis dressing assumption. It does not implement coupled $K^0$--$\bar K^0$ propagation or derive the physical-pair function from flavor-basis scattering. Repeated $K_SK_S$ and $K_LK_L$ states include the $2!$ phase-space symmetry factor.
 
 ### Example with the Pelaez--Rodas phase
 
@@ -103,4 +106,4 @@ Run
 .venv/bin/python -m unittest scripts.implementation.test_omnes scripts.implementation.test_kpi_phases
 ```
 
-The deterministic tests verify exact recovery of the full flavor-trace contact amplitude for unity dressing, agreement with the analytical isospin-limit $K^+\pi^0K^-$ kernel, all four physical flavor modes, charged-neutral threshold splitting, threshold and coupling validation, quadratic coupling scaling, and constant-FSI scaling.
+The deterministic tests verify exact recovery of the full flavor-trace contact amplitude for unity dressing, agreement with the analytical isospin-limit $K^+\pi^0K^-$ kernel, all four flavor modes and seven physical-neutral-kaon modes, charged-neutral threshold splitting, threshold and coupling validation, quadratic coupling scaling, constant-FSI scaling, one-neutral-kaon projection, two-neutral-kaon interference, and identical-particle factors.
