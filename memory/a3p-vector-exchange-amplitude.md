@@ -41,7 +41,7 @@ used for the leading $G_V$ operator in [the RChT record](rcht-basics.md) [@Ecker
    $$G_V=f_\pi/\sqrt2,$$
    following the single-resonance short-distance constraints summarized in the existing Ruiz-Femenia extract [@Ruiz-Femenia:2003jdx]. `g_v` can override it.
 3. **Constant widths:** the propagator uses $M_V^2-s-iM_V\Gamma_V$. Default $M_V,\Gamma_V$ values are the PDG listing central values transcribed in [the light-vector input record](extracts/ParticleDataGroup:2024cfk/light-vector-pole-parameters.md) [@ParticleDataGroup:2024cfk]. A constant-width line shape is an explicit implementation assumption, not a PDG result. `pole_parameters` can override each named state.
-4. **Pole-only scope:** the calculation retains only the canonical Proca propagator between the $WPa$ and $WPP$ vertices inherited from the $G_V$ operator. Eliminating the original antisymmetric tensor also induces a local cross term between its $Pa$ and $PP$ currents, schematically $J_{Pa}^{\mu\nu}J^{PP}_{\mu\nu}$. This is a direct, non-pole $aP^3$ interaction of $O(p^4)$ in Goldstone chiral counting. It is mandatory if the Proca formulation is meant to reproduce the complete antisymmetric-tensor result, rather than an additional optional resonance coupling [@Ecker:1989yg]. The present module omits it because it implements only the resonant pole contribution. The flavor-resolved coefficient of this matching contact has not yet been derived in the repository conventions.
+4. **Pole-only implementation scope:** the numerical module retains only the canonical Proca propagator between the $WPa$ and $WPP$ vertices inherited from the $G_V$ operator. Eliminating the original antisymmetric tensor also induces the local $O(p^4)$ cross term derived below. It is mandatory if the Proca formulation is meant to reproduce the complete antisymmetric-tensor result, rather than an optional extra resonance coupling [@Ecker:1989yg]. The current numerical module intentionally omits it and therefore remains a standalone pole model, not a representation-equivalent rewrite of the full leading antisymmetric-tensor result.
 
    This matching contact is distinct from the leading $O(p^2)$ Goldstone-only ChPT amplitude implemented in `three_meson_width.py`; adding both does not by itself double count. Double counting would arise if one also used $O(p^4)$ ChPT low-energy constants that already contain the same vector-resonance contribution without first matching or subtracting it. Conversely, one should use either the original antisymmetric-tensor exchange or the equivalent package “Proca pole plus induced contact,” not add all three pieces independently.
 
@@ -116,6 +116,127 @@ Y_{V;k}=\operatorname{Tr}\!\left(T_V[\Lambda_k,c_q^A]\right).
 $$
 
 Reversing $i,j$ changes the signs of both $X$ and $J_{PP}$, leaving the contribution invariant. The script asserts this, transversality, linear $c_q^A$ and inverse-$f_a$ scaling, and zero total mass dimension of the four-point amplitude.
+
+## Derived representation-matching contact
+
+The executable script now also performs the first-order elimination needed to match the leading antisymmetric-tensor $G_V$ theory to canonical Proca variables. Multiplying the previously derived Proca coefficients by $M_V$ first recovers the Alda-normalized original-tensor interactions,
+
+$$
+\mathcal L_{VPP}
+=\frac{iG_V}{\sqrt2f_\pi^2}
+V_{\mu\nu}\partial^\mu P_i\partial^\nu P_jX_{V;ij},
+$$
+
+$$
+\mathcal L_{VPa}
+=-\frac{\sqrt2iG_V}{f_\pi f_a}
+V_{\mu\nu}\partial^\mu P_k\partial^\nu aY_{V;k}.
+$$
+
+Write their sum as $V_{\mu\nu}K^{\mu\nu}$ and define $K_{[\mu\nu]}=(K_{\mu\nu}-K_{\nu\mu})/2$. Because $V_{\mu\nu}$ is antisymmetric, only $K_{[\mu\nu]}$ couples. For each vector component, the first-order structure is
+
+$$
+\mathcal L_{\rm first}
+=\frac{M_V^2}{4}V_{\mu\nu}V^{\mu\nu}
+-\frac{M_V}{2}W_{\mu\nu}V^{\mu\nu}
++V_{\mu\nu}K^{\mu\nu}.
+$$
+
+SymPy solves the tensor equation as
+
+$$
+V_{\mu\nu}=\frac{W_{\mu\nu}}{M_V}
+-\frac{2K_{[\mu\nu]}}{M_V^2}
+$$
+
+and obtains
+
+$$
+\mathcal L_{\rm first}\big|_{V\ \mathrm{eliminated}}
+=-\frac14W_{\mu\nu}W^{\mu\nu}
++\frac1{M_V}W_{\mu\nu}K^{[\mu\nu]}
+-\frac1{M_V^2}K_{[\mu\nu]}K^{[\mu\nu]}.
+$$
+
+For $K=K_{PP}+K_{Pa}$, the local cross term is $-2K_{PP,[\mu\nu]}K_{Pa}^{[\mu\nu]}/M_V^2$. Explicit antisymmetrization gives
+
+$$
+K_{PP,[\mu\nu]}K_{Pa}^{[\mu\nu]}
+\propto\frac12\left[
+(p_k\cdot p_i)(p_a\cdot p_j)
+-(p_k\cdot p_j)(p_a\cdot p_i)
+\right].
+$$
+
+The factor $1/2$ cancels the factor $2$ in the cross term. With one incoming ALP and three outgoing pseudoscalars, the four Fourier derivative factors multiply to $-1$. In the same $S=1+iT$ convention as the chiral and pole amplitudes, the resulting labeled matching amplitude is therefore
+
+$$
+\boxed{
+\mathcal M_{{\rm match},V;k;ij}
+=+\frac{G_V^2}{f_\pi^3f_aM_V^2}
+X_{V;ij}Y_{V;k}\,L_{k;ij},
+}
+$$
+
+where
+
+$$
+L_{k;ij}
+=(p_k\cdot p_i)(p_a\cdot p_j)
+-(p_k\cdot p_j)(p_a\cdot p_i)
+$$
+
+and the SymPy on-shell reduction is
+
+$$
+\boxed{
+L_{k;ij}=\frac14\left[
+(s_{ik}-m_i^2-m_k^2)(m_a^2+m_j^2-s_{ik})
+-(s_{jk}-m_j^2-m_k^2)(m_a^2+m_i^2-s_{jk})
+\right].
+}
+$$
+
+$L_{k;ij}$ has mass dimension four, while the prefactor has dimension minus four, so the amplitude is dimensionless. The operator contains four Goldstone/ALP derivatives and is $O(p^4)$ in Goldstone chiral counting. It has neither a propagator denominator nor a width. The exact first-order elimination decomposes the full antisymmetric-tensor current exchange into its momentum-independent propagator piece and its $W\cdot K/M_V$ pole piece, providing the executable check
+
+$$
+\boxed{
+\mathcal M_{G_V}^{\rm antisymmetric\ tensor}
+=\mathcal M_{G_V}^{\rm Proca\ pole}
++\mathcal M_{G_V}^{\rm match}.
+}
+$$
+
+Consequently, the standalone pole implementation is not representation-equivalent by itself. One must use either the original antisymmetric-tensor result or the package “Proca pole plus induced contact,” not add the original tensor exchange to either of its decomposed pieces [@Ecker:1989yg].
+
+This induced $O(p^4)$ contact is distinct from the direct leading $O(p^2)$ Goldstone-only ChPT amplitude in `three_meson_width.py`, so adding those two orders is not intrinsically double counting. Double counting does occur if fitted or matched $O(p^4)$ ChPT low-energy constants already include the same vector-resonance contribution and the induced contact is added again without subtraction. The need for local operators under tensor--Proca conversion is a literature result [@Ecker:1989yg]; the flavor coefficient, sign, Mandelstam form, and checks above are derived in this repository.
+
+### Identical particles in the matching contact
+
+For three identical pseudoscalars, every $VPP$ commutator is $[\Lambda_P,\Lambda_P]=0$, so the matching contact vanishes just like the pole contribution. For $P(p_1)P(p_2)Q(p_3)$, the $Q$-spectator graph vanishes. The two $P$-spectator graphs have identical flavor factors,
+
+$$
+X_{V;PQ}=\operatorname{Tr}\!\left(T_{\bar V}[\Lambda_P,\Lambda_Q]\right),
+\qquad
+Y_{V;P}=\operatorname{Tr}\!\left(T_V[\Lambda_P,c_q^A]\right),
+$$
+
+and therefore add with the same sign. Defining $R=s_{13}s_{23}$, their exact on-shell kinematic sum is
+
+$$
+\boxed{
+\begin{aligned}
+L_{1;23}+L_{2;13}={}&-\frac12R\\
+&+\frac14\Big[
+2m_P^4-2m_P^2m_Q^2-2m_P^2m_a^2+2m_P^2s_{12}
++2m_Q^2m_a^2\\
+&\hspace{2.8em}+(m_Q^2+m_a^2)s_{12}-s_{12}^2
+\Big].
+\end{aligned}
+}
+$$
+
+Thus the Bose-symmetric matching contact also generally depends on both independent Dalitz variables through $s_{13}s_{23}$; it does not reduce to the one-variable leading ChPT contact amplitude. It reduces only when the common flavor factor vanishes, through tuned cancellations among vector components, or on a restricted one-dimensional kinematic locus.
 
 ## Identical particles and Mandelstam dependence
 

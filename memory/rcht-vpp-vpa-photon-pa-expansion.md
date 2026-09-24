@@ -87,7 +87,7 @@ V^k_{\mu\nu}
 }
 $$
 
-The $W^A_\mu$ are canonical massive Proca eigenfields. Terms quadratic in the interaction current are additional local operators and are beyond this record's one-vector/one-photon vertex scope. In particular, the cross term between the $PP$ and $Pa$ currents is a local $aP^3$ interaction and must accompany Proca exchange if exact equivalence to the original antisymmetric-tensor formulation is required [@Ecker:1989yg]. Define the effective generic flavor matrices
+The $W^A_\mu$ are canonical massive Proca eigenfields. Terms quadratic in the interaction current are additional local operators and are beyond this record's one-vector/one-photon vertex scope. In particular, the cross term between the $PP$ and $Pa$ currents is a local $aP^3$ interaction and must accompany Proca exchange if exact equivalence to the original antisymmetric-tensor formulation is required [@Ecker:1989yg]. Its flavor-resolved coefficient, sign, Mandelstam form, and identical-particle limits are derived by [`scripts/derive_a3p_vector_exchange_amplitude.py`](../scripts/derive_a3p_vector_exchange_amplitude.py) and recorded in [the vector-exchange amplitude memory](a3p-vector-exchange-amplitude.md). Define the effective generic flavor matrices
 
 $$
 \mathcal T_A\equiv\sum_k\frac{H_{kA}}{M_k}T_k,

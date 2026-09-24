@@ -24,7 +24,7 @@ print("Assumptions:")
 print("- Natural units and metric dot products; all external pseudoscalars are on shell.")
 print("- Alda convention: u=exp(i Phi_A/(2 f_pi)), hence U=u^2=exp(i Phi_A/f_pi).")
 print("- RChT convention: U=exp(i sqrt(2) Phi_R/f_pi), with Phi_A=sqrt(2) Phi_R.")
-print("- One canonical Proca pole with constant width; no representation-matching local current-current term.")
+print("- One canonical Proca pole with constant width; the induced representation-matching local term is derived separately below.")
 print("- Pair labels are fixed as i<j and all momenta in the displayed decay kinematics are outgoing.\n")
 
 # ---------------------------------------------------------------------------
@@ -311,3 +311,271 @@ print("- Their Bose-symmetric sum remains a two-variable Dalitz amplitude; even 
 print("- Exact flavor/coupling cancellations can remove the amplitude; restricting to s13=s23 gives only a one-dimensional locus.")
 print("- The nonphysical Sigma+s12=0 condition removes the numerator-product coefficient, but not finite-pole dependence.")
 print("Identical-particle assertions: all passed.")
+
+
+# ---------------------------------------------------------------------------
+# 5. Representation-matching local current-current term
+# ---------------------------------------------------------------------------
+# First recover the original antisymmetric-tensor coefficients from the
+# already-derived canonical Proca coefficients.  V_munu=W_munu/M_V+... at
+# first order in the current, so multiplying the Proca coefficients by M_V
+# must remove exactly one inverse mass.
+tensor_wpp_coefficient = sp.simplify(M_V * alda_wpp_coefficient)
+tensor_wpa_coefficient = sp.simplify(M_V * alda_wpa_coefficient)
+expected_tensor_wpp = I * G_V / (sqrt2 * f_pi**2)
+expected_tensor_wpa = -sqrt2 * I * G_V / (f_pi * f_a)
+show("Recovered Alda-normalized original-tensor VPP coefficient", tensor_wpp_coefficient)
+show("Recovered Alda-normalized original-tensor VPa coefficient", tensor_wpa_coefficient)
+assert sp.simplify(tensor_wpp_coefficient - expected_tensor_wpp) == 0
+assert sp.simplify(tensor_wpa_coefficient - expected_tensor_wpa) == 0
+
+# Scalar placeholders encode the coefficients of the fully contracted tensor
+# expression.  K_PP and K_Pa therefore mean the projected currents
+# K_[mu nu]=(K_mu nu-K_nu mu)/2, not unprojected outer products.
+V_component, W_component, K_PP, K_Pa = sp.symbols(
+    "V_component W_component K_PP K_Pa"
+)
+K_total = K_PP + K_Pa
+first_order_lagrangian = (
+    M_V**2 * V_component**2 / 4
+    - M_V * W_component * V_component / 2
+    + V_component * K_total
+)
+V_solution = sp.solve(sp.diff(first_order_lagrangian, V_component), V_component)[0]
+eliminated_lagrangian = sp.factor(first_order_lagrangian.subs(V_component, V_solution))
+expected_eliminated = sp.factor(
+    -W_component**2 / 4
+    + W_component * K_total / M_V
+    - K_total**2 / M_V**2
+)
+local_cross_term = sp.factor(
+    sp.diff(eliminated_lagrangian, K_PP, K_Pa)
+    .subs({K_PP: 0, K_Pa: 0})
+    * K_PP
+    * K_Pa
+)
+
+show("First-order tensor Lagrangian for K=K_PP+K_Pa", first_order_lagrangian)
+show("Antisymmetric-tensor equation-of-motion solution", V_solution)
+show("Lagrangian after eliminating V_munu", eliminated_lagrangian)
+show("Extracted local K_PP-K_Pa cross term", local_cross_term)
+assert sp.simplify(eliminated_lagrangian - expected_eliminated) == 0
+assert sp.simplify(local_cross_term + 2 * K_PP * K_Pa / M_V**2) == 0
+
+# Derive the factor from antisymmetrizing the raw derivative outer products.
+# The coefficient-vector basis is (p_i,p_j,p_k,p_a), with an otherwise generic
+# symmetric Gram matrix.  SymPy performs the full double Lorentz contraction.
+d_ii, d_jj, d_kk, d_aa = sp.symbols("d_ii d_jj d_kk d_aa")
+d_ij, d_ik, d_ia, d_jk, d_ja, d_ka = sp.symbols(
+    "d_ij d_ik d_ia d_jk d_ja d_ka"
+)
+gram4 = sp.Matrix(
+    [
+        [d_ii, d_ij, d_ik, d_ia],
+        [d_ij, d_jj, d_jk, d_ja],
+        [d_ik, d_jk, d_kk, d_ka],
+        [d_ia, d_ja, d_ka, d_aa],
+    ]
+)
+e_i = sp.Matrix([1, 0, 0, 0])
+e_j = sp.Matrix([0, 1, 0, 0])
+e_k = sp.Matrix([0, 0, 1, 0])
+e_a = sp.Matrix([0, 0, 0, 1])
+K_PP_raw = e_i * e_j.T
+K_Pa_raw = e_k * e_a.T
+K_PP_antisym = (K_PP_raw - K_PP_raw.T) / 2
+K_Pa_antisym = (K_Pa_raw - K_Pa_raw.T) / 2
+antisymmetric_current_contraction = sp.factor(
+    sum(
+        K_PP_antisym[mu, nu]
+        * K_Pa_antisym[rho, sigma]
+        * gram4[mu, rho]
+        * gram4[nu, sigma]
+        for mu in range(4)
+        for nu in range(4)
+        for rho in range(4)
+        for sigma in range(4)
+    )
+)
+L_dot = sp.factor(d_ik * d_ja - d_jk * d_ia)
+show("Contraction K_PP[mu nu] K_Pa^[mu nu] after explicit antisymmetrization", antisymmetric_current_contraction)
+show("Definition L_(k;ij) in scalar products", L_dot)
+assert sp.simplify(antisymmetric_current_contraction - L_dot / 2) == 0
+
+# The two original-tensor coefficients multiply to a positive real coefficient.
+# Combining -2 K_PP.K_Pa/M_V^2 with K_PP.K_Pa=L/2 gives a coordinate-space
+# local coefficient -C*L.  For one incoming ALP and three outgoing mesons,
+# the four derivative Fourier factors multiply to -1, hence i*M_match=+i*C*L.
+tensor_coefficient_product = sp.simplify(
+    tensor_wpp_coefficient * tensor_wpa_coefficient
+)
+matching_prefactor = G_V**2 * X * Y / (f_pi**3 * f_a * M_V**2)
+local_lagrangian_coefficient = sp.factor(
+    -tensor_coefficient_product * X * Y / M_V**2
+)
+four_derivative_fourier_factor = sp.simplify((I**3) * (-I))
+contact_vertex = sp.simplify(
+    I * local_lagrangian_coefficient * four_derivative_fourier_factor * L_dot
+)
+matching_amplitude = sp.simplify(contact_vertex / I)
+show("Product of original-tensor VPP and VPa coefficients", tensor_coefficient_product)
+show("Local matching Lagrangian coefficient multiplying L_(k;ij)", local_lagrangian_coefficient)
+show("Fourier factor for three outgoing mesons and one incoming ALP", four_derivative_fourier_factor)
+show("Derived S=1+iT matching amplitude", matching_amplitude)
+assert sp.simplify(tensor_coefficient_product - G_V**2 / (f_pi**3 * f_a)) == 0
+assert four_derivative_fourier_factor == -1
+assert sp.simplify(matching_amplitude - matching_prefactor * L_dot) == 0
+
+# This same exact elimination is the propagator decomposition.  Separate the
+# source-dependent effective action from the source-free Proca term, then set
+# W=0 to isolate the momentum-independent metric part of the full
+# antisymmetric-tensor propagator.  Its PP-Pa cross coefficient must reproduce
+# the matching amplitude; the remaining W.K/M terms generate the Proca pole.
+source_dependent_action = sp.expand(
+    eliminated_lagrangian
+    - eliminated_lagrangian.subs({K_PP: 0, K_Pa: 0})
+)
+nonpole_source_action = sp.factor(source_dependent_action.subs(W_component, 0))
+nonpole_cross_coefficient = sp.factor(
+    sp.diff(nonpole_source_action, K_PP, K_Pa)
+    .subs({K_PP: 0, K_Pa: 0})
+)
+nonpole_from_tensor_propagator = sp.simplify(
+    nonpole_cross_coefficient
+    * tensor_coefficient_product
+    * X
+    * Y
+    * antisymmetric_current_contraction
+    * four_derivative_fourier_factor
+)
+show("Source-dependent action after exact tensor elimination", source_dependent_action)
+show("Momentum-independent non-pole source action", nonpole_source_action)
+show("PP-Pa coefficient in the non-pole propagator piece", nonpole_cross_coefficient)
+show("Non-pole part of the full antisymmetric-tensor exchange", nonpole_from_tensor_propagator)
+assert sp.simplify(nonpole_cross_coefficient + 2 / M_V**2) == 0
+assert sp.simplify(nonpole_from_tensor_propagator - matching_amplitude) == 0
+assert not matching_amplitude.has(Gamma_V)
+matching_dynamic_denominator = sp.factor(sp.denom(sp.together(matching_amplitude)))
+show("Matching-amplitude denominator (no kinematic pole)", matching_dynamic_denominator)
+assert not any(
+    matching_dynamic_denominator.has(variable)
+    for variable in (s, s_ik, s_jk, m_a2, m_i2, m_j2, m_k2, Gamma_V)
+)
+
+contact_unit_scaling = {
+    G_V: z * G_V,
+    f_pi: z * f_pi,
+    f_a: z * f_a,
+    M_V: z * M_V,
+    d_ik: z**2 * d_ik,
+    d_ja: z**2 * d_ja,
+    d_jk: z**2 * d_jk,
+    d_ia: z**2 * d_ia,
+}
+scaled_matching_amplitude = sp.simplify(
+    matching_amplitude.xreplace(contact_unit_scaling)
+)
+show("Matching amplitude under a common mass-unit rescaling", scaled_matching_amplitude)
+assert sp.simplify(scaled_matching_amplitude - matching_amplitude) == 0
+
+# On-shell Mandelstam representation of L_(k;ij).
+L_mandelstam = sp.factor(
+    (
+        (s_ik - m_i2 - m_k2) * (m_a2 + m_j2 - s_ik)
+        - (s_jk - m_j2 - m_k2) * (m_a2 + m_i2 - s_jk)
+    )
+    / 4
+)
+show("L_(k;ij) in Mandelstam variables", L_mandelstam)
+assert sp.simplify(
+    L_dot.subs(
+        {
+            d_ik: (s_ik - m_i2 - m_k2) / 2,
+            d_ja: (m_a2 + m_j2 - s_ik) / 2,
+            d_jk: (s_jk - m_j2 - m_k2) / 2,
+            d_ia: (m_a2 + m_i2 - s_jk) / 2,
+        }
+    )
+    - L_mandelstam
+) == 0
+contact_pair_reversed = L_mandelstam.xreplace(
+    {m_i2: m_j2, m_j2: m_i2, s_ik: s_jk, s_jk: s_ik}
+)
+assert sp.simplify(contact_pair_reversed + L_mandelstam) == 0
+
+# Identical fields for the matching contact.  The Q-spectator flavor factor is
+# zero.  The two P-spectator diagrams have the same X=Tr(Tbar[Lambda_P,Lambda_Q])
+# and Y=Tr(T[Lambda_P,c_q^A]), so their kinematic factors add with a plus sign.
+T_V_matrix = sp.MatrixSymbol("T_V", 3, 3)
+c_q_A_matrix = sp.MatrixSymbol("c_q^A", 3, 3)
+X_PQ = sp.Trace(
+    T_Vbar * (Lambda_P * Lambda_Q - Lambda_Q * Lambda_P)
+)
+Y_P = sp.Trace(
+    T_V_matrix * (Lambda_P * c_q_A_matrix - c_q_A_matrix * Lambda_P)
+)
+X_PP = sp.Trace(
+    T_Vbar * (Lambda_P * Lambda_P - Lambda_P * Lambda_P)
+).doit()
+flavor_p1_spectator = X_PQ * Y_P
+flavor_p2_spectator = X_PQ * Y_P
+show("PPQ Q-spectator VPP flavor trace", X_PP)
+show("PPQ p1-spectator flavor factor X_PQ Y_P", flavor_p1_spectator)
+show("PPQ p2-spectator flavor factor X_PQ Y_P", flavor_p2_spectator)
+assert X_PP == 0
+assert sp.simplify(flavor_p1_spectator - flavor_p2_spectator) == 0
+
+L_23 = sp.factor(
+    L_mandelstam.subs(
+        {
+            m_i2: m_P2,
+            m_j2: m_Q2,
+            m_k2: m_P2,
+            s_ik: s12,
+            s_jk: s13,
+        },
+        simultaneous=True,
+    )
+)
+L_13 = sp.factor(
+    L_mandelstam.subs(
+        {
+            m_i2: m_P2,
+            m_j2: m_Q2,
+            m_k2: m_P2,
+            s_ik: s12,
+            s_jk: s23,
+        },
+        simultaneous=True,
+    )
+)
+contact_sum = sp.factor(L_13 + L_23)
+contact_symmetric, contact_remainder, contact_elementary = sp.symmetrize(
+    sp.expand(contact_sum), [s13, s23], formal=True
+)
+contact_SP = sp.factor(
+    contact_symmetric.subs(
+        {
+            contact_elementary[0][0]: S_pair,
+            contact_elementary[1][0]: P_pair,
+        }
+    )
+)
+contact_on_shell_SP = sp.factor(contact_SP.subs(S_pair, Sigma - s12))
+contact_product_coefficient = sp.factor(sp.diff(contact_on_shell_SP, P_pair))
+
+show("Matching-contact factor for the p1 spectator (pair p2,Q)", L_23)
+show("Matching-contact factor for the p2 spectator (pair p1,Q)", L_13)
+show("Bose-symmetric matching-contact sum in (S_pair,P_pair)", contact_SP)
+show("On-shell matching-contact sum", contact_on_shell_SP)
+show("Coefficient of s13*s23 in the matching-contact sum", contact_product_coefficient)
+assert contact_remainder == 0
+assert sp.simplify(L_23.xreplace({s13: s23, s23: s13}) - L_13) == 0
+assert contact_product_coefficient == -sp.Rational(1, 2)
+
+print("Representation-matching contact conclusion:")
+print("- K denotes the explicitly antisymmetrized current K_[mu nu]; tensor elimination gives W.K/M-K_[mu nu]K^[mu nu]/M^2.")
+print("- The PP-Pa cross term yields +G_V^2 X Y L_(k;ij)/(f_pi^3 f_a M_V^2) in the S=1+iT amplitude.")
+print("- L_(k;ij) has mass dimension four, is O(p^4), and contains no pole denominator or width.")
+print("- Three identical fields vanish; for PPQ the equal flavor factors multiply L_13+L_23, which still depends on s13*s23.")
+print("Representation-matching contact assertions: all passed.")
