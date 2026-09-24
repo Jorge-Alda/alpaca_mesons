@@ -8,7 +8,7 @@ import unittest
 
 import numpy as np
 
-from scripts.implementation import EPSILON_K, decay_width
+from scripts.implementation import EPSILON_K, build_amplitude, decay_width
 
 
 class ThreeMesonWidthTests(unittest.TestCase):
@@ -70,6 +70,24 @@ class ThreeMesonWidthTests(unittest.TestCase):
         ]
         np.testing.assert_allclose(widths, widths[0], rtol=2e-12, atol=0.0)
 
+    def test_two_identical_amplitude_keeps_input_mandelstam_order(self) -> None:
+        coupling = np.diag([1.0, -0.3, 0.2])
+        ordered = build_amplitude(
+            1.4, coupling, coupling, "pi0", "pi0", "eta", 100.0
+        )
+        permuted = build_amplitude(
+            1.4, coupling, coupling, "pi0", "eta", "pi0", 100.0
+        )
+        permuted_again = build_amplitude(
+            1.4, coupling, coupling, "eta", "pi0", "pi0", 100.0
+        )
+        s12 = 0.3
+        s23 = 0.5
+        invariant_sum = ordered.alp_mass**2 + sum(mass**2 for mass in ordered.masses)
+        s13 = invariant_sum - s12 - s23
+        self.assertAlmostEqual(ordered(s12, s23), permuted(s13, s23))
+        self.assertAlmostEqual(ordered(s12, s23), permuted_again(s13, s12))
+
     def test_three_distinct_result_is_permutation_invariant(self) -> None:
         c_a = np.array(
             [[0.4, 0.2j, 0.1], [-0.2j, -0.3, 0.05j], [0.1, -0.05j, 0.2]]
@@ -85,6 +103,21 @@ class ThreeMesonWidthTests(unittest.TestCase):
         widths = [decay_width(0.8, c_a, c_p, *channel, 100.0) for channel in channels]
         self.assertGreater(widths[0], 0.0)
         np.testing.assert_allclose(widths, widths[0], rtol=2e-8, atol=0.0)
+
+    def test_three_distinct_amplitude_keeps_input_mandelstam_order(self) -> None:
+        c_a = np.array(
+            [[0.4, 0.2j, 0.1], [-0.2j, -0.3, 0.05j], [0.1, -0.05j, 0.2]]
+        )
+        c_p = np.array(
+            [[0.3, 0.1, -0.2j], [0.1, 0.2, 0.04], [0.2j, 0.04, -0.1]]
+        )
+        ordered = build_amplitude(0.8, c_a, c_p, "pi+", "pi-", "pi0", 100.0)
+        cyclic = build_amplitude(0.8, c_a, c_p, "pi0", "pi+", "pi-", 100.0)
+        s12 = 0.12
+        s23 = 0.18
+        invariant_sum = ordered.alp_mass**2 + sum(mass**2 for mass in ordered.masses)
+        s13 = invariant_sum - s12 - s23
+        self.assertAlmostEqual(ordered(s12, s23), cyclic(s13, s12))
 
     def test_allowed_strange_channel_is_computed(self) -> None:
         coupling = np.diag([0.8, -0.4, 0.1])

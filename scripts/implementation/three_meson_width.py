@@ -1,4 +1,4 @@
-"""Numerical leading-order widths for an ALP decaying to three mesons.
+"""Numerical leading-order amplitudes and widths for ALP three-meson decays.
 
 The coupling matrices are the hatted axial and pseudoscalar couplings in the
 no-ALP-meson-mixing basis. Masses, ``f_a``, and the returned width are in GeV.
@@ -180,6 +180,220 @@ def _integrate_one_dimension(integrand, lower: float, upper: float) -> float:
     return float(value)
 
 
+@dataclass(frozen=True)
+class ThreeMesonAmplitude:
+    """Leading-order amplitude with invariants ordered like ``channel``.
+
+    Calling the model as ``model(s12, s23)`` uses
+    ``s12 = (p1 + p2)^2`` and ``s23 = (p2 + p3)^2``, where ``p1``, ``p2``,
+    and ``p3`` follow the order of the three mesons in ``channel``.
+    """
+
+    alp_mass: float
+    channel: tuple[str, str, str]
+    masses: tuple[float, float, float]
+    kinetic_coefficient: float
+    breaking_coefficient: float
+    kinetic_tensors: tuple[complex, ...]
+    breaking_tensor: complex
+    identical_pair: tuple[int, int] | None
+
+    def __call__(self, s12: float, s23: float) -> complex:
+        """Evaluate the invariant amplitude at the ordered Dalitz variables."""
+        ma2 = self.alp_mass**2
+        if len(set(self.channel)) == 1:
+            return 6.0 * self.breaking_coefficient * self.breaking_tensor
+
+        if self.identical_pair is not None:
+            s13 = ma2 + sum(mass**2 for mass in self.masses) - s12 - s23
+            pair_invariants = {(0, 1): s12, (0, 2): s13, (1, 2): s23}
+            distinct_index = next(
+                index for index in range(3) if index not in self.identical_pair
+            )
+            pair_invariant = pair_invariants[self.identical_pair]
+            return (
+                0.5
+                * self.kinetic_coefficient
+                * self.kinetic_tensors[0]
+                * (
+                    ma2
+                    + 3.0 * self.masses[distinct_index] ** 2
+                    - 3.0 * pair_invariant
+                )
+                + 2.0 * self.breaking_coefficient * self.breaking_tensor
+            )
+
+        m1, m2, m3 = self.masses
+        s13 = ma2 + m1**2 + m2**2 + m3**2 - s12 - s23
+        tensor_12_3, tensor_13_2, tensor_23_1 = self.kinetic_tensors
+        return (
+            0.5
+            * self.kinetic_coefficient
+            * (
+                tensor_12_3 * (ma2 + m3**2 - s12)
+                + tensor_13_2 * (ma2 + m2**2 - s13)
+                + tensor_23_1 * (ma2 + m1**2 - s23)
+            )
+            + self.breaking_coefficient * self.breaking_tensor
+        )
+
+    def _at_identical_pair_invariant(self, invariant: float) -> complex:
+        """Evaluate a repeated-particle amplitude using its sole invariant."""
+        if self.identical_pair == (0, 1):
+            return self(invariant, 0.0)
+        if self.identical_pair == (1, 2):
+            return self(0.0, invariant)
+        if self.identical_pair == (0, 2):
+            invariant_sum = self.alp_mass**2 + sum(
+                mass**2 for mass in self.masses
+            )
+            return self(0.0, invariant_sum - invariant)
+        raise ValueError("channel does not contain exactly two identical mesons")
+
+
+def _channel_mesons(
+    names: tuple[str, str, str], epsilon_k: complex
+) -> tuple[_Meson, _Meson, _Meson]:
+    return tuple(
+        _physical_neutral_kaon(name, epsilon_k)
+        if name in {"KS", "KL"}
+        else _MESONS[name]
+        for name in names
+    )
+
+
+def _build_amplitude(
+    alp_mass: float,
+    f_a: float,
+    names: tuple[str, str, str],
+    mesons: tuple[_Meson, _Meson, _Meson],
+    c_a: np.ndarray,
+    c_p: np.ndarray,
+) -> ThreeMesonAmplitude:
+    """Build an amplitude from validated numerical and channel inputs."""
+    p_matrix = c_p @ B0_MQ + B0_MQ @ c_p
+    kinetic_coefficient = 1.0 / (6.0 * f_a * F_PI)
+    breaking_coefficient = -1.0 / (6.0 * f_a * F_PI)
+    generators = tuple(meson.generator for meson in mesons)
+    masses = tuple(meson.mass for meson in mesons)
+    unique_names = set(names)
+
+    if len(unique_names) == 1:
+        tensor_p = _trace(generators[0] @ generators[0] @ generators[0] @ p_matrix)
+        return ThreeMesonAmplitude(
+            alp_mass,
+            names,
+            masses,
+            kinetic_coefficient,
+            breaking_coefficient,
+            (),
+            tensor_p,
+            None,
+        )
+
+    if len(unique_names) == 2:
+        identical_name = next(name for name in unique_names if names.count(name) == 2)
+        identical_indices = tuple(
+            index for index, name in enumerate(names) if name == identical_name
+        )
+        distinct_index = next(
+            index for index in range(3) if index not in identical_indices
+        )
+        generator_i = generators[identical_indices[0]]
+        generator_j = generators[distinct_index]
+        tensor_a = _trace(
+            c_a
+            @ _commutator(generator_i, _commutator(generator_i, generator_j))
+        )
+        tensor_p = _trace(
+            (
+                generator_i @ generator_i @ generator_j
+                + generator_i @ generator_j @ generator_i
+                + generator_j @ generator_i @ generator_i
+            )
+            @ p_matrix
+        )
+        return ThreeMesonAmplitude(
+            alp_mass,
+            names,
+            masses,
+            kinetic_coefficient,
+            breaking_coefficient,
+            (tensor_a,),
+            tensor_p,
+            identical_indices,
+        )
+
+    def tensor_a(
+        first: np.ndarray, second: np.ndarray, differentiated: np.ndarray
+    ) -> complex:
+        return _trace(
+            c_a
+            @ (
+                _commutator(first, _commutator(second, differentiated))
+                + _commutator(second, _commutator(first, differentiated))
+            )
+        )
+
+    generator_1, generator_2, generator_3 = generators
+    kinetic_tensors = (
+        tensor_a(generator_1, generator_2, generator_3),
+        tensor_a(generator_1, generator_3, generator_2),
+        tensor_a(generator_2, generator_3, generator_1),
+    )
+    tensor_p = _trace(
+        sum(
+            (
+                generators[order[0]]
+                @ generators[order[1]]
+                @ generators[order[2]]
+                for order in permutations(range(3))
+            ),
+            _ZERO.copy(),
+        )
+        @ p_matrix
+    )
+    return ThreeMesonAmplitude(
+        alp_mass,
+        names,
+        masses,
+        kinetic_coefficient,
+        breaking_coefficient,
+        kinetic_tensors,
+        tensor_p,
+        None,
+    )
+
+
+def build_amplitude(
+    alp_mass: float,
+    c_q_A: np.ndarray,
+    c_q_P: np.ndarray,
+    meson_1: str,
+    meson_2: str,
+    meson_3: str,
+    f_a: float,
+    *,
+    epsilon_k: complex = EPSILON_K,
+) -> ThreeMesonAmplitude:
+    """Return the LO amplitude model for an ordered three-meson channel."""
+    try:
+        ma = float(alp_mass)
+        fa = float(f_a)
+    except (TypeError, ValueError) as error:
+        raise TypeError("alp_mass and f_a must be real scalars") from error
+    if not np.isfinite(ma) or ma <= 0.0:
+        raise ValueError("alp_mass must be finite and positive")
+    if not np.isfinite(fa) or fa <= 0.0:
+        raise ValueError("f_a must be finite and positive")
+
+    names = tuple(_canonical_name(name) for name in (meson_1, meson_2, meson_3))
+    mesons = _channel_mesons(names, epsilon_k)
+    c_a = _coupling_matrix(c_q_A, "c_q_A")
+    c_p = _coupling_matrix(c_q_P, "c_q_P")
+    return _build_amplitude(ma, fa, names, mesons, c_a, c_p)
+
+
 def decay_width(
     alp_mass: float,
     c_q_A: np.ndarray,
@@ -209,15 +423,7 @@ def decay_width(
     """
     names = tuple(_canonical_name(name) for name in (meson_1, meson_2, meson_3))
     has_physical_neutral_kaon = any(name in {"KS", "KL"} for name in names)
-    if has_physical_neutral_kaon:
-        mesons = tuple(
-            _physical_neutral_kaon(name, epsilon_k)
-            if name in {"KS", "KL"}
-            else _MESONS[name]
-            for name in names
-        )
-    else:
-        mesons = tuple(_MESONS[name] for name in names)
+    mesons = _channel_mesons(names, epsilon_k)
 
     if sum(meson.charge for meson in mesons) != 0:
         return 0.0
@@ -254,25 +460,20 @@ def decay_width(
     if c_a is None:
         c_a = _coupling_matrix(c_q_A, "c_q_A")
         c_p = _coupling_matrix(c_q_P, "c_q_P")
-    p_matrix = c_p @ B0_MQ + B0_MQ @ c_p
-    kinetic_coefficient = 1.0 / (6.0 * fa * F_PI)
-    breaking_coefficient = -1.0 / (6.0 * fa * F_PI)
+    amplitude = _build_amplitude(ma, fa, names, mesons, c_a, c_p)
     ma2 = ma * ma
     prefactor = 1.0 / (256.0 * np.pi**3 * ma**3)
 
     unique_names = set(names)
     if len(unique_names) == 1:
         meson = mesons[0]
-        generator = meson.generator
-        tensor_p = _trace(generator @ generator @ generator @ p_matrix)
-        amplitude = 6.0 * breaking_coefficient * tensor_p
         lower = (2.0 * meson.mass) ** 2
         upper = (ma - meson.mass) ** 2
         integral = _integrate_one_dimension(
             lambda s12: _s23_width(
                 s12, ma2, meson.mass, meson.mass, meson.mass
             )
-            * abs(amplitude) ** 2,
+            * abs(amplitude(0.0, 0.0)) ** 2,
             lower,
             upper,
         )
@@ -281,33 +482,8 @@ def decay_width(
     if len(unique_names) == 2:
         identical_name = next(name for name in unique_names if names.count(name) == 2)
         distinct_name = next(name for name in unique_names if names.count(name) == 1)
-        identical = _MESONS[identical_name]
-        distinct = _MESONS[distinct_name]
-        generator_i = identical.generator
-        generator_j = distinct.generator
-        tensor_a = _trace(
-            c_a
-            @ _commutator(
-                generator_i, _commutator(generator_i, generator_j)
-            )
-        )
-        tensor_p = _trace(
-            (
-                generator_i @ generator_i @ generator_j
-                + generator_i @ generator_j @ generator_i
-                + generator_j @ generator_i @ generator_i
-            )
-            @ p_matrix
-        )
-
-        def amplitude(s12: float) -> complex:
-            return (
-                0.5
-                * kinetic_coefficient
-                * tensor_a
-                * (ma2 + 3.0 * distinct.mass**2 - 3.0 * s12)
-                + 2.0 * breaking_coefficient * tensor_p
-            )
+        identical = mesons[names.index(identical_name)]
+        distinct = mesons[names.index(distinct_name)]
 
         lower = (2.0 * identical.mass) ** 2
         upper = (ma - distinct.mass) ** 2
@@ -319,54 +495,14 @@ def decay_width(
                 identical.mass,
                 distinct.mass,
             )
-            * abs(amplitude(s12)) ** 2,
+            * abs(amplitude._at_identical_pair_invariant(s12)) ** 2,
             lower,
             upper,
         )
         return max(0.0, prefactor * integral / 2.0)
 
-    generators = tuple(meson.generator for meson in mesons)
     masses = tuple(meson.mass for meson in mesons)
-    generator_i, generator_j, generator_k = generators
     m_i, m_j, m_k = masses
-
-    def tensor_a(first: np.ndarray, second: np.ndarray, differentiated: np.ndarray) -> complex:
-        return _trace(
-            c_a
-            @ (
-                _commutator(first, _commutator(second, differentiated))
-                + _commutator(second, _commutator(first, differentiated))
-            )
-        )
-
-    tensor_ij_k = tensor_a(generator_i, generator_j, generator_k)
-    tensor_ik_j = tensor_a(generator_i, generator_k, generator_j)
-    tensor_jk_i = tensor_a(generator_j, generator_k, generator_i)
-    tensor_p = _trace(
-        sum(
-            (
-                generators[order[0]]
-                @ generators[order[1]]
-                @ generators[order[2]]
-                for order in permutations(range(3))
-            ),
-            _ZERO.copy(),
-        )
-        @ p_matrix
-    )
-
-    def amplitude(s12: float, s23: float) -> complex:
-        s13 = ma2 + m_i**2 + m_j**2 + m_k**2 - s12 - s23
-        return (
-            0.5
-            * kinetic_coefficient
-            * (
-                tensor_ij_k * (ma2 + m_k**2 - s12)
-                + tensor_ik_j * (ma2 + m_j**2 - s13)
-                + tensor_jk_i * (ma2 + m_i**2 - s23)
-            )
-            + breaking_coefficient * tensor_p
-        )
 
     lower = (m_i + m_j) ** 2
     upper = (ma - m_k) ** 2
