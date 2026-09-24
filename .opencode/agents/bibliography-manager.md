@@ -1,7 +1,8 @@
 ---
 description: Acquires, catalogs, and digests HEP literature with INSPIRE-HEP provenance.
 mode: subagent
-model: openai/gpt-5.6-luna#high
+model: openai/gpt-5.6-luna
+reasoning_effort: high
 temperature: 0.2
 ---
 

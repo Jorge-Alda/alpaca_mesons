@@ -1,7 +1,8 @@
 ---
 description: Generates and evaluates HEP-ph research directions without presenting speculation as fact.
 mode: subagent
-model: openai/gpt-5.6-sol#medium
+model: openai/gpt-5.6-sol
+reasoningEffort: medium
 temperature: 1.0
 ---
 
