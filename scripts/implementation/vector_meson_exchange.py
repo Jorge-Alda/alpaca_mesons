@@ -17,7 +17,7 @@ from typing import Mapping
 
 import numpy as np
 
-from .three_meson_width import (
+from three_meson_width import (
     EPSILON_K,
     F_PI,
     _canonical_name,

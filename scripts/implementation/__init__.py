@@ -1,5 +1,11 @@
 """Numerical implementations of ALP observables."""
 
+from .pseudoscalar_diag import(
+    cqA,
+    cqV,
+    cGA,
+    mixing_shift,
+)
 from .kpi_s_wave_decay import (
     AffineKernel,
     SWaveModel,

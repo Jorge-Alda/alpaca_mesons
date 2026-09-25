@@ -176,7 +176,7 @@ def _trace(matrix: np.ndarray) -> complex:
 
 
 def _integrate_one_dimension(integrand, lower: float, upper: float) -> float:
-    value, _ = quad(integrand, lower, upper, epsabs=0.0, epsrel=1e-9, limit=200)
+    value, _ = quad(integrand, lower, upper, epsabs=0.0, epsrel=1e-6, limit=200)
     return float(value)
 
 
@@ -485,7 +485,7 @@ def decay_width(
     if include_vector_contributions:
         # Keep this import local: vector_meson_exchange imports shared channel
         # and flavor helpers from this module.
-        from .vector_meson_exchange import (
+        from vector_meson_exchange import (
             build_vector_exchange_amplitude,
             build_vector_matching_amplitude,
         )
