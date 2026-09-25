@@ -1,8 +1,8 @@
 ---
-title: Canonical vector-pole contribution to ALP three-pseudoscalar amplitudes
+title: Canonical vector-pole and representation-matching contributions to ALP three-pseudoscalar amplitudes
 status: mixed
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-25
 bibtex_keys: [Alda:2026bar, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
@@ -41,7 +41,7 @@ used for the leading $G_V$ operator in [the RChT record](rcht-basics.md) [@Ecker
    $$G_V=f_\pi/\sqrt2,$$
    following the single-resonance short-distance constraints summarized in the existing Ruiz-Femenia extract [@Ruiz-Femenia:2003jdx]. `g_v` can override it.
 3. **Constant widths:** the propagator uses $M_V^2-s-iM_V\Gamma_V$. Default $M_V,\Gamma_V$ values are the PDG listing central values transcribed in [the light-vector input record](extracts/ParticleDataGroup:2024cfk/light-vector-pole-parameters.md) [@ParticleDataGroup:2024cfk]. A constant-width line shape is an explicit implementation assumption, not a PDG result. `pole_parameters` can override each named state.
-4. **Pole-only implementation scope:** the numerical module retains only the canonical Proca propagator between the $WPa$ and $WPP$ vertices inherited from the $G_V$ operator. Eliminating the original antisymmetric tensor also induces the local $O(p^4)$ cross term derived below. It is mandatory if the Proca formulation is meant to reproduce the complete antisymmetric-tensor result, rather than an optional extra resonance coupling [@Ecker:1989yg]. The current numerical module intentionally omits it and therefore remains a standalone pole model, not a representation-equivalent rewrite of the full leading antisymmetric-tensor result.
+4. **Separate pole and matching implementations:** `build_vector_exchange_amplitude` retains only the canonical Proca propagator between the $WPa$ and $WPP$ vertices inherited from the $G_V$ operator, while the public `build_vector_matching_amplitude` evaluates the induced local $O(p^4)$ cross term derived below over the same labeled flavor contributions. The local term is mandatory if the Proca formulation is meant to reproduce the complete antisymmetric-tensor result, rather than an optional extra resonance coupling [@Ecker:1989yg]. Thus the pole builder remains a standalone pole model; representation-equivalent use requires summing its result with the matching builder's result.
 
    This matching contact is distinct from the leading $O(p^2)$ Goldstone-only ChPT amplitude implemented in `three_meson_width.py`; adding both does not by itself double count. Double counting would arise if one also used $O(p^4)$ ChPT low-energy constants that already contain the same vector-resonance contribution without first matching or subtracting it. Conversely, one should use either the original antisymmetric-tensor exchange or the equivalent package “Proca pole plus induced contact,” not add all three pieces independently.
 
@@ -315,11 +315,45 @@ $$
 
 and derives $s_{13}=m_a^2+\sum_i m_i^2-s_{12}-s_{23}$. `model.contributions` exposes each exchange name, spectator index, pair indices, traces, and pole inputs; `model.exchange_names` is a concise name tuple.
 
+## Example: $a\to\pi^0\pi^+\pi^-$ width
+
+The public width API now performs the required coherent sum of the leading $O(p^2)$ ChPT amplitude, canonical Proca pole, and local tensor-to-Proca matching amplitude before squaring. The matching term is always included when `include_vector_contributions=True`; this option means the representation-equivalent package “pole plus matching,” not a standalone pole. The illustrative inputs $m_a=0.8\,\mathrm{GeV}$, $f_a=1\,\mathrm{TeV}$, $c_q^A=\operatorname{diag}(1,0,0)$, and $c_q^P=0$ are assumptions rather than literature benchmark couplings. The numerical output is therefore `numerical-computation` evidence under the model assumptions in this record, not a phenomenological prediction.
+
+```python
+import numpy as np
+from scripts.implementation import decay_width
+
+ma, fa = 0.8, 1000.0  # GeV
+c_q_A = np.diag([1.0, 0.0, 0.0])
+c_q_P = np.zeros((3, 3))
+width = decay_width(
+    ma,
+    c_q_A,
+    c_q_P,
+    "pi0",
+    "pi+",
+    "pi-",
+    fa,
+    include_vector_contributions=True,
+)
+print(f"Gamma(a -> pi0 pi+ pi-) = {width:.6e} GeV")
+```
+
+With the default vector parameters and $G_V=f_\pi/\sqrt2$, this prints
+
+```text
+Gamma(a -> pi0 pi+ pi-) = 7.198510e-11 GeV
+```
+
+There is no identical-particle symmetry factor for this ordered three-species channel. The API uses the full ordered two-dimensional Dalitz integral whenever vectors are enabled, because pole and matching terms generally retain both invariants even for repeated fields. It then applies $1$, $1/2!$, or $1/3!$ from the canonical final-state names. Interference is automatic because all three amplitudes are added before the absolute square. The default `include_vector_contributions=False` preserves the ChPT-only result and its optimized repeated-field integrations. Optional `g_v`, `pole_parameters`, and `vector_f_pi` inputs are forwarded to the existing vector builders and are validated only when vector inclusion is requested.
+
 ## Invocation and verification
 
 ```text
 .venv/bin/python scripts/derive_a3p_vector_exchange_amplitude.py
+.venv/bin/python -m unittest scripts.implementation.test_three_meson_width
 .venv/bin/python -m unittest scripts.implementation.test_vector_meson_exchange
+.venv/bin/python -m unittest discover -s scripts/implementation -p 'test_*.py'
 ```
 
-The implementation tests cover identity and diagonal-vector zeros, the full $\pi^+\pi^-\eta$ zero for an isospin-symmetric nonidentity diagonal spurion, allowed charged-$\rho$ exchange in $\pi^+\pi^-\pi^0$, $c_q^P$ validation and independence, $c_q^A/f_a$ scaling, ordered permutation covariance including repeated fields, pair reversal, finite default-width behavior at a pole, and contribution metadata.
+The implementation tests cover identity and diagonal-vector zeros, the full $\pi^+\pi^-\eta$ zero for an isospin-symmetric nonidentity diagonal spurion, allowed charged-$\rho$ exchange in $\pi^+\pi^-\pi^0$, $c_q^P$ validation and independence, $c_q^A/f_a$ scaling, ordered permutation covariance including repeated fields, pair reversal, finite default-width behavior at a pole, matching-term mass and $G_V$ scaling, width independence of the matching contact, its two-variable Bose symmetry, contribution metadata, default-width backward compatibility, explicit coherent integration and interference, repeated-particle symmetry factors and permutation invariance, option forwarding and validation, and the all-identical vector zero.

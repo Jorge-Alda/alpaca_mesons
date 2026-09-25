@@ -1,10 +1,9 @@
-"""Pole-mediated canonical-vector contribution to ``a -> P1 P2 P3``.
+"""Canonical-vector pole and tensor-to-Proca matching contributions.
 
 The ordered arguments and Dalitz variables match :func:`build_amplitude` in
-``three_meson_width``.  This module deliberately contains only the canonical
-Proca pole graph obtained from the leading RChT ``G_V`` interaction; the local
-current-current operator required for a complete tensor/Proca representation
-match is outside its scope.
+``three_meson_width``.  The pole and local matching terms are exposed as
+separate builders so callers can use the standalone Proca pole or assemble the
+representation-equivalent pole-plus-contact result explicitly.
 
 ``c_q_P`` is validated for interface compatibility but does not enter this
 leading ``G_V`` exchange contribution.
@@ -162,20 +161,9 @@ class VectorExchangeAmplitude:
 
     def __call__(self, s12: float, s23: float) -> complex:
         """Evaluate the sum of canonical-vector pole graphs."""
-        try:
-            s12_value = float(s12)
-            s23_value = float(s23)
-        except (TypeError, ValueError) as error:
-            raise TypeError("s12 and s23 must be real scalars") from error
-        if not np.isfinite(s12_value) or not np.isfinite(s23_value):
-            raise ValueError("s12 and s23 must be finite")
-
-        invariant_sum = self.alp_mass**2 + sum(mass**2 for mass in self.masses)
-        pair_invariants = {
-            (0, 1): s12_value,
-            (1, 2): s23_value,
-            (0, 2): invariant_sum - s12_value - s23_value,
-        }
+        pair_invariants = _ordered_pair_invariants(
+            s12, s23, self.alp_mass, self.masses
+        )
         result = 0.0j
         for item in self.contributions:
             i, j = item.pair_indices
@@ -194,6 +182,79 @@ class VectorExchangeAmplitude:
             denominator = mass**2 - s_ij - 1j * mass * item.pole.width
             coefficient = self.g_v**2 / (self.f_pi**3 * self.f_a * mass**2)
             result += coefficient * item.flavor_factor * numerator / denominator
+        return complex(result)
+
+
+def _ordered_pair_invariants(
+    s12: float,
+    s23: float,
+    alp_mass: float,
+    masses: tuple[float, float, float],
+) -> dict[tuple[int, int], float]:
+    """Validate ordered Dalitz inputs and return all three pair invariants."""
+    try:
+        s12_value = float(s12)
+        s23_value = float(s23)
+    except (TypeError, ValueError) as error:
+        raise TypeError("s12 and s23 must be real scalars") from error
+    if not np.isfinite(s12_value) or not np.isfinite(s23_value):
+        raise ValueError("s12 and s23 must be finite")
+
+    invariant_sum = alp_mass**2 + sum(mass**2 for mass in masses)
+    return {
+        (0, 1): s12_value,
+        (1, 2): s23_value,
+        (0, 2): invariant_sum - s12_value - s23_value,
+    }
+
+
+@dataclass(frozen=True)
+class VectorMatchingAmplitude:
+    """Callable local tensor-to-Proca matching amplitude.
+
+    Calling ``model(s12, s23)`` means exactly ``s12=(p1+p2)^2`` and
+    ``s23=(p2+p3)^2``, with particle labels following ``channel``.  Pole
+    widths are retained only as contribution metadata and never enter the
+    local amplitude.
+    """
+
+    alp_mass: float
+    channel: tuple[str, str, str]
+    masses: tuple[float, float, float]
+    f_a: float
+    f_pi: float
+    g_v: float
+    contributions: tuple[VectorExchangeContribution, ...]
+
+    @property
+    def exchange_names(self) -> tuple[str, ...]:
+        """Exchange name for each retained labeled matching contribution."""
+        return tuple(item.exchange_name for item in self.contributions)
+
+    def __call__(self, s12: float, s23: float) -> complex:
+        """Evaluate the sum of local representation-matching terms."""
+        pair_invariants = _ordered_pair_invariants(
+            s12, s23, self.alp_mass, self.masses
+        )
+        ma2 = self.alp_mass**2
+        result = 0.0j
+        for item in self.contributions:
+            i, j = item.pair_indices
+            k = item.spectator_index
+            s_ik = pair_invariants[tuple(sorted((i, k)))]
+            s_jk = pair_invariants[tuple(sorted((j, k)))]
+            mi2 = self.masses[i] ** 2
+            mj2 = self.masses[j] ** 2
+            mk2 = self.masses[k] ** 2
+
+            # L_(k;ij), derived in derive_a3p_vector_exchange_amplitude.py.
+            local_kinematic = 0.25 * (
+                (s_ik - mi2 - mk2) * (ma2 + mj2 - s_ik)
+                - (s_jk - mj2 - mk2) * (ma2 + mi2 - s_jk)
+            )
+            mass = item.pole.mass
+            coefficient = self.g_v**2 / (self.f_pi**3 * self.f_a * mass**2)
+            result += coefficient * item.flavor_factor * local_kinematic
         return complex(result)
 
 
@@ -300,4 +361,53 @@ def build_vector_exchange_amplitude(
         f_pi=fpi,
         g_v=gv,
         contributions=tuple(retained),
+    )
+
+
+def build_vector_matching_amplitude(
+    alp_mass: float,
+    c_q_A: np.ndarray,
+    c_q_P: np.ndarray,
+    meson_1: str,
+    meson_2: str,
+    meson_3: str,
+    f_a: float,
+    *,
+    epsilon_k: complex = EPSILON_K,
+    g_v: float | None = None,
+    pole_parameters: Mapping[
+        str, VectorPoleParameters | tuple[float, float] | Mapping[str, float]
+    ]
+    | None = None,
+    f_pi: float = F_PI,
+) -> VectorMatchingAmplitude:
+    """Build the local term matching antisymmetric tensors to Proca fields.
+
+    The positional and optional inputs intentionally match
+    :func:`build_vector_exchange_amplitude`.  The same flavor classification,
+    traces, and vector masses are reused.  Widths are accepted and validated
+    for interface consistency but do not enter this local contribution.
+    ``c_q_P`` is likewise validated but absent at leading ``G_V`` order.
+    """
+    pole_model = build_vector_exchange_amplitude(
+        alp_mass,
+        c_q_A,
+        c_q_P,
+        meson_1,
+        meson_2,
+        meson_3,
+        f_a,
+        epsilon_k=epsilon_k,
+        g_v=g_v,
+        pole_parameters=pole_parameters,
+        f_pi=f_pi,
+    )
+    return VectorMatchingAmplitude(
+        alp_mass=pole_model.alp_mass,
+        channel=pole_model.channel,
+        masses=pole_model.masses,
+        f_a=pole_model.f_a,
+        f_pi=pole_model.f_pi,
+        g_v=pole_model.g_v,
+        contributions=pole_model.contributions,
     )

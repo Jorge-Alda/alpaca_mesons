@@ -21,8 +21,10 @@ from .vector_meson_exchange import (
     DEFAULT_VECTOR_POLES,
     VectorExchangeAmplitude,
     VectorExchangeContribution,
+    VectorMatchingAmplitude,
     VectorPoleParameters,
     build_vector_exchange_amplitude,
+    build_vector_matching_amplitude,
 )
 
 __all__ = [
@@ -32,6 +34,7 @@ __all__ = [
     "ThreeMesonAmplitude",
     "VectorExchangeAmplitude",
     "VectorExchangeContribution",
+    "VectorMatchingAmplitude",
     "VectorPoleParameters",
     "SWaveModel",
     "OmnesFunction",
@@ -41,6 +44,7 @@ __all__ = [
     "build_s_wave_model",
     "build_amplitude",
     "build_vector_exchange_amplitude",
+    "build_vector_matching_amplitude",
     "decay_width",
     "kpi_thresholds",
     "s_wave_decay_width",

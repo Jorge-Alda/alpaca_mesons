@@ -404,6 +404,10 @@ def decay_width(
     f_a: float,
     *,
     epsilon_k: complex = EPSILON_K,
+    include_vector_contributions: bool = False,
+    g_v: float | None = None,
+    pole_parameters=None,
+    vector_f_pi: float = F_PI,
 ) -> float:
     """Return ``Gamma(a -> meson_1 meson_2 meson_3)`` in GeV.
 
@@ -414,6 +418,16 @@ def decay_width(
     The default is the phenomenological PDG value; pass ``epsilon_k=0`` for
     the CP-conserving limit. ``eta'`` and common ASCII spellings are aliases.
 
+    By default only the leading ChPT amplitude is included, preserving the
+    optimized one-dimensional branches for repeated fields.  Setting
+    ``include_vector_contributions=True`` coherently adds both the canonical
+    Proca pole and its mandatory tensor-to-Proca matching contact before
+    squaring.  Under the assumptions recorded in
+    ``memory/a3p-vector-exchange-amplitude.md``, pole plus matching is the
+    representation-equivalent leading vector contribution.  ``g_v``,
+    ``pole_parameters``, and ``vector_f_pi`` are forwarded to the vector
+    builders and are inspected only when vector contributions are requested.
+
     Definite-flavor channels forbidden by charge, ``|S| > 1``, or threshold
     return ``0.0`` before the coupling matrices are inspected. A definite
     flavor channel with ``|S| = 1`` is allowed only when at least one coupling
@@ -421,6 +435,9 @@ def decay_width(
     definite strangeness; their allowed components and interference are
     selected directly by the flavor traces.
     """
+    if not isinstance(include_vector_contributions, bool):
+        raise TypeError("include_vector_contributions must be a bool")
+
     names = tuple(_canonical_name(name) for name in (meson_1, meson_2, meson_3))
     has_physical_neutral_kaon = any(name in {"KS", "KL"} for name in names)
     mesons = _channel_mesons(names, epsilon_k)
@@ -465,6 +482,63 @@ def decay_width(
     prefactor = 1.0 / (256.0 * np.pi**3 * ma**3)
 
     unique_names = set(names)
+    if include_vector_contributions:
+        # Keep this import local: vector_meson_exchange imports shared channel
+        # and flavor helpers from this module.
+        from .vector_meson_exchange import (
+            build_vector_exchange_amplitude,
+            build_vector_matching_amplitude,
+        )
+
+        vector_pole = build_vector_exchange_amplitude(
+            ma,
+            c_a,
+            c_p,
+            *names,
+            fa,
+            epsilon_k=epsilon_k,
+            g_v=g_v,
+            pole_parameters=pole_parameters,
+            f_pi=vector_f_pi,
+        )
+        vector_matching = build_vector_matching_amplitude(
+            ma,
+            c_a,
+            c_p,
+            *names,
+            fa,
+            epsilon_k=epsilon_k,
+            g_v=g_v,
+            pole_parameters=pole_parameters,
+            f_pi=vector_f_pi,
+        )
+        m_i, m_j, m_k = (meson.mass for meson in mesons)
+        lower = (m_i + m_j) ** 2
+        upper = (ma - m_k) ** 2
+
+        def integrate_s23_with_vectors(s12: float) -> float:
+            s23_min, s23_max = _s23_bounds(s12, ma2, m_i, m_j, m_k)
+
+            def squared_total_amplitude(s23: float) -> float:
+                total = (
+                    amplitude(s12, s23)
+                    + vector_pole(s12, s23)
+                    + vector_matching(s12, s23)
+                )
+                return abs(total) ** 2
+
+            return _integrate_one_dimension(
+                squared_total_amplitude, s23_min, s23_max
+            )
+
+        integral = _integrate_one_dimension(
+            integrate_s23_with_vectors, lower, upper
+        )
+        symmetry_factor = 6.0 if len(unique_names) == 1 else (
+            2.0 if len(unique_names) == 2 else 1.0
+        )
+        return max(0.0, prefactor * integral / symmetry_factor)
+
     if len(unique_names) == 1:
         meson = mesons[0]
         lower = (2.0 * meson.mass) ** 2

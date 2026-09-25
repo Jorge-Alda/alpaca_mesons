@@ -5,16 +5,211 @@ Invocation:
 """
 
 import unittest
+from unittest.mock import patch
 
 import numpy as np
+from scipy.integrate import quad_vec
 
-from scripts.implementation import EPSILON_K, build_amplitude, decay_width
+from scripts.implementation import (
+    EPSILON_K,
+    build_amplitude,
+    build_vector_exchange_amplitude,
+    build_vector_matching_amplitude,
+    decay_width,
+)
 
 
 class ThreeMesonWidthTests(unittest.TestCase):
     def setUp(self) -> None:
         self.identity = np.eye(3)
         self.zero = np.zeros((3, 3))
+
+    @staticmethod
+    def _manual_vector_width_components(ma, c_a, c_p, channel, fa):
+        """Integrate coherent, ChPT-only, and vector-only squared amplitudes."""
+        chipt = build_amplitude(ma, c_a, c_p, *channel, fa)
+        pole = build_vector_exchange_amplitude(ma, c_a, c_p, *channel, fa)
+        matching = build_vector_matching_amplitude(ma, c_a, c_p, *channel, fa)
+        m1, m2, m3 = chipt.masses
+
+        def kallen(x, y, z):
+            return x * x + y * y + z * z - 2.0 * (x * y + x * z + y * z)
+
+        def integrate_s23(s12):
+            center = m2**2 + m3**2 + (
+                (s12 + m2**2 - m1**2) * (ma**2 - s12 - m3**2)
+            ) / (2.0 * s12)
+            half_width = np.sqrt(
+                max(
+                    0.0,
+                    kallen(s12, m1**2, m2**2)
+                    * kallen(ma**2, s12, m3**2),
+                )
+            ) / (2.0 * s12)
+
+            def components(s23):
+                chipt_value = chipt(s12, s23)
+                vector_value = pole(s12, s23) + matching(s12, s23)
+                return np.array(
+                    [
+                        abs(chipt_value + vector_value) ** 2,
+                        abs(chipt_value) ** 2,
+                        abs(vector_value) ** 2,
+                    ]
+                )
+
+            return quad_vec(
+                components,
+                center - half_width,
+                center + half_width,
+                epsabs=1e-25,
+                epsrel=2e-9,
+            )[0]
+
+        integrals = quad_vec(
+            integrate_s23,
+            (m1 + m2) ** 2,
+            (ma - m3) ** 2,
+            epsabs=1e-25,
+            epsrel=2e-8,
+            limit=200,
+        )[0]
+        return integrals / (256.0 * np.pi**3 * ma**3)
+
+    def test_default_path_is_backward_compatible_and_skips_vector_options(self) -> None:
+        args = (
+            0.8,
+            np.diag([1.0, 0.0, 0.0]),
+            self.zero,
+            "pi0",
+            "pi+",
+            "pi-",
+            1000.0,
+        )
+        expected = decay_width(*args)
+        with patch(
+            "scripts.implementation.vector_meson_exchange.build_vector_exchange_amplitude",
+            side_effect=AssertionError("vector builder called"),
+        ), patch(
+            "scripts.implementation.vector_meson_exchange.build_vector_matching_amplitude",
+            side_effect=AssertionError("matching builder called"),
+        ):
+            actual = decay_width(
+                *args,
+                include_vector_contributions=False,
+                g_v="unused",
+                pole_parameters="unused",
+                vector_f_pi=-1.0,
+            )
+        self.assertEqual(actual, expected)
+
+    def test_vector_flag_requires_a_bool(self) -> None:
+        with self.assertRaisesRegex(TypeError, "must be a bool"):
+            decay_width(
+                0.8,
+                self.identity,
+                self.zero,
+                "pi0",
+                "pi+",
+                "pi-",
+                100.0,
+                include_vector_contributions=1,
+            )
+
+    def test_enabled_vectors_match_coherent_integral_and_include_interference(self) -> None:
+        ma, fa = 0.8, 1000.0
+        c_a = np.diag([1.0, 0.0, 0.0])
+        channel = ("pi0", "pi+", "pi-")
+        coherent, chipt_only, vector_only = self._manual_vector_width_components(
+            ma, c_a, self.zero, channel, fa
+        )
+        width = decay_width(
+            ma,
+            c_a,
+            self.zero,
+            *channel,
+            fa,
+            include_vector_contributions=True,
+        )
+        np.testing.assert_allclose(width, coherent, rtol=3e-8, atol=0.0)
+        self.assertGreater(
+            abs(width - (chipt_only + vector_only)),
+            1e-3 * width,
+        )
+
+    def test_repeated_vector_width_has_symmetry_factor_and_permutation_invariance(self) -> None:
+        c_a = np.array(
+            [[0.4, 0.2j, 0.1], [-0.2j, -0.3, 0.05j], [0.1, -0.05j, 0.2]]
+        )
+        channel = ("pi0", "pi0", "K0")
+        labeled_coherent = self._manual_vector_width_components(
+            0.9, c_a, self.zero, channel, 100.0
+        )[0]
+        ordered = decay_width(
+            0.9,
+            c_a,
+            self.zero,
+            *channel,
+            100.0,
+            include_vector_contributions=True,
+        )
+        permuted = decay_width(
+            0.9,
+            c_a,
+            self.zero,
+            "pi_0",
+            "K0",
+            "pi0",
+            100.0,
+            include_vector_contributions=True,
+        )
+        np.testing.assert_allclose(ordered, labeled_coherent / 2.0, rtol=3e-8, atol=0.0)
+        np.testing.assert_allclose(permuted, ordered, rtol=3e-8, atol=0.0)
+
+    def test_vector_options_are_forwarded_and_validated_only_when_enabled(self) -> None:
+        args = (
+            0.8,
+            np.diag([1.0, 0.0, 0.0]),
+            self.zero,
+            "pi0",
+            "pi+",
+            "pi-",
+            1000.0,
+        )
+        chipt = decay_width(*args)
+        zero_vector = decay_width(
+            *args, include_vector_contributions=True, g_v=0.0
+        )
+        np.testing.assert_allclose(zero_vector, chipt, rtol=3e-9, atol=0.0)
+
+        with self.assertRaisesRegex(TypeError, "real scalars"):
+            decay_width(
+                *args, include_vector_contributions=True, g_v="invalid"
+            )
+        with self.assertRaisesRegex(TypeError, "mapping"):
+            decay_width(
+                *args,
+                include_vector_contributions=True,
+                pole_parameters="invalid",
+            )
+        with self.assertRaisesRegex(ValueError, "f_pi"):
+            decay_width(
+                *args,
+                include_vector_contributions=True,
+                vector_f_pi=-1.0,
+            )
+
+    def test_all_identical_vector_contribution_is_zero(self) -> None:
+        c_a = np.array(
+            [[0.4, 0.2j, 0.1], [-0.2j, -0.3, 0.05j], [0.1, -0.05j, 0.2]]
+        )
+        c_p = np.diag([1.0, -0.3, 0.2])
+        args = (0.7, c_a, c_p, "pi0", "pi0", "pi0", 100.0)
+        chipt = decay_width(*args)
+        with_vectors = decay_width(
+            *args, include_vector_contributions=True
+        )
+        np.testing.assert_allclose(with_vectors, chipt, rtol=3e-9, atol=0.0)
 
     def test_forbidden_channels_short_circuit_before_coupling_validation(self) -> None:
         malformed = np.zeros((2, 2))
@@ -28,6 +223,22 @@ class ThreeMesonWidthTests(unittest.TestCase):
         )
         self.assertEqual(
             decay_width(0.3, malformed, malformed, "pi+", "pi-", "pi0", -1.0),
+            0.0,
+        )
+        self.assertEqual(
+            decay_width(
+                0.3,
+                malformed,
+                malformed,
+                "pi+",
+                "pi-",
+                "pi0",
+                -1.0,
+                include_vector_contributions=True,
+                g_v="not inspected",
+                pole_parameters="not inspected",
+                vector_f_pi=-1.0,
+            ),
             0.0,
         )
 
