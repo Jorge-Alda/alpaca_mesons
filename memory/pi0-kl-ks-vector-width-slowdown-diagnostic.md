@@ -2,7 +2,7 @@
 title: Diagnostic record for the pi0 K_L K_S vector-width slowdown
 status: mixed
 created: 2026-09-25
-updated: 2026-09-26
+updated: 2026-09-28
 bibtex_keys: [Alda:2026bar, Ecker:1989yg, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Scope and evidence status
 
-This record diagnoses the slowdown and records the implemented correction. The executable calculation is [`scripts/diagnose_pi0_kl_ks_vector_width.py`](../scripts/diagnose_pi0_kl_ks_vector_width.py). It imports the current implementation as top-level modules from `scripts/implementation/`, matching that implementation's present import arrangement, and never launches the nested production width integral.
+This record diagnoses the slowdown and records the implemented correction. The executable calculation is [`scripts/diagnose_pi0_kl_ks_vector_width.py`](../scripts/diagnose_pi0_kl_ks_vector_width.py). It imports the implementation through the `scripts.implementation` package namespace and never launches the nested production width integral.
 
 The evidence status is:
 
@@ -88,11 +88,11 @@ $$
 =2.0004\times10^{-2}-1.3553\times10^{-2}i,
 $$
 
-whereas both corrected physical vector builders retain zero contributions and return exactly zero. Regression mocks prove that the pair-invariant construction and pole denominator are not evaluated; scalar type and finiteness validation is preserved. The noncancelled flavor channel still retains two contributions in each vector model and gives the same representative nonzero values. The direct ChPT physical-state construction is outside this correction and retains a residual of order $10^{-23}$ at this point; the explicitly projected ChPT flavor orderings sum exactly. The exact printed values are authoritative because they are generated from the current working tree.
+whereas both corrected physical vector builders retain zero contributions and return exactly zero. Regression mocks prove that the pair-invariant construction and pole denominator are not evaluated; scalar type and finiteness validation is preserved. The noncancelled flavor channel still retains two contributions in each vector model and gives the same representative nonzero values. The current direct ChPT physical-state construction and the explicitly projected ChPT flavor orderings also return exact zero at this point. The exact printed values are authoritative because they are generated from the current working tree.
 
 ## Bounded quadrature diagnosis
 
-The script evaluates only one inner $s_{23}$ integral at fixed $s_{12}$, with `limit=24` and `epsrel=1e-6`. This bound avoids launching the nested production width. Before correction, the default complex $\epsilon_K$ and `epsabs=0` exhausted all 24 subintervals on an integral of order $10^{-35}\,\mathrm{GeV}^2$. After pre-kinematic vector pruning, the remaining direct-ChPT residual gives an integral of order $10^{-46}\,\mathrm{GeV}^2$ and QUADPACK converges on its initial 21-point panel, both with `epsabs=0` and with the stated diagnostic absolute tolerance. In the explicit $\epsilon_K=0$ case, the full integrand remains exactly zero and also terminates after the initial panel.
+The script evaluates only one inner $s_{23}$ integral at fixed $s_{12}$, with `limit=24` and `epsrel=1e-6`. This bound avoids launching the nested production width. Before correction, the default complex $\epsilon_K$ and `epsabs=0` exhausted all 24 subintervals on an integral of order $10^{-35}\,\mathrm{GeV}^2$. With the current package implementation, the physical-channel integrand is exactly zero and QUADPACK converges on its initial 21-point panel, both with `epsabs=0` and with the stated diagnostic absolute tolerance. The same holds for the explicit $\epsilon_K=0$ case. The noncancelled flavor-channel integral used to define the diagnostic scale is $1.8222312564801699\times10^{-3}\,\mathrm{GeV}^2$ in the direct invocation.
 
 The diagnostic absolute tolerance is chosen as $10^{-12}$ times the corresponding noncancelled flavor-channel integral scale. This factor is a stated diagnostic precision assumption, not a universal production tolerance. A production tolerance should instead be tied to the requested absolute width accuracy and a channel/component scale.
 
@@ -118,4 +118,4 @@ Run:
 git diff --check
 ```
 
-The diagnostic asserts the exact SymPy cancellation, empty physical vector models and pre-kinematic exact-zero calls for default complex $\epsilon_K$, retained nonzero definite-flavor models, exact numerical zero for $\epsilon_K=0$, and one-panel convergence of the bounded integral. The 22 targeted vector tests pass under a minimal import harness. The repository's documented package-form unittest command cannot start in this environment because the existing unrelated package initializer imports unavailable `gvar`; this is an environment/pre-existing packaging uncertainty, not a test failure in the changed module. `git diff --check` passes.
+The diagnostic asserts the exact SymPy cancellation, empty physical vector models and pre-kinematic exact-zero calls for default complex $\epsilon_K$, retained nonzero definite-flavor models, exact numerical zero for $\epsilon_K=0$, and one-panel convergence of the bounded integral. Package-form test and diagnostic results are generated with the repository `.venv`; no top-level-module import workaround is required. On 2026-09-28, all 74 implementation tests passed and the direct diagnostic completed with all assertions passed.

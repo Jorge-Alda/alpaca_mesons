@@ -2,10 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import alpaca
 import pathlib
+import sys
 from time import time
 
-from pseudoscalar_diag import cqA, mixing_shift
-from three_meson_width import decay_width
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.implementation.pseudoscalar_diag import cqA, mixing_shift
+from scripts.implementation.three_meson_width import decay_width
 
 mesons_tex = {
  'pi0': r'\pi^0',

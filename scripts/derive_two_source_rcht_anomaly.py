@@ -57,7 +57,7 @@ def projection(matrix: sp.Matrix) -> sp.Matrix:
 T_A = matrix_symbols("TA")
 T_B = matrix_symbols("TB")
 c_q_A = matrix_symbols("cA")
-X = matrix_symbols("X")  # X=M_a^{-1}(C)
+m_a_inverse_C = matrix_symbols("m_a_inverse_C")
 kappa = matrix_symbols("kappa")
 N_c, c_AB, c_gamma = sp.symbols("N_c c_AB c_gamma")
 delta_AB = sp.Symbol("delta_AB", integer=True, nonnegative=True)
@@ -65,12 +65,15 @@ s_AB = sp.Rational(2, 1) / (1 + delta_AB)
 
 anticommutator_AB = T_A * T_B + T_B * T_A
 seed_AB = sp.expand(
-    c_AB + s_AB * N_c * sp.trace(anticommutator_AB * (c_q_A + X))
+    c_AB
+    + s_AB * N_c * sp.trace(anticommutator_AB * (c_q_A + m_a_inverse_C))
 )
 seed_AB_rotated = sp.expand(
     c_AB
     - s_AB * N_c * sp.trace(anticommutator_AB * kappa)
-    + s_AB * N_c * sp.trace(anticommutator_AB * (c_q_A + kappa + X))
+    + s_AB
+    * N_c
+    * sp.trace(anticommutator_AB * (c_q_A + kappa + m_a_inverse_C))
 )
 seed_invariance_remainder = sp.simplify(seed_AB_rotated - seed_AB)
 
@@ -82,11 +85,12 @@ photon_seed = sp.simplify(
     .subs(dict(zip(T_B, Q)))
 )
 photon_expected = sp.simplify(
-    c_gamma + 2 * N_c * sp.trace(Q**2 * (c_q_A + X))
+    c_gamma + 2 * N_c * sp.trace(Q**2 * (c_q_A + m_a_inverse_C))
 )
 distinct_seed = sp.simplify(seed_AB.subs(delta_AB, 0))
 distinct_expected = sp.simplify(
-    c_AB + 2 * N_c * sp.trace(anticommutator_AB * (c_q_A + X))
+    c_AB
+    + 2 * N_c * sp.trace(anticommutator_AB * (c_q_A + m_a_inverse_C))
 )
 
 # Compact abstract expressions are printed; the component matrices above make
@@ -94,14 +98,18 @@ distinct_expected = sp.simplify(
 TA_abs = sp.MatrixSymbol("T_A", 3, 3)
 TB_abs = sp.MatrixSymbol("T_B", 3, 3)
 cA_abs = sp.MatrixSymbol("c_q^A", 3, 3)
-X_abs = sp.MatrixSymbol("X", 3, 3)
+m_a_inverse_C_abs = sp.MatrixSymbol(r"\mathbb M_a^{-1}(C)", 3, 3)
 kappa_abs = sp.MatrixSymbol("kappa", 3, 3)
 anti_abs = TA_abs * TB_abs + TB_abs * TA_abs
-seed_abs = c_AB + s_AB * N_c * sp.Trace(anti_abs * (cA_abs + X_abs))
+seed_abs = c_AB + s_AB * N_c * sp.Trace(
+    anti_abs * (cA_abs + m_a_inverse_C_abs)
+)
 seed_rotated_abs = (
     c_AB
     - s_AB * N_c * sp.Trace(anti_abs * kappa_abs)
-    + s_AB * N_c * sp.Trace(anti_abs * (cA_abs + kappa_abs + X_abs))
+    + s_AB
+    * N_c
+    * sp.Trace(anti_abs * (cA_abs + kappa_abs + m_a_inverse_C_abs))
 )
 show("Unordered-pair multiplicity s_AB", s_AB)
 show("Two-source symmetric anomaly seed C_seed_AB", seed_abs)
@@ -110,11 +118,11 @@ show("Rotation-invariance remainder", seed_invariance_remainder)
 Q_abs = sp.MatrixSymbol("Q", 3, 3)
 show(
     "Equal-source photon reduction",
-    c_gamma + 2 * N_c * sp.Trace(Q_abs**2 * (cA_abs + X_abs)),
+    c_gamma + 2 * N_c * sp.Trace(Q_abs**2 * (cA_abs + m_a_inverse_C_abs)),
 )
 show(
     "Distinct-source seed combining both ordered cross terms",
-    c_AB + 2 * N_c * sp.Trace(anti_abs * (cA_abs + X_abs)),
+    c_AB + 2 * N_c * sp.Trace(anti_abs * (cA_abs + m_a_inverse_C_abs)),
 )
 
 
@@ -125,10 +133,12 @@ f_pi, f_a, B_0 = sp.symbols("f_pi f_a B_0", nonzero=True)
 c_q_P = matrix_symbols("cP")
 c_q_AP = c_q_A - c_q_P  # Alda convention c_q^{AP}=c_q^A-c_q^P.
 m_q = sp.diag(*sp.symbols("m_u m_d m_s", real=True))
-Y = c_q_A + X
+c_q_A_plus_m_a_inverse_C = c_q_A + m_a_inverse_C
 
 w = tuple(
-    sp.simplify(f_pi / f_a * sp.trace(Y * generator))
+    sp.simplify(
+        f_pi / f_a * sp.trace(c_q_A_plus_m_a_inverse_C * generator)
+    )
     for generator in generators
 )
 Phi_physical_over_a = sp.simplify(
@@ -150,7 +160,10 @@ chi_meson = sp.simplify(
 chi_physical = sp.simplify(chi_direct + chi_meson)
 chi_expected = sp.simplify(
     -4 * I * B_0
-    * ((c_q_AP + X) * m_q + m_q * (c_q_AP + X))
+    * (
+        (c_q_AP + m_a_inverse_C) * m_q
+        + m_q * (c_q_AP + m_a_inverse_C)
+    )
 )
 
 cP_abs = sp.MatrixSymbol("c_q^P", 3, 3)
@@ -158,11 +171,17 @@ cAP_abs = cA_abs - cP_abs
 mq_abs = sp.MatrixSymbol("m_q", 3, 3)
 show(
     "Physical meson matrix Phi/a from LSZ completeness",
-    2 * f_pi / f_a * (cA_abs + X_abs),
+    2 * f_pi / f_a * (cA_abs + m_a_inverse_C_abs),
 )
 show("Direct u_mu coefficient multiplying partial_mu a/f_a", 2 * cA_abs)
-show("Meson u_mu coefficient multiplying partial_mu a/f_a", -2 * (cA_abs + X_abs))
-show("Physical u_mu coefficient multiplying partial_mu a/f_a", -2 * X_abs)
+show(
+    "Meson u_mu coefficient multiplying partial_mu a/f_a",
+    -2 * (cA_abs + m_a_inverse_C_abs),
+)
+show(
+    "Physical u_mu coefficient multiplying partial_mu a/f_a",
+    -2 * m_a_inverse_C_abs,
+)
 show(
     "Direct chi_- coefficient multiplying a/f_a",
     4 * I * B_0 * (cP_abs * mq_abs + mq_abs * cP_abs),
@@ -170,29 +189,46 @@ show(
 show(
     "Meson chi_- coefficient multiplying a/f_a",
     -4 * I * B_0
-    * ((cA_abs + X_abs) * mq_abs + mq_abs * (cA_abs + X_abs)),
+    * (
+        (cA_abs + m_a_inverse_C_abs) * mq_abs
+        + mq_abs * (cA_abs + m_a_inverse_C_abs)
+    ),
 )
 show(
     "Physical chi_- coefficient multiplying a/f_a",
     -4 * I * B_0
-    * ((cAP_abs + X_abs) * mq_abs + mq_abs * (cAP_abs + X_abs)),
+    * (
+        (cAP_abs + m_a_inverse_C_abs) * mq_abs
+        + mq_abs * (cAP_abs + m_a_inverse_C_abs)
+    ),
 )
 
 
 # The flavor factors multiplying the distinct d_i Lorentz structures.
-F_X = sp.expand(sp.trace(anticommutator_AB * X))
+F_m_a_inverse_C = sp.expand(
+    sp.trace(anticommutator_AB * m_a_inverse_C)
+)
 F_chi = sp.expand(
     sp.trace(
         anticommutator_AB
-        * ((c_q_AP + X) * m_q + m_q * (c_q_AP + X))
+        * (
+            (c_q_AP + m_a_inverse_C) * m_q
+            + m_q * (c_q_AP + m_a_inverse_C)
+        )
     )
 )
-show("Flavor factor for d_1, d_3, and d_4", sp.Trace(anti_abs * X_abs))
+show(
+    "Flavor factor for d_1, d_3, and d_4",
+    sp.Trace(anti_abs * m_a_inverse_C_abs),
+)
 show(
     "Flavor factor for d_2",
     sp.Trace(
         anti_abs
-        * ((cAP_abs + X_abs) * mq_abs + mq_abs * (cAP_abs + X_abs))
+        * (
+            (cAP_abs + m_a_inverse_C_abs) * mq_abs
+            + mq_abs * (cAP_abs + m_a_inverse_C_abs)
+        )
     ),
 )
 
@@ -264,12 +300,18 @@ assert sp.simplify(distinct_seed - distinct_expected) == zero
 assert sp.simplify(s_AB.subs(delta_AB, 1) - 1) == zero
 assert sp.simplify(s_AB.subs(delta_AB, 0) - 2) == zero
 assert all(
-    sp.simplify((projection(Y) - Y)[i, j]) == zero
+    sp.simplify(
+        (
+            projection(c_q_A_plus_m_a_inverse_C)
+            - c_q_A_plus_m_a_inverse_C
+        )[i, j]
+    )
+    == zero
     for i in range(3)
     for j in range(3)
 )
 assert all(
-    sp.simplify((u_physical + 2 * X)[i, j]) == zero
+    sp.simplify((u_physical + 2 * m_a_inverse_C)[i, j]) == zero
     for i in range(3)
     for j in range(3)
 )

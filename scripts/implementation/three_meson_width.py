@@ -485,7 +485,7 @@ def decay_width(
     if include_vector_contributions:
         # Keep this import local: vector_meson_exchange imports shared channel
         # and flavor helpers from this module.
-        from vector_meson_exchange import (
+        from .vector_meson_exchange import (
             build_vector_exchange_amplitude,
             build_vector_matching_amplitude,
         )

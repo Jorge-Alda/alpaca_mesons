@@ -17,7 +17,7 @@ from typing import Mapping
 
 import numpy as np
 
-from three_meson_width import (
+from .three_meson_width import (
     EPSILON_K,
     F_PI,
     _canonical_name,
@@ -26,6 +26,7 @@ from three_meson_width import (
     _coupling_matrix,
     _trace,
 )
+from .odd_parity_rcht import ideal_vector_generators
 
 
 @dataclass(frozen=True)
@@ -51,26 +52,8 @@ DEFAULT_VECTOR_POLES: dict[str, VectorPoleParameters] = {
 }
 
 
-def _matrix_unit(row: int, column: int) -> np.ndarray:
-    result = np.zeros((3, 3), dtype=complex)
-    result[row, column] = 1.0
-    return result
-
-
-# Ideal omega--phi mixing is an explicit model assumption.  Unlike the Alda
-# pseudoscalar generators imported above, the physical-vector matrix has unit
-# off-diagonal entries.
-_VECTOR_GENERATORS = {
-    "rho+": _matrix_unit(0, 1),
-    "rho-": _matrix_unit(1, 0),
-    "rho0": np.diag([1.0, -1.0, 0.0]).astype(complex) / np.sqrt(2.0),
-    "K*+": _matrix_unit(0, 2),
-    "K*-": _matrix_unit(2, 0),
-    "K*0": _matrix_unit(1, 2),
-    "K*0bar": _matrix_unit(2, 1),
-    "omega": np.diag([1.0, 1.0, 0.0]).astype(complex) / np.sqrt(2.0),
-    "phi": np.diag([0.0, 0.0, 1.0]).astype(complex),
-}
+# Ideal omega--phi mixing remains the explicit model assumption used here.
+_VECTOR_GENERATORS = ideal_vector_generators()
 
 _DIAGONAL_VECTORS = frozenset(("rho0", "omega", "phi"))
 

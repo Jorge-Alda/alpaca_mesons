@@ -68,10 +68,10 @@ $f_+^{\mu\nu}=-2eQF^{\mu\nu}$ and $f_-^{\mu\nu}=0$, and insert the physical-ALP
 relations already derived in `two-source-alp-rcht-odd-parity-extension.md`,
 
 $$
-u_\mu\big|_{a_{\rm physical}}=-2\frac{\partial_\mu a}{f_a}X,
+u_\mu\big|_{a_{\rm physical}}=-2\frac{\partial_\mu a}{f_a}\mathbb M_a^{-1}(C),
 \qquad
 \chi_-\big|_{a_{\rm physical}}=-4iB_0\frac{a}{f_a}
-\{c_q^{AP}+X,m_q\}.
+\{c_q^{AP}+\mathbb M_a^{-1}(C),m_q\}.
 $$
 
 Therefore the published VJP basis permits a direct $aV\gamma$ vertex from

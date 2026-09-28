@@ -44,7 +44,7 @@ generators = (
 )
 
 c_q_A = matrix_symbols("cA")
-M_a_inv_C = matrix_symbols("X")
+m_a_inverse_C = matrix_symbols(r"\mathbb{M}_a^{-1}(C)")
 kappa = matrix_symbols("kappa")
 q_u, q_d, q_s = sp.symbols("q_u q_d q_s", real=True)
 Q = sp.diag(q_u, q_d, q_s)
@@ -68,12 +68,12 @@ def projection(matrix: sp.Matrix) -> sp.Matrix:
 # Alda Eq. (III.28): the spectral coefficients of M_a^{-1}(C) are
 # tr[C lambda_i]/(m_i^2-m_a^2).  Thus Eq. (III.25) can be written as below.
 completeness_c_q_A = projection(c_q_A)
-completeness_M_a_inv_C = projection(M_a_inv_C)
+completeness_m_a_inverse_C = projection(m_a_inverse_C)
 w = tuple(
     sp.simplify(
         f_pi
         / f_a
-        * sp.trace((c_q_A + M_a_inv_C) * generator)
+        * sp.trace((c_q_A + m_a_inverse_C) * generator)
     )
     for generator in generators
 )
@@ -92,7 +92,7 @@ delta_wzw_mixing = sp.simplify(
     )
 )
 delta_expected = sp.simplify(
-    2 * N_c * sp.trace(Q2 * (c_q_A + M_a_inv_C))
+    2 * N_c * sp.trace(Q2 * (c_q_A + m_a_inverse_C))
 )
 
 # Derive the invariant under c_q^A -> c_q^A+kappa and
@@ -105,11 +105,11 @@ c_gamma_inv_transformed = sp.simplify(
 )
 full_coefficient = sp.simplify(c_gamma + delta_wzw_mixing)
 full_from_invariant = sp.simplify(
-    c_gamma_inv + 2 * N_c * sp.trace(Q2 * M_a_inv_C)
+    c_gamma_inv + 2 * N_c * sp.trace(Q2 * m_a_inverse_C)
 )
 
 # Alda no-mixing choice kappa=-c_q^A-M_a^{-1}(C).
-kappa_no_mixing = -(c_q_A + M_a_inv_C)
+kappa_no_mixing = -(c_q_A + m_a_inverse_C)
 hat_c_q_A = sp.simplify(c_q_A + kappa_no_mixing)
 hat_c_gamma = sp.simplify(
     c_gamma - 2 * N_c * sp.trace(Q2 * kappa_no_mixing)
@@ -130,7 +130,7 @@ print("Conventions: q -> exp(+i a kappa gamma5/f_a) q for delta=0.")
 print("Approximation: one ALP at O(1/f_a), leading no-vector WZW sector.")
 print("Domain: M_a is invertible (away from ALP-meson degeneracies).\n")
 show("U(3) completeness applied to c_q^A", completeness_c_q_A)
-show("U(3) completeness applied to M_a^{-1}(C)", completeness_M_a_inv_C)
+show("U(3) completeness applied to M_a^{-1}(C)", completeness_m_a_inverse_C)
 show("Alda physical-ALP meson components w_i", sp.Matrix(w))
 show("WZW/mixing photon contribution", delta_wzw_mixing)
 show("Invariant explicit photon combination c_gamma^inv", c_gamma_inv)
@@ -148,7 +148,7 @@ assert all(
     for j in range(3)
 )
 assert all(
-    sp.simplify((completeness_M_a_inv_C - M_a_inv_C)[i, j]) == zero
+    sp.simplify((completeness_m_a_inverse_C - m_a_inverse_C)[i, j]) == zero
     for i in range(3)
     for j in range(3)
 )
@@ -156,7 +156,7 @@ assert sp.simplify(delta_wzw_mixing - delta_expected) == zero
 assert sp.simplify(c_gamma_inv_transformed - c_gamma_inv) == zero
 assert sp.simplify(full_coefficient - full_from_invariant) == zero
 assert all(
-    sp.simplify((hat_c_q_A + M_a_inv_C)[i, j]) == zero
+    sp.simplify((hat_c_q_A + m_a_inverse_C)[i, j]) == zero
     for i in range(3)
     for j in range(3)
 )
@@ -168,7 +168,7 @@ off_diagonal_symbols = [
     for j in range(3)
     if i != j
 ] + [
-    M_a_inv_C[i, j]
+    m_a_inverse_C[i, j]
     for i in range(3)
     for j in range(3)
     if i != j

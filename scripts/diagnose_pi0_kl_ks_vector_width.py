@@ -4,8 +4,7 @@
 Invocation:
     .venv/bin/python scripts/diagnose_pi0_kl_ks_vector_width.py
 
-This diagnostic deliberately imports the current implementation modules as
-top-level modules because they currently use top-level imports internally.  It
+This diagnostic imports the implementation through its package namespace and
 does not call the unbounded nested production width integral.
 """
 
@@ -18,19 +17,18 @@ from scipy.integrate import quad
 import sympy as sp
 
 
-# Preserve the current implementation's top-level import arrangement without
-# importing scripts.implementation (whose package initializer is unrelated to
-# this diagnostic).
-IMPLEMENTATION = Path(__file__).resolve().parent / "implementation"
-sys.path.insert(0, str(IMPLEMENTATION))
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-from three_meson_width import (  # noqa: E402
+
+from scripts.implementation.three_meson_width import (
     EPSILON_K,
     _kaon_mixing_coefficients,
     _s23_bounds,
     build_amplitude,
 )
-from vector_meson_exchange import (  # noqa: E402
+from scripts.implementation.vector_meson_exchange import (
     build_vector_exchange_amplitude,
     build_vector_matching_amplitude,
 )

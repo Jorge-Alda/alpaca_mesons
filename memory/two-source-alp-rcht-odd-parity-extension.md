@@ -33,15 +33,19 @@ $$
 
 Thus every unordered pair, diagonal or unlike, occurs once. For the photon, $g_\gamma=e$, so the diagonal normalization is $e^2/(16\pi^2)=\alpha_{\rm em}/(4\pi)$. This convention is used consistently and is not silently changed by a symmetry factor.
 
-The derivation retains one ALP at $O(1/f_a)$, tree-level fields, and a complete $U(3)$ pseudoscalar basis. It assumes $\mathbb M_a^{-1}$ exists, so it excludes exact ALP--meson degeneracies. The quadratic photon-vector transformation is exact only in the already specified truncated tree-level RChT quadratic model. No ideal vector mixing, on-shell reduction, short-distance relation, flavor commutativity, or numerical approximation is imposed.
+The derivation retains one ALP at $O(1/f_a)$, tree-level fields, and a complete $U(3)$ pseudoscalar basis. It assumes $\mathbb M_a^{-1}$ exists, so it excludes exact ALP--meson degeneracies with nonzero overlap. The quadratic photon-vector transformation is exact only in the already specified truncated tree-level RChT quadratic model. No ideal vector mixing, on-shell reduction, short-distance relation, flavor commutativity, or numerical approximation is imposed.
+
+Alda Eq. (III.37) states, for every physical pseudoscalar $i$,
+
+$$
+|m_a^2-m_i^2|\gg\frac{f_\pi}{f_a}
+\left|\operatorname{tr}(C\lambda_i^\dagger)\right|
+\approx\frac{f_\pi}{f_a}m_i^2.
+$$
+
+Thus the excluded fractional neighborhoods scale as $f_\pi/f_a$ and are negligible in generic broad scans when $f_a\gg f_\pi$. A finite caller-supplied $\mathbb M_a^{-1}(C)$ is valid in this domain. Exact coupled diagonalization, and complex propagators when unstable states are deliberately resolved, are needed only for tuned or resolved near-degeneracies with nonzero overlap. This is a local domain caveat, not a global implementation blocker, and matrix magnitude alone is not a reason for a code warning [@Alda:2026bar].
 
 ## 1. Symmetric two-source anomaly seed
-
-Define
-
-$$
-X\equiv\mathbb M_a^{-1}(C).
-$$
 
 Because the Lagrangian contains each unordered pair only once, define the
 source multiplicity
@@ -57,7 +61,7 @@ The symmetric two-source extension of the no-vector WZW seed is
 $$
 \boxed{
 C_{AB}^{\rm seed}=c_{AB}
-+s_{AB}N_c\operatorname{tr}\!\left(\{T_A,T_B\}[c_q^A+X]\right).}
++s_{AB}N_c\operatorname{tr}\!\left(\{T_A,T_B\}[c_q^A+\mathbb M_a^{-1}(C)]\right).}
 $$
 
 Under Alda's axial reparametrization,
@@ -79,7 +83,7 @@ For $A=B=\gamma$, $T_A=T_B=Q$, $g_A=g_B=e$, and $c_{AA}=c_\gamma$, hence
 
 $$
 \boxed{C_{\gamma\gamma}^{\rm seed}
-=c_\gamma+2N_c\operatorname{tr}\!\left(Q^2[c_q^A+X]\right),}
+=c_\gamma+2N_c\operatorname{tr}\!\left(Q^2[c_q^A+\mathbb M_a^{-1}(C)]\right),}
 $$
 
 exactly reproducing the [repository photon result](alp-photon-invariant-from-mixing.md), including its sign and normalization.
@@ -88,7 +92,7 @@ For distinct sources, $s_{AB}=2$, so the corresponding unordered coefficient is
 
 $$
 C_{AB}^{\rm seed}=c_{AB}
-+2N_c\operatorname{tr}\!\left(\{T_A,T_B\}[c_q^A+X]\right),
++2N_c\operatorname{tr}\!\left(\{T_A,T_B\}[c_q^A+\mathbb M_a^{-1}(C)]\right),
 \qquad A\neq B.
 $$
 
@@ -100,14 +104,14 @@ Alda's physical-ALP meson components are
 
 $$
 w_i^{(a)}=\frac{f_\pi}{f_a}
-\operatorname{tr}[(c_q^A+X)\lambda_i^\dagger].
+\operatorname{tr}[(c_q^A+\mathbb M_a^{-1}(C))\lambda_i^\dagger].
 $$
 
 Completeness, rather than an assumed matrix replacement, gives
 
 $$
 \sum_iw_i^{(a)}\lambda_i
-=\frac{2f_\pi}{f_a}(c_q^A+X).
+=\frac{2f_\pi}{f_a}(c_q^A+\mathbb M_a^{-1}(C)).
 $$
 
 At the Goldstone vacuum, Alda Appendix A gives a direct term $2(\partial_\mu a/f_a)c_q^A$ and a meson term $-(\partial_\mu\Phi)/f_\pi$. Their LSZ sum is therefore
@@ -115,7 +119,7 @@ At the Goldstone vacuum, Alda Appendix A gives a direct term $2(\partial_\mu a/f
 $$
 \boxed{
 u_\mu\big|_{a_{\rm physical}}
-=-2\frac{\partial_\mu a}{f_a}X.}
+=-2\frac{\partial_\mu a}{f_a}\mathbb M_a^{-1}(C).}
 $$
 
 For the pseudoscalar source, Alda's convention is $c_q^{AP}=c_q^A-c_q^P$. From $\chi=\chi_S+i\chi_P$ and $\chi_-=u^\dagger\chi u^\dagger-u\chi^\dagger u$, the direct vacuum term is
@@ -138,10 +142,10 @@ $$
 \boxed{
 \chi_-\big|_{a_{\rm physical}}
 =-4iB_0\frac{a}{f_a}
-\{c_q^{AP}+X,m_q\}.}
+\{c_q^{AP}+\mathbb M_a^{-1}(C),m_q\}.}
 $$
 
-This agrees with the no-mixing variables $\widehat c_q^P=-c_q^{AP}-X$ and fixes the sign independently through the direct-plus-meson expansion.
+This agrees with the no-mixing variable $\widehat c_q^P=-c_q^{AP}-\mathbb M_a^{-1}(C)$ and fixes the sign independently through the direct-plus-meson expansion.
 
 ### Insertions in the four VVP operators
 
@@ -174,18 +178,18 @@ $$
 \begin{aligned}
 \mathcal O^1_{ABa}&=-\frac{2}{f_a}\epsilon_{\mu\nu\rho\sigma}
 (\partial_\alpha\partial^\sigma a)
-\left\langle\{T_A,T_B\}X\right\rangle
+\left\langle\{T_A,T_B\}\mathbb M_a^{-1}(C)\right\rangle
 \mathcal S_{AB}\!\left[V_A^{\mu\nu}V_B^{\rho\alpha}\right],\\
 \mathcal O^2_{ABa}&=+\frac{4B_0}{f_a}\epsilon_{\mu\nu\rho\sigma}a
-\left\langle\{T_A,T_B\}\{c_q^{AP}+X,m_q\}\right\rangle
+\left\langle\{T_A,T_B\}\{c_q^{AP}+\mathbb M_a^{-1}(C),m_q\}\right\rangle
 \mathcal S_{AB}\!\left[V_A^{\mu\nu}V_B^{\rho\sigma}\right],\\
 \mathcal O^3_{ABa}&=-\frac{2}{f_a}\epsilon_{\mu\nu\rho\sigma}
 (\partial^\sigma a)
-\left\langle\{T_A,T_B\}X\right\rangle
+\left\langle\{T_A,T_B\}\mathbb M_a^{-1}(C)\right\rangle
 \mathcal S_{AB}\!\left[(\partial_\alpha V_A^{\mu\nu})V_B^{\rho\alpha}\right],\\
 \mathcal O^4_{ABa}&=-\frac{2}{f_a}\epsilon_{\mu\nu\rho\sigma}
 (\partial_\alpha a)
-\left\langle\{T_A,T_B\}X\right\rangle
+\left\langle\{T_A,T_B\}\mathbb M_a^{-1}(C)\right\rangle
 \mathcal S_{AB}\!\left[(\partial^\sigma V_A^{\mu\nu})V_B^{\rho\alpha}\right].
 \end{aligned}
 $$
