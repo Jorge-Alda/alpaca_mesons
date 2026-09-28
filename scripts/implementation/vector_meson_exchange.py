@@ -80,6 +80,14 @@ def _roundoff_zero(value: complex, scale: float) -> bool:
     return abs(value) <= 64.0 * np.finfo(float).eps * scale
 
 
+def _aggregate_flavor_coefficients(coefficients) -> complex:
+    """Sum flavor/order coefficients and make roundoff-only zeros exact."""
+    values = tuple(complex(value) for value in coefficients)
+    total = sum(values, 0.0j)
+    scale = sum(abs(value) for value in values)
+    return 0.0j if _roundoff_zero(total, scale) else total
+
+
 def _is_diagonal(matrix: np.ndarray) -> bool:
     off_diagonal = matrix - np.diag(np.diag(matrix))
     scale = np.linalg.norm(matrix)
@@ -161,6 +169,9 @@ class VectorExchangeAmplitude:
 
     def __call__(self, s12: float, s23: float) -> complex:
         """Evaluate the sum of canonical-vector pole graphs."""
+        if not self.contributions:
+            _validated_dalitz_inputs(s12, s23)
+            return 0.0j
         pair_invariants = _ordered_pair_invariants(
             s12, s23, self.alp_mass, self.masses
         )
@@ -185,13 +196,8 @@ class VectorExchangeAmplitude:
         return complex(result)
 
 
-def _ordered_pair_invariants(
-    s12: float,
-    s23: float,
-    alp_mass: float,
-    masses: tuple[float, float, float],
-) -> dict[tuple[int, int], float]:
-    """Validate ordered Dalitz inputs and return all three pair invariants."""
+def _validated_dalitz_inputs(s12: float, s23: float) -> tuple[float, float]:
+    """Validate and return two real, finite ordered Dalitz inputs."""
     try:
         s12_value = float(s12)
         s23_value = float(s23)
@@ -199,6 +205,17 @@ def _ordered_pair_invariants(
         raise TypeError("s12 and s23 must be real scalars") from error
     if not np.isfinite(s12_value) or not np.isfinite(s23_value):
         raise ValueError("s12 and s23 must be finite")
+    return s12_value, s23_value
+
+
+def _ordered_pair_invariants(
+    s12: float,
+    s23: float,
+    alp_mass: float,
+    masses: tuple[float, float, float],
+) -> dict[tuple[int, int], float]:
+    """Validate ordered Dalitz inputs and return all three pair invariants."""
+    s12_value, s23_value = _validated_dalitz_inputs(s12, s23)
 
     invariant_sum = alp_mass**2 + sum(mass**2 for mass in masses)
     return {
@@ -233,6 +250,9 @@ class VectorMatchingAmplitude:
 
     def __call__(self, s12: float, s23: float) -> complex:
         """Evaluate the sum of local representation-matching terms."""
+        if not self.contributions:
+            _validated_dalitz_inputs(s12, s23)
+            return 0.0j
         pair_invariants = _ordered_pair_invariants(
             s12, s23, self.alp_mass, self.masses
         )
@@ -352,6 +372,31 @@ def build_vector_exchange_amplitude(
                     pole=poles[exchange_name],
                 )
             )
+
+    # Terms in one group have exactly the same pole and kinematic kernel.
+    # Sum their flavor/order coefficients first and drop the whole group when
+    # only floating-point cancellation remains.  Retain original labeled
+    # contributions for nonzero groups so existing metadata stays intact.
+    grouped: dict[
+        tuple[int, tuple[int, int], VectorPoleParameters],
+        list[VectorExchangeContribution],
+    ] = {}
+    for item in retained:
+        key = (item.spectator_index, item.pair_indices, item.pole)
+        grouped.setdefault(key, []).append(item)
+    cancelled_groups = {
+        key
+        for key, items in grouped.items()
+        if _aggregate_flavor_coefficients(
+            item.flavor_factor for item in items
+        ) == 0.0j
+    }
+    retained = [
+        item
+        for item in retained
+        if (item.spectator_index, item.pair_indices, item.pole)
+        not in cancelled_groups
+    ]
 
     return VectorExchangeAmplitude(
         alp_mass=ma,

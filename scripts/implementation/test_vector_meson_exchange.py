@@ -6,6 +6,7 @@ Invocation:
 
 import unittest
 from dataclasses import replace
+from unittest.mock import patch
 
 import numpy as np
 
@@ -127,6 +128,28 @@ class VectorMesonExchangeTests(unittest.TestCase):
         value = model(rho_mass**2, 0.40)
         self.assertTrue(np.isfinite(value.real))
         self.assertTrue(np.isfinite(value.imag))
+
+    def test_pi0_kl_ks_cancels_before_pole_kinematics(self) -> None:
+        model = self.build(
+            self.diagonal,
+            channel=("pi0", "KL", "KS"),
+        )
+        self.assertEqual(model.contributions, ())
+        self.assertEqual(model.exchange_names, ())
+        with patch(
+            "scripts.implementation.vector_meson_exchange._ordered_pair_invariants",
+            side_effect=AssertionError("kinematics evaluated"),
+        ):
+            self.assertEqual(model(0.30, 0.40), 0.0j)
+        with self.assertRaisesRegex(ValueError, "finite"):
+            model(np.nan, 0.40)
+
+        flavor = self.build(
+            self.diagonal,
+            channel=("pi0", "K0", "K0bar"),
+        )
+        self.assertTrue(flavor.contributions)
+        self.assertNotEqual(flavor(0.30, 0.40), 0.0j)
 
 
 class VectorMatchingTests(unittest.TestCase):
@@ -266,6 +289,22 @@ class VectorMatchingTests(unittest.TestCase):
             model("bad", 0.40)
         with self.assertRaisesRegex(ValueError, "finite"):
             model(np.inf, 0.40)
+
+    def test_pi0_kl_ks_cancels_before_matching_kinematics(self) -> None:
+        model = self.build(channel=("pi0", "KL", "KS"))
+        self.assertEqual(model.contributions, ())
+        self.assertEqual(model.exchange_names, ())
+        with patch(
+            "scripts.implementation.vector_meson_exchange._ordered_pair_invariants",
+            side_effect=AssertionError("kinematics evaluated"),
+        ):
+            self.assertEqual(model(0.30, 0.40), 0.0j)
+        with self.assertRaisesRegex(ValueError, "finite"):
+            model(0.30, np.nan)
+
+        flavor = self.build(channel=("pi0", "K0", "K0bar"))
+        self.assertTrue(flavor.contributions)
+        self.assertNotEqual(flavor(0.30, 0.40), 0.0j)
 
 
 if __name__ == "__main__":

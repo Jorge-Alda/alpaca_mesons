@@ -156,11 +156,15 @@ assert projected_symmetric == 0
 
 
 # ---------------------------------------------------------------------------
-# 2. Representative current-amplitude evaluation
+# 2. Representative corrected-amplitude evaluation
 # ---------------------------------------------------------------------------
 default_models = build_components(EPSILON_K, PHYSICAL_CHANNEL)
 flavor_models = build_components(EPSILON_K, FLAVOR_CHANNEL)
 reversed_flavor_models = build_components(EPSILON_K, REVERSED_FLAVOR_CHANNEL)
+assert default_models[1].contributions == ()
+assert default_models[2].contributions == ()
+assert default_models[1](0.0, 0.0) == 0.0j
+assert default_models[2](0.0, 0.0) == 0.0j
 
 s12_lower = (default_models[0].masses[0] + default_models[0].masses[1]) ** 2
 s12_upper = (M_A - default_models[0].masses[2]) ** 2
@@ -272,8 +276,8 @@ for epsilon_label, models in (
 relative_only = bounded_inner_quad(default_models, S12, 0.0)
 absolute_bounded = bounded_inner_quad(default_models, S12, scale_aware_epsabs)
 cp_relative_only = bounded_inner_quad(cp_models, S12, 0.0)
-assert not relative_only[4] and relative_only[3] == 24
-assert absolute_bounded[4]
+assert relative_only[4] and relative_only[3] == 1
+assert absolute_bounded[4] and absolute_bounded[3] == 1
 assert cp_relative_only[4] and cp_relative_only[0] == 0.0
 
-print("\nAssertions passed: exact symbolic cancellation, machine-scale default-epsilon residual, exact epsilon_K=0 numerical zero, and bounded epsabs diagnosis.")
+print("\nAssertions passed: exact symbolic cancellation, pre-kinematic vector pruning, retained nonzero flavor amplitudes, and one-panel bounded quadrature.")
