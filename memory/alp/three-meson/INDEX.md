@@ -1,0 +1,21 @@
+---
+title: ALP three-meson memory index
+status: mixed
+created: 2026-10-01
+updated: 2026-10-01
+bibtex_keys: []
+provenance: assumption
+---
+
+# ALP three-meson records
+
+LO chiral, generic-generator, vector-exchange, and numerical three-meson records.
+
+- [alp-phi2-vector-scalar-lo-chipt-derivation.md](alp-phi2-vector-scalar-lo-chipt-derivation.md) — one-ALP two-pseudoscalar vector and scalar source terms.
+- [alp-phi3-lo-chipt-derivation.md](alp-phi3-lo-chipt-derivation.md) — one-ALP three-pseudoscalar LO chiral derivation.
+- [alp-three-meson-generic-generators.md](alp-three-meson-generic-generators.md) — generic-generator interaction expansion.
+- [alp-three-meson-amplitudes-widths.md](alp-three-meson-amplitudes-widths.md) — amplitudes, symmetry multiplicities, and widths.
+- [alp-three-meson-widths-numerical.md](alp-three-meson-widths-numerical.md) — numerical width implementation.
+- [a3p-vector-exchange-classifier.md](a3p-vector-exchange-classifier.md) — vector-exchange flavor classifier.
+- [a3p-vector-exchange-amplitude.md](a3p-vector-exchange-amplitude.md) — vector-pole and representation-matching amplitudes.
+- [flavor-conserving-neutral-vector-selection-rule.md](flavor-conserving-neutral-vector-selection-rule.md) — neutral-vector flavor selection rule.

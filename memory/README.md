@@ -9,7 +9,17 @@ provenance: assumption
 
 # Research Memory
 
-Each file records one small, auditable unit of research knowledge. Use lower-case kebab-case names, for example `renormalization-conventions.md`.
+Each record is one auditable concept, derivation, calculation, or decision. Records are grouped below by topic; the records themselves retain their complete original content and front matter. Use lower-case kebab-case names, for example `renormalization-conventions.md`.
+
+## Topic indexes
+
+- [ALP](alp/INDEX.md) — ALP-specific derivations and three-meson calculations.
+- [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
+- [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
+- [RChT](rcht/INDEX.md) — foundations and odd-parity resonance-chiral implementation records.
+- [Literature extracts](extracts/INDEX.md) — source-backed modular paper digests.
+
+The ignored `sources/` archive is indexed separately when present; it contains downloaded source material rather than research records.
 
 ```yaml
 ---
