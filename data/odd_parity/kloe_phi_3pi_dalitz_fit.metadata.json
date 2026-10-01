@@ -1,0 +1,19 @@
+{
+  "bibtex_key": "KLOE:2003kas",
+  "source_location": "Table (fit results), arXiv source articolo_errata.tex, pp. 7-8",
+  "units": "Per unit column",
+  "errors": "Fit statistical and systematic errors as printed. Blank rho0/rho- mass and width cells are preserved exactly from fit(a), whose isospin/CPT constraints leave the fitted value printed only on the rho+ row; they are not missing measurements.",
+  "likelihood": {
+    "schema_version": "odd-parity-likelihood-v1",
+    "family": "diagonal_gaussian",
+    "authorization": "User-authorized diagonal published errors where covariance is absent.",
+    "asymmetric_error_rule": "mean_absolute",
+    "diagonal_source_ids": [
+      "kloe-fit-statistical",
+      "kloe-fit-systematic"
+    ],
+    "nuisance_sources": [],
+    "nuisance_source_ids_excluded_from_diagonal": []
+  },
+  "fit_readiness": "No covariance matrix or bin-level Dalitz data supplied; this is a fit-parameter table, not a reconstructed Dalitz sample. CMD-2 tabulated Dalitz inputs are unavailable in the cached Tier-0 material."
+}

@@ -211,6 +211,54 @@ class OPEPrior:
         object.__setattr__(self, "covariance", covariance)
 
 
+def fixed_ope_prior_scales(parameters: OPEParameters) -> np.ndarray:
+    """Return fixed structural scales for the five OPE residual conventions.
+
+    The scales have the same dimensionless convention as the ``c_i,d_i``.
+    They depend only on the caller-supplied reference parameters and are meant
+    to be evaluated before, not during, a fit.
+    """
+    if not isinstance(parameters, OPEParameters):
+        raise TypeError("parameters must be OPEParameters")
+    common = parameters.n_c / (64.0 * np.pi**2)
+    s_c = common * parameters.m_v / (np.sqrt(2.0) * parameters.f_v)
+    d_g = common * parameters.m_v**2 / parameters.f_v**2
+    d_f = parameters.f**2 / (8.0 * parameters.f_v**2)
+    return _readonly_array(
+        (s_c, s_c, s_c, d_g + 2.0 * d_f, d_g + d_f),
+        "fixed OPE prior scales",
+        shape=(5,),
+        real=True,
+    )
+
+
+def fixed_ope_prior(
+    parameters: OPEParameters,
+    truncation_fraction: float | None = None,
+    rho: float = 0.0,
+) -> OPEPrior:
+    """Build a fixed Gaussian OPE prior from reference parameters.
+
+    Gaussianity, the structural scale prescription, and the baseline
+    ``truncation_fraction=1/n_c`` are assumptions.  ``rho`` is a fixed
+    equicorrelation and must lie in the strict SPD interval ``(-1/4, 1)``.
+    The five residual definitions themselves are literature inputs.
+    """
+    if not isinstance(parameters, OPEParameters):
+        raise TypeError("parameters must be OPEParameters")
+    fraction = 1.0 / parameters.n_c if truncation_fraction is None else _positive_real(
+        truncation_fraction, "truncation_fraction"
+    )
+    correlation = _finite_real(rho, "rho")
+    if not -0.25 < correlation < 1.0:
+        raise ValueError("rho must satisfy -1/4 < rho < 1 for positive definiteness")
+    sigmas = fraction * fixed_ope_prior_scales(parameters)
+    correlation_matrix = np.full((5, 5), correlation)
+    np.fill_diagonal(correlation_matrix, 1.0)
+    covariance = np.outer(sigmas, sigmas) * correlation_matrix
+    return OPEPrior(covariance)
+
+
 @dataclass(frozen=True)
 class PhotonVectorTransform:
     epsilon: np.ndarray

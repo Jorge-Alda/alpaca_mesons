@@ -1,0 +1,23 @@
+{
+  "bibtex_key": "CLEO:1997fho",
+  "source_location": "Source labels tab:piz_table_1, tab:etaz_table_1--3, and tab:etap_table_1--6 in clns_97-1477.tex, pp. 24-26",
+  "observable": "Qbar^2 |F(Qbar^2)|",
+  "units": {
+    "q2": "GeV^2",
+    "q2F": "GeV"
+  },
+  "source_scale": "The source table prints q2F and its errors in 0.01 GeV; CSV values are converted to GeV by multiplying by 0.01.",
+  "errors": "stat_GeV and syst_GeV are the separately quoted diagonal errors after the same 0.01 GeV conversion; no covariance matrix supplied; normalization/luminosity systematics are not reconstructed as bin correlations.",
+  "likelihood": {
+    "schema_version": "odd-parity-likelihood-v1",
+    "family": "diagonal_gaussian",
+    "authorization": "User-authorized diagonal published errors where covariance is absent.",
+    "asymmetric_error_rule": "mean_absolute",
+    "diagonal_source_ids": [
+      "cleo-statistical",
+      "cleo-point-systematic"
+    ],
+    "nuisance_sources": [],
+    "nuisance_source_ids_excluded_from_diagonal": []
+  }
+}

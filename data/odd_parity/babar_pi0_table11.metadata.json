@@ -1,0 +1,37 @@
+{
+  "bibtex_key": "BaBar:2009rrj",
+  "source_location": "Table 11, arXiv source babar-pub-09006.tex, p. 19",
+  "units": {
+    "q2": "GeV^2",
+    "cross_section": "fb/GeV^2",
+    "q2F": "MeV"
+  },
+  "errors": "Cross section has statistical and Q2-dependent systematic columns; q2F has combined error. For an asymmetric q2F entry, the eventual authorized diagonal sigma is (q2F_err_low_MeV + q2F_err_high_MeV)/2 while the raw lower/upper magnitudes remain separate. The paper quotes additional Q2-independent 3% cross-section and 2.3% form-factor normalizations.",
+  "likelihood": {
+    "schema_version": "odd-parity-likelihood-v1",
+    "family": "diagonal_gaussian",
+    "authorization": "User-authorized diagonal published errors where covariance is absent.",
+    "asymmetric_error_rule": "mean_absolute",
+    "diagonal_source_ids": [
+      "babar-2009-point-error"
+    ],
+    "nuisance_sources": [
+      {
+        "source_id": "babar-2009-cross-section-normalization",
+        "fraction": 0.03,
+        "response": "multiplicative",
+        "predictor_connection": "absent"
+      },
+      {
+        "source_id": "babar-2009-form-factor-normalization",
+        "fraction": 0.023,
+        "response": "multiplicative",
+        "predictor_connection": "absent"
+      }
+    ],
+    "nuisance_source_ids_excluded_from_diagonal": [
+      "babar-2009-cross-section-normalization",
+      "babar-2009-form-factor-normalization"
+    ]
+  }
+}

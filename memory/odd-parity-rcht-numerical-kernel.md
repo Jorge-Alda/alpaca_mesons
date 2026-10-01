@@ -2,7 +2,7 @@
 title: Non-HLS odd-parity RChT numerical kernel
 status: numerical
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 bibtex_keys: [Alda:2026bar, Ruiz-Femenia:2003jdx, Ecker:1989yg]
 provenance: numerical-computation
 ---
@@ -41,7 +41,7 @@ Assumptions are explicit: tree level, one resonance multiplet, the Goldstone vac
    s=1\ \text{(identical)},\quad s=2\ \text{(distinct)}.
    $$
    `photon_anomaly_seed` evaluates $c_\gamma+2N_c\operatorname{tr}(Q^2(c_q^A+\mathbb M_a^{-1}(C)))$ directly.
-4. `ope_linear_system` returns read-only $A,b$ for $A(c_1,\ldots,c_7,d_1,\ldots,d_4)^T=b$, using exactly the five Ruiz--Femenia relations recorded in the [coupling prescription](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md). `ope_residuals` returns $A\theta-b$. No errors are invented. `OPEPrior` accepts only a user-supplied symmetric positive-definite $5\times5$ covariance, and `ope_prior_chi2` evaluates the quadratic form by a SciPy Cholesky triangular solve.
+4. `ope_linear_system` returns read-only $A,b$ for $A(c_1,\ldots,c_7,d_1,\ldots,d_4)^T=b$, using exactly the five Ruiz--Femenia relations recorded in the [coupling prescription](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md). `ope_residuals` returns $A\theta-b$. `OPEPrior` accepts only a symmetric positive-definite $5\times5$ covariance, and `ope_prior_chi2` evaluates the quadratic form by a SciPy Cholesky triangular solve. The user-authorized `fixed_ope_prior` builder implements the explicitly assumed Gaussian scale model in [the fit-infrastructure record](correlated-odd-parity-fit-infrastructure.md), evaluated once from caller-supplied reference `OPEParameters`; it is not parameter-dependent during fitting.
 5. For real $\boldsymbol\epsilon$ and a real orthogonal rotation $O$, `photon_vector_transform` computes exactly
    $$
    Z=1+\boldsymbol\epsilon^T\boldsymbol\epsilon,\quad
@@ -81,8 +81,8 @@ $$
 \approx\frac{f_\pi}{f_a}m_i^2.
 $$
 
-The excluded neighborhoods therefore scale as $f_\pi/f_a$ and are negligible in generic broad scans for $f_a\gg f_\pi$. Finite caller-supplied `m_a_inverse_C` is valid. Exact coupled diagonalization and, where applicable, complex propagators are local requirements only for deliberately resolved or tuned pseudoscalar degeneracies with nonzero overlap. No warning is generated from matrix magnitude alone [@Alda:2026bar].
+The excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution for $f_a\gg f_\pi$, but Eq. (III.37) is a pointwise validity condition. A finite caller-supplied `m_a_inverse_C` is necessary but not sufficient. The calling scan must evaluate the exact overlap at every point and mask/flag a violation or replace the perturbative treatment by a coupled mixing calculation. Matrix magnitude alone is not the criterion. For unstable states, closeness of the real mass parameters is distinct from closeness of the complex poles; a retained near-pole point requires a coupled complex-propagator analysis. This operator kernel is not passed the pseudoscalar spectrum and therefore cannot perform that pointwise validation itself [@Alda:2026bar].
 
-> **The remaining genuine numerical blocker is the calibration dataset and covariance/theory-error model for $c_i,d_i$ and any promoted nuisance parameters. No defaults are invented.**
+> **The remaining blocker is validated physical data ingestion and observable predictors for the calibration channels. The fixed-prior generic fit layer is ready, but no physical $c_i,d_i$ fit has been run.**
 
 Physical on-shell reduction, external-tensor normalization in amplitudes, width models for internal vectors, Ward-identity tests, and optional spectral conversion of unstable external-vector channels are implementation tasks. This kernel itself continues to supply operator-level coefficients rather than physical widths or fitted couplings.

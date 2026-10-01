@@ -2,7 +2,7 @@
 title: Decision record for a U(3) odd-parity nonet and ALP-source extension
 status: mixed
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 bibtex_keys: [Alda:2026bar, Bai:2025fvl, Fujiwara:1984mp, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, Herrera-Siklody:1996tqr, Ecker:1988te, Ecker:1989yg]
 provenance: literature
 ---
@@ -13,18 +13,17 @@ The repository currently implements the seven $VJP$ and four $VVP$ single-trace 
 
 ## Concrete choices
 
-**A. Minimal nonet continuation (recommended now).** Define a leading-OZI model by promoting $V$ and the Goldstone matrix to $U(3)$ and evaluating the existing seven/four single traces with vector singlet generator $T_0=\mathbf1/\sqrt3$, $\operatorname{tr}(T_0^2)=1$, and Alda pseudoscalar singlet $\lambda_0=\sqrt{2/3}\,\mathbf1$, $\operatorname{tr}(\lambda_0^2)=2$. Take the same $c_i,d_i$ for octet and singlet components, set independent multi-trace coefficients to zero, and omit additional $X_{TC}$ coefficient functions and derivative-$X_{TC}$ operators. Ideal $\omega$--$\phi$ mixing and physical masses are declared baseline approximations, not consequences of $U(3)$. Kaiser--Leutwyler identify one-trace terms with one quark loop and generic extra traces with additional OZI-suppressed quark-loop topologies [@Kaiser:2000gs]. The common singlet/octet $c_i,d_i$ are an ansatz, and this model is neither a symmetry theorem nor a complete $U(3)$ basis.
+**A. Minimal nonet continuation (recommended now).** Define a leading-OZI model by promoting $V$ and the Goldstone matrix to $U(3)$ and evaluating the existing seven/four single traces with vector singlet generator $T_0=\mathbf1/\sqrt3$, $\operatorname{tr}(T_0^2)=1$, and Alda pseudoscalar singlet $\lambda_0=\sqrt{2/3}\,\mathbf1$, $\operatorname{tr}(\lambda_0^2)=2$. Take the same $c_i,d_i$ for octet and singlet components, set independent multi-trace coefficients to zero, and omit additional $X_{TC}$ coefficient functions and derivative-$X_{TC}$ operators. Ideal $\omega$--$\phi$ mixing and physical masses are declared baseline approximations, not consequences of $U(3)$. Kaiser--Leutwyler's generating-functional organization associates one trace generically with one quark loop and motivates OZI suppression for additional trace topologies [@Kaiser:2000gs]. This is nominal coefficient/topology counting, not a proof of uniform numerical suppression after field normalization, singlet insertions, or channel projections. The common singlet/octet $c_i,d_i$ are a separate ansatz, not a consequence of trace counting, and this model is neither a symmetry theorem nor a complete $U(3)$ basis.
 
-**B. Minimal plus controlled singlet/OZI fit.** Add the independent invariants obtained by replacing one trace with products of traces, including singlet-vector projections such as $\langle V_{\mu\nu}\rangle\langle\{V^{\mu\nu},\ldots\}\rangle$ and $\langle V_{\mu\nu}V^{\mu\nu}\rangle\langle\chi_-\rangle$ when the Lorentz/parity structure permits it. Assign one nominal $1/N_c$ suppression per extra trace as generic OZI coefficient counting and fit only combinations visible in the target channels. This rule is separate from anomalous-source counting in powers or derivatives of $X_{TC}$. This option is appropriate if eta-prime/singlet-vector data are part of the accuracy goal, but it expands the parameter space and loses the current short-distance closure unless new matching constraints are supplied [@Kaiser:2000gs; @Roig:2013baa].
+**B. Minimal plus controlled singlet/OZI fit.** Add the independent invariants obtained by replacing one trace with products of traces, including singlet-vector projections such as $\langle V_{\mu\nu}\rangle\langle\{V^{\mu\nu},\ldots\}\rangle$ and $\langle V_{\mu\nu}V^{\mu\nu}\rangle\langle\chi_-\rangle$ when the Lorentz/parity structure permits it. Use one nominal $1/N_c$ suppression per extra trace only as generic OZI prior bookkeeping, then account separately for field/source normalization and fit the combinations visible in the target channels. This rule is separate from anomalous-source counting in powers or derivatives of $X_{TC}$. This option is appropriate if eta-prime/singlet-vector data are part of the accuracy goal, but it expands the parameter space and loses the current short-distance closure unless new matching constraints are supplied [@Kaiser:2000gs; @Roig:2013baa].
 
-**C. Full $U(3)$ source-function treatment.** Herrera-Siklody et al. define $X_{\rm HS}=\langle\log U\rangle+\hat\theta$ with $\hat\theta=i\theta_{\rm HS}$. Alda Eq. (III.14), using $U=u^2$ on a common logarithm branch, gives
+**C. Full $U(3)$ source-function treatment.** Denote Herrera-Siklody et al.'s invariant by $X_{\rm HS}=\langle\log U\rangle+\hat\theta$. Alda Eq. (III.14) instead defines
 
 $$
-X_{TC}=i\langle\log U\rangle-2c_G\frac{a}{f_a}
-=iX_{\rm HS}+\theta_{\rm HS}-2c_G\frac{a}{f_a}.
+X_{TC}=2i\left(\langle\log u\rangle+i c_G\frac{a}{f_a}\right).
 $$
 
-Only after explicitly choosing $\theta_{\rm HS}=2c_Ga/f_a$ does one obtain $X_{TC}=iX_{\rm HS}$, or $X_{\rm HS}=-iX_{TC}$. Since the source normalization and sign conventions of the two papers have not been independently matched here, this repository must state the chosen source identification whenever translating a Herrera-Siklody coefficient function; it must not assert an unconditional equality [@Herrera-Siklody:1996tqr; @Alda:2026bar]. A complete treatment allows parity-appropriate coefficient functions of $X_{TC}$ and independent derivative-$X_{TC}$ structures. Such terms can contribute to dynamical ALP amplitudes and are omitted in option A as an explicit large-$N_c$/operator truncation, not because topological observables are absent.
+On a common logarithm branch, $U=u^2$ relates the mesonic logarithms, but the recorded conventions do not derive the normalization or sign map between $\hat\theta$ and $c_Ga/f_a$. No exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is therefore claimed. Translating a Herrera-Siklody coefficient function requires an independently stated source map [@Herrera-Siklody:1996tqr; @Alda:2026bar]. A complete treatment allows parity-appropriate coefficient functions of Alda's $X_{TC}$ and independent derivative-$X_{TC}$ structures. Such terms can contribute directly to dynamical-ALP amplitudes and are omitted in option A as an explicit large-$N_c$/operator truncation, not because topological observables are absent.
 
 ## Mandatory versus optional at the current accuracy
 
@@ -34,7 +33,7 @@ Optional, and formally beyond the current leading-OZI model: independent singlet
 
 ## ALP/topological-source prescription
 
-For the baseline, use the current $u_\mu$ and $\chi_-$ insertions and do not invent a separate $aVV$ anomaly coefficient: the $c_i,d_i$ are independent homogeneous resonance couplings [@Ruiz-Femenia:2003jdx]. WZW with a declared Bardeen-type counterterm convention fixes the anomalous variation/current assignment, but invariant local odd-parity terms remain independent [@Bai:2025fvl; @Fujiwara:1984mp]. $X_{TC}$-dependent coefficient functions can generate dynamical ALP interactions even without a separately targeted topological observable; omitting them is the explicit option-A large-$N_c$/operator truncation [@Alda:2026bar; @Herrera-Siklody:1996tqr; @Kaiser:2000gs].
+For the baseline, use the current $u_\mu$ and $\chi_-$ insertions and do not invent a separate $aVV$ anomaly coefficient: the $c_i,d_i$ are independent homogeneous resonance couplings [@Ruiz-Femenia:2003jdx]. With external sources and current assignment fixed, WZW plus the declared Bardeen-type counterterm convention reproduces the corresponding anomalous variation; it does not determine finite invariant local odd-parity terms or resonance matching [@Bai:2025fvl; @Fujiwara:1984mp]. $X_{TC}$-dependent coefficient functions can generate dynamical ALP interactions even without a separately targeted topological observable; omitting them is the explicit option-A large-$N_c$/operator truncation [@Alda:2026bar; @Herrera-Siklody:1996tqr; @Kaiser:2000gs].
 
 ## Recommendation and unresolved issues
 

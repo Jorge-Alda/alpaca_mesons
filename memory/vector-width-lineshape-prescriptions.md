@@ -2,7 +2,7 @@
 title: Width and line-shape prescriptions for odd-parity antisymmetric-tensor RChT amplitudes
 status: mixed
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 bibtex_keys: [Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, Rosell:2004mn, Pich:2010sm, Hanhart:2012wi, GomezDumm:2013sib, Jamin:2000wn, Omnes:1958hv, Watson:1952ji, ParticleDataGroup:2024cfk]
 provenance: literature
 ---
@@ -30,14 +30,16 @@ $$
 
 Thus the width turns on as $(s-s_{th})^{3/2}$ for a two-pseudoscalar P wave. A three-pion channel has a three-body phase-space onset and cannot be represented by the same single $q^3$ factor. The $K^*$ channel is the $K\pi$ P wave; the rho channel is the pi pi P wave. These channel assignments are consistent with resonance chiral partial-wave treatments. [@Jamin:2000wn; @ParticleDataGroup:2024cfk]
 
-The useful dressed denominator is
+Choose the scalar line-shape convention
 
 $$
 D_X(s)=\frac{1}{M_{X,0}^2-s-\Sigma_X(s)},
 \qquad \operatorname{Im}\Sigma_X(s+i0)=+\sqrt{s}\,\Gamma_X(s),
 $$
 
-above an open cut, so that the denominator contains $-i\sqrt{s}\,\Gamma_X(s)$ for the stated $+i0$ convention. A constant-width Breit--Wigner replaces the self-energy by an imaginary constant, while a Dyson construction retains a renormalized complex $\Sigma_X(s)$ and its real part. [@Rosell:2004mn; @Pich:2010sm]
+above an open cut, so that the denominator contains $-i\sqrt{s}\,\Gamma_X(s)$ for the stated $+i0$ convention.
+
+Thus $D_X^{-1}(s+i0)=M_{X,0}^2-s-\operatorname{Re}\Sigma_X(s)-i\sqrt{s}\Gamma_X(s)$, and its resonance pole lies on the continuation with $\operatorname{Im}s_p<0$. This fixes the sign consistently within this record. Authors who define the denominator with $+\Sigma$ must correspondingly use the opposite sign for $\operatorname{Im}\Sigma$; mixing the two conventions would put the width or pole on the wrong side. A constant-width Breit--Wigner replaces the self-energy by an imaginary constant, while a Dyson construction retains a renormalized complex $\Sigma_X(s)$ and its real part. [@Rosell:2004mn; @Pich:2010sm]
 
 ## Prescription comparison
 
@@ -62,11 +64,27 @@ above an open cut, so that the denominator contains $-i\sqrt{s}\,\Gamma_X(s)$ fo
 
 For a photon represented through $F_{\mu\nu}$, each tree-level odd vertex is transverse in the photon momentum. A width insertion does not by itself destroy that algebraic transversality. The risk arises when vector-photon mixing, longitudinal/contact terms, or several diagrams are dressed differently: then the cancellations required by the complete current can fail. This is a derived implementation warning, not a claim that every energy-dependent width violates a Ward identity. The safe rule is to test $k_\mu\mathcal M^\mu=0$ after dressing the complete amplitude, and to preserve the low-energy normalization and local terms. [@Ecker:1989yg; @Rosell:2004mn]
 
-A stable vector is an asymptotic state. An unstable vector may be treated as external only within a controlled NWA, when it is narrow enough for the requested accuracy and the production point is sufficiently far from daughter thresholds. In that regime do not replace its external LSZ matrix element by a Breit--Wigner factor. For broad $\rho/K^*$ states or near daughter threshold, the physical prediction is an inclusive daughter-channel observable with a spectral integral. An internal vector carries a variable $s$ and may need a line shape whenever the integration samples a threshold, pole, or rapidly varying phase.
+A stable vector is an asymptotic state. In the Ecker tensor convention its normalization is expressed as the LSZ matrix element
+
+$$
+\langle0|V_{\mu\nu}(0)|V(p,\lambda)\rangle
+=i\frac{\sqrt{Z_V}}{M_V}
+\left(p_\mu\varepsilon_\nu^{(\lambda)}-p_\nu\varepsilon_\mu^{(\lambda)}\right),
+$$
+
+up to a fixed one-particle phase, with $Z_V$ the residue in the selected stable-pole convention and the tree-level canonical limit $Z_V=1$ [@Ecker:1988te; @Ecker:1989yg]. An unstable vector is not an exact LSZ state: an “external vector” prediction is an NWA state/projection only, controlled when the resonance is narrow at the requested accuracy and sufficiently far from daughter thresholds. In that regime do not attach a Breit--Wigner factor to the external matrix element. Broad $\rho/K^*$ states or production near a daughter threshold require an inclusive daughter-channel observable with a spectral integral. An internal vector carries variable $s$ and may need a line shape whenever integration samples a threshold, pole, or rapidly varying phase. Real-axis proximity to $M_V^2$ and proximity to the complex pole $s_p$ are distinct notions once the state is unstable; precision validity and coupled-resonance questions must use the latter.
 
 ## Recommendation and systematics
 
-**Practical baseline:** use a zero-width external-vector treatment only under the NWA conditions above. For internal rho and $K^*$ use running two-body P-wave widths with physical thresholds. For omega use a constant width only as a local/narrow-window approximation, otherwise an explicit $3\pi$ line shape. For phi use separate charged/neutral $K\bar K$ running widths plus $3\pi$ when resolving the pole. State the real-part convention, keep the odd-parity numerator and all local/contact terms consistent, and verify the photon Ward identity and soft/low-energy normalization for the full amplitude.
+**Practical baselines, separated by state:**
+
+- **External state:** use a zero-width on-shell projection only as the controlled NWA described above; otherwise predict the inclusive daughters.
+- **Internal $\rho$:** use a running $\pi\pi$ P-wave width with its physical threshold.
+- **Internal $K^*$:** use a running unequal-mass $K\pi$ P-wave width with its physical threshold; this is not the $\rho$ model with relabeled masses if additional channels are resolved.
+- **Internal $\omega$:** use a constant width only as a declared local/narrow-window approximation; use an explicit $3\pi$ line shape when the spectrum or threshold is resolved.
+- **Internal $\phi$:** near the pole, use separate charged- and neutral-$K\bar K$ running contributions and include $3\pi$ at the claimed precision; a constant width is only a local narrow-window alternative.
+
+For every internal prescription, state the real-part and self-energy sign convention, keep the odd-parity numerator and all local/contact terms consistent, and verify the photon Ward identity and soft/low-energy normalization for the full amplitude.
 
 **Systematic alternatives:** (1) narrow-state versus baseline comparison; (2) constant-width BW only as a deliberately local fit ansatz; (3) replace the baseline denominator by the renormalized Dyson-resummed RChT result for rho and K* when loop data and counterterms are available; (4) replace the relevant production form factor by a dispersive/Omnes representation, varying subtraction constants, phase continuation, and inelastic treatment. For phi, vary charged and neutral $K\bar K$ thresholds separately. For omega, vary the three-pion spectral model rather than pretending that its width has universal two-body P-wave kinematics.
 

@@ -1,0 +1,20 @@
+{
+  "bibtex_key": "ParticleDataGroup:2024cfk",
+  "source_location": "PDG 2024 omega(782) listing, p. 3, decay modes",
+  "units": {
+    "branching_fraction": "fraction"
+  },
+  "source_scale": "PDG prints (8.35 +/- 0.27) percent; CSV converts the percentage and error to fraction units by dividing by 100.",
+  "errors": "PDG quoted uncertainty; this is an averaged branching fraction.",
+  "likelihood": {
+    "schema_version": "odd-parity-likelihood-v1",
+    "family": "diagonal_gaussian",
+    "authorization": "User-authorized diagonal published errors where covariance is absent.",
+    "asymmetric_error_rule": "mean_absolute",
+    "diagonal_source_ids": [
+      "pdg-2024-omega-pi0-gamma-total"
+    ],
+    "nuisance_sources": [],
+    "nuisance_source_ids_excluded_from_diagonal": []
+  }
+}

@@ -2,7 +2,7 @@
 title: Diagnostic record for the pi0 K_L K_S vector-width slowdown
 status: mixed
 created: 2026-09-25
-updated: 2026-09-28
+updated: 2026-09-30
 bibtex_keys: [Alda:2026bar, Ecker:1989yg, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Scope and evidence status
 
-This record diagnoses the slowdown and records the implemented correction. The executable calculation is [`scripts/diagnose_pi0_kl_ks_vector_width.py`](../scripts/diagnose_pi0_kl_ks_vector_width.py). It imports the implementation through the `scripts.implementation` package namespace and never launches the nested production width integral.
+This record diagnoses the slowdown and records the implemented correction. The executable calculation is [`scripts/diagnose_pi0_kl_ks_vector_width.py`](../scripts/diagnose_pi0_kl_ks_vector_width.py). For direct file invocation it adds the repository root to `sys.path`, then imports through the `scripts.implementation` package namespace; it does not use legacy top-level `implementation.*` imports and never launches the nested production width integral.
 
 The evidence status is:
 
@@ -118,4 +118,4 @@ Run:
 git diff --check
 ```
 
-The diagnostic asserts the exact SymPy cancellation, empty physical vector models and pre-kinematic exact-zero calls for default complex $\epsilon_K$, retained nonzero definite-flavor models, exact numerical zero for $\epsilon_K=0$, and one-panel convergence of the bounded integral. Package-form test and diagnostic results are generated with the repository `.venv`; no top-level-module import workaround is required. On 2026-09-28, all 74 implementation tests passed and the direct diagnostic completed with all assertions passed.
+The diagnostic asserts the exact SymPy cancellation, empty physical vector models and pre-kinematic exact-zero calls for default complex $\epsilon_K$, retained nonzero definite-flavor models, exact numerical zero for $\epsilon_K=0$, and one-panel convergence of the bounded integral. Package-form test and diagnostic results are generated with the repository `.venv`; the direct script invocation uses only the repository-root path insertion documented above. The last recorded full run, on 2026-09-28, had all 74 implementation tests and the direct diagnostic passing; this task changes documentation only and does not relabel that run as a 2026-09-30 validation.

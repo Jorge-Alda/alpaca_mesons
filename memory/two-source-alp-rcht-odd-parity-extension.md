@@ -2,7 +2,7 @@
 title: Two-source ALP anomaly seed and odd-parity RChT extension
 status: derived
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 bibtex_keys: [Alda:2026bar, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
@@ -43,7 +43,7 @@ $$
 \approx\frac{f_\pi}{f_a}m_i^2.
 $$
 
-Thus the excluded fractional neighborhoods scale as $f_\pi/f_a$ and are negligible in generic broad scans when $f_a\gg f_\pi$. A finite caller-supplied $\mathbb M_a^{-1}(C)$ is valid in this domain. Exact coupled diagonalization, and complex propagators when unstable states are deliberately resolved, are needed only for tuned or resolved near-degeneracies with nonzero overlap. This is a local domain caveat, not a global implementation blocker, and matrix magnitude alone is not a reason for a code warning [@Alda:2026bar].
+Thus the excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution when $f_a\gg f_\pi$, but the inequality is a local, pointwise validity condition. A finite caller-supplied $\mathbb M_a^{-1}(C)$ is necessary but not sufficient: each scan point must be tested with its exact overlap, and a violation must be masked/flagged or treated with coupled mixing. Matrix magnitude alone is not the test. For stable or sufficiently narrow pseudoscalars, a retained violating point requires coupled diagonalization. For unstable states, real-mass proximity and complex-pole proximity are distinct, and the relevant replacement is a coupled complex-propagator/pole analysis [@Alda:2026bar].
 
 ## 1. Symmetric two-source anomaly seed
 

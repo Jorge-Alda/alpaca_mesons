@@ -1,0 +1,41 @@
+{
+  "bibtex_key": "BaBar:2004ytv",
+  "source_location": "Table sumtab, arXiv source paper.tex, pp. 25-26",
+  "units": {
+    "sqrt_s": "GeV",
+    "efficiency": "%",
+    "efficiency_error": "%",
+    "dL": "nb^-1",
+    "sigma": "nb"
+  },
+  "errors": "The CSV retains Ncorr statistical/systematic errors, efficiency and its quoted uncertainty, and sigma statistical/systematic errors. For sigma, the source assigns the systematic component to event counts, detection efficiencies, and radiative correction, and states that mass-bin systematic errors are fully correlated. The 1.2% luminosity nuisance is retained separately; it is quoted explicitly in the fitted-product uncertainty discussion, not folded into the per-bin sigma systematic column.",
+  "covariance_assumption": "Only the published sigma statistical error is diagonal. The published sigma systematic vector is fully correlated across mass bins and is represented by one additive standardized nuisance; luminosity is a separate multiplicative nuisance.",
+  "likelihood": {
+    "schema_version": "odd-parity-likelihood-v1",
+    "family": "diagonal_gaussian",
+    "authorization": "User-authorized diagonal published errors where covariance is absent.",
+    "asymmetric_error_rule": "mean_absolute",
+    "diagonal_source_ids": [
+      "babar-2004-statistical"
+    ],
+    "nuisance_sources": [
+      {
+        "source_id": "babar-2004-mass-bin-systematic",
+        "response": "additive",
+        "response_column": "sigma_syst_nb",
+        "unit": "nb",
+        "predictor_connection": "absent"
+      },
+      {
+        "source_id": "babar-2004-luminosity-normalization",
+        "fraction": 0.012,
+        "response": "multiplicative",
+        "predictor_connection": "absent"
+      }
+    ],
+    "nuisance_source_ids_excluded_from_diagonal": [
+      "babar-2004-mass-bin-systematic",
+      "babar-2004-luminosity-normalization"
+    ]
+  }
+}

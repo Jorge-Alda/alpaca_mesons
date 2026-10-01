@@ -18,6 +18,8 @@ from scripts.implementation.odd_parity_rcht import (
     VJPCouplings,
     VVPCouplings,
     anomaly_seed,
+    fixed_ope_prior,
+    fixed_ope_prior_scales,
     ideal_vector_generators,
     odd_parity_flavor_kernels,
     ope_linear_system,
@@ -36,7 +38,7 @@ from scripts.implementation.odd_parity_rcht import (
 class FlavorKernelTests(unittest.TestCase):
     def setUp(self):
         self.m_a_inverse_C = np.diag([0.2, -0.1, 0.3])
-        self.cap = np.array([[0.4, 0.1j, 0.0], [-0.1j, -0.2, 0.0], [0.0, 0.0, 0.1]])
+        self.cap = np.array([[0.4, 0.1j, 0.0], [-0.1j, -0.2, 0.0], [0.0, 0.0, 0.1]]) # Why a charge violating coupling matrix????
         self.mass = np.diag([0.01, 0.02, 0.4])
         self.spurions = ALPFlavorSpurions(
             m_a_inverse_C=self.m_a_inverse_C,
@@ -174,11 +176,49 @@ class OPETests(unittest.TestCase):
         point[9] = b[4]
         couplings = OddParityCouplings(VJPCouplings(*point[:7]), VVPCouplings(*point[7:]))
         np.testing.assert_allclose(ope_residuals(couplings, self.parameters).residuals, 0.0, atol=2e-17)
-        for direction in (3, 6, 10):
-            shifted = point.copy(); shifted[direction] += 1.7
-            np.testing.assert_allclose(a @ shifted, b, atol=2e-17)
-        shifted = point.copy(); shifted[7] += 8.0; shifted[8] -= 1.0
-        np.testing.assert_allclose(a @ shifted, b, atol=2e-17)
+        null_directions = (
+            np.array([1, 1, -0.25, 0, 0, 0, 0, 0, 0, 0, 0]),
+            np.array([0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]),
+            np.array([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]),
+            np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]),
+            np.array([0, 0, 0, 0, 0, 0, 0, 8, -1, 0, 0]),
+            np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]),
+        )
+        self.assertEqual(np.linalg.matrix_rank(np.stack(null_directions)), 6)
+        for direction in null_directions:
+            np.testing.assert_allclose(a @ (point + 1.7 * direction), b, atol=2e-17)
+
+    def test_fixed_prior_numerical_reference_and_scaling(self):
+        parameters = OPEParameters(3, 0.770, np.sqrt(2.0) * 0.092, 0.092)
+        expected_scales = np.array([
+            0.01987533408744907,
+            0.01987533408744907,
+            0.01987533408744907,
+            0.29134790486234543,
+            0.22884790486234544,
+        ])
+        expected_sigmas = np.array([
+            0.006625111362483023,
+            0.006625111362483023,
+            0.006625111362483023,
+            0.09711596828744847,
+            0.07628263495411514,
+        ])
+        np.testing.assert_allclose(fixed_ope_prior_scales(parameters), expected_scales, rtol=2e-15)
+        baseline = fixed_ope_prior(parameters)
+        np.testing.assert_allclose(np.sqrt(np.diag(baseline.covariance)), expected_sigmas, rtol=2e-15)
+        tight = fixed_ope_prior(parameters, truncation_fraction=0.2)
+        broad = fixed_ope_prior(parameters, truncation_fraction=0.5)
+        np.testing.assert_allclose(np.sqrt(np.diag(tight.covariance)), 0.2 * expected_scales)
+        np.testing.assert_allclose(np.sqrt(np.diag(broad.covariance)), 0.5 * expected_scales)
+        self.assertTrue(np.all(np.linalg.eigvalsh(fixed_ope_prior(parameters, rho=0.5).covariance) > 0.0))
+
+    def test_fixed_prior_correlation_spd_interval(self):
+        for rho in (-0.25, 1.0, -0.3, 1.2):
+            with self.assertRaisesRegex(ValueError, "-1/4 < rho < 1"):
+                fixed_ope_prior(self.parameters, rho=rho)
+        with self.assertRaisesRegex(ValueError, "positive"):
+            fixed_ope_prior(self.parameters, truncation_fraction=0.0)
 
     def test_prior_manual_chi2_and_rejections(self):
         covariance = np.diag([1.0, 2.0, 3.0, 4.0, 5.0])
