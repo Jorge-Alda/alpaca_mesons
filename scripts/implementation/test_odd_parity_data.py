@@ -11,7 +11,6 @@ from unittest.mock import patch
 
 import numpy as np
 
-from scripts.implementation.correlated_fit import PredictorRegistry
 from scripts.implementation.odd_parity_data import (
     CANONICAL_COUPLING_ORDER,
     DATA_DIRECTORY,
@@ -27,7 +26,6 @@ from scripts.implementation.odd_parity_data import (
 )
 from scripts.implementation.odd_parity_rcht import OPEParameters, fixed_ope_prior, ope_linear_system
 from scripts.implementation.radiative_odd_parity import (
-    OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID,
     OmegaPiGammaInputs,
     omega_pi_gamma_branching_fraction_predictor,
 )
@@ -85,14 +83,14 @@ class OddParityDataTests(unittest.TestCase):
         np.testing.assert_array_equal(observation.values, [0.0835])
         np.testing.assert_allclose(observation.covariance, [[0.0027**2]])
         self.assertEqual(observation.unit, "fraction")
-        self.assertEqual(observation.diagonal_source_ids, ("pdg-2024-omega-pi0-gamma-total",))
-        self.assertEqual(observation.predictor_id, OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID)
+        self.assertEqual(
+            load_omega_pi0_gamma_table().metadata["likelihood"]["diagonal_source_ids"],
+            ("pdg-2024-omega-pi0-gamma-total",),
+        )
+        self.assertIs(observation.predict, omega_pi_gamma_branching_fraction_predictor)
         self.assertEqual(observation.config["GammaOmegaTotal"], total)
-        registry = PredictorRegistry()
-        registry.register(OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID,
-                          omega_pi_gamma_branching_fraction_predictor)
         parameters = {name: 0.01 for name in CANONICAL_COUPLING_ORDER}
-        self.assertEqual(registry.predict(observation.predictor_id, parameters, observation.config).shape, (1,))
+        self.assertEqual(observation.predict(parameters, observation.config).shape, (1,))
         with self.assertRaisesRegex(ValueError, "positive"):
             load_omega_pi0_gamma_observation(self.inputs, 0.0)
 
@@ -109,7 +107,7 @@ class OddParityDataTests(unittest.TestCase):
         problem = build_first_release_fit_problem(self.inputs, 0.00849, self.ope, starts, bounds)
         self.assertEqual(len(problem.observations), 1)
         self.assertEqual(len(problem.ope_constraints), 1)
-        self.assertIn("zero cross-covariance", problem.block_independence_assumption)
+        self.assertIn("zero cross-covariance", problem.block_independence)
         self.assertEqual(problem.ope_design_rank, 5)
         self.assertEqual(problem.ope_rank_deficiency, 6)
         with self.assertRaisesRegex(ValueError, "exactly"):

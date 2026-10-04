@@ -2,7 +2,7 @@
 title: Validated odd-parity data loaders and first-release problem
 status: mixed
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-04
 bibtex_keys: [ParticleDataGroup:2024cfk, CLEO:1997fho, BaBar:2009rrj, BaBar:2004ytv, KLOE:2003kas, Ruiz-Femenia:2003jdx]
 provenance: numerical-computation
 ---
@@ -44,13 +44,13 @@ $$
 \qquad \sigma=0.0027,
 $$
 
-from the PDG listing [@ParticleDataGroup:2024cfk], with diagonal variance $0.0027^2$ and predictor `rcht.omega_pi0_gamma.branching_fraction`. The predictor divides the unchanged partial-width prediction by caller-supplied positive $\Gamma_\omega^{\rm total}$. The fixed-OPE adapter combines `ope_linear_system` and `fixed_ope_prior` without changing the canonical coupling ordering.
+from the PDG listing [@ParticleDataGroup:2024cfk], with diagonal variance $0.0027^2$ and the `omega_pi_gamma_branching_fraction_predictor` callable attached directly to the `Observation`. The predictor divides the unchanged partial-width prediction by caller-supplied positive $\Gamma_\omega^{\rm total}$. Its provenance source ID `pdg-2024-omega-pi0-gamma-total` remains recorded in the checksum-verified sidecar metadata rather than in the fit object, whose API carries no source-ID bookkeeping. The fixed-OPE adapter combines `ope_linear_system` and `fixed_ope_prior` without changing the canonical coupling ordering. The API names used here are defined in [the fit-infrastructure record](correlated-odd-parity-fit-infrastructure.md); the optimizer is fixed by [the optimizer-choice record](odd-parity-fit-optimizer-choice.md).
 
 The first-release builder returns a `FitProblem` containing this one observation and the fixed OPE block, with an explicit zero-cross-covariance declaration. It does not minimize anything. The OPE matrix has rank five and leaves rank deficiency six in the eleven-dimensional parameter space. The connected branching datum does not justify a global-fit claim; no physical fit has been run.
 
 # Remaining readiness and verification
 
-The CLEO and BaBar transition-form-factor tables, BaBar three-pion spectrum, and KLOE fit table have validated loaders only. They deliberately do not create `ObservationGroup` objects because their physical predictors are absent. The BaBar sidecars record unconnected multiplicative source IDs and fractions: $3.0\%$ cross-section normalization, $2.3\%$ form-factor normalization, and $1.2\%$ luminosity normalization. The BaBar three-pion sidecar also records its known fully correlated mass-bin systematic as one unconnected additive nuisance with response vector `sigma_syst_nb` in nb; only its statistical error is diagonal. Other radiative channels also remain blocked by flavor-resolved matching. HLS is excluded.
+The CLEO and BaBar transition-form-factor tables, BaBar three-pion spectrum, and KLOE fit table have validated loaders only. They deliberately do not create `Observation` objects because their physical predictors are absent. The BaBar sidecars record unconnected multiplicative source IDs and fractions: $3.0\%$ cross-section normalization, $2.3\%$ form-factor normalization, and $1.2\%$ luminosity normalization. The BaBar three-pion sidecar also records its known fully correlated mass-bin systematic as one unconnected additive nuisance with shift vector `sigma_syst_nb` in nb; only its statistical error is diagonal. Other radiative channels also remain blocked by flavor-resolved matching. HLS is excluded.
 
 Verification commands are:
 

@@ -2,7 +2,7 @@
 
 Only the PDG omega branching fraction is connected to a predictor.  The other
 loaders intentionally return provenance-preserving tables without constructing
-observation groups.
+observations.
 
 Example:
     .venv/bin/python -m unittest scripts.implementation.test_odd_parity_data
@@ -21,11 +21,11 @@ from typing import Any, Mapping
 
 import numpy as np
 
-from .correlated_fit import FitProblem, FixedOPEConstraint, ObservationGroup, ParameterSpec
+from .correlated_fit import FitProblem, Observation, OPEConstraint, Parameter
 from .odd_parity_rcht import OPEParameters, OPE_LABELS, fixed_ope_prior, ope_linear_system
 from .radiative_odd_parity import (
-    OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID,
     OmegaPiGammaInputs,
+    omega_pi_gamma_branching_fraction_predictor,
 )
 
 
@@ -232,7 +232,7 @@ def load_omega_pi0_gamma_observation(
     inputs: OmegaPiGammaInputs,
     GammaOmegaTotal: float,
     directory: Path = DATA_DIRECTORY,
-) -> ObservationGroup:
+) -> Observation:
     """Connect the single PDG branching fraction to the RChT predictor."""
     if not isinstance(inputs, OmegaPiGammaInputs):
         raise TypeError("inputs must be OmegaPiGammaInputs")
@@ -242,9 +242,9 @@ def load_omega_pi0_gamma_observation(
     config = {name: getattr(inputs, name) for name in ("e", "F", "FV", "MV", "Momega", "mpi")}
     config["GammaOmegaTotal"] = total_width
     error = float(row["stat_or_total_error"])
-    return ObservationGroup(
-        [float(row["value"])], [[error**2]], OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID,
-        config, unit="fraction", diagonal_source_ids=("pdg-2024-omega-pi0-gamma-total",),
+    return Observation(
+        [float(row["value"])], [[error**2]], omega_pi_gamma_branching_fraction_predictor,
+        config, unit="fraction",
     )
 
 
@@ -252,11 +252,11 @@ def build_fixed_ope_constraint(
     parameters: OPEParameters,
     truncation_fraction: float | None = None,
     rho: float = 0.0,
-) -> FixedOPEConstraint:
+) -> OPEConstraint:
     """Adapt the canonical ``ope_linear_system`` and fixed prior to a fit block."""
     matrix, target = ope_linear_system(parameters)
     prior = fixed_ope_prior(parameters, truncation_fraction=truncation_fraction, rho=rho)
-    return FixedOPEConstraint(CANONICAL_COUPLING_ORDER, matrix, target, prior.covariance, OPE_LABELS)
+    return OPEConstraint(CANONICAL_COUPLING_ORDER, matrix, target, prior.covariance, OPE_LABELS)
 
 
 def build_first_release_fit_problem(
@@ -280,12 +280,12 @@ def build_first_release_fit_problem(
         bounds = parameter_bounds[name]
         if not isinstance(bounds, (tuple, list)) or len(bounds) != 2:
             raise ValueError(f"bounds for {name} must be a (lower, upper) pair")
-        specs.append(ParameterSpec(name, parameter_starts[name], bounds[0], bounds[1]))
+        specs.append(Parameter(name, parameter_starts[name], bounds[0], bounds[1]))
     return FitProblem(
         tuple(specs),
         (load_omega_pi0_gamma_observation(inputs, GammaOmegaTotal, directory),),
         ope_constraints=(build_fixed_ope_constraint(ope_parameters, truncation_fraction, rho),),
-        block_independence_assumption=(
+        block_independence=(
             "The PDG omega branching-fraction block and fixed OPE theory block have zero cross-covariance."
         ),
     )

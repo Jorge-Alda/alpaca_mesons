@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-04
 bibtex_keys: []
 provenance: assumption
 ---
@@ -21,3 +21,4 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [odd-parity-data-implementation.md](odd-parity-data-implementation.md) — validated data loaders and readiness.
 - [odd-parity-global-fit-dataset-plan.md](odd-parity-global-fit-dataset-plan.md) — staged global-fit dataset plan.
 - [correlated-odd-parity-fit-infrastructure.md](correlated-odd-parity-fit-infrastructure.md) — fixed-prior correlated fit infrastructure.
+- [odd-parity-fit-optimizer-choice.md](odd-parity-fit-optimizer-choice.md) — pure-scipy optimizer decision for the coupled fit.

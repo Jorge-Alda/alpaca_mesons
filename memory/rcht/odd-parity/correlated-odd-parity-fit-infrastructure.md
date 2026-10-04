@@ -2,7 +2,7 @@
 title: Fixed-prior correlated odd-parity fit infrastructure
 status: mixed
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-04
 bibtex_keys: [Alda:2026bar, Ruiz-Femenia:2003jdx]
 provenance: numerical-computation
 ---
@@ -47,31 +47,32 @@ Sensitivity choices are $\tau=0.2,0.5$ and $\rho=0.5$, always fixed before fitti
 
 ## Generic fit method and API
 
-[`correlated_fit.py`](../../../scripts/implementation/correlated_fit.py) provides frozen `ParameterSpec`, `NuisanceEffect`, `ObservationGroup`, `ParameterPrior`, `FixedOPEConstraint`, `FitProblem`, `FitResult`, and diagnostics records. Every covariance is finite, real, exactly symmetric, and positive definite; complex arrays and empty observation vectors are rejected. Each residual block is whitened with its fixed lower Cholesky factor, and `scipy.optimize.least_squares` minimizes the concatenated residual with ordinary quadratic loss. It reports separate data, parameter-prior, and OPE $\chi^2$ components; data-only and full Jacobian rank, singular values, null vectors, and condition number; and active bounds.
+The optimizer choice and its justification are recorded separately in [the optimizer-choice record](odd-parity-fit-optimizer-choice.md).
+
+[`correlated_fit.py`](../../../scripts/implementation/correlated_fit.py) provides frozen `Parameter`, `Nuisance`, `Observation`, `OPEConstraint`, `FitProblem`, `FitResult`, `RankInfo`, and `Chi2` records. Every covariance is finite, real, exactly symmetric, and positive definite; complex arrays and empty observation vectors are rejected. Each residual block is whitened with its fixed lower Cholesky factor, and `scipy.optimize.least_squares` minimizes the concatenated residual with ordinary quadratic loss. It reports separate data, nuisance, and OPE $\chi^2$ components; data-only and full Jacobian rank, singular values, null directions, and condition number; and active bounds.
 
 The stepwise numerical method is:
 
-1. Supply parameter starts/bounds and observation values/covariances in each observable's own consistent units. Supply any parameter prior in the corresponding parameter units. For the odd-parity OPE block, obtain $A,b$ from the [numerical kernel](odd-parity-rcht-numerical-kernel.md) and the fixed covariance above; these are the only physics-specific inputs to the generic layer.
-2. Resolve each serialized predictor ID through the runtime registry and evaluate its prediction in the observation ordering.
-3. Form prediction-minus-observation, parameter-minus-mean, and $A\boldsymbol\theta-b$ residual blocks. Whiten each with its own precomputed Cholesky factor. If there is more than one observation, prior, or OPE covariance block in total, `FitProblem.block_independence_assumption` must explicitly state the assumption that cross-block covariances vanish. The implementation does not infer or represent cross-block covariance silently; correlated quantities must be assembled into one covariance block or their factorization must be declared.
-4. For each declared standardized nuisance $\eta_s\sim\mathcal N(0,1)$, first apply multiplicative responses $\mu_i\exp[\log(1+f_s)\eta_s]$, then additive responses $a_{is}\eta_s$. Validate the nuisance parameter and standardized prior, shared source-to-parameter naming, vector lengths and represented units, and disjoint diagonal/nuisance source IDs.
+1. Supply parameter starts/bounds and observation values/covariances in each observable's own consistent units. Supply any declared standardized nuisance in its response unit. For the odd-parity OPE block, obtain $A,b$ from the [numerical kernel](odd-parity-rcht-numerical-kernel.md) and the fixed covariance above; these are the only physics-specific inputs to the generic layer.
+2. Evaluate each observation's `predict(parameters, config)` callable in the observation ordering. Predictors are ordinary two-argument callables held directly by `Observation`; there is no registry, no predictor-ID indirection, and no serialized problem form. The `config` mapping carries the fixed observable inputs (masses, decay constants, total widths) and is validated by the predictor itself.
+3. Form prediction-minus-observation, $A\boldsymbol\theta-b$, and nuisance residual blocks. Whiten each covariance-bearing block with its own precomputed Cholesky factor, computed once before minimization. If there is more than one residual block in total, `FitProblem.block_independence` must explicitly state the assumption that cross-block covariances vanish. The implementation does not infer or represent cross-block covariance silently; correlated quantities must be assembled into one covariance block or their factorization must be declared.
+4. For each declared standardized nuisance $\eta_s\sim\mathcal N(0,1)$, first apply multiplicative responses $\mu_i\exp[\log(1+f_s)\eta_s]$, then additive responses $a_{is}\eta_s$. The $\mathcal N(0,1)$ prior is implicit in the `Nuisance` declaration and enters the objective as a residual row equal to $\eta_s$, so no separate parameter-prior block exists. Validate the nuisance parameter name, shared source-to-parameter naming, shift length, and represented units.
 5. Minimize the concatenated residual and diagnose the returned finite-difference Jacobian without changing any covariance.
-6. Return fitted parameter values, residuals, convergence metadata, component $\chi^2$, data-only/full identifiability diagnostics, active bounds, and the exact serialized-problem digest.
+6. Return fitted parameter values, residuals, convergence metadata, component $\chi^2$, data-only/full identifiability diagnostics, active bounds, and the data-only OPE rank deficiency.
 
-Predictors are registered at runtime by stable string ID. Problems store only IDs and finite JSON configurations, never callables. `serialize_fit_problem` emits deterministic canonical JSON with schema `correlated-fit-problem-v3`, including nuisance metadata, source IDs, represented units, and the block-independence declaration or `null` for a single block; `fit_problem_digest` computes its SHA256 digest. No implicit diagonalization of covariance, undeclared block independence, robust loss, jitter, or pseudoinverse fallback exists.
+No implicit diagonalization of covariance, undeclared block independence, robust loss, jitter, or pseudoinverse fallback exists.
 
 Minimal toy invocation:
 
 ```python
-registry = PredictorRegistry()
-registry.register("toy.affine", lambda p, c: p["a"] + p["b"] * np.asarray(c["x"]))
 problem = FitProblem(
-    parameters=(ParameterSpec("a", 0.0), ParameterSpec("b", 1.0)),
-    observations=(ObservationGroup([1.0, 3.0], [[1.0, 0.2], [0.2, 1.0]],
-                                   "toy.affine", {"x": [0.0, 1.0]}),),
-    block_independence_assumption=None,  # one covariance block only
+    parameters=(Parameter("a", 0.0), Parameter("b", 1.0)),
+    observations=(Observation([1.0, 3.0], [[1.0, 0.2], [0.2, 1.0]],
+                              lambda p, c: p["a"] + p["b"] * np.asarray(c["x"]),
+                              {"x": [0.0, 1.0]}),),
+    block_independence=None,  # one covariance block only
 )
-result = fit_correlated(problem, registry)
+result = fit_correlated(problem)
 ```
 
 This is an infrastructure example only; it contains no physics data or fitted $c_i,d_i$ values.
@@ -86,7 +87,9 @@ Run:
 .venv/bin/python -m unittest discover -s scripts/implementation -t .
 ```
 
-The OPE tests reproduce the numerical standard deviations, check tight/broad scaling, enforce the strict equicorrelation SPD interval, and expose all six exact null directions of the $5\times11$ OPE system. Toy-fit tests compare a nonzero correlated residual directly with a lower-Cholesky solve, verify $J\boldsymbol n\simeq0$ for reported null vectors, and test prior and OPE components. Nuisance tests compare manual $\chi^2$, verify the $\eta=0$ and $\eta=1$ responses, positivity and the $O(f^2)$ difference from a linear response, and reject missing priors/parameters, inconsistent shared names, source double counting, and wrong additive lengths/units.
+The OPE tests reproduce the numerical standard deviations, check tight/broad scaling, enforce the strict equicorrelation SPD interval, and expose all six exact null directions of the $5\times11$ OPE system. Toy-fit tests compare a nonzero correlated residual directly with a lower-Cholesky solve, verify $J\boldsymbol n\simeq0$ for reported null directions, reproduce the OPE residual against an explicit Cholesky solve, and account for every $\chi^2$ component against the total. Nuisance tests compare manual $\chi^2$ including the $\eta^2$ prior row, verify the $\eta=0$ and $\eta=1$ responses, positivity, the $O(f^2)$ deviation coefficient $\eta(\eta-1)/2$ from a linear response, and reject non-SPD or non-symmetric covariance, out-of-bounds starts, undeclared parameter names, double-declared nuisance sources, and wrong shift lengths or units.
+
+The fit test modules import `scripts.implementation`, whose package `__init__` eagerly pulls in `pseudoscalar_diag` (external `alpaca` dependency) and `make_plots_a3P`. Those modules are unrelated to the fit, so the four fit test modules are run by loading them against the package directory without executing that `__init__`. This is a known environment limitation, not a property of the fit code.
 
 ## Readiness matrix
 

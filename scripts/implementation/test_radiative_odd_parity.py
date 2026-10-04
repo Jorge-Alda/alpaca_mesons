@@ -10,11 +10,8 @@ from dataclasses import FrozenInstanceError, replace
 
 import numpy as np
 
-from scripts.implementation.correlated_fit import PredictorRegistry
 from scripts.implementation.odd_parity_rcht import OddParityCouplings, VJPCouplings, VVPCouplings
 from scripts.implementation.radiative_odd_parity import (
-    OMEGA_PI_GAMMA_PREDICTOR_ID,
-    OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID,
     OmegaPiGammaInputs,
     G_omega_pi_gamma,
     constrained_G_omega_pi_gamma,
@@ -99,15 +96,13 @@ class OmegaPiGammaTests(unittest.TestCase):
             omega_pi_gamma_width(scaled, self.inputs), scale**2 * omega_pi_gamma_width(self.couplings, self.inputs)
         )
 
-    def test_predictor_registry_shape_and_validation(self):
+    def test_predictor_shape_and_validation(self):
         parameters = {
             **{f"c{i}": value for i, value in enumerate(self.couplings.vjp.as_array(), 1)},
             **{f"d{i}": value for i, value in enumerate(self.couplings.vvp.as_array(), 1)},
         }
         config = {name: getattr(self.inputs, name) for name in ("e", "F", "FV", "MV", "Momega", "mpi")}
-        registry = PredictorRegistry()
-        registry.register(OMEGA_PI_GAMMA_PREDICTOR_ID, omega_pi_gamma_width_predictor)
-        prediction = registry.predict(OMEGA_PI_GAMMA_PREDICTOR_ID, parameters, config)
+        prediction = omega_pi_gamma_width_predictor(parameters, config)
         self.assertEqual(prediction.shape, (1,))
         self.assertFalse(prediction.flags.writeable)
         self.assertEqual(prediction[0], omega_pi_gamma_width(self.couplings, self.inputs))
@@ -122,13 +117,8 @@ class OmegaPiGammaTests(unittest.TestCase):
 
         total_width = 0.00849
         branching_config = {**config, "GammaOmegaTotal": total_width}
-        registry.register(
-            OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID,
-            omega_pi_gamma_branching_fraction_predictor,
-        )
-        branching = registry.predict(
-            OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID, parameters, branching_config
-        )
+        branching = omega_pi_gamma_branching_fraction_predictor(parameters, branching_config)
+        self.assertEqual(branching.shape, (1,))
         np.testing.assert_allclose(branching, [omega_pi_gamma_width(self.couplings, self.inputs) / total_width])
         self.assertFalse(branching.flags.writeable)
         with self.assertRaisesRegex(ValueError, "GammaOmegaTotal"):

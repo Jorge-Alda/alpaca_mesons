@@ -18,8 +18,6 @@ import numpy as np
 from .odd_parity_rcht import OddParityCouplings, VJPCouplings, VVPCouplings
 
 
-OMEGA_PI_GAMMA_PREDICTOR_ID = "rcht.omega_pi0_gamma.width"
-OMEGA_PI_GAMMA_BRANCHING_FRACTION_PREDICTOR_ID = "rcht.omega_pi0_gamma.branching_fraction"
 Z_OMEGA = 1.0
 _PARAMETER_NAMES = tuple(f"c{i}" for i in range(1, 8)) + tuple(f"d{i}" for i in range(1, 5))
 _CONFIG_NAMES = ("e", "F", "FV", "MV", "Momega", "mpi")
