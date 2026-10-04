@@ -27,4 +27,7 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [kloe-phi-three-pion-fit-blocker.md](kloe-phi-three-pion-fit-blocker.md) — why the held KLOE $\phi\to3\pi$ table cannot constrain $d_1,d_2$ at tree level.
 - [dispersive-three-pion-treatment-plan.md](dispersive-three-pion-treatment-plan.md) — scoped dispersive $V\to3\pi$ project (c) and staged alternative (c').
 - [radiative-channel-saturation-probe.md](radiative-channel-saturation-probe.md) — rank-is-not-information criterion and the cheap radiative probe.
-- [radiative-flavor-algebra.md](radiative-flavor-algebra.md) — SymPy flavor algebra: which spurion combinations each radiative channel probes, and their redundancy.
+- [radiative-sm-flavor-algebra.md](radiative-sm-flavor-algebra.md) — SM flavor algebra for $V\to P\gamma$ and $P\to V\gamma$: charge and quark-mass weights, per-channel $F_Q,F_M$; every channel distinct.
+- [radiative-rank-saturation.md](radiative-rank-saturation.md) — normalization-free rank and saturation measurement: ten radiative channels add only two directions beyond the OPE block; four unprobed directions inherited from the OPE block alone; mixing scan and two-body V-to-Vprime P tests; verdict on the probe.
+- [radiative-width-kinematics.md](radiative-width-kinematics.md) — per-operator kinematic factors for the direct and VVP-exchange operators, the single Lorentz invariant, the uniqueness selection rule, the assembled per-channel width, and reproduction of the published $\omega\to\pi^0\gamma$ bracket.
+- [next-steps.md](next-steps.md) — start-of-session map: what is established, the three open items, and the concrete next steps on space-like transition form factors and $P\to\gamma\gamma$.

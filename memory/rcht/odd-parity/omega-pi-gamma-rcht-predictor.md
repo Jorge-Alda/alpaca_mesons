@@ -102,5 +102,7 @@ Tests independently transcribe Eq. (27), build a point satisfying all five OPE r
 
 - **Literature assumptions:** ideal $\omega$--$\phi$ mixing, one common $M_V$, tree-level narrow-width on-shell kinematics, and canonical $Z_\omega=1$ [@Ruiz-Femenia:2003jdx].
 - **Implementation scope:** the single-resonance antisymmetric-tensor RChT formula is used; HLS is not used.
-- **No silent generalization:** there is no SU(3) or channel substitution. The source explicitly warns that $K^*\to K\gamma$ and $\phi\to\eta\gamma$ require flavor-resolved short-distance matching [@Ruiz-Femenia:2003jdx]. Other $V\to P\gamma$ predictors remain blocked until that matching is implemented.
+- **No silent generalization:** there is no SU(3) or channel substitution, and none may be inferred from Eq. (27).
+- **Two distinct obstacles, 2026-10-04.** They must not be conflated. Flavor-resolved short-distance matching [@Ruiz-Femenia:2003jdx] is required only for the *OPE-eliminated numerical prediction*. For the *uneliminated* couplings used by the fit no new matching is needed.
+- Both halves needed for the uneliminated widths are now available: the per-channel flavor algebra in [the SM flavor-algebra record](radiative-sm-flavor-algebra.md), and the per-operator kinematic factors in [the width-kinematics record](radiative-width-kinematics.md), which reproduce the bracket of Eq. (27) exactly in magnitude. A new channel is obtained by multiplying the two, not by substituting flavor invariants into Eq. (27).
 - **Data boundary:** this predictor module itself introduces no experimental value or likelihood; the separate validated loader connects the PDG datum. No physical fit has yet been run because the first-release problem remains rank deficient.

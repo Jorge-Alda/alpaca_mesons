@@ -107,6 +107,22 @@ reported as saturated and the multi-body dispersive treatment
 ([the treatment plan](dispersive-three-pion-treatment-plan.md)) becomes the only
 remaining route.
 
+> **Status of the flavor-level prior, 2026-10-04.** The prior stated below was
+> built on an incorrect flavor algebra and no longer stands. The correct algebra is
+> in [the SM flavor-algebra record](radiative-sm-flavor-algebra.md): **every**
+> radiative channel here, including the kaon channels, has a distinct flavor
+> invariant, so there is no flavor-level reason to expect degeneracy and the
+> probe below must be re-scoped rather than dismissed.
+>
+> **The probe has been run, in its normalization-free half.**
+> [The rank and saturation record](radiative-rank-saturation.md) measures it: the
+> ten radiative channels raise the rank only from 5 to 7 of 11 (8 under the
+> alternative sign convention), so **two of ten channels are informative** and the
+> rest are exactly saturated. Four directions are never reached: a threefold
+> degeneracy among $(c_2,c_4,c_5,c_6,c_7)$ plus $d_4$. The normalized-residual and
+> nuisance-perturbation criteria of this record remain untestable until the common
+> normalization and the absolute $c_3$ coefficient are settled.
+
 ## Status and honesty requirements
 
 **Not yet run.** This record is a proposal. Until the probe exists:
@@ -130,19 +146,35 @@ to justify scoping (c) as its own project.
 
 ## Flavor-level prior, and its limits
 
-[the flavor-algebra record](radiative-flavor-algebra.md) shows that the five
-radiative channels share only **three** distinct source patterns, with
-$\omega\to\pi^0\gamma\leftrightarrow\rho\to\eta\gamma$ and
-$\rho\to\pi^0\gamma\leftrightarrow\omega\to\eta\gamma$ redundant at the flavor
-level. All three are reached by $\phi\to\eta\gamma$ and by the crossed $\eta'$
-channels as well, so the non-kaon radiative class spans exactly three patterns.
-The kaon channels are excluded here because they give $D=M=0$ identically and
-constrain nothing. This lowers the prior on the probe succeeding.
+The prior originally stated here was an artifact of computing the $aV\gamma$
+vertex instead of the Standard Model decay, and is superseded by
+[the SM flavor-algebra record](radiative-sm-flavor-algebra.md). In the correct
+algebra:
 
-Two limits on that prior must be kept in view. First, the off-diagonal entries of
-$\mathbb M_a^{-1}(C)$ are reachable only through $|\Delta S|=1$ amplitudes, and
-no such data is loaded here — so the radiative class cannot be said to constrain
-the full spurion, only its diagonal. Second, the flavor redundancy is not
-observable redundancy: channels differ in kinematics and in which operators
-contribute, so the Jacobian measurement is still the deciding test and has not
-been done.
+- all channels, kaons included, reach a distinct flavor invariant;
+- the kaon channels are nonzero and are the only ones whose mass-weighted
+  structure is non-diagonal, so they probe $m_d+m_s$ and $m_u+m_s$ rather than
+  $u,d$ combinations;
+- only in exact $SU(3)$ do the channels collapse, because $F_M=2mF_Q$ for every
+  channel identically. That collapse is the assumption under which the source
+  publishes a single channel, so degeneracy among these channels should not be
+  assumed.
+
+Two limits still stand. The off-diagonal entries of the quark-mass structure are
+reachable only through channels with an off-diagonal meson field, i.e. the kaon
+channels, and only $|\Delta S|=1$ structure is probed there. And flavor
+distinctness still does not guarantee observational distinctness: channels differ
+in kinematics and in which operators contribute, so only the Jacobian measurement
+decides. That measurement remains unperformed. The operator-level Lorentz mapping, for
+both the direct and the exchange operators, is resolved in
+[the width-kinematics record](radiative-width-kinematics.md).
+
+## Superseded scope of the channel list
+
+The channel list in this record was built for $V\to P\gamma$ only. The
+$pseudoscalar-initiated $P\to V\gamma$ channels, in particular
+$\eta'\to\rho^0\gamma$ and $\eta'\to\omega\gamma$, are equally in the
+operator basis, are tabulated by the PDG, and are **not** redundant with the
+vector-initiated ones: their flavor invariant coincides but their kinematics do
+not. They must be added before any statement about the information content of
+the radiative class. See the flavor-algebra record.
