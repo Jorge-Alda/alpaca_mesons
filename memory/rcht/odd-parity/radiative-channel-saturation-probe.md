@@ -54,12 +54,34 @@ Implement **two or three** radiative channels rather than the whole set, then
 measure saturation before committing. Cheapest first, in order:
 
 1. $\mathcal B(\rho\to\pi^0\gamma)$ and $\mathcal B(\omega\to\eta\gamma)$ —
-   reuse the existing
-   [`vector_to_pseudoscalar_gamma_width`](../../../scripts/implementation/radiative_odd_parity.py);
-   only the flavour factors are missing.
-2. $\mathcal B(\phi\to\pi^0\gamma)$ — highest $d_i$ leverage, but the readiness
-   matrix flags that $K^*$ and $\phi$ radiative channels require
-   **flavour-resolved matching**, so budget extra work here.
+   data is tabulated (see the
+   [PDG extract](../../extracts/ParticleDataGroup:2024cfk/rho-omega-radiative-branchings.md)),
+   but each channel needs an **operator-level derivation**, not a transcription.
+2. $\mathcal B(\phi\to\pi^0\gamma)$ — highest $d_i$ leverage, and the source
+   names it as needing flavor-resolved matching, so budget extra work.
+
+**Scope correction, 2026-10-04.** An earlier draft of this record treated the
+non-$\phi$ channels as close to mechanical. That was wrong, and the error is
+recorded in the
+[on-shell radiative extract](../../extracts/Ruiz-Femenia:2003jdx/on-shell-radiative-amplitudes.md):
+Ruiz--Femenia et al. treat **exactly one** on-shell vector radiative decay,
+$\omega\to\pi^0\gamma$. They state that extending to other channels "requires
+that exact SU(3)$_{\mathrm V}$ symmetry is left aside ... keeping distinct masses
+for each quark flavour, a rather non trivial task". The two channels they name,
+$K^*\to K\gamma$ and $\phi\to\eta\gamma$, are given as *examples*, not as an
+exhaustive exclusion list, so $\rho\to\pi^0\gamma$ and $\omega\to\eta\gamma$ are
+covered by the same statement.
+
+The requirement splits in two, and the distinction matters for cost:
+
+- The **OPE-eliminated** numerical prediction would need fresh short-distance
+  matching per channel. Not needed for the fit, which uses uneliminated
+  couplings.
+- The **uneliminated** amplitude for a new channel needs a genuine operator-level
+  derivation with the right flavor trace and singlet/octet content. Tractable,
+  but not transcription. For an ALP source $\mathbb M_a^{-1}(C)$ is a general
+  Hermitian matrix, so the SU(3) arguments that would license a quick recipe are
+  unavailable.
 
 ### Diagnostics to run
 
@@ -105,3 +127,22 @@ A positive probe gives the first release its first unsaturated data, cheaply.
 A negative probe is a genuine result: it establishes that no available two-body
 dataset discriminates the free directions, which is exactly the evidence needed
 to justify scoping (c) as its own project.
+
+## Flavor-level prior, and its limits
+
+[the flavor-algebra record](radiative-flavor-algebra.md) shows that the five
+radiative channels share only **three** distinct source patterns, with
+$\omega\to\pi^0\gamma\leftrightarrow\rho\to\eta\gamma$ and
+$\rho\to\pi^0\gamma\leftrightarrow\omega\to\eta\gamma$ redundant at the flavor
+level. All three are reached by $\phi\to\eta\gamma$ and by the crossed $\eta'$
+channels as well, so the non-kaon radiative class spans exactly three patterns.
+The kaon channels are excluded here because they give $D=M=0$ identically and
+constrain nothing. This lowers the prior on the probe succeeding.
+
+Two limits on that prior must be kept in view. First, the off-diagonal entries of
+$\mathbb M_a^{-1}(C)$ are reachable only through $|\Delta S|=1$ amplitudes, and
+no such data is loaded here — so the radiative class cannot be said to constrain
+the full spurion, only its diagonal. Second, the flavor redundancy is not
+observable redundancy: channels differ in kinematics and in which operators
+contribute, so the Jacobian measurement is still the deciding test and has not
+been done.

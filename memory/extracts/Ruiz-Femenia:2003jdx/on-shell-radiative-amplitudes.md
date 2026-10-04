@@ -2,7 +2,7 @@
 title: On-shell vector-to-pseudoscalar-photon amplitudes and widths
 status: literature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-04
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
@@ -71,9 +71,43 @@ $$
 -\frac{M_\omega^2}{M_V^2}\left(1+\frac{m_\pi^2}{M_\omega^2}\right)\right]^2.
 $$
 
-The tensor/Lorentz form and the two displayed coupling combinations generalize
-channel-by-channel after replacing the flavor trace, external masses, vector
-pole, and mixing factors. The numerical OPE prediction does **not** generalize
-automatically: the authors explicitly say that $K^*\to K\gamma$ and
-$\phi\to\eta\gamma$ require flavor-resolved short-distance matching (source
-lines 880--890).
+## Scope limit: this is the only on-shell vector radiative decay in the source
+
+The paper contains exactly three phenomenology subsections: $\omega\to\pi\gamma$
+(line 778), $\omega\to\pi^+\pi^-\pi^0$ (line 891), and $\pi\to\gamma\gamma$
+(line 994). **No general $V\to P\gamma$ formula is given**, and no other
+radiative vector decay is treated.
+
+On extending to other channels the authors write (source lines 880--889):
+
+> The extension of our analysis to other decay channels (e.g.
+> $K^*\to K\gamma$, $\phi\to\eta\gamma$) requires that exact
+> SU(3)$_{\mathrm{V}}$ symmetry is left aside in order not to lose the
+> predictive power shown in $\omega\to\pi\gamma$. This study would require to
+> consider the OPE expansion in the asymptotic regime keeping distinct masses
+> for each quark flavour, a rather non trivial task.
+
+Two readings must be distinguished, because an earlier version of this extract
+conflated them:
+
+1. **For the numerical OPE-eliminated prediction (Eq. (28) and its width
+   Eq. (29)) the extension is genuinely non-trivial.** It requires abandoning
+   exact SU(3)$_{\mathrm V}$ and redoing the short-distance matching with
+   distinct quark masses. The two channels named above are given as *examples*
+   ("e.g."), **not** as an exhaustive list of what is excluded. Any other channel,
+   including $\rho\to\pi^0\gamma$ and $\omega\to\eta\gamma$, falls under the
+   same statement.
+2. **For the uneliminated couplings $c_a,d_a$ the requirement is weaker.** The
+   fit uses the uneliminated amplitude, so no new OPE matching is required to
+   *evaluate* a channel; what is required is a derivation of that channel's
+   operator-level amplitude, including its flavor trace and singlet/octet
+   content. That is genuine EFT work rather than transcription, but it is
+   tractable and is **not performed in this source**.
+
+A claim that the displayed coupling combinations simply "generalize after
+replacing the flavor trace, external masses, vector pole, and mixing factors" is
+an inference, not something this source states, and it is unsafe: for an ALP
+source $\mathbb M_a^{-1}(C)$ is a general Hermitian matrix rather than an
+SU(3)-diagonal spurion, so the singlet/octet decomposition that would justify
+such a recipe does not hold automatically. Treat any extension to a new
+radiative channel as an open derivation.

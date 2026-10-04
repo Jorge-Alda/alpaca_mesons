@@ -27,3 +27,4 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [kloe-phi-three-pion-fit-blocker.md](kloe-phi-three-pion-fit-blocker.md) — why the held KLOE $\phi\to3\pi$ table cannot constrain $d_1,d_2$ at tree level.
 - [dispersive-three-pion-treatment-plan.md](dispersive-three-pion-treatment-plan.md) — scoped dispersive $V\to3\pi$ project (c) and staged alternative (c').
 - [radiative-channel-saturation-probe.md](radiative-channel-saturation-probe.md) — rank-is-not-information criterion and the cheap radiative probe.
+- [radiative-flavor-algebra.md](radiative-flavor-algebra.md) — SymPy flavor algebra: which spurion combinations each radiative channel probes, and their redundancy.
