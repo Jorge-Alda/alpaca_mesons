@@ -22,3 +22,8 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [odd-parity-global-fit-dataset-plan.md](odd-parity-global-fit-dataset-plan.md) — staged global-fit dataset plan.
 - [correlated-odd-parity-fit-infrastructure.md](correlated-odd-parity-fit-infrastructure.md) — fixed-prior correlated fit infrastructure.
 - [odd-parity-fit-optimizer-choice.md](odd-parity-fit-optimizer-choice.md) — pure-scipy optimizer decision for the coupled fit.
+- [babar-3pi-spectrum-fit-blocker.md](babar-3pi-spectrum-fit-blocker.md) — why the BaBar ISR table misses the $\omega/\phi$ peaks and needs $\omega'/\omega''$.
+- [three-pion-resonance-separability.md](three-pion-resonance-separability.md) — numerical proof that no BaBar mass window is free of $\omega'/\omega''$.
+- [kloe-phi-three-pion-fit-blocker.md](kloe-phi-three-pion-fit-blocker.md) — why the held KLOE $\phi\to3\pi$ table cannot constrain $d_1,d_2$ at tree level.
+- [dispersive-three-pion-treatment-plan.md](dispersive-three-pion-treatment-plan.md) — scoped dispersive $V\to3\pi$ project (c) and staged alternative (c').
+- [radiative-channel-saturation-probe.md](radiative-channel-saturation-probe.md) — rank-is-not-information criterion and the cheap radiative probe.
