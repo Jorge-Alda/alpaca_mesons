@@ -35,3 +35,4 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [radiative-tff-flavor.md](radiative-tff-flavor.md) — $t_2$ flavor factors for $\pi^0,\eta,\eta'\to\gamma^*\gamma$, with stated mixing convention; full amplitude and mass-spurion factors are in the amplitude record.
 - [radiative-tff-amplitude.md](radiative-tff-amplitude.md) — normalized tree-level $P\to\gamma^*\gamma$ tensor-RChT amplitude, WZW calibration, data Observation connection, and rank consequences for equal versus independent mass-spurion inputs.
 - [next-steps.md](next-steps.md) — current results and remaining source-grounded meson inputs, asymptotic behavior, and matching tasks.
+- [p-to-gamma-gamma.md](p-to-gamma-gamma.md) — real-photon operator audit, identical-photon width, pion normalization and OPE coupling sensitivity.

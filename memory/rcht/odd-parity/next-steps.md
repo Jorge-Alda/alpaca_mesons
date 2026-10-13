@@ -83,21 +83,28 @@ Both have checksum-pinned loaders and predictor-backed Observation factories in
 connection, but does not validate the one-resonance high-$Q^2$ behavior or
 establish a fit result.
 
-## Later candidate: $P\to\gamma\gamma$
+## Checked: $P\to\gamma\gamma$
 
-$\pi^0\to\gamma\gamma$ and $\eta,\eta'\to\gamma\gamma$ have branching fractions
-in the PDG and probe the axial anomaly. They use the same VJP basis with **two**
-photons and one pseudoscalar, so the slot content differs and the kinematic
-factors are new. Its effect on coupling sensitivity must be established from
-the complete two-photon operators. The source's basis is declared
-complete for one-pseudoscalar vertices, which $P\to\gamma\gamma$ satisfies, but
-the two-photon operator content has not been checked here.
+The [real-photon check](p-to-gamma-gamma.md) establishes that these processes
+are the $s_1=s_2=0$ limit of the complete recorded TFF: WZW contact, both
+VJP photon placements and both VVP vector assignments. The width is
+$\Gamma=\pi\alpha_{\rm em}^2m_P^3|F_P(0,0)|^2/4$, including the identical-photon
+factor, and reproduces the published pion correction. No new operators are
+required within the declared single-trace, one-vector tree action.
+
+Equal-spurion inputs add no direction beyond the five OPE constraints;
+independent spurions add at most one common $c_3,d_2$ direction (rank 6).
+This is weaker than the independent-spurion off-shell TFF sensitivity.
+Physical $\eta,\eta'$ predictions still require the Alda-grounded inputs above
+and the nonet action remains an assumed extension. No experimental comparison
+or fit has been performed.
 
 ## Running things
 
 ```text
 .venv/bin/python scripts/derive_radiative_sm_amplitude.py
 .venv/bin/python scripts/derive_radiative_tff_amplitude.py
+.venv/bin/python scripts/derive_p_to_gamma_gamma.py
 .venv/bin/python scripts/diagnose_radiative_rank.py          # ~30 s
 .venv/bin/python scripts/extract_odd_parity_tables.py
 .venv/bin/python -m unittest scripts.implementation.test_odd_parity_data
