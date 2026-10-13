@@ -36,3 +36,6 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [radiative-tff-amplitude.md](radiative-tff-amplitude.md) — normalized tree-level $P\to\gamma^*\gamma$ tensor-RChT amplitude, WZW calibration, data Observation connection, and rank consequences for equal versus independent mass-spurion inputs.
 - [next-steps.md](next-steps.md) — current results and remaining source-grounded meson inputs, asymptotic behavior, and matching tasks.
 - [p-to-gamma-gamma.md](p-to-gamma-gamma.md) — real-photon operator audit, identical-photon width, pion normalization and OPE coupling sensitivity.
+- [alda-neutral-amplitude-inputs.md](alda-neutral-amplitude-inputs.md) — reconstructed arXiv-v1 neutral generators, field conversion and explicit tree/physical kinematics.
+- [vector-stage4-amplitudes.md](vector-stage4-amplitudes.md) — action-derived spectral source insertion into every radiative and two-photon vector slot.
+- [vector-stage4-rank.md](vector-stage4-rank.md) — all 64 retained action scenarios, inherited-OPE sensitivity ranks and their interpretation limits.

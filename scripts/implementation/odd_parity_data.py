@@ -1,8 +1,8 @@
 """Validated deterministic loaders for the extracted odd-parity data release.
 
-Only the PDG omega branching fraction is connected to a predictor.  The other
-loaders intentionally return provenance-preserving tables without constructing
-observations.
+The PDG omega branching fraction and CLEO/BaBar transition-form-factor tables
+connect to explicit predictors. Other loaders return provenance-preserving
+tables. Vector-sector inputs retain their declared branch/source hypotheses.
 
 Example:
     .venv/bin/python -m unittest scripts.implementation.test_odd_parity_data
@@ -199,6 +199,7 @@ def load_cleo_tff_observations(inputs_by_meson, directory: Path = DATA_DIRECTORY
     """
     from .correlated_fit import Observation
     from .pseudoscalar_tff import TFFInputs, q2_abs_tff_predictor
+    from .vector_sector_amplitudes import VectorAmplitudeInputs, q2_abs_tff_predictor as vector_predictor
     from collections.abc import Mapping
     if not isinstance(inputs_by_meson, Mapping) or not inputs_by_meson:
         raise ValueError('inputs_by_meson must be a nonempty mapping')
@@ -206,11 +207,12 @@ def load_cleo_tff_observations(inputs_by_meson, directory: Path = DATA_DIRECTORY
     observations = []
     for meson, inputs in inputs_by_meson.items():
         rows = table.rows[table.rows['meson'] == meson]
-        if not rows.size or not isinstance(inputs, TFFInputs):
-            raise ValueError('each selected CLEO meson requires rows and TFFInputs')
+        if not rows.size or not isinstance(inputs, (TFFInputs,VectorAmplitudeInputs)):
+            raise ValueError('each selected CLEO meson requires rows and explicit TFF inputs')
+        predictor=vector_predictor if isinstance(inputs,VectorAmplitudeInputs) else q2_abs_tff_predictor
         observations.append(Observation(
             rows['q2F_GeV'], np.diag(rows['stat_GeV']**2 + rows['syst_GeV']**2),
-            q2_abs_tff_predictor, {'inputs': inputs, 'q2': rows['q2_GeV2']}, unit='GeV'))
+            predictor, {'inputs': inputs, 'q2': rows['q2_GeV2']}, unit='GeV'))
     return tuple(observations)
 
 
@@ -223,13 +225,15 @@ def load_babar_pi0_tff_observation(inputs, directory: Path = DATA_DIRECTORY,
     """
     from .correlated_fit import Observation, Nuisance
     from .pseudoscalar_tff import TFFInputs, q2_abs_tff_predictor
-    if not isinstance(inputs, TFFInputs):
-        raise TypeError('inputs must be TFFInputs')
+    from .vector_sector_amplitudes import VectorAmplitudeInputs, q2_abs_tff_predictor as vector_predictor
+    if not isinstance(inputs, (TFFInputs,VectorAmplitudeInputs)):
+        raise TypeError('inputs must be TFFInputs or VectorAmplitudeInputs')
+    predictor=vector_predictor if isinstance(inputs,VectorAmplitudeInputs) else q2_abs_tff_predictor
     table = load_babar_pi0_table11(directory)
     rows = table.rows
     sigma = (rows['q2F_err_low_MeV'] + rows['q2F_err_high_MeV']) / 2000.
     return Observation(
-        rows['q2F_MeV'] / 1000., np.diag(sigma**2), q2_abs_tff_predictor,
+        rows['q2F_MeV'] / 1000., np.diag(sigma**2), predictor,
         {'inputs': inputs, 'q2': rows['q2bar_GeV2']}, unit='GeV',
         nuisances=(Nuisance(normalization_parameter, fraction=0.023),))
 
@@ -290,6 +294,33 @@ def load_omega_pi0_gamma_observation(
         [float(row["value"])], [[error**2]], omega_pi_gamma_branching_fraction_predictor,
         config, unit="fraction",
     )
+
+
+def _vector_omega_branching_predictor(parameters,config):
+    from .vector_sector_amplitudes import radiative_width_predictor
+    prediction=radiative_width_predictor(parameters,config['width_config'])/config['total_width']
+    prediction.setflags(write=False)
+    return prediction
+
+
+def load_vector_omega_pi0_gamma_observation(inputs, e, GammaOmegaTotal,
+                                           directory: Path = DATA_DIRECTORY):
+    """Same pinned PDG datum with explicit stage-4 vector-sector inputs.
+
+    inputs must contain the selected pi0 generator/spurion. Source and mass
+    hypotheses come from its sector; this factory does not fit or change them.
+    """
+    from .vector_sector_amplitudes import VectorAmplitudeInputs
+    if not isinstance(inputs,VectorAmplitudeInputs):
+        raise TypeError('inputs must be VectorAmplitudeInputs')
+    e=_finite(e,'e',positive=True)
+    total_width=_finite(GammaOmegaTotal,'GammaOmegaTotal',positive=True)
+    row=load_omega_pi0_gamma_table(directory).rows[0]
+    width_config=dict(inputs=inputs,TV=inputs.sector.generators[1],
+                      Mvector=inputs.sector.masses[1],e=e,orientation='V_to_P')
+    error=float(row['stat_or_total_error'])
+    return Observation([float(row['value'])],[[error**2]],_vector_omega_branching_predictor,
+                       dict(width_config=width_config,total_width=total_width),unit='fraction')
 
 
 def build_fixed_ope_constraint(

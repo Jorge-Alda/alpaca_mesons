@@ -105,8 +105,10 @@ $(0.030389,0.016935\ {\rm GeV}^2)$ for charged or neutral K-star respectively.
 The large-angle branches require roughly $\kappa_V=-0.61$ and
 $\Delta_V=0.68$ GeV squared, so treating them as small OZI corrections would be
 an additional and questionable assumption. Both branches are retained.
-Selecting the near-ideal branch needs an explicitly stated flavor/truncation
-criterion or further interaction data. The 1.26-degree charged/neutral change
+The user subsequently selected proximity to ideal mixing as the tie-breaker
+when the other criteria are equivalent; both branches remain recorded and
+available, and this preference does not establish a measured angle.
+The 1.26-degree charged/neutral change
 remains separate from the much smaller conditional input errors.
 
 ## Electromagnetic residues require more than a common source

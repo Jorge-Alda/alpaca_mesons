@@ -12,6 +12,8 @@ provenance: assumption
 Start-of-session map. Read this, then
 [the rank and saturation record](radiative-rank-saturation.md) for the open
 question, and the two records it depends on for the machinery.
+The latest vector integration is in [stage-4 amplitudes](vector-stage4-amplitudes.md)
+and [stage-4 rank diagnostics](vector-stage4-rank.md).
 
 ## Where things stand
 
@@ -38,14 +40,15 @@ Established and verified (all assertions exercised by scripts):
 
 Open, in order of how much they block:
 
-1. **Integrate Alda's diagonalized neutral generators.** Use the physical
+1. **Propagate Alda's neutral-input uncertainties.** Use the physical
    matrices from its arXiv-v1 mass-diagonalization appendix, including isospin
    admixtures,
    with the fitted quark spurion and explicit field-convention conversion in
    [the input record](../../extracts/Alda:2026nrd/neutral-meson-generators.md).
    The source inputs are verified against the downloaded arXiv version;
-   predictor integration and uncertainty
-   propagation remain. Keep the LO truncation limitation separate from the
+   [amplitude input helper](alda-neutral-amplitude-inputs.md) and observation
+   integration are implemented. Posterior uncertainty propagation remains.
+   Keep the LO truncation limitation separate from the
    fitted parameter errors.
 2. **Single-virtual asymptotics.** The constrained one-resonance TFF approaches
    a nonzero constant at large $Q^2$, so it does not enforce the expected
@@ -56,11 +59,13 @@ Open, in order of how much they block:
    quadratic tensor extension has been derived and
    [stage-3 mass/source tests](../foundations/vector-stage3-calibration.md)
    completed: the minimal mass/universal-source model is inadequate for the
-   fixed PDG snapshot. Additional invariant operators and discrete hypotheses
-   remain explicit. The earlier rank gain with
-   independently inserted internal masses has not been recomputed using that
-   action and its source/vertex prescriptions; it remains a sensitivity
-   extension pending amplitude integration.
+   fixed PDG snapshot. [Stage-4 amplitudes](vector-stage4-amplitudes.md) now
+   integrate the declared additional mass/source operators and retained branches.
+   [Recomputed conditional ranks](vector-stage4-rank.md) give 8 of 11 across all
+   64 action scenarios. The old five OPE rows remain inherited diagnostics;
+   their enlarged-action short-distance matching is still uncomputed.
+   The user's near-ideal preference is a tie-breaker when other criteria are
+   equal, with the second mass branch retained.
 
 ## Space-like transition form factors: amplitude and observations connected
 
@@ -80,7 +85,10 @@ The full amplitude is implemented in
 CLEO and BaBar data connect through the `Observation` factories in
 [`odd_parity_data.py`](../../../scripts/implementation/odd_parity_data.py).
 Physical $\eta,\eta'$ fits must supply explicit mass-spurion traces and field
-normalizations; none are inferred from meson masses. No fit has been run.
+normalizations; none are inferred from meson masses. The arXiv-grounded helper
+now supplies the central generators and quark spurion to the generalized
+vector-sector inputs, with a declared tree/physical kinematic choice.
+No fit has been run.
 
 **Data already validated and checksum-pinned, with loaders:**
 
@@ -103,11 +111,16 @@ $\Gamma=\pi\alpha_{\rm em}^2m_P^3|F_P(0,0)|^2/4$, including the identical-photon
 factor, and reproduces the published pion correction. No new operators are
 required within the declared single-trace, one-vector tree action.
 
-Equal-spurion inputs add no direction beyond the five OPE constraints;
+In the universal-source, common-pole baseline of that real-photon check,
+equal-spurion inputs add no direction beyond the five OPE constraints;
 independent spurions add at most one common $c_3,d_2$ direction (rank 6).
-This is weaker than the independent-spurion off-shell TFF sensitivity.
-Physical $\eta,\eta'$ predictions still require the Alda-grounded inputs above
-and the nonet action remains an assumed extension. No experimental comparison
+That baseline result is weaker than its independent-spurion off-shell TFF
+sensitivity. The enlarged spectral/source action has its separate
+[stage-4 diagnostic](vector-stage4-rank.md); the rank-6 statement is not an
+enlarged-action matching result.
+Physical $\eta,\eta'$ inputs are now available through the arXiv-grounded helper;
+their uncertainty propagation remains open, and the nonet action remains an
+assumed extension. No experimental comparison
 or fit has been performed.
 
 ## Running things
@@ -116,6 +129,10 @@ or fit has been performed.
 .venv/bin/python scripts/derive_radiative_sm_amplitude.py
 .venv/bin/python scripts/derive_radiative_tff_amplitude.py
 .venv/bin/python scripts/derive_p_to_gamma_gamma.py
+.venv/bin/python scripts/derive_vector_stage4_amplitudes.py
+.venv/bin/python scripts/verify_alda_neutral_inputs.py
+.venv/bin/python scripts/verify_vector_stage4.py
+.venv/bin/python scripts/diagnose_vector_stage4.py
 .venv/bin/python scripts/diagnose_radiative_rank.py          # ~30 s
 .venv/bin/python scripts/extract_odd_parity_tables.py
 .venv/bin/python -m unittest scripts.implementation.test_odd_parity_data

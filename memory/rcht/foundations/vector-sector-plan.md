@@ -20,6 +20,16 @@ pseudoscalar inputs; the local manuscript is not an authoritative substitute.
 This policy supersedes the local-manuscript input selection in the previous
 [next-steps record](../odd-parity/next-steps.md).
 
+## Branch preference
+
+User instruction on 2026-10-13: retain both mass-compatible branches in the
+notes and calculations. When all other adequacy, source-sign and truncation
+considerations are equivalent, prefer the branch closer to ideal mixing.
+This is a tie-breaker, not evidence that the near-ideal branch is measured,
+and does not pool charged/neutral scenarios or select a residue-sign hypothesis.
+The stage-4 implementation exposes both branches and uses the near-ideal one
+as its explicit default selection.
+
 ## Indexed inputs
 
 - [RChT baseline](rcht-basics.md) — tensor kinetic and leading source couplings.
@@ -76,16 +86,25 @@ This policy supersedes the local-manuscript input selection in the previous
   additional mass invariant gives two branches; source/sign sensitivity and
   the loss of independent mixing information with three residue coefficients
   are recorded. Conditional input errors remain separate from model limits.
+- Stage 4: [action amplitude integration](../odd-parity/vector-stage4-amplitudes.md)
+  and [conditional rank diagnostics](../odd-parity/vector-stage4-rank.md)
+  completed. Both mass branches and all source hypotheses remain selectable.
+  ArXiv Alda generators are reconstructed, and the new kernels connect to the
+  existing TFF/omega observations with their likelihood policy unchanged.
+  Baseline, photon Ward, Bose, phase/basis, crossing and data-regression checks
+  pass. All 64 retained diagnostic scenarios give rank 8 with inherited OPE
+  rows; those rows have not been rematched for the enlarged action.
 - No unique precision physical-angle determination or full odd-parity
   split-pole matching result is established.
 
 ## Next executable task
 
-Stage 4: integrate the declared mass and source operators into the complete
-radiative and two-photon amplitudes. Retain the separately calibrated mass
-scenarios, mass branches and relative source-sign hypotheses. Verify canonical
-external normalization, every vector-slot rotation, Ward identities and the
-baseline limit before repeating coupling-rank diagnostics. Additional amplitude
-data and an explicit interaction-breaking truncation must select any physical
-prescription; neither an exact residue interpolation nor a small quoted
-conditional angle error is sufficient.
+Stage 5 begins with the joint-fit specification: state the interaction-breaking
+truncation, retained branch/sign hypotheses and source-parameter treatment;
+declare the covariance/independence assumptions for the selected radiative,
+TFF and leptonic data. The inherited OPE targets cannot become an enlarged-action
+precision prior without renewed short-distance matching; the single-virtual
+high-energy behavior remains a separate blocker. Three-pion inputs require the
+already scoped dispersive treatment. Preserve both mass branches, preferring
+the nearer ideal solution only when other adequacy/truncation criteria are equal.
+No physical fit conclusion follows from the stage-4 rank alone.
