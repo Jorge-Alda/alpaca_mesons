@@ -190,6 +190,50 @@ def load_babar_pi0_table11(directory: Path = DATA_DIRECTORY) -> OddParityTable:
                   {"q2": "GeV^2", "cross_section": "fb/GeV^2", "q2F": "MeV"}, directory)
 
 
+def load_cleo_tff_observations(inputs_by_meson, directory: Path = DATA_DIRECTORY):
+    """Connect selected CLEO mesons with explicit derived-model inputs.
+
+    Published stat/syst diagonal errors and zero inter-bin correlations follow
+    the authorization in the checksum-pinned metadata. FH must be supplied;
+    physical eta/eta' masses are insufficient to specify the mass spurion.
+    """
+    from .correlated_fit import Observation
+    from .pseudoscalar_tff import TFFInputs, q2_abs_tff_predictor
+    from collections.abc import Mapping
+    if not isinstance(inputs_by_meson, Mapping) or not inputs_by_meson:
+        raise ValueError('inputs_by_meson must be a nonempty mapping')
+    table = load_cleo_tff(directory)
+    observations = []
+    for meson, inputs in inputs_by_meson.items():
+        rows = table.rows[table.rows['meson'] == meson]
+        if not rows.size or not isinstance(inputs, TFFInputs):
+            raise ValueError('each selected CLEO meson requires rows and TFFInputs')
+        observations.append(Observation(
+            rows['q2F_GeV'], np.diag(rows['stat_GeV']**2 + rows['syst_GeV']**2),
+            q2_abs_tff_predictor, {'inputs': inputs, 'q2': rows['q2_GeV2']}, unit='GeV'))
+    return tuple(observations)
+
+
+def load_babar_pi0_tff_observation(inputs, directory: Path = DATA_DIRECTORY,
+                                  normalization_parameter='babar_pi0_tff_normalization'):
+    """Q^2|F| in GeV, mean asymmetric sigma, separate 2.3% normalization.
+
+    Uses the preauthorized likelihood policy stored with Table 11. The 3%
+    cross-section nuisance belongs to a different observable and is absent.
+    """
+    from .correlated_fit import Observation, Nuisance
+    from .pseudoscalar_tff import TFFInputs, q2_abs_tff_predictor
+    if not isinstance(inputs, TFFInputs):
+        raise TypeError('inputs must be TFFInputs')
+    table = load_babar_pi0_table11(directory)
+    rows = table.rows
+    sigma = (rows['q2F_err_low_MeV'] + rows['q2F_err_high_MeV']) / 2000.
+    return Observation(
+        rows['q2F_MeV'] / 1000., np.diag(sigma**2), q2_abs_tff_predictor,
+        {'inputs': inputs, 'q2': rows['q2bar_GeV2']}, unit='GeV',
+        nuisances=(Nuisance(normalization_parameter, fraction=0.023),))
+
+
 def load_babar_3pi_born_spectrum(directory: Path = DATA_DIRECTORY) -> OddParityTable:
     header = ("sqrt_s_GeV", "Ncorr", "Ncorr_stat", "Ncorr_syst", "efficiency_percent", "efficiency_err_percent",
               "dL_nb_inv", "sigma_nb", "sigma_stat_nb", "sigma_syst_nb")

@@ -8,9 +8,12 @@ Run with: .venv/bin/python scripts/derive_radiative_tff_flavor.py
 """
 import sympy as sp
 
-from derive_radiative_sm_flavor_algebra import (
-    ALONI_CT, ALONI_TH, E1, ETA8, PI0, Q, SQ2, TH, CT,
-)
+TH, CT = sp.symbols("sin_theta cos_theta", real=True)
+ALONI_TH, ALONI_CT = sp.Rational(-1, 3), 2 * sp.sqrt(2) / 3
+PI0 = sp.diag(1, -1, 0) / sp.sqrt(2)
+ETA8 = sp.diag(1, 1, -2) / sp.sqrt(6)
+E1 = sp.eye(3) / sp.sqrt(3)
+Q = sp.diag(sp.Rational(2, 3), sp.Rational(-1, 3), sp.Rational(-1, 3))
 
 
 def tff_flavor(pseudoscalar: sp.Matrix) -> sp.Expr:
@@ -28,8 +31,8 @@ def main() -> None:
     }
     expected = {
         "pi0": sp.sqrt(2) / 3,
-        "eta": (CT + 4 * TH) / (3 * sp.sqrt(3)),
-        "eta_prime": (-TH + 4 * CT) / (3 * sp.sqrt(3)),
+        "eta": sp.sqrt(6) * CT / 9 + 4 * TH / (3 * sp.sqrt(3)),
+        "eta_prime": -sp.sqrt(6) * TH / 9 + 4 * CT / (3 * sp.sqrt(3)),
     }
     for name in factors:
         assert sp.simplify(factors[name] - expected[name]) == 0
