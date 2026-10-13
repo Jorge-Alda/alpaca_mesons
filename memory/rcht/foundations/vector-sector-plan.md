@@ -99,6 +99,21 @@ as its explicit default selection.
 
 ## Next executable task
 
+The user requested an ALP-target audit before advancing this plan.
+[The audit and completion plans](../odd-parity/alp-target-amplitude-audit.md)
+are now saved. The checked leading projections do not access the current
+three blind directions, but normalized physical resonance-corrected ALP
+predictors remain incomplete. Resolve the selected target-completion scope
+before advancing the joint-fit stage below; this is a task-order change,
+not an additional physical fit constraint.
+
+The three blind odd-coefficient directions are explicitly **not a blocker**
+for the desired tree-level ALP accuracy: the checked target contributions
+do not depend on them. They could enter at higher loops or orders, so this
+decision must be revisited if the truncation or target accuracy is extended.
+Missing normalized predictors and the other matching/data requirements
+remain separate from this blind-direction decision.
+
 Stage 5 begins with the joint-fit specification: state the interaction-breaking
 truncation, retained branch/sign hypotheses and source-parameter treatment;
 declare the covariance/independence assumptions for the selected radiative,

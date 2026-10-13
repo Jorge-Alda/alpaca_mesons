@@ -15,6 +15,23 @@ question, and the two records it depends on for the machinery.
 The latest vector integration is in [stage-4 amplitudes](vector-stage4-amplitudes.md)
 and [stage-4 rank diagnostics](vector-stage4-rank.md).
 
+## Current priority: ALP targets before the fit plan
+
+The [ALP target inventory and blindness audit](alp-target-amplitude-audit.md)
+checks $a\to3P,VV,V\gamma,\gamma\gamma$. The three current structural blind
+directions do not enter the verified leading two-boson projections, and a
+single-odd vacuum $a\to3P$ amplitude vanishes. Full normalized ALP resonance
+predictors are not thereby completed; the missing calculations have separate
+plans linked from the audit. The user requested this assessment before further
+joint-fit work. No physical odd-coefficient fit has run.
+
+**The blind directions are not a fit blocker at the desired tree-level ALP
+accuracy.** The checked contributions do not depend on $c_7$, $d_4$ or the
+common $c_2,c_5,c_6$ shift, so separate determinations of these directions are
+not required for that target. They could enter at higher loops or orders,
+or with an extended operator/off-shell treatment; reassess them if the
+accuracy target changes. Full ALP predictor completion is a separate task.
+
 ## Where things stand
 
 Established and verified (all assertions exercised by scripts):

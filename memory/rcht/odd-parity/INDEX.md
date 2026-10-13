@@ -39,3 +39,7 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [alda-neutral-amplitude-inputs.md](alda-neutral-amplitude-inputs.md) — reconstructed arXiv-v1 neutral generators, field conversion and explicit tree/physical kinematics.
 - [vector-stage4-amplitudes.md](vector-stage4-amplitudes.md) — action-derived spectral source insertion into every radiative and two-photon vector slot.
 - [vector-stage4-rank.md](vector-stage4-rank.md) — all 64 retained action scenarios, inherited-OPE sensitivity ranks and their interpretation limits.
+- [alp-target-amplitude-audit.md](alp-target-amplitude-audit.md) — inventory of the four ALP target amplitudes, fresh blind-direction checks and missing-calculation decisions.
+- [alp-two-boson-blind-direction-audit.md](alp-two-boson-blind-direction-audit.md) — exact VJP/VVP null projections for canonical vector and photon tensor legs.
+- [alp-vv-completion-plan.md](alp-vv-completion-plan.md) — steps to assemble the normalized physical ALP two-vector amplitude and width.
+- [alp-vgamma-completion-plan.md](alp-vgamma-completion-plan.md) — steps to complete the ALP vector-photon amplitude including exchange and source/contact terms.

@@ -11,5 +11,5 @@ provenance: assumption
 
 ALP-specific records, organized by the final-state or interaction sector.
 
-- [Three-meson](three-meson/INDEX.md) — LO chiral interactions, amplitudes, widths, and vector exchange.
-- [Photon](photon/INDEX.md) — the WZW and meson-mixing photon invariant.
+- [Three-meson](three-meson/INDEX.md) — LO chiral interactions, amplitudes, widths, vector exchange and the odd-sector tree audit.
+- [Photon](photon/INDEX.md) — WZW/mixing photon invariant, resonance blindness audit and physical-amplitude completion plan.

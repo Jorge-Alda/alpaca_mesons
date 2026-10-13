@@ -19,3 +19,4 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [a3p-vector-exchange-classifier.md](a3p-vector-exchange-classifier.md) — vector-exchange flavor classifier.
 - [a3p-vector-exchange-amplitude.md](a3p-vector-exchange-amplitude.md) — vector-pole and representation-matching amplitudes.
 - [flavor-conserving-neutral-vector-selection-rule.md](flavor-conserving-neutral-vector-selection-rule.md) — neutral-vector flavor selection rule.
+- [odd-parity-three-pseudoscalar-audit.md](odd-parity-three-pseudoscalar-audit.md) — vacuum single-odd tree zero, separation from even G_V exchange and a conditional higher-order loop plan.

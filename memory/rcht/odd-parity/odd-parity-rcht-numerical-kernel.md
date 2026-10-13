@@ -86,3 +86,8 @@ The excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negl
 > **The remaining blocker is validated physical data ingestion and observable predictors for the calibration channels. The fixed-prior generic fit layer is ready, but no physical $c_i,d_i$ fit has been run.**
 
 Physical on-shell reduction, external-tensor normalization in amplitudes, width models for internal vectors, Ward-identity tests, and optional spectral conversion of unstable external-vector channels are implementation tasks. This kernel itself continues to supply operator-level coefficients rather than physical widths or fitted couplings.
+
+For the current distinction between implemented ALP insertions and missing
+complete ALP amplitudes, use the 2026-10-13
+[target audit](alp-target-amplitude-audit.md). New projected null checks do not
+promote this operator-level kernel into a normalized physical predictor.

@@ -13,10 +13,10 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 
 ## Topic indexes
 
-- [ALP](alp/INDEX.md) — ALP-specific derivations and three-meson calculations.
+- [ALP](alp/INDEX.md) — ALP-specific derivations, three-meson/photon calculations and target audits.
 - [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
 - [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
-- [RChT](rcht/INDEX.md) — foundations and odd-parity resonance-chiral implementation records.
+- [RChT](rcht/INDEX.md) — foundations, odd-parity resonance-chiral implementation and ALP amplitude-completion plans.
 - [Literature extracts](extracts/INDEX.md) — source-backed modular paper digests.
 
 The ignored [source archive](sources/INDEX.md) contains downloaded source material rather than research records.
