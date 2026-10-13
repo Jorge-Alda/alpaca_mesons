@@ -9,10 +9,10 @@ s_rs = (p_r + p_s)^2. The S-matrix convention is S = 1 + i T.
 """
 
 import sympy as sp
-
-
-def show(label: str, expression: sp.Expr) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
 
 def multilinear_coefficient(expression: sp.Expr, legs: tuple[sp.Symbol, ...]) -> sp.Expr:

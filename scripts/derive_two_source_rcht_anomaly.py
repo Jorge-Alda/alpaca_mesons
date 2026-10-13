@@ -10,11 +10,11 @@ one.  The calculation is exact at linear order in a/f_a and at tree level.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show, u3_completeness_projection, u3_generators
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show, u3_completeness_projection, u3_generators
 
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    """Print a deterministic labelled LaTeX expression."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def matrix_symbols(prefix: str) -> sp.Matrix:
@@ -27,28 +27,12 @@ def matrix_symbols(prefix: str) -> sp.Matrix:
 
 I = sp.I
 zero = sp.Integer(0)
-generators = (
-    sp.sqrt(sp.Rational(2, 3)) * sp.eye(3),
-    sp.Matrix([[0, 1, 0], [1, 0, 0], [0, 0, 0]]),
-    sp.Matrix([[0, -I, 0], [I, 0, 0], [0, 0, 0]]),
-    sp.diag(1, -1, 0),
-    sp.Matrix([[0, 0, 1], [0, 0, 0], [1, 0, 0]]),
-    sp.Matrix([[0, 0, -I], [0, 0, 0], [I, 0, 0]]),
-    sp.Matrix([[0, 0, 0], [0, 0, 1], [0, 1, 0]]),
-    sp.Matrix([[0, 0, 0], [0, 0, -I], [0, I, 0]]),
-    sp.diag(1, 1, -2) / sp.sqrt(3),
-)
+generators = u3_generators()
 
 
 def projection(matrix: sp.Matrix) -> sp.Matrix:
     """Apply tr(lambda_i lambda_j)=2 delta_ij completeness."""
-    return sp.simplify(
-        sum(
-            (sp.trace(matrix * generator) * generator for generator in generators),
-            sp.zeros(3),
-        )
-        / 2
-    )
+    return u3_completeness_projection(matrix)
 
 
 # ---------------------------------------------------------------------------

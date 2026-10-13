@@ -9,11 +9,11 @@ noncommuting flavor generators, and terms linear in the ALP.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Basic) -> None:
-    """Print one deterministic, LaTeX-formatted derivation step."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def bookkeeping_coefficient(expression: sp.Expr, *parameters: sp.Symbol) -> sp.Expr:

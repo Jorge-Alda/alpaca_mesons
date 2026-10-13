@@ -98,4 +98,4 @@ The measured $K\pi$ mass interval crosses the $K\eta$ and $K\eta'$ thresholds. I
 
 ## Chiral-consistent normalization
 
-The derivation of the production kernel that replaces the unexplained Aloni scalar prefactor is recorded in [the chiral-matching record](kpi-s-wave-chiral-matching.md). The result is an $s$-dependent kernel fixed by the hatted Alda couplings, not a universal constant. A normalized final-state-interaction function may multiply this kernel without changing its leading-order chiral normalization. [@Alda:2026bar; @Aloni:2018vki; @BaBar:2015kii]
+The derivation of the production kernel that replaces the unexplained Aloni scalar prefactor is recorded in [the chiral-matching record](kpi-s-wave-chiral-matching.md). The result is an $s$-dependent kernel fixed by the hatted Alda couplings, not a universal constant. A normalized final-state-interaction function may multiply this kernel without changing its leading-order chiral normalization. [@Alda:2026nrd; @Aloni:2018vki; @BaBar:2015kii]

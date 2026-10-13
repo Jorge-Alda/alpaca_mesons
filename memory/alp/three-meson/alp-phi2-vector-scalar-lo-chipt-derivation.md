@@ -3,7 +3,7 @@ title: One-ALP two-pseudoscalar vector- and scalar-source terms at LO in chiPT
 status: derived
 created: 2026-09-30
 updated: 2026-09-30
-bibtex_keys: [Alda:2026bar]
+bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -26,7 +26,7 @@ $$
 \mathcal A_\phi[X]=\{X,\phi\}.
 $$
 
-These definitions, the LO Lagrangian, and the all-orders $u_\mu$ and $\chi_+$ inputs are those recorded in the [Appendix-A extract](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar]. The physical light-field generator normalization used for the channel audit is the repository convention $\operatorname{tr}(\lambda_a\lambda_b)=2\delta_{ab}$ for the unmixed basis, consistent with the existing three-pseudoscalar implementation.
+These definitions, the LO Lagrangian, and the all-orders $u_\mu$ and $\chi_+$ inputs are those recorded in the [Appendix-A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]. The physical light-field generator normalization used for the channel audit is the repository convention $\operatorname{tr}(\lambda_a\lambda_b)=2\delta_{ab}$ for the unmixed basis, consistent with the existing three-pseudoscalar implementation.
 
 ## Assumptions and exclusions
 
@@ -53,7 +53,7 @@ Neither source generates an $a\Phi$ term. Therefore the lowest nontrivial mesoni
 
 ### 1. Vector source in the kinetic term
 
-The required terms from the [Appendix-A formulas](../../extracts/Alda:2026bar/appendix-a-expansion.md) are [@Alda:2026bar]
+The required terms from the [Appendix-A formulas](../../extracts/Alda:2026nrd/appendix-a-expansion.md) are [@Alda:2026nrd]
 
 $$
 u_\mu^{(0)}=-2\partial_\mu\phi+O(\phi^3),
@@ -178,13 +178,13 @@ $$
 
 Consequently the three flavour-diagonal particle--antiparticle vertices listed above give zero on-shell amplitudes when each particle and antiparticle has its exact common mass. They remain nonzero off-shell interaction terms. The flavour-changing $K\pi$, $K\eta$, and $K\eta'$ families are not removed by this kinematic identity because their masses differ.
 
-Under the no-ALP--meson-mixing prescription recorded in the [Appendix-A extract](../../extracts/Alda:2026bar/appendix-a-expansion.md),
+Under the no-ALP--meson-mixing prescription recorded in the [Appendix-A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md),
 
 $$
 \widehat c_q^V=c_q^{VS},\qquad \widehat c_q^S=0.
 $$
 
-Thus the scalar-source term vanishes in that parametrization, while the vector formula remains with $c_q^V$ replaced by $c_q^{VS}$ [@Alda:2026bar]. This is a field-basis statement, not an additional dynamical approximation.
+Thus the scalar-source term vanishes in that parametrization, while the vector formula remains with $c_q^V$ replaced by $c_q^{VS}$ [@Alda:2026nrd]. This is a field-basis statement, not an additional dynamical approximation.
 
 ## Verification
 

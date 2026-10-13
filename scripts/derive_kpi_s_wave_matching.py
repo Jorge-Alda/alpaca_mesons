@@ -5,20 +5,16 @@ Invocation:
 
 The calculation uses natural units, the mostly-minus metric, the isospin
 limit, diagonal hatted ALP-quark couplings, and the meson-generator
-normalization of Alda:2026bar. The amplitude convention is S = 1 + i T.
+normalization of Alda:2026nrd. The amplitude convention is S = 1 + i T.
 """
 
 from itertools import permutations
 
 import sympy as sp
-
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
-
-
-def commutator(left: sp.MatrixBase, right: sp.MatrixBase) -> sp.MatrixBase:
-    return left * right - right * left
+try:
+    from scripts.symbolic_utils import commutator, show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import commutator, show
 
 
 def kinetic_tensor(

@@ -3,16 +3,16 @@
 Invocation:
     .venv/bin/python scripts/derive_alp_phi3_lo_chipt.py
 
-Conventions follow Appendix A of Alda:2026bar. All fields and decay constants
+Conventions follow Appendix A of Alda:2026nrd. All fields and decay constants
 are in natural units. The bookkeeping symbols count ALP and Phi powers and are
 removed after coefficient extraction.
 """
 
 import sympy as sp
-
-
-def show(label: str, expression: sp.Expr) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
+try:
+    from scripts.symbolic_utils import map_power, scalar_coefficient, show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import map_power, scalar_coefficient, show
 
 
 n = sp.Symbol("N_f", integer=True, positive=True)
@@ -38,19 +38,7 @@ def anticommutator_map(argument: sp.MatrixExpr, field: sp.MatrixExpr) -> sp.Matr
     return argument * field + field * argument
 
 
-def power(linear_map, argument: sp.MatrixExpr, field: sp.MatrixExpr, order: int):
-    result = argument
-    for _ in range(order):
-        result = linear_map(result, field)
-    return result
-
-
-def scalar_coefficient(expression, symbol: sp.Symbol, order: int):
-    """Extract a scalar-series coefficient from an abstract MatrixExpr."""
-    derivative = expression
-    for _ in range(order):
-        derivative = sp.diff(derivative, symbol)
-    return derivative.subs(symbol, 0) / sp.factorial(order)
+power = map_power
 
 
 phi = rho * Phi / (2 * f_pi)

@@ -43,14 +43,23 @@ Invocation:
 
 from __future__ import annotations
 
-from itertools import permutations
-
 import sympy as sp
+try:
+    from scripts.symbolic_utils import (
+        MINKOWSKI_PLUS_MINUS as META,
+        levi_civita_contract,
+        minkowski_dot,
+    )
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import (
+        MINKOWSKI_PLUS_MINUS as META,
+        levi_civita_contract,
+        minkowski_dot,
+    )
 
 M, m = sp.symbols("M m", positive=True)
 vx, vy, vz = sp.symbols("vx vy vz", real=True)
 g1, g2, g3 = sp.symbols("g1 g2 g3", real=True)
-META = (1, -1, -1, -1)
 
 # --- kinematics, on shell by construction ----------------------------------
 E1 = (M**2 + m**2) / (2 * M)
@@ -65,27 +74,8 @@ EPS_G = (-g3, g1, g2, g3)        # R.EPS_G = PZ*(-g3) + PZ*g3 = 0
 SPUB = None
 
 
-def dot(a, b):
-    return sp.expand(a[0] * b[0] - a[1] * b[1] - a[2] * b[2] - a[3] * b[3])
-
-
-def lower(v):
-    return tuple(sum(META[a] * v[b] for b in range(4)) for a in range(4))
-
-
-def levi(a, b, c, d):
-    """eps^{ABCD} a^A b^B c^C d^D with eps^{0123} = +1.
-
-    The permutation parity MUST be the inversion count
-    inv = #{i<j : p_i > p_j}.  Counting decreasing subsequences of length three
-    instead gives the wrong parity for 14 of the 24 permutations and silently
-    destroys every contraction; the self-check in section 1 catches that.
-    """
-    total = 0
-    for p in permutations(range(4)):
-        inv = sum(1 for i in range(4) for j in range(i + 1, 4) if p[i] > p[j])
-        total += (-1) ** inv * a[p[0]] * b[p[1]] * c[p[2]] * d[p[3]]
-    return sp.expand(total)
+dot = minkowski_dot
+levi = levi_civita_contract
 
 
 def S(a, b, c, d):

@@ -1,6 +1,6 @@
 The scope of the project is to re-derive the expressions for ALP process interacting with light mesons by using a consistent framework that we have developed in a previous work.
 
-Our previous work is not yet publicly available, but the aspects relevant for mesonic interactions are firm. The source is available in `/memory/sources/Alda:2026bar.pdf`. Use the temporary identifier `Alda:2026bar` for all references to it.
+Our previous work is not yet publicly available, but the aspects relevant for mesonic interactions are firm. The source is available in `/memory/sources/Alda:2026nrd.pdf`. Use the temporary identifier `Alda:2026nrd` for all references to it.
 
 Other related works, that you might want to consult, but being aware of different assumptions, conventions, and in some cases even mistakes, are:
 

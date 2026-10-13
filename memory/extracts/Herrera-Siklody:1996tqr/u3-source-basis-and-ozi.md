@@ -3,7 +3,7 @@ title: U(3) singlet source basis and OZI hierarchy
 status: literature
 created: 2026-09-28
 updated: 2026-09-30
-bibtex_keys: [Herrera-Siklody:1996tqr, Alda:2026bar]
+bibtex_keys: [Herrera-Siklody:1996tqr, Alda:2026nrd]
 provenance: literature
 ---
 
@@ -11,7 +11,7 @@ provenance: literature
 
 Herrera-Siklody et al. use $U=\exp(i\Phi/f)$ with
 $$\det U=\exp(i\sqrt{2N_f}\,\eta^0/f)$$
-(their Eqs. (3.1)--(3.2)). Their Eq. (3.5bis) introduces the generic topological invariant $\langle\log U\rangle+\hat\theta$, denoted $X_{\rm HS}$ in this repository. It is not renamed $X_{TC}$: that symbol is reserved for Alda's topological source. The recorded conventions do not establish the normalization and sign map between $\hat\theta$ and Alda's ALP source, so no exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is inferred. Any invariant operator may be multiplied by a function of $X_{\rm HS}$; this is the systematic Herrera-Siklody prescription for singlet/topological-source dependence, not a finite list of new ordinary traces (source lines 672--692) [@Herrera-Siklody:1996tqr; @Alda:2026bar].
+(their Eqs. (3.1)--(3.2)). Their Eq. (3.5bis) introduces the generic topological invariant $\langle\log U\rangle+\hat\theta$, denoted $X_{\rm HS}$ in this repository. It is not renamed $X_{TC}$: that symbol is reserved for Alda's topological source. The recorded conventions do not establish the normalization and sign map between $\hat\theta$ and Alda's ALP source, so no exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is inferred. Any invariant operator may be multiplied by a function of $X_{\rm HS}$; this is the systematic Herrera-Siklody prescription for singlet/topological-source dependence, not a finite list of new ordinary traces (source lines 672--692) [@Herrera-Siklody:1996tqr; @Alda:2026nrd].
 
 Their general lowest-order even-parity example is
 $$\begin{aligned}

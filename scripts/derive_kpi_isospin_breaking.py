@@ -8,11 +8,12 @@ The Condon-Shortley convention is |pi+> = -|1,+1>. The charge basis is
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 from sympy.physics.wigner import clebsch_gordan
 
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 half = sp.Rational(1, 2)

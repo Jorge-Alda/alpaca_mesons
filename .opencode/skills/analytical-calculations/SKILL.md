@@ -11,7 +11,7 @@ Use this skill for every analytical derivation, symbolic manipulation, series ex
 
 1. Use the repository's existing `.venv` for every Python operation.
 2. Run scripts with `.venv/bin/python`; never use the system `python`, `python3`, or another environment.
-3. Install a missing dependency only into `.venv`, using `.venv/bin/python -m pip install <package>`.
+3. Install a missing dependency only into `.venv`, using `uv add <package> && uv pip install -r pyproject.toml`.
 4. Do not recreate, replace, or modify the environment configuration unless explicitly requested.
 5. If `.venv` is absent or unusable, stop and ask the user how to proceed. Do not silently fall back to another interpreter.
 

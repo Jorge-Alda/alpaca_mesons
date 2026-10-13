@@ -40,4 +40,4 @@ Use this repository as a reproducible research record. Load only the protocol se
 
 - Keep terminal output to modified paths and necessary follow-up questions.
 - Respond concisely. Do not praise the user.
-- Use the same conventions and definitions as Alda:2026bar
+- Use the same conventions and definitions as Alda:2026nrd

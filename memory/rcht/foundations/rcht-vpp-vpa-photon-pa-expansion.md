@@ -3,7 +3,7 @@ title: Generic-generator RChT vector-pseudoscalar-ALP interactions after photon-
 status: derived
 created: 2026-09-24
 updated: 2026-09-24
-bibtex_keys: [Ecker:1988te, Ecker:1989yg, Alda:2026bar]
+bibtex_keys: [Ecker:1988te, Ecker:1989yg, Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -20,7 +20,7 @@ $$
 +\frac{iG_V}{\sqrt2}\langle V_{\mu\nu}u^\mu u^\nu\rangle,
 $$
 
-and the one-ALP CCWZ expansion [recorded here](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Ecker:1988te; @Alda:2026bar]. The conversion between tensor and Proca representations retains the local terms required by field redefinitions [@Ecker:1989yg]. All interaction formulas below are derived by [`scripts/derive_rcht_gv_flavor_structures.py`](../../../scripts/derive_rcht_gv_flavor_structures.py).
+and the one-ALP CCWZ expansion [recorded here](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Ecker:1988te; @Alda:2026nrd]. The conversion between tensor and Proca representations retains the local terms required by field redefinitions [@Ecker:1989yg]. All interaction formulas below are derived by [`scripts/derive_rcht_gv_flavor_structures.py`](../../../scripts/derive_rcht_gv_flavor_structures.py).
 
 Conventions and assumptions are:
 
@@ -236,7 +236,7 @@ this direct term vanishes. If that commutator is nonzero, the spurion's electrom
 
 At the requested field orders, the $F_V$ operator supplies the quadratic neutral-vector--photon transition. For a purely electromagnetic vector source, the term in $f_+^{\mu\nu}$ linear in $\Phi$ cancels, so $F_V$ does not directly generate $VPP$ or $VPa$. Its appearance in $\mathcal L_{\gamma Pa}^{\rm mix}$ is indirect, through photon-vector diagonalization.
 
-- **Literature inputs:** the RChT operators and tensor conventions [@Ecker:1988te], the need for induced local terms under spin-one field redefinitions [@Ecker:1989yg], and the ALP vielbein expansion [@Alda:2026bar].
+- **Literature inputs:** the RChT operators and tensor conventions [@Ecker:1988te], the need for induced local terms under spin-one field redefinitions [@Ecker:1989yg], and the ALP vielbein expansion [@Alda:2026nrd].
 - **Derived results:** the displayed tensor-origin and Goldstone-current interaction terms, the effective flavor matrices $\mathcal T_A$ and $\mathcal T_\gamma$, and the direct-versus-mixing-induced separation.
 - **Explicit approximation:** exact formulas resum only the truncated tree-level quadratic mixing; the leading-$e$ expression retains one electromagnetic mixing insertion.
 

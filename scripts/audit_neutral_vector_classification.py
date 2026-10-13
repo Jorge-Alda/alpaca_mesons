@@ -13,11 +13,11 @@ from contextlib import redirect_stdout
 from io import StringIO
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Basic) -> None:
-    """Print one deterministic audit step using SymPy's LaTeX renderer."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def commutator(left: sp.Matrix, right: sp.Matrix) -> sp.Matrix:

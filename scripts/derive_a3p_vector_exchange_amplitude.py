@@ -6,11 +6,11 @@ Invocation:
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Basic) -> None:
-    """Print one deterministic derivation step in LaTeX."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 I = sp.I

@@ -3,7 +3,7 @@ title: ALP to three-meson amplitudes and decay widths
 status: derived
 created: 2026-09-22
 updated: 2026-09-22
-bibtex_keys: [Alda:2026bar]
+bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Inputs and assumptions
 
-The interaction terms are the three generic-generator component Lagrangians derived in [the generic-generator expansion](alp-three-meson-generic-generators.md). Their matrix-level origin and literature provenance are recorded in [the leading-order chiral derivation](alp-phi3-lo-chipt-derivation.md) and [the Appendix A extract](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar]. The calculation is implemented in [`scripts/derive_alp_three_meson_amplitudes.py`](../../../scripts/derive_alp_three_meson_amplitudes.py).
+The interaction terms are the three generic-generator component Lagrangians derived in [the generic-generator expansion](alp-three-meson-generic-generators.md). Their matrix-level origin and literature provenance are recorded in [the leading-order chiral derivation](alp-phi3-lo-chipt-derivation.md) and [the Appendix A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]. The calculation is implemented in [`scripts/derive_alp_three_meson_amplitudes.py`](../../../scripts/derive_alp_three_meson_amplitudes.py).
 
 Use natural units, the mostly-minus metric, and
 

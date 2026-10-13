@@ -15,6 +15,10 @@ import sys
 import numpy as np
 from scipy.integrate import quad
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,10 +37,6 @@ from scripts.implementation.vector_meson_exchange import (
     build_vector_matching_amplitude,
 )
 
-
-def show(label: str, expression: sp.Basic) -> None:
-    """Print one symbolic derivation step using SymPy's LaTeX printer."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def one_vector_term(model, contribution, s12: float, s23: float) -> complex:

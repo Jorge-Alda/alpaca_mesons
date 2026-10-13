@@ -3,7 +3,7 @@ title: Canonical vector-pole and representation-matching contributions to ALP th
 status: mixed
 created: 2026-09-24
 updated: 2026-09-25
-bibtex_keys: [Alda:2026bar, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
+bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
 
@@ -13,7 +13,7 @@ provenance: analytical-derivation
 
 The executable derivation is [`scripts/derive_a3p_vector_exchange_amplitude.py`](../../../scripts/derive_a3p_vector_exchange_amplitude.py), and the numerical implementation is [`scripts/implementation/vector_meson_exchange.py`](../../../scripts/implementation/vector_meson_exchange.py). Natural units are used; all masses, widths, $f_\pi$, $G_V$, and $f_a$ are in GeV.
 
-The hatted Hermitian $c_q^A$ and $c_q^P$ are the no-ALP-meson-mixing inputs defined in [the Alda Appendix A extract](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar]. The leading $G_V$ pole depends on $c_q^A$. The implementation validates $c_q^P$ to retain the public interface of the existing three-meson amplitude, but $c_q^P$ does not enter this contribution.
+The hatted Hermitian $c_q^A$ and $c_q^P$ are the no-ALP-meson-mixing inputs defined in [the Alda Appendix A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]. The leading $G_V$ pole depends on $c_q^A$. The implementation validates $c_q^P$ to retain the public interface of the existing three-meson amplitude, but $c_q^P$ does not enter this contribution.
 
 The pseudoscalar generators, masses, aliases, and coherent $K_S/K_L$ convention are imported directly from [`three_meson_width.py`](../../../scripts/implementation/three_meson_width.py), whose conventions are recorded in [the generic-generator derivation](alp-three-meson-generic-generators.md). In particular, the Alda-normalized matrix has off-diagonal generators $\sqrt2E_{ij}$ and its fitted neutral generators, including $\Lambda_{\pi^0}\simeq\operatorname{diag}(1,-1,0)$. Here
 

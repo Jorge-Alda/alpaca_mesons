@@ -3,7 +3,7 @@ title: Bai vector-only WZW vertices and matching to canonical RChT vectors
 status: mixed
 created: 2026-09-28
 updated: 2026-09-28
-bibtex_keys: [Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, Alda:2026bar]
+bibtex_keys: [Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, Alda:2026nrd]
 provenance: literature
 ---
 

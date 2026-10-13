@@ -4,7 +4,7 @@ status: derived
 created: 2026-09-23
 updated: 2026-09-23
 bibtex_keys:
-  - Alda:2026bar
+  - Alda:2026nrd
   - Aloni:2018vki
   - BaBar:2015kii
   - Omnes:1958hv
@@ -24,13 +24,13 @@ provenance: analytical-derivation
 
 ## Scope
 
-This record derives the production kernel that replaces the unexplained scalar-sector normalization in the $a\to S_{K\pi}K$ ansatz of Aloni et al. The phenomenological $\mathcal F_{SPP}$ factor is omitted. The result follows from the chiral-invariant leading-order ALP Lagrangian and no-mixing prescription of Alda and Rigolin. [@Aloni:2018vki; @Alda:2026bar]
+This record derives the production kernel that replaces the unexplained scalar-sector normalization in the $a\to S_{K\pi}K$ ansatz of Aloni et al. The phenomenological $\mathcal F_{SPP}$ factor is omitted. The result follows from the chiral-invariant leading-order ALP Lagrangian and no-mixing prescription of Alda and Rigolin. [@Aloni:2018vki; @Alda:2026nrd]
 
 The executable derivation is [`scripts/derive_kpi_s_wave_matching.py`](../../scripts/derive_kpi_s_wave_matching.py).
 
 ## Inputs and assumptions
 
-The matrix-level interaction is the result derived in [the leading-order $a\Phi^3$ record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md), whose literature inputs are recorded in [the Alda Appendix A extract](../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar]:
+The matrix-level interaction is the result derived in [the leading-order $a\Phi^3$ record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md), whose literature inputs are recorded in [the Alda Appendix A extract](../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]:
 
 $$
 \mathcal L_{a\Phi^3}

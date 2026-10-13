@@ -3,7 +3,7 @@
 Invocation:
     .venv/bin/python scripts/derive_alp_phi2_lo_chipt.py
 
-Conventions follow Appendix A of Alda:2026bar. Natural units are used: fields,
+Conventions follow Appendix A of Alda:2026nrd. Natural units are used: fields,
 f_a, f_pi, B_0, and m_q have their usual mass dimensions.  The bookkeeping
 symbols count ALP and Phi powers and are removed by coefficient extraction.
 No WZW term or field heavier than the pseudoscalar nonet is included.
@@ -12,33 +12,10 @@ No WZW term or field heavier than the pseudoscalar nonet is included.
 from itertools import combinations_with_replacement
 
 import sympy as sp
-
-
-def show(label: str, expression: sp.Expr) -> None:
-    """Print a deterministic labelled LaTeX expression."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
-
-
-def commutator(left: sp.MatrixExpr, right: sp.MatrixExpr) -> sp.MatrixExpr:
-    return left * right - right * left
-
-
-def anticommutator(left: sp.MatrixExpr, right: sp.MatrixExpr) -> sp.MatrixExpr:
-    return left * right + right * left
-
-
-def map_power(linear_map, argument, field, order: int):
-    result = argument
-    for _ in range(order):
-        result = linear_map(result, field)
-    return result
-
-
-def scalar_coefficient(expression, symbol: sp.Symbol, order: int):
-    derivative = expression
-    for _ in range(order):
-        derivative = sp.diff(derivative, symbol)
-    return derivative.subs(symbol, 0) / sp.factorial(order)
+try:
+    from scripts.symbolic_utils import anticommutator, commutator, map_power, matrix_unit, scalar_coefficient, show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import anticommutator, commutator, map_power, matrix_unit, scalar_coefficient, show
 
 
 # ---------------------------------------------------------------------------
@@ -126,9 +103,7 @@ show("Distinct-field c_q^S component interaction", component_scalar)
 # Physical light-channel classification in the repository generator convention
 # ---------------------------------------------------------------------------
 def E(row: int, column: int) -> sp.ImmutableMatrix:
-    matrix = sp.zeros(3)
-    matrix[row, column] = 1
-    return sp.ImmutableMatrix(matrix)
+    return matrix_unit(row, column)
 
 
 theta_P = sp.Symbol("theta_P", real=True)

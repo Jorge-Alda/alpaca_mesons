@@ -11,14 +11,10 @@ with partial_mu a is suppressed in the symbolic flavour calculation.
 from itertools import product
 
 import sympy as sp
-
-
-def show(label: str, expression: sp.Expr) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
-
-
-def commutator(left: sp.MatrixExpr, right: sp.MatrixExpr) -> sp.MatrixExpr:
-    return left * right - right * left
+try:
+    from scripts.symbolic_utils import commutator, show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import commutator, show
 
 
 n = sp.Symbol("N_f", integer=True, positive=True)

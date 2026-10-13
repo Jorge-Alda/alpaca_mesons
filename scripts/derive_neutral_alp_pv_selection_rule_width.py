@@ -9,11 +9,11 @@ generic 3x3 ALP spurion and does not impose its Hermiticity or diagonality.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Basic) -> None:
-    """Print one deterministic derivation step in LaTeX."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def minkowski_dot(left: sp.Matrix, right: sp.Matrix, metric: sp.Matrix) -> sp.Expr:

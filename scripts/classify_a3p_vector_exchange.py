@@ -18,6 +18,10 @@ from dataclasses import dataclass
 from itertools import combinations_with_replacement
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import matrix_unit
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import matrix_unit
 
 
 def commutator(left: sp.Matrix, right: sp.Matrix) -> sp.Matrix:
@@ -37,9 +41,7 @@ def show(label: str, expression: sp.Basic) -> None:
 
 def E(row: int, column: int) -> sp.Matrix:
     """Return the three-flavor matrix unit E_(row,column)."""
-    result = sp.zeros(3)
-    result[row, column] = 1
-    return result
+    return sp.Matrix(matrix_unit(row, column))
 
 
 @dataclass(frozen=True)

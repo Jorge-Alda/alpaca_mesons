@@ -11,11 +11,11 @@ external antisymmetric-tensor-vector contraction in O_7.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    """Print a deterministic labelled LaTeX expression."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def component_matrix(prefix: str) -> sp.Matrix:

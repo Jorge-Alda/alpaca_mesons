@@ -3,7 +3,7 @@ title: Non-HLS odd-parity RChT numerical kernel
 status: numerical
 created: 2026-09-28
 updated: 2026-09-30
-bibtex_keys: [Alda:2026bar, Ruiz-Femenia:2003jdx, Ecker:1989yg]
+bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1989yg]
 provenance: numerical-computation
 ---
 
@@ -11,7 +11,7 @@ provenance: numerical-computation
 
 ## Evidence, scope, and assumptions
 
-[`scripts/implementation/odd_parity_rcht.py`](../../../scripts/implementation/odd_parity_rcht.py) implements the operator-level proposal derived in the [two-source ALP RChT record](two-source-alp-rcht-odd-parity-extension.md), the [direct VJP insertion record](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md), and the [exact photon--vector diagonalization](../foundations/rcht-photon-vector-diagonalization.md). The $VJP/VVP$ basis and five short-distance relations are literature inputs [@Ruiz-Femenia:2003jdx]; the ALP spurion insertion follows Alda's conventions [@Alda:2026bar]. The numerical organization and validation policy are implemented results, not additional physics claims.
+[`scripts/implementation/odd_parity_rcht.py`](../../../scripts/implementation/odd_parity_rcht.py) implements the operator-level proposal derived in the [two-source ALP RChT record](two-source-alp-rcht-odd-parity-extension.md), the [direct VJP insertion record](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md), and the [exact photon--vector diagonalization](../foundations/rcht-photon-vector-diagonalization.md). The $VJP/VVP$ basis and five short-distance relations are literature inputs [@Ruiz-Femenia:2003jdx]; the ALP spurion insertion follows Alda's conventions [@Alda:2026nrd]. The numerical organization and validation policy are implemented results, not additional physics claims.
 
 Natural units are used. $e,c_i,d_i,\mathbb M_a^{-1}(C),c_q^{AP}$ and generators are dimensionless; $f_a,M_V,F_V,F$ have mass dimension one, while `b0_mq` has mass dimension two. `b0_mq` denotes $B_0m_q$, so no second factor of $B_0$ is inserted. Flavor traces retain the repository normalization. Source generators may be non-Hermitian (for charged fields), while $\mathbb M_a^{-1}(C),c_q^{AP},B_0m_q$ are finite Hermitian $3\times3$ matrices.
 
@@ -81,7 +81,7 @@ $$
 \approx\frac{f_\pi}{f_a}m_i^2.
 $$
 
-The excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution for $f_a\gg f_\pi$, but Eq. (III.37) is a pointwise validity condition. A finite caller-supplied `m_a_inverse_C` is necessary but not sufficient. The calling scan must evaluate the exact overlap at every point and mask/flag a violation or replace the perturbative treatment by a coupled mixing calculation. Matrix magnitude alone is not the criterion. For unstable states, closeness of the real mass parameters is distinct from closeness of the complex poles; a retained near-pole point requires a coupled complex-propagator analysis. This operator kernel is not passed the pseudoscalar spectrum and therefore cannot perform that pointwise validation itself [@Alda:2026bar].
+The excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution for $f_a\gg f_\pi$, but Eq. (III.37) is a pointwise validity condition. A finite caller-supplied `m_a_inverse_C` is necessary but not sufficient. The calling scan must evaluate the exact overlap at every point and mask/flag a violation or replace the perturbative treatment by a coupled mixing calculation. Matrix magnitude alone is not the criterion. For unstable states, closeness of the real mass parameters is distinct from closeness of the complex poles; a retained near-pole point requires a coupled complex-propagator analysis. This operator kernel is not passed the pseudoscalar spectrum and therefore cannot perform that pointwise validation itself [@Alda:2026nrd].
 
 > **The remaining blocker is validated physical data ingestion and observable predictors for the calibration channels. The fixed-prior generic fit layer is ready, but no physical $c_i,d_i$ fit has been run.**
 

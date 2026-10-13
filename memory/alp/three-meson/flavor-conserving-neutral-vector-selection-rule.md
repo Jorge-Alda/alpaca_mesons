@@ -3,7 +3,7 @@ title: Neutral-vector selection rule in flavor-conserving ALP three-pseudoscalar
 status: derived
 created: 2026-09-24
 updated: 2026-09-24
-bibtex_keys: [Ecker:1988te, Ecker:1989yg, Alda:2026bar]
+bibtex_keys: [Ecker:1988te, Ecker:1989yg, Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -18,7 +18,7 @@ $$
 \operatorname{Tr}\!\left(T_{\bar V}[T_{{\rm pair},1},T_{{\rm pair},2}]\right),
 $$
 
-as derived in [the RChT flavor expansion](../../rcht/foundations/rcht-vpp-vpa-photon-pa-expansion.md) from the standard $G_V$ operator [@Ecker:1988te; @Ecker:1989yg] and the stated ALP-source expansion [@Alda:2026bar]. The executable audit is [`scripts/audit_neutral_vector_classification.py`](../../../scripts/audit_neutral_vector_classification.py).
+as derived in [the RChT flavor expansion](../../rcht/foundations/rcht-vpp-vpa-photon-pa-expansion.md) from the standard $G_V$ operator [@Ecker:1988te; @Ecker:1989yg] and the stated ALP-source expansion [@Alda:2026nrd]. The executable audit is [`scripts/audit_neutral_vector_classification.py`](../../../scripts/audit_neutral_vector_classification.py).
 
 Assumptions are an ordinary finite-dimensional flavor trace, a flavor-conserving diagonal spurion
 
@@ -68,7 +68,7 @@ and need not vanish. Electrically neutral but flavor-off-diagonal $K^{*0}$ and $
 - **Counterexample:** an off-diagonal flavor-changing spurion need not commute with diagonal vectors, consistent with the nonzero neutral-vector entries in the $C_A=c_{sd}E_{sd}$ table.
 - **Additional zero:** if $C_A\propto\mathbf1$, the complete classified vector-exchange topology vanishes because $[T_P,C_A]=0$ for every $T_P$.
 - **Explicit limitation:** this is not a theorem for the full hadronic amplitude. Higher-order operators, loops, odd-parity interactions, extra symmetry-breaking spurions, or other topologies can evade the commutator argument. The direct Goldstone-current $WPa$ term recorded in the RChT expansion also vanishes for diagonal $C_A$ because it is proportional to $[Q,C_A]$.
-- **Literature inputs:** the RChT operator basis and tensor conventions [@Ecker:1988te; @Ecker:1989yg] and the ALP-source expansion [@Alda:2026bar].
+- **Literature inputs:** the RChT operator basis and tensor conventions [@Ecker:1988te; @Ecker:1989yg] and the ALP-source expansion [@Alda:2026nrd].
 - **Analytical evidence:** the trace identity and all concrete classifier checks are produced by the executable SymPy audit; no new literature source was consulted.
 
 Run with

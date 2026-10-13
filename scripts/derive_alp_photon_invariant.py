@@ -9,11 +9,11 @@ alpha_em/(4*pi) * C_agammagamma * (a/f_a) * F Ftilde.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show, u3_completeness_projection, u3_generators
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show, u3_completeness_projection, u3_generators
 
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    """Print a deterministic labelled LaTeX expression."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 def matrix_symbols(prefix: str) -> sp.Matrix:
@@ -31,17 +31,7 @@ sqrt = sp.sqrt
 zero = sp.Integer(0)
 one = sp.Integer(1)
 
-generators = (
-    sqrt(sp.Rational(2, 3)) * sp.eye(3),
-    sp.Matrix([[0, 1, 0], [1, 0, 0], [0, 0, 0]]),
-    sp.Matrix([[0, -I, 0], [I, 0, 0], [0, 0, 0]]),
-    sp.diag(1, -1, 0),
-    sp.Matrix([[0, 0, 1], [0, 0, 0], [1, 0, 0]]),
-    sp.Matrix([[0, 0, -I], [0, 0, 0], [I, 0, 0]]),
-    sp.Matrix([[0, 0, 0], [0, 0, 1], [0, 1, 0]]),
-    sp.Matrix([[0, 0, 0], [0, 0, -I], [0, I, 0]]),
-    sp.diag(1, 1, -2) / sqrt(3),
-)
+generators = u3_generators()
 
 c_q_A = matrix_symbols("cA")
 m_a_inverse_C = matrix_symbols(r"\mathbb{M}_a^{-1}(C)")
@@ -56,13 +46,7 @@ N_c, f_pi, f_a, c_gamma = sp.symbols(
 
 def projection(matrix: sp.Matrix) -> sp.Matrix:
     """Apply U(3) generator completeness to a flavour matrix."""
-    return sp.simplify(
-        sum(
-            (sp.trace(matrix * generator) * generator for generator in generators),
-            sp.zeros(3),
-        )
-        / 2
-    )
+    return u3_completeness_projection(matrix)
 
 
 # Alda Eq. (III.28): the spectral coefficients of M_a^{-1}(C) are

@@ -3,7 +3,7 @@ title: Fixed-prior correlated odd-parity fit infrastructure
 status: mixed
 created: 2026-09-30
 updated: 2026-10-04
-bibtex_keys: [Alda:2026bar, Ruiz-Femenia:2003jdx]
+bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx]
 provenance: numerical-computation
 ---
 
@@ -11,7 +11,7 @@ provenance: numerical-computation
 
 ## Evidence, conventions, and assumptions
 
-The five OPE residual definitions and their ordering are literature inputs from the Ruiz--Femenia one-multiplet odd-parity RChT relations [@Ruiz-Femenia:2003jdx]. Natural units and Alda notation are used [@Alda:2026bar]. The Gaussian theory prior, structural scale prescription, fixed equicorrelation, and truncation fraction are **explicit assumptions authorized by the user**, not literature results. The user also explicitly authorizes diagonal published errors where covariance is absent, with source-wide normalization/luminosity errors represented as explicit nuisances rather than counted in the diagonal covariance. HLS is excluded.
+The five OPE residual definitions and their ordering are literature inputs from the Ruiz--Femenia one-multiplet odd-parity RChT relations [@Ruiz-Femenia:2003jdx]. Natural units and Alda notation are used [@Alda:2026nrd]. The Gaussian theory prior, structural scale prescription, fixed equicorrelation, and truncation fraction are **explicit assumptions authorized by the user**, not literature results. The user also explicitly authorizes diagonal published errors where covariance is absent, with source-wide normalization/luminosity errors represented as explicit nuisances rather than counted in the diagonal covariance. HLS is excluded.
 
 The input conventions are those recorded in [the numerical kernel](odd-parity-rcht-numerical-kernel.md): $c_i,d_i$ and all five residuals are dimensionless, while $M_V,F_V,F$ are in a common mass unit. [`fixed_ope_prior_scales`](../../../scripts/implementation/odd_parity_rcht.py) takes one caller-supplied immutable `OPEParameters` reference point. The resulting covariance is computed once and remains fixed during minimization; fit parameters cannot alter it.
 

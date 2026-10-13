@@ -3,7 +3,7 @@ title: Appendix A CCWZ expansion formulas
 status: literature
 created: 2026-09-22
 updated: 2026-09-22
-bibtex_keys: [Alda:2026bar]
+bibtex_keys: [Alda:2026nrd]
 provenance: literature
 ---
 
@@ -22,7 +22,7 @@ $$
 \mathcal A_\phi[A]=\{\phi,A\}.
 $$
 
-These conventions follow Appendix A, Eqs. (A.1)-(A.4), of `Alda:2026bar` [@Alda:2026bar].
+These conventions follow Appendix A, Eqs. (A.1)-(A.4), of `Alda:2026nrd` [@Alda:2026nrd].
 
 At linear order in the ALP, the all-orders CCWZ vielbein is
 
@@ -33,7 +33,7 @@ u_\mu =
 -2i\frac{\partial_\mu a}{f_a}\sin\mathcal C_\phi[c_q^V].
 $$
 
-This is Eq. (A.13) of `Alda:2026bar` [@Alda:2026bar].
+This is Eq. (A.13) of `Alda:2026nrd` [@Alda:2026nrd].
 
 Writing $\chi=\chi_S+i\chi_P$, the symmetry-breaking building block is
 
@@ -50,7 +50,7 @@ $$
 \chi_P=2B_0\frac{a}{f_a}\{c_q^P,m_q\}.
 $$
 
-These formulas and their expansion through quadratic total field order are given in Appendix A and Eq. (A.5) of `Alda:2026bar` [@Alda:2026bar].
+These formulas and their expansion through quadratic total field order are given in Appendix A and Eq. (A.5) of `Alda:2026nrd` [@Alda:2026nrd].
 
 For one-ALP amplitudes, the paper prescribes the field redefinition
 
@@ -73,4 +73,4 @@ $$
 C=-B_0\{m_q,c_q^{AP}\}-\frac{m_0^2}{N_f}c_{GA}\mathbf 1.
 $$
 
-This is the no-ALP-meson-mixing prescription of Eqs. (III.30), (III.33), and Sec. III E of `Alda:2026bar` [@Alda:2026bar].
+This is the no-ALP-meson-mixing prescription of Eqs. (III.30), (III.33), and Sec. III E of `Alda:2026nrd` [@Alda:2026nrd].

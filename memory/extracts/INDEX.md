@@ -15,7 +15,7 @@ Each child folder is a source-specific extract collection; see its files for the
 
 - [Achasov:1999wp](Achasov:1999wp/INDEX.md) — source-specific literature extracts.
 - [Akhmetshin:2006sc](Akhmetshin:2006sc/INDEX.md) — source-specific literature extracts.
-- [Alda:2026bar](Alda:2026bar/INDEX.md) — source-specific literature extracts.
+- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — source-specific literature extracts.
 - [Aloni:2018vki](Aloni:2018vki/INDEX.md) — source-specific literature extracts.
 - [Aston:1987ir](Aston:1987ir/INDEX.md) — source-specific literature extracts.
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.

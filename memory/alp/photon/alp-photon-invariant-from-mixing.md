@@ -3,7 +3,7 @@ title: One-ALP photon coefficient from WZW and meson mixing
 status: derived
 created: 2026-09-28
 updated: 2026-09-28
-bibtex_keys: [Alda:2026bar, Bai:2025fvl]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
 provenance: analytical-derivation
 ---
 
@@ -14,10 +14,10 @@ provenance: analytical-derivation
 This record derives the result with
 [`scripts/derive_alp_photon_invariant.py`](../../../scripts/derive_alp_photon_invariant.py).
 The literature inputs are Alda's field redefinition, LSZ coefficients, inverse
-operator, and generator completeness [@Alda:2026bar, Eqs. (II.2), (II.3),
+operator, and generator completeness [@Alda:2026nrd, Eqs. (II.2), (II.3),
 (III.25), (III.28), and (B.1)--(B.2)], as recorded in
-[`appendix-a-expansion.md`](../../extracts/Alda:2026bar/appendix-a-expansion.md) and
-[`photon-anomaly-normalization.md`](../../extracts/Alda:2026bar/photon-anomaly-normalization.md).
+[`appendix-a-expansion.md`](../../extracts/Alda:2026nrd/appendix-a-expansion.md) and
+[`photon-anomaly-normalization.md`](../../extracts/Alda:2026nrd/photon-anomaly-normalization.md).
 Bai's background-field construction establishes that the complete gauged WZW
 functional and its counterterm must be combined for gauge invariance and
 rotation-parameter cancellation; this is literature evidence recorded in

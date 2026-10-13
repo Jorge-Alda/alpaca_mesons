@@ -14,11 +14,11 @@ published assumptions used here.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Expr) -> None:
-    """Print a deterministic labelled LaTeX expression."""
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 e, F, F_V, M_V, M_omega, m_pi = sp.symbols(

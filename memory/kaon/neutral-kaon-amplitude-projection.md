@@ -3,7 +3,7 @@ title: Projection of neutral-kaon flavor amplitudes onto K_S and K_L
 status: mixed
 created: 2026-09-23
 updated: 2026-09-23
-bibtex_keys: [Alda:2026bar, ParticleDataGroup:2024cfk]
+bibtex_keys: [Alda:2026nrd, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
 
@@ -19,7 +19,7 @@ $$
 \overline{\mathcal A}_0=\langle \bar K^0X|T|a\rangle.
 $$
 
-These flavor amplitudes may be obtained from the direct leading-order interactions recorded in [the three-meson amplitude derivation](../alp/three-meson/alp-three-meson-amplitudes-widths.md), whose chiral input is documented in [the matrix-level derivation](../alp/three-meson/alp-phi3-lo-chipt-derivation.md) [@Alda:2026bar]. The mixing input is recorded in [the PDG neutral-kaon extract](../extracts/ParticleDataGroup:2024cfk/neutral-kaon-mixing.md) [@ParticleDataGroup:2024cfk]. The executable derivation is [`scripts/derive_neutral_kaon_projection.py`](../../scripts/derive_neutral_kaon_projection.py).
+These flavor amplitudes may be obtained from the direct leading-order interactions recorded in [the three-meson amplitude derivation](../alp/three-meson/alp-three-meson-amplitudes-widths.md), whose chiral input is documented in [the matrix-level derivation](../alp/three-meson/alp-phi3-lo-chipt-derivation.md) [@Alda:2026nrd]. The mixing input is recorded in [the PDG neutral-kaon extract](../extracts/ParticleDataGroup:2024cfk/neutral-kaon-mixing.md) [@ParticleDataGroup:2024cfk]. The executable derivation is [`scripts/derive_neutral_kaon_projection.py`](../../scripts/derive_neutral_kaon_projection.py).
 
 Assumptions and conventions:
 

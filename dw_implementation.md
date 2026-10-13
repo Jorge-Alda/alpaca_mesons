@@ -11,6 +11,6 @@ If the decay is not kinematically allowed, doesn't conserve charge or strangenes
 
 If two or three mesons are identical, use the formulas that require numerical integration only in one Mandelstam variable.
 
-Use the conventions in `/memory/sources/Alda:2026bar.pdf`.
+Use the conventions in `/memory/sources/Alda:2026nrd.pdf`.
 
 Use the existing virtual environment in `.venv`

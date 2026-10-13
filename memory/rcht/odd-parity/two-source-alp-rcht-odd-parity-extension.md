@@ -3,7 +3,7 @@ title: Two-source ALP anomaly seed and odd-parity RChT extension
 status: derived
 created: 2026-09-28
 updated: 2026-09-30
-bibtex_keys: [Alda:2026bar, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
 
@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Scope, evidence, and obstruction
 
-This record extends the [no-vector photon invariant](../../alp/photon/alp-photon-invariant-from-mixing.md) to two vector-like sources and interfaces it with the [repository RChT vectors](../foundations/rcht-photon-vector-diagonalization.md). The calculation is performed by [`scripts/derive_two_source_rcht_anomaly.py`](../../../scripts/derive_two_source_rcht_anomaly.py). Inputs are Alda's Appendix-A CCWZ and source formulas in [`appendix-a-expansion.md`](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar], the vector-only background-field limitations in [`no-axial-vector-and-rcht-matching.md`](../../extracts/Bai:2025fvl/no-axial-vector-and-rcht-matching.md) [@Bai:2025fvl], and the independent odd-parity operator basis in [`vector-odd-parity.md`](../../extracts/Ruiz-Femenia:2003jdx/vector-odd-parity.md) [@Ruiz-Femenia:2003jdx].
+This record extends the [no-vector photon invariant](../../alp/photon/alp-photon-invariant-from-mixing.md) to two vector-like sources and interfaces it with the [repository RChT vectors](../foundations/rcht-photon-vector-diagonalization.md). The calculation is performed by [`scripts/derive_two_source_rcht_anomaly.py`](../../../scripts/derive_two_source_rcht_anomaly.py). Inputs are Alda's Appendix-A CCWZ and source formulas in [`appendix-a-expansion.md`](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd], the vector-only background-field limitations in [`no-axial-vector-and-rcht-matching.md`](../../extracts/Bai:2025fvl/no-axial-vector-and-rcht-matching.md) [@Bai:2025fvl], and the independent odd-parity operator basis in [`vector-odd-parity.md`](../../extracts/Ruiz-Femenia:2003jdx/vector-odd-parity.md) [@Ruiz-Femenia:2003jdx].
 
 > **WZW anomaly matching does not uniquely predict the complete $aVV$ vertex in antisymmetric-tensor RChT.** Independent VVP and VJP/homogeneous coefficients $d_i,c_i$, together with singlet/double-trace and $SU(3)$-breaking terms, require short-distance constraints and/or data. This obstructs a unique numerical result, but not the general extension below.
 
@@ -43,7 +43,7 @@ $$
 \approx\frac{f_\pi}{f_a}m_i^2.
 $$
 
-Thus the excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution when $f_a\gg f_\pi$, but the inequality is a local, pointwise validity condition. A finite caller-supplied $\mathbb M_a^{-1}(C)$ is necessary but not sufficient: each scan point must be tested with its exact overlap, and a violation must be masked/flagged or treated with coupled mixing. Matrix magnitude alone is not the test. For stable or sufficiently narrow pseudoscalars, a retained violating point requires coupled diagonalization. For unstable states, real-mass proximity and complex-pole proximity are distinct, and the relevant replacement is a coupled complex-propagator/pole analysis [@Alda:2026bar].
+Thus the excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution when $f_a\gg f_\pi$, but the inequality is a local, pointwise validity condition. A finite caller-supplied $\mathbb M_a^{-1}(C)$ is necessary but not sufficient: each scan point must be tested with its exact overlap, and a violation must be masked/flagged or treated with coupled mixing. Matrix magnitude alone is not the test. For stable or sufficiently narrow pseudoscalars, a retained violating point requires coupled diagonalization. For unstable states, real-mass proximity and complex-pole proximity are distinct, and the relevant replacement is a coupled complex-propagator/pole analysis [@Alda:2026nrd].
 
 ## 1. Symmetric two-source anomaly seed
 

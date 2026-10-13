@@ -3,7 +3,7 @@ title: Alda quark rotations and the photon anomaly normalization
 status: mixed
 created: 2026-09-28
 updated: 2026-09-28
-bibtex_keys: [Alda:2026bar, Bai:2025fvl]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
 provenance: literature
 ---
 
@@ -49,7 +49,7 @@ $$
 c_q^A\to c_q^A+\kappa,\qquad c_G\to c_G-\operatorname{tr}\kappa.
 $$
 
-These statements are directly evidenced by `Alda:2026bar`, whose available local copy is a manuscript and is not currently indexed by INSPIRE-HEP. [@Alda:2026bar]
+These statements are directly evidenced by `Alda:2026nrd`, whose available local copy is a manuscript and is not currently indexed by INSPIRE-HEP. [@Alda:2026nrd]
 
 ## Derived photon coefficient under a stated normalization assumption
 
@@ -85,4 +85,4 @@ $$
 
 ## Scope and normalization caveat
 
-Alda's paper explicitly treats amplitudes outside the odd-intrinsic-parity WZW sector; it does not itself define a $c_\gamma$ term. The photon shift above therefore requires the displayed anomaly normalization assumption, while the rotation signs and the $c_q^A$ shift are literature evidence from Alda. Bai's WZW treatment is used only for the photon/anomaly bookkeeping; no vector-meson or resonance terms are included here. [@Alda:2026bar; @Bai:2025fvl]
+Alda's paper explicitly treats amplitudes outside the odd-intrinsic-parity WZW sector; it does not itself define a $c_\gamma$ term. The photon shift above therefore requires the displayed anomaly normalization assumption, while the rotation signs and the $c_q^A$ shift are literature evidence from Alda. Bai's WZW treatment is used only for the photon/anomaly bookkeeping; no vector-meson or resonance terms are included here. [@Alda:2026nrd; @Bai:2025fvl]

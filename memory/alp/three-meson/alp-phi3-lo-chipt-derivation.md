@@ -3,7 +3,7 @@ title: One-ALP three-pseudoscalar interactions at LO in chiPT
 status: derived
 created: 2026-09-22
 updated: 2026-09-22
-bibtex_keys: [Alda:2026bar]
+bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -18,7 +18,7 @@ $$
 \left\langle u_\mu u^\mu+\chi_+\right\rangle.
 $$
 
-The definitions $\phi=\Phi/(2f_\pi)$, $\mathcal C_\phi[X]=[X,\phi]$, $\mathcal A_\phi[X]=\{X,\phi\}$, and the all-orders expressions for $u_\mu$ and $\chi_+$ are taken from [the Appendix A extract](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar]. The executable derivation is [`scripts/derive_alp_phi3_lo_chipt.py`](../../../scripts/derive_alp_phi3_lo_chipt.py).
+The definitions $\phi=\Phi/(2f_\pi)$, $\mathcal C_\phi[X]=[X,\phi]$, $\mathcal A_\phi[X]=\{X,\phi\}$, and the all-orders expressions for $u_\mu$ and $\chi_+$ are taken from [the Appendix A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]. The executable derivation is [`scripts/derive_alp_phi3_lo_chipt.py`](../../../scripts/derive_alp_phi3_lo_chipt.py).
 
 Assumptions and truncations:
 

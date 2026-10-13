@@ -3,7 +3,7 @@ title: Comparison of vector-meson extensions of chiral perturbation theory for A
 status: mixed
 created: 2026-09-23
 updated: 2026-09-23
-bibtex_keys: [Alda:2026bar, Ecker:1988te, Ecker:1989yg, Bando:1987br, Fujiwara:1984mp, Harada:2003jx, Ruiz-Femenia:2003jdx, Ovchynnikov:2025gpx, Bai:2025fvl, Balkin:2025enj]
+bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Bando:1987br, Fujiwara:1984mp, Harada:2003jx, Ruiz-Femenia:2003jdx, Ovchynnikov:2025gpx, Bai:2025fvl, Balkin:2025enj]
 provenance: literature
 ---
 
@@ -51,9 +51,9 @@ The short-distance-constrained antisymmetric theory gives a useful but not preci
 
 Thus “agreement with data” should be assessed channel by channel after a correlated fit. Chiral symmetry and short-distance constraints reduce parameter freedom, but they do not determine all couplings, $SU(3)$ breaking, widths, or final-state phases.
 
-### Extension of `Alda:2026bar`
+### Extension of `Alda:2026nrd`
 
-1. Promote the vector octet to a $U(3)$ nonet and let $V_{\mu\nu}$ transform with the same CCWZ compensator $h$ used in `Alda:2026bar`.
+1. Promote the vector octet to a $U(3)$ nonet and let $V_{\mu\nu}$ transform with the same CCWZ compensator $h$ used in `Alda:2026nrd`.
 2. Insert the Alda covariant blocks $u_\mu$, $\Gamma_\mu$, $\chi_\pm$, $f_\pm^{\mu\nu}$ and the topological singlet $X_{TC}$ into the complete one-vector and two-vector operator bases.
 3. For the even-parity sector, impose the Alda no-mixing parametrization
    $$
@@ -61,7 +61,7 @@ Thus “agreement with data” should be assessed channel by channel after a cor
    \widehat c_q^P=-c_q^{AP}-\mathbb M_a^{-1}(C),\qquad
    \widehat c_q^V=c_q^{VS},
    $$
-   and derive direct $aVP$, $aVPP$, and $aVV$ vertices from invariant sources. This is a derived programme based on the transformation law of the CCWZ blocks, not yet a completed calculation. [@Alda:2026bar]
+   and derive direct $aVP$, $aVPP$, and $aVV$ vertices from invariant sources. This is a derived programme based on the transformation law of the CCWZ blocks, not yet a completed calculation. [@Alda:2026nrd]
 4. Treat the odd-parity sector separately: include WZW, $VJP$, $VVP$, and the anomalous counterterm before applying any field redefinition. The direct-only no-mixing rule established outside WZW cannot simply be assumed to hold in the anomalous sector.
 5. Fit $F_V,G_V$ and odd-parity combinations to $\rho\to\pi\pi$, $V\to P\gamma$, $e^+e^-\to PP$, $e^+e^-\to VP$, $\omega/\phi\to3P$, and transition-form-factor data, while enforcing low-energy anomaly normalization and selected QCD asymptotics.
 6. Add finite widths through self-energies or dispersive propagators in a way that preserves the low-energy expansion; do not insert widths into tree propagators before checking Ward identities.
@@ -84,7 +84,7 @@ The success of $a\simeq2$ and KSRF-type relations explains why HLS efficiently r
 
 That continuation is useful but strongly model dependent: it assumes form factors are real, flavor independent within a Lorentz class, and functions only of the hardest scale. Exact basis-dependent cancellations also rely on the universal HLS vector mass but are imposed after measured masses and widths are substituted. [@Balkin:2025enj]
 
-### Extension of `Alda:2026bar`
+### Extension of `Alda:2026nrd`
 
 1. Factorize the same $U(3)$ field $U=u^2$ used by Alda into HLS variables $\xi_{L,R}$ and define their covariant derivatives with the general ALP left/right sources, including flavor-changing entries.
 2. Introduce a full vector nonet gauge field and retain general $a$, $g$, kinetic terms, $SU(3)$-breaking operators, and singlet mixing. Do not hard-wire $a=2$ or ideal $\omega$--$\phi$ mixing before fitting.
@@ -105,7 +105,7 @@ This method fixes anomaly-related structures, not complete resonance dynamics. P
 
 The Bai et al. implementation includes three flavors, the anomalous $U(1)_A$ sector, vectors and axial vectors, and demonstrates auxiliary-phase cancellation. It uses leading-order and idealized inputs, so its benchmark widths establish consistency rather than precision agreement with a global body of vector-meson data. [@Bai:2025fvl]
 
-### Extension of `Alda:2026bar`
+### Extension of `Alda:2026nrd`
 
 1. Promote the general Alda left/right ALP sources, including non-diagonal $c_q^A,c_q^V,c_q^P,c_q^S$, to background connections in the full $U(3)$ gauged WZW functional.
 2. Retain the anomalous $U(1)_A$ topological source rather than requiring a rotation with $\operatorname{Tr}\kappa=c_G$.
@@ -119,7 +119,7 @@ The Bai et al. implementation includes three flavors, the anomalous $U(1)_A$ sec
 
 The following recommendation is an inference from the literature rather than an established result.
 
-1. **Use RChT as the primary dynamical layer.** Its CCWZ transformation law interfaces directly with `Alda:2026bar`, and its operator basis makes assumptions and short-distance constraints auditable.
+1. **Use RChT as the primary dynamical layer.** Its CCWZ transformation law interfaces directly with `Alda:2026nrd`, and its operator basis makes assumptions and short-distance constraints auditable.
 2. **Use the full background-field WZW functional as the anomaly layer.** This is needed regardless of whether the propagating vectors are represented by RChT or HLS fields.
 3. **Implement HLS as a matched alternative.** Fit it to the same calibration set and use the RChT--HLS spread, after matching low-energy constants and pole inputs, as one estimate of resonance-model uncertainty.
 4. **Validate in ascending complexity:** SM $V\to PP$ and $V\to P\gamma$; pion/kaon electromagnetic form factors; $\omega,\phi\to3P$; pseudoscalar transition form factors; then ALP amplitudes.
@@ -129,7 +129,7 @@ The following recommendation is an inference from the literature rather than an 
 
 - **Literature established:** the structures and transformation properties of RChT, HLS, and the gauged WZW functional; the need for anomalous counterterms; failures of strict VMD in selected anomalous channels. [@Ecker:1988te; @Bando:1987br; @Fujiwara:1984mp; @Ruiz-Femenia:2003jdx; @Bai:2025fvl]
 - **Recent literature implementation:** invariant or covariant ALP resonance amplitudes exist, but they use restricted flavor assumptions or phenomenological form-factor continuations. [@Ovchynnikov:2025gpx; @Balkin:2025enj; @Bai:2025fvl]
-- **Derived recommendation:** RChT plus a background-field WZW anomaly module is the most transparent baseline for the general, flavor-changing, no-mixing framework of `Alda:2026bar`.
+- **Derived recommendation:** RChT plus a background-field WZW anomaly module is the most transparent baseline for the general, flavor-changing, no-mixing framework of `Alda:2026nrd`.
 - **Unresolved:** a controlled error budget near and above $1\,\mathrm{GeV}$; consistent loop/width treatment; complete $U(3)$ odd-parity operator basis with the Alda topological source; coupled-channel final-state interactions; and matching of the exclusive sum to inclusive QCD.
 
 Recent invariant phenomenological models do not yet close the last issue: one implementation finds that its exclusive invariant width above roughly $1\,\mathrm{GeV}$ does not approach the perturbative gluonic result, signaling missing channels or interactions. [@Ovchynnikov:2025gpx]

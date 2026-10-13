@@ -3,7 +3,7 @@ title: Symmetry selection rules and widths for neutral ALP decays to a pseudosca
 status: mixed
 created: 2026-09-24
 updated: 2026-09-24
-bibtex_keys: [Ecker:1988te, Ecker:1989yg, Alda:2026bar, ParticleDataGroup:2024cfk]
+bibtex_keys: [Ecker:1988te, Ecker:1989yg, Alda:2026nrd, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
 

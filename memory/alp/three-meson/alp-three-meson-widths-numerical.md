@@ -3,7 +3,7 @@ title: Numerical implementation of ALP three-meson decay widths
 status: numerical
 created: 2026-09-22
 updated: 2026-09-24
-bibtex_keys: [Alda:2026bar, ParticleDataGroup:2024cfk]
+bibtex_keys: [Alda:2026nrd, ParticleDataGroup:2024cfk]
 provenance: numerical-computation
 ---
 
@@ -11,7 +11,7 @@ provenance: numerical-computation
 
 ## Inputs and conventions
 
-The implementation is [`scripts/implementation/three_meson_width.py`](../../../scripts/implementation/three_meson_width.py). It evaluates the amplitudes and Dalitz integrals derived in [ALP to three-meson amplitudes and decay widths](alp-three-meson-amplitudes-widths.md). The pseudoscalar matrix, generator normalization, $f_\pi=0.093\,\mathrm{GeV}$, fitted products $B_0m_q$, neutral physical generators, and meson masses follow Eqs. (III.1), (C.4), and (C.6) and Table I of `Alda:2026bar` [@Alda:2026bar].
+The implementation is [`scripts/implementation/three_meson_width.py`](../../../scripts/implementation/three_meson_width.py). It evaluates the amplitudes and Dalitz integrals derived in [ALP to three-meson amplitudes and decay widths](alp-three-meson-amplitudes-widths.md). The pseudoscalar matrix, generator normalization, $f_\pi=0.093\,\mathrm{GeV}$, fitted products $B_0m_q$, neutral physical generators, and meson masses follow Eqs. (III.1), (C.4), and (C.6) and Table I of `Alda:2026nrd` [@Alda:2026nrd].
 
 The inputs $\widehat c_q^A$ and $\widehat c_q^P$ are Hermitian $3\times3$ arrays already expressed in the no-mixing basis. Since the fit supplies $B_0m_q$ directly, the symmetry-breaking matrix is evaluated as
 

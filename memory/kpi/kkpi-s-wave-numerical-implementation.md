@@ -4,7 +4,7 @@ status: numerical
 created: 2026-09-23
 updated: 2026-09-23
 bibtex_keys:
-  - Alda:2026bar
+  - Alda:2026nrd
   - Omnes:1958hv
   - ParticleDataGroup:2024cfk
 provenance: numerical-computation
@@ -16,7 +16,7 @@ provenance: numerical-computation
 
 The implementation is [`scripts/implementation/kpi_s_wave_decay.py`](../../scripts/implementation/kpi_s_wave_decay.py). It covers the four charge-conserving flavor modes $K^+\pi^0K^-$, $K^0\pi^0\bar K^0$, $K^+\pi^-\bar K^0$, and $K^0\pi^+K^-$, as well as their physical-neutral-kaon projections $\pi^0K_SK_S$, $\pi^0K_LK_L$, $\pi^0K_SK_L$, $\pi^+K^-K_{S,L}$, and $\pi^-K^+K_{S,L}$. The projections include indirect CP violation through the configurable $\epsilon_K$ convention documented in [the PDG extract](../extracts/ParticleDataGroup:2024cfk/neutral-kaon-mixing.md) [@ParticleDataGroup:2024cfk]. The internal ordering is $(K,\pi,\bar K)$, with $s=(p_K+p_\pi)^2$ and $t=(p_\pi+p_{\bar K})^2$.
 
-The script evaluates the flavor traces of the leading-order $a\Phi^3$ interaction with diagonal hatted couplings, nondegenerate fitted $B_0m_q$, physical neutral generators, and physical charged-neutral masses in the conventions of `Alda:2026bar` [@Alda:2026bar]. All energies are in GeV and widths are returned in GeV.
+The script evaluates the flavor traces of the leading-order $a\Phi^3$ interaction with diagonal hatted couplings, nondegenerate fitted $B_0m_q$, physical neutral generators, and physical charged-neutral masses in the conventions of `Alda:2026nrd` [@Alda:2026nrd]. All energies are in GeV and widths are returned in GeV.
 
 ## Band decomposition and final-state interactions
 

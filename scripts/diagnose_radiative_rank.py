@@ -477,6 +477,86 @@ def main() -> None:
 
     print()
     print("=" * 78)
+    print("6. Space-like TFF sensitivity rows: does the rank rise?")
+    print("=" * 78)
+    print("  The TFF P -> gamma* gamma uses the same seven VJP operators with one")
+    print("  space-like off-shell photon (invariant Q^2) and the pseudoscalar as the")
+    print("  initial state.  The off-shell kinematic factors, derived by explicit index")
+    print("  contraction in scripts/derive_radiative_tff_kinematics.py, are:")
+    print("      c1: (Q^2 + m_P^2)   c2: (m_P^2 - Q^2)   c5: (Q^2 + m_P^2)")
+    print("      c6: -2 Q^2          c3: -2 (pure number)   c4, c7: 0")
+    print("  The decisive output: the off-shell case gives c6 = c2 - c1, NOT")
+    print("  c6 = c1 - c2 as in the on-shell case.  So the TFF row is NOT in the span")
+    print("  of the on-shell rows, and the rank should rise.")
+    print()
+    print("  Flavor factors are set to 1 (placeholder): they are overall factors per")
+    print("  row and do not affect the rank.  The actual TFF flavor structure differs")
+    print("  from the on-shell case and must be derived separately before a fit.")
+    print()
+
+    def tff_row(m_p: float, q2: float) -> np.ndarray:
+        """Sensitivity row dF_{P gamma* gamma}/d(c1..c7,d1..d4) for one TFF channel.
+
+        Off-shell kinematic factors from scripts/derive_radiative_tff_kinematics.py,
+        with flavor factors set to 1 (placeholder).  d-sector is zero: the VVP
+        contribution to the TFF is not included in this decisive test.
+        """
+        r = _np.zeros(11)
+        r[0] = q2 + m_p**2        # c1
+        r[1] = m_p**2 - q2        # c2
+        r[2] = -2.0               # c3 (pure number, flavor factor = 1)
+        r[4] = q2 + m_p**2        # c5
+        r[5] = -2.0 * q2          # c6
+        return r
+
+    TFF_MESONS = {"pi0": 0.1396, "eta": 0.5479, "eta'": 0.9578}
+    Q2_TFF = 5.0  # GeV^2, within the CLEO/BaBar range [1.64, 34.4]
+
+    tff_rows = []
+    for meson, m_p in TFF_MESONS.items():
+        raw = tff_row(m_p, Q2_TFF)
+        tff_rows.append(unit(raw))
+        nz = [f"{'c'+str(j+1) if j < 7 else 'd'+str(j-6)}"
+              for j, x in enumerate(raw) if abs(x) > 1e-12]
+        print(f"  TFF {meson:5s} (Q^2={Q2_TFF} GeV^2)  nonzero: {', '.join(nz)}")
+
+    print()
+    # Baseline: OPE + 10 radiative
+    J_base = _np.vstack([A] + [unit(direct_row(n)) for n in names])
+    sv_base = _np.linalg.svd(J_base, compute_uv=False)
+    rank_base = int((sv_base > 1e-12).sum())
+    print(f"  Baseline rank (OPE + 10 radiative)           =  {rank_base} of 11")
+
+    # With TFF rows
+    J_tff = _np.vstack([J_base] + tff_rows)
+    sv_tff = _np.linalg.svd(J_tff, compute_uv=False)
+    rank_tff = int((sv_tff > 1e-12).sum())
+    print(f"  Rank with TFF rows (OPE + 10 rad + 3 TFF)    =  {rank_tff} of 11")
+    print(f"  Rank rise: {rank_base} -> {rank_tff}  (+{rank_tff - rank_base})")
+    print()
+    print("  Singular value spectrum with TFF rows:")
+    print("    " + ", ".join(f"{v:.4f}" for v in sv_tff))
+    print()
+    if rank_tff > rank_base:
+        print(f"  => The TFF rows ADD {rank_tff - rank_base} rank direction(s).  The TFF")
+        print("     route is VIABLE: the off-shell kinematics breaks the on-shell")
+        print("     c6 = c1 - c2 identity and lifts the null directions.")
+    else:
+        print("  => The TFF rows add NO rank.  The TFF route is DEAD.")
+
+    print()
+    print("  Incremental: which TFF row adds rank, in order pi0, eta, eta'?")
+    blk = J_base.copy()
+    for meson, m_p in TFF_MESONS.items():
+        me = unit(tff_row(m_p, Q2_TFF))
+        before = int((_np.linalg.svd(blk, compute_uv=False) > 1e-12).sum())
+        blk = _np.vstack([blk, me])
+        after = int((_np.linalg.svd(blk, compute_uv=False) > 1e-12).sum())
+        flag = "" if after > before else "   <-- adds NO rank"
+        print(f"    + TFF {meson:5s}  rank {before} -> {after}  (+{after - before}){flag}")
+
+    print()
+    print("=" * 78)
     print("Scope of this half of the probe")
     print("=" * 78)
     print("  These numbers do not depend on the undetermined common normalization N,")

@@ -3,7 +3,7 @@ title: Decision record for a U(3) odd-parity nonet and ALP-source extension
 status: mixed
 created: 2026-09-28
 updated: 2026-09-30
-bibtex_keys: [Alda:2026bar, Bai:2025fvl, Fujiwara:1984mp, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, Herrera-Siklody:1996tqr, Ecker:1988te, Ecker:1989yg]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Fujiwara:1984mp, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, Herrera-Siklody:1996tqr, Ecker:1988te, Ecker:1989yg]
 provenance: literature
 ---
 
@@ -23,7 +23,7 @@ $$
 X_{TC}=2i\left(\langle\log u\rangle+i c_G\frac{a}{f_a}\right).
 $$
 
-On a common logarithm branch, $U=u^2$ relates the mesonic logarithms, but the recorded conventions do not derive the normalization or sign map between $\hat\theta$ and $c_Ga/f_a$. No exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is therefore claimed. Translating a Herrera-Siklody coefficient function requires an independently stated source map [@Herrera-Siklody:1996tqr; @Alda:2026bar]. A complete treatment allows parity-appropriate coefficient functions of Alda's $X_{TC}$ and independent derivative-$X_{TC}$ structures. Such terms can contribute directly to dynamical-ALP amplitudes and are omitted in option A as an explicit large-$N_c$/operator truncation, not because topological observables are absent.
+On a common logarithm branch, $U=u^2$ relates the mesonic logarithms, but the recorded conventions do not derive the normalization or sign map between $\hat\theta$ and $c_Ga/f_a$. No exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is therefore claimed. Translating a Herrera-Siklody coefficient function requires an independently stated source map [@Herrera-Siklody:1996tqr; @Alda:2026nrd]. A complete treatment allows parity-appropriate coefficient functions of Alda's $X_{TC}$ and independent derivative-$X_{TC}$ structures. Such terms can contribute directly to dynamical-ALP amplitudes and are omitted in option A as an explicit large-$N_c$/operator truncation, not because topological observables are absent.
 
 ## Mandatory versus optional at the current accuracy
 
@@ -33,7 +33,7 @@ Optional, and formally beyond the current leading-OZI model: independent singlet
 
 ## ALP/topological-source prescription
 
-For the baseline, use the current $u_\mu$ and $\chi_-$ insertions and do not invent a separate $aVV$ anomaly coefficient: the $c_i,d_i$ are independent homogeneous resonance couplings [@Ruiz-Femenia:2003jdx]. With external sources and current assignment fixed, WZW plus the declared Bardeen-type counterterm convention reproduces the corresponding anomalous variation; it does not determine finite invariant local odd-parity terms or resonance matching [@Bai:2025fvl; @Fujiwara:1984mp]. $X_{TC}$-dependent coefficient functions can generate dynamical ALP interactions even without a separately targeted topological observable; omitting them is the explicit option-A large-$N_c$/operator truncation [@Alda:2026bar; @Herrera-Siklody:1996tqr; @Kaiser:2000gs].
+For the baseline, use the current $u_\mu$ and $\chi_-$ insertions and do not invent a separate $aVV$ anomaly coefficient: the $c_i,d_i$ are independent homogeneous resonance couplings [@Ruiz-Femenia:2003jdx]. With external sources and current assignment fixed, WZW plus the declared Bardeen-type counterterm convention reproduces the corresponding anomalous variation; it does not determine finite invariant local odd-parity terms or resonance matching [@Bai:2025fvl; @Fujiwara:1984mp]. $X_{TC}$-dependent coefficient functions can generate dynamical ALP interactions even without a separately targeted topological observable; omitting them is the explicit option-A large-$N_c$/operator truncation [@Alda:2026nrd; @Herrera-Siklody:1996tqr; @Kaiser:2000gs].
 
 ## Recommendation and unresolved issues
 

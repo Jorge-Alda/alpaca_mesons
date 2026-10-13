@@ -3,7 +3,7 @@ title: Generic-generator expansion of one-ALP three-meson interactions
 status: derived
 created: 2026-09-22
 updated: 2026-09-22
-bibtex_keys: [Alda:2026bar]
+bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Input and conventions
 
-The starting result is the derived leading-order one-ALP, three-pseudoscalar Lagrangian in [the matrix-level derivation](alp-phi3-lo-chipt-derivation.md), whose CCWZ inputs originate from [the Appendix A extract](../../extracts/Alda:2026bar/appendix-a-expansion.md) [@Alda:2026bar]:
+The starting result is the derived leading-order one-ALP, three-pseudoscalar Lagrangian in [the matrix-level derivation](alp-phi3-lo-chipt-derivation.md), whose CCWZ inputs originate from [the Appendix A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]:
 
 $$
 \left.\mathcal L\right|_{a\Phi^3}

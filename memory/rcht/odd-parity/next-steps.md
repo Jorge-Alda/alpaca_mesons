@@ -32,6 +32,12 @@ Established and verified (all assertions exercised by scripts):
   from the OPE block alone. Non-ideal mixing and the two-body $V\to V'P$ decays
   were tested and add **zero** rank.
   `scripts/diagnose_radiative_rank.py`, [record](radiative-rank-saturation.md).
+- **Space-like TFF kinematics**: the off-shell factors break the on-shell
+  $c_6=c_1-c_2$ identity (giving $c_6=c_2-c_1$), and the three TFF rows raise
+  the rank from 7 to **8 of 11**. The TFF route is viable; it lifts one of the
+  four null directions.
+  `scripts/derive_radiative_tff_kinematics.py`,
+  [record](radiative-tff-kinematics.md).
 
 Open, in order of how much they block:
 
@@ -41,15 +47,38 @@ Open, in order of how much they block:
    three falsification criteria.
 2. **The $d_1$ sign discrepancy** in the exchange block: derived
    $(M^2-m_P^2)$, published $m_P^2$ only. Affects $d_1$ alone.
-3. **The four null directions** in $(c_2,c_4,c_5,c_6,c_7)$ and $d_4$.
+3. **TFF predictor and data connection.** The flavor factors are now derived in
+   [the flavor record](radiative-tff-flavor.md). The source does not provide the
+   normalized off-shell amplitude; derive the WZW plus resonance contributions,
+   including the relevant VVP exchange, before creating CLEO/BaBar observations.
+4. **The three remaining null directions** in $(c_2,c_4,c_5,c_6,c_7)$ and $d_4$,
+   not lifted by the TFF.
 
-## Next step: space-like transition form factors
+## Space-like transition form factors: decisive test done, route viable
 
 The most credible remaining candidate for lifting the null directions, because
 they are the only available observable with genuinely different kinematics in the
 $c$-sector: the pseudoscalar is the **initial** state and the photon is
 **space-like off-shell** with invariant $Q^2$, so the operator-level kinematic
 factors differ from the on-shell case rather than rescaling it.
+
+**Decisive test, 2026-10-05: the rank rises.** The off-shell kinematic factors
+were derived by explicit index contraction
+([record](radiative-tff-kinematics.md),
+`scripts/derive_radiative_tff_kinematics.py`). The off-shell case gives
+$c_6=c_2-c_1$, **not** $c_6=c_1-c_2$ as in the on-shell case, so the TFF
+sensitivity row is not in the span of the on-shell rows. Adding the three TFF
+rows ($\pi^0,\eta,\eta'$ at $Q^2=5$ GeV$^2$) to the Jacobian in
+`scripts/diagnose_radiative_rank.py` raises the rank from **7 to 8 of 11**.
+Only the $\pi^0$ row adds rank; the $\eta$ and $\eta'$ rows lie in the span of
+the OPE block, the ten radiative rows, and the $\pi^0$ TFF row. The TFF route
+is **viable**: it lifts one of the four null directions inherited from the OPE
+block. The remaining three are not lifted by the TFF.
+
+The flavor factors are derived in [the TFF flavor record](radiative-tff-flavor.md).
+The next step is to derive the normalized off-shell amplitude, including the WZW
+and relevant VVP contributions, then write the predictor and turn the CLEO and
+BaBar rows into `Observation`s. The cited RChT paper does not print this formula.
 
 **Data already validated and checksum-pinned, with loaders:**
 
@@ -62,30 +91,16 @@ Both have validated loaders in `scripts/implementation/odd_parity_data.py` but
 **deliberately create no `Observation`**, because no physical predictor exists.
 That is the gap to close.
 
-**What to derive.** $F_{P\gamma^*\gamma}(Q^2)$ is the same VJP vertex with the
-photon off-shell, so it uses the same seven operators. The work:
+**What remains to derive.** Steps 1 and 2 of the original plan are done
+([record](radiative-tff-kinematics.md)): the off-shell slot assignment was
+redone, the alternative contracted pairs all vanish (the uniqueness criterion
+holds), and the $c_2,c_5,c_6$ fixed-ratio degeneracy is **broken**
+($c_6=c_2-c_1$, not $c_1-c_2$). The remaining work:
 
-1. Replace the on-shell photon structure $F^{\mu\nu}=r^\mu\epsilon_\gamma^\nu
-   -r^\nu\epsilon_\gamma^\mu$ by the off-shell one and redo the slot
-   assignment. The on-shell identities used before —
-   $\epsilon(q,\epsilon_V,r,k)=0$ from $q=k+r$, and $r\cdot k=(M^2-m_P^2)/2$ —
-   do **not** hold, because $q^2\ne Q^2$ and the photon carries $Q^2$. Work in
-   the pseudoscalar rest frame with $q=(m_P,0,0,0)$ and the off-shell photon
-   $(Q^2,0,0,\sqrt{Q^2-m_P^2})$.
-2. Apply the same uniqueness criterion that fixed the on-shell case: the
-   alternative contracted pairs must either vanish identically or not.
-   Expect the $c_2,c_5,c_6$ fixed-ratio degeneracy to be **broken or not** — this
-   is the decisive output, so check it before anything else.
-3. Then compute the flavor invariants, which need no new algebra since the
-   external states are the same pseudoscalars and vectors; only the kinematics
-   is new.
-4. Only then write a predictor and turn the rows into `Observation`s.
-
-**Decisive test, cheap and worth doing first:** build the sensitivity rows
-$\partial F_{P\gamma^*\gamma}/\partial c_i$ and add them to the Jacobian in
-`scripts/diagnose_radiative_rank.py`. If the rank does not rise, the TFF route is
-dead and the record should say so before any predictor is written. This costs
-minutes and settles the question.
+3. Derive the fully normalized off-shell amplitude (WZW and resonance terms,
+   including relevant VVP exchange); then write a predictor and connect the
+   CLEO and BaBar rows as `Observation`s. The flavor trace itself is recorded in
+   [radiative-tff-flavor.md](radiative-tff-flavor.md).
 
 ## Next step after that: $P\to\gamma\gamma$
 
@@ -103,6 +118,7 @@ the two-photon operator content has not been checked here.
 ```text
 .venv/bin/python scripts/derive_radiative_sm_flavor_algebra.py
 .venv/bin/python scripts/derive_radiative_sm_kinematics_probe.py
+.venv/bin/python scripts/derive_radiative_tff_kinematics.py
 .venv/bin/python scripts/diagnose_radiative_rank.py          # ~30 s
 .venv/bin/python scripts/extract_odd_parity_tables.py
 .venv/bin/python -m unittest scripts.implementation.test_odd_parity_data

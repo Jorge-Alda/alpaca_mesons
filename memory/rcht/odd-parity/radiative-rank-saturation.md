@@ -248,9 +248,11 @@ channel.
 - **transition form factors** $F_{P\gamma^*\gamma}(Q^2)$ and $P\to\gamma\gamma$,
   which carry the same operator basis but with a *space-like* off-shell photon
   and the pseudoscalar as initial state, hence different kinematic factors and
-  genuinely different sensitivity rows. These were not included here, and their
-  kinematics has not been derived. They remain the most credible candidate, and
-  the machinery to test them now exists.
+  genuinely different sensitivity rows. The TFF kinematics has now been derived
+  ([the TFF-kinematics record](radiative-tff-kinematics.md)): the off-shell case
+  gives $c_6=c_2-c_1$, breaking the on-shell $c_6=c_1-c_2$ identity, and the
+  three TFF rows raise the rank from 7 to **8 of 11**. The TFF route is viable
+  and lifts one of the four null directions. $P\to\gamma\gamma$ remains untested.
 - **two-body $V\to V'P$ decays such as $\phi\to\omega\pi^0$ and
   $\phi\to\rho\pi$**: tested above, and they add **zero** rank. They cannot
   help, because they couple only to the $d_i$ while all four null directions

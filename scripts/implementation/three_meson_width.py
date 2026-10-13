@@ -15,7 +15,7 @@ from scipy.integrate import quad
 
 
 F_PI = 0.093
-"""Pion decay constant in GeV, in the convention of Alda:2026bar."""
+"""Pion decay constant in GeV, in the convention of Alda:2026nrd."""
 
 EPSILON_K = 2.228e-3 * np.exp(1j * np.deg2rad(43.52))
 """Default indirect-CP-violation parameter from ParticleDataGroup:2024cfk."""

@@ -3,7 +3,7 @@ title: ALP photon memory index
 status: derived
 created: 2026-10-01
 updated: 2026-10-01
-bibtex_keys: [Alda:2026bar, Bai:2025fvl]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
 provenance: analytical-derivation
 ---
 

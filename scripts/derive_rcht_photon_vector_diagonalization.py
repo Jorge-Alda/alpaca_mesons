@@ -9,10 +9,11 @@ orthonormal diagonal U(3) generators; no ideal-mixing assignment is made.
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 # ---------------------------------------------------------------------------

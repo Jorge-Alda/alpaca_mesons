@@ -9,10 +9,11 @@ labelled CP-limit substitution p = q = 1/sqrt(2).
 """
 
 import sympy as sp
+try:
+    from scripts.symbolic_utils import show
+except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
+    from symbolic_utils import show
 
-
-def show(label: str, expression: sp.Expr | sp.MatrixBase) -> None:
-    print(f"{label}:\n{sp.latex(expression)}\n")
 
 
 p, q = sp.symbols("p q")

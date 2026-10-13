@@ -3,7 +3,7 @@ title: Odd-parity coupling prescriptions and direct ALP-vector-photon VJP insert
 status: mixed
 created: 2026-09-28
 updated: 2026-09-28
-bibtex_keys: [Alda:2026bar, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1989yg, Fujiwara:1984mp]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1989yg, Fujiwara:1984mp]
 provenance: analytical-derivation
 ---
 

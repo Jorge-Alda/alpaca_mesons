@@ -36,7 +36,7 @@ from scipy.integrate import quad
 from scipy.interpolate import PPoly, PchipInterpolator
 
 # Physical generators, masses, f_pi, and B_0 m_q use the fit conventions and
-# inputs of Alda:2026bar at the precise point where they enter this module.
+# inputs of Alda:2026nrd at the precise point where they enter this module.
 from .three_meson_width import (
     B0_MQ,
     EPSILON_K,
@@ -120,7 +120,7 @@ def kpi_thresholds() -> dict[tuple[str, str], float]:
     pairs = {
         (channel[0], channel[1]) for channel in _CHANNELS.values()
     } | {(channel[2], channel[1]) for channel in _CHANNELS.values()}
-    # Alda:2026bar supplies the charged/neutral physical masses used here.
+    # Alda:2026nrd supplies the charged/neutral physical masses used here.
     return {pair: _MESONS[pair[0]].mass + _MESONS[pair[1]].mass for pair in pairs}
 
 
@@ -202,7 +202,7 @@ def _kernels_from_inputs(
     )
     tensor_p = _trace(ordered_sum @ symmetry_breaking)
 
-    # Alda:2026bar: expansion of the chiral-invariant LO a Phi^3 interaction.
+    # Alda:2026nrd: expansion of the chiral-invariant LO a Phi^3 interaction.
     # Eliminating u leaves an affine function of the two K-pi invariants.
     normalization = 1.0 / (12.0 * f_a * F_PI)
     slope_s = normalization * (tensor_u - tensor_s)

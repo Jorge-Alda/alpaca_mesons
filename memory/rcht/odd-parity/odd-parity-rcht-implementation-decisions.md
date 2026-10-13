@@ -3,7 +3,7 @@ title: Decision-ready baseline for odd-parity RChT implementation
 status: mixed
 created: 2026-09-28
 updated: 2026-09-30
-bibtex_keys: [Alda:2026bar, Bai:2025fvl, Fujiwara:1984mp, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, Herrera-Siklody:1996tqr, Ecker:1988te, Ecker:1989yg, Rosell:2004mn, Pich:2010sm, Hanhart:2012wi, GomezDumm:2013sib, Jamin:2000wn, ParticleDataGroup:2024cfk]
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Fujiwara:1984mp, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, Herrera-Siklody:1996tqr, Ecker:1988te, Ecker:1989yg, Rosell:2004mn, Pich:2010sm, Hanhart:2012wi, GomezDumm:2013sib, Jamin:2000wn, ParticleDataGroup:2024cfk]
 provenance: assumption
 ---
 
@@ -11,7 +11,7 @@ provenance: assumption
 
 ## Scope and evidence
 
-This record turns the evidence and options in [the $U(3)$ nonet record](u3-nonet-odd-parity-extension-options.md) and [the vector line-shape record](../foundations/vector-width-lineshape-prescriptions.md) into an implementation baseline. Literature fixes the Ruiz--Femenia operator basis, OZI hierarchy, Ecker antisymmetric-tensor convention, and line-shape constraints; the selected truncations below are declared recommendations, not additional literature results [@Ruiz-Femenia:2003jdx; @Kaiser:2000gs; @Ecker:1989yg]. **HLS remains excluded.** Natural units and Alda notation are used throughout [@Alda:2026bar].
+This record turns the evidence and options in [the $U(3)$ nonet record](u3-nonet-odd-parity-extension-options.md) and [the vector line-shape record](../foundations/vector-width-lineshape-prescriptions.md) into an implementation baseline. Literature fixes the Ruiz--Femenia operator basis, OZI hierarchy, Ecker antisymmetric-tensor convention, and line-shape constraints; the selected truncations below are declared recommendations, not additional literature results [@Ruiz-Femenia:2003jdx; @Kaiser:2000gs; @Ecker:1989yg]. **HLS remains excluded.** Natural units and Alda notation are used throughout [@Alda:2026nrd].
 
 > **Recommended baseline**
 >
@@ -42,7 +42,7 @@ $$
 X_{TC}=2i\left(\langle\log u\rangle+i c_G\frac{a}{f_a}\right).
 $$
 
-The recorded conventions do not derive the normalization and sign map between $\hat\theta$ and Alda's ALP source $c_Ga/f_a$. Therefore no exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is asserted here. The common-branch identity $\langle\log U\rangle=2\langle\log u\rangle$ matches only the mesonic logarithms; it does not supply the missing source map. Importing a Herrera-Siklody coefficient function consequently requires a separately stated and derived source identification [@Herrera-Siklody:1996tqr; @Alda:2026bar]. Coefficient functions of Alda's $X_{TC}$ can contribute to dynamical-ALP amplitudes after expanding $X_{TC}$ in the ALP field. Their omission here is an explicit large-$N_c$/operator truncation, not a consequence of topological observables being absent.
+The recorded conventions do not derive the normalization and sign map between $\hat\theta$ and Alda's ALP source $c_Ga/f_a$. Therefore no exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is asserted here. The common-branch identity $\langle\log U\rangle=2\langle\log u\rangle$ matches only the mesonic logarithms; it does not supply the missing source map. Importing a Herrera-Siklody coefficient function consequently requires a separately stated and derived source identification [@Herrera-Siklody:1996tqr; @Alda:2026nrd]. Coefficient functions of Alda's $X_{TC}$ can contribute to dynamical-ALP amplitudes after expanding $X_{TC}$ in the ALP field. Their omission here is an explicit large-$N_c$/operator truncation, not a consequence of topological observables being absent.
 
 ## Width decision by use case
 
@@ -76,7 +76,7 @@ $$
 \approx\frac{f_\pi}{f_a}m_i^2.
 $$
 
-The approximate right-hand side shows that the excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution when $f_a\gg f_\pi$. This is not permission to retain a violating point. The actual pointwise test must use the exact overlap $|\operatorname{tr}(C\lambda_i^\dagger)|$: every sampled point that violates the inequality is locally outside the perturbative-mixing domain and must be masked/flagged or treated with a coupled mixing calculation. A finite $\mathbb M_a^{-1}(C)$ is necessary but not sufficient, and its matrix magnitude is not the validity criterion. Equation (III.37) is a real tree-level mass-separation condition. For stable or sufficiently narrow pseudoscalars, a retained violating point requires coupled diagonalization of the relevant quadratic system. For unstable states, real values of $m_a^2$ and $m_i^2$ can appear close without the complex poles being close, or conversely; validity is controlled by complex-pole separation relative to the off-diagonal mixing and requires a coupled complex propagator/pole analysis rather than ordinary Hermitian diagonalization [@Alda:2026bar].
+The approximate right-hand side shows that the excluded real-mass neighborhoods scale as $f_\pi/f_a$ and are generally negligible in measure or scan resolution when $f_a\gg f_\pi$. This is not permission to retain a violating point. The actual pointwise test must use the exact overlap $|\operatorname{tr}(C\lambda_i^\dagger)|$: every sampled point that violates the inequality is locally outside the perturbative-mixing domain and must be masked/flagged or treated with a coupled mixing calculation. A finite $\mathbb M_a^{-1}(C)$ is necessary but not sufficient, and its matrix magnitude is not the validity criterion. Equation (III.37) is a real tree-level mass-separation condition. For stable or sufficiently narrow pseudoscalars, a retained violating point requires coupled diagonalization of the relevant quadratic system. For unstable states, real values of $m_a^2$ and $m_i^2$ can appear close without the complex poles being close, or conversely; validity is controlled by complex-pole separation relative to the off-diagonal mixing and requires a coupled complex propagator/pole analysis rather than ordinary Hermitian diagonalization [@Alda:2026nrd].
 
 ## Calibration decision
 

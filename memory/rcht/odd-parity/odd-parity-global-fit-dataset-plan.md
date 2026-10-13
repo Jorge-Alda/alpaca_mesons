@@ -3,13 +3,13 @@ title: Minimal global-fit dataset plan for odd-parity RChT
 status: mixed
 created: 2026-09-30
 updated: 2026-10-04
-bibtex_keys: [Alda:2026bar, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, Achasov:1999wp, CLEO:1997fho, BaBar:2009rrj, KLOE:2003kas, Akhmetshin:2006sc, BaBar:2004ytv, Niecknig:2012sj]
+bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, Achasov:1999wp, CLEO:1997fho, BaBar:2009rrj, KLOE:2003kas, Akhmetshin:2006sc, BaBar:2004ytv, Niecknig:2012sj]
 provenance: assumption
 ---
 
 # Recommended first release
 
-This is a data-selection recommendation, not a fit result. It uses the single-trace, no-HLS odd-parity RChT baseline already recorded in `odd-parity-rcht-implementation-decisions.md`; the fitted objects are identifiable combinations of $c_i,d_i$, not each operator coefficient separately [@Alda:2026bar; @Ruiz-Femenia:2003jdx].
+This is a data-selection recommendation, not a fit result. It uses the single-trace, no-HLS odd-parity RChT baseline already recorded in `odd-parity-rcht-implementation-decisions.md`; the fitted objects are identifiable combinations of $c_i,d_i$, not each operator coefficient separately [@Alda:2026nrd; @Ruiz-Femenia:2003jdx].
 
 ## Tier 0: staged target and executable first-release subset
 
