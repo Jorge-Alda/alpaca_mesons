@@ -96,23 +96,54 @@ as its explicit default selection.
   rows; those rows have not been rematched for the enlarged action.
 - No unique precision physical-angle determination or full odd-parity
   split-pole matching result is established.
+- Enlarged-action short-distance matching attempt: the
+  [chiral-octet VVP calculation](../odd-parity/vector-chiral-octet-matching.md)
+  recovers the baseline relations in their chiral domain and exposes their
+  single-virtual TFF mismatch. The
+  [physical-channel calculation](../odd-parity/vector-physical-tff-matching.md)
+  shows that all 48 fixed-central source-breaking scenarios fail necessary
+  simultaneous TFF cancellations. The 16 universal-source controls cancel
+  those terms but do not establish physical adequacy or full matching.
+  An explicit odd-interaction/resonance extension is required before replacing
+  the current matching gate by a usable joint-fit prescription.
+- Stage 5 started: [joint-fit specification](../odd-parity/vector-stage5-joint-fit-specification.md)
+  and [executable preflight](../odd-parity/vector-stage5-preflight.md) saved.
+  Without inherited OPE rows, radiative/real/virtual amplitude ranks are
+  7/7/8 in all 64 scenarios. User selected tree-level ALP accuracy and deferred
+  self-energies. Full joint calibration remains incomplete pending enlarged-action
+  short-distance matching, additional radiative data and a validated dispersive
+  three-pion predictor; no physical fit was run.
 
 ## Next executable task
+
+The user subsequently selected the
+[odd-breaking single/double-trace and low-energy calibration plan](../odd-parity/odd-breaking-low-energy-calibration-plan.md).
+Execute its stage A: enumerate and reduce the declared one-spurion,
+single/double-trace odd VJP/VVP extension. Follow it with normalized SM/ALP
+amplitude derivation, a frozen low-energy data snapshot and identifiable
+joint calibration. Preserve the hard-limit failure as a scope limitation;
+ultraviolet completion and dispersive three-pion calibration are distinct
+later objectives. The [mismatch explanation](../odd-parity/vector-matching-mismatch-interpretation.md)
+is saved, and the [physical matching record](../odd-parity/vector-physical-tff-matching.md)
+now defines the source-response quantities explicitly.
+
+## Earlier task ordering and expanded-fit requirements
 
 The user requested an ALP-target audit before advancing this plan.
 [The audit and completion plans](../odd-parity/alp-target-amplitude-audit.md)
 are now saved. The checked leading projections do not access the current
 three blind directions, but normalized physical resonance-corrected ALP
-predictors remain incomplete. Resolve the selected target-completion scope
-before advancing the joint-fit stage below; this is a task-order change,
-not an additional physical fit constraint.
+predictors remain incomplete. The earlier target-completion task-order hold
+is superseded by the subsequent request to execute stage 5; it was not an
+additional physical fit constraint.
 
 The three blind odd-coefficient directions are explicitly **not a blocker**
 for the desired tree-level ALP accuracy: the checked target contributions
 do not depend on them. They could enter at higher loops or orders, so this
 decision must be revisited if the truncation or target accuracy is extended.
-Missing normalized predictors and the other matching/data requirements
-remain separate from this blind-direction decision.
+The saved joint specification now governs fit readiness. Missing normalized
+ALP predictors are separate from SM fit readiness, and the matching/data
+requirements remain separate from this blind-direction decision.
 
 Stage 5 begins with the joint-fit specification: state the interaction-breaking
 truncation, retained branch/sign hypotheses and source-parameter treatment;

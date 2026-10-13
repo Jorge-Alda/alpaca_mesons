@@ -15,7 +15,20 @@ question, and the two records it depends on for the machinery.
 The latest vector integration is in [stage-4 amplitudes](vector-stage4-amplitudes.md)
 and [stage-4 rank diagnostics](vector-stage4-rank.md).
 
-## Current priority: ALP targets before the fit plan
+## Current priority: odd extension and low-energy calibration
+
+The user's 2026-10-13 instruction selects the
+[single/double-trace odd flavor-breaking and low-energy calibration plan](odd-breaking-low-energy-calibration-plan.md).
+Its next executable task is stage A, operator enumeration and reduction.
+The [saved matching explanation](vector-matching-mismatch-interpretation.md)
+records why the present enlarged action cannot supply a hard-TFF prescription;
+the [physical matching record](vector-physical-tff-matching.md) defines
+$W,S,R_i,T_i,q$ and the source obstruction. The selected narrower calibration
+does not impose the inherited OPE prior or require hard-TFF/dispersive-three-pion
+completion. It does require normalized kernels, a validated low-energy dataset
+and a fresh ALP-target sensitivity audit after extending the operator space.
+
+## Earlier ALP-target priority and established audit
 
 The [ALP target inventory and blindness audit](alp-target-amplitude-audit.md)
 checks $a\to3P,VV,V\gamma,\gamma\gamma$. The three current structural blind

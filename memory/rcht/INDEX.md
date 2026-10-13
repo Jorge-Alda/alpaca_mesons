@@ -12,4 +12,4 @@ provenance: assumption
 RChT foundations, representation changes, line shapes, and odd-parity implementation records.
 
 - [Foundations](foundations/INDEX.md) — common RChT conventions, even-parity interactions and the nonideal-vector execution plan.
-- [Odd parity](odd-parity/INDEX.md) — anomalous operators, ALP target/amplitude audits, calibrated vector integration, fit infrastructure and data plans.
+- [Odd parity](odd-parity/INDEX.md) — anomalous operators, ALP audits, vector integration, matching obstructions and the selected odd single/double-trace extension with low-energy calibration.

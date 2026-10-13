@@ -16,7 +16,7 @@ Shared RChT conventions, photon-vector diagonalization, even-parity vertices, fr
 - [rcht-photon-vector-diagonalization.md](rcht-photon-vector-diagonalization.md) — quadratic photon-vector diagonalization.
 - [rcht-vpp-vpa-photon-pa-expansion.md](rcht-vpp-vpa-photon-pa-expansion.md) — generic-generator $VPP$, $VPa$, and $\gamma Pa$ interactions.
 - [vector-width-lineshape-prescriptions.md](vector-width-lineshape-prescriptions.md) — width and line-shape choices.
-- [vector-sector-plan.md](vector-sector-plan.md) — staged execution of nonideal tensor-vector mixing, calibration and amplitude integration.
+- [vector-sector-plan.md](vector-sector-plan.md) — nonideal vector execution history and routing to the selected odd-extension/low-energy calibration plan.
 - [vector-nonideal-mass-action.md](vector-nonideal-mass-action.md) — derived minimal tensor mass action, nonideal generators, source overlaps and propagation limits.
 - [vector-mass-extension.md](vector-mass-extension.md) — additional invariant mass operator and its two mass-compatible branches.
 - [vector-leptonic-width.md](vector-leptonic-width.md) — tensor-current leptonic widths and single/double-trace spurion source residues.
