@@ -56,3 +56,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Ruiz-Femenia:2003jdx](Ruiz-Femenia:2003jdx/INDEX.md) — source-specific literature extracts.
 - [VonDetten:2021rax](VonDetten:2021rax/INDEX.md) — source-specific literature extracts.
 - [Watson:1952ji](Watson:1952ji/INDEX.md) — source-specific literature extracts.
+
+- [Moussallam:2021dpk](Moussallam:2021dpk/INDEX.md) — nonideal vector mixing from mass and decay inputs.
+
+- [Kucukarslan:2006wk](Kucukarslan:2006wk/INDEX.md) — direct antisymmetric-tensor omega–phi mixing and off-shell convention audit.

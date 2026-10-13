@@ -3,7 +3,7 @@ title: Next steps for the odd-parity vector-meson fit
 status: mixed
 created: 2026-10-04
 updated: 2026-10-13
-bibtex_keys: [Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, CLEO:1997fho, BaBar:2009rrj, Niecknig:2012sj, Aloni:2018vki]
+bibtex_keys: [Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, CLEO:1997fho, BaBar:2009rrj, Niecknig:2012sj, Aloni:2018vki, Alda:2026nrd]
 provenance: assumption
 ---
 
@@ -38,18 +38,25 @@ Established and verified (all assertions exercised by scripts):
 
 Open, in order of how much they block:
 
-1. **Alda-grounded $\eta,\eta'$ inputs.** The TFF and radiative predictors take
-   explicit pseudoscalar matrices, mass-spurion traces, decay constants and
-   residues. The indexed Alda extract defines the field rescaling but not the
-   component-level $\eta$ mixing and normalization needed for physical fit
-   inputs. The current neutral-meson choices remain exploratory.
+1. **Integrate Alda's diagonalized neutral generators.** Use the physical
+   matrices from its arXiv-v1 mass-diagonalization appendix, including isospin
+   admixtures,
+   with the fitted quark spurion and explicit field-convention conversion in
+   [the input record](../../extracts/Alda:2026nrd/neutral-meson-generators.md).
+   The source inputs are verified against the downloaded arXiv version;
+   predictor integration and uncertainty
+   propagation remain. Keep the LO truncation limitation separate from the
+   fitted parameter errors.
 2. **Single-virtual asymptotics.** The constrained one-resonance TFF approaches
    a nonzero constant at large $Q^2$, so it does not enforce the expected
    $1/Q^2$ falloff. Treat fits over the CLEO/BaBar range as diagnostics until
    this short-distance behavior is addressed.
-3. **Split-pole matching.** The observed rank gain with distinct internal
-   $\rho,\omega,\phi$ masses is not derived from a flavor-resolved
-   SU(3)-breaking action; keep it as a sensitivity extension.
+3. **Vector-sector action and split-pole matching.** Execution has started via
+   [the vector-sector plan](../foundations/vector-sector-plan.md). A minimal
+   quadratic tensor extension has been derived. The earlier rank gain with
+   independently inserted internal masses has not been recomputed using that
+   action and its source/vertex prescriptions; it remains a sensitivity
+   extension pending amplitude integration.
 
 ## Space-like transition form factors: amplitude and observations connected
 

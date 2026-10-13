@@ -19,7 +19,7 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 - [RChT](rcht/INDEX.md) — foundations and odd-parity resonance-chiral implementation records.
 - [Literature extracts](extracts/INDEX.md) — source-backed modular paper digests.
 
-The ignored `sources/` archive is indexed separately when present; it contains downloaded source material rather than research records.
+The ignored [source archive](sources/INDEX.md) contains downloaded source material rather than research records.
 
 ```yaml
 ---
