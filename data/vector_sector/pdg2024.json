@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "bibtex_key": "ParticleDataGroup:2024cfk",
+    "snapshot": "PDG 2024 particle listings, 2024-05-31",
+    "mass_interpretation": "Listing fitted masses; not complex S-matrix pole masses",
+    "units": {
+      "masses": "MeV",
+      "leptonic_widths": "keV"
+    },
+    "primary_width_choice": "OUR FIT for rho; OUR EVALUATION for omega and phi"
+  },
+  "sources": {
+    "rho": {
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-rho-770.pdf",
+      "sha256": "26e9d547439a48387dcee94839ccd01687d90f3ac8c49342a4b92c3d82fb589f",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-rho-770.pdf",
+      "listing_created": "2024-05-31",
+      "accessed": "2026-10-13"
+    },
+    "omega": {
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-782.pdf",
+      "sha256": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf",
+      "listing_created": "2024-05-31",
+      "accessed": "2026-10-13"
+    },
+    "phi": {
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1020.pdf",
+      "sha256": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf",
+      "listing_created": "2024-05-31",
+      "accessed": "2026-10-13"
+    },
+    "kstar": {
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-892.pdf",
+      "sha256": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf",
+      "listing_created": "2024-05-31",
+      "accessed": "2026-10-13"
+    }
+  },
+  "masses": {
+    "rho_neutral": {
+      "value_mev": 775.26,
+      "sigma_mev": 0.23,
+      "source": "rho",
+      "page": 1,
+      "category": "neutral only, e+e-; OUR AVERAGE",
+      "scale_factor": null,
+      "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+    },
+    "rho_charged": {
+      "value_mev": 775.11,
+      "sigma_mev": 0.34,
+      "source": "rho",
+      "page": 2,
+      "category": "charged only, tau decays and e+e-; OUR AVERAGE",
+      "scale_factor": null,
+      "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+    },
+    "kstar_charged": {
+      "value_mev": 891.67,
+      "sigma_mev": 0.26,
+      "source": "kstar",
+      "page": 1,
+      "category": "charged only, hadroproduced; OUR AVERAGE",
+      "scale_factor": null,
+      "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+    },
+    "kstar_neutral": {
+      "value_mev": 895.55,
+      "sigma_mev": 0.2,
+      "source": "kstar",
+      "page": 2,
+      "category": "neutral only; OUR AVERAGE",
+      "scale_factor": 1.7,
+      "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+    },
+    "omega": {
+      "value_mev": 782.66,
+      "sigma_mev": 0.13,
+      "source": "omega",
+      "page": 1,
+      "category": "OUR AVERAGE",
+      "scale_factor": 2.0,
+      "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+    },
+    "phi": {
+      "value_mev": 1019.461,
+      "sigma_mev": 0.016,
+      "source": "phi",
+      "page": 1,
+      "category": "OUR AVERAGE",
+      "scale_factor": null,
+      "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+    }
+  },
+  "leptonic_widths": {
+    "rho": {
+      "value_kev": 7.04,
+      "sigma_kev": 0.06,
+      "source": "rho",
+      "page": 14,
+      "category": "OUR FIT (identical OUR AVERAGE)",
+      "scale_factor": null
+    },
+    "omega": {
+      "value_kev": 0.6,
+      "sigma_kev": 0.02,
+      "source": "omega",
+      "page": 5,
+      "category": "OUR EVALUATION",
+      "scale_factor": null
+    },
+    "phi": {
+      "value_kev": 1.27,
+      "sigma_kev": 0.04,
+      "source": "phi",
+      "page": 6,
+      "category": "OUR EVALUATION",
+      "scale_factor": null
+    }
+  },
+  "alternatives": {
+    "phi_ee_average": {
+      "value_kev": 1.251,
+      "sigma_kev": 0.021,
+      "source": "phi",
+      "page": 6,
+      "category": "OUR AVERAGE",
+      "scale_factor": 1.1
+    }
+  },
+  "assumptions": {
+    "alpha_em": {
+      "value": 0.0072973525692838015,
+      "inverse": 137.035999084,
+      "status": "assumed fixed on-shell input; not derived or newly sourced"
+    },
+    "likelihood": "Independent Gaussian quoted summary errors, conditional diagnostic only; full joint covariance unavailable in these listing entries",
+    "isospin": "Charged and neutral rho/Kstar alternatives are separate scenarios, never pooled; no electromagnetic subtraction inferred",
+    "scale_factors": "No extra multiplication of errors by quoted scale factors",
+    "direct_width_caveat": "Direct listing partial widths avoid fresh BR*total multiplication, but underlying extractions can depend on total widths and branching inputs; independence is not guaranteed"
+  }
+}

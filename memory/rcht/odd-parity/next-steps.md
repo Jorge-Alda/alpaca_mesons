@@ -53,7 +53,11 @@ Open, in order of how much they block:
    this short-distance behavior is addressed.
 3. **Vector-sector action and split-pole matching.** Execution has started via
    [the vector-sector plan](../foundations/vector-sector-plan.md). A minimal
-   quadratic tensor extension has been derived. The earlier rank gain with
+   quadratic tensor extension has been derived and
+   [stage-3 mass/source tests](../foundations/vector-stage3-calibration.md)
+   completed: the minimal mass/universal-source model is inadequate for the
+   fixed PDG snapshot. Additional invariant operators and discrete hypotheses
+   remain explicit. The earlier rank gain with
    independently inserted internal masses has not been recomputed using that
    action and its source/vertex prescriptions; it remains a sensitivity
    extension pending amplitude integration.

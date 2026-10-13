@@ -70,16 +70,22 @@ This policy supersedes the local-manuscript input selection in the previous
   are separated; photon exchange must not be counted twice.
 - Alda arXiv v1 source verified and archived: recorded central inputs agree,
   and local-manuscript provenance is superseded.
-- No physical angle, fit, uncertainty estimate or full split-pole matching
-  result is established by this plan alone.
+- Stage 3: [mass/source calibration](vector-stage3-calibration.md) completed
+  using checksum-pinned PDG 2024 summaries. The minimal mass action and its
+  universal source are inadequate at quoted errors. An explicitly derived
+  additional mass invariant gives two branches; source/sign sensitivity and
+  the loss of independent mixing information with three residue coefficients
+  are recorded. Conditional input errors remain separate from model limits.
+- No unique precision physical-angle determination or full odd-parity
+  split-pole matching result is established.
 
 ## Next executable task
 
-Stage 3 begins with a mass-only adequacy diagnostic for this minimal action,
-before a precision angle fit: the rho and K-star inputs fix the flavor-splitting
-combinations, leaving a single singlet shift to describe both omega and phi.
-Evaluate the resulting residual using a declared mass snapshot and explicit
-isospin/electromagnetic conventions. Then derive the leptonic-width predictor
-from the canonical tensor source residue and test universal $F_V$. Obtain
-independent source/interaction breaking terms if those hypotheses fail; do not
-hide the failure in the angle or reuse decay data as an independent prior.
+Stage 4: integrate the declared mass and source operators into the complete
+radiative and two-photon amplitudes. Retain the separately calibrated mass
+scenarios, mass branches and relative source-sign hypotheses. Verify canonical
+external normalization, every vector-slot rotation, Ward identities and the
+baseline limit before repeating coupling-rank diagnostics. Additional amplitude
+data and an explicit interaction-breaking truncation must select any physical
+prescription; neither an exact residue interpolation nor a small quoted
+conditional angle error is sufficient.

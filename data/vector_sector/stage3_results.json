@@ -1,0 +1,1697 @@
+{
+  "input_sha256": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+  "script_sha256": "7ace08b6d3c550947fd358e93430ead7c79aaa524099340b186ee26f09828fb2",
+  "assumptions": {
+    "covariance": "diagonal summary errors, conditional diagnostics only",
+    "masses": "PDG listing fitted masses used as tree masses; no EM or pole conversion",
+    "xl_gev2": 0.036615999999999996,
+    "xs_gev2": 0.943684,
+    "spurion": "fixed Alda arXiv-v1 central isospin-average inputs",
+    "model_errors": "not included in diagnostic chi2; charged/neutral scenarios and width alternatives remain separate",
+    "electron_mass_gev": 0.00051099895,
+    "alpha_em": 0.0072973525692838015,
+    "fit_scope": "no odd-parity or three-pion inputs"
+  },
+  "scenarios": [
+    {
+      "rho_input": "rho_neutral",
+      "kstar_input": "kstar_charged",
+      "minimal_mass": {
+        "parameters": [
+          0.7705208689415969,
+          0.9006593994337065,
+          0.030325805586718036
+        ],
+        "predicted_mev": [
+          770.5208689415969,
+          900.6593994337065,
+          783.2235533281498,
+          1019.4416994979726
+        ],
+        "residual_mev": [
+          -4.739131058403068,
+          8.98939943370658,
+          0.563553328149835,
+          -0.019300502027252975
+        ],
+        "conditional_chi2": 1640.2140712726634,
+        "nominal_dof": 1,
+        "theta_deg": 1.9249845223079087,
+        "trace_delta_gev2": 0.061706628320999934,
+        "trace_anchored_predicted_mev": [
+          799.923594379498,
+          1005.9719922920241
+        ],
+        "determinant_residual_gev4": 0.010912667514927366
+      },
+      "extended_mass_branches": [
+        {
+          "kappa": -0.6136989830429546,
+          "delta_gev2": 0.6857869433611091,
+          "theta_deg": -75.7031553182811,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0007356300918771684,
+            "delta_gev2": 0.0006438344760737084,
+            "theta_deg": 0.08643395028560333
+          }
+        },
+        {
+          "kappa": 0.04322408648981135,
+          "delta_gev2": 0.017751363184126935,
+          "theta_deg": 5.174375952771794,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0010126758951147872,
+            "delta_gev2": 0.0006629659538847386,
+            "theta_deg": 0.08643395028539684
+          }
+        }
+      ],
+      "width_tests": [
+        {
+          "phi_input": "phi_evaluation",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15615826036851232,
+            "theta_deg": -4.4469569664937385,
+            "conditional_chi2": 1.4063055972452652,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0006292361049806437,
+              "theta_deg": 0.5294971092832397
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 1.9249845223079087,
+              "universal": {
+                "FV_gev": 0.15434557913785416,
+                "prediction_kev": [
+                  6.85425536865355,
+                  0.8268676801998962,
+                  1.1026615179816341
+                ],
+                "conditional_chi2": 155.75734554640133,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.1314776131752865,
+                  0.1656437088377688
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.1537917420921805,
+                "Fs_gev": 0.16355429515518163,
+                "FV_gev": 0.15339765295778832,
+                "z_gev_inverse": 0.005381378828820518,
+                "prediction_kev": [
+                  6.805153480099498,
+                  0.825680276609177,
+                  1.2417637612330161
+                ],
+                "conditional_chi2": 143.14751800479655,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15545617830977945,
+                "Fs_gev": -0.15867217007400394,
+                "FV_gev": 0.1681367310405787,
+                "z_gev_inverse": -0.17315589811556764,
+                "prediction_kev": [
+                  6.953250335374013,
+                  0.6920431784510678,
+                  1.280382813449263
+                ],
+                "conditional_chi2": 23.337661372533947,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15662044719938212,
+                "z_gev_inverse": -0.002697304254533281,
+                "y_gev_inverse": 0.01462343102197052,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -75.7031553182811,
+              "universal": {
+                "FV_gev": 0.1527948727560203,
+                "prediction_kev": [
+                  6.717218166033884,
+                  0.9331322436446512,
+                  0.9863430152368191
+                ],
+                "conditional_chi2": 356.6721748336434,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12252164190511348,
+                  0.17337906432675632
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15728938973635356,
+                "Fs_gev": 0.13060208247648863,
+                "FV_gev": 0.15836668762650868,
+                "z_gev_inverse": -0.014710753361305288,
+                "prediction_kev": [
+                  7.118209181884218,
+                  0.6218842332018755,
+                  0.9533720974635889
+                ],
+                "conditional_chi2": 65.55464377551979,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1579560360581164,
+                "Fs_gev": -0.06847848577827033,
+                "FV_gev": 0.16709661477058463,
+                "z_gev_inverse": -0.12481672919581925,
+                "prediction_kev": [
+                  7.178675868664088,
+                  0.5588943864814677,
+                  0.4054977077200534
+                ],
+                "conditional_chi2": 476.6687554911774,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15669182358825662,
+                "z_gev_inverse": -0.0036719654528412572,
+                "y_gev_inverse": -0.017124301579019,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 5.174375952771794,
+              "universal": {
+                "FV_gev": 0.15279487275602033,
+                "prediction_kev": [
+                  6.717218166033885,
+                  0.9331322436446507,
+                  0.9863430152368194
+                ],
+                "conditional_chi2": 356.6721748336424,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12252164190511353,
+                  0.1733790643267563
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.1520981237708902,
+                "Fs_gev": 0.16363549314304734,
+                "FV_gev": 0.15163238987119257,
+                "z_gev_inverse": 0.006359704769740062,
+                "prediction_kev": [
+                  6.656096429434548,
+                  0.9406352063354197,
+                  1.1422077185965198
+                ],
+                "conditional_chi2": 341.22708244962723,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1565201550792738,
+                "Fs_gev": -0.15207263369844085,
+                "FV_gev": 0.16897725151954598,
+                "z_gev_inverse": -0.1701045504734566,
+                "prediction_kev": [
+                  7.048755242579435,
+                  0.5899051120100652,
+                  1.2671525565571857
+                ],
+                "conditional_chi2": 0.2811272211802116,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15669182358825662,
+                "z_gev_inverse": -0.0036719654528412724,
+                "y_gev_inverse": 0.02202025551614067,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        },
+        {
+          "phi_input": "phi_average",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15560672941574027,
+            "theta_deg": -3.8575688677672586,
+            "conditional_chi2": 5.854955858175616,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0005784635327458975,
+              "theta_deg": 0.453574190322135
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 1.9249845223079087,
+              "universal": {
+                "FV_gev": 0.15546749823579112,
+                "prediction_kev": [
+                  6.9542630084750074,
+                  0.8389321687101454,
+                  1.1187500017051333
+                ],
+                "conditional_chi2": 184.42335545639565,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.1314776131752865,
+                  0.16439997242463877
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15379119828682933,
+                "Fs_gev": 0.16364803766956773,
+                "FV_gev": 0.15339330305644047,
+                "z_gev_inverse": 0.005433351955277004,
+                "prediction_kev": [
+                  6.8051053543381945,
+                  0.825720260885641,
+                  1.2432203809034472
+                ],
+                "conditional_chi2": 142.8378558709861,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15544850167019023,
+                "Fs_gev": -0.15698535451270512,
+                "FV_gev": 0.16806065211314808,
+                "z_gev_inverse": -0.17222184895889575,
+                "prediction_kev": [
+                  6.952563630227276,
+                  0.6927217580166359,
+                  1.25391455646039
+                ],
+                "conditional_chi2": 23.636217344743024,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15666824160813883,
+                "z_gev_inverse": -0.0033499480271559513,
+                "y_gev_inverse": 0.014591654581004726,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -75.7031553182811,
+              "universal": {
+                "FV_gev": 0.1546669474556614,
+                "prediction_kev": [
+                  6.882828052515593,
+                  0.9561381846640802,
+                  1.0106608430559865
+                ],
+                "conditional_chi2": 454.9296228848591,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12252164190511348,
+                  0.17207724696773552
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15907659542015679,
+                "Fs_gev": 0.13447955070132686,
+                "FV_gev": 0.16006951479271173,
+                "z_gev_inverse": -0.013558545069845879,
+                "prediction_kev": [
+                  7.280889948998316,
+                  0.6658803355917934,
+                  0.9833175407841348
+                ],
+                "conditional_chi2": 189.44992294803603,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.16166120050245203,
+                "Fs_gev": -0.05641159016755916,
+                "FV_gev": 0.17046423765421256,
+                "z_gev_inverse": -0.12020752064344194,
+                "prediction_kev": [
+                  7.519405239715879,
+                  0.4351832399156536,
+                  0.4559876589451794
+                ],
+                "conditional_chi2": 1564.9606671414087,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15673748563608753,
+                "z_gev_inverse": -0.004295491340853622,
+                "y_gev_inverse": -0.016207618374602932,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 5.174375952771794,
+              "universal": {
+                "FV_gev": 0.1546669474556614,
+                "prediction_kev": [
+                  6.882828052515594,
+                  0.9561381846640797,
+                  1.0106608430559867
+                ],
+                "conditional_chi2": 454.9296228848581,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12252164190511353,
+                  0.1720772469677355
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15200647727386998,
+                "Fs_gev": 0.16853436034413066,
+                "FV_gev": 0.15133928918378117,
+                "z_gev_inverse": 0.009110608614933324,
+                "prediction_kev": [
+                  6.648077604129056,
+                  0.9464681459977885,
+                  1.2161731478712927
+                ],
+                "conditional_chi2": 345.51834811138696,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.156509631239012,
+                "Fs_gev": -0.1509915131730874,
+                "FV_gev": 0.1689226608065785,
+                "z_gev_inverse": -0.16950280707295343,
+                "prediction_kev": [
+                  7.047807409626095,
+                  0.5910069737159587,
+                  1.2502954830877269
+                ],
+                "conditional_chi2": 0.22024392477341873,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15673748563608753,
+                "z_gev_inverse": -0.004295491340853637,
+                "y_gev_inverse": 0.02193494016240775,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rho_input": "rho_neutral",
+      "kstar_input": "kstar_neutral",
+      "minimal_mass": {
+        "parameters": [
+          0.7706368658770069,
+          0.9007414054691893,
+          0.03000870849938031
+        ],
+        "predicted_mev": [
+          770.6368658770068,
+          900.7414054691893,
+          783.2091283383734,
+          1019.4421655199706
+        ],
+        "residual_mev": [
+          -4.623134122993089,
+          5.191405469189392,
+          0.5491283383733947,
+          -0.018834480029372713
+        ],
+        "conditional_chi2": 1097.0291231133617,
+        "nominal_dof": 1,
+        "theta_deg": 1.904720869352858,
+        "trace_delta_gev2": 0.04783780112100011,
+        "trace_anchored_predicted_mev": [
+          794.7370539406674,
+          1010.0744632029406
+        ],
+        "determinant_residual_gev4": 0.007766691956200722
+      },
+      "extended_mass_branches": [
+        {
+          "kappa": -0.6212504354662618,
+          "delta_gev2": 0.6795973089536091,
+          "theta_deg": -74.44100391947747,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0006269509431211639,
+            "delta_gev2": 0.000605972238679222,
+            "theta_deg": 0.06843784288871364
+          }
+        },
+        {
+          "kappa": 0.030389228735712148,
+          "delta_gev2": 0.01693450819199466,
+          "theta_deg": 3.912224553968161,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0008924474165052319,
+            "delta_gev2": 0.000663254868035833,
+            "theta_deg": 0.06843784288874932
+          }
+        }
+      ],
+      "width_tests": [
+        {
+          "phi_input": "phi_evaluation",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15615826036851232,
+            "theta_deg": -4.4469569664937385,
+            "conditional_chi2": 1.4063055972452652,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0006292361049806437,
+              "theta_deg": 0.5294971092832397
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 1.904720869352858,
+              "universal": {
+                "FV_gev": 0.15435394833901922,
+                "prediction_kev": [
+                  6.8549987161158015,
+                  0.8261865093980021,
+                  1.1033728948670722
+                ],
+                "conditional_chi2": 154.7607890869108,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.1315389342167349,
+                  0.1655992814807614
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15380160719168473,
+                "Fs_gev": 0.16354012374893834,
+                "FV_gev": 0.15340848834914989,
+                "z_gev_inverse": 0.0053681292677360505,
+                "prediction_kev": [
+                  6.80602655258671,
+                  0.8249569241467681,
+                  1.242167480218171
+                ],
+                "conditional_chi2": 142.20474838688781,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1554485733922289,
+                "Fs_gev": -0.15870750532374453,
+                "FV_gev": 0.16813024552514955,
+                "z_gev_inverse": -0.17317118381200383,
+                "prediction_kev": [
+                  6.952570045884514,
+                  0.6927164488992862,
+                  1.2803537339963078
+                ],
+                "conditional_chi2": 23.681182086758547,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.1566200954593383,
+                "z_gev_inverse": -0.0026925011623902604,
+                "y_gev_inverse": 0.01457800140506675,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -74.44100391947747,
+              "universal": {
+                "FV_gev": 0.1534456428132788,
+                "prediction_kev": [
+                  6.774558748619076,
+                  0.8926342704877758,
+                  1.0319691814390173
+                ],
+                "conditional_chi2": 269.07067031269764,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12580369812688516,
+                  0.17022488813924164
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15719990556714084,
+                "Fs_gev": 0.13376339565169365,
+                "FV_gev": 0.15814597713736933,
+                "z_gev_inverse": -0.01291882742828938,
+                "prediction_kev": [
+                  7.110112185053201,
+                  0.6213072897129596,
+                  0.9937666287944253
+                ],
+                "conditional_chi2": 50.19102595117641,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15796292218540267,
+                "Fs_gev": -0.06607155999887372,
+                "FV_gev": 0.16700661747578824,
+                "z_gev_inverse": -0.1234937635239455,
+                "prediction_kev": [
+                  7.179301794137268,
+                  0.5549904464049294,
+                  0.39280127524730224
+                ],
+                "conditional_chi2": 491.3784264377133,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15666056966910819,
+                "z_gev_inverse": -0.0032451859145461582,
+                "y_gev_inverse": -0.014794370846433511,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 3.912224553968161,
+              "universal": {
+                "FV_gev": 0.1534456428132788,
+                "prediction_kev": [
+                  6.774558748619076,
+                  0.8926342704877758,
+                  1.0319691814390173
+                ],
+                "conditional_chi2": 269.07067031269764,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12580369812688516,
+                  0.17022488813924164
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.1527777958596636,
+                "Fs_gev": 0.16417124224108928,
+                "FV_gev": 0.15231787176058584,
+                "z_gev_inverse": 0.006280370590421925,
+                "prediction_kev": [
+                  6.715716769734359,
+                  0.8965581568818382,
+                  1.1896233494209865
+                ],
+                "conditional_chi2": 253.11560848779774,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15614279572667322,
+                "Fs_gev": -0.1548351164796461,
+                "FV_gev": 0.1686961734594855,
+                "z_gev_inverse": -0.17141929392632047,
+                "prediction_kev": [
+                  7.014808083775258,
+                  0.6281301917457977,
+                  1.276161411928064
+                ],
+                "conditional_chi2": 2.1782829375288615,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15666056966910819,
+                "z_gev_inverse": -0.003245185914546143,
+                "y_gev_inverse": 0.019121285399161712,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        },
+        {
+          "phi_input": "phi_average",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15560672941574027,
+            "theta_deg": -3.8575688677672586,
+            "conditional_chi2": 5.854955858175616,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0005784635327458975,
+              "theta_deg": 0.453574190322135
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 1.904720869352858,
+              "universal": {
+                "FV_gev": 0.15547078285103316,
+                "prediction_kev": [
+                  6.954556861786216,
+                  0.8381855775612395,
+                  1.1193976621858044
+                ],
+                "conditional_chi2": 183.13135474912553,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.1315389342167349,
+                  0.16435587865060922
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15380117792787526,
+                "Fs_gev": 0.16361499705157204,
+                "FV_gev": 0.15340501931459238,
+                "z_gev_inverse": 0.005409638044610094,
+                "prediction_kev": [
+                  6.80598856108764,
+                  0.8249885152585186,
+                  1.243331030950161
+                ],
+                "conditional_chi2": 141.89443009798973,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15544097313582908,
+                "Fs_gev": -0.15702199967039254,
+                "FV_gev": 0.16805429894191265,
+                "z_gev_inverse": -0.17223789881586696,
+                "prediction_kev": [
+                  6.951890206603092,
+                  0.6933875936009208,
+                  1.2539059704918265
+                ],
+                "conditional_chi2": 23.978737632308945,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15666790269048916,
+                "z_gev_inverse": -0.003345320027788855,
+                "y_gev_inverse": 0.014546559339926827,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -74.44100391947747,
+              "universal": {
+                "FV_gev": 0.1550429554417621,
+                "prediction_kev": [
+                  6.916334165812652,
+                  0.9113149847299372,
+                  1.0535658442857676
+                ],
+                "conditional_chi2": 334.9312512535597,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12580369812688516,
+                  0.1689467539240321
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15875417836879469,
+                "Fs_gev": 0.13744842401413795,
+                "FV_gev": 0.1596142368224609,
+                "z_gev_inverse": -0.011744298307655396,
+                "prediction_kev": [
+                  7.251405987280027,
+                  0.6628175662363861,
+                  1.0224314211608414
+                ],
+                "conditional_chi2": 140.7458998715579,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1616955548534238,
+                "Fs_gev": -0.05224630225296001,
+                "FV_gev": 0.17033183685191491,
+                "z_gev_inverse": -0.11793044022409775,
+                "prediction_kev": [
+                  7.522601451718906,
+                  0.4155325379830681,
+                  0.44933788269295
+                ],
+                "conditional_chi2": 1607.0499992766238,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15670707781027784,
+                "z_gev_inverse": -0.003880265403972294,
+                "y_gev_inverse": -0.013883055666074125,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 3.912224553968161,
+              "universal": {
+                "FV_gev": 0.1550429554417621,
+                "prediction_kev": [
+                  6.916334165812652,
+                  0.9113149847299372,
+                  1.0535658442857676
+                ],
+                "conditional_chi2": 334.9312512535597,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12580369812688516,
+                  0.1689467539240321
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.152743805155239,
+                "Fs_gev": 0.1667437726151669,
+                "FV_gev": 0.15217866251046186,
+                "z_gev_inverse": 0.00771715431474151,
+                "prediction_kev": [
+                  6.712728815248685,
+                  0.8988434381271052,
+                  1.2290081121162906
+                ],
+                "conditional_chi2": 254.11698338300553,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15613075077992872,
+                "Fs_gev": -0.15334171439417688,
+                "FV_gev": 0.16862335749168025,
+                "z_gev_inverse": -0.1705894514932208,
+                "prediction_kev": [
+                  7.013725872707121,
+                  0.6293088778526205,
+                  1.2527875020736903
+                ],
+                "conditional_chi2": 2.3465293395839097,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15670707781027784,
+                "z_gev_inverse": -0.003880265403972294,
+                "y_gev_inverse": 0.01905674287137052,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rho_input": "rho_charged",
+      "kstar_input": "kstar_charged",
+      "minimal_mass": {
+        "parameters": [
+          0.7672109715305186,
+          0.8984509644099475,
+          0.038091436872964034
+        ],
+        "predicted_mev": [
+          767.2109715305187,
+          898.4509644099476,
+          783.1020153185459,
+          1019.4463896524064
+        ],
+        "residual_mev": [
+          -7.899028469481317,
+          6.780964409947576,
+          0.4420153185459297,
+          -0.014610347593535522
+        ],
+        "conditional_chi2": 1232.3401356523732,
+        "nominal_dof": 1,
+        "theta_deg": 2.417838203136409,
+        "trace_delta_gev2": 0.061706628320999934,
+        "trace_anchored_predicted_mev": [
+          799.7800058607434,
+          1006.0861535407339
+        ],
+        "determinant_residual_gev4": 0.010827143294477093
+      },
+      "extended_mass_branches": [
+        {
+          "kappa": -0.6140213951423887,
+          "delta_gev2": 0.6861148093836172,
+          "theta_deg": -75.6926138411303,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0009111352680821598,
+            "delta_gev2": 0.0008450486213170314,
+            "theta_deg": 0.08821064645870265
+          }
+        },
+        {
+          "kappa": 0.04286281445531037,
+          "delta_gev2": 0.01811874649636354,
+          "theta_deg": 5.163834475620986,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0011788771133674953,
+            "delta_gev2": 0.0009030404092359161,
+            "theta_deg": 0.08821064645764948
+          }
+        }
+      ],
+      "width_tests": [
+        {
+          "phi_input": "phi_evaluation",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15615826036851232,
+            "theta_deg": -4.4469569664937385,
+            "conditional_chi2": 1.4063055972452652,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0006292361049806437,
+              "theta_deg": 0.5294971092832397
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 2.417838203136409,
+              "universal": {
+                "FV_gev": 0.15413695420935214,
+                "prediction_kev": [
+                  6.835738452024595,
+                  0.8433756350566731,
+                  1.0852942449388472
+                ],
+                "conditional_chi2": 180.9915454244606,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.13000853756733088,
+                  0.16673811345604092
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.1535485962502676,
+                "Fs_gev": 0.16385334224476775,
+                "FV_gev": 0.15313262018305476,
+                "z_gev_inverse": 0.005680249989251166,
+                "prediction_kev": [
+                  6.7836524977037485,
+                  0.843291457375703,
+                  1.2311872078615265
+                ],
+                "conditional_chi2": 167.17225413806474,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1556373499193844,
+                "Fs_gev": -0.15778743741671558,
+                "FV_gev": 0.16828950170193946,
+                "z_gev_inverse": -0.17276807655881368,
+                "prediction_kev": [
+                  6.969466681698739,
+                  0.6757951428594436,
+                  1.2806135600758073
+                ],
+                "conditional_chi2": 15.814594263798476,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15662935934702915,
+                "z_gev_inverse": -0.002819001704378155,
+                "y_gev_inverse": 0.015731116941704756,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -75.6926138411303,
+              "universal": {
+                "FV_gev": 0.15280055415360724,
+                "prediction_kev": [
+                  6.717717710238546,
+                  0.9327987243247595,
+                  0.986725692400806
+                ],
+                "conditional_chi2": 355.89181736989667,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12254810012331084,
+                  0.17335188620750586
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15728868269384627,
+                "Fs_gev": 0.13062836478076062,
+                "FV_gev": 0.1583648910935534,
+                "z_gev_inverse": -0.01469587611572983,
+                "prediction_kev": [
+                  7.1181451869108265,
+                  0.6218820525597133,
+                  0.9537021927586704
+                ],
+                "conditional_chi2": 65.42104713975762,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15795609433456792,
+                "Fs_gev": -0.06845832224280277,
+                "FV_gev": 0.16709586144948874,
+                "z_gev_inverse": -0.12480564664246269,
+                "prediction_kev": [
+                  7.178681165680194,
+                  0.5588619290085376,
+                  0.4053888208288356
+                ],
+                "conditional_chi2": 476.7935107669292,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15669154404084637,
+                "z_gev_inverse": -0.003668148167907791,
+                "y_gev_inverse": -0.01710504813591458,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 5.163834475620986,
+              "universal": {
+                "FV_gev": 0.15280055415360724,
+                "prediction_kev": [
+                  6.717717710238546,
+                  0.9327987243247592,
+                  0.986725692400806
+                ],
+                "conditional_chi2": 355.89181736989605,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12254810012331085,
+                  0.17335188620750586
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.1521038643381253,
+                "Fs_gev": 0.1636434349987736,
+                "FV_gev": 0.15163804157807834,
+                "z_gev_inverse": 0.006360918178487327,
+                "prediction_kev": [
+                  6.6565988746875995,
+                  0.9402733481087036,
+                  1.142654357977228
+                ],
+                "conditional_chi2": 340.43278861353053,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15651718375803467,
+                "Fs_gev": -0.15209659022518343,
+                "FV_gev": 0.1689751273170286,
+                "z_gev_inverse": -0.17011611807671426,
+                "prediction_kev": [
+                  7.048487623149167,
+                  0.5902162830780611,
+                  1.2672453551675498
+                ],
+                "conditional_chi2": 0.26405637537336096,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15669154404084637,
+                "z_gev_inverse": -0.003668148167907806,
+                "y_gev_inverse": 0.02199591235979163,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        },
+        {
+          "phi_input": "phi_average",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15560672941574027,
+            "theta_deg": -3.8575688677672586,
+            "conditional_chi2": 5.854955858175616,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0005784635327458975,
+              "theta_deg": 0.453574190322135
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 2.417838203136409,
+              "universal": {
+                "FV_gev": 0.15538116449472916,
+                "prediction_kev": [
+                  6.94654151239429,
+                  0.857046228520915,
+                  1.1028861883089487
+                ],
+                "conditional_chi2": 217.35351013624228,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.13000853756733088,
+                  0.16548615970170316
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15354417183715616,
+                "Fs_gev": 0.1644432079646616,
+                "FV_gev": 0.15310420580721712,
+                "z_gev_inverse": 0.006007838512385759,
+                "prediction_kev": [
+                  6.783261569367392,
+                  0.8436095184509822,
+                  1.2403257595618196
+                ],
+                "conditional_chi2": 166.93197686302915,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1556279662876959,
+                "Fs_gev": -0.15609045282389622,
+                "FV_gev": 0.16821123637790972,
+                "z_gev_inverse": -0.17182748102214618,
+                "prediction_kev": [
+                  6.96862630582577,
+                  0.6766453853004109,
+                  1.2539912953357721
+                ],
+                "conditional_chi2": 16.121634351696365,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.1566768400517347,
+                "z_gev_inverse": -0.0034673617751882066,
+                "y_gev_inverse": 0.015691209117594203,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -75.6926138411303,
+              "universal": {
+                "FV_gev": 0.15467043114980092,
+                "prediction_kev": [
+                  6.883138111493014,
+                  0.955768421165739,
+                  1.0110233135581022
+                ],
+                "conditional_chi2": 453.8496979276668,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12254810012331084,
+                  0.17205027291549604
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15907402146939303,
+                "Fs_gev": 0.13450472805466815,
+                "FV_gev": 0.16006582059324434,
+                "z_gev_inverse": -0.013543247813132469,
+                "prediction_kev": [
+                  7.280654332934516,
+                  0.6658631951007065,
+                  0.9836400772260059
+                ],
+                "conditional_chi2": 189.0214443260057,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.16166148518442686,
+                "Fs_gev": -0.05637758050556947,
+                "FV_gev": 0.17046316094556593,
+                "z_gev_inverse": -0.12018893053773053,
+                "prediction_kev": [
+                  7.519431722768233,
+                  0.4350248184067404,
+                  0.45592500831099575
+                ],
+                "conditional_chi2": 1565.3242317213133,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15673721324757592,
+                "z_gev_inverse": -0.004291771812346757,
+                "y_gev_inverse": -0.01618840792663266,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 5.163834475620986,
+              "universal": {
+                "FV_gev": 0.15467043114980092,
+                "prediction_kev": [
+                  6.883138111493014,
+                  0.9557684211657387,
+                  1.0110233135581022
+                ],
+                "conditional_chi2": 453.8496979276663,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12254810012331085,
+                  0.17205027291549604
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15201287022311027,
+                "Fs_gev": 0.16852006256597946,
+                "FV_gev": 0.15134651736441998,
+                "z_gev_inverse": 0.009099203335840963,
+                "prediction_kev": [
+                  6.6486368134096265,
+                  0.9460673780634714,
+                  1.2162937584363038
+                ],
+                "conditional_chi2": 344.6837938147419,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15650663177096147,
+                "Fs_gev": -0.15101121271791174,
+                "FV_gev": 0.1689203354776346,
+                "z_gev_inverse": -0.16951201259931625,
+                "prediction_kev": [
+                  7.047537273271986,
+                  0.5913204559423451,
+                  1.2503212612204244
+                ],
+                "conditional_chi2": 0.20516154404377268,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15673721324757592,
+                "z_gev_inverse": -0.004291771812346772,
+                "y_gev_inverse": 0.021910770343095007,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rho_input": "rho_charged",
+      "kstar_input": "kstar_neutral",
+      "minimal_mass": {
+        "parameters": [
+          0.7681443212498685,
+          0.8991009935295763,
+          0.035670866056645774
+        ],
+        "predicted_mev": [
+          768.1443212498685,
+          899.1009935295763,
+          783.0463994104715,
+          1019.4480837976423
+        ],
+        "residual_mev": [
+          -6.965678750131432,
+          3.5509935295763295,
+          0.38639941047147186,
+          -0.012916202357660111
+        ],
+        "conditional_chi2": 744.4542048560197,
+        "nominal_dof": 1,
+        "theta_deg": 2.2633797686849935,
+        "trace_delta_gev2": 0.04783780112100011,
+        "trace_anchored_predicted_mev": [
+          794.5917183145823,
+          1010.1887978525992
+        ],
+        "determinant_residual_gev4": 0.007676867373025198
+      },
+      "extended_mass_branches": [
+        {
+          "kappa": -0.6215673424529321,
+          "delta_gev2": 0.6799195767388659,
+          "theta_deg": -74.4303768811433,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0008200300920588385,
+            "delta_gev2": 0.0008102819897842885,
+            "theta_deg": 0.07070301663537816
+          }
+        },
+        {
+          "kappa": 0.030022451588447296,
+          "delta_gev2": 0.01730748974148264,
+          "theta_deg": 3.9015975156339935,
+          "exact_mass_interpolation": true,
+          "conditional_input_sigma": {
+            "kappa": 0.0010824293810673372,
+            "delta_gev2": 0.0009096472539798278,
+            "theta_deg": 0.07070301663546281
+          }
+        }
+      ],
+      "width_tests": [
+        {
+          "phi_input": "phi_evaluation",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15615826036851232,
+            "theta_deg": -4.4469569664937385,
+            "conditional_chi2": 1.4063055972452652,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0006292361049806437,
+              "theta_deg": 0.5294971092832397
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 2.2633797686849935,
+              "universal": {
+                "FV_gev": 0.1542033819767797,
+                "prediction_kev": [
+                  6.841631661651343,
+                  0.8382147171044931,
+                  1.0907502332269736
+                ],
+                "conditional_chi2": 172.87773282338486,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.13046435846373047,
+                  0.16639225288244414
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15362544920709836,
+                "Fs_gev": 0.1637692073203284,
+                "FV_gev": 0.15321597180620447,
+                "z_gev_inverse": 0.005591509188522823,
+                "prediction_kev": [
+                  6.790444799747124,
+                  0.8377694981369713,
+                  1.2346601917206785
+                ],
+                "conditional_chi2": 159.41578771743372,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15558135435477852,
+                "Fs_gev": -0.15806984881679978,
+                "FV_gev": 0.16824264596172586,
+                "z_gev_inverse": -0.17289288298759206,
+                "prediction_kev": [
+                  6.964452602265178,
+                  0.6808605324387902,
+                  1.2806382924914548
+                ],
+                "conditional_chi2": 18.002189031143374,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.1566264925242374,
+                "z_gev_inverse": -0.002779854572089717,
+                "y_gev_inverse": 0.015383407411838421,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -74.4303768811433,
+              "universal": {
+                "FV_gev": 0.15345086597206511,
+                "prediction_kev": [
+                  6.775019956870196,
+                  0.892288689436957,
+                  1.0323514009662853
+                ],
+                "conditional_chi2": 268.3837367814124,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12583234056814796,
+                  0.17019916628403411
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15719910949448118,
+                "Fs_gev": 0.13379013136419937,
+                "FV_gev": 0.1581440696774205,
+                "z_gev_inverse": -0.012903651176252393,
+                "prediction_kev": [
+                  7.110040172903253,
+                  0.6212996076817673,
+                  0.9941142489374314
+                ],
+                "conditional_chi2": 50.0674493320686,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15796297958175823,
+                "Fs_gev": -0.0660513531351833,
+                "FV_gev": 0.1670058614900204,
+                "z_gev_inverse": -0.12348265660178816,
+                "prediction_kev": [
+                  7.179307011384806,
+                  0.5549574212998607,
+                  0.39269725858941473
+                ],
+                "conditional_chi2": 491.500326022022,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.156660325520328,
+                "z_gev_inverse": -0.0032418520061429745,
+                "y_gev_inverse": -0.014774543635414868,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 3.9015975156339935,
+              "universal": {
+                "FV_gev": 0.15345086597206511,
+                "prediction_kev": [
+                  6.775019956870196,
+                  0.892288689436957,
+                  1.0323514009662853
+                ],
+                "conditional_chi2": 268.3837367814124,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12583234056814796,
+                  0.17019916628403411
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15278342943151857,
+                "Fs_gev": 0.16417240754073614,
+                "FV_gev": 0.1523236857050867,
+                "z_gev_inverse": 0.006277907559972116,
+                "prediction_kev": [
+                  6.71621205336256,
+                  0.8961820239978349,
+                  1.1899725670707042
+                ],
+                "conditional_chi2": 252.4340649973875,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.15613942972898753,
+                "Fs_gev": -0.1548574085896051,
+                "FV_gev": 0.16869357146022884,
+                "z_gev_inverse": -0.1714297265026396,
+                "prediction_kev": [
+                  7.014505648134042,
+                  0.6284601744147442,
+                  1.2762181975954836
+                ],
+                "conditional_chi2": 2.2296650512586966,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.156660325520328,
+                "z_gev_inverse": -0.0032418520061429593,
+                "y_gev_inverse": 0.019097012976938808,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        },
+        {
+          "phi_input": "phi_average",
+          "near_ideal_universal_width_only": {
+            "FV_gev": 0.15560672941574027,
+            "theta_deg": -3.8575688677672586,
+            "conditional_chi2": 5.854955858175616,
+            "nominal_dof": 1,
+            "conditional_input_sigma": {
+              "FV_gev": 0.0005784635327458975,
+              "theta_deg": 0.453574190322135
+            },
+            "angle_domain_deg": [
+              -20,
+              20
+            ]
+          },
+          "fixed_angle_cases": [
+            {
+              "case": "minimal_mass_fit",
+              "theta_deg": 2.2633797686849935,
+              "universal": {
+                "FV_gev": 0.15540955610983986,
+                "prediction_kev": [
+                  6.949080321421598,
+                  0.8513789814798194,
+                  1.1078805986866136
+                ],
+                "conditional_chi2": 206.72178140625672,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.13046435846373047,
+                  0.16514289602352886
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15362248091031144,
+                "Fs_gev": 0.16419578443779181,
+                "FV_gev": 0.15319566386686792,
+                "z_gev_inverse": 0.005828286042215342,
+                "prediction_kev": [
+                  6.790182397119685,
+                  0.837984388774833,
+                  1.2412754287099497
+                ],
+                "conditional_chi2": 159.14164896246413,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1555724714616384,
+                "Fs_gev": -0.15637163626313674,
+                "FV_gev": 0.16816485202015263,
+                "z_gev_inverse": -0.17195188658665897,
+                "prediction_kev": [
+                  6.963657356299747,
+                  0.6816591634634829,
+                  1.2539941869504476
+                ],
+                "conditional_chi2": 18.309820829987856,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.1566740719216614,
+                "z_gev_inverse": -0.0034295623149343873,
+                "y_gev_inverse": 0.01534604764234444,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_0",
+              "theta_deg": -74.4303768811433,
+              "universal": {
+                "FV_gev": 0.15504576929078362,
+                "prediction_kev": [
+                  6.916585214906386,
+                  0.9109332217581978,
+                  1.0539225687845613
+                ],
+                "conditional_chi2": 334.0010224993147,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12583234056814796,
+                  0.16892122520147154
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15875134074128747,
+                "Fs_gev": 0.13747300649778438,
+                "FV_gev": 0.15961029231565688,
+                "z_gev_inverse": -0.01172918361330302,
+                "prediction_kev": [
+                  7.251146761281587,
+                  0.6627828540243973,
+                  1.0227647691550155
+                ],
+                "conditional_chi2": 140.35927939709595,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.161695847225964,
+                "Fs_gev": -0.052210353856625556,
+                "FV_gev": 0.17033068988256758,
+                "z_gev_inverse": -0.11791078567570985,
+                "prediction_kev": [
+                  7.522628655980469,
+                  0.41536075232093617,
+                  0.4492894851205345
+                ],
+                "conditional_chi2": 1607.3917735994364,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15670684069017882,
+                "z_gev_inverse": -0.003877027473845788,
+                "y_gev_inverse": -0.013863275533779857,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            },
+            {
+              "case": "extended_mass_branch_1",
+              "theta_deg": 3.9015975156339935,
+              "universal": {
+                "FV_gev": 0.15504576929078362,
+                "prediction_kev": [
+                  6.916585214906386,
+                  0.9109332217581978,
+                  1.0539225687845613
+                ],
+                "conditional_chi2": 334.0010224993147,
+                "nominal_dof": 2,
+                "separate_effective_FV_gev": [
+                  0.15642291821421414,
+                  0.12583234056814796,
+                  0.16892122520147154
+                ]
+              },
+              "single_trace_spurion": {
+                "Fl_gev": 0.15274977323593458,
+                "Fs_gev": 0.16672806093050124,
+                "FV_gev": 0.15218550574747258,
+                "z_gev_inverse": 0.007705203851622293,
+                "prediction_kev": [
+                  6.713253391546616,
+                  0.8984458749220636,
+                  1.229102901248892
+                ],
+                "conditional_chi2": 253.41859857095363,
+                "nominal_dof": 1
+              },
+              "single_trace_spurion_sign_alternative": {
+                "Fl_gev": 0.1561273875483708,
+                "Fs_gev": -0.1533614128550979,
+                "FV_gev": 0.16862065367127824,
+                "z_gev_inverse": -0.1705984559059898,
+                "prediction_kev": [
+                  7.013423708911566,
+                  0.6296379319296641,
+                  1.2528031052774438
+                ],
+                "conditional_chi2": 2.39958406807361,
+                "nominal_dof": 1,
+                "sign_assumption": "Fl positive, Fs negative; disconnected from small breaking around universal positive FV"
+              },
+              "plus_double_trace_spurion": {
+                "FV_gev": 0.15670684069017882,
+                "z_gev_inverse": -0.003877027473845788,
+                "y_gev_inverse": 0.019032645498907565,
+                "exact_width_interpolation": true,
+                "nominal_dof": 0,
+                "sign_assumption": "same physical-residue signs as universal source at this angle"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
