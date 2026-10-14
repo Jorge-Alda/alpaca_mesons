@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "bibtex_key": "ParticleDataGroup:2024cfk",
+    "snapshot": "PDG 2024 particle listings; listing cut-off 2024-01-15",
+    "units": {
+      "branching_fraction": "fraction",
+      "partial_width": "GeV",
+      "total_width": "GeV"
+    },
+    "policy": "Use quoted PDG 2024 summary values; do not multiply quoted uncertainties by scale factors. Each shared resonance total width is stored once. Branching fractions and total widths are summary quantities and are not assumed jointly independent.",
+    "covariance": "No complete joint covariance across the selected channels, total widths, and gamma-gamma partial widths is encoded. Treating quoted summaries as diagonal inputs is conditional; PDG constrained-fit summaries have internal overlap and published fit correlations that are not propagated here.",
+    "rho_nwa": "The rho is broad. Quoted rho branching fractions and total widths refer to PDG listing conventions; mapping them to a narrow-width on-shell tensor amplitude is a model approximation, not a precision line-shape treatment.",
+    "pi0_policy": "Use the PDG-cited direct PrimEx partial-width measurement Γ(pi0→γγ)=7.802±0.052(stat)±0.105(syst) eV, combining the two quoted errors in quadrature. Do not also use the PDG mean-life average or multiply by a gamma-gamma branching fraction; that would reuse the same width information.",
+    "excluded_inputs": [
+      "Hard CLEO/BaBar transition-form-factor data",
+      "Three-pion spectra and amplitude decompositions",
+      "η′→ρ0γ inclusive branching fraction because it includes non-resonant π+π−γ and the PDG resonant component is model-fit dependent"
+    ]
+  },
+  "observations": [
+    {
+      "channel": "omega_pi0_gamma",
+      "observable": "branching_fraction",
+      "value": 0.0835,
+      "sigma": 0.0027,
+      "unit": "fraction",
+      "total_width_key": "omega",
+      "source": "omega",
+      "page": 3,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["PDG consistency factor S=2.2 is already reflected in the quoted uncertainty."]
+    },
+    {
+      "channel": "rho0_pi0_gamma",
+      "observable": "branching_fraction",
+      "value": 0.00047,
+      "sigma": 0.00008,
+      "unit": "fraction",
+      "total_width_key": "rho0",
+      "source": "rho",
+      "page": 11,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["PDG consistency factor S=1.7 is already reflected in the quoted uncertainty.", "Broad-rho narrow-width limitation applies."]
+    },
+    {
+      "channel": "rho0_eta_gamma",
+      "observable": "branching_fraction",
+      "value": 0.000300,
+      "sigma": 0.000021,
+      "unit": "fraction",
+      "total_width_key": "rho0",
+      "source": "rho",
+      "page": 11,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["Broad-rho narrow-width limitation applies."]
+    },
+    {
+      "channel": "omega_eta_gamma",
+      "observable": "branching_fraction",
+      "value": 0.00063,
+      "sigma": 0.00013,
+      "unit": "fraction",
+      "total_width_key": "omega",
+      "source": "omega",
+      "page": 11,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["Selected the dedicated branching-ratio table's OUR AVERAGE; it differs from the constrained-fit value in the decay-mode summary.", "PDG consistency factor S=1.2 is already reflected in the quoted uncertainty."]
+    },
+    {
+      "channel": "etap_omega_gamma",
+      "observable": "branching_fraction",
+      "value": 0.0250,
+      "sigma": 0.0007,
+      "unit": "fraction",
+      "total_width_key": "etap",
+      "source": "etap",
+      "page": 7,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["The PDG eta-prime constrained fit uses 52 measurements and one constraint; the full fit covariance is not included here."]
+    },
+    {
+      "channel": "phi_eta_gamma",
+      "observable": "branching_fraction",
+      "value": 0.0126,
+      "sigma": 0.0004,
+      "unit": "fraction",
+      "total_width_key": "phi",
+      "source": "phi",
+      "page": 13,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["The PDG average combines measurements with differing normalization inputs; no cross-covariance is encoded."]
+    },
+    {
+      "channel": "Kstar0_K0_gamma",
+      "observable": "branching_fraction",
+      "value": 0.00246,
+      "sigma": 0.00021,
+      "unit": "fraction",
+      "total_width_key": "Kstar0",
+      "source": "kstar",
+      "page": 10,
+      "status": "PDG constrained OUR FIT (no OUR AVERAGE listed)",
+      "limitations": ["The fit summary uses the radiative branching fraction together with total-width and partial-width inputs; it is not an independent direct average.", "K-star line-shape and total-width correlations are not propagated."]
+    },
+    {
+      "channel": "Kstarplus_Kplus_gamma",
+      "observable": "branching_fraction",
+      "value": 0.00098,
+      "sigma": 0.00009,
+      "unit": "fraction",
+      "total_width_key": "Kstarplus",
+      "source": "kstar",
+      "page": 10,
+      "status": "PDG constrained OUR FIT (no OUR AVERAGE listed)",
+      "limitations": ["The fit summary uses the radiative branching fraction together with total-width and partial-width inputs; it is not an independent direct average.", "K-star line-shape and total-width correlations are not propagated."]
+    },
+    {
+      "channel": "rhoplus_piplus_gamma",
+      "observable": "branching_fraction",
+      "value": 0.00045,
+      "sigma": 0.00005,
+      "unit": "fraction",
+      "total_width_key": "rhoplus",
+      "source": "rho",
+      "page": 11,
+      "status": "PDG decay-mode average",
+      "limitations": ["PDG consistency factor S=2.2 is already reflected in the quoted uncertainty.", "Charged-rho width and radiative branching summaries are not a joint independent measurement."]
+    },
+    {
+      "channel": "pi0_gamma_gamma",
+      "observable": "partial_width",
+      "value": 7.802e-9,
+      "sigma": 1.17170815478941e-10,
+      "unit": "GeV",
+      "source": "pi0",
+      "page": 2,
+      "status": "PDG-cited PrimEx measurement; stat/syst combined in quadrature",
+      "limitations": ["This is the direct partial-width measurement cited by PDG 2024; do not add the PDG mean-life average as a second datum."]
+    },
+    {
+      "channel": "eta_gamma_gamma",
+      "observable": "partial_width",
+      "value": 5.16e-7,
+      "sigma": 1.8e-8,
+      "unit": "GeV",
+      "source": "eta",
+      "page": 3,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["The width and branching-fraction summaries share source measurements; no extra branching-fraction datum is included."]
+    },
+    {
+      "channel": "etap_gamma_gamma",
+      "observable": "partial_width",
+      "value": 4.28e-6,
+      "sigma": 1.9e-7,
+      "unit": "GeV",
+      "source": "etap",
+      "page": 3,
+      "status": "PDG OUR AVERAGE",
+      "limitations": ["The PDG eta-prime constrained fit and branching summaries overlap; no joint covariance is encoded."]
+    }
+  ],
+  "total_widths": {
+    "rho0": {"value_gev": 0.1474, "sigma_gev": 0.0008, "source": "rho", "page": 7, "status": "PDG OUR AVERAGE"},
+    "rhoplus": {"value_gev": 0.1491, "sigma_gev": 0.0008, "source": "rho", "page": 8, "status": "PDG OUR AVERAGE"},
+    "omega": {"value_gev": 0.00868, "sigma_gev": 0.00013, "source": "omega", "page": 2, "status": "PDG OUR AVERAGE"},
+    "phi": {"value_gev": 0.004249, "sigma_gev": 0.000013, "source": "phi", "page": 3, "status": "PDG OUR AVERAGE"},
+    "Kstar0": {"value_gev": 0.0473, "sigma_gev": 0.0005, "source": "kstar", "page": 6, "status": "PDG OUR AVERAGE (quoted error includes S=2.0)"},
+    "Kstarplus": {"value_gev": 0.0514, "sigma_gev": 0.0008, "source": "kstar", "page": 5, "status": "PDG OUR AVERAGE"},
+    "etap": {"value_gev": 0.000230, "sigma_gev": 0.000021, "source": "etap", "page": 1, "status": "PDG OUR AVERAGE"}
+  },
+  "sources": {
+    "rho": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-rho-770.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-rho-770.pdf", "sha256": "26e9d547439a48387dcee94839ccd01687d90f3ac8c49342a4b92c3d82fb589f"},
+    "omega": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-782.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf", "sha256": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0"},
+    "phi": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1020.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf", "sha256": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e"},
+    "kstar": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-892.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf", "sha256": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9"},
+    "etap": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-eta-prime-958.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-eta-prime-958.pdf", "sha256": "fc0bbc12bc817f2e13d997e7d8f680ae31b0c5c05af3aba18070822296147f15"},
+    "pi0": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-pi-zero.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-pi-zero.pdf", "sha256": "1d738eed1677e11d929fe59c23eec64b2f8ba039a10510b132dc2d6d94340821"},
+    "eta": {"url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-eta.pdf", "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-eta.pdf", "sha256": "fb2ff98bf01c593145c4eea1cb0a3e3a7b6d75f336d0796302bff61300001e7c"}
+  },
+  "deferred": [
+    {
+      "channel": "etap_rho0_gamma",
+      "reason": "The PDG 2024 inclusive η′→ρ0γ entry includes non-resonant π+π−γ. The separate resonant fraction is not published as a model-independent average; the listed values come from fits with differing ρ/ω/box-anomaly or ρ(1450) components. The current narrow-width predictor does not model that inclusive background."
+    }
+  ]
+}

@@ -143,8 +143,11 @@ map, with uncalibratable target directions explicitly exposed.
 
 **Primary dataset:** mass and electronic-width inputs plus radiative decay
 branching fractions/partial widths and $\pi^0,\eta,\eta'\to\gamma\gamma$
-normalizations. Collect missing radiative/real-photon measurements with
-INSPIRE provenance, archived sources, input hashes and units. Use the actual
+normalizations. The [PDG 2024 snapshot](../../extracts/ParticleDataGroup:2024cfk/odd-parity-low-energy-measurements.md)
+now supplies twelve summary observations and seven shared total widths,
+with archived sources, hashes, pages and units. Its inclusive
+$\eta'\to\rho^0\gamma$ entry is deferred; the direct pion partial width
+is used once without adding a derived mean-life datum. Use the actual
 measured observable rather than converting a branching ratio with a fixed
 total width into an allegedly independent partial width.
 
@@ -172,6 +175,26 @@ required to execute this narrowed dataset.
 independence assumptions, with a model-domain justification for every datum.
 
 ## Stage D — calibrate only identifiable low-energy combinations
+
+The [fixed-scenario measured-width Jacobians](odd-low-energy-measurement-jacobians.md)
+are now executed for all 64 retained branches/source scenarios. Their
+conditional soft ranks are $(7,12,12)$ and promoted ranks $(12,12,12)$.
+The controls excluding broad-rho and constrained-fit K-star summaries reach
+$(6,7,7)$ and $(7,7,7)$. The twelve-summary model is already saturated at
+first corrections; no in-sample residual gain establishes power-counting
+adequacy. The full action has 216 locally unmeasured directions in this
+snapshot. Measurement, nuisance and visible-combination maps are saved.
+The [conditional calibration](odd-low-energy-calibration.md) now executes
+all 1792 scenario/model/control fits. All branch/source and image
+certificates pass; 500 interior unsaturated fits have local observable
+covariance and joint held-out null diagnostics; twelve source-boundary
+fits omit symmetric uncertainties. The best achieved soft-leading
+primary total $\chi^2$ is 5.5675 for six nominal degrees of freedom.
+Separate double-trace and single-trace correction models already saturate
+every odd dataset control. This is a completed conditional diagnostic
+run, not selection of a validated preferred truncation or completion of
+the full stage-D exit criterion. Sign/nuisance profiles and ALP-target
+null projections remain open.
 
 1. Build the measurement-weighted Jacobian for each source/branch scenario;
    recompute rank after source/input nuisance treatment. The old 7/8 amplitude
@@ -230,8 +253,15 @@ the kinematic distinction explicitly. The
 [source/LSZ assembly](odd-alp-source-lsz-assembly.md),
 [charged higher SM kernels](odd-charged-cubic-kernels.md) and
 [signed photon/action matching](../../alp/photon/alp-photon-odd-action-phase-matching.md)
-are now derived. Next compute fixed-scenario low-energy measurement Jacobians
-before data identifiability or fitting. The earlier intermediate statements below refer
+are now derived. The [measurement Jacobians](odd-low-energy-measurement-jacobians.md)
+and [bounded numerical SM kernels](odd-bounded-sm-numerical-kernels.md) are
+now implemented. The [conditional calibration](odd-low-energy-calibration.md)
+has executed their joint low-energy fit and local uncertainty/held-out
+identifiability diagnostics in all 64 scenarios. Next profile weak
+identifiable directions and competing sign minima of viable unsaturated
+alternatives, preserving all dataset/covariance controls; then audit the
+SM-null directions against each normalized ALP target. No unique
+truncation or ALP band is established. The earlier intermediate statements below refer
 to their original execution stages, not completion of physical predictors.
 
 The [power-counting proposal](odd-action-power-counting-proposal.md), saved
@@ -239,8 +269,8 @@ at the user's request on 2026-10-14, organizes leading single traces, leading
 double-trace corrections and single-trace spurion/derivative corrections,
 while deferring their mixed double-trace corrections. It is a proposed
 truncation with unestablished numerical resonance-domain adequacy; its
-parent filtration and source-family ranks are now computed, while measured
-data rank remains open. Apply any selected hierarchy
+parent filtration, source-family ranks and conditional measured-data ranks
+are now computed. Numerical correction sizes and adequacy remain open. Apply any selected hierarchy
 to parent columns before amplitude reduction, with no implicit coefficient
 prior or claim of complete next-order resonance accuracy.
 
@@ -267,7 +297,10 @@ vanish for electromagnetic-compatible diagonal scalar sources at this cubic
 order. The 51-combination map keeps independent ALP derivative/mass weights
 and symbolic quark masses; it is not a normalized predictor or fit rank.
 The joint normalized source/channel map now performs that combination;
-fixed-scenario measured sensitivities remain the next task.
+fixed-scenario measured sensitivities are completed in the linked Jacobian
+record. Conditional calibration diagnostics are executed; full validation
+and ALP propagation remain open.
 
-The count and basis are complete. The extended physical kernels, data
-calibration and ALP propagation remain to be completed.
+The count and basis, bounded SM kernels and conditional low-energy
+calibration diagnostics are complete. Full calibration validation,
+ALP-target identifiability and physical ALP propagation remain open.

@@ -69,3 +69,6 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [odd-power-counted-channel-maps.md](odd-power-counted-channel-maps.md) — joint normalized neutral cubic parent maps, source-EOM/contact consistency and nested truncation ranks.
 - [odd-charged-cubic-kernels.md](odd-charged-cubic-kernels.md) — all charged raw parent gradients, composite f-minus derivative momentum, Ward and LO EOM checks.
 - [odd-alp-source-lsz-assembly.md](odd-alp-source-lsz-assembly.md) — general diagonal UV profile, source EOM, 964 LSZ identities and linked signed conditional photon matching.
+- [odd-bounded-sm-numerical-kernels.md](odd-bounded-sm-numerical-kernels.md) — reusable neutral/charged 241-parent gradients, original-coupling embedding and independent symbolic/legacy checks.
+- [odd-low-energy-measurement-jacobians.md](odd-low-energy-measurement-jacobians.md) — all 64 conditional measured-width Jacobians, nuisance projection, nested ranks and data-adequacy controls.
+- [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — 1792 conditional joint fits, 500 interior local prediction/null diagnostics, branch/source/gauge certificates and remaining validation gates.

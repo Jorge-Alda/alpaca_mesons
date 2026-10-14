@@ -23,7 +23,7 @@ Use this repository as a reproducible research record. Load only the protocol se
 
 ## Reproducibility
 
-- Put analytical and numerical work in executable Python scripts under `scripts/`, using `scipy` where appropriate.
+- Put analytical and numerical work in executable Python scripts under `scripts/`, using `simpy` where appropriate.
 - When both analytical and numerical derivations are available, prefer the analytical derivation.
 - Do not treat an analytical derivation as a check: delegate its calculation to an executable Python script.
 - Pair every derivation script with a step-by-step explanation in `memory/`.
@@ -41,3 +41,7 @@ Use this repository as a reproducible research record. Load only the protocol se
 - Keep terminal output to modified paths and necessary follow-up questions.
 - Respond concisely. Do not praise the user.
 - Use the same conventions and definitions as Alda:2026nrd
+
+## Delegation
+
+Tasks that require planning, strategic thinking or medium-term/long-term objectives must be delegated to the `orchestrator` agent. This involves both coming up with a new plan and following up on a plan written during a previous session.

@@ -165,7 +165,22 @@ The photon contact is algebraically basis invariant under the saved anomaly
 assumption; its [signed dual/action matching](../../alp/photon/alp-photon-odd-action-phase-matching.md)
 is now derived with zero-resonance LSZ and nonzero interference checks.
 The required photon-dual orientation is an explicit convention completion,
-not a UV anomaly matching result. Next compute fixed-branch low-energy measurement Jacobians.
+not a UV anomaly matching result. The
+[fixed-scenario measurement Jacobians](odd-low-energy-measurement-jacobians.md)
+now give conditional nested ranks $(7,12,12)$ under soft counting and
+$(12,12,12)$ after hard derivative promotion in all 64 retained scenarios.
+Their twelve-summary snapshot is limited by missing joint covariance,
+broad-rho NWA and constrained-fit K-star inputs; the control excluding both
+sets gives $(6,7,7)$ and $(7,7,7)$. The full bounded action adds no measured
+direction beyond the first-correction columns in this snapshot. The
+[conditional calibration](odd-low-energy-calibration.md) now executes all
+1792 scenario/model/control fits and 500 interior unsaturated local
+uncertainty/held-out null diagnostics. Twelve source-boundary fits omit
+symmetric uncertainties. Separate double-trace and single-trace corrections
+already saturate every control, so this snapshot does not select their
+topology or establish numerical suppression. Next profile weak identifiable
+directions and competing sign minima, then audit the target projection
+of the SM nullspace before ALP propagation.
 Retain the full signed response for each scenario. Validate the
 hierarchy by comparing nested fitted predictions, correction sizes and
 channel adequacy within a declared domain before propagating an ALP uncertainty.

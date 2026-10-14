@@ -28,8 +28,26 @@ The [photon dual/action audit](../../alp/photon/alp-photon-odd-action-phase-matc
 now fixes the signed convention dictionary and checks full original-coupling
 SM recovery, photon-parent LSZ/Bose and nonzero anomaly–resonance interference.
 The photon coefficient remains conditional on its declared UV convention.
-Next compute fixed-scenario low-energy measurement Jacobians. The source-family
-ranks are not dataset ranks, and no physical odd-coefficient fit has run.
+The [fixed-scenario measurement calculation](odd-low-energy-measurement-jacobians.md)
+now evaluates the pinned twelve-summary low-energy snapshot in all 64
+scenarios, including shared-width/even-sector nuisance constraints. Conditional
+soft ranks are $(7,12,12)$ and hard-promoted ranks $(12,12,12)$; removing
+broad-rho and constrained-fit K-star summaries gives $(6,7,7)$ and $(7,7,7)$.
+The [conditional calibration](odd-low-energy-calibration.md) now executes
+1792 joint local fits: seven parent models, four dataset controls and all
+64 scenarios, with original observations counted once. Branch/source and
+gauge-image certificates pass; local observable covariance and joint
+held-out null tests are saved for 500 interior unsaturated fits; twelve
+source-boundary fits omit symmetric uncertainties. The best achieved
+soft-leading primary total $\chi^2$ is 5.5675 for six nominal degrees of
+freedom. Separate double-trace and single-trace corrections already
+saturate the odd rows, so this snapshot cannot select their topology or
+validate correction suppression. No preferred hierarchy or ALP band is
+established. Next profile weak identifiable directions and competing sign
+minima in viable unsaturated alternatives, then project the SM nullspace
+into all four normalized ALP targets in the same scenarios/truncations.
+Stage D's full validation/propagation gate remains open. Source-family
+ranks remain distinct from these conditional measured ranks.
 
 The user's 2026-10-13 instruction selects the
 [single/double-trace odd flavor-breaking and low-energy calibration plan](odd-breaking-low-energy-calibration-plan.md).
@@ -141,7 +159,8 @@ Physical $\eta,\eta'$ fits must supply explicit mass-spurion traces and field
 normalizations; none are inferred from meson masses. The arXiv-grounded helper
 now supplies the central generators and quark spurion to the generalized
 vector-sector inputs, with a declared tree/physical kinematic choice.
-No fit has been run.
+This earlier hard-TFF connection remains unfitted; the later low-energy
+calibration above uses real-photon observations only.
 
 **Data already validated and checksum-pinned, with loaders:**
 
@@ -174,7 +193,8 @@ enlarged-action matching result.
 Physical $\eta,\eta'$ inputs are now available through the arXiv-grounded helper;
 their uncertainty propagation remains open, and the nonet action remains an
 assumed extension. No experimental comparison
-or fit has been performed.
+with the old universal-source baseline has been performed; the later
+conditional low-energy calibration uses the retained action scenarios.
 
 ## Running things
 

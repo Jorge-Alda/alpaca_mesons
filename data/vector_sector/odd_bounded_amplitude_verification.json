@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "original_embedding_rank": 11,
+  "legacy_channel_checks": 42,
+  "independent_symbolic_raw_charged_checks": 723,
+  "all_parent_Bose_checks": 4338,
+  "parent_filter_nesting": true,
+  "direct_pi0_variance_reconstruction": true,
+  "pi0_combined_error_latex": "\\frac{\\sqrt{13729}}{1000000000000}",
+  "sha256": {
+    "scripts/verify_odd_bounded_amplitudes.py": "cc6172a313ae9c8730f1fa2100180fdc3edfcf27e881d8e0fa85980898a0cd31",
+    "scripts/implementation/odd_bounded_amplitudes.py": "28f27a6ec66edb0b660ae9ecd753a20b4870fccae6dda96dbb75a213dc00bdc0",
+    "data/vector_sector/odd_cubic_parent_kernels.json": "482b768f3d6b02656a9a1914bfbda3efd55e187b87b42efae6cf1ce70bc877a7",
+    "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293"
+  }
+}

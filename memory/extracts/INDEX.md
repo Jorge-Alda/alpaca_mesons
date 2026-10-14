@@ -50,7 +50,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Niecknig:2012sj](Niecknig:2012sj/INDEX.md) — source-specific literature extracts.
 - [Omnes:1958hv](Omnes:1958hv/INDEX.md) — source-specific literature extracts.
 - [Ovchynnikov:2025gpx](Ovchynnikov:2025gpx/INDEX.md) — source-specific literature extracts.
-- [ParticleDataGroup:2024cfk](ParticleDataGroup:2024cfk/INDEX.md) — source-specific literature extracts.
+- [ParticleDataGroup:2024cfk](ParticleDataGroup:2024cfk/INDEX.md) — particle inputs and source-backed low-energy odd-action measurements with shared-width/summary-overlap caveats.
 - [Pelaez:2016tgi](Pelaez:2016tgi/INDEX.md) — source-specific literature extracts.
 - [Pelaez:2020gnd](Pelaez:2020gnd/INDEX.md) — source-specific literature extracts.
 - [Pich:2010sm](Pich:2010sm/INDEX.md) — source-specific literature extracts.
