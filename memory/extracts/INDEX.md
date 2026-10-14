@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-14
 bibtex_keys: []
 provenance: literature
 ---
@@ -17,7 +17,7 @@ Each child folder is a source-specific extract collection; see its files for the
 
 - [Achasov:1999wp](Achasov:1999wp/INDEX.md) — source-specific literature extracts.
 - [Akhmetshin:2006sc](Akhmetshin:2006sc/INDEX.md) — source-specific literature extracts.
-- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — CCWZ/source conventions, neutral generators and leading topological action.
+- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — CCWZ/source conventions, neutral generators, topological action and conditional photon bookkeeping.
 - [Aloni:2018vki](Aloni:2018vki/INDEX.md) — source-specific literature extracts.
 - [Aston:1987ir](Aston:1987ir/INDEX.md) — source-specific literature extracts.
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.

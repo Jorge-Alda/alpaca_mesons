@@ -218,12 +218,29 @@ low-energy amplitudes without double counting local resonance-saturated terms.
 
 ## Next executable task
 
+The [power-counting continuation](odd-power-counted-channel-maps.md) has now
+combined all leading/higher neutral cubic parents with source/Fourier/canonical
+normalization, both photon placements and the retained LO topological contact.
+It recovers the original scalar $C,H$ kernels and verifies every action
+relation only after source-EOM compatibility. The generic neutral source-family
+first-correction ranks are $(12,19,6)$ under soft counting and $(15,23,7)$
+after hard derivative-parent promotion. These are not measured Jacobian ranks.
+The [derivative prescription](odd-resonance-derivative-counting.md) defines
+the kinematic distinction explicitly. The
+[source/LSZ assembly](odd-alp-source-lsz-assembly.md),
+[charged higher SM kernels](odd-charged-cubic-kernels.md) and
+[signed photon/action matching](../../alp/photon/alp-photon-odd-action-phase-matching.md)
+are now derived. Next compute fixed-scenario low-energy measurement Jacobians
+before data identifiability or fitting. The earlier intermediate statements below refer
+to their original execution stages, not completion of physical predictors.
+
 The [power-counting proposal](odd-action-power-counting-proposal.md), saved
 at the user's request on 2026-10-14, organizes leading single traces, leading
 double-trace corrections and single-trace spurion/derivative corrections,
 while deferring their mixed double-trace corrections. It is a proposed
-truncation with unresolved resonance-momentum/domain qualifications; its
-filtered amplitude rank has not been computed. Apply any selected hierarchy
+truncation with unestablished numerical resonance-domain adequacy; its
+parent filtration and source-family ranks are now computed, while measured
+data rank remains open. Apply any selected hierarchy
 to parent columns before amplitude reduction, with no implicit coefficient
 prior or claim of complete next-order resonance accuracy.
 
@@ -249,8 +266,8 @@ combinations and 51 neutral combinations. The seven higher $f_-$ representatives
 vanish for electromagnetic-compatible diagonal scalar sources at this cubic
 order. The 51-combination map keeps independent ALP derivative/mass weights
 and symbolic quark masses; it is not a normalized predictor or fit rank.
-Next combine the leading and higher kernels with source/contact normalization
-and the full photon responses, then compute physical-channel sensitivities.
+The joint normalized source/channel map now performs that combination;
+fixed-scenario measured sensitivities remain the next task.
 
 The count and basis are complete. The extended physical kernels, data
 calibration and ALP propagation remain to be completed.

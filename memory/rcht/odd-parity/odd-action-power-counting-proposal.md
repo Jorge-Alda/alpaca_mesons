@@ -10,9 +10,9 @@ provenance: assumption
 # Scope and evidence status
 
 Saved at the user's request after discussion of restricting the amplitude
-combinations. This is a proposed truncation and its limitations, not an
-implemented reduction or a demonstrated uniform power counting for all ALP
-kinematics. Saving the proposal does not establish its numerical adequacy.
+combinations. The parent-action filtration and joint neutral cubic maps are
+now implemented, as linked below. Numerical adequacy and a uniform controlled
+counting for all ALP kinematics remain unestablished.
 
 Inputs: the [bounded action count](odd-higher-covariant-operator-count.md),
 [higher two-boson combinations](odd-higher-two-boson-combinations.md),
@@ -129,9 +129,16 @@ momenta or forcing exact asymptotic constraints.
 The formal parent-action count has now been executed in
 [the Hilbert-series power-counting record](odd-hilbert-power-counting.md):
 the nested quotient image dimensions are 12, 101 and 228 under this nominal
-equal-correction filtration. Physical-channel maps and resonance-region
-adequacy remain uncomputed. The distinctions below between parent columns
-and projected combinations continue to apply.
+equal-correction filtration. The
+[derivative prescription](odd-resonance-derivative-counting.md) now separates
+hard reference invariants from soft variations and conservatively promotes
+the higher-derivative mass/source parents for on-shell vectors. The
+[joint neutral source/channel maps](odd-power-counted-channel-maps.md)
+now retain source/Fourier/canonical normalization, both photon assignments
+and the LO EOM topological contact. Their source-EOM defect is checked before
+using the reduced quotient. Numerical resonance-region adequacy remains
+uncomputed. The distinctions below between parent columns and projected
+combinations continue to apply.
 
 Apply the hierarchy to the parent operator columns before projecting or
 reducing amplitudes. The saved independent combinations can mix single- and
@@ -139,9 +146,26 @@ double-trace parents; their representative labels are not valid filters for
 an entire combination. Preserve the original full basis and compute the
 retained-column image and its exact rank separately.
 
-The current 51 higher neutral combinations are an intermediate stripped
-vertex rank. The filtered parent-action count does not supply a filtered
-physical-channel rank. Next resolve the treatment of derivatives on
-resonances, then recompute the joint leading/higher physical-channel maps. Validate the
-hierarchy by comparing nested truncations, correction sizes and channel
-adequacy within a declared domain before propagating an ALP uncertainty.
+The earlier 51 higher neutral combinations remain an intermediate stripped
+vertex rank. The joint EOM-compatible primitive map now has nested soft
+ranks $(7,29,70)$; conservatively promoted derivative parents instead give
+$(12,40,70)$. These source-family maps are not measured sensitivity ranks
+or a complete ALP predictor.
+
+At Alda's central quark spurion, the generic neutral source-family ranks
+through soft first corrections are $(12,19,6)$ for $a\to VV,V\gamma,
+\gamma\gamma$, respectively. With hard derivative parents promoted they
+are $(15,23,7)$; the full ranks are $(25,27,7)$. These are individually
+normalized cubic family maps, not a combined fitted parameter count.
+Special mass/response loci and a fixed ALP model require separate evaluation.
+
+The [general diagonal LO source/LSZ assembly](odd-alp-source-lsz-assembly.md)
+and [charged higher SM kernels](odd-charged-cubic-kernels.md) are now derived.
+The photon contact is algebraically basis invariant under the saved anomaly
+assumption; its [signed dual/action matching](../../alp/photon/alp-photon-odd-action-phase-matching.md)
+is now derived with zero-resonance LSZ and nonzero interference checks.
+The required photon-dual orientation is an explicit convention completion,
+not a UV anomaly matching result. Next compute fixed-branch low-energy measurement Jacobians.
+Retain the full signed response for each scenario. Validate the
+hierarchy by comparing nested fitted predictions, correction sizes and
+channel adequacy within a declared domain before propagating an ALP uncertainty.

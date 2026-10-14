@@ -96,6 +96,15 @@ flavour-changing axial/pseudoscalar sources.
 
 # Scope and remaining work
 
+The [joint power-counted source/channel calculation](odd-power-counted-channel-maps.md)
+now combines all leading and higher raw parents, adds Fourier/source/canonical
+normalization and checks every action-relation projection. It shows why the
+independent-source stripped map below cannot directly descend to the EOM
+quotient: three leading relations need the LO-compatible source equation
+with its topological contact. Its compatible primitive ranks and on-shell
+channel limits supersede using 51 alone for a truncation count; complete
+ALP predictor and data-fit interpretation remain separate.
+
 These are formal polynomial vertex combinations, **not 51 fit parameters or
 a completed physical ALP sensitivity rank**. They exclude Fourier/source,
 electric-charge and canonical LSZ normalization from the displayed coefficient

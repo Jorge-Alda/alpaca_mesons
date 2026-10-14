@@ -1,8 +1,8 @@
 ---
 title: One-ALP photon coefficient from WZW and meson mixing
-status: derived
+status: mixed
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-14
 bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
 provenance: analytical-derivation
 ---
@@ -37,6 +37,19 @@ F_{\mu\nu}\widetilde F^{\mu\nu},
 \qquad
 \widetilde F^{\mu\nu}=\frac12\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}.
 $$
+
+The originally unspecified dual orientation is completed by the
+[odd-action tensor matching](alp-photon-odd-action-phase-matching.md):
+the photon epsilon in this formula has $\epsilon^{0123}_\gamma=+1$.
+With the common RChT source convention $\epsilon_{0123}^{\rm src}=+1$
+and metric $(+---)$, it is opposite to the metric-raised source tensor.
+Equivalently, using that source dual requires $c_\gamma^{\rm src}=-c_\gamma$
+and $C_{a\gamma\gamma}^{\rm src}=-C_{a\gamma\gamma}$.
+This is a convention completion of the inherited photon assumption, not
+an orientation fixed by Alda. The matched amplitude is
+$i\mathcal M=i e^2E C_{a\gamma\gamma}/(4\pi^2f_a)$, with
+$E=\epsilon^{\rm src}_{\mu\nu\rho\sigma}q_1^\mu\varepsilon_1^\nu
+q_2^\rho\varepsilon_2^\sigma$.
 
 The dimensionful coefficient multiplying $aF\widetilde F$ is therefore
 $\alpha_{\rm em}C_{a\gamma\gamma}/(4\pi f_a)$; omitting the displayed $1/f_a$
@@ -117,8 +130,8 @@ $$
 A=\frac12\sum_i\operatorname{tr}(A\lambda_i^\dagger)\lambda_i.
 $$
 
-The no-vector pseudoscalar WZW vertex is taken with the sign required by the
-Alda anomaly convention and the coefficient shifts above:
+The no-vector pseudoscalar WZW vertex is taken with the sign of the inherited
+photon-dual orientation and the coefficient shifts above:
 
 $$
 \mathcal L_{\rm WZW}\supset
@@ -219,3 +232,6 @@ The script constructs a complete normalized $U(3)$ generator basis, applies
 completeness to fully general $3\times3$ matrices, derives the WZW sum, and
 asserts the contact invariant, the full coefficient, both no-mixing identities,
 and the absence of off-diagonal entries after the diagonal-$Q$ trace.
+The [phase-matching executable](../../../scripts/derive_odd_photon_phase_matching.py)
+derives its signed conversion to the RChT kernels, with both photon
+assignments and a nonzero anomaly–resonance interference check.

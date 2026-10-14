@@ -12,4 +12,4 @@ provenance: assumption
 RChT foundations, representation changes, line shapes, and odd-parity implementation records.
 
 - [Foundations](foundations/INDEX.md) — common RChT conventions, even-parity interactions and the nonideal-vector execution plan.
-- [Odd parity](odd-parity/INDEX.md) — bounded covariant count, Hilbert-series presentation, parent power-counting filtration, source/trace reduction, ALP relevance and calibration planning.
+- [Odd parity](odd-parity/INDEX.md) — bounded Hilbert counts, derivative counting, channel maps, source/LSZ and signed photon matching, and calibration planning.

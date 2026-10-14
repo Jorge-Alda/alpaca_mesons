@@ -116,3 +116,10 @@ natural size, a value of $\Lambda$, priors, or convergence. Adequacy requires
 normalized kernels, nested predictions and comparison with data in the stated
 domain. If a suppressed parent gives a channel's first nonzero amplitude,
 its contribution must be assessed at that channel's leading accuracy.
+
+The next executable step has now been carried out in
+[the resonance derivative prescription](odd-resonance-derivative-counting.md)
+and [the joint channel map](odd-power-counted-channel-maps.md). Their
+EOM-compatible soft primitive ranks are $(7,29,70)$; hard-derivative promotion
+gives $(12,40,70)$. Those projections do not replace the parent-action counts
+above or establish numerical convergence.

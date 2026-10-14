@@ -2,7 +2,7 @@
 title: Normalized neutral-pseudoscalar transition amplitude in tensor RChT
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-14
 bibtex_keys: [Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, CLEO:1997fho, BaBar:2009rrj]
 provenance: analytical-derivation
 ---
@@ -74,7 +74,16 @@ Reproduce the actual contractions and reductions with
 The signed form factor is defined by
 $i\mathcal M=i e^2\epsilon_{\alpha\beta\rho\sigma}
 \epsilon_1^\alpha\epsilon_2^\beta q_1^\rho q_2^\sigma
-F_P(s_1,s_2)$, with the chosen global phase. Write
+F_P(s_1,s_2)$, with the chosen global phase.
+
+For source-level ALP insertion, the
+[shared photon/action phase dictionary](../../alp/photon/alp-photon-odd-action-phase-matching.md)
+now gives $E=\epsilon(q_1,\varepsilon_1,q_2,\varepsilon_2)=-R$ with
+$R=\epsilon(\varepsilon_1,\varepsilon_2,q_1,q_2)$ used above. In the
+unrephased source basis the action is $i e^2E F_P$. An ALP LSZ overlap
+computed for that source field changes sign when used with the rephased
+meson amplitude $i e^2R F_P$. This flips every term together and fixes
+the relative anomaly–resonance phase; the scalar formula below is unchanged.
 
 $$
 \begin{aligned}

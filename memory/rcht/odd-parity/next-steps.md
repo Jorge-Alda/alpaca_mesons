@@ -2,7 +2,7 @@
 title: Next steps for the odd-parity vector-meson fit
 status: mixed
 created: 2026-10-04
-updated: 2026-10-13
+updated: 2026-10-14
 bibtex_keys: [Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, CLEO:1997fho, BaBar:2009rrj, Niecknig:2012sj, Aloni:2018vki, Alda:2026nrd]
 provenance: assumption
 ---
@@ -16,6 +16,20 @@ The latest vector integration is in [stage-4 amplitudes](vector-stage4-amplitude
 and [stage-4 rank diagnostics](vector-stage4-rank.md).
 
 ## Current priority: odd extension and low-energy calibration
+
+The latest [power-counting continuation](odd-power-counted-channel-maps.md)
+combines the leading/higher neutral cubic parent maps with source/Fourier
+normalization and the LO EOM contact. The
+[resonance derivative prescription](odd-resonance-derivative-counting.md)
+retains hard reference terms instead of assigning them soft suppression.
+The [charged higher SM kernels](odd-charged-cubic-kernels.md) and
+[LO ALP source/LSZ assembly](odd-alp-source-lsz-assembly.md) are now derived.
+The [photon dual/action audit](../../alp/photon/alp-photon-odd-action-phase-matching.md)
+now fixes the signed convention dictionary and checks full original-coupling
+SM recovery, photon-parent LSZ/Bose and nonzero anomaly–resonance interference.
+The photon coefficient remains conditional on its declared UV convention.
+Next compute fixed-scenario low-energy measurement Jacobians. The source-family
+ranks are not dataset ranks, and no physical odd-coefficient fit has run.
 
 The user's 2026-10-13 instruction selects the
 [single/double-trace odd flavor-breaking and low-energy calibration plan](odd-breaking-low-energy-calibration-plan.md).

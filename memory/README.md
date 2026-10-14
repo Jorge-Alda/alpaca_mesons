@@ -2,7 +2,7 @@
 title: Research memory index
 status: mixed
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-10-14
 bibtex_keys: []
 provenance: assumption
 ---
@@ -13,10 +13,10 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 
 ## Topic indexes
 
-- [ALP](alp/INDEX.md) — ALP-specific derivations, three-meson/photon calculations and target audits.
+- [ALP](alp/INDEX.md) — ALP derivations, three-meson/photon calculations, signed anomaly/action matching and target audits.
 - [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
 - [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
-- [RChT](rcht/INDEX.md) — foundations, odd-action reduction and bounded Hilbert series, power-counting filtrations, normalized kernels, matching and ALP completion plans.
+- [RChT](rcht/INDEX.md) — foundations, odd-action/Hilbert counts, power-counted channel maps, normalized kernels, matching and ALP completion plans.
 - [Literature extracts](extracts/INDEX.md) — source-backed modular paper digests.
 
 The ignored [source archive](sources/INDEX.md) contains downloaded source material rather than research records.

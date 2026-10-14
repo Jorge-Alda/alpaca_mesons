@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "exact_column_identities": 539,
+  "mass_scaling": "m_a2=M1^2*x; Z_a=M1^2*z; M2^2=M1^2*mass_ratio",
+  "response_scaling": "W(0)=W_scale*diag(1,r_d,r_s)",
+  "scope": "invertible source-family coordinates and nonzero column scales on the stated generic domain",
+  "sha256": {
+    "scripts/verify_odd_channel_rank_coordinates.py": "ff96d010b9ca2e4fc099e0b55af57f4e6615ecc8653da7cef82dd3771b5486f6",
+    "scripts/derive_odd_power_counted_channels.py": "e6811873bc353e3ae73cba467d91e06e13760a623c8b2aab240d7e508b42a37a"
+  }
+}

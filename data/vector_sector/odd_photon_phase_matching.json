@@ -1,0 +1,43 @@
+{
+  "scope": "conditional photon convention matching; neutral cubic bounded action",
+  "source_epsilon_lower0123": 1,
+  "source_epsilon_upper0123": -1,
+  "inherited_photon_dual_upper0123": 1,
+  "inherited_photon_dual_relative_orientation": -1,
+  "orientation_evidence": "convention completion required by the inherited positive WZW assumption, not supplied by Alda",
+  "Ftilde_two_photon_over_E": "-4*eta_gamma",
+  "epsilon_derivative_two_photon_over_E": "-2",
+  "tensor_bridge": "E=epsilon(q1,epsilon1,q2,epsilon2)=-R; R=epsilon(epsilon1,epsilon2,q1,q2)",
+  "G_contact_over_e2": "C_agammagamma/(4*pi**2*f_a)",
+  "G_contact_common_raised_dual": "-C_agammagamma/(4*pi**2*f_a)",
+  "coefficient_dictionary": "c_gamma_common_raised=-c_gamma_inherited; C_common_raised=-C_inherited",
+  "amplitude_E": "i M = i e^2 E [C_inherited/(4 pi^2 fa) + sum g_parent G_parent(U,Y;W1,W2)]",
+  "amplitude_R": "i M = -i e^2 R [C_inherited/(4 pi^2 fa) + sum g_parent G_parent(U,Y;W1,W2)]",
+  "zero_resonance_meson_LSZ_passed": true,
+  "original_11_nonzero_resonance_phase_passed": true,
+  "full_photon_parent_LSZ_checks": 241,
+  "photon_parent_Bose_checks": 241,
+  "contact_Ward_checks": 2,
+  "contact_Bose_passed": true,
+  "coefficient_rotation_passed": true,
+  "interference_benchmark": {
+    "anomaly": "5/(2*pi**2)",
+    "resonance": "-4/15 + 4*sqrt(2)/3",
+    "interference": "4*(-1 + 5*sqrt(2))/(3*pi**2)",
+    "wrong_relative_sign_squared_difference": "8*(-1 + 5*sqrt(2))/(3*pi**2)"
+  },
+  "limitations": [
+    "UV photon coefficient is an external signed input in its declared dual convention",
+    "no extra anomalous resonance coefficients or finite gauged-WZW counterterms matched",
+    "tree, linear 1/fa, neutral diagonal profiles, one-nonet bounded action",
+    "perturbative ALP-meson overlaps and LO resolvent pole exclusions still apply"
+  ],
+  "sha256": {
+    "scripts/derive_odd_photon_phase_matching.py": "833e8f9ae160b500d8e193c0014e47eff7e2e38025f642c4d5f35fd974df35dd",
+    "scripts/derive_radiative_tff_amplitude.py": "1dc45b957c606617ed6146aff1dd1a165cf0d88fd0bda50da2db80c4792d95ba",
+    "scripts/derive_odd_power_counted_channels.py": "e6811873bc353e3ae73cba467d91e06e13760a623c8b2aab240d7e508b42a37a",
+    "data/vector_sector/odd_leading_action_count.json": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",
+    "memory/extracts/Ruiz-Femenia:2003jdx/pseudoscalar-two-photon-form-factor.md": "085b212129fa97800b3427bccbcf5b89742e544f2b9647059df129651e7df28c",
+    "memory/alp/photon/alp-photon-invariant-from-mixing.md": "2faac95b23cc97e6ac4418e1e964fe07a2f96f48fa8733ca6ffa62d37ad4deff"
+  }
+}

@@ -2,7 +2,7 @@
 title: Alda quark rotations and the photon anomaly normalization
 status: mixed
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-14
 bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
 provenance: literature
 ---
@@ -49,7 +49,9 @@ $$
 c_q^A\to c_q^A+\kappa,\qquad c_G\to c_G-\operatorname{tr}\kappa.
 $$
 
-These statements are directly evidenced by `Alda:2026nrd`, whose available local copy is a manuscript and is not currently indexed by INSPIRE-HEP. [@Alda:2026nrd]
+These statements are directly evidenced by the
+[archived arXiv-v1 source](../../sources/Alda:2026nrd/INDEX.md)
+of `Alda:2026nrd`; its bibliography record is already catalogued. [@Alda:2026nrd]
 
 ## Derived photon coefficient under a stated normalization assumption
 
@@ -60,7 +62,8 @@ $$
 c_\gamma\frac{a}{f_a}F_{\mu\nu}\widetilde F^{\mu\nu}.
 $$
 
-Using the same $\widetilde F^{\mu\nu}=\tfrac12\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$ convention and $N_c$ colored copies, assume the axial Jacobian under Alda's rotation is normalized as
+Using $\widetilde F^{\mu\nu}=\tfrac12\epsilon^{\mu\nu\rho\sigma}_\gamma F_{\rho\sigma}$
+and $N_c$ colored copies, assume the axial Jacobian under Alda's rotation is normalized as
 
 $$
 c_\gamma\to c_\gamma-2N_c\,\operatorname{tr}(Q^2\kappa).
@@ -84,5 +87,14 @@ c_\gamma^{\rm inv}
 $$
 
 ## Scope and normalization caveat
+
+The initially unspecified photon-dual orientation is completed in the
+[odd-action matching record](../../alp/photon/alp-photon-odd-action-phase-matching.md).
+Its inherited positive WZW coefficient requires $\epsilon_\gamma^{0123}=+1$,
+opposite to the metric-raised RChT source epsilon when
+$\epsilon^{\rm src}_{0123}=+1$ and $g=(+---)$.
+This orientation is a convention choice rather than an Alda result; no
+equality with an unspecified gluon-dual orientation is inferred. In the common
+raised-source dual the coefficient is $c_\gamma^{\rm src}=-c_\gamma$.
 
 Alda's paper explicitly treats amplitudes outside the odd-intrinsic-parity WZW sector; it does not itself define a $c_\gamma$ term. The photon shift above therefore requires the displayed anomaly normalization assumption, while the rotation signs and the $c_q^A$ shift are literature evidence from Alda. Bai's WZW treatment is used only for the photon/anomaly bookkeeping; no vector-meson or resonance terms are included here. [@Alda:2026nrd; @Bai:2025fvl]

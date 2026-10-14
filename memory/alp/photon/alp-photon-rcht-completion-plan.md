@@ -2,7 +2,7 @@
 title: Complete the resonance-corrected physical ALP two-photon amplitude
 status: mixed
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-14
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, Bai:2025fvl]
 provenance: assumption
 ---
@@ -33,6 +33,16 @@ independently. The WZW/contact term, derivative resonance term and pseudoscalar
 mass-source term do not all have the same effective flavor matrix. UV ALP
 coefficients and any independently matched invariant local photon term remain
 external inputs rather than SM-fit outputs.
+
+The [bounded neutral gradients](../../rcht/odd-parity/odd-power-counted-channel-maps.md)
+and [source/LSZ assembly](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md)
+now supply the normalized leading/higher resonance contribution.
+The [signed photon/action audit](alp-photon-odd-action-phase-matching.md)
+completes the originally unspecified photon dual, derives the common
+$i e^2E$ contact $C_{a\gamma\gamma}/(4\pi^2f_a)$, and verifies photon-parent
+LSZ/Bose and nonzero interference against the original SM TFF. Thus the
+signed algebraic assembly is available; numerical predictor, width/domain
+implementation and enlarged-action data sensitivity remain future work.
 
 ## Ordered calculation
 

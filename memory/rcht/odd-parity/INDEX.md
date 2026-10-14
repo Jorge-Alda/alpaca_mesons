@@ -65,3 +65,7 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [odd-action-power-counting-proposal.md](odd-action-power-counting-proposal.md) — proposed momentum/quark-mass/OZI hierarchy, first-correction truncation, resonance-domain limitations and required parent-column rank calculation.
 - [odd-bounded-hilbert-series.md](odd-bounded-hilbert-series.md) — character-derived raw counts and finite graded quotient presentation, with inherited covariant syzygies explicitly identified.
 - [odd-hilbert-power-counting.md](odd-hilbert-power-counting.md) — homogeneous chiral grading and executed parent-filtration dimensions 12, 101 and 228.
+- [odd-resonance-derivative-counting.md](odd-resonance-derivative-counting.md) — exact hard/residual momentum split and conservative derivative-parent promotion for on-shell vectors.
+- [odd-power-counted-channel-maps.md](odd-power-counted-channel-maps.md) — joint normalized neutral cubic parent maps, source-EOM/contact consistency and nested truncation ranks.
+- [odd-charged-cubic-kernels.md](odd-charged-cubic-kernels.md) — all charged raw parent gradients, composite f-minus derivative momentum, Ward and LO EOM checks.
+- [odd-alp-source-lsz-assembly.md](odd-alp-source-lsz-assembly.md) — general diagonal UV profile, source EOM, 964 LSZ identities and linked signed conditional photon matching.
