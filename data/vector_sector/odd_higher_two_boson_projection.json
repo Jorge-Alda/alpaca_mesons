@@ -1,0 +1,1722 @@
+{
+  "scope": "stripped cubic canonical-wedge projection with constant X and independent U,Y flavour weights; NOT complete physical ALP rank",
+  "invariants": {
+    "s": "q_A^2",
+    "t": "q_B^2",
+    "h": "q_A dot q_B; m_a^2=s+t+2h"
+  },
+  "projected_operator_count": 181,
+  "formal_amplitude_rank": 66,
+  "zero_images": 101,
+  "blocks": {
+    "X:VJP": {
+      "operators": 89,
+      "rank": 30,
+      "zero_images": 49
+    },
+    "X:VVP": {
+      "operators": 43,
+      "rank": 17,
+      "zero_images": 26
+    },
+    "Ydd:VJP": {
+      "operators": 31,
+      "rank": 12,
+      "zero_images": 15
+    },
+    "Ydd:VVP": {
+      "operators": 18,
+      "rank": 7,
+      "zero_images": 11
+    }
+  },
+  "images": {
+    "X:VJP:all:F0:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F0:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F0:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F0:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F0:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F0:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F0:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F0:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F0:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F1:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F1:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F1:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F1:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F1:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F1:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F1:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F1:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F1:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F2:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F2:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F2:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F2:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F2:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F2:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F2:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F2:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F2:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F3:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F3:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F3:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F3:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F3:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F3:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F3:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F3:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F3:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F4:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F4:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F4:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F4:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F4:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F4:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F4:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F4:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F4:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F5:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F5:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F5:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F5:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F5:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F5:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F5:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F5:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F5:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F6:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F6:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F6:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F6:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F6:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F6:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F6:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F6:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F6:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F7:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F7:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F7:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F7:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F7:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F7:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F7:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F7:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F7:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F8:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F8:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F8:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F8:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F8:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F8:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F8:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F8:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F9:L0": {
+      "kinematic_polynomial": "-h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F9:L1": {
+      "kinematic_polynomial": "2*h + 2*s",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F9:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F9:L3": {
+      "kinematic_polynomial": "h",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F9:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F9:L5": {
+      "kinematic_polynomial": "2*h + 2*t",
+      "block": "X:VJP",
+      "zero": false
+    },
+    "X:VJP:all:F9:L6": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F9:L7": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VJP:all:F9:L8": {
+      "kinematic_polynomial": "0",
+      "block": "X:VJP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F0:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F0:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F0:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F0:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F1:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F1:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F1:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F1:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F2:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F2:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F2:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F2:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F3:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F3:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F3:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F3:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F4:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F4:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F4:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F4:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F5:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F5:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F5:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F5:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F6:L0": {
+      "kinematic_polynomial": "-2*h",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F6:L1": {
+      "kinematic_polynomial": "4*h + 2*s + 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:symmetric:F6:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:symmetric:F6:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F0:L0": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F0:L1": {
+      "kinematic_polynomial": "2*s - 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:antisymmetric:F0:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F0:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F0:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F1:L0": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F1:L1": {
+      "kinematic_polynomial": "2*s - 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:antisymmetric:F1:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F1:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F1:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F2:L0": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F2:L1": {
+      "kinematic_polynomial": "2*s - 2*t",
+      "block": "X:VVP",
+      "zero": false
+    },
+    "X:VVP:antisymmetric:F2:L2": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F2:L3": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "X:VVP:antisymmetric:F2:L4": {
+      "kinematic_polynomial": "0",
+      "block": "X:VVP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F0:L1": {
+      "kinematic_polynomial": "-2*s",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F0:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F0:L3": {
+      "kinematic_polynomial": "-h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F0:L4": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F0:L5": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F0:L6": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F0:L7": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F0:L8": {
+      "kinematic_polynomial": "-2*t",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F1:L0": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F1:L1": {
+      "kinematic_polynomial": "-2*s",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F1:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F1:L3": {
+      "kinematic_polynomial": "-h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F1:L4": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F1:L5": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F1:L7": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F1:L8": {
+      "kinematic_polynomial": "-2*t",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F2:L0": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F2:L1": {
+      "kinematic_polynomial": "-2*s",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F2:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F2:L3": {
+      "kinematic_polynomial": "-h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F2:L4": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F2:L5": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F2:L6": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F2:L7": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F2:L8": {
+      "kinematic_polynomial": "-2*t",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F3:L0": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F3:L1": {
+      "kinematic_polynomial": "-2*s",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F3:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VJP",
+      "zero": true
+    },
+    "Ydd:VJP:all:F3:L3": {
+      "kinematic_polynomial": "-h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F3:L5": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VJP:all:F3:L8": {
+      "kinematic_polynomial": "-2*t",
+      "block": "Ydd:VJP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F0:L0": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F0:L1": {
+      "kinematic_polynomial": "-2*s - 2*t",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F0:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F0:L3": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F0:L4": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F1:L0": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F1:L1": {
+      "kinematic_polynomial": "-2*s - 2*t",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F1:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F1:L3": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F1:L4": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F2:L0": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F2:L1": {
+      "kinematic_polynomial": "-2*s - 2*t",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F2:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:symmetric:F2:L3": {
+      "kinematic_polynomial": "-2*h",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:symmetric:F2:L4": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:antisymmetric:F0:L1": {
+      "kinematic_polynomial": "-2*s + 2*t",
+      "block": "Ydd:VVP",
+      "zero": false
+    },
+    "Ydd:VVP:antisymmetric:F0:L2": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    },
+    "Ydd:VVP:antisymmetric:F0:L3": {
+      "kinematic_polynomial": "0",
+      "block": "Ydd:VVP",
+      "zero": true
+    }
+  },
+  "independent_combinations": [
+    {
+      "representative": "X:VJP:all:F0:L0",
+      "coefficients": {
+        "X:VJP:all:F0:L0": "1",
+        "X:VJP:all:F0:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F0:L1",
+      "coefficients": {
+        "X:VJP:all:F0:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F0:L5",
+      "coefficients": {
+        "X:VJP:all:F0:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F1:L0",
+      "coefficients": {
+        "X:VJP:all:F1:L0": "1",
+        "X:VJP:all:F1:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F1:L1",
+      "coefficients": {
+        "X:VJP:all:F1:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F1:L5",
+      "coefficients": {
+        "X:VJP:all:F1:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F2:L0",
+      "coefficients": {
+        "X:VJP:all:F2:L0": "1",
+        "X:VJP:all:F2:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F2:L1",
+      "coefficients": {
+        "X:VJP:all:F2:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F2:L5",
+      "coefficients": {
+        "X:VJP:all:F2:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F3:L0",
+      "coefficients": {
+        "X:VJP:all:F3:L0": "1",
+        "X:VJP:all:F3:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F3:L1",
+      "coefficients": {
+        "X:VJP:all:F3:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F3:L5",
+      "coefficients": {
+        "X:VJP:all:F3:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F4:L0",
+      "coefficients": {
+        "X:VJP:all:F4:L0": "1",
+        "X:VJP:all:F4:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F4:L1",
+      "coefficients": {
+        "X:VJP:all:F4:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F4:L5",
+      "coefficients": {
+        "X:VJP:all:F4:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F5:L0",
+      "coefficients": {
+        "X:VJP:all:F5:L0": "1",
+        "X:VJP:all:F5:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F5:L1",
+      "coefficients": {
+        "X:VJP:all:F5:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F5:L5",
+      "coefficients": {
+        "X:VJP:all:F5:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F6:L0",
+      "coefficients": {
+        "X:VJP:all:F6:L0": "1",
+        "X:VJP:all:F6:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F6:L1",
+      "coefficients": {
+        "X:VJP:all:F6:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F6:L5",
+      "coefficients": {
+        "X:VJP:all:F6:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F7:L0",
+      "coefficients": {
+        "X:VJP:all:F7:L0": "1",
+        "X:VJP:all:F7:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F7:L1",
+      "coefficients": {
+        "X:VJP:all:F7:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F7:L5",
+      "coefficients": {
+        "X:VJP:all:F7:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F8:L0",
+      "coefficients": {
+        "X:VJP:all:F8:L0": "1",
+        "X:VJP:all:F8:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F8:L1",
+      "coefficients": {
+        "X:VJP:all:F8:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F8:L5",
+      "coefficients": {
+        "X:VJP:all:F8:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F9:L0",
+      "coefficients": {
+        "X:VJP:all:F9:L0": "1",
+        "X:VJP:all:F9:L3": "-1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F9:L1",
+      "coefficients": {
+        "X:VJP:all:F9:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VJP:all:F9:L5",
+      "coefficients": {
+        "X:VJP:all:F9:L5": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F0:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F0:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F0:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F0:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F1:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F1:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F1:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F1:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F2:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F2:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F2:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F2:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F3:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F3:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F3:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F3:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F4:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F4:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F4:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F4:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F5:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F5:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F5:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F5:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F6:L0",
+      "coefficients": {
+        "X:VVP:symmetric:F6:L0": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:symmetric:F6:L1",
+      "coefficients": {
+        "X:VVP:symmetric:F6:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:antisymmetric:F0:L1",
+      "coefficients": {
+        "X:VVP:antisymmetric:F0:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:antisymmetric:F1:L1",
+      "coefficients": {
+        "X:VVP:antisymmetric:F1:L1": "1"
+      }
+    },
+    {
+      "representative": "X:VVP:antisymmetric:F2:L1",
+      "coefficients": {
+        "X:VVP:antisymmetric:F2:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F0:L1",
+      "coefficients": {
+        "Ydd:VJP:all:F0:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F0:L3",
+      "coefficients": {
+        "Ydd:VJP:all:F0:L3": "1",
+        "Ydd:VJP:all:F0:L5": "2"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F0:L8",
+      "coefficients": {
+        "Ydd:VJP:all:F0:L8": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F1:L1",
+      "coefficients": {
+        "Ydd:VJP:all:F1:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F1:L3",
+      "coefficients": {
+        "Ydd:VJP:all:F1:L3": "1",
+        "Ydd:VJP:all:F1:L5": "2"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F1:L8",
+      "coefficients": {
+        "Ydd:VJP:all:F1:L8": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F2:L1",
+      "coefficients": {
+        "Ydd:VJP:all:F2:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F2:L3",
+      "coefficients": {
+        "Ydd:VJP:all:F2:L3": "1",
+        "Ydd:VJP:all:F2:L5": "2"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F2:L8",
+      "coefficients": {
+        "Ydd:VJP:all:F2:L8": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F3:L1",
+      "coefficients": {
+        "Ydd:VJP:all:F3:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F3:L3",
+      "coefficients": {
+        "Ydd:VJP:all:F3:L3": "1",
+        "Ydd:VJP:all:F3:L5": "2"
+      }
+    },
+    {
+      "representative": "Ydd:VJP:all:F3:L8",
+      "coefficients": {
+        "Ydd:VJP:all:F3:L8": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:symmetric:F0:L1",
+      "coefficients": {
+        "Ydd:VVP:symmetric:F0:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:symmetric:F0:L3",
+      "coefficients": {
+        "Ydd:VVP:symmetric:F0:L3": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:symmetric:F1:L1",
+      "coefficients": {
+        "Ydd:VVP:symmetric:F1:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:symmetric:F1:L3",
+      "coefficients": {
+        "Ydd:VVP:symmetric:F1:L3": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:symmetric:F2:L1",
+      "coefficients": {
+        "Ydd:VVP:symmetric:F2:L1": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:symmetric:F2:L3",
+      "coefficients": {
+        "Ydd:VVP:symmetric:F2:L3": "1"
+      }
+    },
+    {
+      "representative": "Ydd:VVP:antisymmetric:F0:L1",
+      "coefficients": {
+        "Ydd:VVP:antisymmetric:F0:L1": "1"
+      }
+    }
+  ],
+  "deferred": [
+    "seven fmdd operators",
+    "leading/higher joint physical flavour projection",
+    "source/contact and LSZ normalization",
+    "measurement identifiability"
+  ],
+  "neutral_projection": {
+    "rank": 51,
+    "blocks": {
+      "X:VJP": {
+        "rank": 21,
+        "zero_images": 53
+      },
+      "X:VVP": {
+        "rank": 14,
+        "zero_images": 27
+      },
+      "Ydd:VJP": {
+        "rank": 9,
+        "zero_images": 19
+      },
+      "Ydd:VVP": {
+        "rank": 7,
+        "zero_images": 11
+      }
+    },
+    "independent_combinations": [
+      {
+        "representative": "X:VJP:all:F0:L0",
+        "coefficients": {
+          "X:VJP:all:F0:L0": "1",
+          "X:VJP:all:F0:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F0:L1",
+        "coefficients": {
+          "X:VJP:all:F0:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F0:L5",
+        "coefficients": {
+          "X:VJP:all:F0:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F1:L0",
+        "coefficients": {
+          "X:VJP:all:F1:L0": "1",
+          "X:VJP:all:F1:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F1:L1",
+        "coefficients": {
+          "X:VJP:all:F1:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F1:L5",
+        "coefficients": {
+          "X:VJP:all:F1:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F2:L0",
+        "coefficients": {
+          "X:VJP:all:F2:L0": "1",
+          "X:VJP:all:F2:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F2:L1",
+        "coefficients": {
+          "X:VJP:all:F2:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F2:L5",
+        "coefficients": {
+          "X:VJP:all:F2:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F3:L0",
+        "coefficients": {
+          "X:VJP:all:F3:L0": "1",
+          "X:VJP:all:F3:L3": "-1",
+          "X:VJP:all:F5:L0": "1",
+          "X:VJP:all:F5:L3": "-1",
+          "X:VJP:all:F7:L0": "1",
+          "X:VJP:all:F7:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F3:L1",
+        "coefficients": {
+          "X:VJP:all:F3:L1": "1",
+          "X:VJP:all:F5:L1": "1",
+          "X:VJP:all:F7:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F3:L5",
+        "coefficients": {
+          "X:VJP:all:F3:L5": "1",
+          "X:VJP:all:F5:L5": "1",
+          "X:VJP:all:F7:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F4:L0",
+        "coefficients": {
+          "X:VJP:all:F4:L0": "1",
+          "X:VJP:all:F4:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F4:L1",
+        "coefficients": {
+          "X:VJP:all:F4:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F4:L5",
+        "coefficients": {
+          "X:VJP:all:F4:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F6:L0",
+        "coefficients": {
+          "X:VJP:all:F6:L0": "1",
+          "X:VJP:all:F6:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F6:L1",
+        "coefficients": {
+          "X:VJP:all:F6:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F6:L5",
+        "coefficients": {
+          "X:VJP:all:F6:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F9:L0",
+        "coefficients": {
+          "X:VJP:all:F9:L0": "1",
+          "X:VJP:all:F9:L3": "-1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F9:L1",
+        "coefficients": {
+          "X:VJP:all:F9:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VJP:all:F9:L5",
+        "coefficients": {
+          "X:VJP:all:F9:L5": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F0:L0",
+        "coefficients": {
+          "X:VVP:symmetric:F0:L0": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F0:L1",
+        "coefficients": {
+          "X:VVP:symmetric:F0:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F1:L0",
+        "coefficients": {
+          "X:VVP:symmetric:F1:L0": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F1:L1",
+        "coefficients": {
+          "X:VVP:symmetric:F1:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F2:L0",
+        "coefficients": {
+          "X:VVP:symmetric:F2:L0": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F2:L1",
+        "coefficients": {
+          "X:VVP:symmetric:F2:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F3:L0",
+        "coefficients": {
+          "X:VVP:symmetric:F3:L0": "1",
+          "X:VVP:symmetric:F6:L0": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F3:L1",
+        "coefficients": {
+          "X:VVP:symmetric:F3:L1": "1",
+          "X:VVP:symmetric:F6:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F4:L0",
+        "coefficients": {
+          "X:VVP:symmetric:F4:L0": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F4:L1",
+        "coefficients": {
+          "X:VVP:symmetric:F4:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F5:L0",
+        "coefficients": {
+          "X:VVP:symmetric:F5:L0": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:symmetric:F5:L1",
+        "coefficients": {
+          "X:VVP:symmetric:F5:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:antisymmetric:F0:L1",
+        "coefficients": {
+          "X:VVP:antisymmetric:F0:L1": "1"
+        }
+      },
+      {
+        "representative": "X:VVP:antisymmetric:F2:L1",
+        "coefficients": {
+          "X:VVP:antisymmetric:F2:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F0:L1",
+        "coefficients": {
+          "Ydd:VJP:all:F0:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F0:L3",
+        "coefficients": {
+          "Ydd:VJP:all:F0:L3": "1",
+          "Ydd:VJP:all:F0:L5": "2"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F0:L8",
+        "coefficients": {
+          "Ydd:VJP:all:F0:L8": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F1:L1",
+        "coefficients": {
+          "Ydd:VJP:all:F1:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F1:L3",
+        "coefficients": {
+          "Ydd:VJP:all:F1:L3": "1",
+          "Ydd:VJP:all:F1:L5": "2"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F1:L8",
+        "coefficients": {
+          "Ydd:VJP:all:F1:L8": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F2:L1",
+        "coefficients": {
+          "Ydd:VJP:all:F2:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F2:L3",
+        "coefficients": {
+          "Ydd:VJP:all:F2:L3": "1",
+          "Ydd:VJP:all:F2:L5": "2"
+        }
+      },
+      {
+        "representative": "Ydd:VJP:all:F2:L8",
+        "coefficients": {
+          "Ydd:VJP:all:F2:L8": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:symmetric:F0:L1",
+        "coefficients": {
+          "Ydd:VVP:symmetric:F0:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:symmetric:F0:L3",
+        "coefficients": {
+          "Ydd:VVP:symmetric:F0:L3": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:symmetric:F1:L1",
+        "coefficients": {
+          "Ydd:VVP:symmetric:F1:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:symmetric:F1:L3",
+        "coefficients": {
+          "Ydd:VVP:symmetric:F1:L3": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:symmetric:F2:L1",
+        "coefficients": {
+          "Ydd:VVP:symmetric:F2:L1": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:symmetric:F2:L3",
+        "coefficients": {
+          "Ydd:VVP:symmetric:F2:L3": "1"
+        }
+      },
+      {
+        "representative": "Ydd:VVP:antisymmetric:F0:L1",
+        "coefficients": {
+          "Ydd:VVP:antisymmetric:F0:L1": "1"
+        }
+      }
+    ],
+    "neutral_source_charge_commutators": [
+      "\\left[\\begin{matrix}0 & 0 & 0\\\\0 & 0 & 0\\\\0 & 0 & 0\\end{matrix}\\right]",
+      "\\left[\\begin{matrix}0 & 0 & 0\\\\0 & 0 & 0\\\\0 & 0 & 0\\end{matrix}\\right]"
+    ],
+    "scope": "neutral generator span, B=Q only for direct VJP; independent diagonal U,Y; symbolic quark masses; not a fit rank",
+    "fminus_scope": "electromagnetic-compatible diagonal ALP/meson sources only; f_- at scalar-photon order is a vanishing charge commutator, including its ordered derivatives"
+  },
+  "neutral_fminus_zero_ids": [
+    "fmdd:VJP:all:F0:L0",
+    "fmdd:VJP:all:F0:L1",
+    "fmdd:VJP:all:F0:L2",
+    "fmdd:VJP:all:F0:L3",
+    "fmdd:VJP:all:F0:L5",
+    "fmdd:VJP:all:F0:L6",
+    "fmdd:VJP:all:F0:L8"
+  ]
+}

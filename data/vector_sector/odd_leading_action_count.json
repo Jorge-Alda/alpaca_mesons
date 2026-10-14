@@ -1,0 +1,155 @@
+{
+  "scope": "complete leading covariant seeds only; higher-derivative/one-X derivative extension not counted",
+  "raw_Lorentz_flavor_basis": 44,
+  "independent_leading_action_operators": 40,
+  "original_action_rank": 11,
+  "new_leading_independent_operators": 29,
+  "relations": [
+    {
+      "VJP:F3:L5": "1"
+    },
+    {
+      "VJP:F1:L1": "4/3",
+      "VJP:F1:L2": "4/3",
+      "VJP:F1:L4": "4/3",
+      "VJP:F1:L5": "-4/3",
+      "VJP:F2:L1": "-4",
+      "VJP:F2:L2": "-4",
+      "VJP:F2:L4": "-4",
+      "VJP:F2:L5": "4",
+      "VJP:Y:F1": "-1/3",
+      "VJP:Y:F2": "1"
+    },
+    {
+      "VJP:F0:L1": "4",
+      "VJP:F0:L2": "4",
+      "VJP:F0:L4": "4",
+      "VJP:F0:L5": "-4",
+      "VJP:F3:L1": "-4",
+      "VJP:F3:L2": "-4",
+      "VJP:F3:L4": "-4",
+      "VJP:Y:F0": "-1",
+      "VJP:Y:F3": "1"
+    },
+    {
+      "VVP:S:F1:L1": "4/3",
+      "VVP:S:F1:L2": "4/3",
+      "VVP:S:F2:L1": "-4",
+      "VVP:S:F2:L2": "-4",
+      "VVP:Y:F1": "-1/3",
+      "VVP:Y:F2": "1"
+    }
+  ],
+  "original_VJP_derivatives_to_generic_basis": [
+    [
+      "-2",
+      "0",
+      "1",
+      "-2",
+      "1",
+      "0"
+    ],
+    [
+      "2",
+      "1",
+      "0",
+      "2",
+      "0",
+      "-1"
+    ],
+    [
+      "2",
+      "0",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-2",
+      "-1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "original_VVP_derivatives_to_symmetric_basis": [
+    [
+      "0",
+      "1",
+      "1"
+    ],
+    [
+      "2",
+      "0",
+      "-1"
+    ],
+    [
+      "0",
+      "0",
+      "-1"
+    ]
+  ],
+  "basis_preserving_original_action": [
+    "original:c1",
+    "original:c2",
+    "original:c5",
+    "original:c6",
+    "original:c7",
+    "original:c3",
+    "original:c4",
+    "original:d1",
+    "original:d3",
+    "original:d4",
+    "original:d2",
+    "VJP:F0:L0",
+    "VJP:F0:L1",
+    "VJP:F0:L2",
+    "VJP:F0:L3",
+    "VJP:F0:L4",
+    "VJP:F0:L5",
+    "VJP:F1:L0",
+    "VJP:F1:L1",
+    "VJP:F1:L2",
+    "VJP:F1:L3",
+    "VJP:F1:L4",
+    "VJP:F1:L5",
+    "VJP:F2:L3",
+    "VJP:F3:L0",
+    "VJP:F3:L1",
+    "VJP:F3:L2",
+    "VJP:F3:L3",
+    "VJP:F3:L4",
+    "VJP:Y:F0",
+    "VVP:S:F0:L0",
+    "VVP:S:F0:L1",
+    "VVP:S:F0:L2",
+    "VVP:S:F1:L0",
+    "VVP:S:F1:L1",
+    "VVP:S:F1:L2",
+    "VVP:A:F0:L0",
+    "VVP:A:F0:L1",
+    "VVP:A:F0:L2",
+    "VVP:Y:F0"
+  ],
+  "row_count": 2197,
+  "global_extension_count": null,
+  "sha256": {
+    "scripts/count_odd_leading_covariant.py": "4cf03aae6025163366530c21582421b3a87f69edf156ebcee0dae8c5892b45d4",
+    "scripts/lift_odd_leading_covariant.py": "fb91583b20ab1b191adb1e41f3a0f56f97e9e2e531e915f04380d46d5e8c22ab",
+    "scripts/reduce_odd_goldstone_eom.py": "6582b6a9fd0d72857a465b2ee177799476dadf089f7712ab34cb2db7db45aba6",
+    "scripts/enumerate_odd_breaking_vertices.py": "eedd0086333cceec808fa2a77ef44373d3a1f4a804d5f89aecc048ae099fb053",
+    "data/vector_sector/odd_vertex_enumeration.json": "eeec09e0b3cbab0ae2e9c4b3b96d6fd7b493722373c0bdd5c79aaeebba0e370b",
+    "memory/extracts/Alda:2026nrd/lo-topological-action.md": "0690eb071dcd9bfdb2a450c5153a8edd6ba677f6cad0a71689ea4e39baf22f7d",
+    "memory/rcht/odd-parity/odd-covariant-closure.md": "83a2c54e1c8ff8026c669400c7bd3867790489a84a5995220e303fd23fb7ec66"
+  }
+}

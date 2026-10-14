@@ -1,0 +1,438 @@
+{
+  "scope": "joint higher covariant seeds; independent sources and LO Goldstone EOM; no vector EOM",
+  "ordered_covariant_seed_count": 197,
+  "common_source_projection_rank": 163,
+  "mixed_grade_X_projection_rank": 80,
+  "cross_block_corrections": [
+    {
+      "candidate": 30,
+      "X_derivative_subtraction": {
+        "X:VJP:all:F3:L0": "-1/2",
+        "X:VJP:all:F3:L3": "-1/2",
+        "X:VJP:all:F3:L6": "-1/2",
+        "X:VJP:all:F5:L0": "1/2",
+        "X:VJP:all:F5:L3": "1/2",
+        "X:VJP:all:F5:L6": "1/2"
+      },
+      "remaining_rows": 1152
+    },
+    {
+      "candidate": 31,
+      "X_derivative_subtraction": {
+        "X:VJP:all:F3:L0": "-1",
+        "X:VJP:all:F3:L1": "-1/2",
+        "X:VJP:all:F7:L0": "1",
+        "X:VJP:all:F7:L1": "1/2"
+      },
+      "remaining_rows": 0
+    },
+    {
+      "candidate": 32,
+      "X_derivative_subtraction": {
+        "X:VJP:all:F3:L0": "1/2",
+        "X:VJP:all:F3:L3": "1/2",
+        "X:VJP:all:F3:L6": "1/2",
+        "X:VJP:all:F7:L0": "-1/2",
+        "X:VJP:all:F7:L3": "-1/2",
+        "X:VJP:all:F7:L6": "-1/2"
+      },
+      "remaining_rows": 1152
+    },
+    {
+      "candidate": 33,
+      "X_derivative_subtraction": {
+        "X:VJP:all:F3:L0": "1",
+        "X:VJP:all:F3:L1": "1/2",
+        "X:VJP:all:F3:L6": "1",
+        "X:VJP:all:F3:L7": "1/2",
+        "X:VJP:all:F7:L0": "-1",
+        "X:VJP:all:F7:L1": "-1/2",
+        "X:VJP:all:F7:L6": "-1",
+        "X:VJP:all:F7:L7": "-1/2"
+      },
+      "remaining_rows": 0
+    }
+  ],
+  "remainder_rank": 25,
+  "formal_trace_action_rank_upper_bound": 188,
+  "source_grade_ceiling": null,
+  "kernel_dimension": 34,
+  "kernel_digest": "7052ca6c33b8134d",
+  "exact_formal_relations": [
+    {
+      "X:VJP:all:F8:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L0": "1",
+      "Ydd:VJP:all:F1:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L7": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F0:L0": "1",
+      "Ydd:VVP:antisymmetric:F0:L0": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "1",
+      "X:VJP:all:F3:L1": "1/2",
+      "X:VJP:all:F7:L0": "-1",
+      "X:VJP:all:F7:L1": "-1/2",
+      "fmdd:VJP:all:F0:L4": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "-1",
+      "X:VJP:all:F3:L1": "-1/2",
+      "X:VJP:all:F3:L6": "-1",
+      "X:VJP:all:F3:L7": "-1/2",
+      "X:VJP:all:F7:L0": "1",
+      "X:VJP:all:F7:L1": "1/2",
+      "X:VJP:all:F7:L6": "1",
+      "X:VJP:all:F7:L7": "1/2",
+      "fmdd:VJP:all:F0:L7": "1"
+    }
+  ],
+  "remainder_rows": 117432,
+  "joint_action_count": null,
+  "raw_ids": [
+    "X:VJP:all:F0:L0",
+    "X:VJP:all:F0:L1",
+    "X:VJP:all:F0:L2",
+    "X:VJP:all:F0:L3",
+    "X:VJP:all:F0:L4",
+    "X:VJP:all:F0:L5",
+    "X:VJP:all:F0:L6",
+    "X:VJP:all:F0:L7",
+    "X:VJP:all:F0:L8",
+    "X:VJP:all:F1:L0",
+    "X:VJP:all:F1:L1",
+    "X:VJP:all:F1:L2",
+    "X:VJP:all:F1:L3",
+    "X:VJP:all:F1:L4",
+    "X:VJP:all:F1:L5",
+    "X:VJP:all:F1:L6",
+    "X:VJP:all:F1:L7",
+    "X:VJP:all:F1:L8",
+    "X:VJP:all:F2:L0",
+    "X:VJP:all:F2:L1",
+    "X:VJP:all:F2:L2",
+    "X:VJP:all:F2:L3",
+    "X:VJP:all:F2:L4",
+    "X:VJP:all:F2:L5",
+    "X:VJP:all:F2:L6",
+    "X:VJP:all:F2:L7",
+    "X:VJP:all:F2:L8",
+    "X:VJP:all:F3:L0",
+    "X:VJP:all:F3:L1",
+    "X:VJP:all:F3:L2",
+    "X:VJP:all:F3:L3",
+    "X:VJP:all:F3:L4",
+    "X:VJP:all:F3:L5",
+    "X:VJP:all:F3:L6",
+    "X:VJP:all:F3:L7",
+    "X:VJP:all:F3:L8",
+    "X:VJP:all:F4:L0",
+    "X:VJP:all:F4:L1",
+    "X:VJP:all:F4:L2",
+    "X:VJP:all:F4:L3",
+    "X:VJP:all:F4:L4",
+    "X:VJP:all:F4:L5",
+    "X:VJP:all:F4:L6",
+    "X:VJP:all:F4:L7",
+    "X:VJP:all:F4:L8",
+    "X:VJP:all:F5:L0",
+    "X:VJP:all:F5:L1",
+    "X:VJP:all:F5:L2",
+    "X:VJP:all:F5:L3",
+    "X:VJP:all:F5:L4",
+    "X:VJP:all:F5:L5",
+    "X:VJP:all:F5:L6",
+    "X:VJP:all:F5:L7",
+    "X:VJP:all:F5:L8",
+    "X:VJP:all:F6:L0",
+    "X:VJP:all:F6:L1",
+    "X:VJP:all:F6:L2",
+    "X:VJP:all:F6:L3",
+    "X:VJP:all:F6:L4",
+    "X:VJP:all:F6:L5",
+    "X:VJP:all:F6:L6",
+    "X:VJP:all:F6:L7",
+    "X:VJP:all:F6:L8",
+    "X:VJP:all:F7:L0",
+    "X:VJP:all:F7:L1",
+    "X:VJP:all:F7:L2",
+    "X:VJP:all:F7:L3",
+    "X:VJP:all:F7:L4",
+    "X:VJP:all:F7:L5",
+    "X:VJP:all:F7:L6",
+    "X:VJP:all:F7:L7",
+    "X:VJP:all:F7:L8",
+    "X:VJP:all:F8:L0",
+    "X:VJP:all:F8:L1",
+    "X:VJP:all:F8:L2",
+    "X:VJP:all:F8:L3",
+    "X:VJP:all:F8:L4",
+    "X:VJP:all:F8:L5",
+    "X:VJP:all:F8:L6",
+    "X:VJP:all:F8:L7",
+    "X:VJP:all:F8:L8",
+    "X:VJP:all:F9:L0",
+    "X:VJP:all:F9:L1",
+    "X:VJP:all:F9:L2",
+    "X:VJP:all:F9:L3",
+    "X:VJP:all:F9:L4",
+    "X:VJP:all:F9:L5",
+    "X:VJP:all:F9:L6",
+    "X:VJP:all:F9:L7",
+    "X:VJP:all:F9:L8",
+    "X:VVP:symmetric:F0:L0",
+    "X:VVP:symmetric:F0:L1",
+    "X:VVP:symmetric:F0:L2",
+    "X:VVP:symmetric:F0:L3",
+    "X:VVP:symmetric:F1:L0",
+    "X:VVP:symmetric:F1:L1",
+    "X:VVP:symmetric:F1:L2",
+    "X:VVP:symmetric:F1:L3",
+    "X:VVP:symmetric:F2:L0",
+    "X:VVP:symmetric:F2:L1",
+    "X:VVP:symmetric:F2:L2",
+    "X:VVP:symmetric:F2:L3",
+    "X:VVP:symmetric:F3:L0",
+    "X:VVP:symmetric:F3:L1",
+    "X:VVP:symmetric:F3:L2",
+    "X:VVP:symmetric:F3:L3",
+    "X:VVP:symmetric:F4:L0",
+    "X:VVP:symmetric:F4:L1",
+    "X:VVP:symmetric:F4:L2",
+    "X:VVP:symmetric:F4:L3",
+    "X:VVP:symmetric:F5:L0",
+    "X:VVP:symmetric:F5:L1",
+    "X:VVP:symmetric:F5:L2",
+    "X:VVP:symmetric:F5:L3",
+    "X:VVP:symmetric:F6:L0",
+    "X:VVP:symmetric:F6:L1",
+    "X:VVP:symmetric:F6:L2",
+    "X:VVP:symmetric:F6:L3",
+    "X:VVP:antisymmetric:F0:L0",
+    "X:VVP:antisymmetric:F0:L1",
+    "X:VVP:antisymmetric:F0:L2",
+    "X:VVP:antisymmetric:F0:L3",
+    "X:VVP:antisymmetric:F0:L4",
+    "X:VVP:antisymmetric:F1:L0",
+    "X:VVP:antisymmetric:F1:L1",
+    "X:VVP:antisymmetric:F1:L2",
+    "X:VVP:antisymmetric:F1:L3",
+    "X:VVP:antisymmetric:F1:L4",
+    "X:VVP:antisymmetric:F2:L0",
+    "X:VVP:antisymmetric:F2:L1",
+    "X:VVP:antisymmetric:F2:L2",
+    "X:VVP:antisymmetric:F2:L3",
+    "X:VVP:antisymmetric:F2:L4",
+    "Ydd:VJP:all:F0:L0",
+    "Ydd:VJP:all:F0:L1",
+    "Ydd:VJP:all:F0:L2",
+    "Ydd:VJP:all:F0:L3",
+    "Ydd:VJP:all:F0:L4",
+    "Ydd:VJP:all:F0:L5",
+    "Ydd:VJP:all:F0:L6",
+    "Ydd:VJP:all:F0:L7",
+    "Ydd:VJP:all:F0:L8",
+    "Ydd:VJP:all:F1:L0",
+    "Ydd:VJP:all:F1:L1",
+    "Ydd:VJP:all:F1:L2",
+    "Ydd:VJP:all:F1:L3",
+    "Ydd:VJP:all:F1:L4",
+    "Ydd:VJP:all:F1:L5",
+    "Ydd:VJP:all:F1:L6",
+    "Ydd:VJP:all:F1:L7",
+    "Ydd:VJP:all:F1:L8",
+    "Ydd:VJP:all:F2:L0",
+    "Ydd:VJP:all:F2:L1",
+    "Ydd:VJP:all:F2:L2",
+    "Ydd:VJP:all:F2:L3",
+    "Ydd:VJP:all:F2:L4",
+    "Ydd:VJP:all:F2:L5",
+    "Ydd:VJP:all:F2:L6",
+    "Ydd:VJP:all:F2:L7",
+    "Ydd:VJP:all:F2:L8",
+    "Ydd:VJP:all:F3:L0",
+    "Ydd:VJP:all:F3:L1",
+    "Ydd:VJP:all:F3:L2",
+    "Ydd:VJP:all:F3:L3",
+    "Ydd:VJP:all:F3:L4",
+    "Ydd:VJP:all:F3:L5",
+    "Ydd:VJP:all:F3:L6",
+    "Ydd:VJP:all:F3:L7",
+    "Ydd:VJP:all:F3:L8",
+    "Ydd:VVP:symmetric:F0:L0",
+    "Ydd:VVP:symmetric:F0:L1",
+    "Ydd:VVP:symmetric:F0:L2",
+    "Ydd:VVP:symmetric:F0:L3",
+    "Ydd:VVP:symmetric:F0:L4",
+    "Ydd:VVP:symmetric:F1:L0",
+    "Ydd:VVP:symmetric:F1:L1",
+    "Ydd:VVP:symmetric:F1:L2",
+    "Ydd:VVP:symmetric:F1:L3",
+    "Ydd:VVP:symmetric:F1:L4",
+    "Ydd:VVP:symmetric:F2:L0",
+    "Ydd:VVP:symmetric:F2:L1",
+    "Ydd:VVP:symmetric:F2:L2",
+    "Ydd:VVP:symmetric:F2:L3",
+    "Ydd:VVP:symmetric:F2:L4",
+    "Ydd:VVP:antisymmetric:F0:L0",
+    "Ydd:VVP:antisymmetric:F0:L1",
+    "Ydd:VVP:antisymmetric:F0:L2",
+    "Ydd:VVP:antisymmetric:F0:L3",
+    "fmdd:VJP:all:F0:L0",
+    "fmdd:VJP:all:F0:L1",
+    "fmdd:VJP:all:F0:L2",
+    "fmdd:VJP:all:F0:L3",
+    "fmdd:VJP:all:F0:L4",
+    "fmdd:VJP:all:F0:L5",
+    "fmdd:VJP:all:F0:L6",
+    "fmdd:VJP:all:F0:L7",
+    "fmdd:VJP:all:F0:L8"
+  ],
+  "corrected_kernel_vectors": [
+    {
+      "X:VJP:all:F0:L4": "1"
+    },
+    {
+      "X:VJP:all:F1:L4": "1"
+    },
+    {
+      "X:VJP:all:F2:L4": "1"
+    },
+    {
+      "X:VJP:all:F3:L4": "1"
+    },
+    {
+      "X:VJP:all:F4:L4": "1"
+    },
+    {
+      "X:VJP:all:F5:L4": "1"
+    },
+    {
+      "X:VJP:all:F6:L4": "1"
+    },
+    {
+      "X:VJP:all:F7:L4": "1"
+    },
+    {
+      "X:VJP:all:F8:L4": "1"
+    },
+    {
+      "X:VJP:all:F9:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L7": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L7": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L7": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L7": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F0:L0": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F1:L0": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F2:L0": "1"
+    },
+    {
+      "Ydd:VVP:antisymmetric:F0:L0": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "1/2",
+      "X:VJP:all:F3:L3": "1/2",
+      "X:VJP:all:F3:L6": "1/2",
+      "X:VJP:all:F5:L0": "-1/2",
+      "X:VJP:all:F5:L3": "-1/2",
+      "X:VJP:all:F5:L6": "-1/2",
+      "fmdd:VJP:all:F0:L0": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "1",
+      "X:VJP:all:F3:L1": "1/2",
+      "X:VJP:all:F7:L0": "-1",
+      "X:VJP:all:F7:L1": "-1/2",
+      "fmdd:VJP:all:F0:L4": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "-1/2",
+      "X:VJP:all:F3:L3": "-1/2",
+      "X:VJP:all:F3:L6": "-1/2",
+      "X:VJP:all:F7:L0": "1/2",
+      "X:VJP:all:F7:L3": "1/2",
+      "X:VJP:all:F7:L6": "1/2",
+      "fmdd:VJP:all:F0:L6": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "-1",
+      "X:VJP:all:F3:L1": "-1/2",
+      "X:VJP:all:F3:L6": "-1",
+      "X:VJP:all:F3:L7": "-1/2",
+      "X:VJP:all:F7:L0": "1",
+      "X:VJP:all:F7:L1": "1/2",
+      "X:VJP:all:F7:L6": "1",
+      "X:VJP:all:F7:L7": "1/2",
+      "fmdd:VJP:all:F0:L7": "1"
+    }
+  ],
+  "sha256": {
+    "scripts/complete_odd_higher_reduction.py": "0986bc5beaddcc462279da01ece3fcdd4337261299e88478d7f7f6cf9bbb53f6",
+    "scripts/reduce_odd_covariant_higher.py": "7052ca6c33b8134d4b634ed1aef112d3de603fe14c73066fe2a7de9b4767797e",
+    "data/vector_sector/odd_covariant_higher_kernel.json": "06248c6d70f35c9a03166e7677160615fd78f2a969cb62b5091ee7d7a407eb44"
+  }
+}

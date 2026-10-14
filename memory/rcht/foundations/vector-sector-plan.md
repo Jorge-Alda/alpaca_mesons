@@ -118,10 +118,19 @@ as its explicit default selection.
 
 The user subsequently selected the
 [odd-breaking single/double-trace and low-energy calibration plan](../odd-parity/odd-breaking-low-energy-calibration-plan.md).
-Execute its stage A: enumerate and reduce the declared one-spurion,
-single/double-trace odd VJP/VVP extension. Follow it with normalized SM/ALP
-amplitude derivation, a frozen low-energy data snapshot and identifiable
-joint calibration. Preserve the hard-limit failure as a scope limitation;
+Its [stage-A vertex catalogue](../odd-parity/odd-breaking-vertex-catalogue.md)
+has now been executed with exact flavor/Lorentz reductions. Begin stage B
+with covariant representative/source-contact auditing and normalized
+zero-spurion single/double-trace kernels. This first subsection is now
+executed: see the [source audit](../odd-parity/odd-trace-source-eom-audit.md)
+and [normalized kernels](../odd-parity/odd-trace-scalar-kernels.md).
+The [complete covariant quotient](../odd-parity/odd-higher-covariant-operator-count.md)
+now establishes 228 independent operators, including all eleven original
+operators, hence 217 additions. Next derive the remaining normalized SM and
+independent-source ALP kernels and identify observable combinations before
+fitting.
+Follow this with a frozen low-energy data snapshot and identifiable joint
+calibration. Preserve the hard-limit failure as a scope limitation;
 ultraviolet completion and dispersive three-pion calibration are distinct
 later objectives. The [mismatch explanation](../odd-parity/vector-matching-mismatch-interpretation.md)
 is saved, and the [physical matching record](../odd-parity/vector-physical-tff-matching.md)

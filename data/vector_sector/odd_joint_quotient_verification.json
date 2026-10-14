@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "three_flavor_low_grade_color_ranks": {
+    "2": 2,
+    "3": 5,
+    "4": 17
+  },
+  "leading_source_functional_Bianchi_rank": 3,
+  "leading_Bianchi_Gram_at_Nf3": [
+    [
+      "5308416",
+      "0",
+      "1769472",
+      "0"
+    ],
+    [
+      "0",
+      "4423680",
+      "1474560",
+      "0"
+    ],
+    [
+      "1769472",
+      "1474560",
+      "2248704",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "checks": [
+    "complete U(3) Fierz tensor",
+    "injectivity of at-most-double-trace low-grade tensors",
+    "leading source-functional Bianchi rank",
+    "closed higher rank certificate",
+    "basis cardinalities and original rank",
+    "all provenance hashes"
+  ],
+  "sha256": {
+    "data/vector_sector/odd_leading_action_count.json": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",
+    "data/vector_sector/odd_source_gauge_verification.json": "3219f2a16f8d4cac3f87f9d9670f52b24e34735333597219548bf4e4aef57e2a",
+    "data/vector_sector/odd_covariant_higher_reduction.json": "ea0132256d9f87f42e015d251b31d3d5f80a9bc7e784bf8408b505143061a0ea",
+    "data/vector_sector/odd_three_flavor_action_quotient.json": "8cbd18287c51b0576e6d2f7834689cf052ca9e471d2721741d843af46c9ac2a7",
+    "scripts/verify_joint_odd_quotient.py": "ed025229a645e52ccfe33034f2f17e05932e0e51fc1bc5b87be537df4674d2ea"
+  }
+}

@@ -15,3 +15,4 @@ Source-specific literature extracts for BibTeX key `Alda:2026nrd`.
 - [photon-anomaly-normalization.md](photon-anomaly-normalization.md) — modular extract from Alda:2026nrd.
 
 - [neutral-meson-generators.md](neutral-meson-generators.md) — arXiv-v1 mass-diagonalization appendix generators, normalization and fitted spurion inputs.
+- [lo-topological-action.md](lo-topological-action.md) — arXiv-v1 leading meson/topological action and invariant used for the independent-source EOM audit.

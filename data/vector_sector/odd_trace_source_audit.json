@@ -1,0 +1,25 @@
+{
+  "source_eom": {
+    "scope": "neutral linear U(3) EOM, with independent sources and LO meson action",
+    "JP_divergence_contact_rank": 2,
+    "JP_relations_in_divergence_mass_subsector": 2,
+    "VV_divergence_contact_rank": 2,
+    "VV_relations_in_divergence_mass_subsector": 1,
+    "full_action_new_operator_count": null,
+    "count_limit": "not a complete full-action quotient; vector EOM and nonlinear contacts are not reduced"
+  },
+  "normalized_kernels": {
+    "C_l_latex": "c_{1} m_{P}^{2} q_{l} - c_{1} q_{l} s_{1} + c_{1} q_{l} s_{2} + c_{2} m_{P}^{2} q_{l} + c_{2} q_{l} s_{1} - c_{2} q_{l} s_{2} + 4 c_{3} h_{l} - c_{5} m_{P}^{2} q_{l} + c_{5} q_{l} s_{1} + c_{5} q_{l} s_{2} - 2 c_{6} q_{l} s_{1}",
+    "H_l_latex": "d_{1} m_{P}^{2} q_{l} + 4 d_{2} h_{l} - d_{3} m_{P}^{2} q_{l} + d_{3} q_{l} s_{1} + d_{3} q_{l} s_{2}",
+    "H_minus_latex": "- d_{minus} q_{minus} \\left(s_{1} - s_{2}\\right)",
+    "scalar_EM_kernel_rank": 23,
+    "baseline_scalar_EM_kernel_rank": 8,
+    "additional_scalar_EM_kernel_directions": 15,
+    "interpretation": "formal flavor/virtuality polynomial directions, NOT full-action operators or measurement rank"
+  },
+  "sha256": {
+    "scripts/audit_odd_trace_sources.py": "61b09e2c9b2467da50461c013ead1bf47283fcba91772b05a8f78fc11048788c",
+    "scripts/derive_radiative_tff_amplitude.py": "1dc45b957c606617ed6146aff1dd1a165cf0d88fd0bda50da2db80c4792d95ba",
+    "memory/sources/Alda:2026nrd/main_arXiv.tex": "f5dffa21eceef12db45a91e907886c1a9e609e27e279d456148f63e408dc32d4"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "Frechet matrix product rule",
+    "commuting primitive derivatives",
+    "cyclic-stabilizer and double-trace IBP",
+    "scalar-source IBP",
+    "source-gauge curvature",
+    "covariant u curl",
+    "commutator of covariant derivatives",
+    "both nonlinear Bianchi identities",
+    "source-preserving Goldstone EOM",
+    "source-polynomial equivalence to matrix definitions"
+  ],
+  "sha256": {
+    "scripts/verify_odd_source_gauge.py": "5a57fc70af4a0dba0e19be925588d8836e2f23e6b1ba7521f0baf72992851de5",
+    "scripts/reduce_odd_covariant_higher.py": "7052ca6c33b8134d4b634ed1aef112d3de603fe14c73066fe2a7de9b4767797e"
+  }
+}

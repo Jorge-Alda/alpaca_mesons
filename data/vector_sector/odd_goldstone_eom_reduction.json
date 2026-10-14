@@ -1,0 +1,340 @@
+{
+  "goldstone": {
+    "EOM_residual_latex": "\\frac{X_{TC} m_{0}^{2}}{3} \\mathbb{I} - \\left(\\frac{1}{2}\\right) i_{\\chi minus} + nabla_{dot u}",
+    "scope": "LO Goldstone action only; independent sources; no even resonance interaction variation"
+  },
+  "divergence_multiplier_sectors": {
+    "VJP_leading": {
+      "multipliers": 4,
+      "mass_image_rank": 4,
+      "topological_contact_rank": 2,
+      "augmented_image_rank": 4,
+      "contact_free_dimension": 2,
+      "mass_spurion_degree": 1,
+      "mass_image_within_one_spurion_ceiling": true,
+      "contact_free_null_vectors": [
+        [
+          "0",
+          "-1/3",
+          "1",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "contact_matrix": [
+        [
+          "1",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "3",
+          "1",
+          "0"
+        ]
+      ],
+      "contact_trace_rows": [
+        "(('A',), ('B',))",
+        "(('A', 'B'),)"
+      ]
+    },
+    "VVP_leading": {
+      "multipliers": 3,
+      "mass_image_rank": 3,
+      "topological_contact_rank": 2,
+      "augmented_image_rank": 3,
+      "contact_free_dimension": 1,
+      "mass_spurion_degree": 1,
+      "mass_image_within_one_spurion_ceiling": true,
+      "contact_free_null_vectors": [
+        [
+          "0",
+          "-1/3",
+          "1"
+        ]
+      ],
+      "contact_matrix": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "6",
+          "2"
+        ]
+      ],
+      "contact_trace_rows": [
+        "(('A',), ('B',))",
+        "(('A', 'B'),)"
+      ]
+    },
+    "VJP_X": {
+      "multipliers": 10,
+      "mass_image_rank": 10,
+      "topological_contact_rank": 4,
+      "augmented_image_rank": 10,
+      "contact_free_dimension": 6,
+      "mass_spurion_degree": 2,
+      "mass_image_within_one_spurion_ceiling": false,
+      "contact_free_null_vectors": [
+        [
+          "0",
+          "-1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-3",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "1"
+        ]
+      ],
+      "contact_matrix": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/2",
+          "3/2",
+          "1/2",
+          "0",
+          "1/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/2",
+          "3/2",
+          "1/2",
+          "0",
+          "1/2",
+          "0",
+          "0"
+        ]
+      ],
+      "contact_trace_rows": [
+        "(('A',), ('B', 'X'))",
+        "(('A', 'B'), ('X',))",
+        "(('A', 'B', 'X'),)",
+        "(('A', 'X'), ('B',))",
+        "(('A', 'X', 'B'),)"
+      ]
+    },
+    "VVP_X": {
+      "multipliers": 7,
+      "mass_image_rank": 7,
+      "topological_contact_rank": 3,
+      "augmented_image_rank": 7,
+      "contact_free_dimension": 4,
+      "mass_spurion_degree": 2,
+      "mass_image_within_one_spurion_ceiling": false,
+      "contact_free_null_vectors": [
+        [
+          "0",
+          "-1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-3",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "contact_matrix": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "2",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "3",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "3",
+          "0",
+          "1"
+        ]
+      ],
+      "contact_trace_rows": [
+        "(('A',), ('B', 'X'))",
+        "(('A', 'B'), ('X',))",
+        "(('A', 'B', 'X'),)",
+        "(('A', 'X'), ('B',))",
+        "(('A', 'X', 'B'),)"
+      ]
+    }
+  },
+  "full_operator_count": null,
+  "sha256": {
+    "scripts/reduce_odd_goldstone_eom.py": "6582b6a9fd0d72857a465b2ee177799476dadf089f7712ab34cb2db7db45aba6",
+    "scripts/enumerate_odd_breaking_vertices.py": "eedd0086333cceec808fa2a77ef44373d3a1f4a804d5f89aecc048ae099fb053",
+    "memory/rcht/odd-parity/odd-covariant-closure.md": "83a2c54e1c8ff8026c669400c7bd3867790489a84a5995220e303fd23fb7ec66"
+  }
+}

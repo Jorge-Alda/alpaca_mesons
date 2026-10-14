@@ -1,0 +1,32 @@
+{
+  "chiral": {
+    "identities_verified": true,
+    "curvature_latex": "- \\frac{i}{2} L_{munu} + - \\frac{i}{2} R_{munu} + \\left(\\frac{1}{4}\\right) u_{\\mu} u_{\\nu} - \\left(\\frac{1}{4}\\right) u_{\\nu} u_{\\mu}",
+    "curl_u_latex": "- L_{munu} + R_{munu}",
+    "bianchi_plus_latex": "\\frac{i}{2} L_{munu} u_{\\mu} + - \\frac{i}{2} R_{munu} u_{\\mu} + - \\frac{i}{2} u_{\\mu} L_{munu} + \\frac{i}{2} u_{\\mu} R_{munu}",
+    "bianchi_minus_latex": "\\frac{i}{2} L_{munu} u_{\\mu} + \\frac{i}{2} R_{munu} u_{\\mu} + - \\frac{i}{2} u_{\\mu} L_{munu} + - \\frac{i}{2} u_{\\mu} R_{munu}",
+    "second_chi_minus_derivative_latex": "- \\frac{1}{2} \\chi_{\\mu plus} u_{\\nu} - \\left(\\frac{1}{2}\\right) \\chi_{plus} nabla_{\\mu u \\nu} - \\left(\\frac{1}{4}\\right) i_{\\chi minus} u_{\\mu} u_{\\nu} + i nabla_{\\mu \\chi \\nu minus} - \\left(\\frac{1}{2}\\right) nabla_{\\mu u \\nu} \\chi_{plus} - \\left(\\frac{1}{4}\\right) u_{\\mu} i_{\\chi minus} u_{\\nu} - \\left(\\frac{1}{2}\\right) u_{\\nu} \\chi_{\\mu plus} - \\left(\\frac{1}{4}\\right) u_{\\nu} i_{\\chi minus} u_{\\mu} - \\left(\\frac{1}{4}\\right) u_{\\nu} u_{\\mu} i_{\\chi minus}",
+    "remainders": [
+      "u f_minus",
+      "u f_plus",
+      "[u_mu,u_nu] K",
+      "f_plus K",
+      "covariant scalar/pseudoscalar-source derivatives",
+      "u u (i chi_minus)"
+    ]
+  },
+  "vector": {
+    "explicit_vector_EOM_checked": true,
+    "induced_terms": [
+      "two-extra-derivative vector interaction",
+      "source-only contact"
+    ],
+    "selected_convention": "retain explicit vector fields; no resonance-EOM elimination",
+    "full_action_operator_count": null
+  },
+  "sha256": {
+    "scripts/derive_odd_covariant_closure.py": "0a59acd0a6de00aa24aaab25b53a902fff83fc39e95d3d532840094ebf9671f0",
+    "memory/rcht/foundations/rcht-basics.md": "60bc83ad5376556691d4dd114618c4afc8462aaec65e484d51758d5b668abeae",
+    "memory/rcht/odd-parity/odd-trace-source-eom-audit.md": "b209893ea4b42c4b343929bbb1acdd8730a0357dcdb8377efb5c5574e6a756b6"
+  }
+}

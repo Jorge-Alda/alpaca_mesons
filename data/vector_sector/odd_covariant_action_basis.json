@@ -1,0 +1,4777 @@
+{
+  "scope": "declared VJP/VVP covariant seed space only; not arbitrary multi-Goldstone U(3) odd action",
+  "full_action_count": 228,
+  "original_action_rank": 11,
+  "new_independent_operators": 217,
+  "leading_basis": [
+    "original:c1",
+    "original:c2",
+    "original:c5",
+    "original:c6",
+    "original:c7",
+    "original:c3",
+    "original:c4",
+    "original:d1",
+    "original:d3",
+    "original:d4",
+    "original:d2",
+    "VJP:F0:L0",
+    "VJP:F0:L1",
+    "VJP:F0:L2",
+    "VJP:F0:L3",
+    "VJP:F0:L4",
+    "VJP:F0:L5",
+    "VJP:F1:L0",
+    "VJP:F1:L1",
+    "VJP:F1:L2",
+    "VJP:F1:L3",
+    "VJP:F1:L4",
+    "VJP:F1:L5",
+    "VJP:F2:L3",
+    "VJP:F3:L0",
+    "VJP:F3:L1",
+    "VJP:F3:L2",
+    "VJP:F3:L3",
+    "VJP:F3:L4",
+    "VJP:Y:F0",
+    "VVP:S:F0:L0",
+    "VVP:S:F0:L1",
+    "VVP:S:F0:L2",
+    "VVP:S:F1:L0",
+    "VVP:S:F1:L1",
+    "VVP:S:F1:L2",
+    "VVP:A:F0:L0",
+    "VVP:A:F0:L1",
+    "VVP:A:F0:L2",
+    "VVP:Y:F0"
+  ],
+  "higher_basis": [
+    {
+      "id": "X:VJP:all:F0:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F0:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(u^{\\rho} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right) \\operatorname{tr}\\left(u^{\\rho} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right) \\operatorname{tr}\\left(u^{\\beta} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right) \\operatorname{tr}\\left(u^{\\beta} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VJP:all:F1:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} f_+^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} f_+^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} f_+^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\beta\\nu} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} f_+^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\nu\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} f_+^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F2:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1/2",
+          "AUB;X": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} f_+^{\\alpha\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} f_+^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\rho} f_+^{\\beta\\nu} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\beta} f_+^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} u^{\\beta} f_+^{\\alpha\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} u^{\\rho} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} u^{\\beta} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\chi_{+} u^{\\beta} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} f_+^{\\beta\\nu} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\beta\\nu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} f_+^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\nu\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F3:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} f_+^{\\alpha\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} f_+^{\\alpha\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} f_+^{\\beta\\nu} \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} f_+^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} f_+^{\\alpha\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\beta\\nu} \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F4:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1/2",
+          "AXB;U": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\alpha\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} f_+^{\\alpha\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\chi_{+} f_+^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\chi_{+} f_+^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\chi_{+} f_+^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} f_+^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F5:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "ABXU": "1/2",
+          "AUXB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} f_+^{\\alpha\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VJP:all:F6:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} f_+^{\\beta\\nu} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} f_+^{\\beta\\nu} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} f_+^{\\nu\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} f_+^{\\nu\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} f_+^{\\alpha\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} f_+^{\\alpha\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\chi_{+} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\beta\\nu} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} f_+^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\nu\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} f_+^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F7:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1/2",
+          "AXBU": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) f_+^{\\alpha\\rho} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} f_+^{\\alpha\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F8:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L0",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} u^{\\rho} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L1",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} u^{\\beta} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L2",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} u^{\\beta} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L3",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) u^{\\rho} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L4",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) u^{\\beta} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L5",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "B",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) u^{\\beta} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L6",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(f_+^{\\beta\\nu} u^{\\rho} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L7",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} u^{\\beta} \\right)"
+    },
+    {
+      "id": "X:VJP:all:F9:L8",
+      "block": "X:VJP",
+      "flavor_trace_words": [
+        {
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} u^{\\beta} \\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "1/2",
+          "AXU;B": "1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(u^{\\rho} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\chi_{+} \\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;UX": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1",
+          "AUB;X": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} u^{\\rho} \\right) + \\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} V^{\\beta\\nu} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1",
+          "AUB;X": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} V^{\\nu\\rho} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1",
+          "AUB;X": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(\\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} V^{\\alpha\\rho} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABU;X": "1",
+          "AUB;X": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} V^{\\nu\\rho} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "1/2",
+          "AUXB": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} u^{\\rho} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\rho} V^{\\beta\\nu} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\chi_{+} V^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "1/2",
+          "AUXB": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\beta} V^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\chi_{+} V^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "1/2",
+          "AUXB": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} u^{\\beta} V^{\\alpha\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\chi_{+} V^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "1/2",
+          "AUXB": "1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} V^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) V^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1",
+          "AXB;U": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} \\chi_{+} \\right) + \\operatorname{tr}\\left(u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} V^{\\beta\\nu} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1",
+          "AXB;U": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} \\chi_{+} \\right) + \\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} V^{\\nu\\rho} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1",
+          "AXB;U": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} \\chi_{+} \\right) + \\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} V^{\\alpha\\rho} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABX;U": "1",
+          "AXB;U": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) + \\operatorname{tr}\\left(u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) V^{\\nu\\rho} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\beta\\nu} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\right) + \\operatorname{tr}\\left(V^{\\beta\\nu} u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\nu\\rho} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\right) + \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\alpha\\rho} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\right) + \\operatorname{tr}\\left(V^{\\alpha\\rho} u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1",
+          "AXBU": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} V^{\\beta\\nu} u^{\\rho} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} V^{\\beta\\nu} \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1",
+          "AXBU": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} V^{\\nu\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} V^{\\nu\\rho} \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1",
+          "AXBU": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} V^{\\alpha\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} V^{\\alpha\\rho} \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AUBX": "1",
+          "AXBU": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) V^{\\nu\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "-1/2",
+          "AXU;B": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\rho} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} u^{\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "-1/2",
+          "AXU;B": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\beta} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "-1/2",
+          "AXU;B": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} u^{\\beta} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\rho} u^{\\beta} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "-1/2",
+          "AXU;B": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L4",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BUX": "1/2",
+          "A;BXU": "1/2",
+          "AUX;B": "-1/2",
+          "AXU;B": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "-1/2",
+          "AUXB": "-1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} \\chi_{+} u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} u^{\\rho} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\rho} V^{\\beta\\nu} \\right)}{2} - \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\chi_{+} V^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "-1/2",
+          "AUXB": "-1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} u^{\\beta} V^{\\nu\\rho} \\right)}{2} - \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\chi_{+} V^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "-1/2",
+          "AUXB": "-1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} \\chi_{+} u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} u^{\\beta} \\chi_{+} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} u^{\\beta} V^{\\alpha\\rho} \\right)}{2} - \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\chi_{+} V^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "-1/2",
+          "AUXB": "-1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\beta\\nu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\rho} V^{\\beta\\nu} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) V^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L4",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "ABUX": "1/2",
+          "ABXU": "-1/2",
+          "AUXB": "-1/2",
+          "AXUB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} V^{\\nu\\rho} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) u^{\\beta} V^{\\nu\\rho} \\right)}{2} - \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\left(\\nabla^{\\sigma} \\chi_+\\right) V^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L0",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\beta\\nu} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\rho} \\right) - \\operatorname{tr}\\left(V^{\\beta\\nu} u^{\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L1",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\nu\\rho} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) u^{\\beta} \\right) - \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L2",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "A",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\alpha\\rho} \\chi_{+} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) u^{\\beta} \\right) - \\operatorname{tr}\\left(V^{\\alpha\\rho} u^{\\beta} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L3",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} u^{\\rho} \\right) + \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\rho} \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)\\right)"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L4",
+      "block": "X:VVP",
+      "flavor_trace_words": [
+        {
+          "AU;BX": "1",
+          "AX;BU": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "X",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "one covariant derivative",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} u^{\\beta} \\right) + \\operatorname{tr}\\left(V^{\\alpha\\mu} u^{\\beta} \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} \\left(\\nabla^{\\sigma} \\chi_+\\right) \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L1",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\nu\\rho} i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L2",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(f_+^{\\alpha\\rho} i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L3",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L4",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L5",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L6",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L7",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\alpha\\mu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L8",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(V^{\\mu\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L0",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L1",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L2",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L3",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L4",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L5",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L7",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L8",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L0",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\beta\\nu} i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} f_+^{\\beta\\nu} \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L1",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_+^{\\nu\\rho} i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} f_+^{\\nu\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L2",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_+^{\\alpha\\rho} i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) i\\chi_{-} f_+^{\\alpha\\rho} \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L3",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) i\\chi_{-} \\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L4",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) i\\chi_{-} \\left(\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L5",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) i\\chi_{-} \\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L6",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\rho}\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} i\\chi_{-} \\left(\\nabla^{\\rho}\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L7",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} i\\chi_{-} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\nu\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L8",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1/2",
+          "AYB": "1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) i\\chi_{-} \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} i\\chi_{-} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right)}{2}\\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L0",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(f_+^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L1",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(f_+^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L2",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(f_+^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L3",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\beta\\nu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L5",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L8",
+      "block": "Ydd:VJP",
+      "flavor_trace_words": [
+        {
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "1",
+      "representative_latex": "\\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_+^{\\alpha\\rho}\\right) \\right) \\operatorname{tr}\\left(V^{\\mu\\nu} i\\chi_{-} \\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L0",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\beta\\nu} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\beta\\nu} i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L1",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L2",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\rho} i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L3",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\beta\\nu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\beta\\nu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L4",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L0",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} \\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L1",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} \\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L2",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} \\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L3",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} V^{\\beta\\nu}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L4",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "AB;Y": "2"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "4 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\operatorname{tr}\\left(i\\chi_{-} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) \\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L0",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1",
+          "AYB": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\beta\\nu} i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} V^{\\beta\\nu} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L1",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1",
+          "AYB": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) V^{\\nu\\rho} i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} V^{\\nu\\rho} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L2",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1",
+          "AYB": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) V^{\\alpha\\rho} i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) i\\chi_{-} V^{\\alpha\\rho} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L3",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1",
+          "AYB": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} V^{\\beta\\nu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) i\\chi_{-} \\left(\\nabla^{\\sigma} V^{\\beta\\nu}\\right) \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L4",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "ABY": "1",
+          "AYB": "1"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "symmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) i\\chi_{-} \\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:antisymmetric:F0:L1",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\operatorname{tr}\\left(V^{\\nu\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(V^{\\nu\\rho} i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:antisymmetric:F0:L2",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\operatorname{tr}\\left(V^{\\alpha\\rho} \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) i\\chi_{-} \\right) + \\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\right) \\operatorname{tr}\\left(V^{\\alpha\\rho} i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "Ydd:VVP:antisymmetric:F0:L3",
+      "block": "Ydd:VVP",
+      "flavor_trace_words": [
+        {
+          "A;BY": "1",
+          "AY;B": "-1"
+        }
+      ],
+      "flavor_trace_count": 2,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 6,
+      "coefficient_normalization": "1/M_V^2",
+      "bose_sector": "antisymmetric",
+      "hermitian_prefactor": "1",
+      "representative_latex": "2 \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) i\\chi_{-} \\right) - \\operatorname{tr}\\left(\\left(\\nabla^{\\sigma} V^{\\nu\\rho}\\right) \\right) \\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\alpha\\mu}\\right) i\\chi_{-} \\right)\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L0",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} f_-^{\\beta\\nu} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_-^{\\beta\\nu} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L1",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          0,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) \\chi_{+} f_-^{\\nu\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\alpha\\mu}\\right) f_-^{\\nu\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L2",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AA",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) \\chi_{+} f_-^{\\alpha\\rho} \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta}\\nabla^{\\sigma} V^{\\mu\\nu}\\right) f_-^{\\alpha\\rho} \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L3",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\chi_{+} \\left(\\nabla^{\\sigma} f_-^{\\beta\\nu}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\rho} V^{\\alpha\\mu}\\right) \\left(\\nabla^{\\sigma} f_-^{\\beta\\nu}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L5",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "AB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) \\chi_{+} \\left(\\nabla^{\\sigma} f_-^{\\alpha\\rho}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(\\left(\\nabla^{\\beta} V^{\\mu\\nu}\\right) \\left(\\nabla^{\\sigma} f_-^{\\alpha\\rho}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L6",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          0,
+          2
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\chi_{+} \\left(\\nabla^{\\rho}\\nabla^{\\sigma} f_-^{\\beta\\nu}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\alpha\\mu} \\left(\\nabla^{\\rho}\\nabla^{\\sigma} f_-^{\\beta\\nu}\\right) \\chi_{+} \\right)}{2}\\right)"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L8",
+      "block": "fmdd:VJP",
+      "flavor_trace_words": [
+        {
+          "ABX": "1/2",
+          "AXB": "-1/2"
+        }
+      ],
+      "flavor_trace_count": 1,
+      "spurion_count": 1,
+      "lorentz_label": {
+        "derivative_on": "BB",
+        "metric_pair": [
+          2,
+          4
+        ]
+      },
+      "derivative_order": "ordered outer slot 4, inner slot 5 for AA/BB",
+      "operator_mass_dimension": 7,
+      "coefficient_normalization": "1/M_V^3",
+      "bose_sector": "all",
+      "hermitian_prefactor": "i",
+      "representative_latex": "i \\epsilon_{\\mu\\nu\\rho\\sigma} \\eta_{\\alpha\\beta} \\left(- \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\chi_{+} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_-^{\\alpha\\rho}\\right) \\right)}{2} + \\frac{\\operatorname{tr}\\left(V^{\\mu\\nu} \\left(\\nabla^{\\beta}\\nabla^{\\sigma} f_-^{\\alpha\\rho}\\right) \\chi_{+} \\right)}{2}\\right)"
+    }
+  ],
+  "higher_relations": [
+    {
+      "X:VJP:all:F8:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L0": "1",
+      "Ydd:VJP:all:F1:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L7": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F0:L0": "1",
+      "Ydd:VVP:antisymmetric:F0:L0": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "1",
+      "X:VJP:all:F3:L1": "1/2",
+      "X:VJP:all:F7:L0": "-1",
+      "X:VJP:all:F7:L1": "-1/2",
+      "fmdd:VJP:all:F0:L4": "1"
+    },
+    {
+      "X:VJP:all:F3:L0": "-1",
+      "X:VJP:all:F3:L1": "-1/2",
+      "X:VJP:all:F3:L6": "-1",
+      "X:VJP:all:F3:L7": "-1/2",
+      "X:VJP:all:F7:L0": "1",
+      "X:VJP:all:F7:L1": "1/2",
+      "X:VJP:all:F7:L6": "1",
+      "X:VJP:all:F7:L7": "1/2",
+      "fmdd:VJP:all:F0:L7": "1"
+    }
+  ],
+  "normalization_note": "explicit new representatives; physical SM/ALP kernel normalization remains a separate calculation",
+  "intermediate_projection_note": "odd_covariant_higher_kernel.json supplies a seed-dependent pre-completion bound; the final count is certified by odd_three_flavor_action_quotient.json",
+  "sha256": {
+    "data/vector_sector/odd_three_flavor_action_quotient.json": "8cbd18287c51b0576e6d2f7834689cf052ca9e471d2721741d843af46c9ac2a7",
+    "scripts/export_odd_covariant_basis.py": "35a881ef565069518c74c934a96dab23e9d9f9b3d3cc5aefab2c482895ddb2e8"
+  }
+}

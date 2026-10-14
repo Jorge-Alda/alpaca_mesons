@@ -1,0 +1,36 @@
+{
+  "leading_VJP": {
+    "generic_divergence_to_selected_plus_bianchi": [
+      "0",
+      "2",
+      "2",
+      "0",
+      "2",
+      "-2"
+    ],
+    "contact_rank": 2,
+    "bianchi_remainder_rank": 3,
+    "combined_remainder_rank": 4,
+    "exact_contact_free_relations": 0,
+    "null_vectors": []
+  },
+  "leading_VVP": {
+    "contact_rank": 2,
+    "exact_contact_free_relations": 1,
+    "null_vectors": [
+      [
+        "0",
+        "-1/3",
+        "1"
+      ]
+    ]
+  },
+  "scope": "leading divergence/mass subsector only; fixed explicit-vector convention",
+  "full_new_operator_count": null,
+  "sha256": {
+    "scripts/lift_odd_leading_covariant.py": "fb91583b20ab1b191adb1e41f3a0f56f97e9e2e531e915f04380d46d5e8c22ab",
+    "data/vector_sector/odd_vertex_enumeration.json": "eeec09e0b3cbab0ae2e9c4b3b96d6fd7b493722373c0bdd5c79aaeebba0e370b",
+    "scripts/derive_odd_covariant_closure.py": "0a59acd0a6de00aa24aaab25b53a902fff83fc39e95d3d532840094ebf9671f0",
+    "scripts/reduce_odd_goldstone_eom.py": "6582b6a9fd0d72857a465b2ee177799476dadf089f7712ab34cb2db7db45aba6"
+  }
+}

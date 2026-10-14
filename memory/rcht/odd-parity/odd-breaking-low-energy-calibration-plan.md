@@ -2,7 +2,7 @@
 title: Odd flavor-breaking and single/double-trace extension with low-energy calibration
 status: mixed
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-14
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, ParticleDataGroup:2024cfk]
 provenance: assumption
 ---
@@ -40,6 +40,19 @@ when adequacy and truncation considerations are equivalent. The existing
 partial-isospin approximation remains labelled rather than upgraded silently.
 
 ## Stage A — define and reduce a bounded operator space
+
+Initial execution on 2026-10-13: the
+[source-resolved vertex catalogue](odd-breaking-vertex-catalogue.md),
+[flavor enumeration](odd-breaking-flavor-enumeration.md) and
+[Lorentz/IBP reduction](odd-breaking-lorentz-reduction.md) are saved with
+executable exact SymPy results. The bounded block space has 205 coefficient
+tensors before physical-source/kinematic projection; these are not 205 fit
+parameters. No EOM or OPE prior was applied to that vertex catalogue.
+Execution on 2026-10-14: the [complete covariant quotient](odd-higher-covariant-operator-count.md)
+now establishes 228 independent operators, including all eleven original
+operators, hence 217 additions. The basis, ordered derivatives, cross-block
+relations and exact three-flavor certificates are saved. This completes the
+operator-count milestone; physical predictor normalization remains in stage B.
 
 **Deliverables:** an atomic operator-basis record, an executable SymPy
 reduction/expansion script and a table of dimensions, trace topology,
@@ -81,6 +94,19 @@ channel flavor freedom to test low-energy adequacy. Do not select operators
 solely because they force a desired ultraviolet cancellation.
 
 ## Stage B — derive normalized SM and ALP kernels
+
+Execution on 2026-10-14: the
+[neutral independent-source EOM audit](odd-trace-source-eom-audit.md)
+derives the required $X_{TC}$ contacts and three relations in its
+divergence/mass subsector. The
+[leading single/double-trace scalar kernels](odd-trace-scalar-kernels.md)
+are normalized, implemented and pass 32 new/regression tests. They add 15
+formal scalar EM directions beyond the baseline, not an action count.
+The [complete bounded action quotient](odd-higher-covariant-operator-count.md)
+has now been established: 217 new independent operators. Next map this
+certified basis into normalized SM and independent-source ALP kernels,
+including its higher-field/source directions. Observable projection and data
+identifiability must be computed before selecting fit parameters.
 
 **Deliverables:** action-derived scripts, atomic amplitude records and tested
 extensions of the existing implementation kernels.
@@ -192,8 +218,39 @@ low-energy amplitudes without double counting local resonance-saturated terms.
 
 ## Next executable task
 
-Execute stage A: enumerate and reduce the bounded one-spurion,
-single/double-trace VJP/VVP action, using the Roig basis conversion and the
-existing operator contractions. The present request saves and plans this
-work; it does not claim that the new operator basis, fit or ALP predictors
-have already been computed.
+The [power-counting proposal](odd-action-power-counting-proposal.md), saved
+at the user's request on 2026-10-14, organizes leading single traces, leading
+double-trace corrections and single-trace spurion/derivative corrections,
+while deferring their mixed double-trace corrections. It is a proposed
+truncation with unresolved resonance-momentum/domain qualifications; its
+filtered amplitude rank has not been computed. Apply any selected hierarchy
+to parent columns before amplitude reduction, with no implicit coefficient
+prior or claim of complete next-order resonance accuracy.
+
+The [complete covariant quotient](odd-higher-covariant-operator-count.md)
+contains 228 independent operators: 40 leading and 188 higher, with original
+rank eleven and 217 additions. It uses the user's 2026-10-14 convention:
+preserve explicit vectors and the fixed derivative ceiling; reduce chiral
+identities and source-preserving LO Goldstone EOM. All induced contacts and
+higher-field remainders are retained. No vector EOM or discarded two-spurion
+image is used to force this count.
+
+Map the saved basis into normalized SM and ALP predictors. Extend the existing
+leading trace kernels with the one-spurion derivative and higher-derivative
+mass/source blocks, including both photon assignments and fixed topological
+contacts. Determine which combinations enter radiative decays, real/virtual
+TFFs and each ALP target, and which remain invisible. Use those projections
+to select identifiable low-energy fit combinations rather than fitting all
+217 new action coefficients.
+
+Execution on 2026-10-14: the [higher two-boson projection](odd-higher-two-boson-combinations.md)
+reduces 181 derivative/mass-source representatives to 66 abstract stripped
+combinations and 51 neutral combinations. The seven higher $f_-$ representatives
+vanish for electromagnetic-compatible diagonal scalar sources at this cubic
+order. The 51-combination map keeps independent ALP derivative/mass weights
+and symbolic quark masses; it is not a normalized predictor or fit rank.
+Next combine the leading and higher kernels with source/contact normalization
+and the full photon responses, then compute physical-channel sensitivities.
+
+The count and basis are complete. The extended physical kernels, data
+calibration and ALP propagation remain to be completed.

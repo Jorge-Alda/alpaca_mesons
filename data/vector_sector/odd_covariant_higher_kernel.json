@@ -1,0 +1,115 @@
+{
+  "ordered_covariant_seed_count": 197,
+  "flat_source_EOM_rank": 163,
+  "kernel_dimension": 34,
+  "kernel_vectors": [
+    {
+      "X:VJP:all:F0:L4": "1"
+    },
+    {
+      "X:VJP:all:F1:L4": "1"
+    },
+    {
+      "X:VJP:all:F2:L4": "1"
+    },
+    {
+      "X:VJP:all:F3:L4": "1"
+    },
+    {
+      "X:VJP:all:F4:L4": "1"
+    },
+    {
+      "X:VJP:all:F5:L4": "1"
+    },
+    {
+      "X:VJP:all:F6:L4": "1"
+    },
+    {
+      "X:VJP:all:F7:L4": "1"
+    },
+    {
+      "X:VJP:all:F8:L4": "1"
+    },
+    {
+      "X:VJP:all:F9:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F0:L7": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F1:L7": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F2:L7": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L0": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L4": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L6": "1"
+    },
+    {
+      "Ydd:VJP:all:F3:L7": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F0:L0": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F1:L0": "1"
+    },
+    {
+      "Ydd:VVP:symmetric:F2:L0": "1"
+    },
+    {
+      "Ydd:VVP:antisymmetric:F0:L0": "1"
+    },
+    {
+      "fmdd:VJP:all:F0:L0": "1"
+    },
+    {
+      "fmdd:VJP:all:F0:L4": "1"
+    },
+    {
+      "fmdd:VJP:all:F0:L6": "1"
+    },
+    {
+      "fmdd:VJP:all:F0:L7": "1"
+    }
+  ],
+  "joint_action_count": null,
+  "script_sha256": "7052ca6c33b8134d4b634ed1aef112d3de603fe14c73066fe2a7de9b4767797e",
+  "remainder_rank": 27,
+  "formal_trace_quotient_rank": 190,
+  "source_grade_ceiling": null,
+  "remainder_rows": 122232
+}

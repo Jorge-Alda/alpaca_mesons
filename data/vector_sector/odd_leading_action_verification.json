@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "concrete_U3_Bianchi_probe_rank": 3,
+  "probe_matrix": [
+    [
+      "-5460",
+      "-10248",
+      "-5376",
+      "0"
+    ],
+    [
+      "630",
+      "-10332",
+      "-7280",
+      "0"
+    ],
+    [
+      "-1932",
+      "588",
+      "-1806",
+      "0"
+    ],
+    [
+      "3780",
+      "-21294",
+      "-3605",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "8442",
+      "1890",
+      "3115",
+      "0"
+    ],
+    [
+      "9744",
+      "4116",
+      "6587",
+      "0"
+    ],
+    [
+      "-5460",
+      "-10248",
+      "-5376",
+      "0"
+    ]
+  ],
+  "checked": [
+    "three independent nonlinear Bianchi directions",
+    "exact traced-Bianchi zero",
+    "count and basis dimensions",
+    "input hashes"
+  ],
+  "count_sha256": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",
+  "script_sha256": "21074739130d0faf8263e8bc8316d363ee893de4df9dd9cda71520047fe96650"
+}

@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-04
+updated: 2026-10-14
 bibtex_keys: []
 provenance: assumption
 ---
@@ -45,7 +45,21 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [vector-physical-tff-matching.md](vector-physical-tff-matching.md) — physical-channel hard-ray conditions and the source-breaking obstruction in all 64 retained scenarios.
 - [vector-matching-mismatch-interpretation.md](vector-matching-mismatch-interpretation.md) — saved explanation of both mismatches, their possible origins, remedies and low-energy scope limits.
 - [odd-breaking-low-energy-calibration-plan.md](odd-breaking-low-energy-calibration-plan.md) — selected staged one-spurion single/double-trace odd extension, low-energy fit and ALP propagation plan.
+- [odd-breaking-flavor-enumeration.md](odd-breaking-flavor-enumeration.md) — exact abstract single/double traces, C/Hermitian and Bose sectors, singlet and neutral-photon projections, and literature dictionary audit.
+- [odd-breaking-lorentz-reduction.md](odd-breaking-lorentz-reduction.md) — exact Lorentz/IBP and linear Bianchi reduction with independent sources, source-gradient and scalar projections.
+- [odd-breaking-vertex-catalogue.md](odd-breaking-vertex-catalogue.md) — 205 bounded source-resolved coefficient tensors, dimensions, normalization, target limits and stage-B handoff.
+- [odd-trace-source-eom-audit.md](odd-trace-source-eom-audit.md) — executed neutral U(3) source EOM, induced topological contacts and the remaining full-action count milestone.
+- [odd-covariant-closure.md](odd-covariant-closure.md) — verified covariant identities, source-gradient remainders and the selected explicit-vector counting convention.
+- [odd-goldstone-eom-multiplier-reduction.md](odd-goldstone-eom-multiplier-reduction.md) — exact covariant LO Goldstone EOM multiplier matrices and their two-spurion closure obstruction.
+- [odd-leading-covariant-operator-count.md](odd-leading-covariant-operator-count.md) — complete leading covariant quotient: 40 independent operators, original rank eleven and 29 new representatives.
+- [odd-covariant-source-gauge-reduction.md](odd-covariant-source-gauge-reduction.md) — independent-source frame, ordered derivatives, exact trace-jet IBP and cross-block completion.
+- [odd-three-flavor-trace-gram.md](odd-three-flavor-trace-gram.md) — exact U(3) color Gram closure, including the unresolved direction beyond finite source probes.
+- [odd-higher-covariant-operator-count.md](odd-higher-covariant-operator-count.md) — complete bounded action count: 228 independent operators, original rank eleven, 217 new and an explicit basis.
+- [odd-trace-scalar-kernels.md](odd-trace-scalar-kernels.md) — normalized leading single/double-trace SM kernels, tests and 15 additional formal scalar EM directions.
 - [alp-target-amplitude-audit.md](alp-target-amplitude-audit.md) — inventory of the four ALP target amplitudes, fresh blind-direction checks and missing-calculation decisions.
 - [alp-two-boson-blind-direction-audit.md](alp-two-boson-blind-direction-audit.md) — exact VJP/VVP null projections for canonical vector and photon tensor legs.
 - [alp-vv-completion-plan.md](alp-vv-completion-plan.md) — steps to assemble the normalized physical ALP two-vector amplitude and width.
 - [alp-vgamma-completion-plan.md](alp-vgamma-completion-plan.md) — steps to complete the ALP vector-photon amplitude including exchange and source/contact terms.
+- [odd-operator-alp-relevance.md](odd-operator-alp-relevance.md) — target-relevant operator families, projection limits and candidate remedies for the two matching mismatches.
+- [odd-higher-two-boson-combinations.md](odd-higher-two-boson-combinations.md) — exact stripped higher two-boson coefficient maps: 66 abstract and 51 neutral combinations, with independent ALP source weights.
+- [odd-action-power-counting-proposal.md](odd-action-power-counting-proposal.md) — proposed momentum/quark-mass/OZI hierarchy, first-correction truncation, resonance-domain limitations and required parent-column rank calculation.

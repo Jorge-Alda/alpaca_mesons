@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "exact rational proper-Lorentz boost",
+    "orientation/parity reflection",
+    "off-shell photon Ward replacement",
+    "concrete U(3) polarized trace identity",
+    "input hashes and inventory consistency"
+  ],
+  "passed": true,
+  "enumeration_sha256": "eeec09e0b3cbab0ae2e9c4b3b96d6fd7b493722373c0bdd5c79aaeebba0e370b",
+  "script_sha256": "c9251f7fe6e6f540d966636ec76eb38f81230aed3977df18b3ffda225c3321ca"
+}

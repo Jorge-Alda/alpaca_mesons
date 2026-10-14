@@ -19,7 +19,16 @@ and [stage-4 rank diagnostics](vector-stage4-rank.md).
 
 The user's 2026-10-13 instruction selects the
 [single/double-trace odd flavor-breaking and low-energy calibration plan](odd-breaking-low-energy-calibration-plan.md).
-Its next executable task is stage A, operator enumeration and reduction.
+Its [stage-A source-resolved catalogue](odd-breaking-vertex-catalogue.md)
+has been computed with exact abstract flavor and Lorentz/IBP reductions.
+The [first source/EOM audit](odd-trace-source-eom-audit.md) and
+[leading normalized trace kernels](odd-trace-scalar-kernels.md) are now
+executed. The [complete covariant quotient](odd-higher-covariant-operator-count.md)
+now establishes 228 independent operators, including the original eleven,
+hence 217 additions. Next map the saved basis into normalized SM and
+independent-source ALP kernels, then determine observable and data-identifiable
+combinations before calibration. The 15 additional formal scalar EM directions
+remain a separate earlier projection result.
 The [saved matching explanation](vector-matching-mismatch-interpretation.md)
 records why the present enlarged action cannot supply a hard-TFF prescription;
 the [physical matching record](vector-physical-tff-matching.md) defines
