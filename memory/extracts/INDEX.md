@@ -9,6 +9,8 @@ provenance: literature
 
 # Literature extracts
 
+- [Graf:2020yxt](Graf:2020yxt/INDEX.md) — chiral Hilbert series with external sources, disconnected character projections and IBP qualifications.
+
 Modular source digests grouped by their INSPIRE-HEP BibTeX key.
 
 Each child folder is a source-specific extract collection; see its files for the cited concepts and results.

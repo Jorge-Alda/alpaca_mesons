@@ -130,3 +130,10 @@ SM and independent-source ALP kernels for this basis, determine observable
 projections and blind directions, then calibrate only identifiable low-energy
 combinations. No calibration or physical ALP prediction has been performed
 by the reduction itself.
+
+The [bounded Hilbert-series presentation](odd-bounded-hilbert-series.md)
+independently reconstructs the raw multiplicities by character projections
+and reproduces this quotient from its saved relation certificates. Its
+[parent filtration](odd-hilbert-power-counting.md) has nested dimensions
+12, 101 and 228. The quotient part inherits this record's completeness proof;
+it is not a second independent Molien-Weyl proof of 228.

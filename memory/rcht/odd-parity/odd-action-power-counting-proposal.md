@@ -126,6 +126,13 @@ momenta or forcing exact asymptotic constraints.
 
 # Implementation and outstanding count
 
+The formal parent-action count has now been executed in
+[the Hilbert-series power-counting record](odd-hilbert-power-counting.md):
+the nested quotient image dimensions are 12, 101 and 228 under this nominal
+equal-correction filtration. Physical-channel maps and resonance-region
+adequacy remain uncomputed. The distinctions below between parent columns
+and projected combinations continue to apply.
+
 Apply the hierarchy to the parent operator columns before projecting or
 reducing amplitudes. The saved independent combinations can mix single- and
 double-trace parents; their representative labels are not valid filters for
@@ -133,9 +140,8 @@ an entire combination. Preserve the original full basis and compute the
 retained-column image and its exact rank separately.
 
 The current 51 higher neutral combinations are an intermediate stripped
-vertex rank. No power-counting-filtered count has yet been computed. Next
-classify retained parents by sector, additional spurion/derivative order and
-trace topology, resolve the treatment of derivatives on resonances, then
-recompute the joint leading/higher physical-channel maps. Validate the
+vertex rank. The filtered parent-action count does not supply a filtered
+physical-channel rank. Next resolve the treatment of derivatives on
+resonances, then recompute the joint leading/higher physical-channel maps. Validate the
 hierarchy by comparing nested truncations, correction sizes and channel
 adequacy within a declared domain before propagating an ALP uncertainty.

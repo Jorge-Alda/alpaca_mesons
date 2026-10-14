@@ -1,0 +1,1635 @@
+{
+  "method": "finite graded quotient presentation; independent character checks only",
+  "independent_Molien_checks": {
+    "3": {
+      "ordinary": 6,
+      "C_trace": 4,
+      "C_even": 5
+    },
+    "4": {
+      "ordinary": 23,
+      "C_trace": 9,
+      "C_even": 16
+    }
+  },
+  "character_derived_raw_counts": {
+    "leading_VJP_derivative": 24,
+    "leading_VVP_derivative": 12,
+    "leading_VJP_Y": 4,
+    "leading_VVP_Y": 3,
+    "leading_VJP_fminus_X": 1,
+    "higher_VJP_X": 90,
+    "higher_VVP_X": 43,
+    "higher_VJP_Ydd": 36,
+    "higher_VVP_Ydd": 19,
+    "higher_VJP_fminus_Xdd": 9
+  },
+  "Lorentz_Bose_counts": {
+    "leading": [
+      3,
+      3
+    ],
+    "X": [
+      4,
+      5
+    ],
+    "dd": [
+      5,
+      4
+    ]
+  },
+  "Lorentz_pseudoscalar_counts": {
+    "ordered": 3,
+    "symmetric": 2
+  },
+  "raw_series": "135*j*t**6*v + 29*j*t**4*v + 62*t**4*v**2 + 15*t**2*v**2",
+  "relation_series": "8*j*t**6*v + 3*j*t**4*v + t**4*v**2 + t**2*v**2",
+  "Hilbert_series": "127*j*t**6*v + 26*j*t**4*v + 61*t**4*v**2 + 14*t**2*v**2",
+  "total": 228,
+  "relations_rank": 13,
+  "trace_mixing_relation_indices": [
+    1,
+    3
+  ],
+  "equal_correction_order_filtration": {
+    "0": {
+      "raw_parents": 12,
+      "quotient_image_dimension": 12
+    },
+    "1": {
+      "raw_parents": 107,
+      "quotient_image_dimension": 101
+    },
+    "2": {
+      "raw_parents": 241,
+      "quotient_image_dimension": 228
+    }
+  },
+  "basis": [
+    {
+      "id": "VJP:F0:L0",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F0:L1",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F0:L2",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F0:L3",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F0:L4",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F0:L5",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F1:L0",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F1:L1",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F1:L2",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F1:L3",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F1:L4",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F1:L5",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F2:L0",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:F2:L1",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:F2:L2",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:F2:L3",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:F2:L4",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:F2:L5",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:F3:L0",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F3:L1",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F3:L2",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F3:L3",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:F3:L4",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:Y:F0",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VJP:Y:F2",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VVP:S:F0:L0",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:S:F0:L1",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:S:F0:L2",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:S:F1:L0",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:S:F1:L1",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:S:F1:L2",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:S:F2:L0",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VVP:S:F2:L1",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VVP:S:F2:L2",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VVP:A:F0:L0",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:A:F0:L1",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:A:F0:L2",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:Y:F0",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 2
+    },
+    {
+      "id": "VVP:Y:F2",
+      "kind": "VVP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "VJP:fminus",
+      "kind": "VJP",
+      "level": 0,
+      "traces": 1
+    },
+    {
+      "id": "X:VJP:all:F0:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F0:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F1:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F2:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F3:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F4:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F5:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F6:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F7:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F8:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VJP:all:F9:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F0:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F1:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F2:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F3:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F4:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F5:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:symmetric:F6:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F0:L4",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F1:L4",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "X:VVP:antisymmetric:F2:L4",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "X"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F0:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F1:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L4",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L7",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F2:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VJP:all:F3:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F0:L4",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F1:L4",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L0",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:symmetric:F2:L4",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 1,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:antisymmetric:F0:L1",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:antisymmetric:F0:L2",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "Ydd:VVP:antisymmetric:F0:L3",
+      "kind": "VVP",
+      "level": 1,
+      "traces": 2,
+      "mode": "Ydd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L0",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L1",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L2",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L3",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L5",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L6",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    },
+    {
+      "id": "fmdd:VJP:all:F0:L8",
+      "kind": "VJP",
+      "level": 1,
+      "traces": 1,
+      "mode": "fmdd"
+    }
+  ],
+  "associated_graded_correction_series": "127*delta**2 + 89*delta + 12",
+  "sha256": {
+    "data/vector_sector/odd_leading_action_count.json": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",
+    "data/vector_sector/odd_three_flavor_action_quotient.json": "8cbd18287c51b0576e6d2f7834689cf052ca9e471d2721741d843af46c9ac2a7",
+    "scripts/derive_odd_bounded_hilbert_series.py": "52272e013ab7a42a10208a6813591c267d47110b4db998667c5f90ccc37f3a1e",
+    "data/vector_sector/odd_covariant_block_preparation.json": "4f88b719b9bca72b7542089e78996e42cef704b982ad3852af8a078506f305b2",
+    "scripts/enumerate_odd_breaking_vertices.py": "eedd0086333cceec808fa2a77ef44373d3a1f4a804d5f89aecc048ae099fb053",
+    "scripts/reduce_odd_covariant_higher.py": "7052ca6c33b8134d4b634ed1aef112d3de603fe14c73066fe2a7de9b4767797e"
+  }
+}

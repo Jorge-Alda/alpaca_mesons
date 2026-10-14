@@ -63,3 +63,5 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [odd-operator-alp-relevance.md](odd-operator-alp-relevance.md) — target-relevant operator families, projection limits and candidate remedies for the two matching mismatches.
 - [odd-higher-two-boson-combinations.md](odd-higher-two-boson-combinations.md) — exact stripped higher two-boson coefficient maps: 66 abstract and 51 neutral combinations, with independent ALP source weights.
 - [odd-action-power-counting-proposal.md](odd-action-power-counting-proposal.md) — proposed momentum/quark-mass/OZI hierarchy, first-correction truncation, resonance-domain limitations and required parent-column rank calculation.
+- [odd-bounded-hilbert-series.md](odd-bounded-hilbert-series.md) — character-derived raw counts and finite graded quotient presentation, with inherited covariant syzygies explicitly identified.
+- [odd-hilbert-power-counting.md](odd-hilbert-power-counting.md) — homogeneous chiral grading and executed parent-filtration dimensions 12, 101 and 228.
