@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: []
 provenance: assumption
 ---
@@ -11,6 +11,13 @@ provenance: assumption
 
 Odd-parity operator extensions, coupling prescriptions, numerical kernels, calibration data, and fit planning.
 
+- [levi-civita-convention.md](levi-civita-convention.md) — canonical upper-index orientation, action-preserving reference conversion and explicit legacy-output adapter.
+All displayed physical tensors use the canonical convention in
+[levi-civita-convention.md](levi-civita-convention.md). Older linked scripts,
+fits and signed artifacts are explicitly reference-backend inputs; their
+odd coefficients and tensor scalars require that record's adapter before
+being combined with canonical photon or resonance amplitudes.
+- [odd-parity-physics-draft.md](odd-parity-physics-draft.md) — physics-only manuscript narrative and precise physical wording, direct Alda conventions, audited photon contact and appendix/missing-work comments.
 - [two-source-alp-rcht-odd-parity-extension.md](two-source-alp-rcht-odd-parity-extension.md) — two-source anomaly seed and ALP insertion.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
@@ -68,7 +75,9 @@ Odd-parity operator extensions, coupling prescriptions, numerical kernels, calib
 - [odd-resonance-derivative-counting.md](odd-resonance-derivative-counting.md) — exact hard/residual momentum split and conservative derivative-parent promotion for on-shell vectors.
 - [odd-power-counted-channel-maps.md](odd-power-counted-channel-maps.md) — joint normalized neutral cubic parent maps, source-EOM/contact consistency and nested truncation ranks.
 - [odd-charged-cubic-kernels.md](odd-charged-cubic-kernels.md) — all charged raw parent gradients, composite f-minus derivative momentum, Ward and LO EOM checks.
-- [odd-alp-source-lsz-assembly.md](odd-alp-source-lsz-assembly.md) — general diagonal UV profile, source EOM, 964 LSZ identities and linked signed conditional photon matching.
+- [odd-alp-source-lsz-assembly.md](odd-alp-source-lsz-assembly.md) — general diagonal UV profile, source EOM, 964 LSZ identities and signed photon matching in Bauer's coefficient normalization.
 - [odd-bounded-sm-numerical-kernels.md](odd-bounded-sm-numerical-kernels.md) — reusable neutral/charged 241-parent gradients, original-coupling embedding and independent symbolic/legacy checks.
 - [odd-low-energy-measurement-jacobians.md](odd-low-energy-measurement-jacobians.md) — all 64 conditional measured-width Jacobians, nuisance projection, nested ranks and data-adequacy controls.
 - [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — 1792 conditional joint fits, 500 interior local prediction/null diagnostics, branch/source/gauge certificates and remaining validation gates.
+- [odd-low-energy-profiles.md](odd-low-energy-profiles.md) — finite expanded sign searches, null-safe physical-amplitude profiles and one-sided source-boundary validation.
+- [odd-alp-measured-null-audit.md](odd-alp-measured-null-audit.md) — 448 finite neutral target/null projections, source/contact certificates and correction-model witnesses.

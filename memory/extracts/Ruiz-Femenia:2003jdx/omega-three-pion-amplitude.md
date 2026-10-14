@@ -2,10 +2,17 @@
 title: Omega to three pions in the antisymmetric-tensor basis
 status: literature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
+
+Displayed tensors and odd couplings use $\epsilon^{0123}=+1$ and
+$\epsilon_{0123}=-1$ for $(+---)$. The canonical coefficients are
+$c_i=-c_i^R$, $d_i=-d_i^R$ relative to the opposite source convention.
+The [conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+derives the action-preserving map; archived source text remains literal.
+
 
 # Exact published $\omega\to\pi^+\pi^-\pi^0$ formula
 

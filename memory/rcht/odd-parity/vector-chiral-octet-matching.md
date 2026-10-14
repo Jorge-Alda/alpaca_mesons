@@ -2,7 +2,7 @@
 title: Enlarged vector action in the chiral-octet VVP matching limit
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, Roig:2013baa, Knecht:2001qf]
 provenance: analytical-derivation
 ---
@@ -20,6 +20,13 @@ and `eq:short1`, archived under Ruiz-Femenia:2003jdx. This is tree level,
 leading electromagnetic order, the chiral octet and the vector-only
 single-trace odd basis; no pseudoscalar resonance or independent local odd
 counterterm is added. All masses are in GeV.
+The [convention dictionary](levi-civita-convention.md) fixes the metric
+$(+---)$ and $\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$.
+Displayed couplings are $c_i=-c_i^R$, $d_i=-d_i^R$ and signed TFF scalars
+are the negatives of the legacy scalars at corresponding couplings.
+The linked original script/transcript retain their source convention;
+the results here are their action-preserving adaptation, not a fresh
+correlator calculation.
 
 The enlarged-action mass spurion is set to zero **before** taking the hard
 limit for this calculation. This is the chiral QCD OPE's domain, distinct
@@ -50,7 +57,10 @@ contains SymPy-rendered inputs, expansion coefficients and solved relations.
 2. Build the full published correlator bracket, including the $c_3$ and
    $d_2$ direct **pseudoscalar-density source** terms. A pseudoscalar pole
    residue alone would miss these terms. Its scalar convention is
-   $\Pi=-\langle\bar\psi\psi\rangle_0\mathcal B/F^2$.
+   $\Pi_R=-\langle\bar\psi\psi\rangle_0\mathcal B_R/F^2$.
+   Its canonical scalar is $\Pi=-\Pi_R$, since the tensor defining the
+   correlator reverses. The following expansion instructions describe the
+   archived source-convention calculation.
 3. Substitute $p^2\to p^2/z$, $q^2\to q^2/z$, $r^2\to r^2/z$,
    with $z=\lambda^{-2}$. Expand through $z^2$. Cancel the $z$ coefficient
    and equate the $z^2$ bracket coefficient to
@@ -60,21 +70,21 @@ contains SymPy-rendered inputs, expansion coefficients and solved relations.
 
 ## Result
 
-The independently solved conditions are
+The independently solved conditions, adapted to canonical couplings, are
 
 $$
 4c_3+c_1=0,\qquad c_1-c_2+c_5=0,\qquad
-c_5-c_6=\frac{N_CM_V}{64\sqrt2\pi^2F_V},
+c_5-c_6=-\frac{N_CM_V}{64\sqrt2\pi^2F_V},
 $$
 
 $$
-d_1+8d_2=-\frac{N_CM_0^2}{64\pi^2F_V^2}
-+\frac{F^2}{4F_V^2},\qquad
-d_3=-\frac{N_CM_0^2}{64\pi^2F_V^2}
-+\frac{F^2}{8F_V^2}.
+d_1+8d_2=\frac{N_CM_0^2}{64\pi^2F_V^2}
+-\frac{F^2}{4F_V^2},\qquad
+d_3=\frac{N_CM_0^2}{64\pi^2F_V^2}
+-\frac{F^2}{8F_V^2}.
 $$
 
-For $M_0=M_V$ these reproduce the five literature relations. Even-sector
+For $M_0=M_V$ these reproduce the five adapted literature relations. Even-sector
 spurion extensions do not generate replacement octet OPE relations at this
 order, because they vanish in its chiral limit. Their fitted physical residues
 must not be substituted for the chiral $F_V$ without a source expansion.
@@ -86,10 +96,10 @@ normalized TFF kernel. Applying the correlator conditions gives
 
 $$
 \lim_{Q^2\to\infty}F_P(-Q^2,0)
-=\frac{\sqrt2q(Q,Q)F}{2M_V^2}.
+=-\frac{\sqrt2q(Q,Q)F}{2M_V^2}.
 $$
 
-This is nonzero for the pion: $F/(3M_V^2)$ in its current generator
+This is nonzero for the pion: $-F/(3M_V^2)$ in its current generator
 normalization. It violates single-virtual $1/Q^2$ falloff. The mismatch is
 also discussed in the [Roig source extract](../../extracts/Roig:2013baa/tff-correlator-compatibility.md).
 
@@ -98,13 +108,14 @@ vanishing in the same massless common-pole kernel requires
 
 $$
 c_1-c_2+c_5=0,\qquad
-c_5-c_6=\frac{N_CM_V}{64\sqrt2\pi^2F_V},\qquad
-d_3=-\frac{N_CM_V^2}{64\pi^2F_V^2}.
+c_5-c_6=-\frac{N_CM_V}{64\sqrt2\pi^2F_V},\qquad
+d_3=\frac{N_CM_V^2}{64\pi^2F_V^2}.
 $$
 
-The $F^2/(8F_V^2)$ term is lost. SymPy then obtains
+The $-F^2/(8F_V^2)$ term is lost. SymPy then obtains
 $\lim Q^2F_P(-Q^2,-Q^2)=0$, whereas the pion symmetric OPE requires
-$2F/3$ in the positive-anomaly phase
+$-2F/3$ in the fixed external-state phase used here; the original
+positive-anomaly scalar phase is documented in the
 [pion target extract](../../extracts/Knecht:2001qf/pion-tff-short-distance.md).
 Vanishing alone is therefore insufficient matching. This is a result for
 the declared common-pole/chiral kernel, not a theorem excluding every

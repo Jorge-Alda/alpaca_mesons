@@ -7,7 +7,9 @@ for each of the seven VJP operators, the kinematic factor multiplying G.  This s
 derives those factors by explicit index contraction and checks them against the one
 published channel, omega -> pi0 gamma (Ruiz-Femenia:2003jdx, Eq. 27).
 
-Conventions.  Natural units, metric (+,-,-,-), eps^{0123} = +1.  External
+Legacy source reproduction. Natural units, metric (+,-,-,-), eps_{0123} = +1.
+The physical convention is eps^{0123}=+1; see derive_levi_civita_convention.py.
+External
 antisymmetric-tensor vector in the Ecker normalization
     V^{mu nu} = (q^mu eps^nu - q^nu eps^mu)/M_ext,   q^2 = M^2, q.eps = 0
 photon massless
@@ -44,16 +46,17 @@ Invocation:
 from __future__ import annotations
 
 import sympy as sp
+from itertools import permutations
 try:
     from scripts.symbolic_utils import (
         MINKOWSKI_PLUS_MINUS as META,
-        levi_civita_contract,
+        legacy_epsilon_determinant as levi_civita_contract,
         minkowski_dot,
     )
 except ModuleNotFoundError:  # direct ``python scripts/...py`` invocation
     from symbolic_utils import (
         MINKOWSKI_PLUS_MINUS as META,
-        levi_civita_contract,
+        legacy_epsilon_determinant as levi_civita_contract,
         minkowski_dot,
     )
 
@@ -117,7 +120,7 @@ def main() -> None:
     print("0. Shell conditions, exact")
     print("=" * 78)
     e = [tuple(1 if i == j else 0 for i in range(4)) for j in range(4)]
-    assert levi(*e) == 1, "eps^{0123} must be +1"
+    assert levi(*e) == 1, "legacy lower0123 must be +1"
     print("  eps^{0123} = +1, sanity check passed")
     print(f"  q^2 = {sp.simplify(dot(Q, Q))}   k^2 = {sp.simplify(dot(K, K))}   "
           f"r^2 = {sp.simplify(dot(R, R))}")

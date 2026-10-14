@@ -2,7 +2,7 @@
 title: Pion single- and double-virtual short-distance inputs
 status: literature
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Knecht:2001qf]
 provenance: literature
 ---
@@ -24,11 +24,16 @@ $$
 
 up to $O(\alpha_s)$ corrections (source lines 1847–1862)
 [@Knecht:2001qf]. The anomaly phase in this paper is negative,
-$\mathcal F(0,0)=-N_C/(12\pi^2F_\pi)$. With the repository's positive
-anomaly phase the symmetric Euclidean coefficient is therefore
-$\lim_{Q^2\to\infty}Q^2F_\pi(-Q^2,-Q^2)=2F_\pi/3$.
-This sign conversion is only a global meson phase; it does not change
-relative resonance/anomaly signs.
+$\mathcal F(0,0)=-N_C/(12\pi^2F_\pi)$. The repository now uses
+$\epsilon^{0123}=+1$, $\epsilon_{0123}=-1$ in the metric $(+---)$,
+retaining its external-meson phase. Its scalar anomaly consequently has
+this negative sign, and the corresponding symmetric Euclidean target is
+$\lim_{Q^2\to\infty}Q^2F_\pi(-Q^2,-Q^2)=-2F_\pi/3$.
+The formerly documented positive target belonged to the opposite common
+tensor orientation. This scalar translation preserves the physical tensor
+amplitude and relative resonance/anomaly signs; see the
+[canonical convention record](../../rcht/odd-parity/levi-civita-convention.md)
+and its [executable evidence](../../../data/vector_sector/levi_civita_convention.md).
 
 The paper permits replacing the chiral-limit decay constant by $F_\pi$
 for these stated leading pion limits. It supplies no physical eta/eta-prime

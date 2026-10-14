@@ -2,8 +2,8 @@
 title: One-ALP photon coefficient from WZW and meson mixing
 status: mixed
 created: 2026-09-28
-updated: 2026-10-14
-bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
+updated: 2026-10-15
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Bauer:2020jbp]
 provenance: analytical-derivation
 ---
 
@@ -18,6 +18,8 @@ operator, and generator completeness [@Alda:2026nrd, Eqs. (II.2), (II.3),
 (III.25), (III.28), and (B.1)--(B.2)], as recorded in
 [`appendix-a-expansion.md`](../../extracts/Alda:2026nrd/appendix-a-expansion.md) and
 [`photon-anomaly-normalization.md`](../../extracts/Alda:2026nrd/photon-anomaly-normalization.md).
+Bauer's [photon-operator definition](../../extracts/Bauer:2020jbp/photon-operator-normalization.md)
+fixes the positive $\alpha_{\rm em}/(4\pi)$ normalization in Eqs. (39)/(54).
 Bai's background-field construction establishes that the complete gauged WZW
 functional and its counterterm must be combined for gauge invariance and
 rotation-parameter cancellation; this is literature evidence recorded in
@@ -38,17 +40,17 @@ F_{\mu\nu}\widetilde F^{\mu\nu},
 \widetilde F^{\mu\nu}=\frac12\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}.
 $$
 
-The originally unspecified dual orientation is completed by the
-[odd-action tensor matching](alp-photon-odd-action-phase-matching.md):
-the photon epsilon in this formula has $\epsilon^{0123}_\gamma=+1$.
-With the common RChT source convention $\epsilon_{0123}^{\rm src}=+1$
-and metric $(+---)$, it is opposite to the metric-raised source tensor.
-Equivalently, using that source dual requires $c_\gamma^{\rm src}=-c_\gamma$
-and $C_{a\gamma\gamma}^{\rm src}=-C_{a\gamma\gamma}$.
-This is a convention completion of the inherited photon assumption, not
-an orientation fixed by Alda. The matched amplitude is
-$i\mathcal M=i e^2E C_{a\gamma\gamma}/(4\pi^2f_a)$, with
-$E=\epsilon^{\rm src}_{\mu\nu\rho\sigma}q_1^\mu\varepsilon_1^\nu
+The single canonical tensor has $\epsilon^{0123}=+1$ and
+$\epsilon_{0123}=-1$ for metric $(+---)$, following
+[@Bauer:2020jbp, immediately after Eq. (1)]. The
+[odd-action tensor matching](alp-photon-odd-action-phase-matching.md) and
+[conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+explain the adaptation from the opposite source convention. The positive
+dual coefficient above is unchanged. This convention does not establish
+the meson/WZW mixing result from Alda. The photon-operator normalization is
+source-backed by Bauer's Eqs. (39)/(54). The matched amplitude is
+$i\mathcal M=-i e^2E C_{a\gamma\gamma}/(4\pi^2f_a)$, with
+$E=\epsilon_{\mu\nu\rho\sigma}q_1^\mu\varepsilon_1^\nu
 q_2^\rho\varepsilon_2^\sigma$.
 
 The dimensionful coefficient multiplying $aF\widetilde F$ is therefore
@@ -78,8 +80,9 @@ c_q^A\to c_q^A+\kappa,
 c_\gamma\to c_\gamma-2N_c\operatorname{tr}(Q^2\kappa).
 $$
 
-The photon shift is an explicit anomaly-normalization assumption consistent
-with the displayed photon operator. We retain one ALP at $O(1/f_a)$, the
+The photon shift is a separately declared quark-rotation Jacobian consistent
+with the source-backed photon operator; Eq. (39) alone does not derive this
+shift or the meson contribution. We retain one ALP at $O(1/f_a)$, the
 leading pseudoscalar WZW photon vertex, and no vector mesons or resonance
 terms. The inverse $\mathbb M_a^{-1}$ is assumed to exist, so the derivation is
 not applicable at an ALP--meson degeneracy. No flavour-diagonality assumption

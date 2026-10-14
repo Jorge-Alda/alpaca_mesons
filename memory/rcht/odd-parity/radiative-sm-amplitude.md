@@ -2,10 +2,12 @@
 title: Normalized SM radiative amplitude with complete neutral-vector exchange
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # SM radiative amplitude reconstructed from the action
 
@@ -24,7 +26,7 @@ single vector nonet and common $F_V$ are assumptions. The internal pole masses
 may be explicit inputs; a common $M_V$ is the baseline in the cited paper.
 The source's octet action does not establish extra singlet/OZI matching or a
 fully matched action for arbitrary split internal masses. No fit is performed.
-Metric $(+---)$, source $\epsilon_{0123}=+1$, natural units, masses in GeV.
+Metric $(+---)$, source $\epsilon^{0123}=+1, \epsilon_{0123}=-1$, natural units, masses in GeV.
 
 ### Field conventions and Alda map
 

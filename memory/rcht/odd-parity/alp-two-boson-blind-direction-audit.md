@@ -2,10 +2,12 @@
 title: ALP two-boson tensor projections onto the three SM blind directions
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Two-boson tensor blindness
 
@@ -18,7 +20,7 @@ and actual Fourier/index contractions from the
 The VJP/VVP basis comes from the indexed Ruiz-Femenia extracts.
 Tree level, single-trace continuation, electromagnetic-compatible ALP sources,
 $f_-=0$ for the one-ALP vacuum vertex and canonical spin-one external tensors
-are the assumptions. Natural units, metric $(+---)$, $\epsilon_{0123}=+1$.
+are the assumptions. Natural units, metric $(+---)$, $\epsilon^{0123}=+1, \epsilon_{0123}=-1$.
 
 In Alda's invariant conventions let
 $X=\mathbb M_a^{-1}(\mathcal C)$ and $Y=c_q^{AP}+X$. Then

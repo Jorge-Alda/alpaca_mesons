@@ -2,7 +2,7 @@
 title: Proposed momentum, quark-mass and large-Nc hierarchy for the odd vector action
 status: mixed
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Kaiser:2000gs, Alda:2026nrd, Ruiz-Femenia:2003jdx]
 provenance: assumption
 ---
@@ -161,8 +161,9 @@ Special mass/response loci and a fixed ALP model require separate evaluation.
 
 The [general diagonal LO source/LSZ assembly](odd-alp-source-lsz-assembly.md)
 and [charged higher SM kernels](odd-charged-cubic-kernels.md) are now derived.
-The photon contact is algebraically basis invariant under the saved anomaly
-assumption; its [signed dual/action matching](../../alp/photon/alp-photon-odd-action-phase-matching.md)
+The photon contact uses the source-backed Bauer coefficient normalization
+and is algebraically basis invariant under the separately declared coefficient
+rotation; its [signed dual/action matching](../../alp/photon/alp-photon-odd-action-phase-matching.md)
 is now derived with zero-resonance LSZ and nonzero interference checks.
 The required photon-dual orientation is an explicit convention completion,
 not a UV anomaly matching result. The
@@ -178,9 +179,13 @@ direction beyond the first-correction columns in this snapshot. The
 uncertainty/held-out null diagnostics. Twelve source-boundary fits omit
 symmetric uncertainties. Separate double-trace and single-trace corrections
 already saturate every control, so this snapshot does not select their
-topology or establish numerical suppression. Next profile weak identifiable
-directions and competing sign minima, then audit the target projection
-of the SM nullspace before ALP propagation.
+topology or establish numerical suppression. The [finite profiles](odd-low-energy-profiles.md)
+now certify 112 physical contrasts after 5888 sign-search fits, while 26
+continuing searches and 30 source endpoints remain unresolved. The
+[finite neutral target audit](odd-alp-measured-null-audit.md) certifies 448
+cases and exposes correction-model target-sensitive measured nulls.
+Joint nuisance/target nulls and physical-predictor completion remain gates
+before ALP propagation; finite zero images do not validate a hierarchy.
 Retain the full signed response for each scenario. Validate the
 hierarchy by comparing nested fitted predictions, correction sizes and
 channel adequacy within a declared domain before propagating an ALP uncertainty.

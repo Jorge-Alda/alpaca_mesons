@@ -2,7 +2,7 @@
 title: Vector resonances in the odd-intrinsic-parity sector
 status: literature
 created: 2026-09-23
-updated: 2026-09-28
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
@@ -19,7 +19,7 @@ $$
 +\frac{iG_V}{\sqrt{2}}\langle V_{\mu\nu}u^\mu u^\nu\rangle.
 $$
 
-The odd-parity action contains independent $VJP$ and $VVP$ operator bases in addition to the Wess--Zumino action. The paper uses $\epsilon_{0123}=+1$ (source `vvp.tex`, lines 352--354), and defines [@Ruiz-Femenia:2003jdx, Eq. (10)]:
+The odd-parity action contains independent $VJP$ and $VVP$ operator bases in addition to the Wess--Zumino action. This extract adapts the paper's opposite orientation (source `vvp.tex`, lines 352--354) to the repository metric $(+---)$ and $\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$. The canonical couplings satisfy $c_i=-c_i^{R}$ and $d_i=-d_i^{R}$, where the superscript denotes the original paper. Each epsilon-linear operator also reverses, preserving its physical action. See the [conversion record](../../rcht/odd-parity/levi-civita-convention.md). The adapted basis is [@Ruiz-Femenia:2003jdx, Eq. (10)]:
 
 $$
 \begin{aligned}
@@ -91,9 +91,9 @@ function to the QCD OPE gives [@Ruiz-Femenia:2003jdx, Eq. (19)]:
 $$
 \begin{aligned}
 4c_3+c_1&=0, & c_1-c_2+c_5&=0,\\
-c_5-c_6&=\frac{N_C}{64\pi^2}\frac{M_V}{\sqrt2F_V},\\
-d_1+8d_2&=-\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}+\frac{F^2}{4F_V^2},\\
-d_3&=-\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}+\frac{F^2}{8F_V^2}.
+c_5-c_6&=-\frac{N_C}{64\pi^2}\frac{M_V}{\sqrt2F_V},\\
+d_1+8d_2&=\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}-\frac{F^2}{4F_V^2},\\
+d_3&=\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}-\frac{F^2}{8F_V^2}.
 \end{aligned}
 $$
 

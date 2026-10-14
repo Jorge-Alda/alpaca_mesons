@@ -2,12 +2,28 @@
 title: Next steps for the odd-parity vector-meson fit
 status: mixed
 created: 2026-10-04
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, CLEO:1997fho, BaBar:2009rrj, Niecknig:2012sj, Aloni:2018vki, Alda:2026nrd]
 provenance: assumption
 ---
 
 # Next Steps
+
+The [canonical Levi-Civita audit](levi-civita-convention.md) now fixes
+$\epsilon^{0123}=+1$ and provides the executed action-preserving dictionary
+for all opposite-convention reference-backend coefficients and signed
+outputs. Before using an existing calibration/profile cache in a canonical
+ALP amplitude, apply that adapter to its odd coefficients and epsilon scalar
+while retaining the converted contact sign. Existing caches were not all
+regenerated; their widths/ranks alone cannot verify signed interference.
+The manuscript convention milestone is complete; the broader predictor
+completion gates below remain open.
+
+The follow-up source check now records Bauer's Eqs. (39)/(54) as the
+positive photon-operator normalization and removes its former assumption
+label from the manuscript and linked records. The next scientific step is
+still independent enlarged-action local/anomaly matching and predictor
+completion, rather than a redefinition of that Wilson-coefficient convention.
 
 Start-of-session map. Read this, then
 [the rank and saturation record](radiative-rank-saturation.md) for the open
@@ -27,7 +43,9 @@ The [charged higher SM kernels](odd-charged-cubic-kernels.md) and
 The [photon dual/action audit](../../alp/photon/alp-photon-odd-action-phase-matching.md)
 now fixes the signed convention dictionary and checks full original-coupling
 SM recovery, photon-parent LSZ/Bose and nonzero anomaly–resonance interference.
-The photon coefficient remains conditional on its declared UV convention.
+The photon-operator normalization is fixed by Bauer's Eqs. (39)/(54);
+the UV Wilson coefficient remains an external input and enlarged-action
+local/anomaly matching remains separate.
 The [fixed-scenario measurement calculation](odd-low-energy-measurement-jacobians.md)
 now evaluates the pinned twelve-summary low-energy snapshot in all 64
 scenarios, including shared-width/even-sector nuisance constraints. Conditional
@@ -43,11 +61,20 @@ soft-leading primary total $\chi^2$ is 5.5675 for six nominal degrees of
 freedom. Separate double-trace and single-trace corrections already
 saturate the odd rows, so this snapshot cannot select their topology or
 validate correction suppression. No preferred hierarchy or ALP band is
-established. Next profile weak identifiable directions and competing sign
-minima in viable unsaturated alternatives, then project the SM nullspace
-into all four normalized ALP targets in the same scenarios/truncations.
-Stage D's full validation/propagation gate remains open. Source-family
-ranks remain distinct from these conditional measured ranks.
+established. The [finite sign/profile continuation](odd-low-energy-profiles.md)
+now performs 5888 sign-search fits and 112 physical profiles: 80 preceding
+minima improve, all 1909 physical points are valid, and all declared 3.84-level
+profile sides are bracketed. Twenty-six pairs still improve in the capped
+extra batch and 30 one-sided source endpoints remain unresolved. The
+[finite neutral target audit](odd-alp-measured-null-audit.md) now certifies
+448 scenario/model cases. Correction-model SM nulls affect the sampled
+two-boson resonance targets in every scenario; zero images for the original,
+soft-leading and promoted-leading models hold only at fixed nuisances and
+the declared finite neutral tree probes. Next resolve the continuing
+sign-basin/source-boundary cases, then compute joint nuisance/target nulls
+and complete missing predictor components before any physical band.
+Stage D's full validation/propagation gate remains open. Source-family,
+conditional measured and sampled target ranks remain distinct.
 
 The user's 2026-10-13 instruction selects the
 [single/double-trace odd flavor-breaking and low-energy calibration plan](odd-breaking-low-energy-calibration-plan.md).
@@ -57,9 +84,10 @@ The [first source/EOM audit](odd-trace-source-eom-audit.md) and
 [leading normalized trace kernels](odd-trace-scalar-kernels.md) are now
 executed. The [complete covariant quotient](odd-higher-covariant-operator-count.md)
 now establishes 228 independent operators, including the original eleven,
-hence 217 additions. Next map the saved basis into normalized SM and
-independent-source ALP kernels, then determine observable and data-identifiable
-combinations before calibration. The 15 additional formal scalar EM directions
+hence 217 additions. Its normalized SM cubic kernels, conditional measured
+combinations, calibration and finite neutral ALP-source projections are now
+executed as recorded above. Higher-field/charged target and full physical
+predictor completion remain separate gates. The 15 formal scalar EM directions
 remain a separate earlier projection result.
 The [saved matching explanation](vector-matching-mismatch-interpretation.md)
 records why the present enlarged action cannot supply a hard-TFF prescription;

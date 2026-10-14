@@ -2,12 +2,19 @@
 title: Anomalous RChT basis comparison and a concrete double trace
 status: literature
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-15
 bibtex_keys: [Roig:2013baa, Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
 
 # Odd-parity resonance options
+
+The equations use canonical odd couplings and the metric $(+---)$ with
+$\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$. Relative to the source,
+each epsilon-linear operator reverses and its coefficient satisfies
+$c_i=-c_i^R$, $d_i=-d_i^R$, $\kappa_i=-\kappa_i^R$.
+Thus the homogeneous basis dictionary below is unchanged. See the
+[convention record](../../rcht/odd-parity/levi-civita-convention.md).
 
 Roig and Sanz-Cillero reproduce the leading-$1/N_c$ Ruiz--Femenia basis
 $$\mathcal L_{R\chi T}^{\rm odd}\supset\sum_{i=1}^7\frac{c_i}{M_V}\mathcal O^i_{VJP}+\sum_{i=1}^4d_i\mathcal O^i_{VVP},$$

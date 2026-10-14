@@ -111,8 +111,17 @@ def lower_minkowski(vector: Any) -> tuple[Any, ...]:
 def levi_civita_contract(a: Any, b: Any, c: Any, d: Any) -> Any:
     """Return epsilon^{mu nu rho sigma} a_mu b_nu c_rho d_sigma, epsilon^0123=+1.
 
-    The entries supplied are contravariant vector components; the contraction
-    follows the all-upper epsilon convention stated in the RChT derivations.
+    Entries are contravariant vector components; all four indices are lowered
+    before contraction. Thus epsilon_0123=-1 for metric (+---).
+    """
+    return legacy_epsilon_determinant(*(lower_minkowski(v) for v in (a, b, c, d)))
+
+
+def legacy_epsilon_determinant(a: Any, b: Any, c: Any, d: Any) -> Any:
+    """Legacy lower0123=+1 contraction of contravariant components.
+
+    Kept only for reproducing historical source calculations. New physical
+    contractions must use levi_civita_contract (upper0123=+1).
     """
     if any(len(vector) != 4 for vector in (a, b, c, d)):
         raise ValueError("Levi-Civita contraction requires four-vectors")

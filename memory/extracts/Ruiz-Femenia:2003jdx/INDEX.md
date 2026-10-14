@@ -2,7 +2,7 @@
 title: Ruiz-Femenia:2003jdx literature extract index
 status: literature
 created: 2026-10-01
-updated: 2026-10-04
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
@@ -10,6 +10,10 @@ provenance: literature
 # Ruiz-Femenia:2003jdx
 
 Source-specific literature extracts for BibTeX key `Ruiz-Femenia:2003jdx`.
+
+Displayed odd tensors and coupling formulas are adapted to the canonical
+upper-index Levi-Civita orientation; the [conversion record](../../rcht/odd-parity/levi-civita-convention.md)
+identifies the opposite original source convention and exact coefficient map.
 
 - [omega-three-pion-amplitude.md](omega-three-pion-amplitude.md) — modular extract from Ruiz-Femenia:2003jdx.
 - [on-shell-radiative-amplitudes.md](on-shell-radiative-amplitudes.md) — modular extract from Ruiz-Femenia:2003jdx.

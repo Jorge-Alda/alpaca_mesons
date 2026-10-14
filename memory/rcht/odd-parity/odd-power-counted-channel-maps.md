@@ -2,10 +2,12 @@
 title: Joint power-counted neutral cubic resonance kernels and source EOM audit
 status: derived
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Inputs and scope
 
@@ -24,7 +26,7 @@ The executable
 maps all 44 leading plus 197 higher **raw parents**, before selecting a
 quotient basis or imposing the power-counting filter. It retains Alda's
 field/source conventions, canonical wedge tensors, $(+---)$,
-$\epsilon_{0123}=+1$, all-incoming momenta and $X=2\chi=4B_0m_q$.
+$\epsilon^{0123}=+1, \epsilon_{0123}=-1$, all-incoming momenta and $X=2\chi=4B_0m_q$.
 Quark masses remain symbolic and the neutral rho/omega/positive-strange-phi
 generator span is unchanged. Charged source matrices are not covered.
 

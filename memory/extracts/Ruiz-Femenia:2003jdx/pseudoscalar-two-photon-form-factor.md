@@ -2,16 +2,22 @@
 title: Pseudoscalar two-photon amplitude and transition-form-factor convention
 status: literature
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
 
 # Published $\pi\to\gamma\gamma$ result
 
-Ruiz--Femenia, Pich and Portoles use the Wess--Zumino normalization
+All equations below are adapted to the metric $(+---)$ and
+$\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$.
+The paper uses the opposite orientation; its original couplings obey
+$c_i^R=-c_i$, $d_i^R=-d_i$. The [conversion record](../../rcht/odd-parity/levi-civita-convention.md)
+explains the action-preserving adaptation. External-state phases are retained.
+
+Ruiz--Femenia, Pich and Portoles' Wess--Zumino normalization becomes
 $$
-\mathcal L^{(4)}_{\rm WZ}=-\frac{\sqrt2N_C}{8\pi^2F}
+\mathcal L^{(4)}_{\rm WZ}=+\frac{\sqrt2N_C}{8\pi^2F}
 \epsilon_{\mu\nu\alpha\beta}\langle\Phi\,\partial^\mu v^\nu\,
 \partial^\alpha v^\beta\rangle
 $$
@@ -22,7 +28,7 @@ $t_2$ operator contributes if one photon is off shell (source footnote,
 lines 1064--1069). Therefore no published $F_{P\gamma^*\gamma}(q^2)$ should
 be inferred from this paper without an additional source or a derivation.
 
-For two on-shell photons, the vector-resonance corrections are (Eq. (34),
+For two on-shell photons, the adapted vector-resonance corrections are (Eq. (34),
 source lines 1024--1045):
 $$
 i\mathcal M^{(a)}=-i\epsilon_{\alpha\beta\rho\sigma}
@@ -35,7 +41,7 @@ i\mathcal M^{(b)}=i\epsilon_{\alpha\beta\rho\sigma}
 \epsilon_1^\alpha\epsilon_2^\beta k_1^\rho k_2^\sigma
 \frac{8e^2}{3F}\frac{F_V^2}{M_V^2}\frac{m_\pi^2}{M_V^2}
 (d_1+8d_2-d_3)
-=i\epsilon_{\alpha\beta\rho\sigma}\epsilon_1^\alpha\epsilon_2^\beta k_1^\rho k_2^\sigma
+=-i\epsilon_{\alpha\beta\rho\sigma}\epsilon_1^\alpha\epsilon_2^\beta k_1^\rho k_2^\sigma
 \frac{e^2F}{3M_V^2}\frac{m_\pi^2}{M_V^2}.
 $$
 The resulting width and correction are (source lines 1050--1059):

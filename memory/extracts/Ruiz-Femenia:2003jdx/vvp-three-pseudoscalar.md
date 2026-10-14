@@ -2,10 +2,17 @@
 title: Ruiz-Femenia:2003jdx VVP operators and three-pseudoscalar amplitude
 status: literature
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
+
+Displayed tensors and odd couplings use $\epsilon^{0123}=+1$ and
+$\epsilon_{0123}=-1$ for $(+---)$. The canonical coefficients are
+$c_i=-c_i^R$, $d_i=-d_i^R$ relative to the opposite source convention.
+The [conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+derives the action-preserving map; archived source text remains literal.
+
 
 # VVP Operators and Three-Pseudoscalar Amplitude in Ruiz-Femenia:2003jdx
 
@@ -66,8 +73,8 @@ Matching the $\langle VVP\rangle$ Green's function to the QCD OPE yields:
 
 $$
 \begin{aligned}
-d_1 + 8d_2 &= -\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2} + \frac{F^2}{4F_V^2}, \\
-d_3 &= -\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2} + \frac{F^2}{8F_V^2}.
+d_1 + 8d_2 &= \frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2} - \frac{F^2}{4F_V^2}, \\
+d_3 &= \frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2} - \frac{F^2}{8F_V^2}.
 \end{aligned}
 $$
 

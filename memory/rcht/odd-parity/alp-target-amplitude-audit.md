@@ -2,7 +2,7 @@
 title: Inventory of ALP odd-parity amplitudes and relevance of SM blind directions
 status: mixed
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, Bai:2025fvl]
 provenance: analytical-derivation
 ---
@@ -32,7 +32,7 @@ definitions. No local manuscript is substituted for the arXiv source.
 | $a\to3P$ | LO chiral and even-parity $G_V$ exchange plus the representation-induced local contact | No old explicit odd-sector contribution; fresh tree audit below establishes its zero in the retained vacuum action |
 | $a\to VV$ | Physical-ALP VVP operator insertions and a two-background-source anomaly construction | Complete normalized physical amplitude/width in the calibrated vector action |
 | $a\to V\gamma$ | Direct VJP source insertion and the direct $c_7$ on-shell zero | Full direct-plus-VVP/photon-response amplitude, anomaly/induced-term bookkeeping and width |
-| $a\to\gamma\gamma$ | Complete no-vector WZW/contact invariant under its stated normalization assumption, plus unreduced resonance source insertions | Normalized resonance-corrected ALP amplitude/width with both photon assignments |
+| $a\to\gamma\gamma$ | Derived no-vector WZW/contact invariant in Bauer's photon-operator normalization and the retained leading-nonet WZW approximation, plus unreduced resonance source insertions | Normalized resonance-corrected ALP amplitude/width with both photon assignments |
 
 Evidence is the [even three-P calculation](../../alp/three-meson/a3p-vector-exchange-amplitude.md),
 [two-source ALP derivation](two-source-alp-rcht-odd-parity-extension.md),

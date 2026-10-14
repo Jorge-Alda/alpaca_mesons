@@ -2,8 +2,8 @@
 title: Alda quark rotations and the photon anomaly normalization
 status: mixed
 created: 2026-09-28
-updated: 2026-10-14
-bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
+updated: 2026-10-15
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Bauer:2020jbp]
 provenance: literature
 ---
 
@@ -53,9 +53,11 @@ These statements are directly evidenced by the
 [archived arXiv-v1 source](../../sources/Alda:2026nrd/INDEX.md)
 of `Alda:2026nrd`; its bibliography record is already catalogued. [@Alda:2026nrd]
 
-## Derived photon coefficient under a stated normalization assumption
+## Source-backed photon operator and separate coefficient rotation
 
-Assume the explicit photon term is normalized as
+Use the explicit photon-operator normalization of
+[@Bauer:2020jbp, Eqs. (39)/(54)], as recorded in the
+[source digest](../Bauer:2020jbp/photon-operator-normalization.md):
 
 $$
 \mathcal L_{\gamma\gamma}=\frac{\alpha_{\rm em}}{4\pi}
@@ -63,13 +65,14 @@ c_\gamma\frac{a}{f_a}F_{\mu\nu}\widetilde F^{\mu\nu}.
 $$
 
 Using $\widetilde F^{\mu\nu}=\tfrac12\epsilon^{\mu\nu\rho\sigma}_\gamma F_{\rho\sigma}$
-and $N_c$ colored copies, assume the axial Jacobian under Alda's rotation is normalized as
+and $N_c$ colored copies, the separately declared axial-Jacobian input under
+Alda's rotation is
 
 $$
 c_\gamma\to c_\gamma-2N_c\,\operatorname{tr}(Q^2\kappa).
 $$
 
-This is the photon-only specialization of the anomaly bookkeeping used in the WZW construction. Bai writes the explicit gauge-field term as $(a/f_a)c_{\mathcal A_1\mathcal A_2}F_{\mathcal A_1}\widetilde F_{\mathcal A_2}$ and embeds the derivative couplings as left/right background-field shifts, Eqs. (2.1) and (2.4); that literature evidence motivates the bookkeeping but does not by itself fix the displayed $\alpha_{\rm em}/(4\pi)$ normalization. [@Bai:2025fvl]
+This is the photon-only specialization of the anomaly bookkeeping used in the WZW construction. Bai writes the explicit gauge-field term as $(a/f_a)c_{\mathcal A_1\mathcal A_2}F_{\mathcal A_1}\widetilde F_{\mathcal A_2}$ and embeds the derivative couplings as left/right background-field shifts, Eqs. (2.1) and (2.4). The displayed $\alpha_{\rm em}/(4\pi)$ coefficient convention is fixed by Bauer rather than inferred from Bai's model. Eq. (39) defines the operator coefficient; it alone does not derive the Jacobian or the repository's meson mixing invariant. [@Bai:2025fvl; @Bauer:2020jbp]
 
 It then follows algebraically that the basis-invariant photon combination is
 
@@ -90,11 +93,13 @@ $$
 
 The initially unspecified photon-dual orientation is completed in the
 [odd-action matching record](../../alp/photon/alp-photon-odd-action-phase-matching.md).
-Its inherited positive WZW coefficient requires $\epsilon_\gamma^{0123}=+1$,
-opposite to the metric-raised RChT source epsilon when
-$\epsilon^{\rm src}_{0123}=+1$ and $g=(+---)$.
+Its inherited positive WZW coefficient uses the single canonical tensor
+$\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$ for $g=(+---)$.
+The former calculation used an oppositely oriented RChT source tensor;
+the [canonical conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+documents the action-preserving odd-coupling and signed-amplitude conversion.
 This orientation is a convention choice rather than an Alda result; no
-equality with an unspecified gluon-dual orientation is inferred. In the common
-raised-source dual the coefficient is $c_\gamma^{\rm src}=-c_\gamma$.
+equality with an unspecified gluon-dual orientation is inferred. The canonical
+photon coefficient $c_\gamma$ is unchanged by the source-convention conversion.
 
-Alda's paper explicitly treats amplitudes outside the odd-intrinsic-parity WZW sector; it does not itself define a $c_\gamma$ term. The photon shift above therefore requires the displayed anomaly normalization assumption, while the rotation signs and the $c_q^A$ shift are literature evidence from Alda. Bai's WZW treatment is used only for the photon/anomaly bookkeeping; no vector-meson or resonance terms are included here. [@Alda:2026nrd; @Bai:2025fvl]
+Alda's paper explicitly treats amplitudes outside the odd-intrinsic-parity WZW sector; it does not itself define a $c_\gamma$ term. Bauer supplies the photon-operator normalization, while the rotation signs and the $c_q^A$ shift are literature evidence from Alda. The photon Jacobian and leading-nonet WZW meson contribution remain separate from that operator definition. Bai's WZW treatment is used only for the photon/anomaly bookkeeping; no vector-meson or resonance terms are included here. [@Alda:2026nrd; @Bai:2025fvl; @Bauer:2020jbp]

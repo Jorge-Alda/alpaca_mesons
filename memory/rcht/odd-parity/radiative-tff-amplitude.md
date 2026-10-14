@@ -2,7 +2,7 @@
 title: Normalized neutral-pseudoscalar transition amplitude in tensor RChT
 status: derived
 created: 2026-10-13
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, CLEO:1997fho, BaBar:2009rrj]
 provenance: analytical-derivation
 ---
@@ -27,7 +27,13 @@ nonet fields; the cited octet paper does not establish singlet matching or
 additional OZI operators. No meson matrix is rescaled here. A numerical
 $\eta,\eta'$ application must supply its mass-spurion traces and field/decay
 constant normalization explicitly; its physical mass alone is insufficient.
-Natural units, masses in GeV, metric $(+---)$, source $\epsilon_{0123}=+1$.
+Natural units, masses in GeV, metric $(+---)$,
+$\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$.
+The [Levi-Civita conversion record](levi-civita-convention.md) defines
+$c_i=-c_i^R$, $d_i=-d_i^R$ relative to the opposite orientation of the
+Ruiz source. Every displayed formula uses canonical couplings. The original
+external-state phase is retained, so the scalar form factor reverses when
+its common epsilon tensor reverses; the tensor amplitude is unchanged.
 
 Define $s_1=q_1^2$, $s_2=q_2^2$, $p^2=m_P^2$, $p+q_1+q_2=0$ for the
 all-incoming vertex, and $D_i=M_V^2-s_i$. Set
@@ -66,24 +72,25 @@ Reproduce the actual contractions and reductions with
    derivative and mass blocks have opposite building-block signs.
 4. Add both photon assignments for VJP and both vector Wick assignments for
    VVP.
-5. Expand the WZW trace with both photon assignments. Choose the global meson
-   phase so the pion WZW form factor is positive. This flips every term
-   relative to the negative WZW coefficient in the source amplitude and leaves
-   all relative signs intact.
+5. Expand the adapted positive WZW derivative action with both photon
+   assignments. Retain the previous external-meson phase. With the new common
+   epsilon tensor the pion WZW scalar is negative; every physical tensor
+   amplitude and anomaly--resonance interference remains unchanged.
 
 The signed form factor is defined by
 $i\mathcal M=i e^2\epsilon_{\alpha\beta\rho\sigma}
 \epsilon_1^\alpha\epsilon_2^\beta q_1^\rho q_2^\sigma
-F_P(s_1,s_2)$, with the chosen global phase.
+F_P(s_1,s_2)$, with that fixed global phase.
 
 For source-level ALP insertion, the
 [shared photon/action phase dictionary](../../alp/photon/alp-photon-odd-action-phase-matching.md)
-now gives $E=\epsilon(q_1,\varepsilon_1,q_2,\varepsilon_2)=-R$ with
+gives $E=\epsilon(q_1,\varepsilon_1,q_2,\varepsilon_2)=-R$ with
 $R=\epsilon(\varepsilon_1,\varepsilon_2,q_1,q_2)$ used above. In the
 unrephased source basis the action is $i e^2E F_P$. An ALP LSZ overlap
 computed for that source field changes sign when used with the rephased
 meson amplitude $i e^2R F_P$. This flips every term together and fixes
-the relative anomaly–resonance phase; the scalar formula below is unchanged.
+the relative anomaly–resonance phase. Both tensors now use the single
+canonical orientation; there is no separately oriented photon dual.
 
 $$
 \begin{aligned}
@@ -93,11 +100,12 @@ H(s,t)&=F_Q\big[(d_1-d_3)m_P^2+d_3(s+t)\big]+4d_2F_H.
 \end{aligned}
 $$
 
-The executed script yields
+Converting the executed legacy script output by the stated tensor/coupling
+dictionary yields
 
 $$
 \boxed{
-F_P(s_1,s_2)=\frac{\sqrt2 N_CF_Q}{8\pi^2F}
+F_P(s_1,s_2)=-\frac{\sqrt2 N_CF_Q}{8\pi^2F}
  +\frac{4F_V}{FM_V}\left[\frac{C(s_1,s_2)}{D_1}
                          +\frac{C(s_2,s_1)}{D_2}\right]
  -\frac{4\sqrt2 F_V^2}{F}\frac{H(s_1,s_2)}{D_1D_2}.}
@@ -120,18 +128,19 @@ F^{VVP}_\pi(0,0)=-\frac{8F_V^2m_\pi^2}{3FM_V^4}
 (d_1+8d_2-d_3).
 $$
 
-These reproduce both amplitudes in Eq. (34) of Ruiz-Femenia:2003jdx with the
-declared common phase flip. The integer 8 arises from the mass building block
+These reproduce both amplitudes in Eq. (34) of Ruiz-Femenia:2003jdx after
+the coupling/orientation conversion and the declared common meson phase.
+The integer 8 arises from the mass building block
 and the two vector assignments, rather than from an octet dimension factor.
 All five OPE substitutions give, for the explicitly assumed relation
 $F_H=2m_P^2F_Q$,
 
 $$
-F_P(s_1,s_2)=\frac{\sqrt2 F_Q}{8\pi^2F}
+F_P(s_1,s_2)=-\frac{\sqrt2 F_Q}{8\pi^2F}
 \frac{N_CM_V^4-4\pi^2F^2(m_P^2+s_1+s_2)}{D_1D_2}.
 $$
 
-In particular $F_\pi(0,0)=1/(4\pi^2F)-Fm_\pi^2/(3M_V^4)$ at $N_C=3$,
+In particular $F_\pi(0,0)=-1/(4\pi^2F)+Fm_\pi^2/(3M_V^4)$ at $N_C=3$,
 which reproduces the published $(1-\Delta)$ correction. The script verifies
 that the full TFF sensitivity annihilates **all six** homogeneous OPE null
 directions in this limit: adding these TFF rows to the OPE block preserves
@@ -152,7 +161,7 @@ $7\to8$ by the other $c_3,d_2$ combination. For equal-spurion TFF rows, the
 zero-added-rank result remains exact.
 
 The constrained single-virtual expression approaches a nonzero constant at
-large $Q^2$, $\sqrt2 F_QF/(2M_V^2)$, under these assumptions. Thus this
+large $Q^2$, $-\sqrt2 F_QF/(2M_V^2)$, under these assumptions. Thus this
 single-resonance OPE approximation does not enforce the single-virtual
 $1/Q^2$ asymptotic behavior. Connecting the data enables a diagnostic fit;
 it establishes no precision validity over the CLEO/BaBar range.
@@ -160,7 +169,10 @@ it establishes no precision validity over the CLEO/BaBar range.
 ## Implementation and data
 
 [`pseudoscalar_tff.py`](../../../scripts/implementation/pseudoscalar_tff.py)
-implements the full uneliminated amplitude. `TFFInputs` requires explicit
+implements the legacy uneliminated amplitude. Its original couplings are
+$c_i^R=-c_i$, $d_i^R=-d_i$ and its fixed-phase scalar is $-F_P$;
+use the [convention adapter](levi-civita-convention.md) when comparing it
+with the canonical formulas above. `TFFInputs` requires explicit
 $F,F_V,M_V,m_P,F_Q,F_H$; no $\eta$ or $\eta'$ mass-spurion value is inferred.
 The factories in
 [`odd_parity_data.py`](../../../scripts/implementation/odd_parity_data.py)

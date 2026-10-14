@@ -2,7 +2,7 @@
 title: Physical neutral TFF matching obstruction from source breaking
 status: mixed
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Roig:2013baa, Knecht:2001qf]
 provenance: analytical-derivation
 ---
@@ -18,6 +18,13 @@ and the [stage-5 likelihood specification](vector-stage5-joint-fit-specification
 Tree level, fixed central physical kinematics, independent quark spurion,
 single-trace odd vertices and the declared partial-isospin vector sector apply.
 Self-energies remain deferred by user instruction.
+The [convention dictionary](levi-civita-convention.md) fixes $(+---)$ and
+$\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$.
+Below, $c_i=-c_i^R$, $d_i=-d_i^R$ and the fixed-phase scalar TFF is
+the negative of its legacy value at corresponding couplings. The linked
+original script/transcript/results retain source-convention coefficients;
+their scalar results require this adapter. The conversion preserves
+the source obstruction, residual norms and scenario counts.
 
 ## Definitions for the source mismatch
 
@@ -85,14 +92,14 @@ $$
 H_0(U,V)=(d_1-d_3)m_P^2q(U,V)+4d_2h(U,V).
 $$
 
-The script gives the single-virtual coefficients
+Adapting the script gives the canonical single-virtual coefficients
 
 $$
 a_P=-\frac{4B}{FM_V}q(W_0,Q),
 $$
 
 $$
-b_P=\frac{\sqrt2N_Cq(Q,Q)}{8\pi^2F}
+b_P=-\frac{\sqrt2N_Cq(Q,Q)}{8\pi^2F}
 -\frac{4A}{FM_V}q(S,Q)+\frac4{FM_V}L(W_0,Q)
 +\frac{4\sqrt2d_3}{F}q(S,W_0),
 $$
@@ -106,7 +113,7 @@ For $s_1=-\alpha Q^2$, $s_2=-\beta Q^2$, with fixed positive
 $\alpha,\beta$, the constant is
 
 $$
-b_P^{(2)}=\frac{\sqrt2N_Cq(Q,Q)}{8\pi^2F}
+b_P^{(2)}=-\frac{\sqrt2N_Cq(Q,Q)}{8\pi^2F}
 -\frac4{FM_V}q(S,Q)
 \left[2A+B\left(\frac\alpha\beta+\frac\beta\alpha\right)\right].
 $$
@@ -124,7 +131,7 @@ The three double-virtual constant conditions then imply
 
 $$
 q(S,Q)=\Lambda q(Q,Q),\qquad
-A\Lambda=\frac{\sqrt2N_CM_V}{64\pi^2},
+A\Lambda=-\frac{\sqrt2N_CM_V}{64\pi^2},
 $$
 
 with one common $\Lambda$ for all three pseudoscalars. The Alda generators

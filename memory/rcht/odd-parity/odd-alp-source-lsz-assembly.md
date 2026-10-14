@@ -2,8 +2,8 @@
 title: LO diagonal ALP source profile and parentwise LSZ assembly
 status: mixed
 created: 2026-10-14
-updated: 2026-10-14
-bibtex_keys: [Alda:2026nrd, Bai:2025fvl]
+updated: 2026-10-15
+bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Bauer:2020jbp]
 provenance: analytical-derivation
 ---
 
@@ -79,7 +79,8 @@ would double count.
 
 # Photon contact and remaining matching
 
-Under the **inherited photon-normalization assumption**,
+Using the **Bauer photon-operator normalization**, together with the
+separately declared quark-rotation and leading-nonet WZW inputs,
 
 $$
 C_{a\gamma\gamma}=c_\gamma
@@ -87,17 +88,21 @@ C_{a\gamma\gamma}=c_\gamma
 $$
 
 is invariant under the declared coefficient rotation and equals the transformed
-contact in the no-mixing basis. These algebraic identities pass. Alda excludes
-the WZW sector; this coefficient is not supplied by that paper. The
+contact in the no-mixing basis. These algebraic identities pass. The positive
+local photon coefficient convention is supplied by [@Bauer:2020jbp, Eqs. (39)/(54)],
+as recorded in the [source digest](../../extracts/Bauer:2020jbp/photon-operator-normalization.md).
+Alda excludes the WZW sector; the meson contribution is a separate repository
+derivation, not an equation supplied by that paper. The
 [shared photon/action phase audit](../../alp/photon/alp-photon-odd-action-phase-matching.md)
-now completes the previously unspecified dual orientation: the inherited
-photon dual has upper $\epsilon_\gamma^{0123}=+1$, opposite to the
-metric-raised source tensor. In the common cubic tensor $E$ the scalar
-contact is $+C_{a\gamma\gamma}/(4\pi^2f_a)$, to be added to the normalized
-resonance gradients. The SM [TFF convention](radiative-tff-amplitude.md)
+uses the single canonical tensor $\epsilon^{0123}=+1$, with
+$\epsilon_{0123}=-1$ for $(+---)$. In the common cubic tensor $E$ the scalar
+contact is $-C_{a\gamma\gamma}/(4\pi^2f_a)$, to be added to the canonical
+resonance gradients. The [convention audit](levi-civita-convention.md)
+records the action-preserving conversion of saved reference-backend outputs.
+The SM [TFF convention](radiative-tff-amplitude.md)
 uses $R=-E$ and the opposite external-meson phase; its LSZ overlap must
-follow that phase as well. This convention completion is conditional on
-the saved photon assumption, rather than a new UV anomaly result. No
+follow that phase as well. The convention conversion does not establish
+independent UV/local anomaly matching for the enlarged RChT action. No
 numerical ALP photon predictor, independent hadronic anomaly coefficient,
 or measurement rank is inferred here.
 

@@ -2,10 +2,17 @@
 title: Anomalous WZW contribution to V -> 3pi and e+e- -> 3pi
 status: literature
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, Niecknig:2012sj]
 provenance: literature
 ---
+
+Displayed tensors and odd couplings use $\epsilon^{0123}=+1$ and
+$\epsilon_{0123}=-1$ for $(+---)$. The canonical coefficients are
+$c_i=-c_i^R$, $d_i=-d_i^R$ relative to the opposite source convention.
+The [conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+derives the action-preserving map; archived source text remains literal.
+
 
 # Anomalous / WZW Contribution to $V\to 3\pi$ and $e^+e^-\to 3\pi$
 
@@ -14,7 +21,7 @@ provenance: literature
 The Wess-Zumino action $Z_{\mathrm{WZ}}[v,a]$ is the $\mathcal O(p^4)$ term that fulfills the chiral anomaly [@Ruiz-Femenia:2003jdx, Sec. 2, lines 317--329]. The relevant piece for the $\langle VVP\rangle$ Green's function is the pseudoscalar decay into two photons [@Ruiz-Femenia:2003jdx, Eq. (17), lines 662--668]:
 
 $$
-\mathcal L^{(4)}_{\mathrm{WZ}}=-\frac{\sqrt{2} N_C}{8\pi^2 F}
+\mathcal L^{(4)}_{\mathrm{WZ}}=\frac{\sqrt{2} N_C}{8\pi^2 F}
 \epsilon_{\mu\nu\alpha\beta}
 \langle \Phi \,\partial^{\mu}v^{\nu}\,
 \partial^{\alpha}v^{\beta}\,
@@ -24,7 +31,7 @@ $$
 This term contributes to the $\langle VVP\rangle$ three-point function as the last term in Eq. (18) [@Ruiz-Femenia:2003jdx, line 652]:
 
 $$
--\frac{N_C}{8\pi^2 r^2}.
+\frac{N_C}{8\pi^2 r^2}.
 $$
 
 **For $V\to 3\pi$:** The WZW term does **not** directly generate a $V\to 3\pi$ vertex. The WZW term has one pseudoscalar and two vector currents; to get $V\to 3\pi$, one would need to replace one vector current by two pseudoscalars (via the chiral Lagrangian), which is a higher-order effect. The paper does not write a WZW-induced $V\to 3\pi$ amplitude.

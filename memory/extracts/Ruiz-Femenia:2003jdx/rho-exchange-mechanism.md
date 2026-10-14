@@ -2,10 +2,17 @@
 title: Rho exchange mechanism for pi+ pi- pair in V -> 3pi and e+e- -> 3pi
 status: literature
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, Niecknig:2012sj, BaBar:2004ytv]
 provenance: literature
 ---
+
+Displayed tensors and odd couplings use $\epsilon^{0123}=+1$ and
+$\epsilon_{0123}=-1$ for $(+---)$. The canonical coefficients are
+$c_i=-c_i^R$, $d_i=-d_i^R$ relative to the opposite source convention.
+The [conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+derives the action-preserving map; archived source text remains literal.
+
 
 # $\rho$ Exchange Mechanism for the $\pi^+\pi^-$ Pair
 

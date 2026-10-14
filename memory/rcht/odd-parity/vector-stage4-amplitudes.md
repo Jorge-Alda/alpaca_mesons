@@ -2,10 +2,12 @@
 title: Stage-4 nonideal vector response in radiative and two-photon amplitudes
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Action-level amplitude integration
 
@@ -13,7 +15,7 @@ provenance: analytical-derivation
 
 Use the canonical fields and actual Lorentz contractions in [radiative SM amplitude](radiative-sm-amplitude.md) and [neutral TFF amplitude](radiative-tff-amplitude.md), the physical generators in [nonideal mass action](../foundations/vector-nonideal-mass-action.md), the [mass extension](../foundations/vector-mass-extension.md), and the signed source residues derived in [leptonic widths](../foundations/vector-leptonic-width.md). Calibration branches are recorded in [stage 3](../foundations/vector-stage3-calibration.md). Pseudoscalar coefficients are independent explicit inputs; their Alda provenance is the arXiv version indexed in [neutral meson generators](../../extracts/Alda:2026nrd/neutral-meson-generators.md), not the local manuscript.
 
-Assume tree level, one vector nonet, canonical tensor kinetic terms, real vacuum spurions, the declared mass/source invariants and the existing single-trace odd action. Natural units, masses in GeV, metric $(+---)$ and $\epsilon_{0123}=+1$ apply. This extension does not assert completeness of the flavor-breaking odd action or establish its short-distance matching. No loop, kinetic-breaking or momentum-dependent self-energy prescription is introduced.
+Assume tree level, one vector nonet, canonical tensor kinetic terms, real vacuum spurions, the declared mass/source invariants and the existing single-trace odd action. Natural units, masses in GeV, metric $(+---)$ and $\epsilon^{0123}=+1, \epsilon_{0123}=-1$ apply. This extension does not assert completeness of the flavor-breaking odd action or establish its short-distance matching. No loop, kinetic-breaking or momentum-dependent self-energy prescription is introduced.
 
 Both mass branches remain in stage 3. The user's selection rule is to prefer the smaller departure from ideal mixing when all other considerations are equal; it supplies no likelihood factor or sign determination. Source-sign and charged/neutral input scenarios remain independent choices.
 

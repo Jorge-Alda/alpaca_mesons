@@ -2,10 +2,12 @@
 title: Normalized charged cubic kernels of the bounded odd action
 status: derived
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, Alda:2026nrd]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Inputs and scope
 
@@ -14,7 +16,7 @@ Inputs are the [normalized neutral parent maps](odd-power-counted-channel-maps.m
 [bounded quotient](odd-higher-covariant-operator-count.md). The source and
 field conventions follow Alda:2026nrd; the original odd action follows
 Ruiz-Femenia:2003jdx. The extension and selected tree truncation are local
-assumptions. Use GeV, metric $(+---)$, source $\epsilon_{0123}=+1$, incoming
+assumptions. Use GeV, metric $(+---)$, source $\epsilon^{0123}=+1, \epsilon_{0123}=-1$, incoming
 momenta, canonical tensor-vector LSZ, and $\chi=2B_0m_q$.
 
 # Calculation

@@ -31,3 +31,12 @@ description: Draft HEP-ph research documents based on memory excerpts from other
 - Ensure that all mathematical expressions and equations are clearly defined and properly formatted in LaTeX.
 - Use LaTeX for internal references and citations within the document. For bibliography management, use BibTeX and ensure that all cited references are included in the bibliography section. Never introduce a reference by the name of the authors, always use the `\cite{}` command.
 - The structure of the LaTeX project must be modular, with separate files for the sections and appendices. Ensure that the main file includes these modular files correctly using `\input{}` or `\include{}` commands.
+
+## LaTeX conventions
+
+- Each centered equation must finish with a comma or a period, depending on the context within the sentence.
+- Every section, subsection, equation, table or figure must have a unique label for internal referencing using the `\label{}` command.
+- Matrices in flavour space (e.g. ALP-quark couplings, chiral covariant derivatives, the vielbein and connection) must be boldfaced using `\bm{}`. The `bm{}` command must also include Lorentz indices, algebra indices and superscript/subscript labels (e.g. `\bm{u_\mu}`, `\lambda_a`, `\bm{c_q^{AP}}`). Daggers for Hermitian conjugation, and flavour indices are not included in the boldface (e.g. `\bm{u}^\dagger`, `\bm{c_q^{AP}}_{ij}`).
+- Traces in flavour space must be indicated using `\langle` and `\rangle` (e.g. `\langle \bm{u_\mu} \bm{u^\mu} \rangle`).
+- Dimensionful quantities must be formatted with a small space `\,` between the number and the unit (e.g. `1\,\mathrm{GeV}`). The unit is always enclosed in `\mathrm{}` to ensure proper formatting in LaTeX.
+- Statistical significance in sigmas is formatted with a small space `\,` between the number and the sigma symbol (e.g. `5\,\sigma`).

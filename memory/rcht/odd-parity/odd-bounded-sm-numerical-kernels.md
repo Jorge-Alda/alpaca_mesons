@@ -2,10 +2,12 @@
 title: Numerical SM gradients of all bounded odd-action parents
 status: numerical
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx]
 provenance: numerical-computation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Inputs and conventions
 
@@ -16,7 +18,7 @@ the [photon/action phase dictionary](../../alp/photon/alp-photon-odd-action-phas
 and the [signed spectral response](vector-stage4-amplitudes.md).
 The retained action and leading nonet WZW term are assumptions; their
 normalization and source signs follow the linked records and Alda conventions.
-Natural units are GeV, metric $(+---)$ and source $\epsilon_{0123}=+1$.
+Natural units are GeV, metric $(+---)$ and source $\epsilon^{0123}=+1, \epsilon_{0123}=-1$.
 All raw parent coefficients are dimensionless after their declared $M_V$
 powers; 241 columns represent the bounded 228-dimensional covariant quotient.
 No OPE or coefficient prior is inserted.

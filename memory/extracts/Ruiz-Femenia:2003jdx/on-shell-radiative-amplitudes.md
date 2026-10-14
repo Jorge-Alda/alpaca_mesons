@@ -2,16 +2,24 @@
 title: On-shell vector-to-pseudoscalar-photon amplitudes and widths
 status: literature
 created: 2026-09-30
-updated: 2026-10-04
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: literature
 ---
+
+Displayed tensors and odd couplings use $\epsilon^{0123}=+1$ and
+$\epsilon_{0123}=-1$ for $(+---)$. The canonical coefficients are
+$c_i=-c_i^R$, $d_i=-d_i^R$ relative to the opposite source convention.
+The [conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
+derives the action-preserving map; archived source text remains literal.
+
 
 # Exact published formulas
 
 The local auditable source is `memory/sources/Ruiz-Femenia:2003jdx/vvp.tex`; source
 line numbers below refer to that file. The antisymmetric tensor convention is
-`epsilon_{0123}=+1` (lines 352--354), and the octet matrices are normalized as
+$\epsilon_{0123}^R=+1$ (lines 352--354); the displayed formulas have been
+converted to the canonical tensor as explained above. The octet matrices are normalized as
 `Phi=lambda^a phi^a/sqrt(2)` and `V=lambda^a V^a/sqrt(2)` (Eqs. (4),(8), lines
 206--219 and 291--304). Ideal mixing is
 $$
@@ -58,7 +66,7 @@ $$
 After the OPE constraints, the published on-shell result is (Eq. (28),
 source lines 832--843):
 $$
-i\mathcal M_{\omega\to\pi\gamma}=i\epsilon_{\alpha\beta\rho\sigma}
+i\mathcal M_{\omega\to\pi\gamma}=-i\epsilon_{\alpha\beta\rho\sigma}
 \epsilon_\omega^\alpha\epsilon_\gamma^\beta q^\rho k^\sigma
 \frac{e}{F_V}\left[\frac{N_C}{8\pi^2}\frac{M_\omega}{F}
 -\frac F2\frac{M_\omega}{M_V^2}\left(1+\frac{m_\pi^2}{M_\omega^2}\right)\right].

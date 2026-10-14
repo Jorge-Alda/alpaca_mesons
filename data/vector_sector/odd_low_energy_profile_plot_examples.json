@@ -1,0 +1,18 @@
+[
+  {
+    "control": "primary",
+    "scenario_index": 34
+  },
+  {
+    "control": "without_broad_rho",
+    "scenario_index": 59
+  },
+  {
+    "control": "without_constrained_Kstar",
+    "scenario_index": 50
+  },
+  {
+    "control": "narrow_nonconstrained_summary_control",
+    "scenario_index": 39
+  }
+]

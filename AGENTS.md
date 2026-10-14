@@ -41,6 +41,8 @@ Use this repository as a reproducible research record. Load only the protocol se
 - Keep terminal output to modified paths and necessary follow-up questions.
 - Respond concisely. Do not praise the user.
 - Use the same conventions and definitions as Alda:2026nrd
+- After a successful agent turn, if any file has been added or modified, propose a commit message.
+- In the memory and latex files, use a clear and communicative language. Do not use buzzwords: you can (and must!) use technical terms commonly used in hep-ph. For technical terms from other fields, avoid over-use of jargon, and prefer simpler wording even if it requires longer explanation. Never ever invent new terms that sound technical or like jargon, but are devoid of actual meaning.
 
 ## Delegation
 

@@ -103,10 +103,11 @@ divergence/mass subsector. The
 are normalized, implemented and pass 32 new/regression tests. They add 15
 formal scalar EM directions beyond the baseline, not an action count.
 The [complete bounded action quotient](odd-higher-covariant-operator-count.md)
-has now been established: 217 new independent operators. Next map this
-certified basis into normalized SM and independent-source ALP kernels,
-including its higher-field/source directions. Observable projection and data
-identifiability must be computed before selecting fit parameters.
+has now been established: 217 new independent operators. Normalized SM
+cubic kernels, measured combinations, calibration and finite neutral
+ALP-source projections are now executed as recorded in stage D. Higher-field,
+charged-target and complete physical-predictor directions remain separate
+completion gates; the cubic audit does not establish them.
 
 **Deliverables:** action-derived scripts, atomic amplitude records and tested
 extensions of the existing implementation kernels.
@@ -193,8 +194,12 @@ primary total $\chi^2$ is 5.5675 for six nominal degrees of freedom.
 Separate double-trace and single-trace correction models already saturate
 every odd dataset control. This is a completed conditional diagnostic
 run, not selection of a validated preferred truncation or completion of
-the full stage-D exit criterion. Sign/nuisance profiles and ALP-target
-null projections remain open.
+the full stage-D exit criterion. The [finite sign/profile continuation](odd-low-energy-profiles.md)
+now performs 5888 fits and 112 physical profiles, with 26 continuing capped
+searches and 30 unresolved source endpoints. The [finite neutral target audit](odd-alp-measured-null-audit.md)
+certifies 448 fixed-nuisance cases; correction-model measured nulls affect
+the sampled two-boson resonance targets. Joint nuisance/target projections
+and physical-predictor completion remain open.
 
 1. Build the measurement-weighted Jacobian for each source/branch scenario;
    recompute rank after source/input nuisance treatment. The old 7/8 amplitude
@@ -257,10 +262,11 @@ are now derived. The [measurement Jacobians](odd-low-energy-measurement-jacobian
 and [bounded numerical SM kernels](odd-bounded-sm-numerical-kernels.md) are
 now implemented. The [conditional calibration](odd-low-energy-calibration.md)
 has executed their joint low-energy fit and local uncertainty/held-out
-identifiability diagnostics in all 64 scenarios. Next profile weak
-identifiable directions and competing sign minima of viable unsaturated
-alternatives, preserving all dataset/covariance controls; then audit the
-SM-null directions against each normalized ALP target. No unique
+identifiability diagnostics in all 64 scenarios. The [finite profiles](odd-low-energy-profiles.md)
+and [neutral target audit](odd-alp-measured-null-audit.md) are now executed.
+Next resolve the 26 continuing sign searches and 30 unresolved source
+endpoints, then compute full joint nuisance/target null projections and
+complete the missing charged/local/physical-predictor gates. No unique
 truncation or ALP band is established. The earlier intermediate statements below refer
 to their original execution stages, not completion of physical predictors.
 

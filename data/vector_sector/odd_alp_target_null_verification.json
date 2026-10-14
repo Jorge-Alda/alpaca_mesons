@@ -1,0 +1,251 @@
+{
+  "complete": true,
+  "count": 448,
+  "maximum_measured_null_witness_defect": 5.563463531413638e-17,
+  "maximum_source_contact_relation_defect": 5.30414972031009e-16,
+  "model_summaries": [
+    {
+      "model": "full_bounded",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            28,
+            28
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            21,
+            21
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            4,
+            4
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    },
+    {
+      "model": "leading_double_trace",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            5,
+            5
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            5,
+            5
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            1,
+            1
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    },
+    {
+      "model": "leading_single_trace_corrections",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            3,
+            3
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            4,
+            4
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            2,
+            2
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    },
+    {
+      "model": "original_11",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    },
+    {
+      "model": "promoted_leading",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    },
+    {
+      "model": "soft_first",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            13,
+            13
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            13,
+            13
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            3,
+            3
+          ],
+          "null_sensitive_scenario_count": 64
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    },
+    {
+      "model": "soft_leading",
+      "scenario_count": 64,
+      "targets": {
+        "VV": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "Vgamma": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "gammagamma": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        },
+        "3P": {
+          "null_image_rank_range": [
+            0,
+            0
+          ],
+          "null_sensitive_scenario_count": 0
+        }
+      }
+    }
+  ],
+  "scope": "finite neutral resonance odd-coefficient audit, fixed nuisances, sampled masses and UV basis; no full physical predictor or band",
+  "sha256": {
+    "data/vector_sector/odd_alp_target_nulls.json": "c86d6f324d3c7fd8be92fb946041f786b6b7cb1b54bd1ec29b9c9d53fe1701de",
+    "scripts/verify_odd_alp_target_nulls.py": "4d89625fa8273ee3bb06d4960ea642f31e0de6d1119fb9719b01ff5a350cdf46"
+  }
+}

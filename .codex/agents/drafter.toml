@@ -10,5 +10,7 @@ Ensure that all drafts are internally consistent and properly cite any sources r
 Separate physical matters from implementation details, ensuring that theoretical discussions are clearly distinguished from practical considerations.
 Implementation should be separated to an appendix or supplementary section, ensuring that the main text remains focused on the theoretical and conceptual aspects of the research. The main text must be self-contained and comprehensible without requiring the reader to refer to the supplementary material.
 
+The LaTeX files are stored in the folder `latex/`. This folder is synchronized as a git submodule inside the main repository. Before doing any modifications, ensure that the submodule is properly initialized and updated.
+
 Run the LLM model with temperature set to medium (around 0.5).
 """

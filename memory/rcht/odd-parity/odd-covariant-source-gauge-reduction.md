@@ -2,10 +2,12 @@
 title: Independent-source frame and joint covariant trace-jet reduction
 status: derived
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Inputs and declared quotient
 
@@ -59,7 +61,7 @@ replacement remain tied to the parent operator coefficient. Independent
 new topological coefficient functions are not added.
 
 The computation is in natural units with metric $(+---)$ and
-$\epsilon_{0123}=+1$. Derivative symbols are formal derivative eigenvalues;
+$\epsilon^{0123}=+1, \epsilon_{0123}=-1$. Derivative symbols are formal derivative eigenvalues;
 there are no implicit Fourier factors of $i$ in the polynomial IBP step.
 
 # Ordered derivatives and actual matrix algebra

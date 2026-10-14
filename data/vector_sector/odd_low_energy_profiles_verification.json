@@ -1,0 +1,2332 @@
+{
+  "complete": true,
+  "pair_count": 256,
+  "model_case_count": 512,
+  "search_fit_count": 5888,
+  "improved_pair_count": 80,
+  "continuing_second_batch_improvement_count": 26,
+  "best_optimizer_failure_count": 0,
+  "profiled_pair_count": 56,
+  "physical_profile_count": 112,
+  "unresolved_profile_reference_count": 0,
+  "one_sided_source_profile_count": 6,
+  "valid_source_profile_points": 12,
+  "unresolved_source_profile_points": 30,
+  "valid_physical_profile_points": 1909,
+  "unresolved_physical_profile_points": 0,
+  "maximum_constraint_relative_defect": 1.3811886453790334e-12,
+  "maximum_residual_reproduction_relative_defect": 4.245845813774056e-16,
+  "open_95_level_sides": 0,
+  "primary_best_chi2": 5.567523279882881,
+  "global_nonlinear_minimum_proven": false,
+  "certificates": [
+    {
+      "scenario_index": 0,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 0,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 0,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 0,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 1,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 1,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 1,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 1,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 2,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 2,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 2,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 2,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 3,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 3,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 3,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 3,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 4,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 4,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 4,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 4,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 5,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 5,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 5,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 5,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 6,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 6,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 6,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 6,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 7,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 7,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 7,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 7,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 8,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 8,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 8,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 8,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 9,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 9,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 9,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 9,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 10,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 10,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 10,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 10,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 11,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 11,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 11,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 11,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 12,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 12,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 12,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 12,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 13,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 13,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 13,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 13,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 14,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 14,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 14,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 14,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 15,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 15,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 15,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 15,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 16,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 16,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 16,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 16,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 17,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 17,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 17,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 17,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 18,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 18,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 18,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 18,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 19,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 19,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 19,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 19,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 20,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 20,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 20,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 20,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 21,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 21,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 21,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 21,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 22,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 22,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 22,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 22,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 23,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 23,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 23,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 23,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 24,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 24,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 24,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 24,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 25,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 25,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 25,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 25,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 26,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 26,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 26,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 26,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 27,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 27,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 27,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 27,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 28,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 28,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 28,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 28,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 29,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 29,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 29,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 29,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 30,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 30,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 30,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 30,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 31,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 31,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 31,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 31,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 32,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 32,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 32,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 32,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 33,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 33,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 33,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 33,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 34,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 34,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 34,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 34,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 35,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 35,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 35,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 35,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 36,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 36,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 36,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 36,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 37,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 37,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 37,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 37,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 38,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 38,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 38,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 38,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 39,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 39,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 39,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 39,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 40,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 40,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 40,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 40,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 41,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 41,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 41,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 41,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 42,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 42,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 42,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 42,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 43,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 43,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 43,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 43,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 44,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 44,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 44,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 44,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 45,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 45,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 45,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 45,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 46,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 46,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 46,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 46,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 47,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 47,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 47,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 47,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 48,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 48,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 48,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 48,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 49,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 49,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 49,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 49,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 50,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 50,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 50,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 50,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 51,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 51,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 51,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 51,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 52,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 52,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 52,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 52,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 53,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 53,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 53,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 53,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 54,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 54,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 54,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 54,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 55,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 55,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 55,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 55,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 56,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 56,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 56,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 56,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 57,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 57,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 57,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 57,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 58,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 58,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 58,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 58,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 59,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 59,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 59,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 59,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 60,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 60,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 60,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 60,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 61,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 61,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 61,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 61,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 62,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 62,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 62,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 62,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 63,
+      "control": "primary",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 63,
+      "control": "without_broad_rho",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 63,
+      "control": "without_constrained_Kstar",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 0,
+      "profile_reference_resolved": true
+    },
+    {
+      "scenario_index": 63,
+      "control": "narrow_nonconstrained_summary_control",
+      "best_optimizer_success": true,
+      "branch_certified": true,
+      "source_certified": true,
+      "profiles": 2,
+      "profile_reference_resolved": true
+    }
+  ],
+  "sha256": {
+    "data/vector_sector/odd_low_energy_profiles.json": "2218af1e91ec6d32c5ce534a4fb38c130af0db061742d65c65745336f9eb8e56",
+    "scripts/verify_odd_low_energy_profiles.py": "2561d04c7885842059a60d677222cca6a50c6e1f70e7c9d52a9e1eed34914fd4"
+  }
+}

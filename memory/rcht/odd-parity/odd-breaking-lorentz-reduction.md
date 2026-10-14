@@ -2,10 +2,12 @@
 title: Off-shell Lorentz and integration-by-parts reduction of odd vertex candidates
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Ruiz-Femenia:2003jdx, Roig:2013baa, Alda:2026nrd]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Local tensor-vertex reduction
 
@@ -14,7 +16,7 @@ provenance: analytical-derivation
 Use the [flavor enumeration](odd-breaking-flavor-enumeration.md),
 the [Ruiz derivative seeds](../../extracts/Ruiz-Femenia:2003jdx/vector-odd-parity.md)
 and [VVP seeds](../../extracts/Ruiz-Femenia:2003jdx/vvp-three-pseudoscalar.md).
-Four-dimensional metric $(+---)$, $\epsilon_{0123}=+1$, canonical
+Four-dimensional metric $(+---)$, $\epsilon^{0123}=+1, \epsilon_{0123}=-1$, canonical
 antisymmetric tensor vectors and all-incoming momentum conservation apply.
 No on-shell mass relation, transversality of a generic tensor vector,
 Goldstone EOM, OPE prior or fitted coefficient is used in the primary reduction.

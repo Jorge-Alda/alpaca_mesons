@@ -2,10 +2,12 @@
 title: Normalized leading single/double-trace scalar radiative and photon kernels
 status: derived
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # First stage-B normalized kernels
 
@@ -24,7 +26,7 @@ The existing vector action/source response remains unchanged.
 These are normalized one-scalar-SM-pseudoscalar kernels, not a full independent
 axial/pseudoscalar-source functional or a completed normalized ALP predictor.
 Use actual external-state conjugations for charged flavor matrices, the
-positive-strange phi phase, $\epsilon_{0123}=+1$, $(+---)$ and GeV units.
+positive-strange phi phase, $\epsilon^{0123}=+1, \epsilon_{0123}=-1$, $(+---)$ and GeV units.
 
 ## Trace conventions and covariant representatives
 

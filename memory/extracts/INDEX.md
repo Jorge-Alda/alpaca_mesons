@@ -2,12 +2,14 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: []
 provenance: literature
 ---
 
 # Literature extracts
+
+- [Bauer:2020jbp](Bauer:2020jbp/INDEX.md) — source-backed positive ALP photon-operator normalization in Eqs. (39)/(54) and upper-index dual convention.
 
 - [Graf:2020yxt](Graf:2020yxt/INDEX.md) — chiral Hilbert series with external sources, disconnected character projections and IBP qualifications.
 
@@ -17,7 +19,7 @@ Each child folder is a source-specific extract collection; see its files for the
 
 - [Achasov:1999wp](Achasov:1999wp/INDEX.md) — source-specific literature extracts.
 - [Akhmetshin:2006sc](Akhmetshin:2006sc/INDEX.md) — source-specific literature extracts.
-- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — CCWZ/source conventions, neutral generators, topological action and conditional photon bookkeeping.
+- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — CCWZ/source conventions, neutral generators, topological action and conditional photon bookkeeping in the canonical tensor convention.
 - [Aloni:2018vki](Aloni:2018vki/INDEX.md) — source-specific literature extracts.
 - [Aston:1987ir](Aston:1987ir/INDEX.md) — source-specific literature extracts.
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.
@@ -40,7 +42,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Jamin:2001zq](Jamin:2001zq/INDEX.md) — source-specific literature extracts.
 - [Jamin:2006tj](Jamin:2006tj/INDEX.md) — source-specific literature extracts.
 - [KLOE:2003kas](KLOE:2003kas/INDEX.md) — source-specific literature extracts.
-- [Knecht:2001qf](Knecht:2001qf/INDEX.md) — pion TFF single-virtual falloff and symmetric OPE coefficient.
+- [Knecht:2001qf](Knecht:2001qf/INDEX.md) — pion TFF single-virtual falloff and symmetric OPE coefficient adapted to the canonical fixed-phase signed scalar.
 - [Kaiser:2000gs](Kaiser:2000gs/INDEX.md) — source-specific literature extracts.
 - [Kastner:2008ch](Kastner:2008ch/INDEX.md) — source-specific literature extracts.
 - [Kubis:2001bx](Kubis:2001bx/INDEX.md) — source-specific literature extracts.
@@ -54,9 +56,9 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Pelaez:2016tgi](Pelaez:2016tgi/INDEX.md) — source-specific literature extracts.
 - [Pelaez:2020gnd](Pelaez:2020gnd/INDEX.md) — source-specific literature extracts.
 - [Pich:2010sm](Pich:2010sm/INDEX.md) — source-specific literature extracts.
-- [Roig:2013baa](Roig:2013baa/INDEX.md) — source-specific literature extracts.
+- [Roig:2013baa](Roig:2013baa/INDEX.md) — odd-sector coupling dictionaries and TFF compatibility adapted to the canonical tensor/coupling convention.
 - [Rosell:2004mn](Rosell:2004mn/INDEX.md) — source-specific literature extracts.
-- [Ruiz-Femenia:2003jdx](Ruiz-Femenia:2003jdx/INDEX.md) — source-specific literature extracts.
+- [Ruiz-Femenia:2003jdx](Ruiz-Femenia:2003jdx/INDEX.md) — source-specific extracts adapted to the canonical upper-index Levi-Civita convention with explicit source conversion.
 - [VonDetten:2021rax](VonDetten:2021rax/INDEX.md) — source-specific literature extracts.
 - [Watson:1952ji](Watson:1952ji/INDEX.md) — source-specific literature extracts.
 

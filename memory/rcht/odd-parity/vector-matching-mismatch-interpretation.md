@@ -2,7 +2,7 @@
 title: Interpretation and possible remedies for the two vector matching mismatches
 status: mixed
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Roig:2013baa, Knecht:2001qf]
 provenance: assumption
 ---
@@ -13,7 +13,13 @@ Saved at the user's request on 2026-10-13. The results below are established
 in executable records; their interpretation and proposed remedies are
 explicitly distinguished from demonstrated completions. This is not a new
 calculation or a physical fit. Conventions are tree-level tensor RChT,
-natural units and the positive-anomaly/positive-strange phi phases.
+natural units and the fixed meson/positive-strange phi phases. The
+[convention dictionary](levi-civita-convention.md) fixes $(+---)$ and
+$\epsilon^{0123}=+1$, hence $\epsilon_{0123}=-1$; canonical
+$c_i=-c_i^R$, $d_i=-d_i^R$ and signed TFF scalars are used below.
+The linked original scripts/artifacts retain the opposite source orientation
+and are compared through that adapter. No new matching is inferred from
+this sign conversion.
 
 ## First mismatch: different hard limits of a restricted action
 
@@ -27,15 +33,15 @@ kinematic constraints on the same assumed resonance action.
 In its massless common-pole control, correlator matching requires
 
 $$
-d_3=-\frac{N_CM_V^2}{64\pi^2F_V^2}+\frac{F^2}{8F_V^2}.
+d_3=\frac{N_CM_V^2}{64\pi^2F_V^2}-\frac{F^2}{8F_V^2}.
 $$
 
 Together with the other matched combinations it leaves
-$\lim F_{\pi^0}(-Q^2,0)=F/(3M_V^2)$, violating single-virtual
-$1/Q^2$ falloff. Changing $d_3$ to remove the $F^2/(8F_V^2)$ term,
+$\lim F_{\pi^0}(-Q^2,0)=-F/(3M_V^2)$, violating single-virtual
+$1/Q^2$ falloff. Changing $d_3$ to remove the $-F^2/(8F_V^2)$ term,
 while enforcing both TFF constant cancellations, instead gives
 $\lim Q^2F_{\pi^0}(-Q^2,-Q^2)=0$, whereas the symmetric pion OPE
-requires $2F/3$ in this phase convention. Thus vanishing alone is not
+requires $-2F/3$ in this phase convention. Thus vanishing alone is not
 sufficient matching. These are exact results for the current common-pole
 kernel, not a theorem excluding every theory with a single vector multiplet.
 

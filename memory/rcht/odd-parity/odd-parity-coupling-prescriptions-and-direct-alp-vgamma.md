@@ -2,7 +2,7 @@
 title: Odd-parity coupling prescriptions and direct ALP-vector-photon VJP insertions
 status: mixed
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1989yg, Fujiwara:1984mp]
 provenance: analytical-derivation
 ---
@@ -30,18 +30,18 @@ The three prescriptions do not determine the same object. Prescription A constra
 | Double counting | Adding local odd-parity terms already saturated by retained vectors can double count and spoil asymptotics. | Contact and exchange pieces must be fitted in one declared basis, not counted twice. | A matched HLS/WZW result is an alternative representation/cross-check, not an additive extra contribution to RChT. |
 | ALP flavor extrapolation | The operator basis accepts general ALP spurions, but QCD constraints on hadronic combinations do not determine every flavor-changing ALP amplitude. | Standard hadronic data calibrate universal resonance couplings, while ALP spurion traces and poorly sampled breaking directions remain extrapolations. | Covariant source insertion organizes flavor, but a selected homogeneous action and idealized flavor assignments can hide uncertainty in general Alda flavor directions. |
 
-**Literature-established facts.** The cited OPE matching gives
+**Literature-established facts, adapted to the repository convention.** The cited OPE matching gives
 
 $$
 4c_3+c_1=0,\qquad c_1-c_2+c_5=0,\qquad
-c_5-c_6=\frac{N_C}{64\pi^2}\frac{M_V}{\sqrt2F_V},
+c_5-c_6=-\frac{N_C}{64\pi^2}\frac{M_V}{\sqrt2F_V},
 $$
 
 $$
-d_1+8d_2=-\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}
-+\frac{F^2}{4F_V^2},\qquad
-d_3=-\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}
-+\frac{F^2}{8F_V^2},
+d_1+8d_2=\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}
+-\frac{F^2}{4F_V^2},\qquad
+d_3=\frac{N_C}{64\pi^2}\frac{M_V^2}{F_V^2}
+-\frac{F^2}{8F_V^2},
 $$
 
 and does not fix all coefficients. Strict VMD fails in the cited $\omega\to3\pi$ test. Gauged WZW requires its counterterm, while homogeneous anomalous terms remain free. [@Ruiz-Femenia:2003jdx; @Bai:2025fvl; @Fujiwara:1984mp]
@@ -54,7 +54,7 @@ and does not fix all coefficients. Strict VMD fails in the cited $\omega\to3\pi$
 
 ### Conventions, units, and assumptions
 
-Natural units are used. The fields $a$, $f_a$, $B_0$, $m_q$, and $M_V$ have mass dimension one; $e$, $c_i$, $d_i$, $\mathbb M_a^{-1}(C)$, $c_q^{AP}$, $Q$, and flavor generators are dimensionless. We use $\epsilon_{0123}=+1$, $V=T_VV$, and
+Natural units are used. The fields $a$, $f_a$, $B_0$, $m_q$, and $M_V$ have mass dimension one; $e$, $c_i$, $d_i$, $\mathbb M_a^{-1}(C)$, $c_q^{AP}$, $Q$, and flavor generators are dimensionless. We use the metric $(+---)$, $\epsilon^{0123}=+1$ and hence $\epsilon_{0123}=-1$, $V=T_VV$, and
 
 $$
 \mathcal L_{VJP}=\sum_{i=1}^{7}\frac{c_i}{M_V}\mathcal O^i_{VJP}.
@@ -73,7 +73,13 @@ $$
 
 For the standard electromagnetic-compatible Goldstone vacuum, $f_-^{\mu\nu}=0$ because the charge matrix commutes with the ALP spurions. Alda permits flavor-changing entries only among equal-charge quarks, so this commutation is the relevant framework assumption.
 
-### Published seven-operator basis
+The [Levi-Civita conversion record](levi-civita-convention.md) defines the
+adaptation from the opposite orientation used by Ruiz--Femenia:
+$c_i=-c_i^{R}$ and $d_i=-d_i^{R}$. All couplings and operators displayed here
+use the repository convention; the physical action and relative signs are
+preserved. Legacy numerical coefficients require this adapter before use.
+
+### Adapted seven-operator basis
 
 The exact basis is [@Ruiz-Femenia:2003jdx]
 

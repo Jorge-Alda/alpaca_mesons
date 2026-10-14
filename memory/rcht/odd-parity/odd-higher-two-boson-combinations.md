@@ -2,10 +2,12 @@
 title: Higher odd-action combinations in stripped ALP two-boson vertices
 status: derived
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
+
+Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](levi-civita-convention.md). The linked original scripts and saved artifacts use the explicitly identified reference backend; apply that record's signed coefficient and tensor adapter when interpreting them in the canonical convention.
 
 # Inputs and assumptions
 
@@ -17,7 +19,7 @@ This executes the projection proposed in the
 [operator relevance assessment](odd-operator-alp-relevance.md).
 
 Tree level, one physical ALP and two boson legs, metric $(+---)$ and
-$\epsilon_{0123}=+1$. Both boson tensors have canonical wedge form.
+$\epsilon^{0123}=+1, \epsilon_{0123}=-1$. Both boson tensors have canonical wedge form.
 The scalar vacuum $X=\chi_+$ is constant. Its term linear in a pseudoscalar
 vanishes at a real scalar vacuum; connection/source corrections are retained
 in the full action but do not enter this cubic vertex through an extra $X$

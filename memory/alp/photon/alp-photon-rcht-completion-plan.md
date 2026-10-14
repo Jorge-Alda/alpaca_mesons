@@ -2,7 +2,7 @@
 title: Complete the resonance-corrected physical ALP two-photon amplitude
 status: mixed
 created: 2026-10-13
-updated: 2026-10-14
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg, Bai:2025fvl]
 provenance: assumption
 ---
@@ -21,7 +21,8 @@ C_{a\gamma\gamma}=c_\gamma^{\rm inv}
 C_{a\gamma\gamma}aF\widetilde F
 $$
 
-under its stated photon-anomaly normalization. The [two-source insertions](../../rcht/odd-parity/two-source-alp-rcht-odd-parity-extension.md)
+in the source-backed [Bauer photon-operator normalization](../../extracts/Bauer:2020jbp/photon-operator-normalization.md)
+and the retained leading-nonet WZW approximation. The [two-source insertions](../../rcht/odd-parity/two-source-alp-rcht-odd-parity-extension.md)
 and [operator kernel](../../rcht/odd-parity/odd-parity-rcht-numerical-kernel.md)
 do not add up to a normalized resonance-corrected ALP predictor. The
 [real-photon sensitivity audit](alp-photon-rcht-blind-direction-audit.md)
@@ -39,7 +40,7 @@ and [source/LSZ assembly](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md)
 now supply the normalized leading/higher resonance contribution.
 The [signed photon/action audit](alp-photon-odd-action-phase-matching.md)
 completes the originally unspecified photon dual, derives the common
-$i e^2E$ contact $C_{a\gamma\gamma}/(4\pi^2f_a)$, and verifies photon-parent
+$i e^2E$ contact $-C_{a\gamma\gamma}/(4\pi^2f_a)$, and verifies photon-parent
 LSZ/Bose and nonzero interference against the original SM TFF. Thus the
 signed algebraic assembly is available; numerical predictor, width/domain
 implementation and enlarged-action data sensitivity remain future work.
