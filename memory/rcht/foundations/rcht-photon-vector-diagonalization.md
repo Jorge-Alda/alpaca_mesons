@@ -1,8 +1,8 @@
 ---
 title: Quadratic photon-vector diagonalization in antisymmetric-tensor RChT
-status: derived
+status: mixed
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-10-19
 bibtex_keys: [Ecker:1988te, Ecker:1989yg]
 provenance: analytical-derivation
 ---
@@ -11,14 +11,14 @@ provenance: analytical-derivation
 
 ## Scope and assumptions
 
-This record diagonalizes the tree-level quadratic sector containing the photon and the three neutral members of a vector nonet. The vectors use the antisymmetric-tensor RChT convention and the $F_V$ operator recorded in [the RChT summary](rcht-basics.md) [@Ecker:1988te]. The calculation is performed by [`scripts/derive_rcht_photon_vector_diagonalization.py`](../../../scripts/derive_rcht_photon_vector_diagonalization.py).
+This record diagonalizes the tree-level quadratic sector containing the photon and the three neutral members of a vector nonet, including the vacuum-spurion source terms used by the focused fit. The vectors use the antisymmetric-tensor RChT convention and the universal $F_V$ operator recorded in [the RChT summary](rcht-basics.md) [@Ecker:1988te]. The spurion-dependent source extension is an explicit fit hypothesis, not a claim that it is the complete RChT source action. The calculation is performed by [`scripts/derive_rcht_photon_vector_diagonalization.py`](../../../scripts/derive_rcht_photon_vector_diagonalization.py).
 
 Assumptions are:
 
 - natural units and the metric/sign conventions implicit in the recorded Ecker Lagrangian;
 - a canonical bare photon term $-F_{\mu\nu}F^{\mu\nu}/4$;
 - three real, diagonal, orthonormal $U(3)$ generators $T_i$ for neutral vector mass eigenstates, with distinct input masses $M_i$ allowed;
-- a common real $F_V$ coupling; replacing it by $F_{V_i}$ only changes $F_Vc_i\to F_{V_i}c_i$ below;
+- a real diagonal vacuum spurion $\chi_+=\operatorname{diag}(x_l,x_l,x_s)$ and the source extension with real $z_V,y_V$ defined below; $[\chi_+,Q]=0$ in this vacuum;
 - no ideal-mixing assignment, loops, widths, or additional electromagnetic counterterms;
 - exact algebra in the mixing parameters within this truncated quadratic tree-level Lagrangian. Consequently, the resummed $O(e^2)$ mass and charge shifts are not a complete electromagnetic calculation at that order.
 
@@ -46,7 +46,32 @@ F_L^{\mu\nu}=F_R^{\mu\nu}=-eQF^{\mu\nu},
 f_+^{\mu\nu}=-2eQF^{\mu\nu}.
 $$
 
-These source conventions and the $F_V$ interaction are literature inputs; the following diagonalization is derived. [@Ecker:1988te]
+The source conventions and universal $F_V$ term are literature inputs [@Ecker:1988te]. The spurion extension is the explicit source hypothesis used in the [focused preliminary fit](../odd-parity/odd-preliminary-fit.md). For that hypothesis, extend the universal term by
+
+$$
+\mathcal L_{\rm source}=
+\frac{F_V}{2\sqrt2}\langle V_{\mu\nu}f_+^{\mu\nu}\rangle
++\frac{z_V}{2\sqrt2}\langle V_{\mu\nu}\{\chi_+,f_+^{\mu\nu}\}\rangle
++\frac{y_V}{2\sqrt2}\langle V_{\mu\nu}\rangle\langle\chi_+f_+^{\mu\nu}\rangle.
+$$
+
+Here $F_V$ has units GeV and $z_V,y_V$ have units GeV$^{-1}$. The single-trace fit sets $y_V=0$; the double-trace fit retains all three terms. These extra terms are the declared fit extension. Evaluating $f_+^{\mu\nu}=-2eQF^{\mu\nu}$ gives the source matrix
+
+$$
+S_\gamma=F_VQ+z_V\{\chi_+,Q\}+y_V\langle\chi_+Q\rangle\mathbf1.
+$$
+
+For $\chi_+=\operatorname{diag}(x_l,x_l,x_s)$, this is
+
+$$
+S_\gamma=\operatorname{diag}\!\left(
+\frac{2F_V+4x_lz_V+y_V(x_l-x_s)}{3},
+\frac{-F_V-2x_lz_V+y_V(x_l-x_s)}{3},
+\frac{-F_V-2x_sz_V+y_V(x_l-x_s)}{3}
+\right).
+$$
+
+The ensuing diagonalization is derived for this stated quadratic source sector.
 
 Write the neutral vectors as
 
@@ -58,42 +83,43 @@ T_i=\operatorname{diag}(t_{ui},t_{di},t_{si}),
 \langle T_iT_j\rangle=\delta_{ij}.
 $$
 
-No $T_i$ is identified with $\rho^0$, $\omega$, or $\phi$. All dependence on the neutral flavor basis enters through
+No $T_i$ is identified with $\rho^0$, $\omega$, or $\phi$. For the universal term, the overlap is
 
 $$
 c_i\equiv\langle QT_i\rangle
-=\frac{2t_{ui}-t_{di}-t_{si}}{3}.
+=\frac{2t_{ui}-t_{di}-t_{si}}{3},
+\qquad \sum_i c_i^2=\langle Q^2\rangle=\frac23.
 $$
 
-For any complete orthonormal basis of diagonal generators,
+With the spurion source, the relevant residue is instead
 
 $$
-\sum_i c_i^2=\langle Q^2\rangle=\frac23.
+R_i\equiv\langle T_iS_\gamma\rangle
+=F_Vc_i+z_V\langle T_i\{\chi_+,Q\}\rangle
++y_V\langle\chi_+Q\rangle\langle T_i\rangle.
 $$
 
-The normalized singlet has zero overlap, $\langle Q\mathbf1/\sqrt3\rangle=0$, because $Q$ is traceless. A generic mass eigenstate may nevertheless couple to the photon when it mixes singlet and traceless directions; this statement does not assume ideal mixing.
+For a complete orthonormal diagonal-generator basis, $\sum_iR_i^2=\langle S_\gamma^2\rangle$. The spurion terms give the normalized-singlet residue $\langle S_\gamma\rangle/\sqrt3=(x_l-x_s)(2z_V+3y_V)/(3\sqrt3)$, even though $\langle Q\rangle=0$.
 
 ## Tensor mixing term
 
-The RChT operator gives
+Using the source matrix above, the neutral mixing term is
 
 $$
-\begin{aligned}
-\mathcal L_{F_V}
-&=\frac{F_V}{2\sqrt2}\left\langle V_{\mu\nu}f_+^{\mu\nu}\right\rangle\\
-&=-\frac{eF_V}{\sqrt2}\sum_i c_iV^i_{\mu\nu}F^{\mu\nu}
+\mathcal L_{V\gamma}
+=-\frac{e}{\sqrt2}\sum_iR_iV^i_{\mu\nu}F^{\mu\nu}
 =-\frac12\sum_i g_iV^i_{\mu\nu}F^{\mu\nu},
-\end{aligned}
 $$
 
 where
 
 $$
-g_i=\sqrt2\,eF_Vc_i,
+g_i=\sqrt2\,eR_i,
 \qquad
-\epsilon_i\equiv\frac{g_i}{M_i}
-=\frac{\sqrt2\,eF_Vc_i}{M_i}.
+\epsilon_i\equiv\frac{g_i}{M_i}=\frac{\sqrt2\,eR_i}{M_i}.
 $$
+
+The universal result follows at $z_V=y_V=0$, when $R_i=F_Vc_i$.
 
 The $g_i$ have mass dimension one and the $\epsilon_i$ are dimensionless.
 
@@ -217,7 +243,7 @@ $$
 \mathbf R_\mu=K_V^{-1/2}O\,\mathbf W_\mu
 $$
 
-produces canonical, fully diagonal massive fields $W^a_\mu$. This construction leaves the generator overlaps $c_i$ generic and determines the final electromagnetic coupling of each $W^a$ from
+produces canonical, fully diagonal massive fields $W^a_\mu$. This construction leaves the generalized residues $R_i$ generic and determines the final electromagnetic coupling of each $W^a$ from
 
 $$
 \frac{e}{Z}\boldsymbol\epsilon^TK_V^{-1/2}O.
@@ -273,4 +299,4 @@ Run
 .venv/bin/python scripts/derive_rcht_photon_vector_diagonalization.py
 ```
 
-The script derives the tensor elimination, verifies the photon-decoupling congruence transformation, constructs $K_V^{-1/2}$, derives the generic rational and universal determinant pole equations, checks an electromagnetically decoupled vector direction, checks the massless transverse photon mode, and verifies $\sum_i c_i^2=2/3$ for a generic three-angle orthogonal basis of diagonal generators.
+The script derives the spurion-dependent residues from $S_\gamma$, checks their universal limit and basis-invariant norm, then derives the tensor elimination and photon-decoupling congruence transformation with $g_i=\sqrt2 eR_i$. It constructs $K_V^{-1/2}$, derives the generic rational and determinant pole equations, checks an electromagnetically decoupled vector direction and the massless transverse photon mode, and verifies $\sum_i c_i^2=2/3$ in the universal limit.

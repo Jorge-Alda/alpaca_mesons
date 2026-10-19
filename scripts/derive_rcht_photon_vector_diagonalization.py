@@ -56,8 +56,35 @@ show("Basis invariant sum_i c_i^2", c_norm)
 show("Electromagnetic overlap of the normalized U(3) singlet", c_singlet)
 
 assert sp.simplify(T.T * T - sp.eye(3)) == sp.zeros(3)
+assert sp.simplify(T * T.T - sp.eye(3)) == sp.zeros(3)
 assert c_norm == sp.Rational(2, 3)
 assert c_singlet == 0
+
+# ---------------------------------------------------------------------------
+# 1b. Spurion-dependent electromagnetic source residues
+# ---------------------------------------------------------------------------
+xl, xs = sp.symbols("x_l x_s", real=True)
+F_V, z_V, y_V = sp.symbols("F_V z_V y_V", real=True)
+chi_plus = sp.diag(xl, xl, xs)
+source_matrix = sp.simplify(
+    F_V * sp.diag(*q)
+    + z_V * (chi_plus * sp.diag(*q) + sp.diag(*q) * chi_plus)
+    + y_V * sp.trace(chi_plus * sp.diag(*q)) * sp.eye(3)
+)
+source_diagonal = sp.simplify(sp.Matrix([source_matrix[i, i] for i in range(3)]))
+residues = sp.simplify(T.T * source_diagonal)
+residue_norm = sp.trigsimp((residues.T * residues)[0])
+singlet_residue = sp.simplify(sum(source_diagonal) / sp.sqrt(3))
+universal_residues = sp.simplify(residues.subs({z_V: 0, y_V: 0}))
+
+show("Vacuum source matrix S_gamma=F_V Q+z_V{chi_plus,Q}+y_V Tr(chi_plus Q) I", source_matrix)
+show("Generalized neutral-vector residues R_i=Tr(T_i S_gamma)", residues)
+show("Basis-invariant sum_i R_i^2=Tr(S_gamma^2)", residue_norm)
+show("Normalized-singlet residue with spurion terms", singlet_residue)
+show("Universal limit z_V=y_V=0", universal_residues)
+
+assert sp.simplify(residues.subs({z_V: 0, y_V: 0}) - F_V * c) == sp.zeros(3, 1)
+assert sp.simplify(singlet_residue.subs({z_V: 0, y_V: 0})) == 0
 
 
 # ---------------------------------------------------------------------------
@@ -171,11 +198,12 @@ assert sp.simplify(decoupled_check.subs(s, M3**2)) == 0
 # ---------------------------------------------------------------------------
 # 5. Electromagnetic normalization and leading-e expansion
 # ---------------------------------------------------------------------------
-e, F_V = sp.symbols("e F_V", real=True)
-c1, c2, c3 = sp.symbols("c_1 c_2 c_3", real=True)
-g_vector = sp.sqrt(2) * e * F_V * sp.Matrix([c1, c2, c3])
+e = sp.symbols("e", real=True)
+R1, R2, R3 = sp.symbols("R_1 R_2 R_3", real=True)
+g_vector = sp.sqrt(2) * e * sp.Matrix([R1, R2, R3])
 epsilon_vector = sp.diag(1 / M1, 1 / M2, 1 / M3) * g_vector
-show("Tensor mixing coefficients g_i=sqrt(2) e F_V c_i", g_vector)
+show("Tensor mixing coefficients g_i=sqrt(2) e R_i", g_vector)
+show("R_i are the generalized source residues Tr(T_i S_gamma)", residues)
 show("Dimensionless kinetic mixings epsilon_i=g_i/M_i", epsilon_vector)
 show("Tree-level canonical photon charge e_gamma", e / sp.sqrt(Z))
 
