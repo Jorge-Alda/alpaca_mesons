@@ -65,17 +65,20 @@ established. The [finite sign/profile continuation](odd-low-energy-profiles.md)
 now performs 5888 sign-search fits and 112 physical profiles: 80 preceding
 minima improve, all 1909 physical points are valid, and all declared 3.84-level
 profile sides are bracketed. A further 442 finite fits improve six flagged
-minima; 28 converged source endpoints still fail the inherited constraint
-tolerance at cancellation scale and one lacks a feasible projected start.
-Direct source coordinates and an independent constraint certificate are the
-next fit-validation task. The
+minima. Direct physical-source coordinates and an independent forward-error
+certificate now validate all 29 previously unresolved endpoints. Re-anchoring
+lowers four references; targeted restarts and refreshed source grids leave no
+further decrease above $10^{-4}$ for pairs 90 and 218. Sparse finite searches
+do not prove global minima, and source-profile level crossings remain a
+separate validation limit. The
 [finite neutral target audit](odd-alp-measured-null-audit.md) now certifies
 448 scenario/model cases. Correction-model SM nulls affect the sampled
 two-boson resonance targets in every scenario; zero images for the original,
 soft-leading and promoted-leading models hold only at fixed nuisances and
-the declared finite neutral tree probes. Next resolve the continuing
-sign-basin/source-boundary cases, then compute joint nuisance/target nulls
-and complete missing predictor components before any physical band.
+the declared finite neutral tree probes. The targeted finite sign/source
+continuation is recorded in [the profile result](odd-low-energy-profiles.md);
+global minima remain unproven. Next compute joint nuisance/target nulls and
+complete missing predictor components before any physical band.
 Stage D's full validation/propagation gate remains open. Source-family,
 conditional measured and sampled target ranks remain distinct.
 

@@ -195,8 +195,12 @@ Separate double-trace and single-trace correction models already saturate
 every odd dataset control. This is a completed conditional diagnostic
 run, not selection of a validated preferred truncation or completion of
 the full stage-D exit criterion. The [finite sign/profile continuation](odd-low-energy-profiles.md)
-now performs 5888 fits and 112 physical profiles, with 26 continuing capped
-searches and 30 unresolved source endpoints. The [finite neutral target audit](odd-alp-measured-null-audit.md)
+now performs 5888 initial fits and 112 physical profiles. A continuation adds
+442 finite fits, validates all 29 previously unresolved source endpoints using
+direct source coordinates and an independent arithmetic certificate, and
+re-anchors four lower references. Targeted restarts and refreshed source grids
+find no further decrease above $10^{-4}$ for pairs 90 and 218; finite searches
+do not prove global minima. The [finite neutral target audit](odd-alp-measured-null-audit.md)
 certifies 448 fixed-nuisance cases; correction-model measured nulls affect
 the sampled two-boson resonance targets. Joint nuisance/target projections
 and physical-predictor completion remain open.

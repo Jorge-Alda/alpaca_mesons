@@ -79,5 +79,5 @@ being combined with canonical photon or resonance amplitudes.
 - [odd-bounded-sm-numerical-kernels.md](odd-bounded-sm-numerical-kernels.md) — reusable neutral/charged 241-parent gradients, original-coupling embedding and independent symbolic/legacy checks.
 - [odd-low-energy-measurement-jacobians.md](odd-low-energy-measurement-jacobians.md) — all 64 conditional measured-width Jacobians, nuisance projection, nested ranks and data-adequacy controls.
 - [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — 1792 conditional joint fits, 500 interior local prediction/null diagnostics, branch/source/gauge certificates and remaining validation gates.
-- [odd-low-energy-profiles.md](odd-low-energy-profiles.md) — finite sign searches, physical-amplitude profiles and source-boundary continuation; six further minima improved and cancellation-scale source certificates remain open.
+- [odd-low-energy-profiles.md](odd-low-energy-profiles.md) — finite sign searches, re-anchored source-boundary fits and independently certified source profiles; global minima and precise level crossings remain unproven.
 - [odd-alp-measured-null-audit.md](odd-alp-measured-null-audit.md) — 448 finite neutral target/null projections, source/contact certificates and correction-model witnesses.
