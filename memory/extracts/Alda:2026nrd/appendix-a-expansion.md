@@ -2,7 +2,7 @@
 title: Appendix A CCWZ expansion formulas
 status: literature
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd]
 provenance: literature
 ---
@@ -18,11 +18,20 @@ $$
 and the commutator and anticommutator maps
 
 $$
-\mathcal C_\phi[A]=[A,\phi],\qquad
+\mathcal C_\phi[A]=[\phi,A],\qquad
 \mathcal A_\phi[A]=\{\phi,A\}.
 $$
 
 These conventions follow Appendix A, Eqs. (A.1)-(A.4), of `Alda:2026nrd` [@Alda:2026nrd].
+
+The ordering is verified directly in the archived arXiv-v1
+[`main_arXiv.tex`](../../sources/Alda:2026nrd/main_arXiv.tex), lines 2042--2046.
+The explicit linear vielbein at line 2109 contains
+$-i(\partial_\mu a)/(f_\pi f_a)[\bm\Phi,\bm{c_q^V}]$.
+This fixes the sign of odd powers of the commutator map. Calculations that
+previously combined the reversed map with the displayed sine formulas require
+an individual audit; changing this definition does not establish that every
+downstream derivation has been rechecked.
 
 At linear order in the ALP, the all-orders CCWZ vielbein is
 
@@ -74,3 +83,17 @@ C=-B_0\{m_q,c_q^{AP}\}-\frac{m_0^2}{N_f}c_{GA}\mathbf 1.
 $$
 
 This is the no-ALP-meson-mixing prescription of Eqs. (III.30), (III.33), and Sec. III E of `Alda:2026nrd` [@Alda:2026nrd].
+
+The invariant vector/scalar combination appearing here is defined in the
+archived source, lines 264--274 and 290, by
+
+$$
+\bm{c_q^{VS}}=\bm{c_q^V}-\bm{c_q^S},\qquad
+\bm{c_q^V}\longrightarrow\bm{c_q^V}+\bm\delta,\qquad
+\bm{c_q^S}\longrightarrow\bm{c_q^S}+\bm\delta.
+$$
+
+The choice $\bm\delta=-\bm{c_q^S}$ and the resulting
+$\bm{\widehat c_q^V}=\bm{c_q^{VS}}$, $\bm{\widehat c_q^S}=0$ are also
+explicit at source lines 812--814. These are literature definitions, not a
+new inference from the two-pseudoscalar amplitudes. [@Alda:2026nrd]

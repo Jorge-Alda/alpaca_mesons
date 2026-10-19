@@ -1,6 +1,6 @@
 # Instructions
 
-This folder will contain a research project in the field of hep-ph. Your task is to create all the structure necessary for an AI research assistant based on an opencode harness.
+This folder will contain a research project in the field of hep-ph. Your task is to create all the structure necessary for an AI research assistant based on a codex harness.
 
 ## Priorities
 
@@ -8,7 +8,7 @@ This folder will contain a research project in the field of hep-ph. Your task is
 
 - Every source used must be included in the `bibliography.bib` file, using the bibtex information from inspire-hep
 - Every concept, definition, equation, or piece of information learnt from a bibliographical source must be documented as a markdown file in the `/memory` folder, with a reference to the bibtex key
-- Analytical derivations must be reproducible, using two files: a python script, in the `/scripts` folder, containing the derivation in `scipy`, and a markdown file in `/memory` detailing step-by-step solutions
+- Analytical derivations must be reproducible, using two files: a python script, in the `/scripts` folder, containing the derivation in `sympy`, and a markdown file in `/memory` detailing step-by-step solutions
 - Numerical derivations must be reproducible, using python scripts in `/scripts` and explanations in `/memory`
 - Derivations, both analytical and numerical, must indicate the provenance of every input by linking to the corresponding files in `/memory`
 - Any approximation or assumption must be cleared stated as such
@@ -29,7 +29,7 @@ This folder will contain a research project in the field of hep-ph. Your task is
 
 ## Subagents
 
-Create files for the following subagents, with specific instructions and configurations for opencode:
+Create files for the following subagents, with specific instructions and configurations for codex:
 
 - Orchestrator: GPT 5.6-Sol Medium, with default temperature
 - Brainstormer: GPT 5.6-Sol Medium, higher temperature

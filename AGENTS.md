@@ -23,7 +23,7 @@ Use this repository as a reproducible research record. Load only the protocol se
 
 ## Reproducibility
 
-- Put analytical and numerical work in executable Python scripts under `scripts/`, using `simpy` where appropriate.
+- Put analytical and numerical work in executable Python scripts under `scripts/`, using `sympy` where appropriate.
 - When both analytical and numerical derivations are available, prefer the analytical derivation.
 - Do not treat an analytical derivation as a check: delegate its calculation to an executable Python script.
 - Pair every derivation script with a step-by-step explanation in `memory/`.
@@ -43,7 +43,9 @@ Use this repository as a reproducible research record. Load only the protocol se
 - Use the same conventions and definitions as Alda:2026nrd
 - After a successful agent turn, if any file has been added or modified, propose a commit message.
 - In the memory and latex files, use a clear and communicative language. Do not use buzzwords: you can (and must!) use technical terms commonly used in hep-ph. For technical terms from other fields, avoid over-use of jargon, and prefer simpler wording even if it requires longer explanation. Never ever invent new terms that sound technical or like jargon, but are devoid of actual meaning.
+- For physical quantities, use the notation introduced in Alda:2026nrd if available. If not, try to use the notation from the references that you have consulted. Do not introduce shorthand notations for sums or products or quentities just because they appear together in some expression. Introduce new notation only for quantities that have a clear physical meaning: in that case, choose a descriptive notation (i.e. not just `X` or `Y` unless there is a motivated reason for that), and ask the user for aproval of the new notation.
 
 ## Delegation
 
-Tasks that require planning, strategic thinking or medium-term/long-term objectives must be delegated to the `orchestrator` agent. This involves both coming up with a new plan and following up on a plan written during a previous session.
+- Tasks that require planning, strategic thinking or medium-term/long-term objectives must be delegated to the `orchestrator` agent. This involves both coming up with a new plan and following up on a plan written during a previous session.
+- Only the `drafter` agent is allowed to modify the files in the folder `/latex`. Delegate to this agent any time the user asks to write or modify the draft.

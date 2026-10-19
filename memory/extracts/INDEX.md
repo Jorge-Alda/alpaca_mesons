@@ -19,7 +19,7 @@ Each child folder is a source-specific extract collection; see its files for the
 
 - [Achasov:1999wp](Achasov:1999wp/INDEX.md) — source-specific literature extracts.
 - [Akhmetshin:2006sc](Akhmetshin:2006sc/INDEX.md) — source-specific literature extracts.
-- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — CCWZ/source conventions, neutral generators, topological action and conditional photon bookkeeping in the canonical tensor convention.
+- [Alda:2026nrd](Alda:2026nrd/INDEX.md) — source-verified CCWZ commutator ordering, source conventions, neutral generators, topological action and photon bookkeeping in the canonical tensor convention.
 - [Aloni:2018vki](Aloni:2018vki/INDEX.md) — source-specific literature extracts.
 - [Aston:1987ir](Aston:1987ir/INDEX.md) — source-specific literature extracts.
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.

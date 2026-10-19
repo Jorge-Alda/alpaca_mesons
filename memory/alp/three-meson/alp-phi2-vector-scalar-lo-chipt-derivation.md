@@ -2,7 +2,7 @@
 title: One-ALP two-pseudoscalar vector- and scalar-source terms at LO in chiPT
 status: derived
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-15
 bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -22,7 +22,7 @@ The executable calculation is [`scripts/derive_alp_phi2_lo_chipt.py`](../../../s
 
 $$
 \phi=\frac{\Phi}{2f_\pi},\qquad
-\mathcal C_\phi[X]=[X,\phi],\qquad
+\mathcal C_\phi[X]=[\phi,X],\qquad
 \mathcal A_\phi[X]=\{X,\phi\}.
 $$
 
@@ -32,7 +32,7 @@ These definitions, the LO Lagrangian, and the all-orders $u_\mu$ and $\chi_+$ in
 
 - The expansion is at leading chiral order and keeps exactly $O(a\Phi^2/f_a)$.
 - Flavour matrices are not assumed to commute during the derivation.
-- The physical-channel audit assumes an electrically neutral ALP source: its flavour matrix is block diagonal between $u$ and the equal-charge $(d,s)$ sector. Both diagonal and $d$--$s$ sources are retained.
+- The flavour-field audit assumes an electrically neutral ALP source: its flavour matrix is block diagonal between $u$ and the equal-charge $(d,s)$ sector. Both diagonal and $d$--$s$ sources are retained. The table labels monomials in the meson fields, not outgoing LSZ states.
 - The symbolic $d$--$s$ source and its Hermitian conjugate are classified separately; Hermiticity relates their coefficients but is not used to erase either direction.
 - The $\eta$--$\eta'$ rotation is kept at a generic real angle $\theta_P$; no numerical mixing approximation is chosen.
 - Isospin symmetry and equal pseudoscalar masses are not assumed in the derivation. Exact particle--antiparticle mass equality is invoked only when identifying the on-shell zero of flavour-diagonal vector-source channels.
@@ -67,7 +67,7 @@ SymPy forms both matrix orderings in $u_\mu u^\mu$, extracts one ALP and two pow
 $$
 \boxed{
 \left.\mathcal L_{\mathrm{kin}}\right|_{a\Phi^2,c_q^V}
-=\frac{i\,\partial_\mu a}{2f_a}
+=-\frac{i\,\partial_\mu a}{2f_a}
 \left\langle
 \partial^\mu\Phi\,[c_q^V,\Phi]
 \right\rangle .
@@ -140,7 +140,7 @@ Their interaction is
 $$
 \boxed{
 \mathcal L_{a\phi_i\phi_j}
-=\frac{i}{2f_a}F_{ij}^V\,\partial_\mu a
+=-\frac{i}{2f_a}F_{ij}^V\,\partial_\mu a
 \left(\phi_i\partial^\mu\phi_j-\phi_j\partial^\mu\phi_i\right)
 -\frac{iB_0}{2f_a}F_{ij}^S\,a\phi_i\phi_j.
 }
@@ -153,7 +153,7 @@ $$
 \left\langle\lambda_i^2[c_q^S,m_q]\right\rangle.
 $$
 
-## Physical channel classification
+## Flavour-field classification
 
 The script audits all total-charge-zero pairs drawn from
 
@@ -161,7 +161,10 @@ $$
 \{\pi^+,\pi^-,\pi^0,K^+,K^-,K^0,\bar K^0,\eta,\eta'\}.
 $$
 
-The classification concerns nonzero off-shell flavour coefficients:
+The classification concerns nonzero off-shell coefficients of field monomials.
+An outgoing charged meson uses the conjugate flavour generator; the physical
+decay amplitudes, with this conjugation and the scalar/vector sum, are derived
+in [the two-pseudoscalar amplitude record](alp-flavour-violating-two-pseudoscalar-amplitudes.md).
 
 | source structure | channels |
 |---|---|
@@ -170,7 +173,7 @@ The classification concerns nonzero off-shell flavour coefficients:
 | diagonal $c_q^S$ with diagonal $m_q$ | none, because $[c_q^S,m_q]=0$ |
 | $d$--$s$ $c_q^S$ selecting $S=+1$ | $K^+\pi^-$, $K^0\pi^0$, $K^0\eta$, $K^0\eta'$ |
 
-The Hermitian-conjugate $s$--$d$ sources generate the charge-conjugate $S=-1$ channels $K^-\pi^+$, $\bar K^0\pi^0$, $\bar K^0\eta$, and $\bar K^0\eta'$. For the vector interaction, on-shell two-body kinematics gives
+The Hermitian-conjugate $s$--$d$ sources generate the conjugate field monomials $K^-\pi^+$, $\bar K^0\pi^0$, $\bar K^0\eta$, and $\bar K^0\eta'$. These monomial labels must be conjugated when specifying outgoing particles. For the vector interaction, on-shell two-body kinematics gives
 
 $$
 p_a\cdot(p_j-p_i)=m_j^2-m_i^2.
@@ -184,7 +187,12 @@ $$
 \widehat c_q^V=c_q^{VS},\qquad \widehat c_q^S=0.
 $$
 
-Thus the scalar-source term vanishes in that parametrization, while the vector formula remains with $c_q^V$ replaced by $c_q^{VS}$ [@Alda:2026nrd]. This is a field-basis statement, not an additional dynamical approximation.
+Thus the scalar-source term vanishes in that parametrization, while the vector formula remains with $c_q^V$ replaced by $c_q^{VS}=c_q^V-c_q^S$ [@Alda:2026nrd]. This is a field-basis statement, not an additional dynamical approximation. Equality of on-shell vector-plus-scalar amplitudes requires meson masses and generators from the same LO mass operator, as derived in the linked amplitude record.
+
+The source commutator ordering and vector sign are verified against archived
+`main_arXiv.tex`, lines 2042--2046 and 2109. The corrected executable derives
+the kinetic sign before channel specialization. No unrelated higher-multiplicity
+derivation has been audited by this correction.
 
 ## Verification
 

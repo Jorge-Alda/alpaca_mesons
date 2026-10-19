@@ -35,9 +35,10 @@ mq = sp.MatrixSymbol("m_q", n, n)
 phi = rho * Phi / (2 * f_pi)
 dphi = rho * dPhi / (2 * f_pi)
 
+# Alda Appendix A defines C_phi[A]=[phi,A]; the order is essential.
 # The O(Phi) pieces are the only terms needed for the kinetic a Phi^2 term.
 u_meson = -2 * dphi
-u_alp_vector = -2 * sp.I * epsilon * da / f_a * commutator(cV, phi)
+u_alp_vector = -2 * sp.I * epsilon * da / f_a * commutator(phi, cV)
 kinetic_matrix = sp.expand(
     f_pi**2
     / 4
@@ -47,7 +48,7 @@ kinetic_raw = sp.Trace(
     scalar_coefficient(scalar_coefficient(kinetic_matrix, epsilon, 1), rho, 2)
 )
 kinetic_reduced = (
-    sp.I * da / (2 * f_a) * sp.Trace(dPhi * commutator(cV, Phi))
+    -sp.I * da / (2 * f_a) * sp.Trace(dPhi * commutator(cV, Phi))
 )
 
 # The ALP part of chi_S is already O(a).  At O(Phi^2),
@@ -87,7 +88,7 @@ lambda_j = sp.MatrixSymbol("lambda_j", n, n)
 F_V_ij = sp.Trace(cV * commutator(lambda_i, lambda_j))
 F_S_ij = sp.Trace(anticommutator(lambda_i, lambda_j) * commutator(cS, mq))
 component_vector = (
-    sp.I
+    -sp.I
     * da
     / (2 * f_a)
     * F_V_ij
@@ -137,8 +138,8 @@ v_u, v_d, v_s, v_sd = sp.symbols("c_u^V c_d^V c_s^V c_sd^V")
 s_sd = sp.Symbol("c_sd^S")
 mq3 = sp.diag(mu, md, ms)
 cV_diagonal = sp.diag(v_u, v_d, v_s)
-# E_sd closes a flavour trace with an S=+1 final state; its Hermitian-conjugate
-# source gives the charge-conjugate S=-1 channels.
+# These are field monomials, not outgoing LSZ states. E_sd closes a trace
+# with the K+ pi- monomial; outgoing S=+1 uses conjugate fields and E_ds.
 cV_sd = v_sd * E(2, 1)
 cS_sd = s_sd * E(2, 1)
 
@@ -183,9 +184,9 @@ scalar_sd_channels = nonzero_channels(scalar_flavour, cS_sd)
 print("Physical Q=0 channels with nonzero flavour coefficients:")
 for heading, channels in (
     ("diagonal c_q^V", vector_diagonal_channels),
-    ("E_sd c_q^V (S=+1; conjugate source gives S=-1)", vector_sd_channels),
+    ("E_sd c_q^V (field monomials; conjugate fields required for outgoing states)", vector_sd_channels),
     ("diagonal c_q^S", scalar_diagonal_channels),
-    ("E_sd c_q^S (S=+1; conjugate source gives S=-1)", scalar_sd_channels),
+    ("E_sd c_q^S (field monomials; conjugate fields required for outgoing states)", scalar_sd_channels),
 ):
     print(f"  {heading}:")
     if not channels:

@@ -2,7 +2,7 @@
 title: ALP three-meson memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-15
 bibtex_keys: []
 provenance: assumption
 ---
@@ -12,6 +12,7 @@ provenance: assumption
 LO chiral, generic-generator, vector-exchange, and numerical three-meson records.
 
 - [alp-phi2-vector-scalar-lo-chipt-derivation.md](alp-phi2-vector-scalar-lo-chipt-derivation.md) — one-ALP two-pseudoscalar vector and scalar source terms.
+- [alp-flavour-violating-two-pseudoscalar-amplitudes.md](alp-flavour-violating-two-pseudoscalar-amplitudes.md) — outgoing-state amplitudes for all eight flavour-changing two-pseudoscalar channels, source-corrected vector sign, LO field-redefinition invariance and widths.
 - [alp-phi3-lo-chipt-derivation.md](alp-phi3-lo-chipt-derivation.md) — one-ALP three-pseudoscalar LO chiral derivation.
 - [alp-three-meson-generic-generators.md](alp-three-meson-generic-generators.md) — generic-generator interaction expansion.
 - [alp-three-meson-amplitudes-widths.md](alp-three-meson-amplitudes-widths.md) — amplitudes, symmetry multiplicities, and widths.
