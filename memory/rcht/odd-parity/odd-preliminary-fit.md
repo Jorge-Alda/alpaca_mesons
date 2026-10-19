@@ -2,7 +2,7 @@
 title: Focused preliminary odd-parity fit and input sensitivities
 status: mixed
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-20
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
 provenance: numerical-computation
 ---
@@ -89,7 +89,19 @@ superseded optimum.
 At the chosen fixed setup, the achieved total $\chi^2$ values are
 $362.14547$, $346.29371$, $5.5675233$ and $54.216008$ for the universal,
 positive-strange single-trace, negative-strange single-trace and double-trace
-source hypotheses, respectively. The negative-strange case is an adequate
+source hypotheses, respectively. The archived double-trace number imposed an
+additional requirement that each signed vector-current residue have the same
+sign as its universal-source value. That requirement does not follow from the
+double-trace Lagrangian and incorrectly removes the $y_V=0$ embedding of the
+negative-strange single-trace fit. The corrected double-trace fit imposes no
+such residue-sign restriction; starting at that exact embedding gives
+$\chi^2=5.5675233$, and the local refit reaches $5.5411233$ with
+$y_V=-2.19\times10^{-4}\,\mathrm{GeV}^{-1}$. The corrected fit and its
+reproduction script are in
+[the seeded double-trace result](../../../data/vector_sector/odd_double_trace_seeded_refit.json)
+and [its script](../../../scripts/refit_double_trace_from_single_trace.py).
+The older $54.216008$ value is not comparable to this fit because its
+parameter domain was artificially restricted. The negative-strange case is an adequate
 conditional working example with six nominal residual degrees of freedom;
 the nominal count assumes the inherited diagonal-summary likelihood.
 Electronic widths alone do not determine that relative source sign.

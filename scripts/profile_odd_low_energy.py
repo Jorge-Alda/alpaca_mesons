@@ -36,9 +36,9 @@ class ConditionalLikelihood:
         if self.hyp in ('single_trace_positive','single_trace_negative'):
             fl=p[4]+2*p[5]*self.ass['xl_gev2'];fs=p[4]+2*p[5]*self.ass['xs_gev2']
             if fl<=0 or (fs>0)!=(self.hyp=='single_trace_positive'):raise ValueError('single-trace source signs crossed')
-        if self.hyp=='double_trace':
-            reference=C.J.module('vector_sector').source_residues(sec.generators,np.diag([self.ass['xl_gev2']]*2+[self.ass['xs_gev2']]),1.)
-            if np.any(np.asarray(sec.residues)*np.asarray(reference)<=0):raise ValueError('physical source residue signs crossed')
+        # The double-trace model adds an independent spurion source term.
+        # Its signed residues are predictions of (F_V,z_V,y_V), not a
+        # positivity constraint relative to the universal-source residues.
         return sec,mk
     def blocks(self,v):
         if np.any(v[:self.nn]<self.lower[:self.nn]) or np.any(v[:self.nn]>self.upper[:self.nn]):raise ValueError('numerical domain bounds crossed')

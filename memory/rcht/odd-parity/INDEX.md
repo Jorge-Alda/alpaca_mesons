@@ -78,7 +78,7 @@ being combined with canonical photon or resonance amplitudes.
 - [odd-alp-source-lsz-assembly.md](odd-alp-source-lsz-assembly.md) — general diagonal UV profile, source EOM, 964 LSZ identities and signed photon matching in Bauer's coefficient normalization.
 - [odd-bounded-sm-numerical-kernels.md](odd-bounded-sm-numerical-kernels.md) — reusable neutral/charged 241-parent gradients, original-coupling embedding and independent symbolic/legacy checks.
 - [odd-low-energy-measurement-jacobians.md](odd-low-energy-measurement-jacobians.md) — all 64 conditional measured-width Jacobians, nuisance projection, nested ranks and data-adequacy controls.
-- [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — 1792 conditional joint fits, 500 interior local prediction/null diagnostics, branch/source/gauge certificates and remaining validation gates.
-- [odd-preliminary-fit.md](odd-preliminary-fit.md) — focused original-eleven-operator preliminary fit, four separate source hypotheses, canonical coefficient representatives and targeted input/data sensitivities.
+- [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — historical 1792 conditional joint fits with an identified overly restrictive double-trace residue-sign condition; corrected focused refit and remaining validation gates.
+- [odd-preliminary-fit.md](odd-preliminary-fit.md) — focused original-eleven-operator preliminary fit, corrected unconstrained double-trace refit nested at $y_V=0$, canonical coefficient representatives and targeted input/data sensitivities.
 - [odd-low-energy-profiles.md](odd-low-energy-profiles.md) — finite sign searches, re-anchored source-boundary fits and independently certified source profiles; global minima and precise level crossings remain unproven.
 - [odd-alp-measured-null-audit.md](odd-alp-measured-null-audit.md) — 448 finite neutral target/null projections, source/contact certificates and correction-model witnesses.

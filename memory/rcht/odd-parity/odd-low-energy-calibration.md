@@ -2,7 +2,7 @@
 title: Conditional low-energy odd-action calibration and adequacy
 status: mixed
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-20
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
 provenance: numerical-computation
 ---
@@ -71,6 +71,19 @@ The primary feasible example uses charged-rho and charged-K-star masses, the eva
 There are 512 unsaturated fits. Twelve approach a source-domain boundary and omit symmetric Gaussian uncertainty claims; the remaining **500** have full retained-coefficient/nuisance local identifiable prediction covariance and joint held-out null tests. The largest derivative step-halving change is $1.92\times10^{-8}$. Null-sensitive held-out predictions remain explicitly withheld. These are conditional local Gaussian experimental/input uncertainties without coefficient priors or residual rescaling, and do not replace nonlinear profiles or establish a unique amplitude-sign solution. All six implementation tests passed, and `git diff --check` was clean.
 
 Artifacts: [calibration results](../../../data/vector_sector/odd_low_energy_calibration.json), [independent verification/local diagnostics](../../../data/vector_sector/odd_low_energy_calibration_verification.json), and [SymPy transcript](../../../data/vector_sector/odd_low_energy_calibration.md). Input hashes, all separate minima, pulls, nuisance values, representative gauges, conditioning, boundary checks and nested measured-prediction changes are retained.
+
+**Domain correction (2026-10-20):** the original implementation imposed an
+extra sign requirement on all three double-trace current residues, tying them
+to the universal-source residues. This is not implied by the Lagrangian: at
+$y_V=0$, the double-trace source action exactly contains the single-trace
+model, including its negative-strange-source solution. The archived
+double-trace entries in the 1792-run calibration and the $\chi^2=54.216008$
+focused result therefore describe an artificially restricted domain. The
+double-trace sign check has been removed from both fit implementations. The
+large calibration grid has not yet been regenerated, so its double-trace
+results and source-sign certificates must not be used as results of the
+corrected fit. The focused corrected refit is recorded in
+[odd-preliminary-fit.md](odd-preliminary-fit.md).
 
 # Remaining exit gates and next step
 
