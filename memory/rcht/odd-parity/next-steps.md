@@ -33,6 +33,17 @@ and [stage-4 rank diagnostics](vector-stage4-rank.md).
 
 ## Current priority: odd extension and low-energy calibration
 
+The user's 2026-10-19 instruction now selects a
+[focused preliminary fit](odd-preliminary-fit.md): original eleven odd
+operators, the primary twelve-summary dataset, charged-rho and charged-K-star
+mass inputs, evaluated phi electronic width and the near-ideal root. Keep
+the four electromagnetic-source hypotheses separate and reuse the best valid
+archived minima. Report targeted one-input changes and the two data-removal
+controls. Further optimization must answer a specific material discrepancy;
+the 1792-case survey is background evidence rather than the working task.
+Seven measured odd combinations leave four original coefficient directions
+unmeasured, which must accompany any numerical coefficient representative.
+
 The latest [power-counting continuation](odd-power-counted-channel-maps.md)
 combines the leading/higher neutral cubic parent maps with source/Fourier
 normalization and the LO EOM contact. The
@@ -77,8 +88,9 @@ two-boson resonance targets in every scenario; zero images for the original,
 soft-leading and promoted-leading models hold only at fixed nuisances and
 the declared finite neutral tree probes. The targeted finite sign/source
 continuation is recorded in [the profile result](odd-low-energy-profiles.md);
-global minima remain unproven. Next compute joint nuisance/target nulls and
-complete missing predictor components before any physical band.
+global minima remain unproven. The focused working fit above takes priority;
+joint nuisance/target nulls and missing predictor components are required
+when proceeding to an ALP uncertainty band.
 Stage D's full validation/propagation gate remains open. Source-family,
 conditional measured and sampled target ranks remain distinct.
 

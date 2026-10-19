@@ -16,7 +16,7 @@
 ### 2.2 Odd-parity sector
 
 - Complete Lagrangian: IN PROGRESS
-- Fit to the parameters: IN PROGRESS
+- Fit to the parameters: IN PROGRESS; use the [focused preliminary fit](rcht/odd-parity/odd-preliminary-fit.md) with one fixed mass/data setup and separate source hypotheses, then address material input sensitivities before further optimization.
 - Calculation of $a \to 2V$, $a \to \gamma V$, $a \to VPP$, $a\to \gamma PP$ and mixing contribution to $a\to 2\gamma$: MISSING
 
 ## 3. Decays into 4 particles

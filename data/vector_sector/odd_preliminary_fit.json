@@ -1,0 +1,2374 @@
+{
+  "scope": "One fixed experimental-input setup, four distinct source hypotheses, three one-at-a-time input sensitivities and two data-removal checks for the negative single-trace source case, retained as a conditional working example because it describes the primary data; archive extraction without new minimization.",
+  "selection_policy": "Charged rho and Kstar mass summaries; evaluated phi electronic width; near-ideal inverse mass root; primary twelve odd summaries. These choices define a conditional comparison, not a uniquely preferred source hypothesis.",
+  "conventions": "\\epsilon^{0123}=+1; metric (+---); canonical c_i=-c_i^R and d_i=-d_i^R; old archives remain reference backend inputs.",
+  "uncertainty_policy": "Quoted diagonal experimental summaries, fixed central Alda neutral inputs, tree-level real-photon model. Null directions are unmeasured; representatives are not eleven separately measured coefficients. Local prediction errors are sign-branch conditional; no global nonlinear confidence intervals.",
+  "results": [
+    {
+      "label": "central_universal",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "universal"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 128,
+      "chi2": 362.1454688441374,
+      "odd_chi2": 15.09479399249824,
+      "ancillary_chi2": 347.05067485163914,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": -0.0015399035160762002,
+        "c2": 0.0003138976078686935,
+        "c3": -0.001790481193683153,
+        "c4": 0.024173500145869865,
+        "c5": 0.0015399035160760018,
+        "c6": -0.001853801123949461,
+        "c7": 3.469446951953614e-17,
+        "d1": 0.25150782568175484,
+        "d2": -0.011724027724086048,
+        "d3": 0.2912591985199143,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": 0.0015399035160762002,
+        "c2": -0.0003138976078686935,
+        "c3": 0.001790481193683153,
+        "c4": -0.024173500145869865,
+        "c5": -0.0015399035160760018,
+        "c6": 0.001853801123949461,
+        "c7": -3.469446951953614e-17,
+        "d1": -0.25150782568175484,
+        "d2": 0.011724027724086048,
+        "d3": -0.2912591985199143,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          -0.6951525312982092,
+          -0.3417059491290683,
+          5.059145173876282e-05,
+          0.0
+        ],
+        [
+          -0.022975032510465065,
+          0.6320379617072872,
+          -0.0004035369136817667,
+          0.0
+        ],
+        [
+          2.7553776725218484e-17,
+          1.3874249000389106e-16,
+          1.4238704461370723e-17,
+          0.0
+        ],
+        [
+          -8.08240011239431e-17,
+          2.198968083178077e-16,
+          8.274633766895702e-18,
+          0.0
+        ],
+        [
+          -0.7181275638086745,
+          0.29033201257821967,
+          -0.0003529454619430015,
+          0.0
+        ],
+        [
+          -0.022975032510464892,
+          0.6320379617072867,
+          -0.0004035369136817757,
+          0.0
+        ],
+        [
+          0.00023683369004715363,
+          -0.0006298602057295752,
+          -0.9999997735929363,
+          0.0
+        ],
+        [
+          2.2709913491243037e-15,
+          3.0543857294835374e-15,
+          6.263964218359131e-17,
+          0.0
+        ],
+        [
+          -1.2531916691080505e-16,
+          1.2483650522179553e-15,
+          9.383849462367552e-17,
+          0.0
+        ],
+        [
+          -2.724172565323881e-15,
+          7.693443073776312e-15,
+          5.336041428104114e-17,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 7.256100905335411e-16,
+      "null_annihilation_norm": 8.27852384488355e-15,
+      "even_parameters": [
+        0.7746464254876106,
+        0.8924522360226069,
+        0.018949177116804623,
+        0.039244572022091875,
+        0.15290854056860145
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7746464254876106,
+        "m_Kstar_GeV": 0.8924522360226069,
+        "Delta_V_GeV2": 0.018949177116804623,
+        "kappa_V": 0.039244572022091875,
+        "F_V_GeV": 0.15290854056860145
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.04726989791273992,
+        "Kstarplus": 0.051399262177630155,
+        "etap": 0.0002037651070114229,
+        "omega": 0.008594176234746545,
+        "phi": 0.004249161124137627,
+        "rho0": 0.14765907817530255,
+        "rhoplus": 0.1490916151253123
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.07951184055898486,
+          "pull": -1.4770960892648688,
+          "local_prediction_sigma": 0.002324541603873121
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.000568997603048644,
+          "pull": 1.2374700381080503,
+          "local_prediction_sigma": 1.881677149781395e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.00036208211658798157,
+          "pull": 2.956291266094362,
+          "local_prediction_sigma": 1.13342346844651e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0006260797880437431,
+          "pull": -0.030155476586591835,
+          "local_prediction_sigma": 2.6243314098026196e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.024760109426922965,
+          "pull": -0.3427008186814811,
+          "local_prediction_sigma": 0.0006964443343557299
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012651234697407147,
+          "pull": 0.12808674351786653,
+          "local_prediction_sigma": 0.00039909960311114646
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.0023533416038315916,
+          "pull": -0.5078971246114682,
+          "local_prediction_sigma": 0.00018868229105865685
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009795099903050586,
+          "pull": -0.005444552166015256,
+          "local_prediction_sigma": 8.997540994504912e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.0004388732047655052,
+          "pull": -0.22253590468989531,
+          "local_prediction_sigma": 1.4766853947691443e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.974342607379067e-09,
+          "pull": 1.4708663302769533,
+          "local_prediction_sigma": 5.519687320571431e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.187758574514752e-07,
+          "pull": 0.1542143028597341,
+          "local_prediction_sigma": 1.7845265085359362e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.2587655140992535e-06,
+          "pull": -0.11176045210919063,
+          "local_prediction_sigma": 1.890802974548111e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "central_single_trace_positive",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_positive"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 132,
+      "chi2": 346.2937126927641,
+      "odd_chi2": 15.248972557651335,
+      "ancillary_chi2": 331.04474013511276,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": -0.0025559570157932783,
+        "c2": 0.0023333974679189623,
+        "c3": -0.0017421482205109383,
+        "c4": 0.024413722848796938,
+        "c5": 0.0025559570157946336,
+        "c6": -0.004889354483706927,
+        "c7": -4.85722573273506e-17,
+        "d1": 0.2885329757732441,
+        "d2": -0.010427095166268876,
+        "d3": 0.3286616790000002,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": 0.0025559570157932783,
+        "c2": -0.0023333974679189623,
+        "c3": 0.0017421482205109383,
+        "c4": -0.024413722848796938,
+        "c5": -0.0025559570157946336,
+        "c6": 0.004889354483706927,
+        "c7": 4.85722573273506e-17,
+        "d1": -0.2885329757732441,
+        "d2": 0.010427095166268876,
+        "d3": -0.3286616790000002,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          0.7745842047254019,
+          0.004375744801404385,
+          -0.0004032956116272405,
+          0.0
+        ],
+        [
+          -0.2549335639442084,
+          -0.5787993227291169,
+          -0.0004711507389998258,
+          0.0
+        ],
+        [
+          3.5183846819965757e-17,
+          1.6074497725085432e-16,
+          -2.457349019509407e-18,
+          0.0
+        ],
+        [
+          9.668240671981056e-18,
+          6.239548307091316e-17,
+          1.2188677694069767e-18,
+          0.0
+        ],
+        [
+          0.5196506407811928,
+          -0.574423577927713,
+          -0.0008744463506270685,
+          0.0
+        ],
+        [
+          -0.2549335639442084,
+          -0.5787993227291179,
+          -0.0004711507389998375,
+          0.0
+        ],
+        [
+          0.0005265691039715963,
+          -0.0010459420571646138,
+          0.9999993143648609,
+          0.0
+        ],
+        [
+          3.558569923555123e-15,
+          5.818801165016599e-15,
+          8.195184140833075e-17,
+          0.0
+        ],
+        [
+          3.9838228015762596e-16,
+          1.4817086899166815e-15,
+          -5.179165696662443e-18,
+          0.0
+        ],
+        [
+          -1.0554108920595432e-15,
+          6.775747841461779e-15,
+          7.906072081998066e-17,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 8.124335762203784e-16,
+      "null_annihilation_norm": 1.5438164539816177e-14,
+      "even_parameters": [
+        0.7746260330482577,
+        0.8924621456044559,
+        0.0189970236357352,
+        0.03916290739982905,
+        0.15174687011550708,
+        0.0063943295422305025
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7746260330482577,
+        "m_Kstar_GeV": 0.8924621456044559,
+        "Delta_V_GeV2": 0.0189970236357352,
+        "kappa_V": 0.03916290739982905,
+        "F_V_GeV": 0.15174687011550708,
+        "z_V_GeV_inverse": 0.0063943295422305025
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.047272775547706695,
+        "Kstarplus": 0.05139962720267048,
+        "etap": 0.00020468919099473783,
+        "omega": 0.008591672891982226,
+        "phi": 0.0042491516509159935,
+        "rho0": 0.14765703135987904,
+        "rhoplus": 0.14909573716955943
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.07935977563252429,
+          "pull": -1.5334164323984127,
+          "local_prediction_sigma": 0.0023185546137281026
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.0005750575898791302,
+          "pull": 1.313219873489127,
+          "local_prediction_sigma": 1.8981113817818187e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.00036092334463471045,
+          "pull": 2.9011116492719276,
+          "local_prediction_sigma": 1.1322230156187433e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0006344466265787618,
+          "pull": 0.034204819836629395,
+          "local_prediction_sigma": 2.6615414690274787e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.02476757804605031,
+          "pull": -0.33203136278527157,
+          "local_prediction_sigma": 0.000696533872321822
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012648233539452497,
+          "pull": 0.12058384863124129,
+          "local_prediction_sigma": 0.00039909775518732576
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.0023639655910448277,
+          "pull": -0.45730670931034423,
+          "local_prediction_sigma": 0.00018948134700986
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009797524331660536,
+          "pull": -0.0027507425994045703,
+          "local_prediction_sigma": 8.997520377986015e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.0004444135414419479,
+          "pull": -0.11172917116104136,
+          "local_prediction_sigma": 1.5061346242885344e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.982464374456238e-09,
+          "pull": 1.5401819447836278,
+          "local_prediction_sigma": 5.364273203366744e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.18695218959174e-07,
+          "pull": 0.1497343866207765,
+          "local_prediction_sigma": 1.7865941697759067e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.257156583206262e-06,
+          "pull": -0.12022850944072419,
+          "local_prediction_sigma": 1.8915739436433585e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "central_single_trace_negative",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_negative"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 136,
+      "chi2": 5.567523279882881,
+      "odd_chi2": 3.711301864548906,
+      "ancillary_chi2": 1.856221415333975,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": -0.003514010215819321,
+        "c2": -0.02407058577902864,
+        "c3": 0.005638957647771834,
+        "c4": 0.019521142935384102,
+        "c5": 0.0035140102158206284,
+        "c6": 0.020556575563208366,
+        "c7": 3.469446951953614e-18,
+        "d1": -0.12963975306814232,
+        "d2": 0.003351724791952035,
+        "d3": 0.06535894551030719,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": 0.003514010215819321,
+        "c2": 0.02407058577902864,
+        "c3": -0.005638957647771834,
+        "c4": -0.019521142935384102,
+        "c5": -0.0035140102158206284,
+        "c6": -0.020556575563208366,
+        "c7": -3.469446951953614e-18,
+        "d1": 0.12963975306814232,
+        "d2": -0.003351724791952035,
+        "d3": -0.06535894551030719,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          0.6234463141717995,
+          -0.4596816270583495,
+          0.002737716308636109,
+          0.0
+        ],
+        [
+          0.13481115991299203,
+          0.6178801304372654,
+          -0.007077822669540755,
+          0.0
+        ],
+        [
+          -1.164414097870042e-16,
+          1.8988473348054555e-16,
+          -3.060163866559519e-19,
+          0.0
+        ],
+        [
+          -5.3466764024267406e-17,
+          -2.400718454415333e-16,
+          1.6088259958116445e-19,
+          0.0
+        ],
+        [
+          0.7582574740847903,
+          0.15819850337891633,
+          -0.004340106360904639,
+          0.0
+        ],
+        [
+          0.13481115991299153,
+          0.6178801304372659,
+          -0.0070778226695407545,
+          0.0
+        ],
+        [
+          -0.0034926588695015984,
+          -0.010692244634068072,
+          -0.9999367366182256,
+          0.0
+        ],
+        [
+          5.556859265045153e-15,
+          -3.5223087412920517e-15,
+          -1.1012620953995498e-17,
+          0.0
+        ],
+        [
+          -2.585878954616894e-16,
+          5.023039136792019e-17,
+          -5.101142605079963e-18,
+          0.0
+        ],
+        [
+          -1.6163798451037838e-15,
+          -9.451713343450016e-16,
+          1.6465887561495162e-17,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 1.1223477727005054e-15,
+      "null_annihilation_norm": 5.374924125022713e-15,
+      "even_parameters": [
+        0.7750812133302757,
+        0.891653203813661,
+        0.018196999869663357,
+        0.0428464701016948,
+        0.168952777554148,
+        -0.17026995728419667
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7750812133302757,
+        "m_Kstar_GeV": 0.891653203813661,
+        "Delta_V_GeV2": 0.018196999869663357,
+        "kappa_V": 0.0428464701016948,
+        "F_V_GeV": 0.168952777554148,
+        "z_V_GeV_inverse": -0.17026995728419667
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.04729821440858426,
+        "Kstarplus": 0.05139889415812293,
+        "etap": 0.00020423229373571492,
+        "omega": 0.008658598423243824,
+        "phi": 0.004249086249376823,
+        "rho0": 0.14750477000196038,
+        "rhoplus": 0.14908753655490908
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.0828016895718296,
+          "pull": -0.25863349191496643,
+          "local_prediction_sigma": 0.0024366478150614768
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.0005603394112996153,
+          "pull": 1.1292426412451917,
+          "local_prediction_sigma": 1.945646971411104e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.0003222229044946264,
+          "pull": 1.058233547363162,
+          "local_prediction_sigma": 1.7564776878988823e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0005340003309205676,
+          "pull": -0.738458992918711,
+          "local_prediction_sigma": 2.1275478200834002e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.024763876589004547,
+          "pull": -0.3373191585649346,
+          "local_prediction_sigma": 0.0006831022266081776
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.01262747697097786,
+          "pull": 0.06869242744464779,
+          "local_prediction_sigma": 0.0003979909196923787
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.002453928961693717,
+          "pull": -0.028909706220394824,
+          "local_prediction_sigma": 0.00018701403661617043
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009792653988451713,
+          "pull": -0.008162235053651911,
+          "local_prediction_sigma": 8.997602624170248e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.00043324653335044837,
+          "pull": -0.3350693329910324,
+          "local_prediction_sigma": 1.5994500291436614e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.732104456221945e-09,
+          "pull": -0.5965269038399427,
+          "local_prediction_sigma": 6.651422858745536e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.213802286911352e-07,
+          "pull": 0.2989015939519557,
+          "local_prediction_sigma": 1.7687103150907232e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.3113232090970525e-06,
+          "pull": 0.16485899524764663,
+          "local_prediction_sigma": 1.8734075092231467e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "central_double_trace",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "double_trace"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 140,
+      "chi2": 54.21600784354674,
+      "odd_chi2": 41.34131906221591,
+      "ancillary_chi2": 12.874688781330827,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": 0.018156961325560387,
+        "c2": 0.06570482727263634,
+        "c3": -0.07943627440392122,
+        "c4": -0.02428666215928747,
+        "c5": -0.018156961325557008,
+        "c6": -0.047547865947085016,
+        "c7": -0.0,
+        "d1": 0.9636436535828027,
+        "d2": -0.4977091800103941,
+        "d3": 0.77234905900147,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": -0.018156961325560387,
+        "c2": -0.06570482727263634,
+        "c3": 0.07943627440392122,
+        "c4": 0.02428666215928747,
+        "c5": 0.018156961325557008,
+        "c6": 0.047547865947085016,
+        "c7": 0.0,
+        "d1": -0.9636436535828027,
+        "d2": 0.4977091800103941,
+        "d3": -0.77234905900147,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          0.7722514350043931,
+          0.060230101118207216,
+          -0.00023675503434156025,
+          0.0
+        ],
+        [
+          -0.21252420479842316,
+          -0.5956789032616748,
+          0.0003264716926525388,
+          0.0
+        ],
+        [
+          1.941665413171306e-16,
+          1.121511806204287e-16,
+          3.446727495140581e-17,
+          0.0
+        ],
+        [
+          -5.664155025833306e-17,
+          -1.6710985590375186e-16,
+          1.0226264336764062e-17,
+          0.0
+        ],
+        [
+          0.5597272302059697,
+          -0.5354488021434677,
+          8.97166583109594e-05,
+          0.0
+        ],
+        [
+          -0.212524204798423,
+          -0.5956789032616746,
+          0.00032647169265252984,
+          0.0
+        ],
+        [
+          0.00027138386971863743,
+          0.00045124311909203055,
+          0.9999998613652118,
+          0.0
+        ],
+        [
+          -1.5389772544670759e-15,
+          -2.096836777082376e-15,
+          1.5507539600844794e-16,
+          0.0
+        ],
+        [
+          -5.70607029914047e-17,
+          6.671788427523613e-17,
+          1.8614113774364218e-16,
+          0.0
+        ],
+        [
+          -3.067819134238795e-15,
+          -1.5157263914437258e-15,
+          -7.046165710255218e-17,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 2.3735147687527132e-15,
+      "null_annihilation_norm": 9.096976397353612e-15,
+      "even_parameters": [
+        0.7752364829143551,
+        0.8916334612080584,
+        0.01778165411938968,
+        0.04330016062943828,
+        0.1556978973559517,
+        0.0004613380227715146,
+        0.0184780033801967
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7752364829143551,
+        "m_Kstar_GeV": 0.8916334612080584,
+        "Delta_V_GeV2": 0.01778165411938968,
+        "kappa_V": 0.04330016062943828,
+        "F_V_GeV": 0.1556978973559517,
+        "z_V_GeV_inverse": 0.0004613380227715146,
+        "y_V_GeV_inverse": 0.0184780033801967
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.04744755734240397,
+        "Kstarplus": 0.05141085013909398,
+        "etap": 0.00020395994018673815,
+        "omega": 0.008790129323008822,
+        "phi": 0.004248370483440112,
+        "rho0": 0.1472895462872833,
+        "rhoplus": 0.1490130602411805
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.0886891745348598,
+          "pull": 1.9219164943925184,
+          "local_prediction_sigma": 0.002511839397874562
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.00034228001471987434,
+          "pull": -1.5964998160015704,
+          "local_prediction_sigma": 2.959685200099539e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.0002695917014907379,
+          "pull": -1.4480142147267652,
+          "local_prediction_sigma": 1.396993166670691e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.00029587631289946007,
+          "pull": -2.5701822084656922,
+          "local_prediction_sigma": 3.67908917665068e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.024761677904950076,
+          "pull": -0.34046013578560774,
+          "local_prediction_sigma": 0.000695559911170024
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012395735965283986,
+          "pull": -0.5106600867900348,
+          "local_prediction_sigma": 0.00039746518105860794
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.002887684602354602,
+          "pull": 2.0365933445457247,
+          "local_prediction_sigma": 0.0001978450210693604
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009871517316779592,
+          "pull": 0.07946368531065853,
+          "local_prediction_sigma": 8.99893589950272e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.0002206563741835071,
+          "pull": -4.586872516329858,
+          "local_prediction_sigma": 2.303021094382177e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.883633486196344e-09,
+          "pull": 0.6967049419487654,
+          "local_prediction_sigma": 4.415223824677238e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.073927901524476e-07,
+          "pull": -0.47817832486402223,
+          "local_prediction_sigma": 1.7879823658901164e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.343585342584966e-06,
+          "pull": 0.3346596978156112,
+          "local_prediction_sigma": 1.8919922521474736e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "change_rho_input",
+      "scenario": {
+        "rho_input": "rho_neutral",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_negative"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 8,
+      "chi2": 5.646622459077768,
+      "odd_chi2": 3.76135087394419,
+      "ancillary_chi2": 1.885271585133578,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": -0.0035813720741085945,
+        "c2": -0.02417256765066716,
+        "c3": 0.005671895577409065,
+        "c4": 0.019490653059000437,
+        "c5": 0.0035813720741079327,
+        "c6": 0.02059119557655793,
+        "c7": -3.642919299551295e-17,
+        "d1": -0.13119468171876986,
+        "d2": 0.003442625613961978,
+        "d3": 0.06524003502519042,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": 0.0035813720741085945,
+        "c2": 0.02417256765066716,
+        "c3": -0.005671895577409065,
+        "c4": -0.019490653059000437,
+        "c5": -0.0035813720741079327,
+        "c6": -0.02059119557655793,
+        "c7": 3.642919299551295e-17,
+        "d1": 0.13119468171876986,
+        "d2": -0.003442625613961978,
+        "d3": -0.06524003502519042,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          0.13125619119392376,
+          0.7632432186084528,
+          -0.015218459891636532,
+          0.0
+        ],
+        [
+          -0.6127252237723566,
+          -0.1567198601585619,
+          -0.0025856498207833733,
+          0.0
+        ],
+        [
+          -1.7072310724196071e-16,
+          1.3201414812389246e-16,
+          -1.5844914260229078e-17,
+          0.0
+        ],
+        [
+          2.0163968540684046e-16,
+          -8.45626807518774e-17,
+          2.590282325619499e-17,
+          0.0
+        ],
+        [
+          -0.4814690325784339,
+          0.6065233584498912,
+          -0.017804109712419972,
+          0.0
+        ],
+        [
+          -0.6127252237723574,
+          -0.15671986015856157,
+          -0.0025856498207834145,
+          0.0
+        ],
+        [
+          0.009745934920834675,
+          -0.021609622084514307,
+          -0.9997189810071044,
+          0.0
+        ],
+        [
+          4.609450901370986e-15,
+          -2.6869591898724336e-15,
+          3.9066518316060787e-16,
+          0.0
+        ],
+        [
+          7.016295972550921e-16,
+          1.179720417936672e-16,
+          5.830934801956839e-17,
+          0.0
+        ],
+        [
+          -1.6867104913515375e-15,
+          -6.920205321203159e-16,
+          3.939655308509985e-18,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 3.778227201027382e-16,
+      "null_annihilation_norm": 1.0586832208446202e-14,
+      "even_parameters": [
+        0.775246665571578,
+        0.8916531586826877,
+        0.01779189556256956,
+        0.043245041487068744,
+        0.16897114916303577,
+        -0.1702688334887983
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.775246665571578,
+        "m_Kstar_GeV": 0.8916531586826877,
+        "Delta_V_GeV2": 0.01779189556256956,
+        "kappa_V": 0.043245041487068744,
+        "F_V_GeV": 0.16897114916303577,
+        "z_V_GeV_inverse": -0.1702688334887983
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.047298309238116266,
+        "Kstarplus": 0.05139893110074829,
+        "etap": 0.000204069684427466,
+        "omega": 0.008658145304908103,
+        "phi": 0.004249086287909964,
+        "rho0": 0.1475055293665553,
+        "rhoplus": 0.14908794668907308
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.08278323425851657,
+          "pull": -0.26546879314201416,
+          "local_prediction_sigma": 0.00243597336235535
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.0005609589266030963,
+          "pull": 1.1369865825387038,
+          "local_prediction_sigma": 1.94541845864815e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.00032236637322524887,
+          "pull": 1.0650653916785187,
+          "local_prediction_sigma": 1.757550288046312e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0005330821436886628,
+          "pull": -0.7455219716256711,
+          "local_prediction_sigma": 2.1227542881890817e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.02476256310307038,
+          "pull": -0.33919556704231635,
+          "local_prediction_sigma": 0.000683108198113759
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012627489247067119,
+          "pull": 0.06872311766779708,
+          "local_prediction_sigma": 0.00039798801132313953
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.0024542521266289973,
+          "pull": -0.027370825576203073,
+          "local_prediction_sigma": 0.00018700685159660265
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.000979289957021461,
+          "pull": -0.007889366428211485,
+          "local_prediction_sigma": 8.997598755492711e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.0004338191615708999,
+          "pull": -0.32361676858200195,
+          "local_prediction_sigma": 1.5990154807214968e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.731285955352951e-09,
+          "pull": -0.6035124391513464,
+          "local_prediction_sigma": 6.650947598537293e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.214330978697308e-07,
+          "pull": 0.30183877054059766,
+          "local_prediction_sigma": 1.7685931361409796e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.311405673473768e-06,
+          "pull": 0.16529301828299137,
+          "local_prediction_sigma": 1.87339718391779e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "change_kstar_input",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_neutral",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_negative"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 200,
+      "chi2": 12.158901318721824,
+      "odd_chi2": 6.221084010104454,
+      "ancillary_chi2": 5.93781730861737,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": -0.0010731475694837765,
+        "c2": -0.020285991571171065,
+        "c3": 0.004544677422100599,
+        "c4": 0.019951971042086774,
+        "c5": 0.0010731475694839396,
+        "c6": 0.019212844001686234,
+        "c7": -1.3877787807814457e-17,
+        "d1": -0.07366003255827033,
+        "d2": -0.0022922490564673847,
+        "d3": 0.06892075655746595,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": 0.0010731475694837765,
+        "c2": 0.020285991571171065,
+        "c3": -0.004544677422100599,
+        "c4": -0.019951971042086774,
+        "c5": -0.0010731475694839396,
+        "c6": -0.019212844001686234,
+        "c7": 1.3877787807814457e-17,
+        "d1": 0.07366003255827033,
+        "d2": 0.0022922490564673847,
+        "d3": -0.06892075655746595,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          -0.16538583688045502,
+          -0.7563752926636863,
+          0.023322555762077,
+          0.0
+        ],
+        [
+          0.6190666369336444,
+          0.129266909208722,
+          0.006823871283253362,
+          0.0
+        ],
+        [
+          2.6776145610493496e-16,
+          7.656216040495431e-18,
+          1.8628330732697998e-17,
+          0.0
+        ],
+        [
+          -2.473562790094992e-16,
+          -5.081734794556814e-17,
+          -3.5546465000681774e-17,
+          0.0
+        ],
+        [
+          0.4536808000531909,
+          -0.6271083834549631,
+          0.030146427045330406,
+          0.0
+        ],
+        [
+          0.6190666369336453,
+          0.12926690920872255,
+          0.006823871283253394,
+          0.0
+        ],
+        [
+          -0.01828263366645067,
+          0.034808395764151706,
+          0.9992267614963803,
+          0.0
+        ],
+        [
+          -7.742172965530647e-15,
+          -2.5777847765870558e-15,
+          -2.856947215736782e-16,
+          0.0
+        ],
+        [
+          8.597618003900828e-17,
+          1.74628907677674e-16,
+          -1.029524072786644e-16,
+          0.0
+        ],
+        [
+          -4.3579132197402362e-16,
+          3.613920662391293e-16,
+          -9.857240765274798e-18,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          -0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 1.0458832236793736e-15,
+      "null_annihilation_norm": 8.518870049547922e-15,
+      "even_parameters": [
+        0.7750781115931239,
+        0.8954925800075016,
+        0.01741240415860845,
+        0.03013296375840687,
+        0.1686758391431442,
+        -0.17154640433266619
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7750781115931239,
+        "m_Kstar_GeV": 0.8954925800075016,
+        "Delta_V_GeV2": 0.01741240415860845,
+        "kappa_V": 0.03013296375840687,
+        "F_V_GeV": 0.1686758391431442,
+        "z_V_GeV_inverse": -0.17154640433266619
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.047291614494496134,
+        "Kstarplus": 0.05139851232120086,
+        "etap": 0.000190235209790134,
+        "omega": 0.008643716614514265,
+        "phi": 0.004249127141345831,
+        "rho0": 0.14756645117620687,
+        "rhoplus": 0.14908321905029873
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.08201563795746768,
+          "pull": -0.5497637194564177,
+          "local_prediction_sigma": 0.0024280418403766287
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.0005553979586034309,
+          "pull": 1.0674744825428863,
+          "local_prediction_sigma": 1.93365564079087e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.00034014979710078673,
+          "pull": 1.9118951000374647,
+          "local_prediction_sigma": 1.580210961874564e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0005754360662199023,
+          "pull": -0.4197225675392133,
+          "local_prediction_sigma": 2.1284774129674248e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.02465914542896243,
+          "pull": -0.48693510148224706,
+          "local_prediction_sigma": 0.0006875250652304588
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012640462844470861,
+          "pull": 0.1011571111771527,
+          "local_prediction_sigma": 0.00039841581067198673
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.0024312269310174683,
+          "pull": -0.1370146142025317,
+          "local_prediction_sigma": 0.00018705172523726736
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009790115000103945,
+          "pull": -0.010983333217838159,
+          "local_prediction_sigma": 8.997661094098592e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.0004271200644240961,
+          "pull": -0.45759871151807735,
+          "local_prediction_sigma": 1.5646098441013583e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.735850404213202e-09,
+          "pull": -0.5645569292695246,
+          "local_prediction_sigma": 6.6847895673939e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.219489213399618e-07,
+          "pull": 0.33049562999787685,
+          "local_prediction_sigma": 1.7816434177658985e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.3199684877095755e-06,
+          "pull": 0.21036046162934618,
+          "local_prediction_sigma": 1.8798380064644735e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "change_phi_input",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_average",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_negative"
+      },
+      "model": "original_11",
+      "control": "primary",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 168,
+      "chi2": 5.627632779453851,
+      "odd_chi2": 3.7609751920488703,
+      "ancillary_chi2": 1.8666575874049811,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": -0.0034022050175316885,
+        "c2": -0.02387643070300556,
+        "c3": 0.0055697273237293845,
+        "c4": 0.01957747456900572,
+        "c5": 0.003402205017531889,
+        "c6": 0.0204742256854735,
+        "c7": 3.9898639947466563e-17,
+        "d1": -0.12715826704876512,
+        "d2": 0.003209719963875938,
+        "d3": 0.06579039128314987,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": 0.0034022050175316885,
+        "c2": 0.02387643070300556,
+        "c3": -0.0055697273237293845,
+        "c4": -0.01957747456900572,
+        "c5": -0.003402205017531889,
+        "c6": -0.0204742256854735,
+        "c7": -3.9898639947466563e-17,
+        "d1": 0.12715826704876512,
+        "d2": -0.003209719963875938,
+        "d3": -0.06579039128314987,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          0.7637026262964657,
+          -0.12945007966485259,
+          0.0009876551242498214,
+          0.0
+        ],
+        [
+          -0.15808718185385,
+          0.6123712616650694,
+          0.0031433772027508007,
+          0.0
+        ],
+        [
+          -6.164165723886844e-17,
+          -4.7250524486401466e-17,
+          1.981396918276059e-17,
+          0.0
+        ],
+        [
+          5.023537512231274e-17,
+          -7.735126763982745e-17,
+          -5.664267604016784e-17,
+          0.0
+        ],
+        [
+          0.6056154444426155,
+          0.48292118200021705,
+          0.004131032327000699,
+          0.0
+        ],
+        [
+          -0.15808718185385034,
+          0.6123712616650694,
+          0.0031433772027508458,
+          0.0
+        ],
+        [
+          0.0022622792643604075,
+          0.0057170467672367255,
+          -0.9999810985557633,
+          0.0
+        ],
+        [
+          1.7684492977084915e-15,
+          -1.7914169175372943e-16,
+          -3.46301966668311e-16,
+          0.0
+        ],
+        [
+          -1.8400820588567722e-16,
+          -5.636730786007442e-16,
+          -1.8300360502435384e-16,
+          0.0
+        ],
+        [
+          5.792350266421713e-16,
+          1.0452498995595687e-15,
+          2.5406421824269806e-17,
+          0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 1.538040464811856e-15,
+      "null_annihilation_norm": 6.270349893781229e-15,
+      "even_parameters": [
+        0.7750811471189769,
+        0.8916505085173085,
+        0.01819846664681256,
+        0.042854790194678284,
+        0.16888689895882736,
+        -0.16953954722168496
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7750811471189769,
+        "m_Kstar_GeV": 0.8916505085173085,
+        "Delta_V_GeV2": 0.01819846664681256,
+        "kappa_V": 0.042854790194678284,
+        "F_V_GeV": 0.16888689895882736,
+        "z_V_GeV_inverse": -0.16953954722168496
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.04729732620380175,
+        "Kstarplus": 0.051398881269236765,
+        "etap": 0.00020356937720977214,
+        "omega": 0.008658468734677871,
+        "phi": 0.004249091172106488,
+        "rho0": 0.14750669563833269,
+        "rhoplus": 0.14908739419328576
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.08279525001400323,
+          "pull": -0.2610185133321388,
+          "local_prediction_sigma": 0.0024382320935511723
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.0005601818707291244,
+          "pull": 1.1272733841140552,
+          "local_prediction_sigma": 1.9454092619785336e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.0003228110605714184,
+          "pull": 1.0862409795913526,
+          "local_prediction_sigma": 1.7484281445756333e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0005342407322947066,
+          "pull": -0.7366097515791803,
+          "local_prediction_sigma": 2.1299609886098503e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.024758536015994037,
+          "pull": -0.344948548579949,
+          "local_prediction_sigma": 0.0006832350840076327
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012629041645772355,
+          "pull": 0.07260411443088619,
+          "local_prediction_sigma": 0.000397989581670225
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.002450897972003106,
+          "pull": -0.04334299046139927,
+          "local_prediction_sigma": 0.00018694418913136747
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009792568304842668,
+          "pull": -0.008257439063701617,
+          "local_prediction_sigma": 8.997603177726972e-05
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.0004330473977048902,
+          "pull": -0.3390520459021953,
+          "local_prediction_sigma": 1.597986814545919e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.733800859365844e-09,
+          "pull": -0.582048869041225,
+          "local_prediction_sigma": 6.631615980806123e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.214292752275106e-07,
+          "pull": 0.3016264015283664,
+          "local_prediction_sigma": 1.768858701370121e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.312167023986427e-06,
+          "pull": 0.16930012624435398,
+          "local_prediction_sigma": 1.8736576139639587e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "without_broad_rho",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_negative"
+      },
+      "model": "original_11",
+      "control": "without_broad_rho",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 137,
+      "chi2": 0.37741791096306865,
+      "odd_chi2": 0.11042501229100088,
+      "ancillary_chi2": 0.2669928986720678,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": 0.0020618765946420563,
+        "c2": -0.015603070300514756,
+        "c3": 0.0028560068351198018,
+        "c4": 0.022407511528682394,
+        "c5": -0.0020618765946420004,
+        "c6": 0.017664946895156873,
+        "c7": -0.0,
+        "d1": -0.006206431622028088,
+        "d2": -0.002197153938528693,
+        "d3": 0.07574939305914372,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": -0.0020618765946420563,
+        "c2": 0.015603070300514756,
+        "c3": -0.0028560068351198018,
+        "c4": -0.022407511528682394,
+        "c5": 0.0020618765946420004,
+        "c6": -0.017664946895156873,
+        "c7": 0.0,
+        "d1": 0.006206431622028088,
+        "d2": 0.002197153938528693,
+        "d3": -0.07574939305914372,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          -0.2606255165279872,
+          -0.7291945308353552,
+          0.018699634604084834,
+          0.0
+        ],
+        [
+          0.6305551475886735,
+          0.04895422932394253,
+          0.001920750042358562,
+          0.0
+        ],
+        [
+          1.2352492470044031e-17,
+          2.3551367286216638e-17,
+          -8.31264624507892e-18,
+          0.0
+        ],
+        [
+          -6.272751627306914e-17,
+          -4.073804131122557e-17,
+          1.1963192024575377e-17,
+          0.0
+        ],
+        [
+          0.36992963106068605,
+          -0.6802403015114123,
+          0.020620384646443345,
+          0.0
+        ],
+        [
+          0.6305551475886734,
+          0.048954229323942784,
+          0.001920750042358534,
+          0.0
+        ],
+        [
+          0.0051787929749378,
+          -0.027485182591111476,
+          -0.999608795900304,
+          0.0
+        ],
+        [
+          1.760279982212951e-15,
+          8.071204875627136e-16,
+          2.543247641246214e-16,
+          0.0
+        ],
+        [
+          5.217050328477642e-17,
+          -3.425422224745714e-16,
+          1.0662202419442832e-17,
+          0.0
+        ],
+        [
+          -5.902074310850869e-16,
+          5.071982417522243e-16,
+          1.835420386327693e-17,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 6.570746061101995e-16,
+      "null_annihilation_norm": 7.046499741343601e-15,
+      "even_parameters": [
+        0.775105574810621,
+        0.8916893838217161,
+        0.01812016064796957,
+        0.04279117683807931,
+        0.16895899043467252,
+        -0.1701139035877392
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.775105574810621,
+        "m_Kstar_GeV": 0.8916893838217161,
+        "Delta_V_GeV2": 0.01812016064796957,
+        "kappa_V": 0.04279117683807931,
+        "F_V_GeV": 0.16895899043467252,
+        "z_V_GeV_inverse": -0.1701139035877392
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.047297519756973286,
+        "Kstarplus": 0.051400000000000126,
+        "etap": 0.00023071964314278786,
+        "omega": 0.00868019678924226,
+        "phi": 0.004249001468388672,
+        "rho0": 0.1474,
+        "rhoplus": 0.1491
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.0836317353083888,
+          "pull": 0.048790854958812795,
+          "local_prediction_sigma": 0.002606304773024164
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0005895769112193637,
+          "pull": -0.31094683677412555,
+          "local_prediction_sigma": 3.551534253562835e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.025007377207432072,
+          "pull": 0.010538867760101291,
+          "local_prediction_sigma": 0.0006932036735682554
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012600468785160286,
+          "pull": 0.0011719629007143559,
+          "local_prediction_sigma": 0.00039820894513159657
+        },
+        {
+          "channel": "Kstar0_K0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00246,
+          "measurement_sigma": 0.00021,
+          "prediction": 0.002451559102954141,
+          "pull": -0.04019474783742278,
+          "local_prediction_sigma": 0.0001864241955132729
+        },
+        {
+          "channel": "Kstarplus_Kplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00098,
+          "measurement_sigma": 9e-05,
+          "prediction": 0.0009800000000042232,
+          "pull": 4.692427002517263e-11,
+          "local_prediction_sigma": 9.000000000000003e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.812893474961692e-09,
+          "pull": 0.09297088969779126,
+          "local_prediction_sigma": 8.167085440563904e-11
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.154983227932423e-07,
+          "pull": -0.02787095593098654,
+          "local_prediction_sigma": 1.7936957795570266e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.282740837842664e-06,
+          "pull": 0.014425462329813624,
+          "local_prediction_sigma": 1.8788795635842842e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    },
+    {
+      "label": "without_constrained_Kstar",
+      "scenario": {
+        "rho_input": "rho_charged",
+        "kstar_input": "kstar_charged",
+        "phi_input": "phi_evaluation",
+        "branch": "near_ideal",
+        "source_hypothesis": "single_trace_negative"
+      },
+      "model": "original_11",
+      "control": "without_constrained_Kstar",
+      "archive_source": "odd_low_energy_profiles.json",
+      "archive_pair_index": 138,
+      "chi2": 3.5374270187095194,
+      "odd_chi2": 2.5232718177900284,
+      "ancillary_chi2": 1.014155200919491,
+      "success": true,
+      "global_minimum_proven": false,
+      "canonical_representative_coefficients": {
+        "c1": 0.006677939560908869,
+        "c2": 0.030117088065592112,
+        "c3": -0.004183060520291057,
+        "c4": -0.016584776526906247,
+        "c5": -0.006677939560905244,
+        "c6": -0.023439148504687354,
+        "c7": -0.0,
+        "d1": 0.20659515854795324,
+        "d2": -0.038621088102135846,
+        "d3": -0.03739320960399531,
+        "d4": -0.0
+      },
+      "reference_backend_representative_coefficients": {
+        "c1": -0.006677939560908869,
+        "c2": -0.030117088065592112,
+        "c3": 0.004183060520291057,
+        "c4": 0.016584776526906247,
+        "c5": 0.006677939560905244,
+        "c6": 0.023439148504687354,
+        "c7": 0.0,
+        "d1": -0.20659515854795324,
+        "d2": 0.038621088102135846,
+        "d3": 0.03739320960399531,
+        "d4": 0.0
+      },
+      "coefficient_units": "dimensionless",
+      "representative_policy": "minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred",
+      "fixed_nuisance_measured_rank": 7,
+      "fixed_nuisance_coefficient_null_dimension": 4,
+      "fixed_nuisance_null_basis_columns": [
+        [
+          -0.736494350833076,
+          -0.23984927991239627,
+          0.006956587990576224,
+          0.0
+        ],
+        [
+          0.06673076962127125,
+          0.6289246792012727,
+          -0.0008673392241470363,
+          0.0
+        ],
+        [
+          5.3607943818048385e-17,
+          -2.393472713686786e-16,
+          4.857317610508261e-18,
+          0.0
+        ],
+        [
+          -1.9249046496457606e-15,
+          -9.759202746568929e-16,
+          -1.2445341628972233e-18,
+          0.0
+        ],
+        [
+          -0.6697635812118058,
+          0.38907539928887486,
+          0.006089248766429214,
+          0.0
+        ],
+        [
+          0.06673076962127006,
+          0.6289246792012722,
+          -0.0008673392241470249,
+          0.0
+        ],
+        [
+          -0.00931800648255901,
+          -0.0003903547880645397,
+          -0.9999565102434858,
+          0.0
+        ],
+        [
+          1.2563470447176013e-14,
+          5.497018899204058e-15,
+          -1.1726560829909182e-16,
+          0.0
+        ],
+        [
+          -5.2752333478900484e-15,
+          1.4216613166818344e-15,
+          -1.8098519939735063e-17,
+          0.0
+        ],
+        [
+          4.93747085031515e-15,
+          -2.761144562831215e-15,
+          2.3198879618742564e-17,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "projection_relative_defect": 5.683569381892749e-16,
+      "null_annihilation_norm": 4.472464146245005e-15,
+      "even_parameters": [
+        0.7750853858303113,
+        0.8916598064144431,
+        0.01818536174362921,
+        0.04283504463332154,
+        0.16895147887507375,
+        -0.1702467617149526
+      ],
+      "even_parameters_by_name": {
+        "m_rho_GeV": 0.7750853858303113,
+        "m_Kstar_GeV": 0.8916598064144431,
+        "Delta_V_GeV2": 0.01818536174362921,
+        "kappa_V": 0.04283504463332154,
+        "F_V_GeV": 0.16895147887507375,
+        "z_V_GeV_inverse": -0.1702467617149526
+      },
+      "shared_total_widths_gev": {
+        "Kstar0": 0.0473,
+        "Kstarplus": 0.0514,
+        "etap": 0.0002126594795413004,
+        "omega": 0.008657980291100268,
+        "phi": 0.004249047793266636,
+        "rho0": 0.14747863548279955,
+        "rhoplus": 0.1491
+      },
+      "observations": [
+        {
+          "channel": "omega_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0835,
+          "measurement_sigma": 0.0027,
+          "prediction": 0.08281193017738916,
+          "pull": -0.25484067504105185,
+          "local_prediction_sigma": 0.002622221021247236
+        },
+        {
+          "channel": "rho0_pi0_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00047,
+          "measurement_sigma": 8e-05,
+          "prediction": 0.0005372891596804933,
+          "pull": 0.8411144960061658,
+          "local_prediction_sigma": 2.0038155434233786e-05
+        },
+        {
+          "channel": "rho0_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0003,
+          "measurement_sigma": 2.1e-05,
+          "prediction": 0.00031733166507788417,
+          "pull": 0.825317384661152,
+          "local_prediction_sigma": 1.749786235728678e-05
+        },
+        {
+          "channel": "omega_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00063,
+          "measurement_sigma": 0.00013,
+          "prediction": 0.0005166758745364542,
+          "pull": -0.8717240420272758,
+          "local_prediction_sigma": 2.1016898687547705e-05
+        },
+        {
+          "channel": "etap_omega_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.025,
+          "measurement_sigma": 0.0007,
+          "prediction": 0.024835016909823936,
+          "pull": -0.23569012882295004,
+          "local_prediction_sigma": 0.0006870338551616871
+        },
+        {
+          "channel": "phi_eta_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.0126,
+          "measurement_sigma": 0.0004,
+          "prediction": 0.012615240385746119,
+          "pull": 0.03810096436529693,
+          "local_prediction_sigma": 0.0003996431337873248
+        },
+        {
+          "channel": "rhoplus_piplus_gamma",
+          "observable": "branching_fraction",
+          "unit": "dimensionless",
+          "measurement": 0.00045,
+          "measurement_sigma": 5e-05,
+          "prediction": 0.00045000000000001533,
+          "pull": 3.0682921481339775e-13,
+          "local_prediction_sigma": 5.000000000000002e-05
+        },
+        {
+          "channel": "pi0_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 7.802e-09,
+          "measurement_sigma": 1.17170815478941e-10,
+          "prediction": 7.853879317460185e-09,
+          "pull": 0.44276654769471563,
+          "local_prediction_sigma": 1.0715133670272768e-10
+        },
+        {
+          "channel": "eta_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 5.16e-07,
+          "measurement_sigma": 1.8e-08,
+          "prediction": 5.122454891576518e-07,
+          "pull": -0.20858393568601327,
+          "local_prediction_sigma": 1.768694105983449e-08
+        },
+        {
+          "channel": "etap_gamma_gamma",
+          "observable": "partial_width",
+          "unit": "GeV",
+          "measurement": 4.28e-06,
+          "measurement_sigma": 1.9e-07,
+          "prediction": 4.258127816306544e-06,
+          "pull": -0.11511675628134668,
+          "local_prediction_sigma": 1.8938244783545938e-07
+        }
+      ],
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+    }
+  ],
+  "sha256": {
+    "data/vector_sector/odd_low_energy_calibration.json": "a3896a3e9d14b60070d18601fa997940712ef4808527bbefc130ef8e9f24cd9c",
+    "data/vector_sector/odd_low_energy_profiles.json": "2218af1e91ec6d32c5ce534a4fb38c130af0db061742d65c65745336f9eb8e56",
+    "data/vector_sector/odd_low_energy_continuation.json": "b7c3e93019d6b7744d090c34785026356ecd132260165f56589b40759aad80c3",
+    "data/vector_sector/odd_low_energy_profile_reanchoring.json": "68fe57981a7662a63d21d3d4246658dd2c37e92b94543436cbb97d60fc270ad7",
+    "data/vector_sector/odd_low_energy_calibration_verification.json": "c9be2ceb593d1b8d3790c6f33cf6e1416c615ba52fd0747622548211310f5e34",
+    "data/vector_sector/odd_low_energy_jacobians.json": "f8735d0b5090c943831bc080b24a672c5c5cefd9f92dee601c854f143872236c",
+    "data/vector_sector/stage3_results.json": "a8cc2290afd22fcc43b98e7ab39e72f68c5694718769ca693d2e203216359192",
+    "data/vector_sector/alda_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+    "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
+    "scripts/summarize_odd_preliminary_fit.py": "958bd2d46a381a832e202c843327a27da90999735fdc9104f519d080a14ea6db"
+  }
+}

@@ -2,7 +2,7 @@
 title: Odd flavor-breaking and single/double-trace extension with low-energy calibration
 status: mixed
 created: 2026-10-13
-updated: 2026-10-14
+updated: 2026-10-19
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, Roig:2013baa, Kaiser:2000gs, ParticleDataGroup:2024cfk]
 provenance: assumption
 ---
@@ -250,6 +250,15 @@ low-energy amplitudes without double counting local resonance-saturated terms.
 
 ## Next executable task
 
+The user simplified the working fit on 2026-10-19. Use the
+[focused original-operator preliminary result](odd-preliminary-fit.md) with
+one fixed mass/data setup, separate source hypotheses, and targeted input
+and data-removal sensitivities. Reuse existing validated minima and do not
+repeat the full scenario grid. Resolve only material issues exposed by this
+compact result before further fit optimization. The remaining ALP predictor
+and uncertainty work below is a separate task from obtaining this
+conditional low-energy working fit.
+
 The [power-counting continuation](odd-power-counted-channel-maps.md) has now
 combined all leading/higher neutral cubic parents with source/Fourier/canonical
 normalization, both photon placements and the retained LO topological contact.
@@ -268,10 +277,11 @@ now implemented. The [conditional calibration](odd-low-energy-calibration.md)
 has executed their joint low-energy fit and local uncertainty/held-out
 identifiability diagnostics in all 64 scenarios. The [finite profiles](odd-low-energy-profiles.md)
 and [neutral target audit](odd-alp-measured-null-audit.md) are now executed.
-Next resolve the 26 continuing sign searches and 30 unresolved source
-endpoints, then compute full joint nuisance/target null projections and
-complete the missing charged/local/physical-predictor gates. No unique
-truncation or ALP band is established. The earlier intermediate statements below refer
+The later source continuation validates all 29 previously unresolved endpoints
+and re-anchors four references, as recorded in the profile result. The working
+fit now follows the focused task above. Full joint nuisance/target null
+projections and missing charged/local/physical predictors remain prerequisites
+for ALP uncertainty propagation. No unique ALP band is established. The earlier intermediate statements below refer
 to their original execution stages, not completion of physical predictors.
 
 The [power-counting proposal](odd-action-power-counting-proposal.md), saved
