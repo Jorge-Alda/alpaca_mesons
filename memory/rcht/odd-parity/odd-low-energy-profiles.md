@@ -2,7 +2,7 @@
 title: Finite sign-basin and physical-amplitude profile validation
 status: mixed
 created: 2026-10-14
-updated: 2026-10-14
+updated: 2026-10-19
 bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
 provenance: numerical-computation
 ---
@@ -41,12 +41,13 @@ The complete 256-pair run covers all 512 original/soft-leading model cases and p
 
 Fifty-six computationally prioritized interior pairs receive two profiles each. All **1909** physical profile points satisfy the optimizer/domain/image and physical-contrast constraints; the maximum independently reconstructed normalized constraint defect is $1.39\times10^{-12}$ and the residual reproduction defect is $4.25\times10^{-16}$. No profile found a lower reference. All 112 contrasts bracket both sides of the descriptive $\Delta\chi^2=3.84$ level, with no open side in the declared grid/extensions. These finite, sign-conditional brackets do not establish coverage or a globally unique solution.
 
-Six pairs whose preceding solution approached a source boundary receive one-sided source profiles. Twelve endpoints are valid and **30 remain unresolved**. No symmetric Gaussian errors or closed source-domain interval is assigned to those cases. The unresolved endpoints and continuing sign-batch improvement remain stage-D validation gates.
+Six pairs whose preceding solution approached a source boundary receive one-sided source profiles. Twelve endpoints are valid and **30 remain unresolved**. A further finite continuation ([script](../../../scripts/continue_odd_low_energy_profiles.py), [result](../../../data/vector_sector/odd_low_energy_continuation.json)) covers all 28 flagged pairs and performs 442 additional unconstrained fits. Six achieved minima improve by more than $10^{-4}$, at pairs 37, 45, 64, 90, 122 and 218; their new $chi^2$ values are respectively 2.28602596, 0.365868788, 3.03653351, 348.344646, 439.847677 and 371.508355. The largest training-image defect is $9.20\times10^{-15}$. One formerly invalid source endpoint now passes; 28 endpoints converge but miss the inherited $10^{-17}$ GeV source-constraint tolerance by cancellation-scale defects, and one has no feasible projected start. No tolerance change is made. These results do not establish global minima or complete source-boundary validation. Refit in direct source coordinates with an independent cancellation-aware certificate before accepting the boundary minima. No symmetric Gaussian errors or closed source-domain interval is assigned to unresolved cases.
 
 # Reproduction and artifacts
 
 ```text
 .venv/bin/python scripts/profile_odd_low_energy.py
+.venv/bin/python scripts/continue_odd_low_energy_profiles.py
 .venv/bin/python scripts/verify_odd_low_energy_profiles.py
 .venv/bin/python scripts/plot_odd_low_energy_profiles.py
 .venv/bin/python scripts/export_odd_profile_target_points.py

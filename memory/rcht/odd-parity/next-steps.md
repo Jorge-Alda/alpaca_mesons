@@ -2,7 +2,7 @@
 title: Next steps for the odd-parity vector-meson fit
 status: mixed
 created: 2026-10-04
-updated: 2026-10-15
+updated: 2026-10-19
 bibtex_keys: [Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, CLEO:1997fho, BaBar:2009rrj, Niecknig:2012sj, Aloni:2018vki, Alda:2026nrd]
 provenance: assumption
 ---
@@ -64,8 +64,11 @@ validate correction suppression. No preferred hierarchy or ALP band is
 established. The [finite sign/profile continuation](odd-low-energy-profiles.md)
 now performs 5888 sign-search fits and 112 physical profiles: 80 preceding
 minima improve, all 1909 physical points are valid, and all declared 3.84-level
-profile sides are bracketed. Twenty-six pairs still improve in the capped
-extra batch and 30 one-sided source endpoints remain unresolved. The
+profile sides are bracketed. A further 442 finite fits improve six flagged
+minima; 28 converged source endpoints still fail the inherited constraint
+tolerance at cancellation scale and one lacks a feasible projected start.
+Direct source coordinates and an independent constraint certificate are the
+next fit-validation task. The
 [finite neutral target audit](odd-alp-measured-null-audit.md) now certifies
 448 scenario/model cases. Correction-model SM nulls affect the sampled
 two-boson resonance targets in every scenario; zero images for the original,
