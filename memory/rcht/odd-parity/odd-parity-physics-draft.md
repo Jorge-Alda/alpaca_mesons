@@ -42,7 +42,7 @@ inherits exact relation certificates. Formal parent counts do not establish
 observable ranks or controlled convergence. Independent-source differentiation
 precedes physical source restriction, and fixed topological contacts remain.
 The photon-operator normalization follows Bauer's Eqs. (39)/(54); it is not
-attributed to Alda's WZW-excluding action. The meson contribution is a separate
+attributed to Alda:2026nrd's WZW-excluding action. The meson contribution is a separate
 leading-nonet WZW/source derivation. No fit implementation is included.
 
 # Verification

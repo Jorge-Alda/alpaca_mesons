@@ -22,7 +22,7 @@ X, Y = sp.symbols("X Y")
 
 print("Assumptions:")
 print("- Natural units and metric dot products; all external pseudoscalars are on shell.")
-print("- Alda convention: u=exp(i Phi_A/(2 f_pi)), hence U=u^2=exp(i Phi_A/f_pi).")
+print("- Alda:2026nrd convention: u=exp(i Phi_A/(2 f_pi)), hence U=u^2=exp(i Phi_A/f_pi).")
 print("- RChT convention: U=exp(i sqrt(2) Phi_R/f_pi), with Phi_A=sqrt(2) Phi_R.")
 print("- One canonical Proca pole with constant width; the induced representation-matching local term is derived separately below.")
 print("- Pair labels are fixed as i<j and all momenta in the displayed decay kinematics are outgoing.\n")
@@ -40,21 +40,21 @@ lambda_k = Lambda_k / sqrt2
 
 rcht_wpp_coefficient = sqrt2 * I * G_V / (f_pi**2 * M_V)
 rcht_wpa_coefficient = -2 * I * G_V / (f_pi * f_a * M_V)
-alda_wpp_coefficient = sp.simplify(rcht_wpp_coefficient / 2)
-alda_wpa_coefficient = sp.simplify(rcht_wpa_coefficient / sqrt2)
-normalization_product = sp.simplify(alda_wpp_coefficient * alda_wpa_coefficient)
+alda_2026nrd_wpp_coefficient = sp.simplify(rcht_wpp_coefficient / 2)
+alda_2026nrd_wpa_coefficient = sp.simplify(rcht_wpa_coefficient / sqrt2)
+normalization_product = sp.simplify(alda_2026nrd_wpp_coefficient * alda_2026nrd_wpa_coefficient)
 
-show("Alda/RChT field relation Phi_A=sqrt(2) Phi_R", sp.Eq(sp.Symbol("Phi_A"), sqrt2 * sp.Symbol("Phi_R")))
+show("Alda:2026nrd/RChT field relation Phi_A=sqrt(2) Phi_R", sp.Eq(sp.Symbol("Phi_A"), sqrt2 * sp.Symbol("Phi_R")))
 show("RChT pseudoscalar generator lambda_i=Lambda_i/sqrt(2)", sp.Eq(sp.Symbol("lambda_i"), lambda_i))
-show("Converted L_WPP coefficient", alda_wpp_coefficient)
-show("Converted L_WPa coefficient", alda_wpa_coefficient)
+show("Converted L_WPP coefficient", alda_2026nrd_wpp_coefficient)
+show("Converted L_WPa coefficient", alda_2026nrd_wpa_coefficient)
 show("Product of the two Lagrangian coefficients", normalization_product)
 show("Positive normalization after i*(-i)=+1", G_V**2 / (f_pi**3 * f_a * M_V**2))
 
 expected_wpp = I * G_V / (sqrt2 * f_pi**2 * M_V)
 expected_wpa = -sqrt2 * I * G_V / (f_pi * f_a * M_V)
-assert sp.simplify(alda_wpp_coefficient - expected_wpp) == 0
-assert sp.simplify(alda_wpa_coefficient - expected_wpa) == 0
+assert sp.simplify(alda_2026nrd_wpp_coefficient - expected_wpp) == 0
+assert sp.simplify(alda_2026nrd_wpa_coefficient - expected_wpa) == 0
 assert sp.simplify(normalization_product - G_V**2 / (f_pi**3 * f_a * M_V**2)) == 0
 
 # Scalar i-factor audit.  With exp(-ip.x), each three-derivative vertex has
@@ -320,12 +320,12 @@ print("Identical-particle assertions: all passed.")
 # already-derived canonical Proca coefficients.  V_munu=W_munu/M_V+... at
 # first order in the current, so multiplying the Proca coefficients by M_V
 # must remove exactly one inverse mass.
-tensor_wpp_coefficient = sp.simplify(M_V * alda_wpp_coefficient)
-tensor_wpa_coefficient = sp.simplify(M_V * alda_wpa_coefficient)
+tensor_wpp_coefficient = sp.simplify(M_V * alda_2026nrd_wpp_coefficient)
+tensor_wpa_coefficient = sp.simplify(M_V * alda_2026nrd_wpa_coefficient)
 expected_tensor_wpp = I * G_V / (sqrt2 * f_pi**2)
 expected_tensor_wpa = -sqrt2 * I * G_V / (f_pi * f_a)
-show("Recovered Alda-normalized original-tensor VPP coefficient", tensor_wpp_coefficient)
-show("Recovered Alda-normalized original-tensor VPa coefficient", tensor_wpa_coefficient)
+show("Recovered Alda:2026nrd-normalized original-tensor VPP coefficient", tensor_wpp_coefficient)
+show("Recovered Alda:2026nrd-normalized original-tensor VPa coefficient", tensor_wpa_coefficient)
 assert sp.simplify(tensor_wpp_coefficient - expected_tensor_wpp) == 0
 assert sp.simplify(tensor_wpa_coefficient - expected_tensor_wpa) == 0
 

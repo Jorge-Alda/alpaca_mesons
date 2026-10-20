@@ -10,7 +10,7 @@ provenance: analytical-derivation
 # Inputs and purpose
 
 Use the [source-functional normal form](odd-covariant-source-gauge-reduction.md)
-and [Alda's canonical neutral generators](alda-neutral-amplitude-inputs.md).
+and [Alda:2026nrd's canonical neutral generators](alda-neutral-amplitude-inputs.md).
 All flavor matrices have dimension three. The purpose is to test genuine
 three-flavor trace identities rather than assume abstract trace words remain
 independent at arbitrary field degree.

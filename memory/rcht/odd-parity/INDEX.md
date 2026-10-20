@@ -17,7 +17,7 @@ All displayed physical tensors use the canonical convention in
 fits and signed artifacts are explicitly reference-backend inputs; their
 odd coefficients and tensor scalars require that record's adapter before
 being combined with canonical photon or resonance amplitudes.
-- [odd-parity-physics-draft.md](odd-parity-physics-draft.md) — physics-only manuscript narrative and precise physical wording, direct Alda conventions, audited photon contact and appendix/missing-work comments.
+- [odd-parity-physics-draft.md](odd-parity-physics-draft.md) — physics-only manuscript narrative and precise physical wording, direct Alda:2026nrd conventions, audited photon contact and appendix/missing-work comments.
 - [two-source-alp-rcht-odd-parity-extension.md](two-source-alp-rcht-odd-parity-extension.md) — two-source anomaly seed and ALP insertion.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.

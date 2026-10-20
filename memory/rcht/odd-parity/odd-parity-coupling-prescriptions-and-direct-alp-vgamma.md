@@ -28,7 +28,7 @@ The three prescriptions do not determine the same object. Prescription A constra
 | Widths and phases | Leading large-$N_c$ result is narrow and tree level; widths are extra dynamical input. | Can constrain width/self-energy prescriptions and phases, but these must preserve Ward identities and low-energy matching. | WZW matching supplies no propagator or width prescription; phenomenological insertions add model dependence. |
 | Field-redefinition invariance | Holds for complete amplitudes only when all induced local terms are retained; a finite representation-dependent truncation can differ. | Amplitude-level fits can be invariant if the transformed complete basis is used; fitted individual $c_i,d_i$ are basis dependent. | A source-to-propagating-field identification is not a literal field identity; matched local terms are required. |
 | Double counting | Adding local odd-parity terms already saturated by retained vectors can double count and spoil asymptotics. | Contact and exchange pieces must be fitted in one declared basis, not counted twice. | A matched HLS/WZW result is an alternative representation/cross-check, not an additive extra contribution to RChT. |
-| ALP flavor extrapolation | The operator basis accepts general ALP spurions, but QCD constraints on hadronic combinations do not determine every flavor-changing ALP amplitude. | Standard hadronic data calibrate universal resonance couplings, while ALP spurion traces and poorly sampled breaking directions remain extrapolations. | Covariant source insertion organizes flavor, but a selected homogeneous action and idealized flavor assignments can hide uncertainty in general Alda flavor directions. |
+| ALP flavor extrapolation | The operator basis accepts general ALP spurions, but QCD constraints on hadronic combinations do not determine every flavor-changing ALP amplitude. | Standard hadronic data calibrate universal resonance couplings, while ALP spurion traces and poorly sampled breaking directions remain extrapolations. | Covariant source insertion organizes flavor, but a selected homogeneous action and idealized flavor assignments can hide uncertainty in general Alda:2026nrd flavor directions. |
 
 **Literature-established facts, adapted to the repository convention.** The cited OPE matching gives
 
@@ -71,7 +71,7 @@ u_\mu\big|_{a_{\rm physical}}=-2\frac{\partial_\mu a}{f_a}\mathbb M_a^{-1}(C),
 f_+^{\mu\nu}=-2eQF^{\mu\nu}.
 $$
 
-For the standard electromagnetic-compatible Goldstone vacuum, $f_-^{\mu\nu}=0$ because the charge matrix commutes with the ALP spurions. Alda permits flavor-changing entries only among equal-charge quarks, so this commutation is the relevant framework assumption.
+For the standard electromagnetic-compatible Goldstone vacuum, $f_-^{\mu\nu}=0$ because the charge matrix commutes with the ALP spurions. Alda:2026nrd permits flavor-changing entries only among equal-charge quarks, so this commutation is the relevant framework assumption.
 
 The [Levi-Civita conversion record](levi-civita-convention.md) defines the
 adaptation from the opposite orientation used by Ruiz--Femenia:

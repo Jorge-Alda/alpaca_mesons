@@ -15,7 +15,7 @@ Replace the ideal omega–phi assignment and independently inserted pole masses
 with generators, masses and source residues derived from a declared quadratic
 antisymmetric-tensor action. Preserve the repository's positive-strange phi
 phase, generator normalization and electromagnetic-source convention.
-Use the arXiv version identified by the Alda BibTeX entry for subsequent neutral
+Use the arXiv version identified by the Alda:2026nrd BibTeX entry for subsequent neutral
 pseudoscalar inputs; the local manuscript is not an authoritative substitute.
 This policy supersedes the local-manuscript input selection in the previous
 [next-steps record](../odd-parity/next-steps.md).
@@ -62,7 +62,7 @@ as its explicit default selection.
    slot and source consistently; use the action's matrix propagator and
    canonical external-state normalization. Recover the existing baseline,
    recompute rank and state which symmetry-breaking vertices remain omitted.
-   Physical eta inputs require the arXiv-verified Alda generators and spurion.
+   Physical eta inputs require the arXiv-verified Alda:2026nrd generators and spurion.
 5. **Joint decay calibration, then assess dynamical mixing.** Include radiative
    channels and the separately planned dispersive three-pion treatment with
    documented correlations. Add momentum-dependent self-energies only after
@@ -78,7 +78,7 @@ as its explicit default selection.
 - Stage 2: [direct tensor source audit](../../extracts/Kucukarslan:2006wk/tensor-mixing.md)
   saved. Strong versus electromagnetic mixing and off-shell field definitions
   are separated; photon exchange must not be counted twice.
-- Alda arXiv v1 source verified and archived: recorded central inputs agree,
+- Alda:2026nrd arXiv v1 source verified and archived: recorded central inputs agree,
   and local-manuscript provenance is superseded.
 - Stage 3: [mass/source calibration](vector-stage3-calibration.md) completed
   using checksum-pinned PDG 2024 summaries. The minimal mass action and its
@@ -89,7 +89,7 @@ as its explicit default selection.
 - Stage 4: [action amplitude integration](../odd-parity/vector-stage4-amplitudes.md)
   and [conditional rank diagnostics](../odd-parity/vector-stage4-rank.md)
   completed. Both mass branches and all source hypotheses remain selectable.
-  ArXiv Alda generators are reconstructed, and the new kernels connect to the
+  ArXiv Alda:2026nrd generators are reconstructed, and the new kernels connect to the
   existing TFF/omega observations with their likelihood policy unchanged.
   Baseline, photon Ward, Bose, phase/basis, crossing and data-regression checks
   pass. All 64 retained diagnostic scenarios give rank 8 with inherited OPE

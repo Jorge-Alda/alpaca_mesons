@@ -30,7 +30,7 @@ $$
 - \frac{k \left(a g + b\right)^{2}}{T^{2} \sigma}
 $$
 
-Original measurements occur once; fixed diagonal summaries, central Alda source inputs and declared tree kinematics. No OPE/OZI/naturalness priors.
+Original measurements occur once; fixed diagonal summaries, central Alda:2026nrd source inputs and declared tree kinematics. No OPE/OZI/naturalness priors.
 
 primary, original_11: odd chi2 range [3.711301771848424, 1101.2121122245203]; 64/64 optimizer successes.
 

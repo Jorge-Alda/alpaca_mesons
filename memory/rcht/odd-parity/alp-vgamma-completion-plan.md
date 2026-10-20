@@ -21,7 +21,7 @@ contractions. Complete normalization/contact assembly remains unperformed.
 
 ## Inputs and truncation
 
-Use Alda arXiv-v1 independent $X=\mathbb M_a^{-1}(\mathcal C)$ and
+Use Alda:2026nrd arXiv-v1 independent $X=\mathbb M_a^{-1}(\mathcal C)$ and
 $Y=c_q^{AP}+X$, the VJP/VVP operator basis, and the
 [calibrated stage-4 response](vector-stage4-amplitudes.md).
 Assume tree level, one ALP, electromagnetic-compatible sources and the retained
@@ -43,7 +43,7 @@ separate model choices.
    $1/M_{\rm ext}$; the internal response gets its action-derived inverse
    mass matrix. The explicit photon source remains $Q$.
 3. Assemble any retained WZW/counterterm, ALP–meson LSZ and field-redefinition
-   contact terms in one convention. Compare with Alda's no-mixing variables
+   contact terms in one convention. Compare with Alda:2026nrd's no-mixing variables
    and avoid counting both an absorbed meson pole and its original graph.
    Gauge/anomaly normalization does not determine independent finite resonance
    or local matching coefficients.
@@ -64,6 +64,6 @@ separate model choices.
 
 Save a paired executable/memory derivation and a fit-ready numerical predictor
 with independent Ward, field-basis, normalization and null-shift tests. State
-UV ALP inputs, any added local coefficients and the pointwise Alda mixing-validity
+UV ALP inputs, any added local coefficients and the pointwise Alda:2026nrd mixing-validity
 domain. Keep physical coupling uncertainty distinct from the structural
 row-span check and from daughter line-shape/model uncertainty.

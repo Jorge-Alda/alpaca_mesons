@@ -77,21 +77,21 @@
       "K+": 0.493677,
       "pi+": 0.13957039
     },
-    "charged_pseudoscalar_mass_status": "Alda arxiv-v1 input table; fixed central kinematic inputs",
+    "charged_pseudoscalar_mass_status": "Alda:2026nrd arxiv-v1 input table; fixed central kinematic inputs",
     "calibrated_external_vector_mass_policy": "rho+ uses selected rho_input; charged and neutral Kstar both use selected kstar_input, exact-isospin vector action",
-    "vector_spurion_policy": "even vector mass/source block uses isospin chi_plus from stage3; odd mass spurion and neutral P eigenvectors retain full Alda isospin; partial isospin truncation, rho mixing omitted",
-    "alda_common_control_external_mass_policy": "measured charged/neutral external masses retained as explicitly labeled old reference",
-    "neutral_pseudoscalar_scheme": "physical masses with Alda arxiv-v1 eigenvectors and independent chi",
+    "vector_spurion_policy": "even vector mass/source block uses isospin chi_plus from stage3; odd mass spurion and neutral P eigenvectors retain full Alda:2026nrd isospin; partial isospin truncation, rho mixing omitted",
+    "alda_2026nrd_common_control_external_mass_policy": "measured charged/neutral external masses retained as explicitly labeled old reference",
+    "neutral_pseudoscalar_scheme": "physical masses with Alda:2026nrd arxiv-v1 eigenvectors and independent chi",
     "uncertainties": "fixed central inputs; no pooled alternatives or model/input uncertainty inference"
   },
   "sha256": {
     "scripts/diagnose_vector_stage4.py": "743bd3b3db2a660fb487019c1446e0c6c4cb1680c0087c168d03ec620b531e2d",
     "scripts/implementation/vector_sector.py": "27e13e68d13355319fe90c90f79468a07cc6dc454b2f00b3a45125f7a4ad0df8",
     "scripts/implementation/vector_sector_amplitudes.py": "1a18e05cf4dfbddb4a52d6a8d5467c3cf2d14582b5dfe56ad8bbb3a55ad873c2",
-    "scripts/implementation/alda_neutral_inputs.py": "3e33acee58cc6e4a4979f7c6fdca4dd032802b41f9291b1a7ef64d036b8573d0",
+    "scripts/implementation/alda_2026nrd_neutral_inputs.py": "3e33acee58cc6e4a4979f7c6fdca4dd032802b41f9291b1a7ef64d036b8573d0",
     "data/vector_sector/stage3_results.json": "a8cc2290afd22fcc43b98e7ab39e72f68c5694718769ca693d2e203216359192",
     "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
-    "data/vector_sector/alda_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9"
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9"
   },
   "baseline_consistency": {
     "common": {
@@ -863,7 +863,7 @@
       ]
     }
   },
-  "alda_universal_common_pole_control": {
+  "alda_2026nrd_universal_common_pole_control": {
     "channel_labels": [
       "omega pi0",
       "rho0 pi0",

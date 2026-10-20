@@ -11,12 +11,12 @@ provenance: assumption
 
 ## Scope and evidence
 
-This record turns the evidence and options in [the $U(3)$ nonet record](u3-nonet-odd-parity-extension-options.md) and [the vector line-shape record](../foundations/vector-width-lineshape-prescriptions.md) into an implementation baseline. Literature fixes the Ruiz--Femenia operator basis, OZI hierarchy, Ecker antisymmetric-tensor convention, and line-shape constraints; the selected truncations below are declared recommendations, not additional literature results [@Ruiz-Femenia:2003jdx; @Kaiser:2000gs; @Ecker:1989yg]. **HLS remains excluded.** Natural units and Alda notation are used throughout [@Alda:2026nrd].
+This record turns the evidence and options in [the $U(3)$ nonet record](u3-nonet-odd-parity-extension-options.md) and [the vector line-shape record](../foundations/vector-width-lineshape-prescriptions.md) into an implementation baseline. Literature fixes the Ruiz--Femenia operator basis, OZI hierarchy, Ecker antisymmetric-tensor convention, and line-shape constraints; the selected truncations below are declared recommendations, not additional literature results [@Ruiz-Femenia:2003jdx; @Kaiser:2000gs; @Ecker:1989yg]. **HLS remains excluded.** Natural units and Alda:2026nrd notation are used throughout [@Alda:2026nrd].
 
 > **Recommended baseline**
 >
 > 1. Use a defined leading-OZI, single-trace $U(3)$ nonet model based on the seven $VJP$ and four $VVP$ Ruiz--Femenia operators, with common $c_i,d_i$ and all independent double traces set explicitly to zero. This is trace-topology bookkeeping, not a proof that every omitted multi-trace coefficient has the same suppression. Common singlet/octet couplings are an ansatz, not a symmetry consequence or complete $U(3)$ result.
-> 2. Use $T_0=\mathbf1/\sqrt3$, $\operatorname{tr}(T_0^2)=1$, for the vector singlet and $\lambda_0=\sqrt{2/3}\,\mathbf1$, $\operatorname{tr}(\lambda_0^2)=2$, for Alda's pseudoscalar singlet.
+> 2. Use $T_0=\mathbf1/\sqrt3$, $\operatorname{tr}(T_0^2)=1$, for the vector singlet and $\lambda_0=\sqrt{2/3}\,\mathbf1$, $\operatorname{tr}(\lambda_0^2)=2$, for Alda:2026nrd's pseudoscalar singlet.
 > 3. Use ideal $\omega$--$\phi$ mixing and physical vector masses only as declared first-pass approximations.
 > 4. Treat a vector as external only in a justified narrow-width approximation (NWA), sufficiently far from daughter thresholds. Then use its LSZ matrix element and no Breit--Wigner factor. Broad $\rho/K^*$ states or channels near daughter threshold require an inclusive spectral daughter observable.
 > 5. For internal vectors use physical thresholds and energy-dependent P-wave widths for $\rho$ and $K^*$; use a narrow constant $\omega$ width unless the $3\pi$ line shape is resolved; for $\phi$ near its pole resolve charged and neutral $K\bar K$ widths and include $3\pi$ at precision level.
@@ -26,7 +26,7 @@ This record turns the evidence and options in [the $U(3)$ nonet record](u3-nonet
 
 ## Nonet and OZI decision
 
-“Singlet/double trace” is not one prescription. The baseline is a defined leading-single-quark-loop/OZI model: continue the existing single traces to the full nonet, use the two normalized singlet generators above, take common $c_i,d_i$ for octet and singlet directions, and set every independent double-trace coefficient to zero. In the standard large-$N_c$ generating-functional organization, an additional flavor trace generically represents an additional quark-loop topology and motivates one nominal $1/N_c$ suppression [@Kaiser:2000gs]. That rule is only coefficient/topology bookkeeping: field normalizations, singlet insertions, anomalous-source dependence, and channel-specific leading terms can modify the net scaling, so trace number alone does not prove a numerical suppression for every operator. It is also separate from the large-$N_c$ counting of powers and derivatives of Alda's anomalous source $X_{TC}$. Common singlet/octet $c_i,d_i$ are therefore a model ansatz and operator truncation, not a symmetry theorem. Ideal neutral-vector mixing and physical masses are likewise phenomenological baseline choices. This model is sufficient for first $aV\gamma$ and $aVV$ predictions and is not a global architecture blocker.
+“Singlet/double trace” is not one prescription. The baseline is a defined leading-single-quark-loop/OZI model: continue the existing single traces to the full nonet, use the two normalized singlet generators above, take common $c_i,d_i$ for octet and singlet directions, and set every independent double-trace coefficient to zero. In the standard large-$N_c$ generating-functional organization, an additional flavor trace generically represents an additional quark-loop topology and motivates one nominal $1/N_c$ suppression [@Kaiser:2000gs]. That rule is only coefficient/topology bookkeeping: field normalizations, singlet insertions, anomalous-source dependence, and channel-specific leading terms can modify the net scaling, so trace number alone does not prove a numerical suppression for every operator. It is also separate from the large-$N_c$ counting of powers and derivatives of Alda:2026nrd's anomalous source $X_{TC}$. Common singlet/octet $c_i,d_i$ are therefore a model ansatz and operator truncation, not a symmetry theorem. Ideal neutral-vector mixing and physical masses are likewise phenomenological baseline choices. This model is sufficient for first $aV\gamma$ and $aVV$ predictions and is not a global architecture blocker.
 
 Upgrade when fitting $\eta'$, $\omega/\phi$, or other OZI-sensitive data at subleading $1/N_c$ accuracy. Concrete additions include the breaking operator $i\epsilon_{\mu\nu\rho\sigma}\langle V^{\mu\nu}V^{\rho\sigma}\rangle\langle\chi_-\rangle$ alongside its single-trace counterpart, and trace-factorized derivative structures such as $\epsilon_{\mu\nu\rho\sigma}\langle V^{\mu\nu}f_+^{\rho\alpha}\rangle\langle\nabla_\alpha u^\sigma\rangle$ or analogous $VVP$ factorizations. A complete $U(3)$ upgrade must additionally enumerate parity-allowed coefficient functions of $X_{TC}$ and operators with derivatives of $X_{TC}$, then reduce the candidate set using integration by parts, equations of motion, and $U(3)$ trace identities. These examples are upgrade templates, not a claim of a complete independent basis [@Roig:2013baa; @Herrera-Siklody:1996tqr].
 
@@ -36,13 +36,13 @@ $$
 X_{\rm HS}=\langle\log U\rangle+\hat\theta,
 $$
 
-while Alda Eq. (III.14), with $U=u^2$ on a common logarithm branch, defines the distinct convention
+while Alda:2026nrd Eq. (III.14), with $U=u^2$ on a common logarithm branch, defines the distinct convention
 
 $$
 X_{TC}=2i\left(\langle\log u\rangle+i c_G\frac{a}{f_a}\right).
 $$
 
-The recorded conventions do not derive the normalization and sign map between $\hat\theta$ and Alda's ALP source $c_Ga/f_a$. Therefore no exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is asserted here. The common-branch identity $\langle\log U\rangle=2\langle\log u\rangle$ matches only the mesonic logarithms; it does not supply the missing source map. Importing a Herrera-Siklody coefficient function consequently requires a separately stated and derived source identification [@Herrera-Siklody:1996tqr; @Alda:2026nrd]. Coefficient functions of Alda's $X_{TC}$ can contribute to dynamical-ALP amplitudes after expanding $X_{TC}$ in the ALP field. Their omission here is an explicit large-$N_c$/operator truncation, not a consequence of topological observables being absent.
+The recorded conventions do not derive the normalization and sign map between $\hat\theta$ and Alda:2026nrd's ALP source $c_Ga/f_a$. Therefore no exact factor relation between $X_{\rm HS}$ and $X_{TC}$ is asserted here. The common-branch identity $\langle\log U\rangle=2\langle\log u\rangle$ matches only the mesonic logarithms; it does not supply the missing source map. Importing a Herrera-Siklody coefficient function consequently requires a separately stated and derived source identification [@Herrera-Siklody:1996tqr; @Alda:2026nrd]. Coefficient functions of Alda:2026nrd's $X_{TC}$ can contribute to dynamical-ALP amplitudes after expanding $X_{TC}$ in the ALP field. Their omission here is an explicit large-$N_c$/operator truncation, not a consequence of topological observables being absent.
 
 ## Width decision by use case
 
@@ -68,7 +68,7 @@ up to a consistently fixed one-particle phase, where $Z_V$ is the residue assign
 
 ## Near-degeneracy domain
 
-Alda Eq. (III.37) requires
+Alda:2026nrd Eq. (III.37) requires
 
 $$
 |m_a^2-m_i^2|\gg\frac{f_\pi}{f_a}
@@ -106,4 +106,4 @@ using baseline truncation fraction $\tau=1/N_c$ and equicorrelation $\rho=0$. Do
 
 **Implementation tasks, not physics-choice blockers:** on-shell amplitude reduction; the fixed external-tensor normalization; internal-vector line-shape code by the use cases above; spectral daughter distributions; and complete-amplitude Ward-identity tests.
 
-**Nonblockers at baseline:** independent double traces and singlet-specific couplings within the declared model; nonideal $\omega$--$\phi$ mixing; a free hadronic $c_{AB}$; precision Dyson/dispersive line shapes; and generic construction of $\mathbb M_a^{-1}(C)$ away from the local Alda degeneracy domain. Pointwise validity masking/warnings and coupled treatment of any intentionally retained violating points remain required implementation work.
+**Nonblockers at baseline:** independent double traces and singlet-specific couplings within the declared model; nonideal $\omega$--$\phi$ mixing; a free hadronic $c_{AB}$; precision Dyson/dispersive line shapes; and generic construction of $\mathbb M_a^{-1}(C)$ away from the local Alda:2026nrd degeneracy domain. Pointwise validity masking/warnings and coupled treatment of any intentionally retained violating points remain required implementation work.

@@ -64,7 +64,7 @@ If the target accuracy requires double-odd effects:
    two odd insertions plus the needed even vertices. Track possible local
    counterterms at that order; the one-pseudoscalar VJP/VVP basis is not a
    complete multi-pseudoscalar basis.
-2. Use independent Alda arXiv ALP source spurions and physical generator
+2. Use independent Alda:2026nrd arXiv ALP source spurions and physical generator
    conventions; do not replace the existing even-parity contribution.
 3. Derive full tensor propagator contractions, loop integrals and renormalization
    in executable scripts, retaining representation-induced local terms and

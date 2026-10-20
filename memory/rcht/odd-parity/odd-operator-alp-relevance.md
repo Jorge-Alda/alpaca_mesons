@@ -17,7 +17,7 @@ Saved at the user's request. This assessment interprets the
 It introduces no established sufficient ultraviolet completion.
 Tree-level ALP accuracy, explicit canonical vectors and the fixed derivative
 ceiling remain the selected convention. Source insertions follow
-[Alda's independent-source/LSZ construction](two-source-alp-rcht-odd-parity-extension.md).
+[Alda:2026nrd's independent-source/LSZ construction](two-source-alp-rcht-odd-parity-extension.md).
 
 # Target relevance
 

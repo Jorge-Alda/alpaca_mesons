@@ -15,7 +15,7 @@ Use [the covariant identities](odd-covariant-closure.md),
 [the source-preserving LO Goldstone EOM](odd-goldstone-eom-multiplier-reduction.md),
 [the derivative ceiling](odd-breaking-lorentz-reduction.md),
 [the leading quotient](odd-leading-covariant-operator-count.md), and
-[Alda's topological action](../../extracts/Alda:2026nrd/lo-topological-action.md).
+[Alda:2026nrd's topological action](../../extracts/Alda:2026nrd/lo-topological-action.md).
 Use the specified VJP/VVP seed classes, at most one quark spurion and two
 flavor traces. Preserve explicit vector fields. No vector EOM, on-shell
 conditions, physical-mass substitution or loop calculation is used.

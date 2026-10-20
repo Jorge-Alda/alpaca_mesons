@@ -34,7 +34,7 @@ these action scenarios. The old baseline controls retain their previous physical
 kinematic inputs and are explicitly labelled as controls.
 
 The even-vector block remains isospin projected. The odd-vertex quark spurion
-and physical neutral generators retain Alda's fitted isospin breaking. Rho–isoscalar
+and physical neutral generators retain Alda:2026nrd's fitted isospin breaking. Rho–isoscalar
 mixing is omitted, so this is a declared partial-isospin approximation. Physical
 pseudoscalar kinematics also remain distinct from the LO eigenmasses, especially
 for eta. See the input record for the convention conversion and limitations.
@@ -88,7 +88,7 @@ The extra TFF rows can alter redundancy/conditioning without adding a new
 direction; unchanged rank does not mean unchanged fit uncertainty.
 
 Two controls pass. The old illustrative common/split-pole inputs reproduce
-radiative ranks 7/8 and combined TFF rank 8. With the new full Alda generators
+radiative ranks 7/8 and combined TFF rank 8. With the new full Alda:2026nrd generators
 and independent quark spurion but a universal common-pole sector, radiative
 rank remains 7 and rises to 8 with TFFs. Thus merely updating the eta inputs
 does not explain the calibrated radiative rank 8; the spectral/source response

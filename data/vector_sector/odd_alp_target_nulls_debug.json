@@ -9945,7 +9945,7 @@
     "data/vector_sector/odd_low_energy_calibration.json": "a3896a3e9d14b60070d18601fa997940712ef4808527bbefc130ef8e9f24cd9c",
     "data/vector_sector/odd_low_energy_jacobians.json": "f8735d0b5090c943831bc080b24a672c5c5cefd9f92dee601c854f143872236c",
     "data/vector_sector/odd_cubic_parent_kernels.json": "482b768f3d6b02656a9a1914bfbda3efd55e187b87b42efae6cf1ce70bc877a7",
-    "data/vector_sector/alda_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
     "data/vector_sector/stage3_results.json": "a8cc2290afd22fcc43b98e7ab39e72f68c5694718769ca693d2e203216359192",
     "data/vector_sector/odd_leading_action_count.json": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",
     "data/vector_sector/odd_three_flavor_action_quotient.json": "8cbd18287c51b0576e6d2f7834689cf052ca9e471d2721741d843af46c9ac2a7",

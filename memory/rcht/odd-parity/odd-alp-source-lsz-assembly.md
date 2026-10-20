@@ -9,7 +9,7 @@ provenance: analytical-derivation
 
 # Inputs and assumptions
 
-Use Alda's [source expansion and no-mixing prescription](../../extracts/Alda:2026nrd/appendix-a-expansion.md),
+Use Alda:2026nrd's [source expansion and no-mixing prescription](../../extracts/Alda:2026nrd/appendix-a-expansion.md),
 its [LO topological action](../../extracts/Alda:2026nrd/lo-topological-action.md),
 the [normalized neutral kernels](odd-power-counted-channel-maps.md), and the
 explicit assumptions of the [photon invariant record](../../alp/photon/alp-photon-invariant-from-mixing.md).
@@ -49,7 +49,7 @@ The actual domain excludes neutral mass poles and requires perturbative
 ALP–meson overlaps; finite inversion alone does not establish LSZ validity.
 The LO masses must come from this same operator.
 
-With Alda's field conversion, the meson replacement is
+With Alda:2026nrd's field conversion, the meson replacement is
 $\Phi_R/a=\sqrt2F(c^A+S)/f_a$. Direct insertion and this replacement give
 
 $$
@@ -91,7 +91,7 @@ is invariant under the declared coefficient rotation and equals the transformed
 contact in the no-mixing basis. These algebraic identities pass. The positive
 local photon coefficient convention is supplied by [@Bauer:2020jbp, Eqs. (39)/(54)],
 as recorded in the [source digest](../../extracts/Bauer:2020jbp/photon-operator-normalization.md).
-Alda excludes the WZW sector; the meson contribution is a separate repository
+Alda:2026nrd excludes the WZW sector; the meson contribution is a separate repository
 derivation, not an equation supplied by that paper. The
 [shared photon/action phase audit](../../alp/photon/alp-photon-odd-action-phase-matching.md)
 uses the single canonical tensor $\epsilon^{0123}=+1$, with

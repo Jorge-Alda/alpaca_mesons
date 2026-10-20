@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Derive the one-ALP photon coefficient in Alda conventions.
+"""Derive the one-ALP photon coefficient in Alda:2026nrd conventions.
 
 Run from the repository root with:
     .venv/bin/python scripts/derive_alp_photon_invariant.py
@@ -49,7 +49,7 @@ def projection(matrix: sp.Matrix) -> sp.Matrix:
     return u3_completeness_projection(matrix)
 
 
-# Alda Eq. (III.28): the spectral coefficients of M_a^{-1}(C) are
+# Alda:2026nrd Eq. (III.28): the spectral coefficients of M_a^{-1}(C) are
 # tr[C lambda_i]/(m_i^2-m_a^2).  Thus Eq. (III.25) can be written as below.
 completeness_c_q_A = projection(c_q_A)
 completeness_m_a_inverse_C = projection(m_a_inverse_C)
@@ -92,7 +92,7 @@ full_from_invariant = sp.simplify(
     c_gamma_inv + 2 * N_c * sp.trace(Q2 * m_a_inverse_C)
 )
 
-# Alda no-mixing choice kappa=-c_q^A-M_a^{-1}(C).
+# Alda:2026nrd no-mixing choice kappa=-c_q^A-M_a^{-1}(C).
 kappa_no_mixing = -(c_q_A + m_a_inverse_C)
 hat_c_q_A = sp.simplify(c_q_A + kappa_no_mixing)
 hat_c_gamma = sp.simplify(
@@ -115,7 +115,7 @@ print("Approximation: one ALP at O(1/f_a), leading no-vector WZW sector.")
 print("Domain: M_a is invertible (away from ALP-meson degeneracies).\n")
 show("U(3) completeness applied to c_q^A", completeness_c_q_A)
 show("U(3) completeness applied to M_a^{-1}(C)", completeness_m_a_inverse_C)
-show("Alda physical-ALP meson components w_i", sp.Matrix(w))
+show("Alda:2026nrd physical-ALP meson components w_i", sp.Matrix(w))
 show("WZW/mixing photon contribution", delta_wzw_mixing)
 show("Invariant explicit photon combination c_gamma^inv", c_gamma_inv)
 show("Full one-ALP coefficient C_agammagamma(m_a)", full_coefficient)

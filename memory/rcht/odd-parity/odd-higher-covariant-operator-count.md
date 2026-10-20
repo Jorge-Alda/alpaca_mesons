@@ -33,7 +33,7 @@ Use [the bounded source-resolved catalogue](odd-breaking-vertex-catalogue.md),
 [the Goldstone EOM ceiling audit](odd-goldstone-eom-multiplier-reduction.md),
 [the covariant source-frame reduction](odd-covariant-source-gauge-reduction.md), and
 [the exact three-flavor Gram closure](odd-three-flavor-trace-gram.md).
-Preserve Alda's canonical fields, one vector nonet, the fixed derivative
+Preserve Alda:2026nrd's canonical fields, one vector nonet, the fixed derivative
 ceiling, at most one quark spurion and two flavor traces. Only chiral
 identities, exact IBP/Schouten and source-preserving LO Goldstone EOM are
 used. No resonance EOM, fitted physical masses, on-shell vector constraint,

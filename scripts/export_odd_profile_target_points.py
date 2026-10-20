@@ -14,8 +14,8 @@ def main():
     assert profiles['complete_256_pair_run'] and verification['complete']
     rows=[r for r in profiles['results'] if r['control']=='primary'];assert len(rows)==64
     assumptions=json.loads((ROOT/'data/vector_sector/stage3_results.json').read_text())['assumptions']
-    alda=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
-    tree=C.J.module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F)
+    alda=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
+    tree=C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F)
     fast=C.FastChannels(tree,alda['physical_masses_gev'],np.sqrt(4*np.pi*assumptions['alpha_em']))
     maps=C.model_maps();points=[]
     calibration=json.loads((ROOT/'data/vector_sector/odd_low_energy_calibration.json').read_text())

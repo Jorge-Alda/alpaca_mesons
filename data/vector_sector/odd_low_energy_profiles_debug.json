@@ -3770,7 +3770,7 @@
           1.78449267099401e-08,
           1.8908138284932206e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 7,

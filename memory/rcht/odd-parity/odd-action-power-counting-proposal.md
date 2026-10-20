@@ -152,7 +152,7 @@ ranks $(7,29,70)$; conservatively promoted derivative parents instead give
 $(12,40,70)$. These source-family maps are not measured sensitivity ranks
 or a complete ALP predictor.
 
-At Alda's central quark spurion, the generic neutral source-family ranks
+At Alda:2026nrd's central quark spurion, the generic neutral source-family ranks
 through soft first corrections are $(12,19,6)$ for $a\to VV,V\gamma,
 \gamma\gamma$, respectively. With hard derivative parents promoted they
 are $(15,23,7)$; the full ranks are $(25,27,7)$. These are individually

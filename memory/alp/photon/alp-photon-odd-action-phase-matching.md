@@ -12,7 +12,7 @@ provenance: analytical-derivation
 Inputs are the canonically adapted [WZW derivative vertex](../../extracts/Ruiz-Femenia:2003jdx/pseudoscalar-two-photon-form-factor.md),
 the [normalized SM TFF](../../rcht/odd-parity/radiative-tff-amplitude.md),
 the [bounded neutral cubic gradients](../../rcht/odd-parity/odd-power-counted-channel-maps.md),
-and Alda's [source/meson LSZ replacement](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md).
+and Alda:2026nrd's [source/meson LSZ replacement](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md).
 The positive field conversion is $\Phi_A=\sqrt2\Phi_R$, with $f_\pi=F$.
 The [photon record](alp-photon-invariant-from-mixing.md) uses the source-backed
 positive photon-operator normalization of [@Bauer:2020jbp, Eqs. (39)/(54)]
@@ -22,7 +22,7 @@ $\epsilon^{0123}=+1$, following [@Bauer:2020jbp, after Eq. (1)]. The
 [conversion audit](../../rcht/odd-parity/levi-civita-convention.md) identifies
 the older oppositely oriented source tensor in the saved reference-backend
 transcripts. This is a convention conversion, not a photon-anomaly result
-supplied by Alda, which excludes WZW.
+supplied by Alda:2026nrd, which excludes WZW.
 
 The [Bai digest](../../extracts/Bai:2025fvl/background-fields-wzw.md) establishes
 the need for the full gauged WZW functional and its gauge counterterm.

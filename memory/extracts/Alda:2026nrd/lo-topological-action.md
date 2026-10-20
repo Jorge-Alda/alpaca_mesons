@@ -1,5 +1,5 @@
 ---
-title: Alda leading topological invariant and meson action for the source audit
+title: Alda:2026nrd leading topological invariant and meson action for the source audit
 status: literature
 created: 2026-10-14
 updated: 2026-10-14

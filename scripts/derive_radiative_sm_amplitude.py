@@ -1,7 +1,7 @@
 """Action-based SM V-P-photon amplitude and complete neutral-vector flavor sum.
 
 Run .venv/bin/python scripts/derive_radiative_sm_amplitude.py.
-Uses RChT fields Phi_R and their explicit conversion to Alda's Phi_A;
+Uses RChT fields Phi_R and their explicit conversion to Alda:2026nrd's Phi_A;
 all masses are GeV, chi entries GeV^2. No fitted parameter is introduced.
 """
 import sympy as sp

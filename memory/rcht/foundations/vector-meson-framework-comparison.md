@@ -7,7 +7,7 @@ bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Bando:1987br, Fujiwara:1
 provenance: literature
 ---
 
-# Vector-Meson Extensions for the Alda--Rigolin Programme
+# Vector-Meson Extensions for the Alda:2026nrd--Rigolin Programme
 
 ## Executive comparison
 
@@ -54,8 +54,8 @@ Thus “agreement with data” should be assessed channel by channel after a cor
 ### Extension of `Alda:2026nrd`
 
 1. Promote the vector octet to a $U(3)$ nonet and let $V_{\mu\nu}$ transform with the same CCWZ compensator $h$ used in `Alda:2026nrd`.
-2. Insert the Alda covariant blocks $u_\mu$, $\Gamma_\mu$, $\chi_\pm$, $f_\pm^{\mu\nu}$ and the topological singlet $X_{TC}$ into the complete one-vector and two-vector operator bases.
-3. For the even-parity sector, impose the Alda no-mixing parametrization
+2. Insert the Alda:2026nrd covariant blocks $u_\mu$, $\Gamma_\mu$, $\chi_\pm$, $f_\pm^{\mu\nu}$ and the topological singlet $X_{TC}$ into the complete one-vector and two-vector operator bases.
+3. For the even-parity sector, impose the Alda:2026nrd no-mixing parametrization
    $$
    \widehat c_q^A=-\mathbb M_a^{-1}(C),\qquad
    \widehat c_q^P=-c_q^{AP}-\mathbb M_a^{-1}(C),\qquad
@@ -66,7 +66,7 @@ Thus “agreement with data” should be assessed channel by channel after a cor
 5. Fit $F_V,G_V$ and odd-parity combinations to $\rho\to\pi\pi$, $V\to P\gamma$, $e^+e^-\to PP$, $e^+e^-\to VP$, $\omega/\phi\to3P$, and transition-form-factor data, while enforcing low-energy anomaly normalization and selected QCD asymptotics.
 6. Add finite widths through self-energies or dispersive propagators in a way that preserves the low-energy expansion; do not insert widths into tree propagators before checking Ward identities.
 
-**Assessment:** this is the strongest default for a reusable, systematically improvable Alda extension, especially if both even- and odd-parity amplitudes are required.
+**Assessment:** this is the strongest default for a reusable, systematically improvable Alda:2026nrd extension, especially if both even- and odd-parity amplitudes are required.
 
 ## 2. Hidden Local Symmetry
 
@@ -86,11 +86,11 @@ That continuation is useful but strongly model dependent: it assumes form factor
 
 ### Extension of `Alda:2026nrd`
 
-1. Factorize the same $U(3)$ field $U=u^2$ used by Alda into HLS variables $\xi_{L,R}$ and define their covariant derivatives with the general ALP left/right sources, including flavor-changing entries.
+1. Factorize the same $U(3)$ field $U=u^2$ used by Alda:2026nrd into HLS variables $\xi_{L,R}$ and define their covariant derivatives with the general ALP left/right sources, including flavor-changing entries.
 2. Introduce a full vector nonet gauge field and retain general $a$, $g$, kinetic terms, $SU(3)$-breaking operators, and singlet mixing. Do not hard-wire $a=2$ or ideal $\omega$--$\phi$ mixing before fitting.
-3. Express all ALP source dependence through $c_q^{AP}$, $c_q^{VS}$, $c_{GA}$, and $X_{TC}$, or prove explicitly that amplitudes are invariant under the Alda quark-field redefinitions.
+3. Express all ALP source dependence through $c_q^{AP}$, $c_q^{VS}$, $c_{GA}$, and $X_{TC}$, or prove explicitly that amplitudes are invariant under the Alda:2026nrd quark-field redefinitions.
 4. Include the complete anomalous HLS functional, not only a selected $PVV$ term. Fit its homogeneous coefficients to radiative and three-pseudoscalar vector decays.
-5. Verify that low-energy expansion of HLS exchange plus contact terms reproduces the pure Alda amplitudes and does not double count their local $O(p^4)$ or higher terms.
+5. Verify that low-energy expansion of HLS exchange plus contact terms reproduces the pure Alda:2026nrd amplitudes and does not double count their local $O(p^4)$ or higher terms.
 6. Compare amplitudes numerically against an RChT implementation using the same masses, widths, and fitted channels. Differences after matching quantify truncation uncertainty.
 
 **Assessment:** HLS is the shortest route to a broad event-generator implementation, but it is less transparent than RChT for separating symmetry consequences from VMD-inspired parameter choices.
@@ -107,13 +107,13 @@ The Bai et al. implementation includes three flavors, the anomalous $U(1)_A$ sec
 
 ### Extension of `Alda:2026nrd`
 
-1. Promote the general Alda left/right ALP sources, including non-diagonal $c_q^A,c_q^V,c_q^P,c_q^S$, to background connections in the full $U(3)$ gauged WZW functional.
+1. Promote the general Alda:2026nrd left/right ALP sources, including non-diagonal $c_q^A,c_q^V,c_q^P,c_q^S$, to background connections in the full $U(3)$ gauged WZW functional.
 2. Retain the anomalous $U(1)_A$ topological source rather than requiring a rotation with $\operatorname{Tr}\kappa=c_G$.
 3. Derive and include the Bardeen-type counterterm before choosing the no-mixing variables. Then transform the WZW functional, counterterm, and explicit partonic anomalous couplings together.
 4. Prove field-redefinition invariance for a minimal test set: $a\to\gamma\gamma$, $a\to V\gamma$, $a\to VV$, $V\to a\gamma$, and the five-field WZW amplitudes $a\to4P$.
 5. Couple this anomaly module to either RChT or HLS dynamics for propagating vectors. Subtract local terms already generated by resonance exchange to prevent double counting.
 
-**Assessment:** this is the preferred way to complete the WZW part of the Alda programme and to derive $a\to4P$, but it cannot replace a dynamical vector EFT.
+**Assessment:** this is the preferred way to complete the WZW part of the Alda:2026nrd programme and to derive $a\to4P$, but it cannot replace a dynamical vector EFT.
 
 ## 4. Recommended staged programme
 
@@ -130,7 +130,7 @@ The following recommendation is an inference from the literature rather than an 
 - **Literature established:** the structures and transformation properties of RChT, HLS, and the gauged WZW functional; the need for anomalous counterterms; failures of strict VMD in selected anomalous channels. [@Ecker:1988te; @Bando:1987br; @Fujiwara:1984mp; @Ruiz-Femenia:2003jdx; @Bai:2025fvl]
 - **Recent literature implementation:** invariant or covariant ALP resonance amplitudes exist, but they use restricted flavor assumptions or phenomenological form-factor continuations. [@Ovchynnikov:2025gpx; @Balkin:2025enj; @Bai:2025fvl]
 - **Derived recommendation:** RChT plus a background-field WZW anomaly module is the most transparent baseline for the general, flavor-changing, no-mixing framework of `Alda:2026nrd`.
-- **Unresolved:** a controlled error budget near and above $1\,\mathrm{GeV}$; consistent loop/width treatment; complete $U(3)$ odd-parity operator basis with the Alda topological source; coupled-channel final-state interactions; and matching of the exclusive sum to inclusive QCD.
+- **Unresolved:** a controlled error budget near and above $1\,\mathrm{GeV}$; consistent loop/width treatment; complete $U(3)$ odd-parity operator basis with the Alda:2026nrd topological source; coupled-channel final-state interactions; and matching of the exclusive sum to inclusive QCD.
 
 Recent invariant phenomenological models do not yet close the last issue: one implementation finds that its exclusive invariant width above roughly $1\,\mathrm{GeV}$ does not approach the perturbative gluonic result, signaling missing channels or interactions. [@Ovchynnikov:2025gpx]
 

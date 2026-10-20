@@ -27,7 +27,7 @@ def source_certificate(parameters,hypothesis,assumptions):
         reference=C.J.module('vector_sector').source_residues(sector.generators,np.diag([assumptions['xl_gev2']]*2+[assumptions['xs_gev2']]),1.)
         margin=float(min(np.asarray(sector.residues)*np.sign(reference)))
     midpoint=4*(p[1]**2-p[0]**2)/(3*(assumptions['xl_gev2']-assumptions['xs_gev2']))
-    physical=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())['physical_masses_gev']
+    physical=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())['physical_masses_gev']
     open_channels=bool(sector.masses[0]<physical['etap'] and sector.masses[1]<physical['etap'] and sector.masses[0]>physical['eta'] and sector.masses[1]>physical['eta'] and sector.masses[2]>physical['eta'] and mk>max(physical['K_neutral'],physical['K_charged']))
     return dict(valid=bool(margin>0 and open_channels),on_shell_channels_open=open_channels,source_domain_margin_gev=margin,root_midpoint_gap=float(abs(p[3]-midpoint)),near_domain_boundary=bool(margin<1e-7 or abs(p[3]-midpoint)<1e-7))
 
@@ -59,7 +59,7 @@ def local_diagnostics(result,data,ass,fast,mapping):
     for i in withheld:
         h=allJ[i];balanced=h[keep]/norm[keep];reconstructed=balanced@inverse@B;defect=np.linalg.norm(balanced-reconstructed)/max(1.,np.linalg.norm(balanced));excluded_response=np.linalg.norm(h[~keep])/max(1.,np.linalg.norm(h));identifiable=bool(max(defect,excluded_response)<1e-8)
         held_results.append(dict(channel=obs[i]['channel'],joint_nuisance_identifiable=identifiable,normalized_training_null_defect=float(max(defect,excluded_response)),prediction=float(values[i]) if identifiable else None,local_sigma=float(np.linalg.norm(balanced@inverse)*errors[i]) if identifiable else None,prediction_status='local conditional sign-gauge prediction' if identifiable else 'unidentifiable; prediction withheld'))
-    return dict(training_observable_null_relative_defect=train_defect,derivative_step_relative_change=float(stepdefect),joint_visible_rank=rank,joint_parameter_column_count=A.shape[1],unmeasured_tangent_dimensions=A.shape[1]-rank,joint_balanced_singular_values=sv.tolist(),local_prediction_covariance=cov.tolist(),local_prediction_sigmas=np.sqrt(np.diag(cov)).tolist(),local_covariance_scope='conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty',held_out=held_results)
+    return dict(training_observable_null_relative_defect=train_defect,derivative_step_relative_change=float(stepdefect),joint_visible_rank=rank,joint_parameter_column_count=A.shape[1],unmeasured_tangent_dimensions=A.shape[1]-rank,joint_balanced_singular_values=sv.tolist(),local_prediction_covariance=cov.tolist(),local_prediction_sigmas=np.sqrt(np.diag(cov)).tolist(),local_covariance_scope='conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty',held_out=held_results)
 
 
 def main():
@@ -88,7 +88,7 @@ def main():
             fits={r['model']:r for r in j['results'] if r['scenario_index']==i and r['control']==control};base=np.asarray(fits['soft_leading']['predictions'])
             for model,r in fits.items():
                 nested.append(dict(scenario_index=i,control=control,model=model,relative_prediction_changes_from_soft_leading=((np.asarray(r['predictions'])-base)/base).tolist(),status='gauge-independent measured predictions; sign ambiguity prevents unique signed correction decomposition'))
-    data=json.loads((ROOT/'data/odd_parity/odd_low_energy_measurements.json').read_text());alda=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text());tree=C.J.module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F);fast=C.FastChannels(tree,alda['physical_masses_gev'],np.sqrt(4*np.pi*ass['alpha_em']));maps=C.model_maps();local=[]
+    data=json.loads((ROOT/'data/odd_parity/odd_low_energy_measurements.json').read_text());alda=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text());tree=C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F);fast=C.FastChannels(tree,alda['physical_masses_gev'],np.sqrt(4*np.pi*ass['alpha_em']));maps=C.model_maps();local=[]
     for i,r in enumerate(j['results']):
         if r['success'] and r['action_image_certified'] and not r['active_search_bounds'] and certificates[i]['valid'] and source_certificates[i]['valid'] and not source_certificates[i]['near_domain_boundary'] and r['visible_fit_rank']<len(r['measurement_labels']):
             diagnostics=local_diagnostics(r,data,ass,fast,maps[r['model']]);df=len(r['measurement_labels'])+14-diagnostics['joint_visible_rank'];pvalue=float(chi2_distribution.sf(r['chi2'],df)) if df>0 else None
@@ -107,7 +107,7 @@ def main():
     with transcript.open('w') as h:
         h.write('# Conditional low-energy calibration\n\n')
         for label,expr in j['symbolic_derivation'].items():h.write(label+':\n$$\n'+expr+'\n$$\n\n')
-        h.write('Original measurements occur once; fixed diagonal summaries, central Alda source inputs and declared tree kinematics. No OPE/OZI/naturalness priors.\n\n')
+        h.write('Original measurements occur once; fixed diagonal summaries, central Alda:2026nrd source inputs and declared tree kinematics. No OPE/OZI/naturalness priors.\n\n')
         for row in summary:h.write(f"{row['control']}, {row['model']}: odd chi2 range {row['odd_chi2_range']}; {row['success_count']}/64 optimizer successes.\n\n")
         h.write('Saturated interpolation is not a truncation-adequacy test. Invisible action directions are unmeasured. Fixed-start exhaustive signs plus finite nonlinear starts do not establish a global nonlinear minimum. No ALP band or model-selection conclusion is produced.\n')
     print(transcript.relative_to(ROOT))

@@ -41,7 +41,7 @@ c_q^A=\operatorname{diag}(0.8,-0.3,0.15),\qquad
 c_q^P=0.
 $$
 
-The ChPT conventions and fitted pseudoscalar inputs follow [the numerical-width record](../alp/three-meson/alp-three-meson-widths-numerical.md) and its Alda source [@Alda:2026nrd]. The pole and matching amplitudes use the assumptions listed in [the vector-exchange record](../alp/three-meson/a3p-vector-exchange-amplitude.md): current constant-width pole inputs, ideal vector mixing, and $G_V=f_\pi/\sqrt2$. The local term required by tensor-to-Proca matching is kept separate from the pole [@Ecker:1989yg]. No approximation to $\epsilon_K$ is made. The only flavor assumption used for the exact zero is that the relevant strangeness-zero amplitude is Bose/order symmetric,
+The ChPT conventions and fitted pseudoscalar inputs follow [the numerical-width record](../alp/three-meson/alp-three-meson-widths-numerical.md) and its Alda:2026nrd source [@Alda:2026nrd]. The pole and matching amplitudes use the assumptions listed in [the vector-exchange record](../alp/three-meson/a3p-vector-exchange-amplitude.md): current constant-width pole inputs, ideal vector mixing, and $G_V=f_\pi/\sqrt2$. The local term required by tensor-to-Proca matching is kept separate from the pole [@Ecker:1989yg]. No approximation to $\epsilon_K$ is made. The only flavor assumption used for the exact zero is that the relevant strangeness-zero amplitude is Bose/order symmetric,
 
 $$
 \mathcal A_{0\bar0}=\mathcal A_{\bar00},

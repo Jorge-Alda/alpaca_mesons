@@ -12,7 +12,7 @@ provenance: analytical-derivation
 ## Inputs and assumptions
 
 Use [stage-4 action amplitudes](vector-stage4-amplitudes.md),
-[physical Alda generators](alda-neutral-amplitude-inputs.md),
+[physical Alda:2026nrd generators](alda-neutral-amplitude-inputs.md),
 [stage-3 source/mass scenarios](../foundations/vector-stage3-calibration.md),
 and the [stage-5 likelihood specification](vector-stage5-joint-fit-specification.md).
 Tree level, fixed central physical kinematics, independent quark spurion,
@@ -43,9 +43,9 @@ $\rho^0,\omega,\phi$ in the physical neutral basis of the selected mass action.
 | $S$ | First spectral source moment $\sum_iR_iT_i$, in GeV. It is the coefficient of $1/Q^2$ in $W(-Q^2)$, not a new fitted parameter independent of the $R_i$. |
 | $J$ | Next moment $\sum_iR_iM_i^2T_i$, in GeV$^3$; $W(-Q^2)=S/Q^2-J/Q^4+\cdots$. |
 | $q(U,V)$ | Channel-dependent symmetric bilinear trace $\operatorname{tr}(\{U,V\}T_P)$, with $\{U,V\}=UV+VU$ and $T_P$ the canonical generator of the chosen physical pseudoscalar $P$. It is neither a momentum nor a universal number. Its units are the product of the units of $U$ and $V$; $q(Q,Q)$ is dimensionless, while $q(S,Q)$ is in GeV. |
-| $T_P$ | Dimensionless canonical neutral-pseudoscalar generator reconstructed from Alda arXiv v1: $T_P=F\lambda_P/(\sqrt2f_\pi)$. It retains the physical neutral admixtures and is independent of the vector mixing angle. |
+| $T_P$ | Dimensionless canonical neutral-pseudoscalar generator reconstructed from Alda:2026nrd arXiv v1: $T_P=F\lambda_P/(\sqrt2f_\pi)$. It retains the physical neutral admixtures and is independent of the vector mixing angle. |
 | $h(U,V)$ | Companion mass trace $\operatorname{tr}(\{U,V\}\{T_P,\chi\})$, where $\chi=2B_0m_q$ has units GeV$^2$. It has two additional powers of mass compared with $q(U,V)$. |
-| $X$ | Vector source's vacuum spurion $\chi_+|_{\Phi=0}=2\chi$, isospin-projected as $\operatorname{diag}(x_l,x_l,x_s)$. This $X$ is distinct from Alda's topological invariant $X_{TC}$. |
+| $X$ | Vector source's vacuum spurion $\chi_+ | _{\Phi=0}=2\chi$, isospin-projected as $\operatorname{diag}(x_l,x_l,x_s)$. This $X$ is distinct from Alda:2026nrd's topological invariant $X_{TC}$. |
 | $F_V,z_V,y_V$ | Coefficients of the common, single-trace spurion, and double-trace spurion electromagnetic source interactions, respectively. $F_V$ is in GeV; $z_V,y_V$ are in GeV$^{-1}$. |
 
 These definitions follow the [source-action derivation](../foundations/vector-leptonic-width.md)
@@ -134,7 +134,7 @@ q(S,Q)=\Lambda q(Q,Q),\qquad
 A\Lambda=-\frac{\sqrt2N_CM_V}{64\pi^2},
 $$
 
-with one common $\Lambda$ for all three pseudoscalars. The Alda generators
+with one common $\Lambda$ for all three pseudoscalars. The Alda:2026nrd generators
 span the diagonal flavor space. Thus their three trace equations imply
 $\{S,Q\}=\Lambda\{Q,Q\}$; since $S$ and $Q$ are diagonal and every
 charge entry is nonzero, $S=\Lambda Q$.

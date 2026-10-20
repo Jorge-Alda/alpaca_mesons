@@ -2,7 +2,7 @@
   "scope": "One fixed experimental-input setup, four distinct source hypotheses, three one-at-a-time input sensitivities and two data-removal checks for the negative single-trace source case, retained as a conditional working example because it describes the primary data; archive extraction without new minimization.",
   "selection_policy": "Charged rho and Kstar mass summaries; evaluated phi electronic width; near-ideal inverse mass root; primary twelve odd summaries. These choices define a conditional comparison, not a uniquely preferred source hypothesis.",
   "conventions": "\\epsilon^{0123}=+1; metric (+---); canonical c_i=-c_i^R and d_i=-d_i^R; old archives remain reference backend inputs.",
-  "uncertainty_policy": "Quoted diagonal experimental summaries, fixed central Alda neutral inputs, tree-level real-photon model. Null directions are unmeasured; representatives are not eleven separately measured coefficients. Local prediction errors are sign-branch conditional; no global nonlinear confidence intervals.",
+  "uncertainty_policy": "Quoted diagonal experimental summaries, fixed central Alda:2026nrd neutral inputs, tree-level real-photon model. Null directions are unmeasured; representatives are not eleven separately measured coefficients. Local prediction errors are sign-branch conditional; no global nonlinear confidence intervals.",
   "results": [
     {
       "label": "central_universal",
@@ -267,7 +267,7 @@
           "local_prediction_sigma": 1.890802974548111e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "central_single_trace_positive",
@@ -534,7 +534,7 @@
           "local_prediction_sigma": 1.8915739436433585e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "central_single_trace_negative",
@@ -801,7 +801,7 @@
           "local_prediction_sigma": 1.8734075092231467e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "central_double_trace",
@@ -1070,7 +1070,7 @@
           "local_prediction_sigma": 1.8919922521474736e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "change_rho_input",
@@ -1337,7 +1337,7 @@
           "local_prediction_sigma": 1.87339718391779e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "change_kstar_input",
@@ -1604,7 +1604,7 @@
           "local_prediction_sigma": 1.8798380064644735e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "change_phi_input",
@@ -1871,7 +1871,7 @@
           "local_prediction_sigma": 1.8736576139639587e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "without_broad_rho",
@@ -2108,7 +2108,7 @@
           "local_prediction_sigma": 1.8788795635842842e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     },
     {
       "label": "without_constrained_Kstar",
@@ -2355,7 +2355,7 @@
           "local_prediction_sigma": 1.8938244783545938e-07
         }
       ],
-      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
+      "local_prediction_uncertainty_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty"
     }
   ],
   "sha256": {
@@ -2366,7 +2366,7 @@
     "data/vector_sector/odd_low_energy_calibration_verification.json": "c9be2ceb593d1b8d3790c6f33cf6e1416c615ba52fd0747622548211310f5e34",
     "data/vector_sector/odd_low_energy_jacobians.json": "f8735d0b5090c943831bc080b24a672c5c5cefd9f92dee601c854f143872236c",
     "data/vector_sector/stage3_results.json": "a8cc2290afd22fcc43b98e7ab39e72f68c5694718769ca693d2e203216359192",
-    "data/vector_sector/alda_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
     "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
     "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
     "scripts/summarize_odd_preliminary_fit.py": "958bd2d46a381a832e202c843327a27da90999735fdc9104f519d080a14ea6db"

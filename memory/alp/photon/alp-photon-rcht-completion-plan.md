@@ -29,7 +29,7 @@ do not add up to a normalized resonance-corrected ALP predictor. The
 is zero along all three current structural blind directions but is stripped
 of the overall physical normalization.
 
-Use Alda arXiv-v1 $X=\mathbb M_a^{-1}(\mathcal C)$ and $Y=c_q^{AP}+X$
+Use Alda:2026nrd arXiv-v1 $X=\mathbb M_a^{-1}(\mathcal C)$ and $Y=c_q^{AP}+X$
 independently. The WZW/contact term, derivative resonance term and pseudoscalar
 mass-source term do not all have the same effective flavor matrix. UV ALP
 coefficients and any independently matched invariant local photon term remain
@@ -49,7 +49,7 @@ implementation and enlarged-action data sensitivity remain future work.
 
 1. Declare the retained tree/single-trace action and leading $e^2/f_a$ order.
    Fix the dual-field convention and the invariant UV/contact coefficient.
-   Verify Alda's source signs against the archived arXiv formulas; do not use
+   Verify Alda:2026nrd's source signs against the archived arXiv formulas; do not use
    the local manuscript or infer a singlet matching coefficient from the anomaly.
 2. In `scripts/derive_physical_alp_gamma_gamma.py`, independently derive the
    VJP term with each photon placement and the VVP term with both vector
@@ -79,7 +79,7 @@ implementation and enlarged-action data sensitivity remain future work.
 
 Pair the executable with a derivation record and numerical predictor; include
 Ward/Bose, zero-resonance, reparametrization, normalization and null-shift tests.
-State the pointwise ALP–meson near-degeneracy domain from Alda, and replace the
+State the pointwise ALP–meson near-degeneracy domain from Alda:2026nrd, and replace the
 perturbative inverse with a coupled treatment for retained violating points.
 Virtual photons, loops, further singlet/OZI terms and high-energy matching
 are separate extensions, not implied by the real-photon tree calculation.

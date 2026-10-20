@@ -28,11 +28,11 @@ Use [mismatch interpretation](vector-matching-mismatch-interpretation.md),
 [U(3) extension options](u3-nonet-odd-parity-extension-options.md),
 [Roig operator comparison](../../extracts/Roig:2013baa/anomalous-rcht-bases-and-double-trace.md),
 [stage-4 amplitudes](vector-stage4-amplitudes.md),
-[Alda input conversion](alda-neutral-amplitude-inputs.md),
+[Alda:2026nrd input conversion](alda-neutral-amplitude-inputs.md),
 [fit specification](vector-stage5-joint-fit-specification.md), and
 [ALP target audit](alp-target-amplitude-audit.md).
 
-Preserve canonical tensor fields, Alda arXiv-v1 source conventions, the
+Preserve canonical tensor fields, Alda:2026nrd arXiv-v1 source conventions, the
 positive-strange phi phase, independent $M_V$ normalization, and WZW/current
 assignment. Retain both mass branches and source-sign hypotheses. Keep
 charged/neutral scenarios separate, preferring the near-ideal branch only
@@ -127,7 +127,7 @@ extensions of the existing implementation kernels.
    vanish. Add flavor-sensitive tests distinguishing derivative versus
    mass double traces and singlet versus octet channels.
 4. Recompute sensitivity of $a\to VV,V\gamma,\gamma\gamma,3P$ to all retained
-   new combinations, using the independent Alda sources. The old blind-direction
+   new combinations, using the independent Alda:2026nrd sources. The old blind-direction
    result is not assumed to survive an extended operator space. Identify any
    new combination invisible in the SM dataset but entering an ALP target.
    Construct normalized predictors before interpreting that sensitivity as
@@ -162,7 +162,7 @@ Without adequate low-virtuality data, the primary dataset stands on its own.
 Audit measurement overlap and correlated total widths, normalization errors,
 and mass/electronic/radiative summary correlations. Keep standardized shared
 nuisances once and separate from diagonal errors. Where covariance is absent,
-state conditional independence explicitly. Alda neutral-input covariance is
+state conditional independence explicitly. Alda:2026nrd neutral-input covariance is
 an input-propagation task, not an extra fit datum. Missing correlations must
 be labelled; source-breaking/model uncertainty stays separate from input error.
 
@@ -235,7 +235,7 @@ failure and reassess the action/domain before producing an ALP band.
 ## Stage E — propagate to tree-level ALP predictions
 
 Propagate the calibrated combinations through the complete normalized ALP
-predictors from stage B, retaining Alda's pointwise mixing-validity conditions.
+predictors from stage B, retaining Alda:2026nrd's pointwise mixing-validity conditions.
 Reassess which target observables depend on unconstrained new singlet/source
 directions. If one does, its uncertainty remains open until an explicit
 assumption or additional source-sensitive information is supplied; no unique

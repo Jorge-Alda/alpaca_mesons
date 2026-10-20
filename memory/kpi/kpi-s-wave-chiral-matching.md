@@ -24,13 +24,13 @@ provenance: analytical-derivation
 
 ## Scope
 
-This record derives the production kernel that replaces the unexplained scalar-sector normalization in the $a\to S_{K\pi}K$ ansatz of Aloni et al. The phenomenological $\mathcal F_{SPP}$ factor is omitted. The result follows from the chiral-invariant leading-order ALP Lagrangian and no-mixing prescription of Alda and Rigolin. [@Aloni:2018vki; @Alda:2026nrd]
+This record derives the production kernel that replaces the unexplained scalar-sector normalization in the $a\to S_{K\pi}K$ ansatz of Aloni et al. The phenomenological $\mathcal F_{SPP}$ factor is omitted. The result follows from the chiral-invariant leading-order ALP Lagrangian and no-mixing prescription of Alda:2026nrd and Rigolin. [@Aloni:2018vki; @Alda:2026nrd]
 
 The executable derivation is [`scripts/derive_kpi_s_wave_matching.py`](../../scripts/derive_kpi_s_wave_matching.py).
 
 ## Inputs and assumptions
 
-The matrix-level interaction is the result derived in [the leading-order $a\Phi^3$ record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md), whose literature inputs are recorded in [the Alda Appendix A extract](../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]:
+The matrix-level interaction is the result derived in [the leading-order $a\Phi^3$ record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md), whose literature inputs are recorded in [the Alda:2026nrd Appendix A extract](../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]:
 
 $$
 \mathcal L_{a\Phi^3}
@@ -43,7 +43,7 @@ $$
 The following assumptions are used:
 
 - The calculation is leading order in the chiral expansion and linear in $1/f_a$.
-- The hatted couplings are in the Alda no-ALP-meson-mixing basis.
+- The hatted couplings are in the Alda:2026nrd no-ALP-meson-mixing basis.
 - The isospin limit $m_u=m_d=\widehat m$ and $m_{K^+}=m_{K^-}=m_K$ is used.
 - The coupling matrices are diagonal, with entries $A_i=(\widehat c_q^A)_{ii}$ and $P_i=(\widehat c_q^P)_{ii}$.
 - The exact isospin-limit meson generators are used; physical $\pi^0$--$\eta$--$\eta'$ mixing can instead be included by evaluating the same trace formulas with the fitted generators.
@@ -169,7 +169,7 @@ P_{\mathrm{LO}}(s)=
 }
 $$
 
-This is the Alda-consistent per-band scalar production kernel. Under the requirements that both charge-conjugate bands use the same one-variable kernel and that no additional contact remainder is retained, the decomposition is fixed by the full leading-order amplitude.
+This is the Alda:2026nrd-consistent per-band scalar production kernel. Under the requirements that both charge-conjugate bands use the same one-variable kernel and that no additional contact remainder is retained, the decomposition is fixed by the full leading-order amplitude.
 
 If the overall factor is written in the convention of Aloni et al.,
 
@@ -233,7 +233,7 @@ $$
 }
 $$
 
-Setting $F_0^{K\pi}=1$ reproduces the complete Alda-consistent leading-order contact amplitude exactly. A normalized elastic Omnes function is one possible realization [see the Omnes extract](../extracts/Omnes:1958hv/phase-representation.md) [@Omnes:1958hv]:
+Setting $F_0^{K\pi}=1$ reproduces the complete Alda:2026nrd-consistent leading-order contact amplitude exactly. A normalized elastic Omnes function is one possible realization [see the Omnes extract](../extracts/Omnes:1958hv/phase-representation.md) [@Omnes:1958hv]:
 
 $$
 \Omega(s;s_0)=
@@ -256,7 +256,7 @@ The Omnes construction and direct use of the BaBar amplitude are two alternative
 
 The phase $\delta_0^{1/2}(s)$ in the Omnes integral is the phase of the $I=1/2$ $K\pi\to K\pi$ scattering partial wave. It should therefore be taken from a scattering analysis, such as LASS or a modern dispersive coupled-channel fit, rather than from the BaBar magnitude. The calculation proceeds as follows:
 
-1. Compute $P_{\mathrm{LO}}(s)$ from the hatted Alda couplings.
+1. Compute $P_{\mathrm{LO}}(s)$ from the hatted Alda:2026nrd couplings.
 2. Obtain the scattering phase $\delta_0^{1/2}(s)$.
 3. Construct $\Omega(s;s_0)$ with $\Omega(s_0;s_0)=1$.
 4. Use $P_{\mathrm{LO}}(s)\Omega(s;s_0)+P_{\mathrm{LO}}(t)\Omega(t;s_0)$.
@@ -343,7 +343,7 @@ If the calculation includes the full $K_0^*(1430)$ region, use a coupled-channel
 For the present ALP problem, the practical choice is therefore:
 
 1. If every physical $K\pi$ invariant mass remains below about $1.3\,\mathrm{GeV}$, use the Pelaez--Rodas phase, with the Roy--Steiner result fixing or validating the low-energy part, and assign an uncertainty for treating the weak $K\eta$ channel as elastic.
-2. If the integration reaches the $K_0^*(1430)$ and $K\eta'$ region, replace the scalar Omnes factor by a coupled-channel matrix. This also requires deriving the Alda-consistent production kernels for $K\eta$ and $K\eta'$, since a coupled-channel solution acts on a vector of source amplitudes.
+2. If the integration reaches the $K_0^*(1430)$ and $K\eta'$ region, replace the scalar Omnes factor by a coupled-channel matrix. This also requires deriving the Alda:2026nrd-consistent production kernels for $K\eta$ and $K\eta'$, since a coupled-channel solution acts on a vector of source amplitudes.
 
 Even when the external value of $s$ lies in the elastic region, the Omnes integral extends to infinity. Above the last trustworthy phase input, a high-energy phase continuation is still required. Additional subtractions suppress this sensitivity, and varying the continuation and matching scale provides the associated systematic uncertainty. [@Omnes:1958hv]
 

@@ -211,10 +211,10 @@ def main():
                 raise ValueError('measurement source hash mismatch')
     calibration = json.loads((ROOT/'data/vector_sector/stage3_results.json').read_text())
     pdg = json.loads((ROOT/'data/vector_sector/pdg2024.json').read_text())
-    alda = json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
+    alda = json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
     assumptions = calibration['assumptions']
     e = np.sqrt(4*math.pi*assumptions['alpha_em'])
-    tree = module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree', F=F, fpi=F)
+    tree = module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree', F=F, fpi=F)
     bounded = module('odd_bounded_amplitudes')
     ids = list(bounded.parent_ids())
     embedding = bounded.original_embedding()
@@ -378,7 +378,7 @@ def main():
     paths = [str(measurement_path.relative_to(ROOT)), 'scripts/derive_odd_low_energy_jacobians.py',
              'scripts/implementation/odd_bounded_amplitudes.py', 'data/vector_sector/odd_cubic_parent_kernels.json',
              'data/vector_sector/stage3_results.json', 'data/vector_sector/pdg2024.json',
-             'data/vector_sector/alda_arxiv_v1.json', 'data/vector_sector/odd_leading_action_count.json',
+             'data/vector_sector/alda_2026nrd_arxiv_v1.json', 'data/vector_sector/odd_leading_action_count.json',
              'data/vector_sector/odd_three_flavor_action_quotient.json']
     output = ROOT/'data/vector_sector/odd_low_energy_jacobians.json'
     if args.limit_scenarios:
@@ -387,11 +387,11 @@ def main():
         complete_64_scenario_run=not bool(args.limit_scenarios), operator_order=ids, filtrations=filtrations,
         reference_original_coefficients=SEED_ORIGINAL.tolist(), reference_status='deterministic nonzero point; no OPE, fit or prior',
         measured_values=measured_values.tolist(), measurement_errors=errors.tolist(), measurement_snapshot=args.measurements,
-        vertex_scalar_mass_scheme='LO Alda eigenmasses and charged source-EOM masses',
-        phase_space_scalar_mass_scheme='physical Alda input-table masses; labelled kinematic replacement',
+        vertex_scalar_mass_scheme='LO Alda:2026nrd eigenmasses and charged source-EOM masses',
+        phase_space_scalar_mass_scheme='physical Alda:2026nrd input-table masses; labelled kinematic replacement',
         domain='real photons and on-shell light vectors; no hard TFF or three-pion input',
         nuisance_policy='original mass/electronic/total-width observations once; diagonal summary errors conditional on absent cross covariance',
-        alda_uncertainties='fixed central generators/quark spurion; posterior covariance and truncation effects unpropagated',
+        alda_2026nrd_uncertainties='fixed central generators/quark spurion; posterior covariance and truncation effects unpropagated',
         zero_radiative_amplitude_warning='at zero odd couplings radiative width derivatives vanish; this singular locus is not a global identifiability result',
         scenarios=results, sha256={path: hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in paths})
     output.write_text(json.dumps(artifact, indent=2, allow_nan=False)+'\n')

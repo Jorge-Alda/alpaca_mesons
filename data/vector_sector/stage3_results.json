@@ -6,7 +6,7 @@
     "masses": "PDG listing fitted masses used as tree masses; no EM or pole conversion",
     "xl_gev2": 0.036615999999999996,
     "xs_gev2": 0.943684,
-    "spurion": "fixed Alda arXiv-v1 central isospin-average inputs",
+    "spurion": "fixed Alda:2026nrd arXiv-v1 central isospin-average inputs",
     "model_errors": "not included in diagnostic chi2; charged/neutral scenarios and width alternatives remain separate",
     "electron_mass_gev": 0.00051099895,
     "alpha_em": 0.0072973525692838015,

@@ -1,0 +1,12 @@
+{
+  "bibtex_key": "Alda:2026nrd",
+  "arxiv_version": "2610.13671v1",
+  "source_archive_sha256": "3322b89e81dabd86e4e6cd03d26bc940668694c12714e197377bd32972e67339",
+  "source_locations": ["app:mesonmass", "eq:fit_mesonic", "eq:matrices_physmesons", "tab:mesonfit_inputs"],
+  "B0mq_gev2": [0.006568, 0.011740, 0.235921],
+  "m0_squared_gev2": 0.67124,
+  "fpi_gev": 0.093,
+  "physical_masses_gev": {"pi0": 0.1349768, "eta": 0.547862, "etap": 0.95778, "pi_charged": 0.13957039, "K_charged": 0.493677, "K_neutral": 0.497611},
+  "published_lambda_diagonals": {"pi0": [1.01707, -0.98257, -0.01140], "eta": [0.79999, 0.83749, -0.81156], "etap": [0.57061, 0.57721, 1.15812]},
+  "limitations": "Rounded fitted central parameters. No posterior uncertainty propagation or chiral truncation error. Physical eta mass is distinct from the LO fitted eigenmass."
+}

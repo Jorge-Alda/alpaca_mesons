@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 Use the original seven VJP and four VVP operators and the canonical tensor
 convention in [the preliminary fit](odd-preliminary-fit.md). The ALP is
-specified directly in Alda's no-mixing basis by diagonal dimensionless
+specified directly in Alda:2026nrd's no-mixing basis by diagonal dimensionless
 couplings $c_q^A$ and $c_q^P$. No field rotation is performed here. Let
 $\chi=2B_0m_q$ be the diagonal quark-mass matrix, and let $M_V=0.770$ GeV
 retain its role as the odd-operator normalization scale. The even-vector

@@ -13,7 +13,7 @@ Canonical tensor and odd-coupling conventions follow [the Levi-Civita audit](lev
 
 ## Inputs and assumptions
 
-Use the canonical fields and actual Lorentz contractions in [radiative SM amplitude](radiative-sm-amplitude.md) and [neutral TFF amplitude](radiative-tff-amplitude.md), the physical generators in [nonideal mass action](../foundations/vector-nonideal-mass-action.md), the [mass extension](../foundations/vector-mass-extension.md), and the signed source residues derived in [leptonic widths](../foundations/vector-leptonic-width.md). Calibration branches are recorded in [stage 3](../foundations/vector-stage3-calibration.md). Pseudoscalar coefficients are independent explicit inputs; their Alda provenance is the arXiv version indexed in [neutral meson generators](../../extracts/Alda:2026nrd/neutral-meson-generators.md), not the local manuscript.
+Use the canonical fields and actual Lorentz contractions in [radiative SM amplitude](radiative-sm-amplitude.md) and [neutral TFF amplitude](radiative-tff-amplitude.md), the physical generators in [nonideal mass action](../foundations/vector-nonideal-mass-action.md), the [mass extension](../foundations/vector-mass-extension.md), and the signed source residues derived in [leptonic widths](../foundations/vector-leptonic-width.md). Calibration branches are recorded in [stage 3](../foundations/vector-stage3-calibration.md). Pseudoscalar coefficients are independent explicit inputs; their Alda:2026nrd provenance is the arXiv version indexed in [neutral meson generators](../../extracts/Alda:2026nrd/neutral-meson-generators.md), not the local manuscript.
 
 Assume tree level, one vector nonet, canonical tensor kinetic terms, real vacuum spurions, the declared mass/source invariants and the existing single-trace odd action. Natural units, masses in GeV, metric $(+---)$ and $\epsilon^{0123}=+1, \epsilon_{0123}=-1$ apply. This extension does not assert completeness of the flavor-breaking odd action or establish its short-distance matching. No loop, kinetic-breaking or momentum-dependent self-energy prescription is introduced.
 
@@ -21,7 +21,7 @@ Both mass branches remain in stage 3. The user's selection rule is to prefer the
 
 For the numerical calibration application, the even-vector mass/source block
 retains stage 3's exact-isospin projection, while the odd mass-spurion and
-neutral-pseudoscalar inputs retain Alda's full fitted isospin breaking.
+neutral-pseudoscalar inputs retain Alda:2026nrd's full fitted isospin breaking.
 This explicitly declared partial-isospin truncation omits rho–isoscalar mixing;
 it does not establish a complete isospin-resolved vector action.
 
@@ -126,7 +126,7 @@ focused new tests and existing amplitude/data regressions without triggering
 the package's unrelated eager imports:
 
 ```text
-.venv/bin/python scripts/verify_alda_neutral_inputs.py
+.venv/bin/python scripts/verify_alda_2026nrd_neutral_inputs.py
 .venv/bin/python scripts/verify_vector_stage4.py
 ```
 

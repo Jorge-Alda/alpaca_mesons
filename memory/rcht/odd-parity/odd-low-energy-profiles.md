@@ -9,7 +9,7 @@ provenance: numerical-computation
 
 # Scope and frozen finite policy
 
-This continues the [conditional calibration](odd-low-energy-calibration.md) and [maintained stage-D plan](odd-breaking-low-energy-calibration-plan.md). All 64 input/mass/source alternatives and four predeclared datasets remain separate. The diagonal PDG-summary covariance, fixed Alda central inputs, LO source-compatible vertex masses, physical phase-space masses and single counting of ancillary observations are inherited assumptions. No new prior or OPE constraint is introduced.
+This continues the [conditional calibration](odd-low-energy-calibration.md) and [maintained stage-D plan](odd-breaking-low-energy-calibration-plan.md). All 64 input/mass/source alternatives and four predeclared datasets remain separate. The diagonal PDG-summary covariance, fixed Alda:2026nrd central inputs, LO source-compatible vertex masses, physical phase-space masses and single counting of ancillary observations are inherited assumptions. No new prior or OPE constraint is introduced.
 
 Strengthen the sign-basin search for all 512 unsaturated original/soft-leading cases. Pair only their training-observable likelihood evaluations while bidirectional image containment is certified at every proposed nuisance point. Pairing is not an assertion of equal action nullspaces, held-out predictions or ALP sensitivities. Each of the 256 scenario/dataset likelihood pairs uses sixteen distinct fixed-point sign starts and both previous optima. If the achieved residual improves by more than $10^{-4}$, run one further deterministic batch of sixteen starts; stop at that declared budget and label continuing improvement. This is a stronger finite search, not an exhaustive proof of a global nonlinear minimum.
 
@@ -31,7 +31,7 @@ One-sided source-residue targets use positive multiples $0.05,0.25,0.5,1,2,4,8$ 
 - [Measurement Jacobians](odd-low-energy-measurement-jacobians.md): retained parent filters, coefficient units and shared-width observations.
 - [Bounded SM numerical kernels](odd-bounded-sm-numerical-kernels.md): normalized amplitudes and WZW offsets.
 - [PDG snapshot](../../extracts/ParticleDataGroup:2024cfk/odd-parity-low-energy-measurements.md): measurements and absent joint covariance [@ParticleDataGroup:2024cfk].
-- [Alda input conversion](alda-neutral-amplitude-inputs.md): fields, central spurions and source/physical mass distinction [@Alda:2026nrd].
+- [Alda:2026nrd input conversion](alda-neutral-amplitude-inputs.md): fields, central spurions and source/physical mass distinction [@Alda:2026nrd].
 
 The next structural gate is a separate retained-action null projection into available normalized ALP targets. Missing source/contact or physical-normalization kernels are explicit completion gates; this finite continuation does not derive all missing predictors or produce an ALP band.
 

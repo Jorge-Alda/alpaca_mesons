@@ -115,7 +115,7 @@ show(
 # ---------------------------------------------------------------------------
 f_pi, f_a, B_0 = sp.symbols("f_pi f_a B_0", nonzero=True)
 c_q_P = matrix_symbols("cP")
-c_q_AP = c_q_A - c_q_P  # Alda convention c_q^{AP}=c_q^A-c_q^P.
+c_q_AP = c_q_A - c_q_P  # Alda:2026nrd convention c_q^{AP}=c_q^A-c_q^P.
 m_q = sp.diag(*sp.symbols("m_u m_d m_s", real=True))
 c_q_A_plus_m_a_inverse_C = c_q_A + m_a_inverse_C
 

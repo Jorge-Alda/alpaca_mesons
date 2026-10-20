@@ -8,14 +8,14 @@ from .radiative_sm import Q
 from .odd_parity_data import (load_cleo_tff_observations,load_babar_pi0_tff_observation,
     load_vector_omega_pi0_gamma_observation,load_omega_pi0_gamma_observation)
 from .radiative_odd_parity import OmegaPiGammaInputs
-from .alda_neutral_inputs import alda_neutral_inputs
+from .alda_2026nrd_neutral_inputs import alda_2026nrd_neutral_inputs
 
 
 class VectorSectorDataTests(unittest.TestCase):
     def test_calibrated_sector_reaches_all_tff_observation_blocks(self):
         sector=VectorSector.from_stage3(rho_input='rho_neutral',kstar_input='kstar_neutral',
             phi_input='phi_evaluation',source_hypothesis='double_trace')
-        data=alda_neutral_inputs(mass_scheme='physical')
+        data=alda_2026nrd_neutral_inputs(mass_scheme='physical')
         selected={name:VectorAmplitudeInputs(p['F'],.77,p['mp'],p['TP'],p['chi'],sector)
                   for name,p in data.items()}
         observations=load_cleo_tff_observations({'pi0':selected['pi0'],'eta':selected['eta'],

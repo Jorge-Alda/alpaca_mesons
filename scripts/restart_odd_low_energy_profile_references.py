@@ -19,7 +19,7 @@ def main():
            'data/vector_sector/odd_low_energy_calibration.json',
            'data/odd_parity/odd_low_energy_measurements.json',
            'data/vector_sector/pdg2024.json','data/vector_sector/stage3_results.json',
-           'data/vector_sector/alda_arxiv_v1.json',
+           'data/vector_sector/alda_2026nrd_arxiv_v1.json',
            'data/vector_sector/odd_low_energy_reanchored_profiles.json',
            'scripts/restart_odd_low_energy_profile_references.py',
            'scripts/reanchor_odd_low_energy_profiles.py',
@@ -27,7 +27,7 @@ def main():
            'scripts/profile_odd_low_energy.py','scripts/calibrate_odd_low_energy.py']
     profiles,calibration,data,pdg,stage3,alda,reprofile=[json.loads((ROOT/p).read_text()) for p in paths[:7]]
     ass=stage3['assumptions']
-    tree=P.C.J.module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree',F=P.C.J.F,fpi=P.C.J.F)
+    tree=P.C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree',F=P.C.J.F,fpi=P.C.J.F)
     fast=P.C.FastChannels(tree,alda['physical_masses_gev'],np.sqrt(4*math.pi*ass['alpha_em']))
     output=dict(scope='targeted multiplier-one finite restarts plus refreshed source grids',
                 global_nonlinear_minimum_proven=False,

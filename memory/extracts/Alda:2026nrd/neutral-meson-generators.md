@@ -1,5 +1,5 @@
 ---
-title: Alda neutral-meson generators from mass diagonalization
+title: Alda:2026nrd neutral-meson generators from mass diagonalization
 status: literature
 created: 2026-10-13
 updated: 2026-10-13
@@ -42,7 +42,7 @@ The appendix describes an effective LO calibration, excludes the eta mass
 from the likelihood, and predicts $m_\eta=494.10$ MeV; the quoted parameter
 errors exclude chiral truncation effects. [@Alda:2026nrd]
 
-Alda uses $\Phi=\sum\lambda_P P$, $u=\exp(i\Phi/(2f_\pi))$,
+Alda:2026nrd uses $\Phi=\sum\lambda_P P$, $u=\exp(i\Phi/(2f_\pi))$,
 $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$, $f_\pi=93$ MeV.
 The existing RChT kernel uses $\Phi_R=\sum T_P P$ and
 $u=\exp(i\Phi_R/(\sqrt2F))$. For the same fields and $F=f_\pi$, their

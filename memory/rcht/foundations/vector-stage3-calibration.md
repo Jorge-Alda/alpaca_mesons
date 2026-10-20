@@ -12,7 +12,7 @@ provenance: numerical-computation
 ## Inputs, scope and conventions
 
 Use the [PDG 2024 snapshot and provenance](../../extracts/ParticleDataGroup:2024cfk/vector-sector-calibration-inputs.md),
-the [arXiv-v1 Alda inputs](../../extracts/Alda:2026nrd/neutral-meson-generators.md),
+the [arXiv-v1 Alda:2026nrd inputs](../../extracts/Alda:2026nrd/neutral-meson-generators.md),
 the [minimal mass action](vector-nonideal-mass-action.md), the
 [additional mass invariant](vector-mass-extension.md), and the
 [leptonic-width/source derivation](vector-leptonic-width.md).
@@ -29,7 +29,7 @@ measurements; their full cross-covariance is unavailable. Chi-squared values bel
 are conditional adequacy diagnostics, not precision global-fit significances.
 
 Set $x_l=4B_0\widehat m=0.036616$ GeV squared and
-$x_s=4B_0m_s=0.943684$ GeV squared from Alda's central parameters.
+$x_s=4B_0m_s=0.943684$ GeV squared from Alda:2026nrd's central parameters.
 Spurion errors are fixed in this diagnostic; quoted propagated errors below
 include PDG input errors only. They do not include chiral truncation, omitted
 self-energies, source corrections or correlations. No model error is silently

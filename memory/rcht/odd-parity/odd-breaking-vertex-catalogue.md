@@ -126,9 +126,9 @@ The complete bounded one-spurion action count is the next pre-fit milestone.
 
 The local vertex enumeration/reduction requested in stage A is executed.
 Before fitting, stage B must choose covariant representatives, expand the
-full blocks with independent Alda sources and account for nonlinear contact
+full blocks with independent Alda:2026nrd sources and account for nonlinear contact
 remainders not fixed by equality in this vertex sector. EOM conversion of
-singlet/double traces must retain the Alda anomalous singlet and source terms;
+singlet/double traces must retain the Alda:2026nrd anomalous singlet and source terms;
 the literature basis dictionary is an audit, not permission to discard them.
 
 Begin stage B by deriving exact normalized radiative/TFF kernels for the

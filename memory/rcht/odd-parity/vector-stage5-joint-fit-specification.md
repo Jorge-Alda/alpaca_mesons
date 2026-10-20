@@ -33,7 +33,7 @@ superseded. Missing normalized ALP predictors remain separate work.
 ## Inputs and truncation
 
 Use [stage-4 amplitudes](vector-stage4-amplitudes.md),
-[Alda arXiv inputs](alda-neutral-amplitude-inputs.md),
+[Alda:2026nrd arXiv inputs](alda-neutral-amplitude-inputs.md),
 [mass/source calibration](../foundations/vector-stage3-calibration.md),
 [validated likelihood data](odd-parity-data-implementation.md), and
 [fit infrastructure](correlated-odd-parity-fit-infrastructure.md).
@@ -52,7 +52,7 @@ Odd vertices remain the existing single-trace one-pseudoscalar action.
 Additional odd flavor-breaking and multi-pseudoscalar contact operators,
 kinetic breaking, rho–isoscalar mixing and loops are omitted. The even block
 is isospin projected while odd spurions and neutral pseudoscalar generators
-retain Alda isospin breaking. This partial-isospin truncation is an assumption,
+retain Alda:2026nrd isospin breaking. This partial-isospin truncation is an assumption,
 not a complete symmetry-breaking action. Do not reinterpret the three-pion
 exchange contribution as a complete amplitude.
 
@@ -111,7 +111,7 @@ is absent. No fit or numerical coupling prior is authorized by rank alone.
    The existing Omnès kernel alone does not satisfy these gates. A chi-squared
    difference between published shape fits is not a covariance or a quantitative
    width systematic for an uncomputed predictor.
-4. Propagate Alda input uncertainty from documented correlations (or label
+4. Propagate Alda:2026nrd input uncertainty from documented correlations (or label
    explicitly conditional input variations when covariance is unavailable),
    then minimize separate scenarios and report data/theory components,
    identifiable combinations, source-marginalized rank and model adequacy.

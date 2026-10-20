@@ -11,7 +11,7 @@ provenance: numerical-computation
 
 ## Evidence, scope, and assumptions
 
-[`scripts/implementation/odd_parity_rcht.py`](../../../scripts/implementation/odd_parity_rcht.py) implements the operator-level proposal derived in the [two-source ALP RChT record](two-source-alp-rcht-odd-parity-extension.md), the [direct VJP insertion record](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md), and the [exact photon--vector diagonalization](../foundations/rcht-photon-vector-diagonalization.md). The $VJP/VVP$ basis and five short-distance relations are literature inputs [@Ruiz-Femenia:2003jdx]; the ALP spurion insertion follows Alda's conventions [@Alda:2026nrd]. The numerical organization and validation policy are implemented results, not additional physics claims.
+[`scripts/implementation/odd_parity_rcht.py`](../../../scripts/implementation/odd_parity_rcht.py) implements the operator-level proposal derived in the [two-source ALP RChT record](two-source-alp-rcht-odd-parity-extension.md), the [direct VJP insertion record](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md), and the [exact photon--vector diagonalization](../foundations/rcht-photon-vector-diagonalization.md). The $VJP/VVP$ basis and five short-distance relations are literature inputs [@Ruiz-Femenia:2003jdx]; the ALP spurion insertion follows Alda:2026nrd's conventions [@Alda:2026nrd]. The numerical organization and validation policy are implemented results, not additional physics claims.
 
 Natural units are used. $e,c_i,d_i,\mathbb M_a^{-1}(C),c_q^{AP}$ and generators are dimensionless; $f_a,M_V,F_V,F$ have mass dimension one, while `b0_mq` has mass dimension two. `b0_mq` denotes $B_0m_q$, so no second factor of $B_0$ is inserted. Flavor traces retain the repository normalization. Source generators may be non-Hermitian (for charged fields), while $\mathbb M_a^{-1}(C),c_q^{AP},B_0m_q$ are finite Hermitian $3\times3$ matrices.
 
@@ -73,7 +73,7 @@ The deterministic tests compare every coefficient directly, check seeded unitary
 
 The [implementation decision record](odd-parity-rcht-implementation-decisions.md) fixes the first-prediction baseline: leading-OZI single-trace $U(3)$ continuation, common $c_i,d_i$, ideal $\omega$--$\phi$ mixing and physical masses as declared approximations, narrow on-shell external vectors, and the Ecker antisymmetric-tensor external-state normalization. Independent double traces, singlet-specific operators, and precision line shapes are upgrades triggered by the target dataset, not global blockers. The generic background-source anomaly helper retains caller-supplied $c_{AB}$, but the pure-RChT baseline uses WZW/counterterm normalization plus $c_i,d_i$ and does not require a free hadronic $c_{AB}$.
 
-Alda Eq. (III.37) requires
+Alda:2026nrd Eq. (III.37) requires
 
 $$
 |m_a^2-m_i^2|\gg\frac{f_\pi}{f_a}

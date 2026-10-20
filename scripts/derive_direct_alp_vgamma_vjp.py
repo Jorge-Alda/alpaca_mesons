@@ -80,7 +80,7 @@ anti_cAP_m_a_inverse_C_mq = (
 )
 
 show(
-    "Alda inverse mixing operator applied to C",
+    "Alda:2026nrd inverse mixing operator applied to C",
     m_a_inverse_C_abs,
 )
 show("Physical u_mu coefficient multiplying partial_mu a", -2 * m_a_inverse_C_abs / f_a)

@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Inputs and assumptions
 
-Use the canonical tensor normalization, positive-strange ideal phi phase, vacuum spurion $\chi_+=\operatorname{diag}(x_l,x_l,x_s)$ and strong-isospin assumptions of [the minimal mass action](vector-nonideal-mass-action.md), with its cited kinetic conventions [@Ecker:1988te]. Numerical spurion inputs must follow the downloaded arXiv version of Alda [@Alda:2026nrd], rather than a local manuscript. This derivation requires no numerical values. It retains tree-level canonical kinetic terms; loops, electromagnetic shifts and higher spurion orders remain omitted.
+Use the canonical tensor normalization, positive-strange ideal phi phase, vacuum spurion $\chi_+=\operatorname{diag}(x_l,x_l,x_s)$ and strong-isospin assumptions of [the minimal mass action](vector-nonideal-mass-action.md), with its cited kinetic conventions [@Ecker:1988te]. Numerical spurion inputs must follow the downloaded arXiv version of Alda:2026nrd [@Alda:2026nrd], rather than a local manuscript. This derivation requires no numerical values. It retains tree-level canonical kinetic terms; loops, electromagnetic shifts and higher spurion orders remain omitted.
 
 **Assumed extension:** add one symmetry-allowed double-trace spurion mass operator,
 
@@ -19,7 +19,7 @@ $$
 \mathcal L_{\rm extra}=\frac{\kappa_V}{4}\langle V_{\mu\nu}\rangle\langle V^{\mu\nu}\chi_+\rangle.
 $$
 
-This equation defines the dimensionless $\kappa_V$ normalization exactly. Its coefficient is a new independent parameter, not a value inferred from Alda or a claim that the operator exhausts all breaking terms. The Lorentz contraction is suppressed only during flavor mass extraction. Every mass and spurion entry has dimension two in natural units.
+This equation defines the dimensionless $\kappa_V$ normalization exactly. Its coefficient is a new independent parameter, not a value inferred from Alda:2026nrd or a claim that the operator exhausts all breaking terms. The Lorentz contraction is suppressed only during flavor mass extraction. Every mass and spurion entry has dimension two in natural units.
 
 ## Executable calculation
 

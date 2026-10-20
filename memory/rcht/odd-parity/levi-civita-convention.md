@@ -25,7 +25,7 @@ The positive photon-dual normalization is the source-backed definition in
 [photon-operator digest](../../extracts/Bauer:2020jbp/photon-operator-normalization.md).
 The coefficient rotation and leading-nonet WZW meson contribution are separate
 inputs/results in the [photon record](../../alp/photon/alp-photon-invariant-from-mixing.md).
-Alda's independent axial/mass/topological source definitions are unchanged;
+Alda:2026nrd's independent axial/mass/topological source definitions are unchanged;
 its WZW-excluding meson action does not supply the photon operator or WZW meson contribution.
 
 # Executed conversion

@@ -18,7 +18,7 @@ $c_7$, $d_4$ and $\delta c_2=\delta c_5=\delta c_6$.
 Uncertainties in the other directions, even-sector nuisance parameters and
 discrete residue signs have not been established by that rank calculation.
 
-Use Alda's archived arXiv v1 for ALP LSZ/source conventions, as indexed in
+Use Alda:2026nrd's archived arXiv v1 for ALP LSZ/source conventions, as indexed in
 [the neutral input record](../../extracts/Alda:2026nrd/neutral-meson-generators.md).
 Its invariant definition and no-mixing formulas were checked in the downloaded
 source at `eq:invariants`, `eq:mixing_coeff`, `eq:ALPcouplings_nomixing` and

@@ -61,7 +61,7 @@ def u3_generators() -> tuple[sp.ImmutableMatrix, ...]:
 
     The ordering is (lambda_0, lambda_1, ..., lambda_8): singlet, then the
     conventional Gell-Mann ordering. This matches the meson-field convention
-    used in the Alda derivations.
+    used in the Alda:2026nrd derivations.
     """
     i = sp.I
     sqrt = sp.sqrt

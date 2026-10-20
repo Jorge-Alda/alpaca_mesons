@@ -1,4 +1,4 @@
-"""Derive the Alda-consistent a -> K+ pi0 K- scalar production kernel.
+"""Derive the Alda:2026nrd-consistent a -> K+ pi0 K- scalar production kernel.
 
 Invocation:
     .venv/bin/python scripts/derive_kpi_s_wave_matching.py

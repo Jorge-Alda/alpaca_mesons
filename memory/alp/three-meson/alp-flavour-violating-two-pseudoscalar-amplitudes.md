@@ -73,7 +73,7 @@ $p_a\cdot(p_j-p_i)=m_j^2-m_i^2$. No assumption $m_i=m_j$ is made.
 
 # Field-redefinition invariance and meson masses
 
-Alda's vector field redefinition shifts both $\bm{c_q^V}$ and
+Alda:2026nrd's vector field redefinition shifts both $\bm{c_q^V}$ and
 $\bm{c_q^S}$ by the same $\bm\delta$. Choosing
 $\bm\delta=-\bm{c_q^S}$ removes the scalar source and leaves
 $\bm{\widehat c_q^V}=\bm{c_q^{VS}}$.

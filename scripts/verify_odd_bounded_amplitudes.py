@@ -17,7 +17,7 @@ def main():
     bounded = module('odd_bounded_amplitudes')
     sectors = module('vector_sector')
     old = module('vector_sector_amplitudes')
-    p = module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree')
+    p = module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree')
     embedding = bounded.original_embedding()
     assert embedding.shape == (241, 11) and np.linalg.matrix_rank(embedding) == 11
     source = np.diag([.11, -.07, .13])

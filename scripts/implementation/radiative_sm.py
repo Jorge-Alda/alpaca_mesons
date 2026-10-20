@@ -1,7 +1,7 @@
 """Action-derived SM V-P-photon amplitude, including c4 and all neutral exchange.
 
 Tree level, single-trace RChT basis and common FV; explicit flavor matrices
-are coefficients of Phi_R. Alda conversion is Phi_R=F Phi_A/(sqrt(2) fpi).
+are coefficients of Phi_R. Alda:2026nrd conversion is Phi_R=F Phi_A/(sqrt(2) fpi).
 No physical eta/eta' default or fitted coupling is supplied here.
 """
 from dataclasses import dataclass

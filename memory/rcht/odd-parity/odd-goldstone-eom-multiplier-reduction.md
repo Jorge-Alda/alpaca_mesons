@@ -9,7 +9,7 @@ provenance: analytical-derivation
 
 # Inputs and scope
 
-Use [Alda's LO topological action](../../extracts/Alda:2026nrd/lo-topological-action.md),
+Use [Alda:2026nrd's LO topological action](../../extracts/Alda:2026nrd/lo-topological-action.md),
 [the neutral source derivation](odd-trace-source-eom-audit.md),
 [covariant closure conventions](odd-covariant-closure.md), and
 [the flavor enumeration](odd-breaking-flavor-enumeration.md).

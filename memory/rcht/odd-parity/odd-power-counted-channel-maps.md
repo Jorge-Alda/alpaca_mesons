@@ -19,12 +19,12 @@ Use [the 228-dimensional bounded action](odd-higher-covariant-operator-count.md)
 [the normalized leading scalar kernels](odd-trace-scalar-kernels.md), and
 [the stage-4 photon response](vector-stage4-amplitudes.md).
 The on-shell source-family rank specialization also uses the checksum-pinned
-[Alda central quark inputs](alda-neutral-amplitude-inputs.md).
+[Alda:2026nrd central quark inputs](alda-neutral-amplitude-inputs.md).
 
 The executable
 [derive_odd_power_counted_channels.py](../../../scripts/derive_odd_power_counted_channels.py)
 maps all 44 leading plus 197 higher **raw parents**, before selecting a
-quotient basis or imposing the power-counting filter. It retains Alda's
+quotient basis or imposing the power-counting filter. It retains Alda:2026nrd's
 field/source conventions, canonical wedge tensors, $(+---)$,
 $\epsilon^{0123}=+1, \epsilon_{0123}=-1$, all-incoming momenta and $X=2\chi=4B_0m_q$.
 Quark masses remain symbolic and the neutral rho/omega/positive-strange-phi
@@ -138,7 +138,7 @@ The companion JSON contains each normalized parent gradient for
 $a\to VV$, $a\to V\gamma$ and $a\to\gamma\gamma$, with both VJP photon
 assignments. It also computes on-shell neutral channel maps after imposing
 $s=M_1^2,t=M_2^2$, $s=M_1^2,t=0$, or $s=t=0$, respectively.
-Their coefficient-field ranks hold the Alda central quark spurion fixed at
+Their coefficient-field ranks hold the Alda:2026nrd central quark spurion fixed at
 $\chi=(0.013136,0.023480,0.471842)$ GeV squared, represented as exact
 decimals. Vector masses and the diagonal $W(0)$ response remain coefficient-
 field parameters. They vary the compatible source family

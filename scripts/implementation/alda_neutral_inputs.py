@@ -1,4 +1,4 @@
-"""ArXiv-v1 Alda neutral generators from its full 3x3 mass diagonalization.
+"""ArXiv-v1 Alda:2026nrd neutral generators from its full 3x3 mass diagonalization.
 
 Canonical fields are converted by TP=F lambda_P/(sqrt(2) fpi).
 Select physical or tree masses explicitly; physical eta is a phenomenological
@@ -8,10 +8,10 @@ from pathlib import Path
 import json
 import numpy as np
 
-SNAPSHOT = Path(__file__).resolve().parents[2] / 'data/vector_sector/alda_arxiv_v1.json'
+SNAPSHOT = Path(__file__).resolve().parents[2] / 'data/vector_sector/alda_2026nrd_arxiv_v1.json'
 
 
-def alda_neutral_inputs(*, mass_scheme, F=.093, fpi=.093):
+def alda_2026nrd_neutral_inputs(*, mass_scheme, F=.093, fpi=.093):
     """Return pi0/eta/etap dictionaries with TP, chi, F, mp and tree_mass.
 
     mass_scheme is 'tree' or 'physical'; masses in GeV, chi in GeV squared.

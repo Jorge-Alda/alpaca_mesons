@@ -139,6 +139,6 @@ can already be correlated with the original $d_1$ or $c_2,c_6$; simply
 adding that literature coefficient as a second independent copy would
 double count. These equations are a literature-basis audit, not imposed
 off-shell source relations. Independent external density/axial terms are
-retained here; applying the EOM dictionary to the dynamical Alda singlet
+retained here; applying the EOM dictionary to the dynamical Alda:2026nrd singlet
 requires its source/anomaly contact terms and is deferred to normalized
 source expansion in stage B.

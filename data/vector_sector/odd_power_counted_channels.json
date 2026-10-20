@@ -5301,7 +5301,7 @@
           }
         }
       },
-      "scope": "Alda central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank",
+      "scope": "Alda:2026nrd central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank",
       "rank_coordinates": "m_a2/M_1^2, Z_a/M_1^2, M_2^2/M_1^2",
       "generic_domain": "M_1 nonzero when present; W_u(0) nonzero for photon channels; special rank-drop loci require separate specialization"
     },
@@ -7287,7 +7287,7 @@
           }
         }
       },
-      "scope": "Alda central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank",
+      "scope": "Alda:2026nrd central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank",
       "rank_coordinates": "m_a2/M_1^2, Z_a/M_1^2, W_d/W_u, W_s/W_u",
       "generic_domain": "M_1 nonzero when present; W_u(0) nonzero for photon channels; special rank-drop loci require separate specialization"
     },
@@ -8294,7 +8294,7 @@
           }
         }
       },
-      "scope": "Alda central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank",
+      "scope": "Alda:2026nrd central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank",
       "rank_coordinates": "m_a2, Z_a, W_d/W_u, W_s/W_u",
       "generic_domain": "M_1 nonzero when present; W_u(0) nonzero for photon channels; special rank-drop loci require separate specialization"
     }
@@ -10030,6 +10030,6 @@
     "data/vector_sector/odd_covariant_block_preparation.json": "4f88b719b9bca72b7542089e78996e42cef704b982ad3852af8a078506f305b2",
     "data/vector_sector/odd_leading_action_count.json": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",
     "data/vector_sector/odd_three_flavor_action_quotient.json": "8cbd18287c51b0576e6d2f7834689cf052ca9e471d2721741d843af46c9ac2a7",
-    "data/vector_sector/alda_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9"
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9"
   }
 }

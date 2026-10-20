@@ -19,7 +19,7 @@ def main():
         'data/odd_parity/odd_low_energy_measurements.json',
         'data/vector_sector/pdg2024.json',
         'data/vector_sector/stage3_results.json',
-        'data/vector_sector/alda_arxiv_v1.json',
+        'data/vector_sector/alda_2026nrd_arxiv_v1.json',
         'scripts/refit_double_trace_from_single_trace.py',
         'scripts/profile_odd_low_energy.py',
         'scripts/calibrate_odd_low_energy.py',
@@ -30,7 +30,7 @@ def main():
     archived_double = next(r for r in results if r['label'] == 'central_double_trace')
     ass = stage3['assumptions']
 
-    tree = P.C.J.module('alda_neutral_inputs').alda_neutral_inputs(
+    tree = P.C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(
         mass_scheme='tree', F=P.C.J.F, fpi=P.C.J.F)
     fast = P.C.FastChannels(tree, alda['physical_masses_gev'],
                             np.sqrt(4 * math.pi * ass['alpha_em']))

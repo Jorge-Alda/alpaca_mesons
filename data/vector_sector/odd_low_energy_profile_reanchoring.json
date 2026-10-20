@@ -7,7 +7,7 @@
     "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
     "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
     "data/vector_sector/stage3_results.json": "a8cc2290afd22fcc43b98e7ab39e72f68c5694718769ca693d2e203216359192",
-    "data/vector_sector/alda_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
     "data/vector_sector/odd_low_energy_continuation.json": "b7c3e93019d6b7744d090c34785026356ecd132260165f56589b40759aad80c3",
     "data/vector_sector/odd_low_energy_source_continuation.json": "0f36bc98161440258fc894c5148e4335d092fd589f3f9e3e8d8a2639f1291c60",
     "scripts/reanchor_odd_low_energy_profiles.py": "4742a1ec9cf2eb60ce10d666dcd8d974005a7b1f0bb048febac11a022e334772",

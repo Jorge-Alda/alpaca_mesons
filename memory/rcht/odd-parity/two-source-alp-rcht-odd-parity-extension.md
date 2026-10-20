@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Scope, evidence, and obstruction
 
-This record extends the [no-vector photon invariant](../../alp/photon/alp-photon-invariant-from-mixing.md) to two vector-like sources and interfaces it with the [repository RChT vectors](../foundations/rcht-photon-vector-diagonalization.md). The calculation is performed by [`scripts/derive_two_source_rcht_anomaly.py`](../../../scripts/derive_two_source_rcht_anomaly.py). Inputs are Alda's Appendix-A CCWZ and source formulas in [`appendix-a-expansion.md`](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd], the vector-only background-field limitations in [`no-axial-vector-and-rcht-matching.md`](../../extracts/Bai:2025fvl/no-axial-vector-and-rcht-matching.md) [@Bai:2025fvl], and the independent odd-parity operator basis in [`vector-odd-parity.md`](../../extracts/Ruiz-Femenia:2003jdx/vector-odd-parity.md) [@Ruiz-Femenia:2003jdx].
+This record extends the [no-vector photon invariant](../../alp/photon/alp-photon-invariant-from-mixing.md) to two vector-like sources and interfaces it with the [repository RChT vectors](../foundations/rcht-photon-vector-diagonalization.md). The calculation is performed by [`scripts/derive_two_source_rcht_anomaly.py`](../../../scripts/derive_two_source_rcht_anomaly.py). Inputs are Alda:2026nrd's Appendix-A CCWZ and source formulas in [`appendix-a-expansion.md`](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd], the vector-only background-field limitations in [`no-axial-vector-and-rcht-matching.md`](../../extracts/Bai:2025fvl/no-axial-vector-and-rcht-matching.md) [@Bai:2025fvl], and the independent odd-parity operator basis in [`vector-odd-parity.md`](../../extracts/Ruiz-Femenia:2003jdx/vector-odd-parity.md) [@Ruiz-Femenia:2003jdx].
 
 > **WZW anomaly matching does not uniquely predict the complete $aVV$ vertex in antisymmetric-tensor RChT.** Independent VVP and VJP/homogeneous coefficients $d_i,c_i$, together with singlet/double-trace and $SU(3)$-breaking terms, require short-distance constraints and/or data. This obstructs a unique numerical result, but not the general extension below.
 
@@ -35,7 +35,7 @@ Thus every unordered pair, diagonal or unlike, occurs once. For the photon, $g_\
 
 The derivation retains one ALP at $O(1/f_a)$, tree-level fields, and a complete $U(3)$ pseudoscalar basis. It assumes $\mathbb M_a^{-1}$ exists, so it excludes exact ALP--meson degeneracies with nonzero overlap. The quadratic photon-vector transformation is exact only in the already specified truncated tree-level RChT quadratic model. No ideal vector mixing, on-shell reduction, short-distance relation, flavor commutativity, or numerical approximation is imposed.
 
-Alda Eq. (III.37) states, for every physical pseudoscalar $i$,
+Alda:2026nrd Eq. (III.37) states, for every physical pseudoscalar $i$,
 
 $$
 |m_a^2-m_i^2|\gg\frac{f_\pi}{f_a}
@@ -64,7 +64,7 @@ C_{AB}^{\rm seed}=c_{AB}
 +s_{AB}N_c\operatorname{tr}\!\left(\{T_A,T_B\}[c_q^A+\mathbb M_a^{-1}(C)]\right).}
 $$
 
-Under Alda's axial reparametrization,
+Under Alda:2026nrd's axial reparametrization,
 
 $$
 c_q^A\to c_q^A+\kappa,
@@ -96,11 +96,11 @@ C_{AB}^{\rm seed}=c_{AB}
 \qquad A\neq B.
 $$
 
-For hadronic RChT vectors, $c_{AB}$ is **not** a UV Wilson coefficient fixed by Alda. It parametrizes the local background-field/anomaly convention used when vector-like sources are matched onto resonances. Independent homogeneous resonance operators remain in addition to this seed.
+For hadronic RChT vectors, $c_{AB}$ is **not** a UV Wilson coefficient fixed by Alda:2026nrd. It parametrizes the local background-field/anomaly convention used when vector-like sources are matched onto resonances. Independent homogeneous resonance operators remain in addition to this seed.
 
 ## 2. Physical-ALP insertions by completeness
 
-Alda's physical-ALP meson components are
+Alda:2026nrd's physical-ALP meson components are
 
 $$
 w_i^{(a)}=\frac{f_\pi}{f_a}
@@ -114,7 +114,7 @@ $$
 =\frac{2f_\pi}{f_a}(c_q^A+\mathbb M_a^{-1}(C)).
 $$
 
-At the Goldstone vacuum, Alda Appendix A gives a direct term $2(\partial_\mu a/f_a)c_q^A$ and a meson term $-(\partial_\mu\Phi)/f_\pi$. Their LSZ sum is therefore
+At the Goldstone vacuum, Alda:2026nrd Appendix A gives a direct term $2(\partial_\mu a/f_a)c_q^A$ and a meson term $-(\partial_\mu\Phi)/f_\pi$. Their LSZ sum is therefore
 
 $$
 \boxed{
@@ -122,7 +122,7 @@ u_\mu\big|_{a_{\rm physical}}
 =-2\frac{\partial_\mu a}{f_a}\mathbb M_a^{-1}(C).}
 $$
 
-For the pseudoscalar source, Alda's convention is $c_q^{AP}=c_q^A-c_q^P$. From $\chi=\chi_S+i\chi_P$ and $\chi_-=u^\dagger\chi u^\dagger-u\chi^\dagger u$, the direct vacuum term is
+For the pseudoscalar source, Alda:2026nrd's convention is $c_q^{AP}=c_q^A-c_q^P$. From $\chi=\chi_S+i\chi_P$ and $\chi_-=u^\dagger\chi u^\dagger-u\chi^\dagger u$, the direct vacuum term is
 
 $$
 \chi_-\big|_{a,\rm direct}
@@ -196,7 +196,7 @@ $$
 
 The normalized $\mathcal S_{AB}$ exchanges the complete labeled vector factors,
 preserving which factor carries each Lorentz index and derivative. Consequently
-**all four $d_i$ operators can contribute** when the full Alda pseudoscalar
+**all four $d_i$ operators can contribute** when the full Alda:2026nrd pseudoscalar
 source is retained; in particular, $d_2$ must not be omitted. Their distinct
 derivative structures have not been combined, integrated by parts, or reduced
 with on-shell equations.

@@ -11,7 +11,7 @@ provenance: numerical-computation
 
 This executes stage D of the [maintained calibration plan](odd-breaking-low-energy-calibration-plan.md), following the [completed fixed-scenario measurement Jacobians](odd-low-energy-measurement-jacobians.md). It is a conditional calibration of the pinned low-energy summaries, with no ultraviolet matching constraint or coefficient prior.
 
-The [PDG snapshot](../../extracts/ParticleDataGroup:2024cfk/odd-parity-low-energy-measurements.md) supplies twelve accepted odd observations. The four mass observations, three electronic-width observations and all seven original shared total widths are included once in each dataset control. Stage-3 fitted values supply initial points only. The missing joint covariance is explicitly replaced by diagonal quoted-summary errors for this diagnostic calculation; removing broad-rho or constrained-fit K-star summaries does not supply that covariance. Alda neutral central inputs remain fixed, with LO source-compatible vertex masses and physical phase-space masses treated separately.
+The [PDG snapshot](../../extracts/ParticleDataGroup:2024cfk/odd-parity-low-energy-measurements.md) supplies twelve accepted odd observations. The four mass observations, three electronic-width observations and all seven original shared total widths are included once in each dataset control. Stage-3 fitted values supply initial points only. The missing joint covariance is explicitly replaced by diagonal quoted-summary errors for this diagnostic calculation; removing broad-rho or constrained-fit K-star summaries does not supply that covariance. Alda:2026nrd neutral central inputs remain fixed, with LO source-compatible vertex masses and physical phase-space masses treated separately.
 
 All 64 mass/input/source alternatives remain separate. The raw parent filters distinguish the original eleven operators, soft leading parents, leading double-trace additions, single-trace spurion/derivative additions, their first-correction union, promoted leading parents and the full bounded action. Parent filters act before observable reduction. Saturated models test interpolation and numerical implementation; their improved in-sample residuals do not establish a controlled hierarchy.
 
@@ -21,7 +21,7 @@ All 64 mass/input/source alternatives remain separate. The raw parent filters di
 - [Measurement Jacobians](odd-low-energy-measurement-jacobians.md): separate scenario definitions, measurement units, shared-width treatment, null directions and conditional ranks.
 - [Power-counting proposal](odd-action-power-counting-proposal.md): proposed parent topology/derivative filtration, without numerical naturalness penalties.
 - [Stage-3 calibration](../foundations/vector-stage3-calibration.md): mass/source action and starting values; its data are counted once.
-- [Alda input conversion](alda-neutral-amplitude-inputs.md): scalar generators, spurions, field conventions and stated central-input approximation [@Alda:2026nrd].
+- [Alda:2026nrd input conversion](alda-neutral-amplitude-inputs.md): scalar generators, spurions, field conventions and stated central-input approximation [@Alda:2026nrd].
 
 The selected likelihood is quadratic and uses no inherited OPE Gaussian row, implicit OZI penalty, or robust-loss downweighting. The on-shell broad-vector approximation and partial-isospin treatment remain model limitations. Local covariance and nominal rank-based degrees of freedom do not establish a globally unique nonlinear/sign solution.
 

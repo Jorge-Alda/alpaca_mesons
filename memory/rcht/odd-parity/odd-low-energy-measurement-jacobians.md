@@ -45,7 +45,7 @@ supply their missing covariance or establish model adequacy.
 Use the source-backed [PDG 2024 snapshot](../../extracts/ParticleDataGroup:2024cfk/odd-parity-low-energy-measurements.md),
 its [data JSON](../../../data/odd_parity/odd_low_energy_measurements.json),
 the [bounded numerical kernels](odd-bounded-sm-numerical-kernels.md),
-[Alda input conversion](alda-neutral-amplitude-inputs.md),
+[Alda:2026nrd input conversion](alda-neutral-amplitude-inputs.md),
 [stage-3 fixed sectors](../foundations/vector-stage3-calibration.md),
 and the [selected calibration plan](odd-breaking-low-energy-calibration-plan.md).
 Sources are already catalogued in `bibliography.bib`; the snapshot pins
@@ -69,15 +69,15 @@ The near-ideal preference is a tie-breaker, not a likelihood term.
 The LO neutral eigenmasses and charged masses
 $m_{P,ij}^2=(\chi_i+\chi_j)/2$ enter the local vertex invariants. This is
 necessary for the same bounded source-preserving Goldstone-EOM quotient.
-Physical Alda input-table masses enter the phase-space factors separately
+Physical Alda:2026nrd input-table masses enter the phase-space factors separately
 as a stated phenomenological kinematic replacement. It is not an NLO
 source/mass refit. A physical-mass replacement inside the local polynomial
 would instead require its nonzero EOM remainders; it cannot silently be
 called the same 228-dimensional action map.
 
 The even mass/source block retains exact isospin, while odd spurions and
-neutral generators retain Alda isospin breaking. This partial-isospin
-truncation and broad-vector NWA limits remain. Alda central inputs are fixed:
+neutral generators retain Alda:2026nrd isospin breaking. This partial-isospin
+truncation and broad-vector NWA limits remain. Alda:2026nrd central inputs are fixed:
 posterior covariance and chiral/model truncation effects are not propagated.
 Both charged/neutral rho vertices share the selected rho mass in each
 scenario, and both K-star vertices share its selected K-star mass. Their

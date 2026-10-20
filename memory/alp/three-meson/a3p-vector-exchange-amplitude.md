@@ -13,20 +13,20 @@ provenance: analytical-derivation
 
 The executable derivation is [`scripts/derive_a3p_vector_exchange_amplitude.py`](../../../scripts/derive_a3p_vector_exchange_amplitude.py), and the numerical implementation is [`scripts/implementation/vector_meson_exchange.py`](../../../scripts/implementation/vector_meson_exchange.py). Natural units are used; all masses, widths, $f_\pi$, $G_V$, and $f_a$ are in GeV.
 
-The hatted Hermitian $c_q^A$ and $c_q^P$ are the no-ALP-meson-mixing inputs defined in [the Alda Appendix A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]. The leading $G_V$ pole depends on $c_q^A$. The implementation validates $c_q^P$ to retain the public interface of the existing three-meson amplitude, but $c_q^P$ does not enter this contribution.
+The hatted Hermitian $c_q^A$ and $c_q^P$ are the no-ALP-meson-mixing inputs defined in [the Alda:2026nrd Appendix A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]. The leading $G_V$ pole depends on $c_q^A$. The implementation validates $c_q^P$ to retain the public interface of the existing three-meson amplitude, but $c_q^P$ does not enter this contribution.
 
-The pseudoscalar generators, masses, aliases, and coherent $K_S/K_L$ convention are imported directly from [`three_meson_width.py`](../../../scripts/implementation/three_meson_width.py), whose conventions are recorded in [the generic-generator derivation](alp-three-meson-generic-generators.md). In particular, the Alda-normalized matrix has off-diagonal generators $\sqrt2E_{ij}$ and its fitted neutral generators, including $\Lambda_{\pi^0}\simeq\operatorname{diag}(1,-1,0)$. Here
+The pseudoscalar generators, masses, aliases, and coherent $K_S/K_L$ convention are imported directly from [`three_meson_width.py`](../../../scripts/implementation/three_meson_width.py), whose conventions are recorded in [the generic-generator derivation](alp-three-meson-generic-generators.md). In particular, the Alda:2026nrd-normalized matrix has off-diagonal generators $\sqrt2E_{ij}$ and its fitted neutral generators, including $\Lambda_{\pi^0}\simeq\operatorname{diag}(1,-1,0)$. Here
 
 $$
-u=\exp\!\left(\frac{i\Phi_{\rm Alda}}{2f_\pi}\right),\qquad
-U=u^2=\exp\!\left(\frac{i\Phi_{\rm Alda}}{f_\pi}\right).
+u=\exp\!\left(\frac{i\Phi_{\rm Alda:2026nrd}}{2f_\pi}\right),\qquad
+U=u^2=\exp\!\left(\frac{i\Phi_{\rm Alda:2026nrd}}{f_\pi}\right).
 $$
 
 This is equivalent to the RChT convention
 
 $$
 U=\exp\!\left(\frac{i\sqrt2\Phi_R}{F}\right),\qquad
-\Phi_{\rm Alda}=\sqrt2\Phi_R,\qquad F=f_\pi,
+\Phi_{\rm Alda:2026nrd}=\sqrt2\Phi_R,\qquad F=f_\pi,
 $$
 
 used for the leading $G_V$ operator in [the RChT record](../../rcht/foundations/rcht-basics.md) [@Ecker:1988te].
@@ -47,9 +47,9 @@ used for the leading $G_V$ operator in [the RChT record](../../rcht/foundations/
 
    Further effects not included here are genuinely model-dependent vector-sector corrections: higher-derivative and explicit-$SU(3)$-breaking resonance operators, nonideal neutral-vector mixing, heavier vector multiplets, multi-resonance operators, loops and final-state rescattering, and improved energy-dependent or dispersive line shapes. These are logically separate from the mandatory representation-matching contact. At strong leading order, $F_V$ does not supply another $VPP$ or $VPa$ vertex; its photon--vector mixing effects are electromagnetic and begin beyond the $e^0$ two-$G_V$ contribution considered here.
 
-## Alda-normalization conversion and sign
+## Alda:2026nrd-normalization conversion and sign
 
-The RChT interactions in the $\Phi_R$ convention are derived in [the flavor-expansion record](../../rcht/foundations/rcht-vpp-vpa-photon-pa-expansion.md). Substituting each $\lambda_R=\Lambda_{\rm Alda}/\sqrt2$ gives, for distinct labeled components and one fixed pair $i<j$,
+The RChT interactions in the $\Phi_R$ convention are derived in [the flavor-expansion record](../../rcht/foundations/rcht-vpp-vpa-photon-pa-expansion.md). Substituting each $\lambda_R=\Lambda_{\rm Alda:2026nrd}/\sqrt2$ gives, for distinct labeled components and one fixed pair $i<j$,
 
 $$
 \mathcal L_{WPP}
@@ -119,7 +119,7 @@ Reversing $i,j$ changes the signs of both $X$ and $J_{PP}$, leaving the contribu
 
 ## Derived representation-matching contact
 
-The executable script now also performs the first-order elimination needed to match the leading antisymmetric-tensor $G_V$ theory to canonical Proca variables. Multiplying the previously derived Proca coefficients by $M_V$ first recovers the Alda-normalized original-tensor interactions,
+The executable script now also performs the first-order elimination needed to match the leading antisymmetric-tensor $G_V$ theory to canonical Proca variables. Multiplying the previously derived Proca coefficients by $M_V$ first recovers the Alda:2026nrd-normalized original-tensor interactions,
 
 $$
 \mathcal L_{VPP}
@@ -305,7 +305,7 @@ This statement concerns the **amplitude**. A total width may always be represent
 
 For every labeled spectator index, the implementation retains the complementary pair in increasing index order. If $c_q^A\propto\mathbf1$, it returns an empty contribution list before exchange-specific work. For diagonal $c_q^A$, diagonal $\rho^0,\omega,\phi$ directions are skipped before either flavor trace according to [the neutral-vector selection rule](flavor-conserving-neutral-vector-selection-rule.md). For each remaining candidate it tests $X$ first and rejects exact or scale-relative roundoff zeros before computing $Y$ or kinematics. Repeated final fields are not compressed into multiplicities, because their labeled pair invariants differ. Importing the existing $K_S/K_L$ generators preserves coherent neutral-kaon sums automatically.
 
-For an isospin-symmetric but nonidentity diagonal spurion, $c_q^A=\operatorname{diag}(c_\ell,c_\ell,c_s)$, the complete $\pi^+\pi^-\eta$ contribution vanishes: the charged-pion spectator commutators vanish, while the diagonal $\eta$ spectator cannot couple through a diagonal spurion. For a generic diagonal spurion with $c_u\ne c_d$, the fitted Alda $\eta$ generator's unequal $u,d$ entries produce small charged-$\rho$ isospin-breaking traces. Setting those entries equal would be an additional isospin-limit approximation and is not silently imposed.
+For an isospin-symmetric but nonidentity diagonal spurion, $c_q^A=\operatorname{diag}(c_\ell,c_\ell,c_s)$, the complete $\pi^+\pi^-\eta$ contribution vanishes: the charged-pion spectator commutators vanish, while the diagonal $\eta$ spectator cannot couple through a diagonal spurion. For a generic diagonal spurion with $c_u\ne c_d$, the fitted Alda:2026nrd $\eta$ generator's unequal $u,d$ entries produce small charged-$\rho$ isospin-breaking traces. Setting those entries equal would be an additional isospin-limit approximation and is not silently imposed.
 
 The public model is called as `model(s12, s23)` with exactly
 

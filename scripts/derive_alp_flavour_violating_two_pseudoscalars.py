@@ -1,4 +1,4 @@
-"""Derive a -> PP flavour-changing amplitudes from the LO Alda action.
+"""Derive a -> PP flavour-changing amplitudes from the LO Alda:2026nrd action.
 
 Run: .venv/bin/python scripts/derive_alp_flavour_violating_two_pseudoscalars.py
 Tests: .venv/bin/python scripts/derive_alp_flavour_violating_two_pseudoscalars.py --test
@@ -148,7 +148,7 @@ eom_identity_right = B_0*comm(mq3,anti(generic_first,generic_second))
 
 def run_derivation():
     print('LO even-intrinsic-parity action; natural units; O(a Phi^2/f_a); Fourier exp(-ikx).')
-    show('Alda commutator map C_phi[c_q^V]=[phi,c_q^V]',comm(phi,cV))
+    show('Alda:2026nrd commutator map C_phi[c_q^V]=[phi,c_q^V]',comm(phi,cV))
     show('Raw kinetic extraction',kinetic_raw)
     show('Kinetic interaction after trace cyclicity',kinetic)
     show('Raw scalar extraction',scalar_raw)

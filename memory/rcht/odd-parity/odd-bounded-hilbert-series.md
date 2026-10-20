@@ -12,7 +12,7 @@ provenance: analytical-derivation
 User-selected scope: the existing bounded VJP/VVP action, with one vector
 nonet, at most two flavor traces, the fixed derivative/spurion ceilings,
 independent external sources and LO Goldstone EOM; no resonance EOM.
-Conventions are Alda's, with $X=\chi_+$, $Y=i\chi_-$ and
+Conventions are Alda:2026nrd's, with $X=\chi_+$, $Y=i\chi_-$ and
 $Z_{TC}=m_0^2X_{TC}/3$. Natural units are used.
 
 This calculation independently derives the **raw multiplicities** by finite

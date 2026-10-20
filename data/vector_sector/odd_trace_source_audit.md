@@ -10,7 +10,7 @@ $$
 \left[\begin{matrix}\frac{2 \left(- 3 F \chi_{Pu} + \sqrt{6} \chi_{u} \phi_{0} + 3 \chi_{u} \phi_{3} + \sqrt{3} \chi_{u} \phi_{8}\right)}{3 F} & 0 & 0\\0 & \frac{2 \left(- 3 F \chi_{Pd} + \sqrt{6} \chi_{d} \phi_{0} - 3 \chi_{d} \phi_{3} + \sqrt{3} \chi_{d} \phi_{8}\right)}{3 F} & 0\\0 & 0 & \frac{2 \left(- 3 F \chi_{Ps} + \sqrt{6} \chi_{s} \phi_{0} - 2 \sqrt{3} \chi_{s} \phi_{8}\right)}{3 F}\end{matrix}\right]
 $$
 
-Linear Alda X_TC; theta_TC independent before ALP substitution:
+Linear Alda:2026nrd X_TC; theta_TC independent before ALP substitution:
 $$
 - 2 \theta_{TC} - \frac{\sqrt{6} \phi_{0}}{F}
 $$

@@ -22,7 +22,7 @@ Tree level, single-trace continuation, electromagnetic-compatible ALP sources,
 $f_-=0$ for the one-ALP vacuum vertex and canonical spin-one external tensors
 are the assumptions. Natural units, metric $(+---)$, $\epsilon^{0123}=+1, \epsilon_{0123}=-1$.
 
-In Alda's invariant conventions let
+In Alda:2026nrd's invariant conventions let
 $X=\mathbb M_a^{-1}(\mathcal C)$ and $Y=c_q^{AP}+X$. Then
 
 $$

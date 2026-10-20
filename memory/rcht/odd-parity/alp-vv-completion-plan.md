@@ -21,7 +21,7 @@ state any added singlet/OZI term separately. HLS is not part of this plan.
 
 ## Inputs
 
-- Alda's arXiv-v1 $\mathcal C$, $X=\mathbb M_a^{-1}(\mathcal C)$,
+- Alda:2026nrd's arXiv-v1 $\mathcal C$, $X=\mathbb M_a^{-1}(\mathcal C)$,
   $Y=c_q^{AP}+X$, independent derivative/mass sources and physical generators.
 - The [VVP basis](../../extracts/Ruiz-Femenia:2003jdx/vvp-three-pseudoscalar.md),
   canonical external tensor wavefunctions and operator normalizations.
@@ -47,7 +47,7 @@ state any added singlet/OZI term separately. HLS is not part of this plan.
    an independently fixed hadronic resonance coupling: do not introduce a free
    hadronic $c_{AB}$ by treating a resonance as a UV gauge source. State any
    additional matching assumption and prevent double counting with VVP terms.
-4. Verify equivalence of direct-plus-meson-pole LSZ assembly and Alda's no-mixing
+4. Verify equivalence of direct-plus-meson-pole LSZ assembly and Alda:2026nrd's no-mixing
    variables at $O(1/f_a)$. Check field reparametrization and generator-phase
    invariance, vector assignment symmetry and the existing projected nulls.
    Add any otherwise required invariant local terms as explicit new inputs.
@@ -65,7 +65,7 @@ state any added singlet/OZI term separately. HLS is not part of this plan.
 
 Pair the executable with a stepwise memory derivation and a numerical predictor
 under `scripts/implementation/`. Add independent limiting-normalization,
-assignment/phase, null-projection and threshold tests. Enforce Alda's exact
+assignment/phase, null-projection and threshold tests. Enforce Alda:2026nrd's exact
 source-overlap near-degeneracy condition point by point; a finite supplied
 $X$ alone is insufficient. Do not reuse the WZW meson-pole term a second time
 in the no-mixing basis. A physical prediction also needs calibrated couplings

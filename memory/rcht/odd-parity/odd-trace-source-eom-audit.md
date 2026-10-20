@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Inputs and assumptions
 
-Use [Alda's leading action](../../extracts/Alda:2026nrd/lo-topological-action.md),
+Use [Alda:2026nrd's leading action](../../extracts/Alda:2026nrd/lo-topological-action.md),
 [Appendix-A sources](../../extracts/Alda:2026nrd/appendix-a-expansion.md),
 [canonical field conversion](alda-neutral-amplitude-inputs.md), and
 [the stage-A trace catalogue](odd-breaking-flavor-enumeration.md).
@@ -50,7 +50,7 @@ Y=i\chi_-\big|_{\rm linear}
 $$
 
 3. Introduce the independent dimensionless phase $\theta_{TC}$, which
-   specializes to $c_Ga/f_a$ only after the source calculation. Alda's
+   specializes to $c_Ga/f_a$ only after the source calculation. Alda:2026nrd's
    invariant becomes
 
 $$
@@ -135,5 +135,5 @@ permit discarding contacts induced by a field redefinition.
 
 The normalized SM kernels retain their pre-EOM coefficients and therefore
 do not implement an invalid octet-only replacement. Applying a tree EOM
-to Alda's phenomenological physical-mass scheme would also need its
+to Alda:2026nrd's phenomenological physical-mass scheme would also need its
 truncation remainders, especially for eta.

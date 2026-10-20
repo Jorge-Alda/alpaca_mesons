@@ -6,7 +6,7 @@ Charged rho and Kstar mass summaries; evaluated phi electronic width; near-ideal
 
 $\epsilon^{0123}=+1; metric (+---); canonical c_i=-c_i^R and d_i=-d_i^R; old archives remain reference backend inputs.$
 
-Quoted diagonal experimental summaries, fixed central Alda neutral inputs, tree-level real-photon model. Null directions are unmeasured; representatives are not eleven separately measured coefficients. Local prediction errors are sign-branch conditional; no global nonlinear confidence intervals.
+Quoted diagonal experimental summaries, fixed central Alda:2026nrd neutral inputs, tree-level real-photon model. Null directions are unmeasured; representatives are not eleven separately measured coefficients. Local prediction errors are sign-branch conditional; no global nonlinear confidence intervals.
 
 | Case | Source hypothesis | Total chi2 | Odd rank | Unmeasured coefficient directions |
 |---|---|---:|---:|---:|

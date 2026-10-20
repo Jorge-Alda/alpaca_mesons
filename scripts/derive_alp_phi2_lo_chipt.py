@@ -35,7 +35,7 @@ mq = sp.MatrixSymbol("m_q", n, n)
 phi = rho * Phi / (2 * f_pi)
 dphi = rho * dPhi / (2 * f_pi)
 
-# Alda Appendix A defines C_phi[A]=[phi,A]; the order is essential.
+# Alda:2026nrd Appendix A defines C_phi[A]=[phi,A]; the order is essential.
 # The O(Phi) pieces are the only terms needed for the kinetic a Phi^2 term.
 u_meson = -2 * dphi
 u_alp_vector = -2 * sp.I * epsilon * da / f_a * commutator(phi, cV)

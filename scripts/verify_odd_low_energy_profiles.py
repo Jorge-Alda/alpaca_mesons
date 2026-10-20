@@ -35,8 +35,8 @@ def main():
     data=json.loads((ROOT/'data/odd_parity/odd_low_energy_measurements.json').read_text())
     pdg=json.loads((ROOT/'data/vector_sector/pdg2024.json').read_text())
     ass=json.loads((ROOT/'data/vector_sector/stage3_results.json').read_text())['assumptions']
-    alda=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
-    tree=C.J.module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F)
+    alda=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
+    tree=C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F)
     fast=C.FastChannels(tree,alda['physical_masses_gev'],math.sqrt(4*math.pi*ass['alpha_em']))
     certificates=[];failed_points=0;valid_points=0;valid_source_points=0;failed_source_points=0;max_constraint=0.;max_chi=0.
     for r in rows:

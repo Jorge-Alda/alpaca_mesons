@@ -157,7 +157,7 @@ Established and verified (all assertions exercised by scripts):
 
 Open, in order of how much they block:
 
-1. **Propagate Alda's neutral-input uncertainties.** Use the physical
+1. **Propagate Alda:2026nrd's neutral-input uncertainties.** Use the physical
    matrices from its arXiv-v1 mass-diagonalization appendix, including isospin
    admixtures,
    with the fitted quark spurion and explicit field-convention conversion in
@@ -249,7 +249,7 @@ conditional low-energy calibration uses the retained action scenarios.
 .venv/bin/python scripts/derive_radiative_tff_amplitude.py
 .venv/bin/python scripts/derive_p_to_gamma_gamma.py
 .venv/bin/python scripts/derive_vector_stage4_amplitudes.py
-.venv/bin/python scripts/verify_alda_neutral_inputs.py
+.venv/bin/python scripts/verify_alda_2026nrd_neutral_inputs.py
 .venv/bin/python scripts/verify_vector_stage4.py
 .venv/bin/python scripts/diagnose_vector_stage4.py
 .venv/bin/python scripts/diagnose_radiative_rank.py          # ~30 s

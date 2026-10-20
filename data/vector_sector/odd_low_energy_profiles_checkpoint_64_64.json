@@ -3759,7 +3759,7 @@
           1.7841428472542365e-08,
           1.8903672831351537e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 7,
@@ -5737,7 +5737,7 @@
           1.785951778150654e-08,
           1.8916975512264434e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -7838,7 +7838,7 @@
           1.7994514594401533e-08,
           1.8995832605842193e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -9641,7 +9641,7 @@
           1.7997555704635175e-08,
           1.8997921908893752e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -13485,7 +13485,7 @@
           1.7866021926491463e-08,
           1.8914426679205741e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -15484,7 +15484,7 @@
           1.788105883865717e-08,
           1.89240266869609e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -18982,7 +18982,7 @@
           1.7995061744264693e-08,
           1.899651498250467e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -20806,7 +20806,7 @@
           1.7996935888274334e-08,
           1.899742210880891e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -24650,7 +24650,7 @@
           1.7815742401179708e-08,
           1.8798236629476723e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -28563,7 +28563,7 @@
           1.7934951861843377e-08,
           1.883808265558618e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -33786,7 +33786,7 @@
           1.785817651737938e-08,
           1.8970240692111363e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -37396,7 +37396,7 @@
           1.7975633060918587e-08,
           1.8999618353524597e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -41331,7 +41331,7 @@
           1.7792763433390558e-08,
           1.8921620937661187e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 5,
@@ -44679,7 +44679,7 @@
           1.7894985858536175e-08,
           1.893062003709326e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -49974,7 +49974,7 @@
           1.7953876640187267e-08,
           1.8926380447453806e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -51818,7 +51818,7 @@
           1.7973838630252378e-08,
           1.8970397618604987e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -55745,7 +55745,7 @@
           1.7794919348122483e-08,
           1.8879117048575716e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 7,
@@ -57723,7 +57723,7 @@
           1.7798373973466794e-08,
           1.886289598765688e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -59824,7 +59824,7 @@
           1.7892393787477702e-08,
           1.8911009633300294e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -61627,7 +61627,7 @@
           1.790763866777505e-08,
           1.8920577747183408e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -65471,7 +65471,7 @@
           1.693001308484623e-08,
           1.8702819089195934e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -68782,7 +68782,7 @@
           1.7571216720923908e-08,
           1.8815242190002766e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -72280,7 +72280,7 @@
           1.7795772815912437e-08,
           1.885067770915398e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -74104,7 +74104,7 @@
           1.7878590515994547e-08,
           1.8910098187855422e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -76444,7 +76444,7 @@
           1.7304181469151815e-08,
           1.893736585586503e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -78443,7 +78443,7 @@
           1.762372684886733e-08,
           1.8939288048810855e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -81941,7 +81941,7 @@
           1.7927115219876805e-08,
           1.8985040965064108e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -83991,7 +83991,7 @@
           1.7999575034365618e-08,
           1.899295411794716e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -86352,7 +86352,7 @@
           1.7770782543952162e-08,
           1.8903970205370221e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 5,
@@ -88372,7 +88372,7 @@
           1.7857106195156123e-08,
           1.8908254604657442e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -90515,7 +90515,7 @@
           1.7881419628790975e-08,
           1.8907755575508656e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -92359,7 +92359,7 @@
           1.7907152391621278e-08,
           1.892321358688151e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -96335,7 +96335,7 @@
           1.785850642147964e-08,
           1.89160356352335e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 7,
@@ -98313,7 +98313,7 @@
           1.7859972196378018e-08,
           1.8917228514716872e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -100414,7 +100414,7 @@
           1.799458979226612e-08,
           1.8995850410471745e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -102217,7 +102217,7 @@
           1.7997606364459964e-08,
           1.8997957228426433e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -106061,7 +106061,7 @@
           1.786998566398248e-08,
           1.8915835950792742e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -108060,7 +108060,7 @@
           1.7883278556895544e-08,
           1.8924651180449503e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -111558,7 +111558,7 @@
           1.7995180694738952e-08,
           1.8996627469447383e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -113382,7 +113382,7 @@
           1.7996817599131616e-08,
           1.899732706073591e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -117226,7 +117226,7 @@
           1.7814809583895614e-08,
           1.880071879776876e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -121139,7 +121139,7 @@
           1.7931304727095485e-08,
           1.8840052081584268e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -126362,7 +126362,7 @@
           1.7858108558506693e-08,
           1.8970889344659243e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -129972,7 +129972,7 @@
           1.7986182412644804e-08,
           1.8999757038308567e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -133955,7 +133955,7 @@
           1.778966299627191e-08,
           1.892104913378367e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 5,
@@ -137303,7 +137303,7 @@
           1.78944726777592e-08,
           1.893029653107729e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -142598,7 +142598,7 @@
           1.7954015141420804e-08,
           1.8925805917973924e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -144442,7 +144442,7 @@
           1.796318568871995e-08,
           1.8958107324553167e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -148369,7 +148369,7 @@
           1.779643596986967e-08,
           1.887928389115212e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 7,
@@ -150347,7 +150347,7 @@
           1.7798790556614233e-08,
           1.8862907014695458e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -152448,7 +152448,7 @@
           1.7892190882784438e-08,
           1.891092732924993e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -154251,7 +154251,7 @@
           1.7907513933952362e-08,
           1.8920533400995817e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -158095,7 +158095,7 @@
           1.7774816458442563e-08,
           1.8895417887923325e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -161406,7 +161406,7 @@
           1.760827966191604e-08,
           1.882614916589118e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -163528,7 +163528,7 @@
           1.782492796517532e-08,
           1.8878079676933089e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -165352,7 +165352,7 @@
           1.7880409731220826e-08,
           1.8910419016635052e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -167692,7 +167692,7 @@
           1.7147882323410746e-08,
           1.8906294561905828e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 6,
@@ -171003,7 +171003,7 @@
           1.7762181801971862e-08,
           1.89600317034977e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -174501,7 +174501,7 @@
           1.7918018130779913e-08,
           1.8983453056661562e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -176551,7 +176551,7 @@
           1.7997395933860825e-08,
           1.8992180470448149e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -178912,7 +178912,7 @@
           1.7766753143185884e-08,
           1.89021047400313e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": []
       },
       "local_residual_dof": 5,
@@ -180932,7 +180932,7 @@
           1.776852483805573e-08,
           1.8866232855399544e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",
@@ -183075,7 +183075,7 @@
           1.7870827153275253e-08,
           1.8900233461305628e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "Kstar0_K0_gamma",
@@ -184919,7 +184919,7 @@
           1.7898165273644726e-08,
           1.891622410155764e-07
         ],
-        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
+        "local_covariance_scope": "conditional on fitted sign branch, fixed central Alda:2026nrd and diagonal summaries; physical observables only; no coefficient or global nonlinear uncertainty",
         "held_out": [
           {
             "channel": "rho0_pi0_gamma",

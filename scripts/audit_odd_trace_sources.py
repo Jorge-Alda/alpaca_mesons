@@ -30,11 +30,11 @@ def source_eom():
     chip=sp.expand(ud*source*ud+uu*dagger*uu)
     chim=sp.expand(ud*source*ud-uu*dagger*uu)
     Y=sp.simplify(sp.diff(sp.I*chim,z).subs(z,0))
-    # Linear X_TC follows Alda's invariant; theta_TC is an independent phase
+    # Linear X_TC follows Alda:2026nrd's invariant; theta_TC is an independent phase
     # source, specializing to c_G a/f_a only after variation.
     XTC=-sp.sqrt(2)*sp.trace(Phi)/F-2*theta
     mass=(F**2*sp.trace(chip)/4).expand().coeff(z,2)
-    anomaly=-F**2*m0**2*XTC**2/12  # N_f=3, Alda LO coefficient.
+    anomaly=-F**2*m0**2*XTC**2/12  # N_f=3, Alda:2026nrd LO coefficient.
     # The cross term from F^2 Tr(u_mu u^mu)/4 gives, after IBP,
     # +sqrt(2) F Tr(Phi div_a), since u_mu=2a_mu-sqrt(2)/F d_mu Phi.
     action=sp.expand(mass+anomaly+sp.sqrt(2)*F*sp.trace(Phi*da))
@@ -45,7 +45,7 @@ def source_eom():
     assert residual==sp.zeros(3)
     show('Neutral canonical Phi_R in the 3,8,0 basis',Phi)
     show('Linear independent pseudoscalar block Y=i chi_minus',Y)
-    show('Linear Alda X_TC; theta_TC independent before ALP substitution',XTC)
+    show('Linear Alda:2026nrd X_TC; theta_TC independent before ALP substitution',XTC)
     show('Executed quadratic meson potential and integrated axial-source cross term',action)
     show('Euler-Lagrange box Phi_R',boxPhi)
     show('Derived divergence u_mu',divu)

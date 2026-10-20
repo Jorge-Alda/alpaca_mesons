@@ -17,7 +17,7 @@ the [charged expansion](odd-charged-cubic-kernels.md),
 the [photon/action phase dictionary](../../alp/photon/alp-photon-odd-action-phase-matching.md),
 and the [signed spectral response](vector-stage4-amplitudes.md).
 The retained action and leading nonet WZW term are assumptions; their
-normalization and source signs follow the linked records and Alda conventions.
+normalization and source signs follow the linked records and Alda:2026nrd conventions.
 Natural units are GeV, metric $(+---)$ and source $\epsilon^{0123}=+1, \epsilon_{0123}=-1$.
 All raw parent coefficients are dimensionless after their declared $M_V$
 powers; 241 columns represent the bounded 228-dimensional covariant quotient.

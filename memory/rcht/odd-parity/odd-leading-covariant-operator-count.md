@@ -27,9 +27,9 @@ Use [the catalogue](odd-breaking-vertex-catalogue.md),
 [the flavor construction](odd-breaking-flavor-enumeration.md),
 [covariant identities](odd-covariant-closure.md),
 [Goldstone multiplier images](odd-goldstone-eom-multiplier-reduction.md), and
-[Alda's leading topological action](../../extracts/Alda:2026nrd/lo-topological-action.md).
+[Alda:2026nrd's leading topological action](../../extracts/Alda:2026nrd/lo-topological-action.md).
 Preserve the explicit tensor vectors, at-most-double traces, independent
-external sources and Alda field conventions. Use the LO Goldstone EOM only;
+external sources and Alda:2026nrd field conventions. Use the LO Goldstone EOM only;
 even resonance interactions are not inserted into that EOM. No resonance EOM,
 physical-pole condition, fitted mass substitution or OPE prior is used.
 

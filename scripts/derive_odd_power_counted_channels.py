@@ -318,7 +318,7 @@ def main():
     response_d,response_s,mass_ratio = sp.symbols('r_d r_s mass_ratio')
     WW = sp.diag(1,response_d,response_s)
     uu,yy = canonical_source(UU,Y,True)
-    snapshot = json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
+    snapshot = json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
     fixed_chi = {symbol:2*sp.Rational(str(value)) for symbol,value in
                  zip(CHI.diagonal(),snapshot['B0mq_gev2'])}
     channel_maps = {}
@@ -350,7 +350,7 @@ def main():
                 else:
                     _,filtered = exact_map([values[k] for k in selected],[ids[k] for k in selected],variables)
                 result['nested'][scheme][str(ceiling)] = dict(raw_parents=len(selected),**filtered)
-        result['scope'] = 'Alda central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank'
+        result['scope'] = 'Alda:2026nrd central quark spurion fixed; generic source-family rank after invertible mass/response coordinate scaling; not a dataset or fixed ALP model rank'
         result['rank_coordinates'] = ('m_a2/M_1^2, Z_a/M_1^2, M_2^2/M_1^2' if channel=='aVV' else
             'm_a2/M_1^2, Z_a/M_1^2, W_d/W_u, W_s/W_u' if channel=='aVgamma' else
             'm_a2, Z_a, W_d/W_u, W_s/W_u')
@@ -364,7 +364,7 @@ def main():
              'data/vector_sector/odd_covariant_block_preparation.json',
              'data/vector_sector/odd_leading_action_count.json',
              'data/vector_sector/odd_three_flavor_action_quotient.json',
-             'data/vector_sector/alda_arxiv_v1.json']
+             'data/vector_sector/alda_2026nrd_arxiv_v1.json']
     payload = dict(scope='neutral cubic resonance kernels only; response-symbol polynomial ranks, not complete ALP predictors or data ranks',
                    invariants=dict(s='q_A^2',t='q_B^2',h='q_A dot q_B',m_a2='s+t+2h'),
                    source_convention='u_mu = i p_mu U a; i chi_minus = Y a; Z_TC = Z_a a',

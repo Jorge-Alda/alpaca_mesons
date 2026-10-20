@@ -33,7 +33,7 @@ DEFAULT_FIT_LABEL = 'central_single_trace_negative'
 VECTOR_PAIRS = (('omega', 'omega'), ('omega', 'phi'), ('phi', 'phi'))
 
 # Fixed central inputs of the preliminary fit, not additional fit parameters.
-# B0 m_q: Alda:2026nrd, data/vector_sector/alda_arxiv_v1.json, arXiv v1.
+# B0 m_q: Alda:2026nrd, data/vector_sector/alda_2026nrd_arxiv_v1.json, arXiv v1.
 # chi_plus is the exact-isospin even-sector value 4 B0 m_q; the odd
 # insertion retains the separate u and d quark masses, as in the fit.
 # alpha_em: data/vector_sector/stage3_results.json, assumptions.alpha_em.
@@ -83,7 +83,7 @@ def _positive_number(value, name):
 def read_preliminary_fit_parameters(fit_path=None, *, fit_label=DEFAULT_FIT_LABEL):
     """Read one one-trace preliminary-fit solution and its fixed inputs.
 
-    Fixed central Alda quark masses, the exact-isospin even mass source,
+    Fixed central Alda:2026nrd quark masses, the exact-isospin even mass source,
     alpha_em and M_V are pinned in ``FIXED_CALCULATION_INPUTS`` with their
     provenance. An optional JSON ``calculation_inputs`` object can override
     these explicit inputs. The result gives original odd coefficients, named even fit

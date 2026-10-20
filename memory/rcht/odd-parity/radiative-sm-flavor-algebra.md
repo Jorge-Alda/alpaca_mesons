@@ -13,7 +13,7 @@ The action-derived implementation and complete channel amplitude are recorded in
 
 ## Field and spurion conventions
 
-For canonical RChT vectors, $V=\lambda^aV^a/\sqrt2$ with $\operatorname{tr}(\lambda^a\lambda^b)=2\delta^{ab}$. Thus $T_{\rho^0}=\operatorname{diag}(1,-1,0)/\sqrt2$, $T_\omega=\operatorname{diag}(1,1,0)/\sqrt2$, and $T_\phi=\operatorname{diag}(0,0,1)$. The electromagnetic matrix is $Q=\operatorname{diag}(2/3,-1/3,-1/3)$. The pseudoscalar coefficient matrix $T_P$ is supplied in the RChT field convention; if it is expressed in Alda's field matrix, first use $\Phi_R=F\Phi_A/(\sqrt2f_\pi)$ as derived in the [SM amplitude record](radiative-sm-amplitude.md).
+For canonical RChT vectors, $V=\lambda^aV^a/\sqrt2$ with $\operatorname{tr}(\lambda^a\lambda^b)=2\delta^{ab}$. Thus $T_{\rho^0}=\operatorname{diag}(1,-1,0)/\sqrt2$, $T_\omega=\operatorname{diag}(1,1,0)/\sqrt2$, and $T_\phi=\operatorname{diag}(0,0,1)$. The electromagnetic matrix is $Q=\operatorname{diag}(2/3,-1/3,-1/3)$. The pseudoscalar coefficient matrix $T_P$ is supplied in the RChT field convention; if it is expressed in Alda:2026nrd's field matrix, first use $\Phi_R=F\Phi_A/(\sqrt2f_\pi)$ as derived in the [SM amplitude record](radiative-sm-amplitude.md).
 
 Let $\chi=2B_0m_q$ be the real diagonal mass-squared spurion. For external vector coefficient $T_V$ and pseudoscalar coefficient $T_P$, the direct VJP traces are
 

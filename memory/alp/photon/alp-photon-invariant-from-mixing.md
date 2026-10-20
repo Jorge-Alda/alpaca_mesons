@@ -13,7 +13,7 @@ provenance: analytical-derivation
 
 This record derives the result with
 [`scripts/derive_alp_photon_invariant.py`](../../../scripts/derive_alp_photon_invariant.py).
-The literature inputs are Alda's field redefinition, LSZ coefficients, inverse
+The literature inputs are Alda:2026nrd's field redefinition, LSZ coefficients, inverse
 operator, and generator completeness [@Alda:2026nrd, Eqs. (II.2), (II.3),
 (III.25), (III.28), and (B.1)--(B.2)], as recorded in
 [`appendix-a-expansion.md`](../../extracts/Alda:2026nrd/appendix-a-expansion.md) and
@@ -25,7 +25,7 @@ functional and its counterterm must be combined for gauge invariance and
 rotation-parameter cancellation; this is literature evidence recorded in
 [`background-fields-wzw.md`](../../extracts/Bai:2025fvl/background-fields-wzw.md)
 [@Bai:2025fvl]. The photon formulas below are derived claims, not claims made in
-Alda, whose stated scope excludes the WZW sector.
+Alda:2026nrd, whose stated scope excludes the WZW sector.
 
 ## Conventions, units, and assumptions
 
@@ -47,7 +47,7 @@ $\epsilon_{0123}=-1$ for metric $(+---)$, following
 [conversion audit](../../rcht/odd-parity/levi-civita-convention.md)
 explain the adaptation from the opposite source convention. The positive
 dual coefficient above is unchanged. This convention does not establish
-the meson/WZW mixing result from Alda. The photon-operator normalization is
+the meson/WZW mixing result from Alda:2026nrd. The photon-operator normalization is
 source-backed by Bauer's Eqs. (39)/(54). The matched amplitude is
 $i\mathcal M=-i e^2E C_{a\gamma\gamma}/(4\pi^2f_a)$, with
 $E=\epsilon_{\mu\nu\rho\sigma}q_1^\mu\varepsilon_1^\nu
@@ -57,7 +57,7 @@ The dimensionful coefficient multiplying $aF\widetilde F$ is therefore
 $\alpha_{\rm em}C_{a\gamma\gamma}/(4\pi f_a)$; omitting the displayed $1/f_a$
 would change the coefficient's mass dimension and normalization.
 
-Alda's redefinition is
+Alda:2026nrd's redefinition is
 
 $$
 q_L\to e^{ia(\delta-\kappa)/f_a}q_L,
@@ -110,7 +110,7 @@ $$
 
 ## Step 2: LSZ components and the WZW contribution
 
-Alda's physical-ALP meson components are
+Alda:2026nrd's physical-ALP meson components are
 
 $$
 w_i^{(a)}=\frac{f_\pi}{f_a}\left[
@@ -165,11 +165,11 @@ C_{a\gamma\gamma}(m_a)
 Q^2(c_q^A+\mathbb M_a^{-1}(C))\right]}.
 $$
 
-Here $C$ and therefore $\mathbb M_a^{-1}(C)$ are invariant under Alda's field
+Here $C$ and therefore $\mathbb M_a^{-1}(C)$ are invariant under Alda:2026nrd's field
 redefinition. The split between the explicit contact term and the
 WZW/meson-pole term is basis dependent; only their displayed sum is invariant.
 
-## Step 3: Alda no-mixing basis
+## Step 3: Alda:2026nrd no-mixing basis
 
 Choose
 

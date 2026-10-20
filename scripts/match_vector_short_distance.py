@@ -124,9 +124,9 @@ def source_matching():
     show('SU(3)-symmetric spurion limit: double trace vanishes',S.subs(xs,xl))
 
 def numeric(coefficients):
-    sectors=stage4.module('vector_sector'); alda=stage4.module('alda_neutral_inputs')
+    sectors=stage4.module('vector_sector'); alda=stage4.module('alda_2026nrd_neutral_inputs')
     api=stage4.module('vector_sector_amplitudes'); Q=stage4.module('radiative_sm').Q
-    inputs=alda.alda_neutral_inputs(mass_scheme='physical',F=.093,fpi=.093)
+    inputs=alda.alda_2026nrd_neutral_inputs(mass_scheme='physical',F=.093,fpi=.093)
     compiled=sp.lambdify([*theta,*coefficients['inputs'],F,MV,NC],coefficients['single']+coefficients['double'],'numpy')
     previous=json.loads((ROOT/'data/vector_sector/stage4_rank_results.json').read_text())
     for path,digest in previous['sha256'].items():

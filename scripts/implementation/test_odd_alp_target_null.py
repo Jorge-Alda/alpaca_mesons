@@ -15,8 +15,8 @@ import audit_odd_alp_target_nulls as AUDIT
 class TargetTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.ald=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
-        cls.tree=J.module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree')
+        cls.ald=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
+        cls.tree=J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree')
         ass=json.loads((ROOT/'data/vector_sector/stage3_results.json').read_text())['assumptions']
         cls.sector,_=J.action_sector(np.array([.775,.895,.018,.043,.16]),'universal',ass)
         cls.e=np.sqrt(4*np.pi*ass['alpha_em'])

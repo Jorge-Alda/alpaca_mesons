@@ -4,7 +4,7 @@
   "source_epsilon_upper0123": -1,
   "inherited_photon_dual_upper0123": 1,
   "inherited_photon_dual_relative_orientation": -1,
-  "orientation_evidence": "convention completion required by the inherited positive WZW assumption, not supplied by Alda",
+  "orientation_evidence": "convention completion required by the inherited positive WZW assumption, not supplied by Alda:2026nrd",
   "Ftilde_two_photon_over_E": "-4*eta_gamma",
   "epsilon_derivative_two_photon_over_E": "-2",
   "tensor_bridge": "E=epsilon(q1,epsilon1,q2,epsilon2)=-R; R=epsilon(epsilon1,epsilon2,q1,q2)",

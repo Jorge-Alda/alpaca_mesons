@@ -120,13 +120,13 @@ def baseline_check():
 
 def main():
     sectors=module('vector_sector')
-    alda=module('alda_neutral_inputs')
+    alda=module('alda_2026nrd_neutral_inputs')
     calibration=json.loads((ROOT/'data/vector_sector/stage3_results.json').read_text())
     pdg=json.loads((ROOT/'data/vector_sector/pdg2024.json').read_text())
-    pseudoscalars=alda.alda_neutral_inputs(mass_scheme='physical',F=.093,fpi=.093)
+    pseudoscalars=alda.alda_2026nrd_neutral_inputs(mass_scheme='physical',F=.093,fpi=.093)
     mass_values={name:entry['value_mev']/1000 for name,entry in pdg['masses'].items()}
-    # Physical kinematic masses from Alda's arXiv-v1 input table, not tree eigenmasses.
-    snapshot=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
+    # Physical kinematic masses from Alda:2026nrd's arXiv-v1 input table, not tree eigenmasses.
+    snapshot=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
     pm=snapshot['physical_masses_gev']
     fixed={'K0':pm['K_neutral'],'K+':pm['K_charged'],'pi+':pm['pi_charged']}
     outcomes=[]
@@ -144,29 +144,29 @@ def main():
                         phi_input=width['phi_input'],branch=branch,preferred_if_otherwise_equal=branch=='near_ideal',
                         source_hypothesis=hypothesis, signed_residues_gev=list(sector.residues),
                         **rows_for(sector,pseudoscalars,masses)))
-    alda_common=rows_for(sectors.VectorSector.universal(.770,.13),pseudoscalars,
+    alda_2026nrd_common=rows_for(sectors.VectorSector.universal(.770,.13),pseudoscalars,
         {**fixed,'rho':mass_values['rho_neutral'],'omega':mass_values['omega'],
          'phi':mass_values['phi'],'rho+':mass_values['rho_charged'],
          'Kstar0':mass_values['kstar_neutral'],'Kstar+':mass_values['kstar_charged']})
-    assert alda_common['radiative']['rank']==7
-    assert alda_common['radiative_and_real_and_virtual_tff']['rank']==8
+    assert alda_2026nrd_common['radiative']['rank']==7
+    assert alda_2026nrd_common['radiative_and_real_and_virtual_tff']['rank']==8
     paths=['scripts/diagnose_vector_stage4.py','scripts/implementation/vector_sector.py',
            'scripts/implementation/vector_sector_amplitudes.py',
-           'scripts/implementation/alda_neutral_inputs.py','data/vector_sector/stage3_results.json',
-           'data/vector_sector/pdg2024.json','data/vector_sector/alda_arxiv_v1.json']
+           'scripts/implementation/alda_2026nrd_neutral_inputs.py','data/vector_sector/stage3_results.json',
+           'data/vector_sector/pdg2024.json','data/vector_sector/alda_2026nrd_arxiv_v1.json']
     result=dict(coupling_order=ORDER,scope='action sensitivity diagnostic; no fitted odd-parity couplings',
         inherited_ope='five baseline homogeneous sensitivity rows; NOT a rematched short-distance prescription',
         persistent_null_directions=dict(c7=NULLS[0],d4=NULLS[1],common_c2_c5_c6_shift=NULLS[2]),
         inputs=dict(F_gev=.093,operator_MV_gev=.770,virtualities_gev2=[[0,0],[-1,0],[-5,0]],
                     charged_pseudoscalar_masses_gev=fixed,
-                    charged_pseudoscalar_mass_status='Alda arxiv-v1 input table; fixed central kinematic inputs',
+                    charged_pseudoscalar_mass_status='Alda:2026nrd arxiv-v1 input table; fixed central kinematic inputs',
                     calibrated_external_vector_mass_policy='rho+ uses selected rho_input; charged and neutral Kstar both use selected kstar_input, exact-isospin vector action',
-                    vector_spurion_policy='even vector mass/source block uses isospin chi_plus from stage3; odd mass spurion and neutral P eigenvectors retain full Alda isospin; partial isospin truncation, rho mixing omitted',
-                    alda_common_control_external_mass_policy='measured charged/neutral external masses retained as explicitly labeled old reference',
-                    neutral_pseudoscalar_scheme='physical masses with Alda arxiv-v1 eigenvectors and independent chi',
+                    vector_spurion_policy='even vector mass/source block uses isospin chi_plus from stage3; odd mass spurion and neutral P eigenvectors retain full Alda:2026nrd isospin; partial isospin truncation, rho mixing omitted',
+                    alda_2026nrd_common_control_external_mass_policy='measured charged/neutral external masses retained as explicitly labeled old reference',
+                    neutral_pseudoscalar_scheme='physical masses with Alda:2026nrd arxiv-v1 eigenvectors and independent chi',
                     uncertainties='fixed central inputs; no pooled alternatives or model/input uncertainty inference'),
         sha256={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths},
-        baseline_consistency=baseline_check(),alda_universal_common_pole_control=alda_common,
+        baseline_consistency=baseline_check(),alda_2026nrd_universal_common_pole_control=alda_2026nrd_common,
         scenarios=outcomes)
     output=ROOT/'data/vector_sector/stage4_rank_results.json'
     output.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')

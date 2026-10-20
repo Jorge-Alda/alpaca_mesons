@@ -301,7 +301,7 @@ class PhotonVectorTransform:
 
 
 def odd_parity_flavor_kernels(source_a, source_b, spurions: ALPFlavorSpurions) -> OddParityFlavorKernels:
-    """Return traces containing the explicit Alda physical-ALP spurions."""
+    """Return traces containing the explicit Alda:2026nrd physical-ALP spurions."""
     if not isinstance(spurions, ALPFlavorSpurions):
         raise TypeError("spurions must be ALPFlavorSpurions")
     ta = _source_matrix(source_a, "source_a")

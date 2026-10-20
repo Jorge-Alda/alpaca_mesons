@@ -82,8 +82,8 @@ def main():
     data=json.loads((ROOT/jac['measurement_snapshot']).read_text())
     obs={r['channel']:r for r in data['observations'] if r.get('status','included')!='deferred'}
     assumptions=json.loads((ROOT/'data/vector_sector/stage3_results.json').read_text())['assumptions']
-    alda=json.loads((ROOT/'data/vector_sector/alda_arxiv_v1.json').read_text())
-    tree=C.J.module('alda_neutral_inputs').alda_neutral_inputs(mass_scheme='tree')
+    alda=json.loads((ROOT/'data/vector_sector/alda_2026nrd_arxiv_v1.json').read_text())
+    tree=C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree')
     chi=tree['pi0']['chi'];e=np.sqrt(4*np.pi*assumptions['alpha_em'])
     fast=C.FastChannels(tree,alda['physical_masses_gev'],e)
     models=C.model_maps();results=[]
@@ -119,7 +119,7 @@ def main():
             target_labels=labels,targets=diagnostics,source_contact_relation_certificates=certificates))
     inputs=['scripts/audit_odd_alp_target_nulls.py','scripts/implementation/odd_alp_target_null.py',
             'data/vector_sector/odd_low_energy_calibration.json','data/vector_sector/odd_low_energy_jacobians.json',
-            'data/vector_sector/odd_cubic_parent_kernels.json','data/vector_sector/alda_arxiv_v1.json',
+            'data/vector_sector/odd_cubic_parent_kernels.json','data/vector_sector/alda_2026nrd_arxiv_v1.json',
             'data/vector_sector/stage3_results.json','data/vector_sector/odd_leading_action_count.json',
             'data/vector_sector/odd_three_flavor_action_quotient.json',jac['measurement_snapshot']]
     out=dict(scope='finite conditional neutral bounded resonance odd-coefficient null audit',

@@ -26,7 +26,7 @@ Isospin breaking enters the $a\to K\bar K\pi$ calculation in four distinct place
 - charged-neutral meson mass differences and therefore split thresholds;
 - electromagnetic interactions and radiative corrections.
 
-These effects should not be represented by a single correction to the isospin-symmetric $I=1/2$ Omnes function. The Alda-consistent source is obtained from the full flavor traces in [the leading-order interaction record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md) [@Alda:2026nrd]. Strong and electromagnetic corrections to low-energy $\pi K$ scattering are treated systematically in chiral perturbation theory by the sources recorded in [the Kubis--Meissner extract](../extracts/Kubis:2001ij/isospin-violation-pik.md), [the Nehme--Talavera extract](../extracts/Nehme:2001wf/low-energy-pik-breaking.md), and the charged-channel extracts [Nehme:2001wa](../extracts/Nehme:2001wa/charged-pik-breaking.md) and [Kubis:2001bx](../extracts/Kubis:2001bx/charged-pik-threshold.md). [@Kubis:2001ij; @Nehme:2001wf; @Nehme:2001wa; @Kubis:2001bx]
+These effects should not be represented by a single correction to the isospin-symmetric $I=1/2$ Omnes function. The Alda:2026nrd-consistent source is obtained from the full flavor traces in [the leading-order interaction record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md) [@Alda:2026nrd]. Strong and electromagnetic corrections to low-energy $\pi K$ scattering are treated systematically in chiral perturbation theory by the sources recorded in [the Kubis--Meissner extract](../extracts/Kubis:2001ij/isospin-violation-pik.md), [the Nehme--Talavera extract](../extracts/Nehme:2001wf/low-energy-pik-breaking.md), and the charged-channel extracts [Nehme:2001wa](../extracts/Nehme:2001wa/charged-pik-breaking.md) and [Kubis:2001bx](../extracts/Kubis:2001bx/charged-pik-threshold.md). [@Kubis:2001ij; @Nehme:2001wf; @Nehme:2001wa; @Kubis:2001bx]
 
 The charge-isospin transformations and threshold-mixing formulas below are derived by [`scripts/derive_kpi_isospin_breaking.py`](../../scripts/derive_kpi_isospin_breaking.py).
 
@@ -49,7 +49,7 @@ $$
 
 The $c_0$ term is isoscalar and $c_3$ is isovector. For an isoscalar source and exact isospin, coupling the bachelor kaon with $I=1/2$ to total $I=0$ selects a $K\pi$ pair with $I=1/2$. An isovector source permits total $I=1$ and generally produces both $I=1/2$ and $I=3/2$ pair amplitudes. Therefore a source with $c_u\ne c_d$ must not be dressed entirely with the BaBar $I=1/2$ wave or with an $I=1/2$ Omnes function.
 
-In practice, evaluate the Alda flavor traces without setting $u=d$. Keep the distinct entries of $\widehat c_q^A$, $\widehat c_q^P$, and $B_0m_q$, and use the physical neutral-meson generators. This gives separate production kernels for every physical charge channel. The physical generators and $B_0m_q$ inputs already used in `scripts/implementation/three_meson_width.py` provide the repository conventions for this calculation.
+In practice, evaluate the Alda:2026nrd flavor traces without setting $u=d$. Keep the distinct entries of $\widehat c_q^A$, $\widehat c_q^P$, and $B_0m_q$, and use the physical neutral-meson generators. This gives separate production kernels for every physical charge channel. The physical generators and $B_0m_q$ inputs already used in `scripts/implementation/three_meson_width.py` provide the repository conventions for this calculation.
 
 ## Charge and isospin bases
 
@@ -187,7 +187,7 @@ Above the $K\eta$ and $K\eta'$ thresholds, enlarge $\mathbf F_c$, $T_c$, and $\O
 
 At leading chiral order, $m_d-m_u$ induces $\pi^0$--$\eta$ mixing as well as mass and vertex corrections. At higher orders it also enters loops, wave-function renormalization, and local counterterms. Including only a mixing angle or only physical masses is not a complete fixed-order treatment; separately identified effects can cancel. [@Kubis:2001ij; @Nehme:2001wf]
 
-For a leading-order ALP analysis, using the fitted physical neutral generators and nondegenerate $B_0m_q$ values consistently in the Alda flavor traces captures the source-level effects included in those inputs. Dynamical isospin violation in the rescattering matrix remains omitted unless $T_c$ is matched to the complete isospin-breaking chiral amplitude.
+For a leading-order ALP analysis, using the fitted physical neutral generators and nondegenerate $B_0m_q$ values consistently in the Alda:2026nrd flavor traces captures the source-level effects included in those inputs. Dynamical isospin violation in the rescattering matrix remains omitted unless $T_c$ is matched to the complete isospin-breaking chiral amplitude.
 
 Charge-dependent $K_{\ell3}$ scalar form factors provide useful low-energy normalization and slope checks because they include strong and electromagnetic isospin breaking. They are not universal ALP production form factors: the source vector, subtraction constants, and left-hand cuts differ. [See the scalar-form-factor extract](../extracts/Kastner:2008ch/kl3-scalar-isospin-breaking.md) [@Kastner:2008ch]
 
@@ -201,7 +201,7 @@ A pairwise Coulomb factor is only an approximation in a three-body decay because
 
 ### Minimal controlled improvement
 
-1. Evaluate separate Alda production kernels for all physical charge channels with nondegenerate hatted couplings, physical neutral generators, and physical masses.
+1. Evaluate separate Alda:2026nrd production kernels for all physical charge channels with nondegenerate hatted couplings, physical neutral generators, and physical masses.
 2. Extract $P_{1/2}$ and $P_{3/2}$, retaining the source contribution proportional to $c_u-c_d$.
 3. Construct $T_c=C\operatorname{diag}(T^{1/2},T^{3/2})C$ from isospin-symmetric dispersive amplitudes.
 4. Solve the $2\times2$ charge-basis Omnes problem using physical thresholds.

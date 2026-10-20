@@ -188,7 +188,7 @@ def main():
         script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         assumptions=dict(covariance='diagonal summary errors, conditional diagnostics only',
             masses='PDG listing fitted masses used as tree masses; no EM or pole conversion',
-            xl_gev2=XL,xs_gev2=XS,spurion='fixed Alda arXiv-v1 central isospin-average inputs',
+            xl_gev2=XL,xs_gev2=XS,spurion='fixed Alda:2026nrd arXiv-v1 central isospin-average inputs',
             model_errors='not included in diagnostic chi2; charged/neutral scenarios and width alternatives remain separate',
             electron_mass_gev=ME,alpha_em=alpha,fit_scope='no odd-parity or three-pion inputs'),scenarios=outcomes)
     OUTPUT.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')

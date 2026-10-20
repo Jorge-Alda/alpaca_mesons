@@ -38,11 +38,11 @@ Use the [calibration archive](odd-low-energy-calibration.md),
 [measurement Jacobians](odd-low-energy-measurement-jacobians.md), and
 [canonical tensor conversion](levi-civita-convention.md).
 The source-backed [PDG measurement extract](../../extracts/ParticleDataGroup:2024cfk/odd-parity-low-energy-measurements.md)
-specifies every fitted observable. Alda's central neutral inputs are retained
+specifies every fitted observable. Alda:2026nrd's central neutral inputs are retained
 [@Alda:2026nrd]. Bibliography records were inspected before using these
 existing research results.
 
-The inherited assumptions are tree level, fixed Alda neutral inputs,
+The inherited assumptions are tree level, fixed Alda:2026nrd neutral inputs,
 diagonal quoted-summary covariance where the experimental covariance is
 unavailable, shared total-width nuisances included once, LO source-compatible
 vertex masses with physical phase-space masses, and the documented partial

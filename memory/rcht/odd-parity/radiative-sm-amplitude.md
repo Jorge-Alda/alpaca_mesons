@@ -28,7 +28,7 @@ The source's octet action does not establish extra singlet/OZI matching or a
 fully matched action for arbitrary split internal masses. No fit is performed.
 Metric $(+---)$, source $\epsilon^{0123}=+1, \epsilon_{0123}=-1$, natural units, masses in GeV.
 
-### Field conventions and Alda map
+### Field conventions and Alda:2026nrd map
 
 The canonical RChT vector octet is $V=\lambda^aV^a/\sqrt2$, with
 $\operatorname{tr}(\lambda^a\lambda^b)=2\delta^{ab}$. Consequently its eighth
@@ -41,13 +41,13 @@ $T_\phi=\operatorname{diag}(0,0,1)$. These already exist in
 Pseudoscalar coefficient matrices remain explicit inputs and are not assigned
 vector-state defaults.
 
-The [indexed Alda appendix](../../extracts/Alda:2026nrd/appendix-a-expansion.md)
+The [indexed Alda:2026nrd appendix](../../extracts/Alda:2026nrd/appendix-a-expansion.md)
 defines $\phi=\Phi_A/(2f_\pi)$; RChT uses
 $u=\exp(i\Phi_R/(\sqrt2F))$. Therefore the explicit field map is
 $\Phi_R=F\Phi_A/(\sqrt2f_\pi)$, and $u_\mu=-\partial_\mu\Phi_A/f_\pi$
 at one-field order. The implementation requires explicit coefficients of
-$\Phi_R$; Alda matrices must first use this map. No vector normalization is
-inferred from Alda's pseudoscalar convention. Physical $\eta,\eta'$ residues,
+$\Phi_R$; Alda:2026nrd matrices must first use this map. No vector normalization is
+inferred from Alda:2026nrd's pseudoscalar convention. Physical $\eta,\eta'$ residues,
 decay constants, mixing and mass-spurion values remain explicit inputs.
 
 ## Derivation and flavor sums
