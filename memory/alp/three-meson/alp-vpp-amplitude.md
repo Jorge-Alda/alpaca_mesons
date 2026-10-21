@@ -65,7 +65,11 @@ d_1m_X^2\,\frac{\operatorname{tr}(\{T_V,T_R\}\mathcal U_X)}{2}
 -4d_2\,\frac{\operatorname{tr}(\{T_V,T_R\}\mathcal Y_X)}{2}
 \right].
 $$
-Here $M_V$ is the external vector mass; for the ALP source take
+Here $M_V$ is the vector-mass parameter in the RChT Lagrangian and in the
+operator normalization, not the physical external-state mass. The external
+vector is on shell with $k^2=m_V^2$, where $m_V=m_\omega$ or $m_\phi$ for the
+selected state; use this physical mass in external kinematics and phase space.
+For the ALP source take
 $X=a$, $m_X=m_a$, $r^2=s$, $\mathcal U_X=\mathcal U_a$,
 $\mathcal Y_X=\mathcal Y_a$. For an outgoing pseudoscalar $P_i$, take
 $X=P_i$, $m_X=m_i$, $r^2$ as shown, $\mathcal U_X=\mathcal U_i$,
