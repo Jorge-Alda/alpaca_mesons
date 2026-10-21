@@ -10,6 +10,7 @@ if str(ROOT) not in sys.path:
 
 from alpaca_chiral.pseudoscalar_diag import ALPcouplings
 from alpaca_chiral.vector_pair import neutral_vector_pair_width
+from alpaca_chiral.vector_photon import vector_photon_width
 
 mesons_tex = {
  'omega': r'\omega',
@@ -39,15 +40,25 @@ def make_plot_cG():
                     channels[channel] = np.array(dw)
                     print('\t' , channel, "computed in", round(tf-t0, 2), "seconds")
 
+    for i, meson in enumerate(mesons):
+        channel = f"{mesons_tex[meson]} \\gamma"
+        print("Computing channel", channel)
+        t0 = time()
+        dw = [vector_photon_width(m, fa, cG, meson) for m in ma]
+        tf = time()
+        if any(dw) and np.max(dw) > 1e-12:
+            channels[channel] = np.array(dw)
+            print('\t' , channel, "computed in", round(tf-t0, 2), "seconds")
+
     colors = plt.cm.jet(np.linspace(0, 1, len(channels)))
 
     fig = plt.figure()
     for (channel, color) in zip(channels.keys(), colors):
         plt.semilogy(ma, channels[channel], label=f'${channel}$', color=color)
     total = np.sum([c for c in channels.values()], axis=0)
-    plt.semilogy(ma, total, c='k', lw=1.5)
+    #plt.semilogy(ma, total, c='k', lw=1.5)
     plt.xlabel(r'$m_a$ [GeV]')
-    plt.ylabel(r'$\Gamma(a \to VV)$ [GeV]')
+    plt.ylabel(r'$\Gamma(a \to VV / V\gamma)$ [GeV]')
     plt.legend(ncols=3, fontsize=6, borderpad=0.2, labelspacing=0.1, handlelength=1.4)
     plt.ylim(1e-12, 1e-3)
     fig.savefig(pathlib.Path(__file__).parent / 'plots/dw_a2V_cG.pdf', bbox_inches='tight')
