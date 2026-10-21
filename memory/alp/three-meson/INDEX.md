@@ -2,7 +2,7 @@
 title: ALP three-meson memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-15
+updated: 2026-10-21
 bibtex_keys: []
 provenance: assumption
 ---
@@ -21,3 +21,4 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [a3p-vector-exchange-amplitude.md](a3p-vector-exchange-amplitude.md) — vector-pole and representation-matching amplitudes.
 - [flavor-conserving-neutral-vector-selection-rule.md](flavor-conserving-neutral-vector-selection-rule.md) — neutral-vector flavor selection rule.
 - [odd-parity-three-pseudoscalar-audit.md](odd-parity-three-pseudoscalar-audit.md) — vacuum single-odd tree zero, separation from even G_V exchange and a conditional higher-order loop plan.
+- [alp-vpp-amplitude.md](alp-vpp-amplitude.md) — strong tree $a\to VPP$ odd vector exchange, even scalar-source exchanges, fit-null projection, and internal pole selection.
