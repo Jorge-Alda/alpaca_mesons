@@ -1,0 +1,132 @@
+{
+  "scope": "Supplemental fit conditional on frozen provisional parameters; not independent of archived fit because Kstar and phi PDG width inputs overlap. Do not add chi2 values.",
+  "covariance_assumption": "Quoted summary covariance; phi BR correlation -0.72 retained, other cross-correlations unavailable and set to zero; no fixed-parameter uncertainty propagated.",
+  "excluded_rho": "rho to pi pi total width saturates its total-width input already present in the provisional fit; no independent additional row.",
+  "sources": {
+    "kstar": {
+      "bibtex_key": "ParticleDataGroup:2024cfk",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf",
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-892.pdf",
+      "entries": "Charged Kpi partial width 51.4 +/- 0.8 MeV; neutral Kpi partial width 47.3 +/- 0.5 MeV, constrained total and partial width fits. Neutral error includes S=2.0, no further rescaling.",
+      "sha256": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9"
+    },
+    "phi": {
+      "bibtex_key": "ParticleDataGroup:2024cfk",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf",
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1020.pdf",
+      "entries": "K+K- BR .491 +/- .005; KLKS BR .339 +/- .004; constrained-fit correlation x1,x2=-72 percent; no further rescaling.; pi+ pi- BR (7.3 +/- 1.3) x 10^-5, diagnostic only.",
+      "sha256": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e"
+    },
+    "omega": {
+      "bibtex_key": "ParticleDataGroup:2024cfk",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf",
+      "sha256": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0",
+      "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-782.pdf",
+      "entries": "pi+ pi- BR (1.53 +/- .12) percent, diagnostic only"
+    }
+  },
+  "rows": [
+    {
+      "channel": "kstar_charged_Kpi",
+      "vector": "kstar_charged",
+      "physical_vector_mass_GeV": 0.89167,
+      "observable": "partial_width_GeV",
+      "value": 0.0514,
+      "sigma": 0.0008,
+      "source": "ParticleDataGroup:2024cfk",
+      "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+    },
+    {
+      "channel": "kstar_neutral_Kpi",
+      "vector": "kstar_neutral",
+      "physical_vector_mass_GeV": 0.89555,
+      "observable": "partial_width_GeV",
+      "value": 0.0473,
+      "sigma": 0.0005,
+      "source": "ParticleDataGroup:2024cfk",
+      "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+    },
+    {
+      "channel": "phi_K+_K-",
+      "vector": "phi",
+      "physical_vector_mass_GeV": 1.019461,
+      "observable": "branching_fraction",
+      "value": 0.491,
+      "sigma": 0.005,
+      "source": "ParticleDataGroup:2024cfk",
+      "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+    },
+    {
+      "channel": "phi_KL_KS",
+      "vector": "phi",
+      "physical_vector_mass_GeV": 1.019461,
+      "observable": "branching_fraction",
+      "value": 0.339,
+      "sigma": 0.004,
+      "source": "ParticleDataGroup:2024cfk",
+      "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+    }
+  ],
+  "covariance_blocks": {
+    "kstar_charged": [
+      0
+    ],
+    "kstar_neutral": [
+      1
+    ],
+    "phi_kaon_branching_fractions": [
+      2,
+      3
+    ]
+  },
+  "covariance": [
+    [
+      6.4e-07,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      2.5e-07,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.5e-05,
+      -1.44e-05
+    ],
+    [
+      0.0,
+      0.0,
+      -1.44e-05,
+      1.6e-05
+    ]
+  ],
+  "excluded_diagnostics": [
+    {
+      "channel": "phi_pi+_pi-",
+      "vector": "phi",
+      "physical_vector_mass_GeV": 1.019461,
+      "observable": "branching_fraction",
+      "value": 7.3e-05,
+      "sigma": 1.3e-05,
+      "source": "ParticleDataGroup:2024cfk",
+      "included_in_likelihood": false,
+      "exclusion_reason": "Observed isospin-violating decay requires isospin violation or rho admixture outside the current exact-isospin LO VPP model with frozen isoscalar mixing."
+    },
+    {
+      "channel": "omega_pi+_pi-",
+      "vector": "omega",
+      "physical_vector_mass_GeV": 0.78266,
+      "observable": "branching_fraction",
+      "value": 0.0153,
+      "sigma": 0.0012,
+      "source": "ParticleDataGroup:2024cfk",
+      "included_in_likelihood": false,
+      "exclusion_reason": "Observed isospin-violating decay requires isospin violation or rho admixture outside the current exact-isospin LO VPP model with frozen isoscalar mixing."
+    }
+  ]
+}

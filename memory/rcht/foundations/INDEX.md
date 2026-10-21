@@ -20,4 +20,5 @@ Shared RChT conventions, photon-vector diagonalization, even-parity vertices, fr
 - [vector-nonideal-mass-action.md](vector-nonideal-mass-action.md) — derived minimal tensor mass action, nonideal generators, source overlaps and propagation limits.
 - [vector-mass-extension.md](vector-mass-extension.md) — additional invariant mass operator and its two mass-compatible branches.
 - [vector-leptonic-width.md](vector-leptonic-width.md) — tensor-current leptonic widths and single/double-trace spurion source residues.
+- [vector-gv-fit.md](vector-gv-fit.md) — conditional four-row $G_V$ fit to charged/neutral $K^*\to K\pi$ widths and correlated $\phi\to K\bar K$ branching fractions with provisional inputs fixed.
 - [vector-stage3-calibration.md](vector-stage3-calibration.md) — fixed-input mass/source adequacy diagnostics, separate scenarios and identifiability limits.

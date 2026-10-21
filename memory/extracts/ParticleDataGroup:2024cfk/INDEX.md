@@ -18,4 +18,5 @@ Source-specific literature extracts for BibTeX key `ParticleDataGroup:2024cfk`.
 - [omega-pi0-gamma-datum.md](omega-pi0-gamma-datum.md) — modular extract from ParticleDataGroup:2024cfk.
 - [rho-omega-radiative-branchings.md](rho-omega-radiative-branchings.md) — $\rho,\omega$ radiative branching fractions with consistency factors and width cross-checks.
 - [vector-sector-calibration-inputs.md](vector-sector-calibration-inputs.md) — checksum-pinned 2024 masses and direct electronic widths for stage-3 vector calibration.
+- [vector-to-two-pseudoscalar-inputs.md](vector-to-two-pseudoscalar-inputs.md) — $K^*$ partial widths, correlated $\phi\to K\bar K$ fractions, and the isospin-violating $\phi,\omega\to\pi^+\pi^-$ summaries.
 - [odd-parity-low-energy-measurements.md](odd-parity-low-energy-measurements.md) — source pages, values, shared-width policy, fit-overlap caveats, and deferred eta-prime/rho channel for the bounded odd-action snapshot.
