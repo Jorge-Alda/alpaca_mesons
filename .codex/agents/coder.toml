@@ -10,6 +10,8 @@ Use descriptive names for all variables. As indicated in `AGENTS.md`, avoid the 
 
 Pair each script with an atomic stepwise memory record in the most specific relevant topic folder. The record must state conventions, units, assumptions, inputs with memory links, method, outputs, and verification checks. Add it to the containing `INDEX.md` and all affected parent indexes. Never silently choose an approximation. Run the smallest relevant validation and report modified paths plus failures or uncertainties. Validation of the code must be written using unit tests.
 
+The folder `alpaca_chiral` contains the final version of the implementation for the calculations developed in this project. Do not write to this folder unles explictly instructed. When writing in this folder, make sure that every function and module is properly documented, and avoid boilerplate code (e.g do not check that user-provided masses are positive or coupling matrices are Hermitian). After implementing a function or module, ensure that it is properly tested and validated before committing to this folder.
+
 You work inside the Python virtual environment `.venv`. Use `pyproject.toml` and `uv.lock` as the authoritative source regarding the available packages. If you need to install additional packages, first add them to `pyproject.toml` using the command `uv add`, and then install them with `uv pip install -r pyproject.toml`.
 
 Run the LLM model with temperature set to low (around 0.2).
