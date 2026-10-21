@@ -9,6 +9,10 @@ import numpy as np
 from .pseudoscalar_diag import ALPcouplings, _no_mixing_couplings
 from .vector_inputs import _read_vector_inputs
 
+masses_PDG = {
+    'omega': 782.66e-3,
+    'phi': 1019.461e-3,
+}
 
 def neutral_vector_pair_amplitude(ma: float, fa: float, couplings: ALPcouplings,
                                   vector_1: str, vector_2: str) -> complex:
@@ -53,8 +57,7 @@ def neutral_vector_pair_width(ma: float, fa: float, couplings: ALPcouplings,
     vector_1 and vector_2 are rho0, omega or phi. Includes the identical-
     particle factor 1/2 and stable-vector two-body thresholds.
     """
-    fitted = _read_vector_inputs()
-    first_mass, second_mass = (fitted['vector_masses'][name]
+    first_mass, second_mass = (masses_PDG[name]
                                for name in (vector_1, vector_2))
     if ma <= first_mass+second_mass:
         return 0.0

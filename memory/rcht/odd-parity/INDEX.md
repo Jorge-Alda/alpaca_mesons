@@ -21,6 +21,7 @@ being combined with canonical photon or resonance amplitudes.
 - [two-source-alp-rcht-odd-parity-extension.md](two-source-alp-rcht-odd-parity-extension.md) — two-source anomaly seed and ALP insertion.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
+- [odd-prescription-matching.md](odd-prescription-matching.md) — algebraic matching status for VMD and Bai:2025fvl, with the separate rank-five octet OPE family.
 - [odd-parity-rcht-implementation-decisions.md](odd-parity-rcht-implementation-decisions.md) — selected implementation baseline.
 - [odd-parity-rcht-numerical-kernel.md](odd-parity-rcht-numerical-kernel.md) — numerical odd-parity RChT kernel.
 - [omega-pi-gamma-rcht-predictor.md](omega-pi-gamma-rcht-predictor.md) — on-shell $\omega\to\pi^0\gamma$ predictor.

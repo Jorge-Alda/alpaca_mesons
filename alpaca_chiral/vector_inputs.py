@@ -11,6 +11,9 @@ import numpy as np
 
 DEFAULT_FIT_PATH = Path(__file__).with_name('odd_preliminary_fit.json')
 DEFAULT_FIT_LABEL = 'central_single_trace_negative'
+#DEFAULT_FIT_PATH = Path(__file__).with_name('odd_prescription_matching.json')
+#DEFAULT_FIT_LABEL = 'bai_2025fvl'
+#DEFAULT_FIT_LABEL = 'aloni_2018vki'
 
 FIXED_CALCULATION_INPUTS = {
     'B0mq_GeV2': (0.006568, 0.011740, 0.235921),

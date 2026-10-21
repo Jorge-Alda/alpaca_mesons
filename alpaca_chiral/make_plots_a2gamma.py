@@ -38,7 +38,7 @@ def make_plot_cG():
     total = np.sum([c for c in channels.values()], axis=0)
     #plt.semilogy(ma, total, c='k', lw=1.5)
     plt.xlabel(r'$m_a$ [GeV]')
-    plt.ylabel(r'$\Gamma(a \to \gamma\gamma)$')
+    plt.ylabel(r'$\Gamma(a \to \gamma\gamma)$ [GeV]')
     plt.legend(ncols=3, fontsize=6, borderpad=0.2, labelspacing=0.1, handlelength=1.4)
     plt.ylim(1e-12, 1e-3)
     fig.savefig(pathlib.Path(__file__).parent / 'plots/dw_a2gamma_cG.pdf', bbox_inches='tight')
@@ -49,6 +49,13 @@ def make_plot_cG():
     plt.ylabel(r'$c_{\gamma\gamma}^{\rm eff}$')
     plt.ylim(-5, 5)
     fig_c.savefig(pathlib.Path(__file__).parent / 'plots/c_eff_a2gamma_cG.pdf', bbox_inches='tight')
+
+    fig_c_log = plt.figure()
+    plt.semilogy(ma, np.abs(c_eff), label=r'$c_{\gamma\gamma}^{\rm eff}$', color='blue')
+    plt.xlabel(r'$m_a$ [GeV]')
+    plt.ylabel(r'$|c_{\gamma\gamma}^{\rm eff}|$')
+    plt.ylim(1e-2, 1e2)
+    fig_c_log.savefig(pathlib.Path(__file__).parent / 'plots/c_eff_a2gamma_cG_log.pdf', bbox_inches='tight')
 
 if __name__ == '__main__':
     make_plot_cG()
