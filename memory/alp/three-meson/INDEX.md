@@ -32,6 +32,8 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [alp-vpp-amplitude.md](alp-vpp-amplitude.md) — strong tree $a\to VPP$ odd vector exchange, even scalar-source exchanges, fit-null projection, and internal pole selection.
 - [alp-photon-pp-amplitude.md](alp-photon-pp-amplitude.md) — odd vector-exchange amplitude for $a\to\gamma PP$, including direct VJP photon insertion, vector-photon conversion, crossed pseudoscalar routing, and the charged-source $c_4$ term.
 - [alp-photon-pp-width.md](alp-photon-pp-width.md) — photon-polarization sum, Dalitz boundaries, and widths for the selected $a\to\gamma PP$ flavor channels.
+- [photon-pp-kaon-pion-profile.md](photon-pp-kaon-pion-profile.md) — matched adaptive profiles of $a\to\gamma K^+K^-$ and $a\to\gamma\pi^+\pi^-$, with resonance pole metadata and call counts.
+- [photon-pp-gauss-legendre-profile.md](photon-pp-gauss-legendre-profile.md) — matched channel profiles of the production Gauss–Legendre $a\to\gamma PP$ width, including grid sizes, pole terms, and fallback counts.
 - [odd-photon-neutral-kaon-selection-rules.md](odd-photon-neutral-kaon-selection-rules.md) — coherent $K_L,K_S$ projections for the odd $a\to\gamma PP$ amplitude: $K_LK_S$ is allowed, while equal-state and equal-flavor neutral-kaon pairs cancel or are excluded.
 - [chi-minus-meson-source-convention.md](chi-minus-meson-source-convention.md) — direct Appendix A derivation fixing the outgoing-meson $i\chi_-$ sign and correcting the crossed $d_2$ terms.
 - [alp-vpp-width.md](alp-vpp-width.md) — invariant polarization sum and two-variable $a\to VPP$ width with the $|\Delta S|=1$ even-source restriction.
