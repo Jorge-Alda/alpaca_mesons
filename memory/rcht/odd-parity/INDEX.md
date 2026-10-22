@@ -81,6 +81,7 @@ being combined with canonical photon or resonance amplitudes.
 - [odd-low-energy-measurement-jacobians.md](odd-low-energy-measurement-jacobians.md) — all 64 conditional measured-width Jacobians, nuisance projection, nested ranks and data-adequacy controls.
 - [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — historical 1792 conditional joint fits with an identified overly restrictive double-trace residue-sign condition; corrected focused refit and remaining validation gates.
 - [odd-preliminary-fit.md](odd-preliminary-fit.md) — central original-eleven-operator provisional fit with a minimal parameter-only JSON and conditional $G_V$ value; research archives retain the corrected double-trace refit and targeted input sensitivities.
+- [preliminary-fit-lagrangian-and-null-directions.md](preliminary-fit-lagrangian-and-null-directions.md) — full retained even and original eleven-operator odd Lagrangians at the preliminary fit, including its four fixed-nuisance coefficient null directions.
 - [alp-vv-amplitude.md](alp-vv-amplitude.md) — analytic no-mixing $a\to\omega\omega,\omega\phi,\phi\phi$ amplitudes with VJP photon conversion and the fitted one-trace even-vector source.
 - [alp-vgamma-amplitude.md](alp-vgamma-amplitude.md) — no-mixing $a\to\omega\gamma,\phi\gamma$ amplitudes with the broken even-sector photon response and explicit null-direction projections.
 - [alp-vv-width.md](alp-vv-width.md) — polarization sum, phase space, identical-particle factors and analytic narrow-vector widths for the three channels.
