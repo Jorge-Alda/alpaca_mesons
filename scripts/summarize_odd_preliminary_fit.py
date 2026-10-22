@@ -1,12 +1,18 @@
-"""Extract a small conditional original-eleven fit report; no new fit scan.
+"""Export central single-trace negative fit parameters; no new fit scan.
 
-Run: .venv/bin/python scripts/summarize_odd_preliminary_fit.py
+Regenerate the conditional G_V parameter file before exporting the combined fit::
+
+    .venv/bin/python scripts/fit_vector_gv.py data/vector_sector/gv_measurements.json data/vector_sector/gv_conditional_fit.json
+    .venv/bin/python scripts/summarize_odd_preliminary_fit.py
+
+Both output files contain only metadata.bibtex_references and parameters.
+The standalone G_V file supplies parameters.G_V_GeV to the combined export.
 Numerical channel-image projection uses scipy least squares/SVD. GeV units;
 all c_i,d_i are dimensionless with the original operator M_V factors retained.
 """
 from pathlib import Path
-import hashlib
 import json
+import math
 import unittest
 import sys
 import numpy as np
@@ -23,7 +29,7 @@ def read(name):
     return json.loads((ROOT/'data/vector_sector'/name).read_text())
 
 def project_original(rows, embedding, parent_coefficients):
-    """Minimum Euclidean norm representative, at fixed nuisance parameters."""
+    """Minimum Euclidean norm representative, at fixed even-sector parameters."""
     matrix=rows@embedding
     target=rows@parent_coefficients
     coefficients=la.lstsq(matrix,target,cond=1e-10)[0]
@@ -31,7 +37,7 @@ def project_original(rows, embedding, parent_coefficients):
     defect=float(la.norm(matrix@coefficients-target)/max(1.,la.norm(target)))
     return coefficients,null,defect
 
-def main():
+def main(*, write_output=True):
     files=['odd_low_energy_calibration.json','odd_low_energy_profiles.json','odd_low_energy_continuation.json','odd_low_energy_profile_reanchoring.json','odd_low_energy_calibration_verification.json','odd_low_energy_jacobians.json','stage3_results.json','alda_2026nrd_arxiv_v1.json','pdg2024.json']
     archive={name:read(name) for name in files}
     profiles=archive['odd_low_energy_profiles.json']['results']
@@ -42,17 +48,10 @@ def main():
     calibration=archive['odd_low_energy_calibration.json']['results']
     local={x['fit_index']:x for x in archive['odd_low_energy_calibration_verification.json']['local_prediction_uncertainties']}
     ass=archive['stage3_results.json']['assumptions'];alda=archive['alda_2026nrd_arxiv_v1.json']
-    tree=C.J.module('alda_2026nrd_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F)
+    tree=C.J.module('alda_neutral_inputs').alda_2026nrd_neutral_inputs(mass_scheme='tree',F=C.J.F,fpi=C.J.F)
     fast=C.FastChannels(tree,alda['physical_masses_gev'],np.sqrt(4*np.pi*ass['alpha_em']))
     embedding=C.model_maps()['original_11']
-    selections=[('central_'+hyp,dict(CENTRAL,source_hypothesis=hyp)) for hyp in HYPOTHESES]
-    for key,value in [('rho_input','rho_neutral'),('kstar_input','kstar_neutral'),('phi_input','phi_average')]:
-        scenario=dict(CENTRAL,source_hypothesis='single_trace_negative');scenario[key]=value
-        selections.append(('change_'+key,scenario))
-    # Use exact archived phi label, whose name is not a new measurement definition.
-    phi_labels=sorted(set(x['scenario']['phi_input'] for x in profiles)-{'phi_evaluation'})
-    selections[-1][1]['phi_input']=phi_labels[0]
-    selections += [(control,dict(CENTRAL,source_hypothesis='single_trace_negative')) for control in ('without_broad_rho','without_constrained_Kstar')]
+    selections=[('central_single_trace_negative', dict(CENTRAL, source_hypothesis='single_trace_negative'))]
     output=[]
     observations=json.loads((ROOT/'data/odd_parity/odd_low_energy_measurements.json').read_text())['observations']
     for label,scenario in selections:
@@ -70,32 +69,32 @@ def main():
             raise ValueError('original coefficient projection or nullspace failed')
         if not np.allclose(rows@embedding@coef,-rows@embedding@canonical,rtol=1e-12,atol=1e-12):
             raise ValueError('epsilon coefficient adapter failed')
-        diagnostic=pair['local_diagnostics'] if source=='odd_low_energy_profiles.json' else local.get(ci) if source=='odd_low_energy_calibration.json' else None
-        sigmas=diagnostic['local_prediction_sigmas'] if diagnostic else [None]*len(labels)
-        entries=[]
-        for k,pred,pull,sigma in zip(labels,best['predictions'],best['pulls'],sigmas):
-            obs=next(x for x in observations if x['channel']==k)
-            y,error=C.J.data_units(obs)
-            entries.append(dict(channel=k,observable=obs['observable'],unit='dimensionless' if obs['observable']=='branching_fraction' else 'GeV',measurement=y,measurement_sigma=error,prediction=pred,pull=pull,local_prediction_sigma=sigma))
         even_names=['m_rho_GeV','m_Kstar_GeV','Delta_V_GeV2','kappa_V','F_V_GeV']
         if scenario['source_hypothesis']!='universal':even_names.append('z_V_GeV_inverse')
         if scenario['source_hypothesis']=='double_trace':even_names.append('y_V_GeV_inverse')
         even_values=best['even_parameters']
         if len(even_names)!=len(even_values):raise ValueError('source parameter naming does not match fitted vector')
-        output.append(dict(label=label,scenario=scenario,model='original_11',control=control,archive_source=source,archive_pair_index=pair_index,chi2=best['chi2'],odd_chi2=best['odd_chi2'],ancillary_chi2=best['ancillary_chi2'],success=best['success'],global_minimum_proven=False,canonical_representative_coefficients=dict(zip(NAMES,canonical.tolist())),reference_backend_representative_coefficients=dict(zip(NAMES,coef.tolist())),coefficient_units='dimensionless',representative_policy='minimum Euclidean norm in the eleven original coefficients at fitted nuisance values; no coefficient errors inferred',fixed_nuisance_measured_rank=11-null.shape[1],fixed_nuisance_coefficient_null_dimension=null.shape[1],fixed_nuisance_null_basis_columns=null.tolist(),projection_relative_defect=defect,null_annihilation_norm=float(la.norm(rows@embedding@null)),even_parameters=even_values,even_parameters_by_name=dict(zip(even_names,even_values)),shared_total_widths_gev=best['shared_total_widths_gev'],observations=entries,local_prediction_uncertainty_scope=diagnostic.get('local_covariance_scope') if diagnostic else 'not recomputed for an improved archived point'))
-    if len(output)!=9 or len({x['label'] for x in output})!=9:
-        raise ValueError('incomplete focused case set')
-    result=dict(scope='One fixed experimental-input setup, four distinct source hypotheses, three one-at-a-time input sensitivities and two data-removal checks for the negative single-trace source case, retained as a conditional working example because it describes the primary data; archive extraction without new minimization.',selection_policy='Charged rho and Kstar mass summaries; evaluated phi electronic width; near-ideal inverse mass root; primary twelve odd summaries. These choices define a conditional comparison, not a uniquely preferred source hypothesis.',conventions=r'\epsilon^{0123}=+1; metric (+---); canonical c_i=-c_i^R and d_i=-d_i^R; old archives remain reference backend inputs.',uncertainty_policy='Quoted diagonal experimental summaries, fixed central Alda:2026nrd neutral inputs, tree-level real-photon model. Null directions are unmeasured; representatives are not eleven separately measured coefficients. Local prediction errors are sign-branch conditional; no global nonlinear confidence intervals.',results=output,sha256={str((ROOT/'data/vector_sector'/name).relative_to(ROOT)):hashlib.sha256((ROOT/'data/vector_sector'/name).read_bytes()).hexdigest() for name in files})
-    result['sha256']['data/odd_parity/odd_low_energy_measurements.json']=hashlib.sha256((ROOT/'data/odd_parity/odd_low_energy_measurements.json').read_bytes()).hexdigest()
-    result['sha256']['scripts/summarize_odd_preliminary_fit.py']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
-    path=ROOT/'data/vector_sector/odd_preliminary_fit.json';path.write_text(json.dumps(result,indent=2)+'\n')
-    lines=['# Conditional preliminary fit of the original eleven operators','',result['scope'],'',result['selection_policy'],'','$'+result['conventions']+'$','',result['uncertainty_policy'],'','| Case | Source hypothesis | Total chi2 | Odd rank | Unmeasured coefficient directions |','|---|---|---:|---:|---:|']
-    for item in output:lines.append(f"| {item['label']} | {item['scenario']['source_hypothesis']} | {item['chi2']:.8g} | {item['fixed_nuisance_measured_rank']} | {item['fixed_nuisance_coefficient_null_dimension']} |")
-    lines+=['','## Canonical coefficient representatives','','These dimensionless values use a numerical minimum-norm choice for the unmeasured directions. Their zeros or values do not constrain those directions.','', '| Case | '+' | '.join(NAMES)+' |','|---|'+'---:|'*11]
-    for item in output:lines.append('| '+item['label']+' | '+' | '.join(f'{item["canonical_representative_coefficients"][k]:.7g}' for k in NAMES)+' |')
-    lines+=['','Complete predictions, pulls, available conditional local prediction errors, null bases, nuisance values and input hashes are in `odd_preliminary_fit.json`. No new optimizer search is performed. No individual coefficient uncertainty is assigned.','']
-    (path.with_suffix('.md')).write_text('\n'.join(lines))
-    print(path.relative_to(ROOT));print(path.with_suffix('.md').relative_to(ROOT))
+        parameters = dict(zip(even_names, even_values))
+        parameters.update(zip(NAMES, canonical.tolist()))
+        parameters.update({f'Gamma_total_{name}_GeV': value
+                           for name, value in best['shared_total_widths_gev'].items()})
+        light_source, strange_source = 0.036616, 0.943684
+        off_diagonal = (math.sqrt(2)*parameters['Delta_V_GeV2']/3
+                        + parameters['kappa_V']*(light_source+strange_source)/math.sqrt(2))
+        diagonal_difference = (2*parameters['m_Kstar_GeV']**2-2*parameters['m_rho_GeV']**2
+                               - parameters['Delta_V_GeV2']/3
+                               + 2*parameters['kappa_V']*(strange_source-light_source))
+        parameters['omega_phi_mixing_angle_rad'] = .5*math.atan2(2*off_diagonal, diagonal_difference)
+        parameters['G_V_GeV'] = read('gv_conditional_fit.json')['parameters']['G_V_GeV']
+        output.append(parameters)
+    result = dict(metadata=dict(bibtex_references=[
+        'Alda:2026nrd', 'Ruiz-Femenia:2003jdx', 'ParticleDataGroup:2024cfk',
+        'Ecker:1988te', 'Ecker:1989yg']), parameters=output[0])
+    if write_output:
+        path=ROOT/'data/vector_sector/odd_preliminary_fit.json'
+        path.write_text(json.dumps(result,indent=2)+'\n')
+        print(path.relative_to(ROOT))
+    return result, null
 
 class ProjectionTests(unittest.TestCase):
     def test_representative_preserves_predictions_and_exposes_ambiguity(self):

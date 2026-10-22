@@ -27,18 +27,18 @@ $$
 
 which gives the generic-flavor $VPP$ vertex in
 [the interaction expansion](rcht-vpp-vpa-photon-pa-expansion.md)
-[@Ecker:1988te]. The fit holds every parameter of
+[@Ecker:1988te]. The fit conditions on every parameter of
 `central_single_trace_negative` in
 [`odd_preliminary_fit.json`](../../../data/vector_sector/odd_preliminary_fit.json)
-fixed, including the fitted tensor masses, neutral mixing inputs, and shared
-total-width nuisances. It uses the charged and neutral $K^*$ partial widths
+fixed, including the fitted tensor masses, neutral mixing angle, and shared
+total widths. It uses the charged and neutral $K^*$ partial widths
 $51.4\pm0.8$ and $47.3\pm0.5$ MeV, plus the $\phi\to K^+K^-$ and
 $\phi\to K_LK_S$ branching fractions $(49.1\pm0.5)\%$ and
 $(33.9\pm0.4)\%$ [@ParticleDataGroup:2024cfk]. The PDG constrained-fit
 correlation coefficient between the two $\phi$ fractions is $-0.72$ and is
 included. The partial-width entries come from PDG constrained fits that also
-use total widths. The $\phi$ branching fractions use the fixed provisional
-$\phi$ total-width nuisance to compare predicted widths with measured
+use total widths. The $\phi$ branching fractions use the provisional
+$\phi$ total width to compare predicted widths with measured
 fractions. Therefore this supplemental four-row fit overlaps the archived
 provisional inputs; its $\chi^2$ must not be added to the old fit as
 independent data.
@@ -113,11 +113,10 @@ and fitting those effects.
 
 ## Verification
 
-[`scripts/fit_vector_gv.py`](../../../scripts/fit_vector_gv.py) records the
-input hashes, frozen parameter values, summed flavor traces, prediction, and
-fit result in
+[`scripts/fit_vector_gv.py`](../../../scripts/fit_vector_gv.py) writes the
+standalone conditional result using only a `parameters` map and
+references-only metadata in
 [`gv_conditional_fit.json`](../../../data/vector_sector/gv_conditional_fit.json).
-The accompanying unit checks verify the equal-mass $\rho\to\pi\pi$
-normalization, flavor factors, threshold closure, correlated-fit stationarity,
-and the fixed provisional input selection. The result is conditional on the
+The provisional-fit generator incorporates its value into the central fit.
+No parameter correlation matrix was calculated. The result is conditional on the
 leading tree-level RChT vertex and the quoted-summary Gaussian likelihood.

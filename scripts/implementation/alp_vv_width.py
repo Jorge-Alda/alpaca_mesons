@@ -55,7 +55,7 @@ class PreliminaryFitParameters:
     canonical epsilon^0123=+1 convention. ``even_parameters`` contains the
     fitted mass and electromagnetic-source coefficients with the units in
     their names. Vector flavour generators obey Tr(T_i T_j)=delta_ij;
-    they are derived matrices, rather than fitted nuisance parameters.
+    they are derived from the fitted vector mixing angle.
     ``photon_vector_residues`` are signed electromagnetic-current matrix
     elements in GeV. The quark mass matrix is chi=2 B0 m_q, in GeV^2.
     """
@@ -92,21 +92,26 @@ def read_preliminary_fit_parameters(fit_path=None, *, fit_label=DEFAULT_FIT_LABE
     widths do not enter the stable-daughter two-body formula.
     """
     document = json.loads(Path(fit_path or DEFAULT_FIT_PATH).read_text())
-    selected = [entry for entry in document['results'] if entry['label'] == fit_label]
-    if len(selected) != 1:
-        raise ValueError('fit_label must select exactly one preliminary fit')
-    selected = selected[0]
-    if selected.get('model') != 'original_11':
-        raise ValueError('the fit must use the original eleven odd operators')
-    if selected['scenario']['branch'] != 'near_ideal':
-        raise ValueError('this reader requires the near-ideal neutral vector mass branch')
-    hypothesis = selected['scenario']['source_hypothesis']
-    if hypothesis not in ('single_trace_positive', 'single_trace_negative'):
-        raise ValueError('this calculation requires a one-trace electromagnetic source fit')
+    if 'parameters' in document:
+        if fit_label != DEFAULT_FIT_LABEL:
+            raise ValueError('the parameter file contains only central_single_trace_negative')
+        selected = document
+    else:
+        matches = [entry for entry in document['results'] if entry['label'] == fit_label]
+        if len(matches) != 1:
+            raise ValueError('fit_label must select exactly one preliminary fit')
+        selected = matches[0]
+        if selected.get('model') != 'original_11':
+            raise ValueError('the fit must use the original eleven odd operators')
+        if selected['scenario']['branch'] != 'near_ideal':
+            raise ValueError('this reader requires the near-ideal neutral vector mass branch')
+        if selected['scenario']['source_hypothesis'] not in ('single_trace_positive', 'single_trace_negative'):
+            raise ValueError('this calculation requires a one-trace electromagnetic source fit')
     fixed = dict(FIXED_CALCULATION_INPUTS)
     fixed.update(document.get('calculation_inputs', {}))
     even_parameters = {name: float(value) for name, value
-                       in selected['even_parameters_by_name'].items()}
+                       in selected['parameters'].items() if name not in
+                       [f'c{index}' for index in range(1, 8)]+[f'd{index}' for index in range(1, 5)]}
     rho_mass = even_parameters['m_rho_GeV']
     kstar_mass = even_parameters['m_Kstar_GeV']
     singlet_mass_coefficient = even_parameters['Delta_V_GeV2']
@@ -130,9 +135,7 @@ def read_preliminary_fit_parameters(fit_path=None, *, fit_label=DEFAULT_FIT_LABE
     vector_mass_squared = np.linalg.eigvalsh(neutral_mass_squared_matrix)
     if np.any(vector_mass_squared <= 0):
         raise ValueError('fitted neutral vector mass matrix must be positive')
-    vector_mixing_angle = 0.5*math.atan2(
-        2*neutral_mass_squared_matrix[0, 1],
-        neutral_mass_squared_matrix[1, 1]-neutral_mass_squared_matrix[0, 0])
+    vector_mixing_angle = float(selected['parameters']['omega_phi_mixing_angle_rad'])
     ideal_omega_generator = np.diag([1., 1., 0.])/math.sqrt(2)
     ideal_phi_generator = np.diag([0., 0., 1.])
     vector_generators = {
@@ -154,13 +157,15 @@ def read_preliminary_fit_parameters(fit_path=None, *, fit_label=DEFAULT_FIT_LABE
     if quark_masses.shape != (3,) or not np.all(np.isfinite(quark_masses)):
         raise ValueError('B0mq_GeV2 must have three finite entries')
     odd_coefficients = {name: float(value) for name, value
-                        in selected['canonical_representative_coefficients'].items()}
+                        in selected['parameters'].items()
+                        if name in [f'c{index}' for index in range(1, 8)]+[f'd{index}' for index in range(1, 5)]}
     return PreliminaryFitParameters(
         fit_label, odd_coefficients, even_parameters, vector_masses,
         vector_generators, photon_vector_residues, np.diag(2*quark_masses),
         _positive_number(fixed['alpha_em'], 'alpha_em'),
         _positive_number(fixed['operator_mass_GeV'], 'operator_mass_GeV'),
-        dict(selected['shared_total_widths_gev']))
+        {name.removeprefix('Gamma_total_').removesuffix('_GeV'): float(value)
+         for name, value in selected['parameters'].items() if name.startswith('Gamma_total_')})
 
 
 def _quark_couplings(values, name):

@@ -111,18 +111,11 @@ def derive():
     gradient = sp.Matrix([[sp.diff(amplitudes[name], coefficient)
                            for coefficient in parameters] for name in generators])
     projection = (gradient*nulls).applyfunc(sp.simplify)
-    artifact_path = Path(__file__).resolve().parents[1]/'data/vector_sector/odd_preliminary_fit.json'
-    primary_fits = [entry for entry in json.loads(artifact_path.read_text())['results']
-                    if entry['control'] == 'primary']
-    # The artifact stores floating orthonormal columns, so their projection
-    # has floating residuals. Certify the complete stored column space by
-    # its distance from the exact null space, rather than rounding entries.
+    from summarize_odd_preliminary_fit import main as reconstruct_central_fit
+    _, fitted_columns = reconstruct_central_fit(write_output=False)
     exact_projector = nulls*(nulls.T*nulls).inv()*nulls.T
-    stored_null_residuals = {}
-    for entry in primary_fits:
-        stored_columns = sp.Matrix(entry['fixed_nuisance_null_basis_columns'])
-        residual = (sp.eye(11)-exact_projector)*stored_columns
-        stored_null_residuals[entry['label']] = float(residual.norm())
+    residual = (sp.eye(11)-exact_projector)*sp.Matrix(fitted_columns)
+    stored_null_residuals = {'central_single_trace_negative': float(residual.norm())}
     assert projection == sp.zeros(2, 4)
     assert max(stored_null_residuals.values()) < 1e-12
     return locals()

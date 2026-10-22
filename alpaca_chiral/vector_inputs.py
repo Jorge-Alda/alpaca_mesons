@@ -10,10 +10,6 @@ from pathlib import Path
 import numpy as np
 
 DEFAULT_FIT_PATH = Path(__file__).with_name('odd_preliminary_fit.json')
-DEFAULT_FIT_LABEL = 'central_single_trace_negative'
-#DEFAULT_FIT_PATH = Path(__file__).with_name('odd_prescription_matching.json')
-#DEFAULT_FIT_LABEL = 'bai_2025fvl'
-#DEFAULT_FIT_LABEL = 'aloni_2018vki'
 
 FIXED_CALCULATION_INPUTS = {
     'B0mq_GeV2': (0.006568, 0.011740, 0.235921),
@@ -26,17 +22,23 @@ FIXED_CALCULATION_INPUTS = {
 
 @lru_cache(maxsize=1)
 def _read_vector_inputs():
-    """Reconstruct masses, normalized generators, and signed source residues."""
-    fit_path = DEFAULT_FIT_PATH
-    fit_label = DEFAULT_FIT_LABEL
-    document = json.loads(Path(fit_path or DEFAULT_FIT_PATH).read_text())
-    selected = [entry for entry in document['results'] if entry['label'] == fit_label]
-    selected = selected[0]
-    hypothesis = selected['scenario']['source_hypothesis']
+    """Read the flat preliminary-fit parameters and reconstruct vector inputs.
+
+    The production JSON stores one central fit in ``parameters``. Fixed
+    calculation inputs retain the values above unless explicitly supplied in
+    ``calculation_inputs``. The returned label identifies that central fit for
+    callers even though the JSON no longer stores a label.
+    """
+    document = json.loads(Path(DEFAULT_FIT_PATH).read_text())
+    parameters = document['parameters']
     fixed = dict(FIXED_CALCULATION_INPUTS)
     fixed.update(document.get('calculation_inputs', {}))
+    odd_parameter_names = {f'c{index}' for index in range(1, 8)} | {
+        f'd{index}' for index in range(1, 5)}
     even_parameters = {name: float(value) for name, value
-                       in selected['even_parameters_by_name'].items()}
+                       in parameters.items()
+                       if name not in odd_parameter_names
+                       and name not in {'omega_phi_mixing_angle_rad'}}
     rho_mass = even_parameters['m_rho_GeV']
     kstar_mass = even_parameters['m_Kstar_GeV']
     singlet_mass_coefficient = even_parameters['Delta_V_GeV2']
@@ -54,9 +56,7 @@ def _read_vector_inputs():
          2*kstar_mass**2-rho_mass**2 + singlet_mass_coefficient/3
          + 2*singlet_mass_breaking_coefficient*strange_mass_source]])
     vector_mass_squared = np.linalg.eigvalsh(neutral_mass_squared_matrix)
-    vector_mixing_angle = 0.5*math.atan2(
-        2*neutral_mass_squared_matrix[0, 1],
-        neutral_mass_squared_matrix[1, 1]-neutral_mass_squared_matrix[0, 0])
+    vector_mixing_angle = float(parameters['omega_phi_mixing_angle_rad'])
     ideal_omega_generator = np.diag([1., 1., 0.])/math.sqrt(2)
     ideal_phi_generator = np.diag([0., 0., 1.])
     vector_generators = {
@@ -76,12 +76,13 @@ def _read_vector_inputs():
         for name, generator in vector_generators.items()}
     quark_masses = np.asarray(fixed['B0mq_GeV2'], dtype=float)
     odd_coefficients = {name: float(value) for name, value
-                        in selected['canonical_representative_coefficients'].items()}
+                        in parameters.items()
+                        if name in odd_parameter_names}
+    label = document['metadata']['label']
     return dict(zip(
         ('label', 'odd_coefficients', 'even_parameters', 'vector_masses',
          'vector_generators', 'photon_vector_residues', 'quark_mass_matrix',
-         'alpha_em', 'operator_mass', 'shared_total_widths'),
-        (fit_label, odd_coefficients, even_parameters, vector_masses,
+         'alpha_em', 'operator_mass'),
+        (label, odd_coefficients, even_parameters, vector_masses,
          vector_generators, photon_vector_residues, np.diag(2*quark_masses),
-         fixed['alpha_em'], fixed['operator_mass_GeV'],
-         dict(selected['shared_total_widths_gev']))))
+         fixed['alpha_em'], fixed['operator_mass_GeV'])))

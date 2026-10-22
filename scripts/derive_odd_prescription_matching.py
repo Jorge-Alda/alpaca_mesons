@@ -344,10 +344,6 @@ def build_artifact():
     this choice has no statistical meaning and does not complete source matching.
     Algebraic expressions remain in the derivation output and memory record.
     """
-    preliminary_path = ROOT/"data/vector_sector/odd_preliminary_fit.json"
-    preliminary = json.loads(preliminary_path.read_text())
-    working_point = next(record for record in preliminary["results"]
-                         if record["label"] == "central_single_trace_negative")
     photon_matching = derive_photon_vector_normalization()
     source_families = derive_source_pole_families()
     source_actions = derive_neutral_source_actions()
@@ -436,7 +432,8 @@ def build_artifact():
         record["source_action_coefficient_GeV_inverse"] = float(sp.N(
             source_actions[name+"_phi_dV_dV"].subs(substitutions), 17))
         # Matching metadata is nested in scenario to preserve the fit schema.
-        expected_keys = list(working_point)
+        expected_keys = ["label", "scenario", "model", "control", "parameters",
+                         "observables", "fit_statistics", "coefficient_diagnostics"]
         record.update({
             "control": "neutral_pole_matching",
             "archive_source": "scripts/derive_odd_prescription_matching.py",
@@ -457,13 +454,23 @@ def build_artifact():
             "shared_total_widths_gev": {},
             "local_prediction_uncertainty_scope": "No fit or prediction uncertainty is assigned. The rank and null diagnostics describe exact neutral pole matching constraints rather than experimental measurements.",
         })
+        record['parameters'] = dict(record['even_parameters_by_name'])
+        record['parameters'].update(record['canonical_representative_coefficients'])
+        record['parameters']['omega_phi_mixing_angle_rad'] = 0.0
+        record['fit_statistics'] = {'chi2': None, 'odd_chi2': None,
+                                    'ancillary_chi2': None, 'success': None}
+        record['observables'] = []
+        record['coefficient_diagnostics'] = dict(
+            measured_rank=record['fixed_nuisance_measured_rank'],
+            null_dimension=record['fixed_nuisance_coefficient_null_dimension'],
+            null_basis_columns=record['fixed_nuisance_null_basis_columns'],
+            projection_relative_defect=0.0, null_annihilation_norm=0.0)
         record["scenario"]["even_sector_policy"] = "Common vector mass; mass-spurion and double-trace source coefficients are explicitly zero because these prescriptions add no such terms. F_V is derived from the Aloni quadratic mixing term; Bai F_V is zero for the omitted quadratic mixing operator, not a measured physical value."
         record["scenario"]["matching_metadata"] = {
             key: record.pop(key) for key in list(record) if key not in expected_keys}
         records.append({key: record[key] for key in expected_keys})
     inputs = [
         "scripts/derive_odd_prescription_matching.py",
-        "data/vector_sector/odd_preliminary_fit.json",
         "memory/rcht/odd-parity/odd-prescription-matching.md",
         "memory/extracts/Aloni:2018vki/vector-meson-dominance.md",
         "memory/extracts/Bai:2025fvl/no-axial-vector-and-rcht-matching.md",
@@ -479,12 +486,67 @@ def build_artifact():
     }
 
 
+def derive_aloni_vector_two_pion_matching():
+    """Match the displayed rho two-pion vertex on its vector pole.
+
+    The paper matrices are Phi/sqrt(2) and V_ideal/sqrt(2). The
+    positive G_V convention is selected after matching squared couplings.
+    This pole match does not equate off-shell tensor and Proca vertices.
+    """
+    pion_plus_generator = sp.zeros(3)
+    pion_plus_generator[0, 1] = 1
+    pion_minus_generator = pion_plus_generator.T
+    rho_generator = sp.diag(1, -1, 0)/sp.sqrt(2)
+    flavor_trace = sp.trace(rho_generator*(
+        pion_plus_generator*pion_minus_generator
+        -pion_minus_generator*pion_plus_generator))
+    vector_coupling, chiral_decay_constant, vector_mass = sp.symbols(
+        "g F M_V", positive=True)
+    tensor_coupling = sp.Symbol("G_V", positive=True)
+    source_coupling = sp.simplify(vector_coupling*flavor_trace/(2*sp.sqrt(2)))
+    tensor_pole_coupling = tensor_coupling*vector_mass/chiral_decay_constant**2
+    equation = sp.Eq(tensor_pole_coupling**2, source_coupling**2)
+    solution = sp.solve(equation, tensor_coupling)[0]
+    return {"rho_pion_flavor_trace": flavor_trace,
+            "source_rho_pion_coupling": source_coupling,
+            "squared_coupling_equation": equation,
+            "positive_G_V": solution}
+
+
+def build_simplified_artifacts():
+    """Return one flat parameter document per literature prescription.
+
+    Widths omitted by the prescription are explicit zeroes, as documented
+    in metadata; they are not estimates of measured total widths.
+    """
+    artifacts = {}
+    for record in build_artifact()["results"]:
+        metadata = {
+            "bibtex_references": record["scenario"]["matching_metadata"]["bibtex_keys"],
+        }
+        parameters = dict(record["parameters"])
+        if record["label"] == "aloni_2018vki":
+            matching_inputs = record["scenario"]["matching_metadata"]["numerical_matching_inputs"]
+            parameters["G_V_GeV"] = float(derive_aloni_vector_two_pion_matching()[
+                "positive_G_V"].subs({
+                    sp.Symbol("g", positive=True): sp.sqrt(12*sp.pi),
+                    sp.Symbol("F", positive=True): sp.Rational(92, 1000),
+                    sp.Symbol("M_V", positive=True): matching_inputs["common_M_V_GeV"]}))
+        else:
+            parameters["G_V_GeV"] = 0.0
+        for vector_name in ("Kstar0", "Kstarplus", "etap", "omega", "phi", "rho0", "rhoplus"):
+            parameters[f"Gamma_total_{vector_name}_GeV"] = 0.0
+        artifacts[record["label"]] = {"metadata": metadata, "parameters": parameters}
+    return artifacts
+
+
 def main():
     """Write the deterministic JSON and print the actual SymPy solution steps."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--derive-only", action="store_true", help="Print algebra without writing JSON.")
     arguments = parser.parse_args()
-    for label, calculation in (("Photon vector normalization", derive_photon_vector_normalization()),
+    for label, calculation in (("Vector two-pion normalization", derive_aloni_vector_two_pion_matching()),
+                               ("Photon vector normalization", derive_photon_vector_normalization()),
                                ("Neutral pole", derive_neutral_pole_matching()),
                                ("Complete double VMD TFF", derive_complete_vmd_tff()),
                                ("Neutral source actions", derive_neutral_source_actions()),
@@ -504,9 +566,12 @@ def main():
     print(f"Solved family: {sp.latex(sp.Tuple(*solution))}")
     if arguments.derive_only:
         return
-    path = ROOT/"data/vector_sector/odd_prescription_matching.json"
-    path.write_text(json.dumps(build_artifact(), indent=2)+"\n")
-    print(path.relative_to(ROOT))
+    for label, artifact in build_simplified_artifacts().items():
+        filename = f"odd_prescription_matching_{label}.json"
+        for directory in ("data/vector_sector", "alpaca_chiral"):
+            path = ROOT/directory/filename
+            path.write_text(json.dumps(artifact, indent=2)+"\n")
+            print(path.relative_to(ROOT))
 
 
 if __name__ == "__main__":

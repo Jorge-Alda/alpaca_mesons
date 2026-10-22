@@ -2,8 +2,8 @@
 title: Aloni and Bai vector-meson prescriptions in the original odd basis
 status: derived
 created: 2026-10-21
-updated: 2026-10-21
-bibtex_keys: [Aloni:2018vki, Bai:2025fvl, Ruiz-Femenia:2003jdx, Fujiwara:1984mp]
+updated: 2026-10-22
+bibtex_keys: [Aloni:2018vki, Bai:2025fvl, Ruiz-Femenia:2003jdx, Fujiwara:1984mp, Ecker:1988te]
 provenance: analytical-derivation
 ---
 
@@ -88,7 +88,7 @@ whereas the neutral pseudoscalar pole match requires $d_3^{\rm pole}=N_Cg^2/(64\
 
 ## Numerical coefficient representatives
 
-The companion fit-style JSON stores numerical coefficient dictionaries, not
+The two companion simplified JSON files store numerical parameter dictionaries, not
 the affine formulae above. Its displayed representative sets the five
 undetermined coordinates $c_4,c_5,c_6,c_7,d_4$ to zero; this convention does
 not determine those coefficients physically. Keep the paper decay-constant
@@ -161,8 +161,8 @@ With the five null coordinates chosen as zero, the resulting numerical
 representatives have $(c_1,c_2,d_1,d_3)=(-0.002577520392,0.002577520392,
 -0.044762327745,-0.044762327745)$ for Aloni and
 $(0.041240326273,-0.041240326273,0.179049310978,0.179049310978)$ for Bai.
-The drop-in JSON stores the five-dimensional coefficient null basis and the
-matching inputs. Its even-parameter slots use the common vector mass, zero
+The derivation retains the five-dimensional coefficient null basis and the
+matching inputs; the split JSON files contain the flat numerical parameters. Its even-parameter slots use the common vector mass, zero
 mass-breaking and spurion-source parameters, the prescription-matched $F_V$,
 and $z_V=0$. These are conditional representatives, not fits or uncertainty
 estimates.
@@ -192,3 +192,73 @@ with $c_4,c_6,c_7,d_4$ free. This is the full double-pole form-factor realizatio
 ```text
 .venv/bin/python scripts/derive_odd_prescription_matching.py --derive-only
 ```
+
+## Flat schema and even-parity two-pion matching
+
+### Inputs and conventions
+
+Use the neutral pole representatives and common masses in
+[odd-prescription-matching.md](odd-prescription-matching.md), the displayed
+[Aloni:2018vki matrices and Lagrangian](../../extracts/Aloni:2018vki/vector-meson-dominance.md),
+and the RChT even-parity operator in
+[the vector two-pseudoscalar expansion](../foundations/rcht-vpp-vpa-photon-pa-expansion.md).
+Natural units are used; $F$, $M_V$, and $G_V$ have units GeV, whereas $g$ is
+dimensionless. The comparison retains one vector pole at tree level.
+
+Neither Aloni:2018vki nor Bai:2025fvl reports a parameter named RChT $G_V$.
+Aloni:2018vki supplies a $VPP$ operator, which permits a pole-amplitude match.
+The specified Bai:2025fvl WZW/background prescription supplies no even-parity
+$VPP$ operator, so its exported $G_V=0$ denotes this omission. It is not a
+measurement of the physical vector coupling.
+
+### Stepwise pole match
+
+1. In the RChT normalization, use $T_{\rho}=\operatorname{diag}(1,-1,0)/\sqrt2$,
+   $T_{\pi^+}=E_{12}$, and $T_{\pi^-}=E_{21}$. Their trace is
+   $\operatorname{Tr}(T_{\rho}[T_{\pi^+},T_{\pi^-}])=\sqrt2$.
+2. Aloni:2018vki writes $\boldsymbol P=\Phi/\sqrt2$ and
+   $\boldsymbol V=V_{\rm ideal}/\sqrt2$. Thus its displayed
+   $-ig\operatorname{Tr}(\boldsymbol V^\mu[\boldsymbol P,\partial_\mu\boldsymbol P])$
+   contains $-ig\rho^\mu(\pi^+\partial_\mu\pi^- -\pi^-\partial_\mu\pi^+)/2$.
+   The magnitude of the two-pion coupling is $g/2$.
+3. The RChT tensor operator gives the vector-pole two-pion coupling
+   $|G_V|M_V/F^2$. Equating the squared couplings and selecting the positive
+   $G_V$ convention for the $\rho$ field phase gives
+   $$
+   G_V=\frac{gF^2}{2M_V}.
+   $$
+4. Using the previously prescribed $g=\sqrt{12\pi}$, $F=0.092$ GeV,
+   and $M_V=\sqrt2gF$ gives $G_V=0.0325269119346$ GeV. This is a
+   consequence of the literal displayed matrix normalization and operator;
+   no short-distance relation such as $F_VG_V=F^2$ is imposed. Matching
+   squared couplings leaves the sign convention explicit and does not
+   establish complete off-shell equivalence.
+
+### Serialization and assumptions
+
+The two files `odd_prescription_matching_aloni_2018vki.json` and
+`odd_prescription_matching_bai_2025fvl.json` contain only top-level `metadata`
+and `parameters`. All parameters are flat, as in `odd_preliminary_fit.json`.
+The odd coefficients remain the existing neutral pole representatives with
+five unconstrained coordinates chosen as zero. The neutral mixing angle,
+mass-breaking coefficients, and absent source operators retain explicit
+zeroes. The seven total-width entries are also explicit zeroes: the
+prescriptions do not supply these inputs. These zeroes must not be
+interpreted as measured widths or used as physical denominators.
+
+The data copies and packaged copies are identical. Their metadata contains
+only `bibtex_references`; this record specifies the pole scope and omission conventions. The
+independent-source obstruction documented in the preceding matching record
+continues to apply.
+
+### Reproduction and verification
+
+`scripts/derive_odd_prescription_matching.py` derives the trace, solves the
+squared-coupling equation with SymPy, and writes both copies deterministically:
+
+```text
+.venv/bin/python scripts/derive_odd_prescription_matching.py
+```
+
+The generation invocation succeeds. Existing symbolic neutral matching
+residuals remain zero. No unit tests were run for this serialization change.

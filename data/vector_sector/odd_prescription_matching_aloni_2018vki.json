@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "bibtex_references": [
+      "Aloni:2018vki"
+    ]
+  },
+  "parameters": {
+    "m_rho_GeV": 0.7988557850323275,
+    "m_Kstar_GeV": 0.7988557850323275,
+    "Delta_V_GeV2": 0.0,
+    "kappa_V": 0.0,
+    "F_V_GeV": 0.06505382386916236,
+    "z_V_GeV_inverse": 0.0,
+    "c1": -0.002577520392079368,
+    "c2": 0.002577520392079368,
+    "c3": 0.0,
+    "c4": 0.0,
+    "c5": 0.0,
+    "c6": 0.0,
+    "c7": 0.0,
+    "d1": -0.04476232774459556,
+    "d2": 0.0,
+    "d3": -0.04476232774459556,
+    "d4": 0.0,
+    "omega_phi_mixing_angle_rad": 0.0,
+    "G_V_GeV": 0.03252691193458118,
+    "Gamma_total_Kstar0_GeV": 0.0,
+    "Gamma_total_Kstarplus_GeV": 0.0,
+    "Gamma_total_etap_GeV": 0.0,
+    "Gamma_total_omega_GeV": 0.0,
+    "Gamma_total_phi_GeV": 0.0,
+    "Gamma_total_rho0_GeV": 0.0,
+    "Gamma_total_rhoplus_GeV": 0.0
+  }
+}

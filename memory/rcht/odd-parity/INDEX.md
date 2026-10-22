@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-21
+updated: 2026-10-22
 bibtex_keys: []
 provenance: assumption
 ---
@@ -21,7 +21,7 @@ being combined with canonical photon or resonance amplitudes.
 - [two-source-alp-rcht-odd-parity-extension.md](two-source-alp-rcht-odd-parity-extension.md) — two-source anomaly seed and ALP insertion.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
-- [odd-prescription-matching.md](odd-prescription-matching.md) — algebraic matching status for VMD and Bai:2025fvl, with the separate rank-five octet OPE family.
+- [odd-prescription-matching.md](odd-prescription-matching.md) — neutral pole matching for Aloni:2018vki and Bai:2025fvl, derived even-parity $G_V$, split flat-schema inputs and the separate rank-five octet OPE family.
 - [odd-parity-rcht-implementation-decisions.md](odd-parity-rcht-implementation-decisions.md) — selected implementation baseline.
 - [odd-parity-rcht-numerical-kernel.md](odd-parity-rcht-numerical-kernel.md) — numerical odd-parity RChT kernel.
 - [omega-pi-gamma-rcht-predictor.md](omega-pi-gamma-rcht-predictor.md) — on-shell $\omega\to\pi^0\gamma$ predictor.
@@ -80,7 +80,7 @@ being combined with canonical photon or resonance amplitudes.
 - [odd-bounded-sm-numerical-kernels.md](odd-bounded-sm-numerical-kernels.md) — reusable neutral/charged 241-parent gradients, original-coupling embedding and independent symbolic/legacy checks.
 - [odd-low-energy-measurement-jacobians.md](odd-low-energy-measurement-jacobians.md) — all 64 conditional measured-width Jacobians, nuisance projection, nested ranks and data-adequacy controls.
 - [odd-low-energy-calibration.md](odd-low-energy-calibration.md) — historical 1792 conditional joint fits with an identified overly restrictive double-trace residue-sign condition; corrected focused refit and remaining validation gates.
-- [odd-preliminary-fit.md](odd-preliminary-fit.md) — focused original-eleven-operator preliminary fit, corrected unconstrained double-trace refit nested at $y_V=0$, canonical coefficient representatives and targeted input/data sensitivities.
+- [odd-preliminary-fit.md](odd-preliminary-fit.md) — central original-eleven-operator provisional fit with a minimal parameter-only JSON and conditional $G_V$ value; research archives retain the corrected double-trace refit and targeted input sensitivities.
 - [alp-vv-amplitude.md](alp-vv-amplitude.md) — analytic no-mixing $a\to\omega\omega,\omega\phi,\phi\phi$ amplitudes with VJP photon conversion and the fitted one-trace even-vector source.
 - [alp-vgamma-amplitude.md](alp-vgamma-amplitude.md) — no-mixing $a\to\omega\gamma,\phi\gamma$ amplitudes with the broken even-sector photon response and explicit null-direction projections.
 - [alp-vv-width.md](alp-vv-width.md) — polarization sum, phase space, identical-particle factors and analytic narrow-vector widths for the three channels.

@@ -1,6 +1,8 @@
 """Conditional LO RChT G_V fit with the provisional parameters held fixed.
 
 Run: .venv/bin/python scripts/fit_vector_gv.py measurements.json output.json
+The output contains only metadata.bibtex_references and parameters.G_V_GeV.
+Regenerate this file before running scripts/summarize_odd_preliminary_fit.py.
 Input rows specify vector, channel, observable and value; covariance uses
 GeV for partial widths and dimensionless branching fractions. K*pi sums modes.
 Physical external masses enter phase space; fitted tensor masses enter the
@@ -15,7 +17,6 @@ import json
 import math
 import numpy as np
 import sympy as sp
-from scipy.stats import chi2 as chi_squared_distribution
 
 ROOT = Path(__file__).resolve().parents[1]
 FIT_PATH = ROOT / 'data/vector_sector/odd_preliminary_fit.json'
@@ -101,9 +102,8 @@ def fit_squared_coupling(coefficients, widths, covariance):
 def fixed_parameters():
     """Read the selected provisional fit and reconstruct its neutral masses."""
     document = json.loads(FIT_PATH.read_text())
-    selected = next(row for row in document['results']
-                    if row['label']=='central_single_trace_negative')
-    parameters = selected['even_parameters_by_name']
+    selected = document
+    parameters = selected['parameters']
     rho_mass, kaon_mass = parameters['m_rho_GeV'], parameters['m_Kstar_GeV']
     singlet_shift, breaking = parameters['Delta_V_GeV2'], parameters['kappa_V']
     light, strange = 0.036616, 0.943684
@@ -111,7 +111,7 @@ def fixed_parameters():
         math.sqrt(2)*singlet_shift/3+breaking*(light+strange)/math.sqrt(2)],
         [math.sqrt(2)*singlet_shift/3+breaking*(light+strange)/math.sqrt(2),
          2*kaon_mass**2-rho_mass**2+singlet_shift/3+2*breaking*strange]])
-    mixing_angle = .5*math.atan2(2*mass_matrix[0,1],mass_matrix[1,1]-mass_matrix[0,0])
+    mixing_angle = parameters['omega_phi_mixing_angle_rad']
     masses = dict(zip(('rho0','omega','phi'),[rho_mass,*np.sqrt(np.linalg.eigvalsh(mass_matrix))]))
     masses['kstar_charged'] = kaon_mass
     masses['kstar_neutral'] = kaon_mass
@@ -146,57 +146,17 @@ def main():
             tensor_masses[row['vector']], physical_masses[first],physical_masses[second],
             factors[channel]) for first,second,channel in daughter_modes)
         if row['observable']=='branching_fraction':
-            coefficient /= selected['shared_total_widths_gev']['phi']
+            coefficient /= selected['parameters']['Gamma_total_phi_GeV']
         return coefficient
     coefficients = np.array([measurement_coefficient(row) for row in measurements['rows']])
     values = np.array([row['value'] for row in measurements['rows']])
     covariance = np.array(measurements['covariance'])
     result = fit_squared_coupling(coefficients,values,covariance)
-    residuals = np.array(result['residuals'])
-    # Marginal pulls are interpretable row by row; their squares do not sum to
-    # chi2 for correlated rows. Block contributions use each block covariance.
-    pulls = residuals/np.sqrt(np.diag(covariance))
-    channels = []
-    for index,row in enumerate(measurements['rows']):
-        single_fit = fit_squared_coupling([coefficients[index]],[values[index]],
-                                        covariance[index:index+1,index:index+1])
-        channels.append(dict(channel=row['channel'],observable=row['observable'],
-            measured=float(values[index]),predicted=result['predictions'][index],
-            sigma=float(np.sqrt(covariance[index,index])),marginal_pull=float(pulls[index]),
-            separate_abs_G_V_GeV=single_fit['G_V_GeV'],
-            separate_delta_chi2_one_GeV=single_fit['G_V_delta_chi2_one_GeV']))
-    block_contributions = {}
-    for label,indices in measurements['covariance_blocks'].items():
-        block_residuals = residuals[indices]
-        block_covariance = covariance[np.ix_(indices,indices)]
-        block_contributions[label] = float(block_residuals@np.linalg.solve(block_covariance,block_residuals))
-    result.update(channels=channels,chi2_by_block=block_contributions,
-        nominal_p_value=float(chi_squared_distribution.sf(result['chi2'],result['nominal_dof'])),
-        fixed_shared_total_widths_GeV=selected['shared_total_widths_gev'],
-        covariance_policy='Mixed GeV widths and dimensionless BRs; phi BR correlation retained; other cross-correlations unavailable and set to zero',
-        scope='Supplemental conditional fit, not independent of the archived fit; do not add chi2 values')
-    excluded_diagnostics = []
-    for row in measurements.get('excluded_diagnostics', []):
-        factor = factors[row['channel']]
-        coefficient = width_coefficient(row['physical_vector_mass_GeV'],
-            tensor_masses[row['vector']],physical_masses['pi_charged'],
-            physical_masses['pi_charged'],factor)
-        partial_width = coefficient*result['G_V_squared_GeV2']
-        excluded_diagnostics.append(dict(row,squared_flavor_trace=factor,
-            predicted_partial_width_GeV=partial_width,
-            predicted_branching_fraction=partial_width/selected['shared_total_widths_gev'][row['vector']],
-            included_in_likelihood=False))
-    result.update(excluded_diagnostics=excluded_diagnostics)
-    result.update(fixed_fit_label=selected['label'],fixed_even_parameters=selected['even_parameters_by_name'],
-        fixed_odd_coefficients=selected['canonical_representative_coefficients'],
-        F_GeV=DECAY_CONSTANT_GEV,tensor_masses_GeV=tensor_masses,
-        mixing_angle_rad=mixing_angle,squared_flavor_traces=factors,
-        adopted_sign='G_V positive; widths alone do not determine its relative sign',
-        prediction_coefficients_per_GeV2=coefficients.tolist(),
-        measurements=measurements,assumptions=__doc__,
-        input_sha256={str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path):
-            hashlib.sha256(path.read_bytes()).hexdigest() for path in (FIT_PATH,ALDA_PATH,Path(__file__).resolve(),arguments.measurements)})
-    arguments.output.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
+    output = dict(
+        metadata=dict(bibtex_references=[
+            'Ecker:1988te', 'Ecker:1989yg', 'ParticleDataGroup:2024cfk', 'Alda:2026nrd']),
+        parameters=dict(G_V_GeV=result['G_V_GeV']))
+    arguments.output.write_text(json.dumps(output,indent=2,allow_nan=False)+'\n')
     print(arguments.output)
 
 

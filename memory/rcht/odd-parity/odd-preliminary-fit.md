@@ -2,24 +2,24 @@
 title: Focused preliminary odd-parity fit and input sensitivities
 status: mixed
 created: 2026-10-19
-updated: 2026-10-20
-bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk]
+updated: 2026-10-22
+bibtex_keys: [Alda:2026nrd, Ruiz-Femenia:2003jdx, ParticleDataGroup:2024cfk, Ecker:1988te, Ecker:1989yg]
 provenance: numerical-computation
 ---
 
 # Scope and input choices
 
-The user requested a simpler preliminary fit on 2026-10-19. The working
-calibration uses the original seven VJP and four VVP operators
+The production fit now exports only the central negative single-trace result.
+The working calibration uses the original seven VJP and four VVP operators
 [@Ruiz-Femenia:2003jdx], the twelve-summary primary dataset, charged-rho and
 charged-K-star mass inputs, the evaluated phi electronic width, and the
 near-ideal mass root. These are explicit pragmatic input choices for a
 conditional preliminary result, not an experimentally determined
 isospin-limit mass prescription. The charged and neutral categories are
 documented in the [PDG input extract](../../extracts/ParticleDataGroup:2024cfk/vector-sector-calibration-inputs.md).
-All four electromagnetic-source hypotheses are displayed at this fixed
-setup; the relative strange-source sign is not inferred from electronic
-widths alone.
+Other source hypotheses and sensitivity cases remain in the research archives;
+they are not exported in the production fit JSON. The relative strange-source
+sign is not inferred from electronic widths alone.
 
 The original eleven-operator model is the smallest existing unsaturated
 model. Its measured image agrees with the soft-leading model at the
@@ -44,7 +44,7 @@ existing research results.
 
 The inherited assumptions are tree level, fixed Alda:2026nrd neutral inputs,
 diagonal quoted-summary covariance where the experimental covariance is
-unavailable, shared total-width nuisances included once, LO source-compatible
+unavailable, shared total widths included once, LO source-compatible
 vertex masses with physical phase-space masses, and the documented partial
 isospin and broad-rho approximations. There is no OPE, naturalness or OZI
 coefficient prior. Units are GeV, with dimensionless original $c_i,d_i$
@@ -61,30 +61,30 @@ does not reconstruct their missing experimental covariance.
 
 # Interpretation and next step
 
-Run the deterministic extraction:
+Regenerate the conditional $G_V$ value and export the central fit:
 
 ```text
+.venv/bin/python scripts/fit_vector_gv.py data/vector_sector/gv_measurements.json data/vector_sector/gv_conditional_fit.json
 .venv/bin/python scripts/summarize_odd_preliminary_fit.py
 ```
 
-The [compact numerical artifact](../../../data/vector_sector/odd_preliminary_fit.json)
-and [readable result table](../../../data/vector_sector/odd_preliminary_fit.md)
-give nine selected cases, predictions, residuals, source labels, input hashes,
-canonical original-coefficient representatives and their coefficient null
-spaces. The script maps the selected archived amplitude vector into the
-original eleven-operator image and checks its reconstruction numerically.
-The nuisance parameters are stored both as the historical ordered array and
-as `even_parameters_by_name`; for the central negative single-trace case this
-includes $z_V=-0.1702699573\,\mathrm{GeV}^{-1}$.
-It performs no additional minimization.
-The largest relative amplitude-reconstruction defect is
-$2.38\times10^{-15}$ and the largest coefficient-null residual norm is
-$1.55\times10^{-14}$. The extraction's projection/convention unit check
-passes; `git diff --check` is clean. These verify the artifact extraction
-and coordinate conversion, without independently repeating the nonlinear
-fits. Local prediction errors are included only where the covariance record
-matches the selected fitted point; no errors are transferred from a
-superseded optimum.
+The [production JSON](../../../data/vector_sector/odd_preliminary_fit.json)
+contains only `metadata.bibtex_references` and `parameters` for
+`central_single_trace_negative`. The parameter map includes the even-sector
+parameters, $c_i,d_i$, the $\omega$--$\phi$ mixing angle, fitted total widths,
+and $G_V$. The standalone [`G_V` output](../../../data/vector_sector/gv_conditional_fit.json)
+has the same minimal shape. The $G_V$ value remains conditional on the
+provisional point. No parameter correlation matrix was calculated, so no
+correlation field is stored.
+
+The generator maps the selected archived amplitude vector into the original
+eleven-operator image and checks its reconstruction numerically. It performs
+no additional provisional minimization. The largest relative
+amplitude-reconstruction defect is $2.38\times10^{-15}$ and the largest
+coefficient-null residual norm is $1.55\times10^{-14}$. The minimal fit
+artifacts were regenerated on 2026-10-22; the stored provisional parameter
+values were reused and $G_V$ was recomputed. These checks do not independently
+repeat the nonlinear provisional fit.
 
 At the chosen fixed setup, the achieved total $\chi^2$ values are
 $362.14547$, $346.29371$, $5.5675233$ and $54.216008$ for the universal,

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "label": "Bai",
+    "bibtex_references": [
+      "Bai:2025fvl"
+    ]
+  },
+  "parameters": {
+    "m_rho_GeV": 0.77,
+    "m_Kstar_GeV": 0.77,
+    "Delta_V_GeV2": 0.0,
+    "kappa_V": 0.0,
+    "F_V_GeV": 0.0,
+    "z_V_GeV_inverse": 0.0,
+    "c1": 0.04124032627326989,
+    "c2": -0.04124032627326989,
+    "c3": 0.0,
+    "c4": 0.0,
+    "c5": 0.0,
+    "c6": 0.0,
+    "c7": 0.0,
+    "d1": 0.17904931097838225,
+    "d2": 0.0,
+    "d3": 0.17904931097838225,
+    "d4": 0.0,
+    "omega_phi_mixing_angle_rad": 0.0,
+    "G_V_GeV": 0.0
+  }
+}

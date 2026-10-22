@@ -12087,7 +12087,7 @@
   ],
   "sha256": {
     "scripts/derive_odd_charged_kernels.py": "7b723bbd26803bd77a786b5084f37255486f9e67a0827ef0de0988929d6ade37",
-    "scripts/derive_odd_power_counted_channels.py": "e6811873bc353e3ae73cba467d91e06e13760a623c8b2aab240d7e508b42a37a",
+    "scripts/derive_odd_power_counted_channels.py": "1695549515e8abf157e727053a4ceeb8ac83b0198653d1166fb5698e6791871d",
     "data/vector_sector/odd_vertex_enumeration.json": "eeec09e0b3cbab0ae2e9c4b3b96d6fd7b493722373c0bdd5c79aaeebba0e370b",
     "data/vector_sector/odd_covariant_block_preparation.json": "4f88b719b9bca72b7542089e78996e42cef704b982ad3852af8a078506f305b2",
     "data/vector_sector/odd_leading_action_count.json": "017c9b964d5f31e9690ab8882a002be37ad031372e2fe7b9b665a7ffad936864",

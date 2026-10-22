@@ -55,11 +55,9 @@ def derive():
 
 def fitted_null_verification(exact_nulls):
     """Compare the exact four-dimensional space with the actual fit archive."""
-    archive_path = Path(__file__).resolve().parents[1]/'data/vector_sector/odd_preliminary_fit.json'
-    archive = json.loads(archive_path.read_text())
-    selected = next(result for result in archive['results']
-                    if result['label']=='central_single_trace_negative')
-    fitted_nulls = sp.Matrix(selected['fixed_nuisance_null_basis_columns'])
+    from summarize_odd_preliminary_fit import main as reconstruct_central_fit
+    _, fitted_columns = reconstruct_central_fit(write_output=False)
+    fitted_nulls = sp.Matrix(fitted_columns)
     annihilator = sp.Matrix.hstack(*exact_nulls.T.nullspace()).T
     discrepancy = annihilator*fitted_nulls
     return max(abs(float(entry)) for entry in discrepancy)
