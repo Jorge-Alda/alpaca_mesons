@@ -30,7 +30,7 @@ $$
 |K_L\rangle=p|K^0\rangle-q|\bar K^0\rangle
 $$
 
-with $p=(1+\epsilon_K)/\sqrt{2(1+|\epsilon_K|^2)}$ and $q=(1-\epsilon_K)/\sqrt{2(1+|\epsilon_K|^2)}$ [@ParticleDataGroup:2024cfk]. The default value is the one recorded in [the numerical-width record](../alp/three-meson/alp-three-meson-widths-numerical.md). Natural units are used. Masses and decay constants are in GeV, Dalitz invariants are in $\mathrm{GeV}^2$, invariant amplitudes are dimensionless, and the bounded inner integral of $|\mathcal M|^2ds_{23}$ is in $\mathrm{GeV}^2$.
+with $p=(1+\epsilon_K)/\sqrt{2(1+|\epsilon_K|^2)}$ and $q=(1-\epsilon_K)/\sqrt{2(1+|\epsilon_K|^2)}$ [@ParticleDataGroup:2024cfk]. The default value is the one recorded in [the numerical-width record](../alp/three-pseudoscalar/alp-three-meson-widths-numerical.md). Natural units are used. Masses and decay constants are in GeV, Dalitz invariants are in $\mathrm{GeV}^2$, invariant amplitudes are dimensionless, and the bounded inner integral of $|\mathcal M|^2ds_{23}$ is in $\mathrm{GeV}^2$.
 
 The representative inputs are explicit assumptions, not a phenomenological benchmark:
 
@@ -41,7 +41,7 @@ c_q^A=\operatorname{diag}(0.8,-0.3,0.15),\qquad
 c_q^P=0.
 $$
 
-The ChPT conventions and fitted pseudoscalar inputs follow [the numerical-width record](../alp/three-meson/alp-three-meson-widths-numerical.md) and its Alda:2026nrd source [@Alda:2026nrd]. The pole and matching amplitudes use the assumptions listed in [the vector-exchange record](../alp/three-meson/a3p-vector-exchange-amplitude.md): current constant-width pole inputs, ideal vector mixing, and $G_V=f_\pi/\sqrt2$. The local term required by tensor-to-Proca matching is kept separate from the pole [@Ecker:1989yg]. No approximation to $\epsilon_K$ is made. The only flavor assumption used for the exact zero is that the relevant strangeness-zero amplitude is Bose/order symmetric,
+The ChPT conventions and fitted pseudoscalar inputs follow [the numerical-width record](../alp/three-pseudoscalar/alp-three-meson-widths-numerical.md) and its Alda:2026nrd source [@Alda:2026nrd]. The pole and matching amplitudes use the assumptions listed in [the vector-exchange record](../alp/three-pseudoscalar/a3p-vector-exchange-amplitude.md): current constant-width pole inputs, ideal vector mixing, and $G_V=f_\pi/\sqrt2$. The local term required by tensor-to-Proca matching is kept separate from the pole [@Ecker:1989yg]. No approximation to $\epsilon_K$ is made. The only flavor assumption used for the exact zero is that the relevant strangeness-zero amplitude is Bose/order symmetric,
 
 $$
 \mathcal A_{0\bar0}=\mathcal A_{\bar00},

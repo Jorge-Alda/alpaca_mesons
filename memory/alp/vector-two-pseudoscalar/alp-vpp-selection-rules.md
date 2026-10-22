@@ -14,7 +14,7 @@ This record derives flavor support for the strong tree amplitudes in the
 $V=\omega,\phi$. The external vector generator is diagonal and isospin
 symmetric, $T_V=\operatorname{diag}(v_n,v_n,v_s)$; ideal $\omega$--$\phi$ mixing is
 considered separately. Pseudoscalar generators use the conventions of the
-[generic-generator record](alp-three-meson-generic-generators.md), with generic
+[generic-generator record](../three-pseudoscalar/alp-three-meson-generic-generators.md), with generic
 $\eta$--$\eta'$ mixing. Charge is conserved, and only neutral ALP spurions are
 considered. In the even sector the vector-scalar source is restricted to its
 neutral $|\Delta S|=1$ entries $c_{ds}$ and $c_{sd}$; charged $us,su$ source

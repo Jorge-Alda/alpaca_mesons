@@ -98,8 +98,8 @@ $$
 so this correction does not change the ALP insertion or the $s$-channel
 ALP-source numerator. It reverses the crossed pseudoscalar-source $d_2$
 pieces in the $a\to VPP$ amplitude. The corrected sign is used in both
-[the strong $a\to VPP$ record](alp-vpp-amplitude.md) and [the radiative
-$a\to\gamma PP$ record](alp-photon-pp-amplitude.md).
+[the strong $a\to VPP$ record](../vector-two-pseudoscalar/alp-vpp-amplitude.md) and [the radiative
+$a\to\gamma PP$ record](../photon-two-pseudoscalar/alp-photon-pp-amplitude.md).
 
 # Verification
 

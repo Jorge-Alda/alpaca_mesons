@@ -65,7 +65,7 @@ The width phase-space expression and polarization sum are unchanged. Their
 amplitude input is now built with the corrected Alda-normalized pseudoscalar
 generators and the outgoing source
 $i\chi_-|_{P_i}=+\{\lambda_i^\dagger,\chi\}/f_\pi$ from the
-[Appendix A derivation](chi-minus-meson-source-convention.md). This correction
+[Appendix A derivation](../shared/chi-minus-meson-source-convention.md). This correction
 changes the crossed odd-exchange mass-source terms as well as the generator
 prefactors; it must be propagated through both the standalone implementation
 and the library function. See the [strong amplitude record](alp-vpp-amplitude.md)

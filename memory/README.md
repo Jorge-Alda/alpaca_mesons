@@ -14,7 +14,7 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 ## Topic indexes
 
 - [Plan](plan.md) - Long-term project planning.
-- [ALP](alp/INDEX.md) — ALP derivations, flavour-changing two-pseudoscalar and three-meson/photon calculations, signed anomaly/action matching and target audits.
+- [ALP](alp/INDEX.md) — ALP derivations and decay calculations organized by pseudoscalar, photon, and vector final states, with related shared conventions and audits.
 - [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
 - [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
 - [RChT](rcht/INDEX.md) — foundations, odd-sector conventions and operators, normalized kernels, literature prescription matching and flat inputs, focused original-operator preliminary fit, conditional calibration/profiles, finite ALP target/null audits and matching/completion plans.

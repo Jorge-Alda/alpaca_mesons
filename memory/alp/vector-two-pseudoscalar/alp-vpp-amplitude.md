@@ -52,7 +52,7 @@ version used the opposite mass-source sign and the RChT-normalized generator
 with Alda's pion constant. Both discrepancies are corrected here. In
 particular, the corrected outgoing-meson source reverses the crossed
 $d_2$ terms; the ALP source is unchanged. The detailed Appendix A derivation
-is in [chi-minus-meson-source-convention.md](chi-minus-meson-source-convention.md).
+is in [chi-minus-meson-source-convention.md](../shared/chi-minus-meson-source-convention.md).
 
 The executable calculation is
 [`scripts/derive_alp_vector_two_pseudoscalar.py`](../../../scripts/derive_alp_vector_two_pseudoscalar.py):

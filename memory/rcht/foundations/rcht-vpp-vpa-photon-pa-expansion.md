@@ -87,7 +87,7 @@ V^k_{\mu\nu}
 }
 $$
 
-The $W^A_\mu$ are canonical massive Proca eigenfields. Terms quadratic in the interaction current are additional local operators and are beyond this record's one-vector/one-photon vertex scope. In particular, the cross term between the $PP$ and $Pa$ currents is a local $aP^3$ interaction and must accompany Proca exchange if exact equivalence to the original antisymmetric-tensor formulation is required [@Ecker:1989yg]. Its flavor-resolved coefficient, sign, Mandelstam form, and identical-particle limits are derived by [`scripts/derive_a3p_vector_exchange_amplitude.py`](../../../scripts/derive_a3p_vector_exchange_amplitude.py) and recorded in [the vector-exchange amplitude memory](../../alp/three-meson/a3p-vector-exchange-amplitude.md). Define the effective generic flavor matrices
+The $W^A_\mu$ are canonical massive Proca eigenfields. Terms quadratic in the interaction current are additional local operators and are beyond this record's one-vector/one-photon vertex scope. In particular, the cross term between the $PP$ and $Pa$ currents is a local $aP^3$ interaction and must accompany Proca exchange if exact equivalence to the original antisymmetric-tensor formulation is required [@Ecker:1989yg]. Its flavor-resolved coefficient, sign, Mandelstam form, and identical-particle limits are derived by [`scripts/derive_a3p_vector_exchange_amplitude.py`](../../../scripts/derive_a3p_vector_exchange_amplitude.py) and recorded in [the vector-exchange amplitude memory](../../alp/three-pseudoscalar/a3p-vector-exchange-amplitude.md). Define the effective generic flavor matrices
 
 $$
 \mathcal T_A\equiv\sum_k\frac{H_{kA}}{M_k}T_k,
@@ -175,7 +175,7 @@ $$
 
 Hence $\mathcal L_{WPa}=\mathcal L_{WPa}^{(G_V)}+\mathcal L_{WPa}^{(\chi)}$ in the exactly transformed truncated Lagrangian. The Goldstone-current contribution is $O(e^2)$ and vanishes under the standard assumption $[Q,c_q^A]=0$.
 
-The tensor-origin interaction vanishes for a channel in which the relevant pseudoscalar generator commutes with the axial ALP spurion. In the no-ALP-meson-mixing parametrization of [the LO ALP derivation](../../alp/three-meson/alp-phi3-lo-chipt-derivation.md), one may substitute $c_q^A\to-\mathbb M_a^{-1}(C)$.
+The tensor-origin interaction vanishes for a channel in which the relevant pseudoscalar generator commutes with the axial ALP spurion. In the no-ALP-meson-mixing parametrization of [the LO ALP derivation](../../alp/three-pseudoscalar/alp-phi3-lo-chipt-derivation.md), one may substitute $c_q^A\to-\mathbb M_a^{-1}(C)$.
 
 ## One photon, one pseudoscalar, and one ALP
 

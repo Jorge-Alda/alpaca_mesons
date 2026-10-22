@@ -34,7 +34,7 @@ At fixed outer invariant, compute outer-invariant contributions and kinematic co
 
 Write down the original numerator, denominators, polarization contractions, and on-shell invariant relations. Reduce them algebraically with a reproducible SymPy script when a nontrivial identity is used. Keep finite widths, crossed terms, and matching pieces in the derivation; do not infer a cancellation from a zero-width or narrow-width limit.
 
-Useful validated examples are documented in [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md) and [vpp-scalar-optimization.md](vpp-scalar-optimization.md). For polarization sums, a factorized Gram determinant must retain its complete dependence on every integration variable. In $a\to VPP$, the exact form is $s(t-t_-)(t_+-t)/4$; replacing it by a function of $s$ alone would remove the angular dependence and is incorrect.
+Useful validated examples are documented in [three-pseudoscalar-scalar-optimization.md](../three-pseudoscalar/three-pseudoscalar-scalar-optimization.md) and [vpp-scalar-optimization.md](../vector-two-pseudoscalar/vpp-scalar-optimization.md). For polarization sums, a factorized Gram determinant must retain its complete dependence on every integration variable. In $a\to VPP$, the exact form is $s(t-t_-)(t_+-t)/4$; replacing it by a function of $s$ alone would remove the angular dependence and is incorrect.
 
 ## 4. Preserve phase space and error control
 
@@ -68,4 +68,4 @@ Record the derivation, exact inputs, invocation, benchmark cases, tolerances, me
 
 ## Provenance
 
-These guidelines are distilled from the verified implementations and comparisons in [photon-pp-scalar-optimization.md](photon-pp-scalar-optimization.md), [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md), and [vpp-scalar-optimization.md](vpp-scalar-optimization.md). The channel-independent workflow is recommended practice; each future algebraic reduction remains unverified until it receives its own derivation and tests.
+These guidelines are distilled from the verified implementations and comparisons in [photon-pp-scalar-optimization.md](../photon-two-pseudoscalar/photon-pp-scalar-optimization.md), [three-pseudoscalar-scalar-optimization.md](../three-pseudoscalar/three-pseudoscalar-scalar-optimization.md), and [vpp-scalar-optimization.md](../vector-two-pseudoscalar/vpp-scalar-optimization.md). The channel-independent workflow is recommended practice; each future algebraic reduction remains unverified until it receives its own derivation and tests.

@@ -34,7 +34,7 @@ definitions. No local manuscript is substituted for the arXiv source.
 | $a\to V\gamma$ | Direct VJP source insertion and the direct $c_7$ on-shell zero | Full direct-plus-VVP/photon-response amplitude, anomaly/induced-term bookkeeping and width |
 | $a\to\gamma\gamma$ | Derived no-vector WZW/contact invariant in Bauer's photon-operator normalization and the retained leading-nonet WZW approximation, plus unreduced resonance source insertions | Normalized resonance-corrected ALP amplitude/width with both photon assignments |
 
-Evidence is the [even three-P calculation](../../alp/three-meson/a3p-vector-exchange-amplitude.md),
+Evidence is the [even three-P calculation](../../alp/three-pseudoscalar/a3p-vector-exchange-amplitude.md),
 [two-source ALP derivation](two-source-alp-rcht-odd-parity-extension.md),
 [direct VJP derivation](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md),
 [operator-level numerical kernel](odd-parity-rcht-numerical-kernel.md), and
@@ -50,7 +50,7 @@ The [two-boson tensor audit](alp-two-boson-blind-direction-audit.md) and
 verify that the projected VJP/VVP sensitivities annihilate all three structural
 blind directions, without imposing OPE identities or identifying the ALP
 derivative and mass spurions. Signed spectral/source weights do not resurrect
-an identically zero contraction. The [three-P audit](../../alp/three-meson/odd-parity-three-pseudoscalar-audit.md)
+an identically zero contraction. The [three-P audit](../../alp/three-pseudoscalar/odd-parity-three-pseudoscalar-audit.md)
 establishes zero single-odd tree sensitivity for the four-scalar vacuum amplitude.
 
 For the two-boson result let $N$ contain the three blind columns and $r$ be a

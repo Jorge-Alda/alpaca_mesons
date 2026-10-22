@@ -30,7 +30,7 @@ The executable derivation is [`scripts/derive_kpi_s_wave_matching.py`](../../scr
 
 ## Inputs and assumptions
 
-The matrix-level interaction is the result derived in [the leading-order $a\Phi^3$ record](../alp/three-meson/alp-phi3-lo-chipt-derivation.md), whose literature inputs are recorded in [the Alda:2026nrd Appendix A extract](../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]:
+The matrix-level interaction is the result derived in [the leading-order $a\Phi^3$ record](../alp/three-pseudoscalar/alp-phi3-lo-chipt-derivation.md), whose literature inputs are recorded in [the Alda:2026nrd Appendix A extract](../extracts/Alda:2026nrd/appendix-a-expansion.md) [@Alda:2026nrd]:
 
 $$
 \mathcal L_{a\Phi^3}
@@ -81,7 +81,7 @@ $$
 
 ## Flavor traces
 
-Using the ordered-generator definitions in [the generic-generator record](../alp/three-meson/alp-three-meson-generic-generators.md), SymPy gives
+Using the ordered-generator definitions in [the generic-generator record](../alp/three-pseudoscalar/alp-three-meson-generic-generators.md), SymPy gives
 
 $$
 T^A_{K^+\pi^0;K^-}=2(A_s-A_u),
