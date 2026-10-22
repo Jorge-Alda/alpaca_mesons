@@ -17,6 +17,7 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [alp-three-meson-generic-generators.md](alp-three-meson-generic-generators.md) — generic-generator interaction expansion.
 - [alp-three-meson-amplitudes-widths.md](alp-three-meson-amplitudes-widths.md) — amplitudes, symmetry multiplicities, and widths.
 - [alp-three-meson-widths-numerical.md](alp-three-meson-widths-numerical.md) — numerical width implementation.
+- [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — candidate methods to speed up three-body integrations and open trade-offs for mass scans and four-body decays.
 - [a3p-vector-exchange-classifier.md](a3p-vector-exchange-classifier.md) — vector-exchange flavor classifier.
 - [a3p-vector-exchange-amplitude.md](a3p-vector-exchange-amplitude.md) — vector-pole and representation-matching amplitudes.
 - [flavor-conserving-neutral-vector-selection-rule.md](flavor-conserving-neutral-vector-selection-rule.md) — neutral-vector flavor selection rule.
