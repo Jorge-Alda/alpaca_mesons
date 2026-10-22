@@ -2,7 +2,7 @@
 title: Invariant width for an ALP to a vector and two pseudoscalars
 status: derived
 created: 2026-10-21
-updated: 2026-10-21
+updated: 2026-10-22
 bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
@@ -18,7 +18,13 @@ $M_V$, in kinematics, the polarization projector, and phase-space boundaries.
 Internal exchanges
 are coherent complex functions, with any line shape specified in those
 functions. Natural units, metric $(+---)$, and the amplitude phases of the
-parent record are used. The even scalar-source term is restricted to
+parent record are used. Pseudoscalar amplitudes and generators follow the
+Alda:2026nrd convention in the parent record: $f_\pi=93\,\mathrm{MeV}$,
+$\Phi=\sum_i\lambda_i\phi_i$, and
+$\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$. Thus the width
+formula here uses the already Alda-normalized coefficients from that record;
+there is no extra generator rescaling in phase space or in the polarization
+sum. The even scalar-source term is restricted to
 $|\Delta S|=1$: in the $(u,d,s)$ basis retain only $ds,sd$ entries of
 $c_q^{VS}$. No new literature input is used.
 

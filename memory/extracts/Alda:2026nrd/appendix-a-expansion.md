@@ -2,7 +2,7 @@
 title: Appendix A CCWZ expansion formulas
 status: literature
 created: 2026-09-22
-updated: 2026-10-15
+updated: 2026-10-22
 bibtex_keys: [Alda:2026nrd]
 provenance: literature
 ---
@@ -60,6 +60,30 @@ $$
 $$
 
 These formulas and their expansion through quadratic total field order are given in Appendix A and Eq. (A.5) of `Alda:2026nrd` [@Alda:2026nrd].
+
+The same Appendix A definition fixes the complementary building block
+through quadratic total field order. With
+$\bm\chi=\bm\chi_S+i\bm\chi_P$ and
+$\mathcal A_\phi[A]=\{\phi,A\}$, Eq. (A.7) gives
+$$
+\chi_-=2i\cos(\mathcal A_\phi)[\chi_P]
+-2i\sin(\mathcal A_\phi)[\chi_S]
+=2i\left(\chi_P-\{\phi,\chi_S\}
+-\frac12\{\phi,\{\phi,\chi_P\}\}+\cdots\right).
+$$
+For one ALP and at most one meson, use
+$\chi_0=2B_0m_q$,
+$\chi_S=\chi_0+i(a/f_a)[c_q^S,\chi_0]$ and
+$\chi_P=(a/f_a)\{c_q^P,\chi_0\}$. Thus
+$$
+\chi_-=\frac{2ia}{f_a}\{c_q^P,\chi_0\}
+-2i\{\phi,\chi_0\}
++\frac{2a}{f_a}\{\phi,[c_q^S,\chi_0]\}
++O(\text{fields}^3,a^2).
+$$
+The sign of the linear-meson term is therefore explicitly negative in
+$\chi_-$; this is the source of the positive $i\chi_-$ meson mass insertion
+used in the odd-parity operators. [@Alda:2026nrd, App. A, Eqs. (A.1), (A.5)--(A.7)]
 
 For one-ALP amplitudes, the paper prescribes the field redefinition
 

@@ -2,7 +2,7 @@
 title: ALP three-meson memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-21
+updated: 2026-10-22
 bibtex_keys: []
 provenance: assumption
 ---
@@ -22,6 +22,8 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [flavor-conserving-neutral-vector-selection-rule.md](flavor-conserving-neutral-vector-selection-rule.md) — neutral-vector flavor selection rule.
 - [odd-parity-three-pseudoscalar-audit.md](odd-parity-three-pseudoscalar-audit.md) — vacuum single-odd tree zero, separation from even G_V exchange and a conditional higher-order loop plan.
 - [alp-vpp-amplitude.md](alp-vpp-amplitude.md) — strong tree $a\to VPP$ odd vector exchange, even scalar-source exchanges, fit-null projection, and internal pole selection.
+- [alp-photon-pp-amplitude.md](alp-photon-pp-amplitude.md) — odd vector-exchange amplitude for $a\to\gamma PP$, including direct VJP photon insertion, vector-photon conversion, crossed pseudoscalar routing, and the charged-source $c_4$ term.
+- [chi-minus-meson-source-convention.md](chi-minus-meson-source-convention.md) — direct Appendix A derivation fixing the outgoing-meson $i\chi_-$ sign and correcting the crossed $d_2$ terms.
 - [alp-vpp-width.md](alp-vpp-width.md) — invariant polarization sum and two-variable $a\to VPP$ width with the $|\Delta S|=1$ even-source restriction.
 - [alp-vpp-width-numerical.md](alp-vpp-width-numerical.md) — selected-channel numerical calculator, fit inputs, kaon cancellations, and line-shape assumptions.
 - [alp-vpp-selection-rules.md](alp-vpp-selection-rules.md) — trace-derived channels for the even amplitude and odd amplitude with diagonal or neutral $|\Delta S|=1$ ALP sources.

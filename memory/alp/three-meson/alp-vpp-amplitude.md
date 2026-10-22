@@ -2,7 +2,7 @@
 title: Strong tree amplitude for an ALP to a narrow vector and two pseudoscalars
 status: derived
 created: 2026-10-21
-updated: 2026-10-21
+updated: 2026-10-22
 bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
@@ -17,23 +17,42 @@ metric $(+---)$ are used, with
 $\epsilon^{0123}=+1$. All meson masses, vector masses, vector source residues,
 and odd coefficients are those of the central provisional fit where relevant;
 no additional $\kappa_V$ interaction is included. The ALP sources are already
-in Alda:2026nrd's no-mixing basis [@Alda:2026nrd]. Define
+in Alda:2026nrd's no-mixing basis [@Alda:2026nrd]. Pseudoscalars use its
+normalization
+$$
+\Phi=\sum_i\lambda_i\phi_i,\qquad
+\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij},\qquad
+u=\exp\!\left(\frac{i\Phi}{2f_\pi}\right),\qquad
+f_\pi=0.093\,{\rm GeV}.
+$$
+The vector generators $T_V,T_R$ instead have unit trace normalization.
+When using RChT vertices internally, the explicit conversion is
+$T_{P_i}=\lambda_i/\sqrt2$ and $F=f_\pi$. Define
 $$
 \chi=2B_0m_q,\qquad
 \mathcal U_a=\frac{2c_q^A}{f_a},\qquad
 \mathcal Y_a=-\frac{2}{f_a}\{c_q^P,\chi\},\qquad
-\mathcal U_i=-\frac{\sqrt2}{F}\lambda_i^\dagger,\qquad
-\mathcal Y_i=-\frac{\sqrt2}{F}\{\lambda_i^\dagger,\chi\}.
+\mathcal U_i=-\frac{1}{f_\pi}\lambda_i^\dagger,\qquad
+\mathcal Y_i=+\frac{1}{f_\pi}\{\lambda_i^\dagger,\chi\}.
 $$
-Here $F=f_\pi$ at the retained leading chiral order, $c_q^A,c_q^P$ are the
-no-mixing ALP matrices, and $\lambda_i^\dagger$ is the outgoing-state
-pseudoscalar generator. The no-mixing vector-source matrix is
+Here $c_q^A,c_q^P$ are the no-mixing ALP matrices, and $\lambda_i^\dagger$
+is the outgoing-state Alda pseudoscalar generator. The no-mixing
+vector-source matrix is
 $c_q^{VS}=c_q^V-c_q^S$, with the no-mixing scalar source set to zero. The
 even coupling $G_V$ is not among the parameters of the provisional odd-sector
 fit, so it remains an explicit symbolic input and the amplitude is linear in
 $G_V$. The odd action contains
 the original seven $VJP$ and four $VVP$ operators only
 [@Ruiz-Femenia:2003jdx].
+
+**Convention audit (2026-10-22):** Appendix A gives
+$\chi_-|_P=-i\{\lambda_i^\dagger,\chi\}/f_\pi$, hence
+$\mathcal Y_i=i\chi_-|_P=+\{\lambda_i^\dagger,\chi\}/f_\pi$. An earlier
+version used the opposite mass-source sign and the RChT-normalized generator
+with Alda's pion constant. Both discrepancies are corrected here. In
+particular, the corrected outgoing-meson source reverses the crossed
+$d_2$ terms; the ALP source is unchanged. The detailed Appendix A derivation
+is in [chi-minus-meson-source-convention.md](chi-minus-meson-source-convention.md).
 
 The executable calculation is
 [`scripts/derive_alp_vector_two_pseudoscalar.py`](../../../scripts/derive_alp_vector_two_pseudoscalar.py):
@@ -61,14 +80,13 @@ $$
 \mathcal N_R(X;r^2)=
 4\left[
 d_1m_X^2\,\frac{\operatorname{tr}(\{T_V,T_R\}\mathcal U_X)}{2}
--d_3(m_X^2-M_V^2-r^2)\,\frac{\operatorname{tr}(\{T_V,T_R\}\mathcal U_X)}{2}
+-d_3(m_X^2-m_V^2-r^2)\,\frac{\operatorname{tr}(\{T_V,T_R\}\mathcal U_X)}{2}
 -4d_2\,\frac{\operatorname{tr}(\{T_V,T_R\}\mathcal Y_X)}{2}
 \right].
 $$
-Here $M_V$ is the vector-mass parameter in the RChT Lagrangian and in the
-operator normalization, not the physical external-state mass. The external
-vector is on shell with $k^2=m_V^2$, where $m_V=m_\omega$ or $m_\phi$ for the
-selected state; use this physical mass in external kinematics and phase space.
+Here $m_V$ is the physical external-vector mass, with $k^2=m_V^2$. The
+independent odd-operator normalization scale is $M_V$; it does not enter this
+$VVP$ numerator. Use $m_V$ in external kinematics and phase space.
 For the ALP source take
 $X=a$, $m_X=m_a$, $r^2=s$, $\mathcal U_X=\mathcal U_a$,
 $\mathcal Y_X=\mathcal Y_a$. For an outgoing pseudoscalar $P_i$, take
@@ -85,15 +103,15 @@ $$
 \epsilon_{\mu\nu\rho\sigma}
 \varepsilon_V^\mu p_1^\nu p_2^\rho k^\sigma
 \sum_{T_R}\Bigg[
--\frac{\sqrt2G_V\,\mathcal N_R(a;s)
+-\frac{G_V\,\mathcal N_R(a;s)
 \operatorname{tr}(T_R[\lambda_1^\dagger,\lambda_2^\dagger])}
-{F^2M_V(s-M_R^2)}\\
-&\quad+\frac{2G_V\,\mathcal N_R(P_2;t)
+{\sqrt2f_\pi^2m_V(s-M_R^2)}\\
+&\quad+\frac{\sqrt2G_V\,\mathcal N_R(P_2;t)
 \operatorname{tr}(T_R[\lambda_1^\dagger,c_q^A])}
-{Ff_aM_V(t-M_R^2)}
--\frac{2G_V\,\mathcal N_R(P_1;u)
+{f_\pi f_am_V(t-M_R^2)}
+-\frac{\sqrt2G_V\,\mathcal N_R(P_1;u)
 \operatorname{tr}(T_R[\lambda_2^\dagger,c_q^A])}
-{Ff_aM_V(u-M_R^2)}\Bigg].
+{f_\pi f_am_V(u-M_R^2)}\Bigg].
 \end{aligned}
 $$
 The first term is $a\to VT_R^*\to V P_1P_2$. The other two are
@@ -113,7 +131,7 @@ the complete $c_q^{VS}$ contribution in this rotated representation:
 $$
 \begin{aligned}
 \mathcal M_{VS}={}&-
-\frac{iG_VM_V}{\sqrt2F^2f_a}
+\frac{i\sqrt2G_Vm_V}{8f_\pi^2f_a}
 \sum_{\lambda_R}\Bigg[
 \frac{
 \operatorname{tr}(\{\lambda_2^\dagger,\lambda_R\}
@@ -129,8 +147,9 @@ $$
 \Bigg].
 \end{aligned}
 $$
-The sum runs over canonically normalized pseudoscalar mass eigenstates
-$\lambda_R$ with masses $m_R$. This is a parity-even Lorentz structure and
+The sum runs over Alda-normalized pseudoscalar mass eigenstates $\lambda_R$
+with $\operatorname{tr}(\lambda_R\lambda_S)=2\delta_{RS}$ and masses $m_R$.
+This is a parity-even Lorentz structure and
 must be kept separate from $\mathcal M_{\rm odd}$. In the original source
 variables the same result is distributed among the direct $G_VaVPP$ contact
 and pseudoscalar exchanges; do not add that contact to the rotated expression.

@@ -82,20 +82,12 @@ def _real_components(row, column):
 
 
 def _meson_inputs(epsilon_k):
-    """Return RChT generators and LO masses, with Tr(lambda_i^2)=1.
-
-    Here U=exp(i sqrt(2) Phi/F). The ``three_meson_width`` generators
-    instead expand Phi_fpi in U=exp(i Phi_fpi/fpi), so Phi_fpi=sqrt(2) Phi
-    at F=fpi. Its generators, including K_S/K_L, require division by
-    sqrt(2). ``alda_2026nrd_neutral_inputs`` already returns this normalized
-    RChT generator as TP=F lambda_Alda/(sqrt(2) fpi).
-    """
+    """Return Alda generators (trace norm two) and LO masses in GeV."""
     neutral = alda_2026nrd_neutral_inputs(mass_scheme='tree')
-    generators = {name: meson.generator / math.sqrt(2)
-                  for name, meson in _MESONS.items()}
+    generators = {name: meson.generator for name, meson in _MESONS.items()}
     tree_masses = {}
     for name, key in (('pi0', 'pi0'), ('eta', 'eta'), ('eta_prime', 'etap')):
-        generators[name] = neutral[key]['TP']
+        generators[name] = math.sqrt(2)*neutral[key]['TP']
         tree_masses[name] = neutral[key]['tree_mass']
     quark_masses = json.loads(SNAPSHOT.read_text())['B0mq_gev2']
     for names, row, column in ((('pi+', 'pi-'), 0, 1),
@@ -104,7 +96,7 @@ def _meson_inputs(epsilon_k):
         for name in names:
             tree_masses[name] = math.sqrt(quark_masses[row] + quark_masses[column])
     for name in ('KS', 'KL'):
-        generators[name] = _physical_neutral_kaon(name, epsilon_k).generator / math.sqrt(2)
+        generators[name] = _physical_neutral_kaon(name, epsilon_k).generator
     return generators, tree_masses
 
 
@@ -158,7 +150,7 @@ def build_vpp_amplitude(alp_mass, c_q_A, c_q_P, final_state, f_a, *, g_v,
     G_V and f_a are in GeV. c_q_VS is restricted to ds/sd by the retained
     |Delta S|=1 even-source calculation; diagonal entries commute with chi.
     K_L/K_S aliases follow three_meson_width. A zero amplitude has no terms.
-    The amplitude uses F=0.093 GeV from the stored Alda:2026nrd input.
+    The amplitude uses f_pi=0.093 GeV from the stored Alda:2026nrd input.
     """
     alp_mass = _positive_number(alp_mass, 'alp_mass')
     f_a = _positive_number(f_a, 'f_a')
@@ -183,7 +175,6 @@ def build_vpp_amplitude(alp_mass, c_q_A, c_q_P, final_state, f_a, *, g_v,
     external = fitted.vector_generators[vector]
     chi = fitted.quark_mass_matrix
     pion_constant = json.loads(SNAPSHOT.read_text())['fpi_gev']
-    operator_mass = fitted.operator_mass
     odd = fitted.odd_coefficients
     vector_groups = [(fitted.vector_masses[name], fitted.shared_total_widths[name],
                       (fitted.vector_generators[name],)) for name in ('rho0', 'omega', 'phi')]
@@ -203,33 +194,34 @@ def build_vpp_amplitude(alp_mass, c_q_A, c_q_P, final_state, f_a, *, g_v,
             for invariant, source, mass_source, source_mass_squared, trace, factor in (
                 (0, 2*axial/f_a, -2*_anticommutator(pseudoscalar, chi)/f_a,
                  alp_mass**2, np.trace(internal @ _commutator(first, second)),
-                 -math.sqrt(2)*g_v/(pion_constant**2*operator_mass)),
-                (1, -math.sqrt(2)*second/pion_constant,
-                 -math.sqrt(2)*_anticommutator(second, chi)/pion_constant,
+                 -g_v/(math.sqrt(2)*pion_constant**2*physical_vector_mass)),
+                (1, -second/pion_constant,
+                 _anticommutator(second, chi)/pion_constant,
                  tree_masses[second_name]**2, np.trace(internal @ _commutator(first, axial)),
-                 2*g_v/(pion_constant*f_a*operator_mass)),
-                (2, -math.sqrt(2)*first/pion_constant,
-                 -math.sqrt(2)*_anticommutator(first, chi)/pion_constant,
+                 math.sqrt(2)*g_v/(pion_constant*f_a*physical_vector_mass)),
+                (2, -first/pion_constant,
+                 _anticommutator(first, chi)/pion_constant,
                  tree_masses[first_name]**2, np.trace(internal @ _commutator(second, axial)),
-                 -2*g_v/(pion_constant*f_a*operator_mass))):
+                 -math.sqrt(2)*g_v/(pion_constant*f_a*physical_vector_mass))):
                 derivative_trace = np.trace(anticommutator @ source) / 2
                 mass_trace = np.trace(anticommutator @ mass_source) / 2
                 constant = 4*((odd['d1']*source_mass_squared
-                               - odd['d3']*(source_mass_squared-operator_mass**2))*derivative_trace
+                               - odd['d3']*(source_mass_squared-physical_vector_mass**2))*derivative_trace
                               - 4*odd['d2']*mass_trace)
                 add(0, invariant, mass, width, factor*trace*constant,
                     factor*trace*4*odd['d3']*derivative_trace)
     pseudoscalar_groups = [(tree_masses[name], (generators[name],))
                            for name in ('pi0', 'eta', 'eta_prime')]
     for row, column, name in ((0, 1, 'pi+'), (0, 2, 'K+'), (1, 2, 'K0')):
-        pseudoscalar_groups.append((tree_masses[name], _real_components(row, column)))
+        pseudoscalar_groups.append((tree_masses[name], tuple(
+            math.sqrt(2)*generator for generator in _real_components(row, column))))
     for mass, components in pseudoscalar_groups:
         for internal in components:
             for coefficient, invariant, spectator, emitted in ((1, 2, second, first), (2, 1, first, second)):
                 flavor = (np.trace(_anticommutator(spectator, internal) @ _commutator(vector_source, chi))
                           * np.trace(external @ _commutator(internal, emitted)))
                 add(coefficient, invariant, mass, 0.,
-                    -1j*g_v*operator_mass/(math.sqrt(2)*pion_constant**2*f_a)*flavor)
+                    -1j*math.sqrt(2)*g_v*physical_vector_mass/(8*pion_constant**2*f_a)*flavor)
     terms = []
     for key, (constants, linears) in contributions.items():
         constant, linear = map(_aggregate_flavor_coefficients, (constants, linears))

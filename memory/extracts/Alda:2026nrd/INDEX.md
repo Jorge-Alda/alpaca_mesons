@@ -2,7 +2,7 @@
 title: Alda:2026nrd literature extract index
 status: literature
 created: 2026-10-01
-updated: 2026-10-15
+updated: 2026-10-22
 bibtex_keys: [Alda:2026nrd]
 provenance: literature
 ---

@@ -43,8 +43,8 @@ def _real_components(row, column):
 
 
 def _meson_inputs():
-    """Return outgoing RChT generators and LO pole masses in GeV."""
-    generators = {name: generator / math.sqrt(2)
+    """Return outgoing Alda generators (trace norm two) and LO masses in GeV."""
+    generators = {name: generator
                   for name, (_, generator) in _pseudoscalars().items()}
     neutral_squared, _ = mass_sol(fit_results['B0mu'], fit_results['B0md'],
                                   fit_results['B0ms'], fit_results['m02'])
@@ -132,7 +132,6 @@ def vector_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcoupli
     first, second = generators[first_name], generators[second_name]
     external = fitted['vector_generators'][vector]
     chi = fitted['quark_mass_matrix']
-    operator_mass = fitted['operator_mass']
     odd = fitted['odd_coefficients']
     vector_groups = [(fitted['vector_masses'][name], {'rho0': .1474, 'omega': .00868, 'phi': .004249}[name],
                       (fitted['vector_generators'][name],)) for name in ('rho0', 'omega', 'phi')]
@@ -153,33 +152,34 @@ def vector_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcoupli
             for invariant, source, mass_source, source_mass_squared, trace, factor in (
                 (0, 2*axial/fa, -2*_anticommutator(pseudoscalar, chi)/fa,
                  ma**2, np.trace(internal @ _commutator(first, second)),
-                 -math.sqrt(2)*g_v/(F_PI**2*operator_mass)),
-                (1, -math.sqrt(2)*second/F_PI,
-                 -math.sqrt(2)*_anticommutator(second, chi)/F_PI,
+                 -g_v/(math.sqrt(2)*F_PI**2*physical_vector_mass)),
+                (1, -second/F_PI,
+                 _anticommutator(second, chi)/F_PI,
                  tree_masses[second_name]**2, np.trace(internal @ _commutator(first, axial)),
-                 2*g_v/(F_PI*fa*operator_mass)),
-                (2, -math.sqrt(2)*first/F_PI,
-                 -math.sqrt(2)*_anticommutator(first, chi)/F_PI,
+                 math.sqrt(2)*g_v/(F_PI*fa*physical_vector_mass)),
+                (2, -first/F_PI,
+                 _anticommutator(first, chi)/F_PI,
                  tree_masses[first_name]**2, np.trace(internal @ _commutator(second, axial)),
-                 -2*g_v/(F_PI*fa*operator_mass))):
+                 -math.sqrt(2)*g_v/(F_PI*fa*physical_vector_mass))):
                 derivative_trace = np.trace(anticommutator @ source) / 2
                 mass_trace = np.trace(anticommutator @ mass_source) / 2
                 constant = 4*((odd['d1']*source_mass_squared
-                               - odd['d3']*(source_mass_squared-operator_mass**2))*derivative_trace
+                               - odd['d3']*(source_mass_squared-physical_vector_mass**2))*derivative_trace
                               - 4*odd['d2']*mass_trace)
                 add(0, invariant, mass, width, factor*trace*constant,
                     factor*trace*4*odd['d3']*derivative_trace)
     pseudoscalar_groups = [(tree_masses[name], (generators[name],))
                            for name in ('pi0', 'eta', 'eta_prime')]
     for row, column, name in ((0, 1, 'pi+'), (0, 2, 'K+'), (1, 2, 'K0')):
-        pseudoscalar_groups.append((tree_masses[name], _real_components(row, column)))
+        pseudoscalar_groups.append((tree_masses[name], tuple(
+            math.sqrt(2)*generator for generator in _real_components(row, column))))
     for mass, components in pseudoscalar_groups:
         for internal in components:
             for coefficient, invariant, spectator, emitted in ((1, 2, second, first), (2, 1, first, second)):
                 flavor = (np.trace(_anticommutator(spectator, internal) @ _commutator(vector_source, chi))
                           * np.trace(external @ _commutator(internal, emitted)))
                 add(coefficient, invariant, mass, 0.,
-                    -1j*g_v*operator_mass/(math.sqrt(2)*F_PI**2*fa)*flavor)
+                    -1j*math.sqrt(2)*g_v*physical_vector_mass/(8*F_PI**2*fa)*flavor)
     terms = []
     for key, (constants, linears) in contributions.items():
         constant, linear = map(_sum_flavour_coefficients, (constants, linears))
