@@ -399,7 +399,9 @@ class ThreeBodyScalarTests(unittest.TestCase):
                 if reference == 0.:
                     self.assertEqual(optimized, 0.)
                 else:
-                    np.testing.assert_allclose(optimized, reference, rtol=2e-9, atol=0.)
+                    # The official width now uses independently converged quadrature
+                    # with relative tolerance 1e-5 rather than the same adaptive rule.
+                    np.testing.assert_allclose(optimized, reference, rtol=3e-5, atol=0.)
 
     def test_thresholds_and_zeros(self):
         diagonal, changing = coupling_inputs()

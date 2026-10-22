@@ -1,10 +1,10 @@
 ---
 title: Strategies for faster phase-space integration
-status: conjectured
+status: mixed
 created: 2026-10-22
 updated: 2026-10-22
 bibtex_keys: []
-provenance: conjecture
+provenance: numerical-computation
 ---
 
 # Strategies for Faster Phase-Space Integration
@@ -19,7 +19,7 @@ The leading-order chiral-only implementation has analytic reductions for repeate
 
 ### Fixed quadrature on mapped phase space
 
-For $a\to\gamma PP$, a resonance-aware hybrid Gauss--Legendre implementation is now the official width calculation; its algorithm, validation, and measured timings are recorded in [photon-pp-gauss-legendre-quadrature.md](photon-pp-gauss-legendre-quadrature.md). It uses vectorized fixed rules in both Dalitz variables for equal-mass daughters and adaptive outer integration with fixed inner rules for unequal-mass daughters, with pole subdivisions and adaptive fallback when order doubling does not converge. The earlier general proposal to map both variables to fixed intervals remains applicable to other channels only after channel-specific profiling and validation. Further improvements such as resonance-aware outer mappings or analytic integration still require separate convergence studies.
+For $a\to\gamma PP$, $a\to3P$, and $a\to VPP$, resonance-aware Gauss--Legendre implementations are now the official width calculations; see [photon-pp-gauss-legendre-quadrature.md](photon-pp-gauss-legendre-quadrature.md), [three-pseudoscalar-gauss-legendre-quadrature.md](three-pseudoscalar-gauss-legendre-quadrature.md), and [vpp-gauss-legendre-quadrature.md](vpp-gauss-legendre-quadrature.md). Their former nested-adaptive production widths have been removed; independent adaptive references remain in the benchmark scripts. Further improvements such as resonance-aware mappings or analytic integration still require separate convergence studies.
 
 Resonances and threshold boundaries can spoil convergence of a global fixed grid. Partition the domain around accessible pole bands or choose coordinates that resolve the resonant structure; retain an adaptive fallback for difficult points. Existing pole subdivision in a given calculator should be accounted for before claiming this as a new benefit.
 
@@ -51,4 +51,4 @@ For a generic scalar $1\to4$ decay, removing overall orientation leaves five ind
 
 ## Inputs and provenance
 
-This discussion is based on the repository's numerical width implementations and the derivations linked in this directory's index. Proposed speedups, cache designs, and interpolation schemes are conjectures until profiled and compared with reference integrations. No code changes or numerical benchmarks are included in this record.
+This discussion is based on the repository's numerical width implementations and the derivations linked in this directory's index. The channel-specific quadrature results linked above are numerical computations; broader speedup claims, cache designs, interpolation schemes, and analytic reductions remain conjectural until profiled and compared with reference integrations.

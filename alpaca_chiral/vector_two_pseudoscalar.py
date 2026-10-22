@@ -10,7 +10,6 @@ from dataclasses import dataclass
 import math
 
 import numpy as np
-from scipy.integrate import quad
 
 from .pseudoscalar_diag import ALPcouplings, _no_mixing_couplings, cqV_no_mixing, fit_results, mass_sol
 from .three_pseudoscalar import F_PI, _pseudoscalars
@@ -186,20 +185,20 @@ class _VectorTwoPseudoscalarAmplitude:
             for coefficient, pole, constant, linear in t_terms:
                 contribution = (constant+linear*t)/(t-pole)
                 if coefficient == 0:
-                    odd += contribution
+                    odd = odd+contribution
                 elif coefficient == 1:
-                    first += contribution
+                    first = first+contribution
                 else:
-                    second += contribution
+                    second = second+contribution
             u = crossed_offset-t
             for coefficient, pole, constant, linear in u_terms:
                 contribution = (constant+linear*u)/(u-pole)
                 if coefficient == 0:
-                    odd += contribution
+                    odd = odd+contribution
                 elif coefficient == 1:
-                    first += contribution
+                    first = first+contribution
                 else:
-                    second += contribution
+                    second = second+contribution
             return odd, first, second
 
         return coefficients
@@ -256,39 +255,58 @@ def _prepare_amplitude(ma, masses, final_state, terms):
         squared_masses, ma*ma+sum(squared_masses))
 
 
-def vector_two_pseudoscalar_width(ma: float, fa: float, couplings: ALPcouplings,
-                                  vector: str, meson_1: str, meson_2: str) -> float:
-    """Return scalar-prepared Gamma(a -> VPP), in GeV.
+def vector_two_pseudoscalar_width(
+        ma: float, fa: float, couplings: ALPcouplings,
+        vector: str, meson_1: str, meson_2: str, *,
+        order: int = 16, epsrel: float = 1e-5) -> float:
+    """Return Gamma(a -> VPP) in GeV using Gauss-Legendre quadrature.
 
-    Uses relative tolerance 1e-5, internal pole subdivisions and the
-    identical-pseudoscalar factor 1/2!. Fixed-s coefficients are reused
-    by all evaluations of the inner quadrature.
+    Retains the complete polarization sum and constant-width propagators.
+    Pole subdivisions, order doubling, adaptive fallback and ``epsrel``
+    follow ``three_pseudoscalar_width``. Closed and forbidden
+    channels return zero before constructing any quadrature rule.
     """
+    from ._three_body_quadrature import integrate_three_body
+
     amplitude = vector_two_pseudoscalar_amplitude(
         ma, fa, couplings, vector, meson_1, meson_2)
     if not amplitude.terms:
         return 0.
     vector_mass, first_mass, second_mass = amplitude.masses
-    total_squared = amplitude.total_squared
-    crossed_poles = tuple((invariant, mass*mass)
-                          for _, invariant, mass, _, _, _ in amplitude.terms
-                          if invariant in (1, 2))
 
-    def integrate_t(s):
-        """Integrate a prepared scalar polarization sum over t at fixed s."""
-        lower, upper = amplitude.t_limits(s)
-        points = set()
-        for invariant, mass_squared in crossed_poles:
-            pole = mass_squared if invariant == 1 else total_squared-s-mass_squared
-            if lower < pole < upper:
-                points.add(pole)
-        return quad(amplitude.at_fixed_s(s, lower, upper), lower, upper,
-                    points=sorted(points), epsabs=0., epsrel=1e-5, limit=150)[0]
+    def limits(s):
+        """Array-compatible physical t boundaries in GeV squared."""
+        center = vector_mass**2+second_mass**2+(ma**2-vector_mass**2-s)*(s+second_mass**2-first_mass**2)/(2*s)
+        product = ((ma-vector_mass)**2-s)*((ma+vector_mass)**2-s)
+        product *= (s-(first_mass+second_mass)**2)*(s-(first_mass-second_mass)**2)
+        half_range = np.sqrt(np.maximum(0., product))/(2*s)
+        return center-half_range, center+half_range
 
-    lower, upper = (first_mass+second_mass)**2, (ma-vector_mass)**2
-    points = sorted({mass*mass for _, invariant, mass, _, _, _ in amplitude.terms
-                     if invariant == 0 and lower < mass*mass < upper})
-    integral = quad(integrate_t, lower, upper, points=points,
-                    epsabs=0., epsrel=1e-5, limit=150)[0]
-    identical_factor = 2 if amplitude.final_state[1] == amplitude.final_state[2] else 1
-    return integral/(256*math.pi**3*ma**3*identical_factor)
+    def fixed_squared(s):
+        """Prepare the exact polarization sum with NumPy array evaluation."""
+        lower, upper = limits(s)
+        coefficients = amplitude.coefficients_at_fixed_s(s)
+        vector_squared, first_squared, second_squared = amplitude.squared_masses
+        first_second = (s-first_squared-second_squared)/2
+
+        def squared(t):
+            """Evaluate all inner nodes together, retaining interference."""
+            vector_first = (amplitude.total_squared-s-t-vector_squared-first_squared)/2
+            vector_second = (t-vector_squared-second_squared)/2
+            odd, first, second = coefficients(t)
+            gram = np.maximum(0., s/4*(t-lower)*(upper-t))
+            return np.maximum(0., gram*np.abs(odd)**2
+                +(vector_first**2/vector_squared-first_squared)*np.abs(first)**2
+                +(vector_second**2/vector_squared-second_squared)*np.abs(second)**2
+                +2*(vector_first*vector_second/vector_squared-first_second)
+                *np.real(first*np.conjugate(second)))
+        return squared
+
+    poles = tuple(tuple(pole for _, pole, _, _ in group)
+                  for group in amplitude.prepared_terms)
+    integral = integrate_three_body(
+        fixed_squared, limits, (first_mass+second_mass)**2,
+        (ma-vector_mass)**2, amplitude.total_squared, poles,
+        order=order, epsrel=epsrel)
+    symmetry = 2 if amplitude.final_state[1] == amplitude.final_state[2] else 1
+    return integral/(256*math.pi**3*ma**3*symmetry)

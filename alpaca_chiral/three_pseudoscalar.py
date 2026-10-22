@@ -11,7 +11,6 @@ from itertools import permutations
 from math import factorial
 
 import numpy as np
-from scipy.integrate import quad
 
 from .pseudoscalar_diag import ALPcouplings, _no_mixing_couplings, fit_results
 from .vector_inputs import _read_vector_inputs
@@ -133,7 +132,7 @@ def three_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
         *(parent_squared-squared_masses[spectator]), tuple(poles))
         for (spectator, first, second), poles in grouped_exchanges.items())
 
-    def amplitude(s12, s23):
+    def evaluate(s12, s23):
         """Evaluate the same coherent amplitude with prepared scalar factors.
 
         On shell, the pole numerator is s_ij times the matching polynomial.
@@ -149,44 +148,54 @@ def three_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
             for pole, coefficient in poles:
                 residue += coefficient/(pole-pair_invariant)
             result += numerator*residue
-        return complex(result)
+        return result
 
+    def amplitude(s12, s23):
+        """Return the complex scalar amplitude at one Dalitz point."""
+        return complex(evaluate(s12, s23))
+
+    amplitude.vectorized = evaluate
+    amplitude.invariant_poles = tuple(
+        tuple(pole for pair, _, _, _, poles in prepared_exchanges
+              if pair == invariant for pole, _ in poles)
+        for invariant in range(3))
     return amplitude
 
 
-def three_pseudoscalar_width(ma: float, fa: float, couplings: ALPcouplings,
-                              meson_1: str, meson_2: str, meson_3: str) -> float:
-    """Return the scalar-prepared Gamma(a -> P1 P2 P3) in GeV.
+def three_pseudoscalar_width(
+        ma: float, fa: float, couplings: ALPcouplings,
+        meson_1: str, meson_2: str, meson_3: str, *,
+        order: int = 16, epsrel: float = 1e-5) -> float:
+    """Return Gamma(a -> 3P) in GeV using converged Gauss-Legendre rules.
 
-    Identical particles contribute 1/prod(n!). Numerical integration uses
-    relative tolerance 1e-5. Thresholds use observed pseudoscalar masses.
+    Retains the full coherent amplitude, finite widths, physical phase
+    space and identical-particle factorials. Inner intervals are split at poles
+    and ±2, ±8 mass times width; orders double four times with adaptive
+    fallback. The outer grid uses a sine-squared endpoint map and order
+    doubling, with adaptive outer fallback. ``epsrel`` sets outer
+    relative tolerance and four times the inner convergence tolerance.
     """
+    from ._three_body_quadrature import integrate_three_body
+
     names = meson_1, meson_2, meson_3
-    particles = _pseudoscalars()
-    first_mass, second_mass, third_mass = (particles[name][0] for name in names)
-    if ma <= first_mass+second_mass+third_mass:
-        return 0.0
+    masses = tuple(_pseudoscalars()[name][0] for name in names)
+    if ma <= sum(masses):
+        return 0.
     amplitude = three_pseudoscalar_amplitude(ma, fa, couplings, *names)
+    first, second, third = masses
 
-    first_squared, second_squared, third_squared = (
-        mass*mass for mass in (first_mass, second_mass, third_mass))
-    parent_squared = ma*ma
-    pair_threshold = (first_mass+second_mass)**2
-    pair_difference = (first_mass-second_mass)**2
-    upper_invariant = (ma-third_mass)**2
-    upper_sum = (ma+third_mass)**2
+    def limits(s):
+        """Physical s23 boundaries at fixed s12, in GeV squared."""
+        center = second**2+third**2+(s+second**2-first**2)*(ma**2-s-third**2)/(2*s)
+        product = (s-(first+second)**2)*(s-(first-second)**2)
+        product *= ((ma-third)**2-s)*((ma+third)**2-s)
+        half_range = np.sqrt(np.maximum(0., product))/(2*s)
+        return center-half_range, center+half_range
 
-    def integrate_second_invariant(s12):
-        """Integrate over the second Dalitz invariant at fixed s12."""
-        center = second_squared+third_squared+(
-            (s12+second_squared-first_squared)*(parent_squared-s12-third_squared))/(2*s12)
-        product = ((s12-pair_threshold)*(s12-pair_difference)
-                   *(upper_invariant-s12)*(upper_sum-s12))
-        half_width = np.sqrt(max(0., product))/(2*s12)
-        return quad(lambda s23: abs(amplitude(s12, s23))**2,
-                    center-half_width, center+half_width, epsabs=0., epsrel=1e-5, limit=200)[0]
-
-    integral = quad(integrate_second_invariant, (first_mass+second_mass)**2,
-                    (ma-third_mass)**2, epsabs=0., epsrel=1e-5, limit=200)[0]
+    integral = integrate_three_body(
+        lambda s: lambda t: np.abs(amplitude.vectorized(s, t))**2,
+        limits, (first+second)**2, (ma-third)**2,
+        ma**2+sum(mass**2 for mass in masses), amplitude.invariant_poles,
+        order=order, epsrel=epsrel)
     symmetry = np.prod([factorial(number) for number in Counter(names).values()])
     return float(integral/(256*np.pi**3*ma**3*symmetry))
