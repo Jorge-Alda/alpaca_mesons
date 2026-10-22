@@ -34,6 +34,7 @@ from .alda_neutral_inputs import SNAPSHOT, alda_2026nrd_neutral_inputs
 from .alp_vv_width import read_preliminary_fit_parameters
 from .three_meson_width import (
     EPSILON_K, _MESONS, _canonical_name, _physical_neutral_kaon,
+    _kaon_mixing_coefficients,
 )
 from .vector_meson_exchange import _aggregate_flavor_coefficients
 
@@ -98,6 +99,15 @@ def _meson_inputs(epsilon_k):
     for name in ('KS', 'KL'):
         generators[name] = _physical_neutral_kaon(name, epsilon_k).generator
     return generators, tree_masses
+
+
+def _flavor_projection(name, epsilon_k):
+    """Return outgoing flavor-bra coefficients, including complex kaon mixing."""
+    if name not in ('KS', 'KL'):
+        return ((name, 1.+0j),)
+    p_mixing, q_mixing = _kaon_mixing_coefficients(epsilon_k)
+    return (('K0', p_mixing.conjugate()),
+            ('K0bar', (1 if name == 'KS' else -1)*q_mixing.conjugate()))
 
 
 @dataclass(frozen=True)
@@ -171,7 +181,6 @@ def build_vpp_amplitude(alp_mass, c_q_A, c_q_P, final_state, f_a, *, g_v,
     if supplied is not None:
         vector_source[1, 2], vector_source[2, 1] = supplied[1, 2], supplied[2, 1]
     generators, tree_masses = _meson_inputs(epsilon_k)
-    first, second = generators[first_name].conj().T, generators[second_name].conj().T
     external = fitted.vector_generators[vector]
     chi = fitted.quark_mass_matrix
     pion_constant = json.loads(SNAPSHOT.read_text())['fpi_gev']
@@ -185,43 +194,50 @@ def build_vpp_amplitude(alp_mass, c_q_A, c_q_P, final_state, f_a, *, g_v,
 
     def add(coefficient, invariant, mass, width, constant, linear=0j):
         values = contributions.setdefault((coefficient, invariant, mass, width), ([], []))
-        values[0].append(constant)
-        values[1].append(linear)
+        values[0].append(projection*constant)
+        values[1].append(projection*linear)
 
-    for mass, width, components in vector_groups:
-        for internal in components:
-            anticommutator = _anticommutator(external, internal)
-            for invariant, source, mass_source, source_mass_squared, trace, factor in (
-                (0, 2*axial/f_a, -2*_anticommutator(pseudoscalar, chi)/f_a,
-                 alp_mass**2, np.trace(internal @ _commutator(first, second)),
-                 -g_v/(math.sqrt(2)*pion_constant**2*physical_vector_mass)),
-                (1, -second/pion_constant,
-                 _anticommutator(second, chi)/pion_constant,
-                 tree_masses[second_name]**2, np.trace(internal @ _commutator(first, axial)),
-                 math.sqrt(2)*g_v/(pion_constant*f_a*physical_vector_mass)),
-                (2, -first/pion_constant,
-                 _anticommutator(first, chi)/pion_constant,
-                 tree_masses[first_name]**2, np.trace(internal @ _commutator(second, axial)),
-                 -math.sqrt(2)*g_v/(pion_constant*f_a*physical_vector_mass))):
-                derivative_trace = np.trace(anticommutator @ source) / 2
-                mass_trace = np.trace(anticommutator @ mass_source) / 2
-                constant = 4*((odd['d1']*source_mass_squared
-                               - odd['d3']*(source_mass_squared-physical_vector_mass**2))*derivative_trace
-                              - 4*odd['d2']*mass_trace)
-                add(0, invariant, mass, width, factor*trace*constant,
-                    factor*trace*4*odd['d3']*derivative_trace)
-    pseudoscalar_groups = [(tree_masses[name], (generators[name],))
-                           for name in ('pi0', 'eta', 'eta_prime')]
-    for row, column, name in ((0, 1, 'pi+'), (0, 2, 'K+'), (1, 2, 'K0')):
-        pseudoscalar_groups.append((tree_masses[name], tuple(
-            math.sqrt(2)*generator for generator in _real_components(row, column))))
-    for mass, components in pseudoscalar_groups:
-        for internal in components:
-            for coefficient, invariant, spectator, emitted in ((1, 2, second, first), (2, 1, first, second)):
-                flavor = (np.trace(_anticommutator(spectator, internal) @ _commutator(vector_source, chi))
-                          * np.trace(external @ _commutator(internal, emitted)))
-                add(coefficient, invariant, mass, 0.,
-                    -1j*math.sqrt(2)*g_v*physical_vector_mass/(8*pion_constant**2*f_a)*flavor)
+    # Project complete flavor amplitudes; physical generators already contain
+    # conjugated mixing weights and must not be conjugated a second time.
+    for first_flavor, first_weight in _flavor_projection(first_name, epsilon_k):
+        for second_flavor, second_weight in _flavor_projection(second_name, epsilon_k):
+            projection = first_weight*second_weight
+            first = generators[first_flavor].conj().T
+            second = generators[second_flavor].conj().T
+            for mass, width, components in vector_groups:
+                for internal in components:
+                    anticommutator = _anticommutator(external, internal)
+                    for invariant, source, mass_source, source_mass_squared, trace, factor in (
+                        (0, 2*axial/f_a, -2*_anticommutator(pseudoscalar, chi)/f_a,
+                         alp_mass**2, np.trace(internal @ _commutator(first, second)),
+                         -g_v/(math.sqrt(2)*pion_constant**2*physical_vector_mass)),
+                        (1, -second/pion_constant,
+                         _anticommutator(second, chi)/pion_constant,
+                         tree_masses[second_flavor]**2, np.trace(internal @ _commutator(first, axial)),
+                         math.sqrt(2)*g_v/(pion_constant*f_a*physical_vector_mass)),
+                        (2, -first/pion_constant,
+                         _anticommutator(first, chi)/pion_constant,
+                         tree_masses[first_flavor]**2, np.trace(internal @ _commutator(second, axial)),
+                         -math.sqrt(2)*g_v/(pion_constant*f_a*physical_vector_mass))):
+                        derivative_trace = np.trace(anticommutator @ source) / 2
+                        mass_trace = np.trace(anticommutator @ mass_source) / 2
+                        constant = 4*((odd['d1']*source_mass_squared
+                                       - odd['d3']*(source_mass_squared-physical_vector_mass**2))*derivative_trace
+                                      - 4*odd['d2']*mass_trace)
+                        add(0, invariant, mass, width, factor*trace*constant,
+                            factor*trace*4*odd['d3']*derivative_trace)
+            pseudoscalar_groups = [(tree_masses[name], (generators[name],))
+                                   for name in ('pi0', 'eta', 'eta_prime')]
+            for row, column, name in ((0, 1, 'pi+'), (0, 2, 'K+'), (1, 2, 'K0')):
+                pseudoscalar_groups.append((tree_masses[name], tuple(
+                    math.sqrt(2)*generator for generator in _real_components(row, column))))
+            for mass, components in pseudoscalar_groups:
+                for internal in components:
+                    for coefficient, invariant, spectator, emitted in ((1, 2, second, first), (2, 1, first, second)):
+                        flavor = (np.trace(_anticommutator(spectator, internal) @ _commutator(vector_source, chi))
+                                  * np.trace(external @ _commutator(internal, emitted)))
+                        add(coefficient, invariant, mass, 0.,
+                            -1j*math.sqrt(2)*g_v*physical_vector_mass/(8*pion_constant**2*f_a)*flavor)
     terms = []
     for key, (constants, linears) in contributions.items():
         constant, linear = map(_aggregate_flavor_coefficients, (constants, linears))
