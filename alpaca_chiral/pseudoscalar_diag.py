@@ -190,6 +190,9 @@ def cqP_no_mixing(couplings: ALPcouplings, ma: float):
 def cG_no_mixing(couplings: ALPcouplings, ma: float):
     return cGA(couplings) + np.trace(mixing_shift(couplings, ma))
 
+def cqV_no_mixing(couplings: ALPcouplings, ma: float):
+    return cqV(couplings)
+
 def cA_no_mixing(couplings: ALPcouplings, ma: float):
     """Return the dimensionless no-mixing axial matrix in u,d,s order."""
     return cqA_no_mixing(couplings, ma)

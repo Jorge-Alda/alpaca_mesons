@@ -11,6 +11,8 @@ description: Catalog and digest HEP literature with INSPIRE-HEP metadata and aud
 2. Add the unmodified, source-provided entry to `bibliography.bib`; use its citation key for all records.
 3. For arXiv papers, download the source archive to `memory/sources/<bibtex-key>/`. Otherwise cache available source material there.
 4. Never commit downloaded source material.
+5. If a paper is not available on arXiv, try downloading the source from the links in INSPIRE-HEP, or from ResearchGate. As a last fallback, use Sci-Hub.
+6. If the retrieved source is in PDF format, first convert it to markdown using a suitable tool such as `pdf2text` (if the PDF is machine-readable) or an OCR like `tesseract` (if it is a scanned document). Store the resulting markdown as `memory/extracts/<bibtex-key>/fulltext.md`.
 
 ## Digest
 
