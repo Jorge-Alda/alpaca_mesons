@@ -12,6 +12,7 @@ channel amplitudes.
 """
 from dataclasses import dataclass
 from itertools import combinations, combinations_with_replacement, product
+from functools import lru_cache
 
 import sympy as sp
 
@@ -302,6 +303,110 @@ def show(label, expression):
     print(f'{label}:\n{sp.latex(expression)}\n')
 
 
+@lru_cache(maxsize=1)
+def derive_flavour_selection_rules():
+    """Enumerate nonzero flavour routings before summing Lorentz amplitudes.
+
+    Charged generators at external outgoing legs are conjugated. The two
+    ends of a charged propagator carry mutually conjugate generators.
+    Neutral mixing entries remain symbolic: a zero means a polynomial
+    identity, not cancellation at a chosen angle or fitted coefficient.
+    All three neutral pseudoscalars have independent symbolic u,d,s entries.
+    This retains their isospin admixtures: the audit is generic support before
+    inserting the Alda:2026nrd fitted neutral generators. Independent entries
+    are only a test of polynomial support, not a new mixing prescription.
+    Orthogonality or fitted-parameter cancellations require substitution.
+    Traces alone cannot establish cancellation between distinct routings.
+    """
+    def elementary(row, column):
+        matrix = sp.zeros(3)
+        matrix[row, column] = 1
+        return matrix
+
+    omega_n, omega_s, phi_n, phi_s = sp.symbols('omega_n omega_s phi_n phi_s', real=True)
+    pi0_u, pi0_d, pi0_s = sp.symbols('pi0_u pi0_d pi0_s', real=True)
+    eta_u, eta_d, eta_s = sp.symbols('eta_u eta_d eta_s', real=True)
+    etap_u, etap_d, etap_s = sp.symbols('etap_u etap_d etap_s', real=True)
+    nonstrange = sp.diag(1, 1, 0)/sp.sqrt(2)
+    strange = sp.diag(0, 0, 1)
+    vectors = {'rho0':sp.diag(1, -1, 0)/sp.sqrt(2),
+               'rho+':elementary(0, 1), 'rho-':elementary(1, 0),
+               'K*+':elementary(0, 2), 'K*-':elementary(2, 0),
+               'K*0':elementary(1, 2), 'K*0bar':elementary(2, 1),
+               'omega':omega_n*nonstrange+omega_s*strange,
+               'phi':phi_n*nonstrange+phi_s*strange}
+    mesons = {'pi0':sp.diag(pi0_u, pi0_d, pi0_s),
+              'pi+':sp.sqrt(2)*elementary(1, 0),
+              'pi-':sp.sqrt(2)*elementary(0, 1),
+              'K+':sp.sqrt(2)*elementary(2, 0),
+              'K-':sp.sqrt(2)*elementary(0, 2),
+              'K0':sp.sqrt(2)*elementary(2, 1),
+              'K0bar':sp.sqrt(2)*elementary(1, 2),
+              'eta':sp.diag(eta_u, eta_d, eta_s),
+              'etap':sp.diag(etap_u, etap_d, etap_s)}
+    sources = {'diagonal':sp.diag(*sp.symbols('c_u c_d c_s')),
+               'ds':elementary(1, 2), 'sd':elementary(2, 1)}
+    quark_mass = sp.diag(*sp.symbols('chi_u chi_d chi_s', positive=True))
+    pair_traces = {}
+    for first, second in combinations_with_replacement(mesons, 2):
+        commutator = mesons[first]*mesons[second]-mesons[second]*mesons[first]
+        pair_traces[first, second] = {name:sp.expand(sp.trace(matrix*commutator))
+            for name, matrix in vectors.items() if sp.expand(sp.trace(matrix*commutator)) != 0}
+    odd_traces, axial_traces, strong_traces = {}, {}, {}
+    for first, first_matrix in vectors.items():
+        for second, second_matrix in vectors.items():
+            source_product = first_matrix.adjoint()*second_matrix.adjoint()+second_matrix.adjoint()*first_matrix.adjoint()
+            strong_product = first_matrix*second_matrix.adjoint()+second_matrix.adjoint()*first_matrix
+            for sector, source in sources.items():
+                odd_traces[sector, first, second] = (
+                    sp.expand(sp.trace(source_product*source)),
+                    sp.expand(sp.trace(source_product*(source*quark_mass+quark_mass*source))))
+            for name, generator in mesons.items():
+                strong_traces[first, second, name] = (
+                    sp.expand(sp.trace(strong_product*generator)),
+                    sp.expand(sp.trace(strong_product*(generator*quark_mass+quark_mass*generator))))
+        for sector, source in sources.items():
+            for name, generator in mesons.items():
+                axial_traces[sector, first, name] = sp.expand(sp.trace(
+                    first_matrix.adjoint()*(source*generator-generator*source)))
+    channels = {sector:{} for sector in sources}
+    for final_state in combinations_with_replacement(mesons, 4):
+        for sector in sources:
+            pair_routes, axial_routes = set(), set()
+            for first_indices in combinations(range(4), 2):
+                second_indices = tuple(index for index in range(4) if index not in first_indices)
+                first_pair = tuple(final_state[index] for index in first_indices)
+                second_pair = tuple(final_state[index] for index in second_indices)
+                for first_vector in pair_traces[first_pair]:
+                    for second_vector in pair_traces[second_pair]:
+                        derivative, mass = odd_traces[sector, first_vector, second_vector]
+                        if derivative != 0 or mass != 0:
+                            pair_routes.add((first_pair, second_pair, first_vector, second_vector))
+                for first_index in second_indices:
+                    second_index = next(index for index in second_indices if index != first_index)
+                    for second_vector in pair_traces[first_pair]:
+                        for first_vector in vectors:
+                            if (axial_traces[sector, first_vector, final_state[first_index]] != 0
+                                and any(trace != 0 for trace in strong_traces[
+                                    first_vector, second_vector, final_state[second_index]])):
+                                axial_routes.add((final_state[first_index], final_state[second_index],
+                                                  first_pair, first_vector, second_vector))
+            if pair_routes or axial_routes:
+                channels[sector][final_state] = {'aVV':sorted(pair_routes), 'aVP':sorted(axial_routes)}
+    return {'pair_traces':pair_traces, 'odd_traces':odd_traces,
+            'axial_traces':axial_traces, 'strong_traces':strong_traces,
+            'channels':channels}
+
+
+def print_flavour_selection_rules():
+    """Print all structural routings as deterministic JSON, without fit cuts."""
+    import json
+    result = derive_flavour_selection_rules()
+    print(json.dumps({sector:[{'final_state':state, **routes}
+                             for state, routes in channels.items()]
+                      for sector, channels in result['channels'].items()}, indent=2))
+
+
 def main():
     """Print the field-counting derivation and independently reduced vertices."""
     print(__doc__)
@@ -381,6 +486,38 @@ if __name__ == '__main__':
             self.assertEqual({tuple(vertex.name for vertex in result[0])
                               for result in enumerate_vector_trees()}, expected)
 
+        def test_vpp_flavour_selection(self):
+            result = derive_flavour_selection_rules()
+            self.assertEqual(set(result['pair_traces']['pi+', 'pi-']), {'rho0'})
+            self.assertEqual(result['pair_traces']['pi0', 'eta'], {})
+            self.assertEqual(result['pair_traces']['K0', 'K0'], {})
+            self.assertEqual(set(result['pair_traces']['K+', 'K-']), {'rho0', 'omega', 'phi'})
+
+        def test_axial_isoscalar_and_pure_neutral_exclusions(self):
+            result = derive_flavour_selection_rules()
+            self.assertEqual(result['axial_traces']['diagonal', 'rho0', 'pi0'], 0)
+            for state in result['channels']['diagonal']:
+                self.assertFalse(all(name in {'pi0', 'eta', 'etap'} for name in state))
+            self.assertIn(('pi+', 'pi+', 'pi-', 'pi-'), result['channels']['diagonal'])
+
+        def test_source_quantum_numbers_and_explicit_isospin_limit(self):
+            result = derive_flavour_selection_rules()
+            charge = {'pi+':1, 'pi-':-1, 'K+':1, 'K-':-1}
+            strangeness = {'K+':1, 'K-':-1, 'K0':1, 'K0bar':-1}
+            for sector, expected_strangeness in (('diagonal', 0), ('ds', 1), ('sd', -1)):
+                for state in result['channels'][sector]:
+                    self.assertEqual(sum(charge.get(name, 0) for name in state), 0)
+                    self.assertEqual(sum(strangeness.get(name, 0) for name in state), expected_strangeness)
+            derivative, mass = result['strong_traces']['rho+', 'rho+', 'pi0']
+            self.assertNotEqual(derivative, 0)
+            self.assertNotEqual(mass, 0)
+            pi0_u, pi0_d, pi0_s = sp.symbols('pi0_u pi0_d pi0_s', real=True)
+            isospin_limit = {pi0_u:1, pi0_d:-1, pi0_s:0}
+            self.assertEqual(derivative.subs(isospin_limit), 0)
+            chi_u, chi_d = sp.symbols('chi_u chi_d', positive=True)
+            self.assertNotEqual(mass.subs(isospin_limit), 0)
+            self.assertEqual(mass.subs(isospin_limit).subs(chi_u, chi_d), 0)
+
         def test_pairing_parity(self):
             self.assertEqual([sign for _, sign in derive_pairing_signs()], [1, -1, 1])
 
@@ -410,7 +547,9 @@ if __name__ == '__main__':
             self.assertEqual(sewn['pair_epsilon'], -1)
             self.assertEqual(sewn['axial_epsilon'], 1)
 
-    if '--test' in sys.argv:
+    if '--selection-rules' in sys.argv:
+        print_flavour_selection_rules()
+    elif '--test' in sys.argv:
         unittest.main(argv=[sys.argv[0]])
     else:
         main()
