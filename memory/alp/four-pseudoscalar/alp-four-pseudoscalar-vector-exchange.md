@@ -137,11 +137,119 @@ without also adding the removed pure-gradient-source vertices.
 
 # Completion boundary
 
-The executable record establishes the complete field-counting inventory,
-the odd off-shell numerator, the tensor response on a $VPP$ current, the
-pairing signs, and the scalar-source vertex polynomials. It does **not** yet
-contract all five families into a complete Lorentz-scalar channel amplitude
-with every momentum routing, flavor sum, and propagator denominator. In
-particular, no four-body width or numerical channel prediction follows from
-this record. That assembly is required before describing these ingredients
-as the full $a\to4P$ amplitude.
+## Axial and pseudoscalar sources in the no-mixing basis
+
+For this subsection $c_q^A$ and $c_q^P$ mean the input matrices already in
+the no-ALP--meson-mixing basis of [the Appendix-A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md)
+[@Alda:2026nrd]. They are not rotated again. The leading chiral source
+orders show that neither source supplies an $aPP$ vertex. The axial part of
+$u_\mu$ is even in $\Phi$, while the source-free part is odd; their cross
+term in $\langle u_\mu u^\mu\rangle$ is therefore odd in $\Phi$. The
+pseudoscalar source enters $\chi_+$ through the sine of the anticommutator
+map and is also odd in $\Phi$. Consequently the $a\Phi^2$ coefficient is
+zero. The possible $aP$ bilinear is removed by the prescribed no-mixing
+basis; this cancellation is a basis input and is not re-derived for
+arbitrary independent matrices here. The $aPP$--pseudoscalar--$VPP$--$VPP$
+family in the topology inventory is thus not an axial or pseudoscalar
+contribution: it belongs to the $c_q^{VS}$ scalar-source representation.
+
+The nonzero axial even-parity source with one vector and one pseudoscalar
+comes from the cross term of
+$$
+\mathcal L_{G_V}=\frac{iG_V}{\sqrt2}\langle V_{\mu\nu}u^\mu u^\nu\rangle.
+$$
+Using $u_\mu^{(a,A)}=2(\partial_\mu a)c_q^A/f_a$ and
+$u_\mu^{(P)}=-(\partial_\mu\Phi)/f_\pi+O(\Phi^3)$, antisymmetry of
+$V_{\mu\nu}$ combines the two cross terms. For a vector component
+$V_{\mu\nu}=T_R V_{R,\mu\nu}$ and meson component
+$\Phi=\lambda_i^\dagger P_i$, the result is
+$$
+\left.\mathcal L_{G_V}\right|_{aVP}=
+-\frac{2iG_V}{\sqrt2 f_af_\pi}\,
+V_R^{\mu\nu}\partial_\mu a\,\partial_\nu P_i\,
+\operatorname{tr}\!\left(T_R[c_q^A,\lambda_i^\dagger]\right).
+$$
+Thus the coefficient of $V_R^{\mu\nu}\partial_\mu a\partial_\nu P_i$ is
+$$
+-\frac{2iG_V}{\sqrt2 f_af_\pi}
+\operatorname{tr}\!\left(T_R[c_q^A,\lambda_i^\dagger]\right).
+$$
+The expression is a Lagrangian coefficient before Fourier and vertex
+factors. It feeds the tree $aVP$--$VVP$--$VPP$ topology. The odd $aVV$
+numerator already recorded above contains both source matrices through
+$$
+D_{RS}=\frac{1}{f_a}\operatorname{tr}\!\left(\{T_R,T_S\}c_q^A\right),
+\qquad
+P_{RS}=-\frac{1}{f_a}\operatorname{tr}\!\left(\{T_R,T_S\}\{c_q^P,\chi\}\right),
+\quad \chi=2B_0m_q,
+$$
+in the definitions of that numerator. These supply the $aVV$--$VPP$--$VPP$
+tree family. Its momentum routings, like those of the axial $aVP$ family,
+must be summed over labeled external assignments and allowed vector flavors.
+
+## Sewn scalar amplitudes
+
+The full tensor responses on the two $VPP$ currents and on the axial $aVP$
+current are sewn to the canonical odd tensor amplitude
+$\mathcal N_{RS}\epsilon(\varepsilon_R,\varepsilon_S,q_R,q_S)/(M_RM_S)$.
+Fourier signs are fixed by an incoming $a$ wave $e^{-ip_a x}$ and outgoing
+meson waves $e^{+ip_i x}$. Define $s_{ij}=(p_i+p_j)^2$ and
+$\epsilon(p_1,p_2,p_3,p_4)=\epsilon_{\mu\nu\rho\sigma}
+p_1^\mu p_2^\nu p_3^\rho p_4^\sigma$. Each vector index $R,S$ is summed
+over the real orthonormal vector nonet, with $\operatorname{tr}(T_RT_S)=
+\delta_{RS}$. A denominator below means $q^2-M_R^2+i0$; no widths are
+inserted.
+
+For the odd $aVV$ source followed by two $VPP$ vertices, the result is
+$$
+\mathcal M_{aVV}=\epsilon(p_1,p_2,p_3,p_4)
+\sum_{(ij|kl)=(12|34),(13|24),(14|23)}\sigma_{ij|kl}
+\sum_{R,S}\frac{-G_V^2\,\mathcal N^a_{RS}(s_{ij},s_{kl})
+\operatorname{tr}(T_R[\lambda_i^\dagger,\lambda_j^\dagger])
+\operatorname{tr}(T_S[\lambda_k^\dagger,\lambda_l^\dagger])}
+{2f_\pi^4(s_{ij}-M_R^2+i0)(s_{kl}-M_S^2+i0)},
+\qquad (\sigma_{12|34},\sigma_{13|24},\sigma_{14|23})=(+1,-1,+1).
+$$
+Here $\mathcal N^a_{RS}$ is the previously defined odd numerator with
+$D^a_{RS}=\operatorname{tr}(\{T_R,T_S\}c_q^A)/f_a$ and
+$P^a_{RS}=-\operatorname{tr}(\{T_R,T_S\}\{c_q^P,\chi\})/f_a$.
+The numerator already includes both vector assignments at its odd vertex.
+
+For the axial $aVP$ source followed by an odd $VVP$ vertex and a $VPP$
+vertex, let $i,j$ be ordered distinct labels and let $k<l$ be the remaining
+two labels. Then
+$$
+\mathcal M_{aVP}=\epsilon(p_1,p_2,p_3,p_4)
+\sum_{\substack{i\ne j\\\{k,l\}=\{1,2,3,4\}\setminus\{i,j\}\\k<l}}
+\operatorname{sgn}(i,j,k,l)\sum_{R,S}
+\frac{G_V^2\,\mathcal N^j_{RS}((p_a-p_i)^2,s_{kl})
+\operatorname{tr}(T_R[c_q^A,\lambda_i^\dagger])
+\operatorname{tr}(T_S[\lambda_k^\dagger,\lambda_l^\dagger])}
+{f_\pi^3f_a((p_a-p_i)^2-M_R^2+i0)(s_{kl}-M_S^2+i0)}.
+$$
+The permutation sign is the sign of the ordered list $(i,j,k,l)$ relative
+to $(1,2,3,4)$. The strong odd numerator $\mathcal N^j_{RS}$ is the same
+VVP polynomial with its source replaced by the outgoing meson $P_j$ and its
+source mass squared set to $m_j^2$:
+$$
+D^j_{RS}=-\frac{1}{2f_\pi}
+\operatorname{tr}(\{T_R,T_S\}\lambda_j^\dagger),\qquad
+P^j_{RS}=\frac{1}{2f_\pi}
+\operatorname{tr}(\{T_R,T_S\}\{\lambda_j^\dagger,\chi\}),
+\qquad \chi=2B_0m_q.
+$$
+The exchanged vector momentum at the odd vertex is crossed,
+$q_R=-(p_a-p_i)$, as included in the routing sign above. The complete
+axial/pseudoscalar-source amplitude in this retained vector-exchange sector
+is $\mathcal M_{aVV}+\mathcal M_{aVP}$. The first term contains both
+$c_q^A$ and $c_q^P$; the second contains $c_q^A$ only. The absent $aPP$
+family is not included.
+
+The executable calculation in
+[`scripts/derive_alp_four_pseudoscalar.py`](../../../scripts/derive_alp_four_pseudoscalar.py)
+derives the two scalar kernels, Lorentz contractions, source traces, and
+routing signs; its focused checks pass. These are generic labeled-channel
+amplitudes. A numerical prediction still requires specifying the four
+external generators and masses, evaluating the vector-flavor sums, and
+integrating the four-body phase space with the appropriate identical-particle
+factor.

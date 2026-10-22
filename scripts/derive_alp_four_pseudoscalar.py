@@ -156,6 +156,147 @@ def expand_traces(expression):
         lambda term: sp.Trace(sp.expand(term.arg)).doit()))
 
 
+def derive_axial_vp_source():
+    """Polarize i G_V Tr(V u_mu u_nu)/sqrt(2).
+
+    Derivatives are kept as independent commuting field labels here; hence
+    these are Lagrangian coefficients before Fourier or vertex factors.
+    No second ALP rotation is applied to c_q^A.
+    """
+    vector, generator, axial = [sp.MatrixSymbol(name, 3, 3) for name in
+                                ('T_R', 'lambda_i_dagger', 'c_q^A')]
+    decay_constant, alp_scale, coupling = sp.symbols('f_pi f_a G_V', positive=True)
+    alp_mu, alp_nu, meson_mu, meson_nu = sp.symbols(
+        'partial_mu_a partial_nu_a partial_mu_P_i partial_nu_P_i')
+    vielbein_mu = -generator*meson_mu/decay_constant + 2*axial*alp_mu/alp_scale
+    vielbein_nu = -generator*meson_nu/decay_constant + 2*axial*alp_nu/alp_scale
+    lagrangian = sp.I*coupling*sp.Trace(vector*(
+        vielbein_mu*vielbein_nu))/sp.sqrt(2)
+    expanded = expand_traces(lagrangian)
+    first_coefficient = sp.expand(expanded).coeff(alp_mu).coeff(meson_nu)
+    second_coefficient = sp.expand(expanded).coeff(alp_nu).coeff(meson_mu)
+    # V^{mu nu}=-V^{nu mu}: relabel the second term's summed indices.
+    coefficient = sp.expand(first_coefficient-second_coefficient)
+    expected = -sp.sqrt(2)*sp.I*coupling*sp.Trace(
+        vector*(axial*generator-generator*axial))/(decay_constant*alp_scale)
+    return expanded, coefficient, sp.simplify(coefficient-expand_traces(expected))
+
+
+def derive_axial_pseudoscalar_vv():
+    """Insert the supplied no-mixing sources into the derived odd numerator."""
+    first, second, axial, pseudoscalar, quark_mass = [sp.MatrixSymbol(name, 3, 3)
+        for name in ('T_R', 'T_S', 'c_q^A', 'c_q^P', 'chi')]
+    alp_scale = sp.Symbol('f_a', positive=True)
+    numerator, _ = derive_odd_numerator()
+    symmetric = first*second+second*first
+    derivative_trace = sp.Trace(symmetric*axial)/alp_scale
+    mass_trace = -sp.Trace(symmetric*(pseudoscalar*quark_mass
+                                     +quark_mass*pseudoscalar))/alp_scale
+    return expand_traces(numerator.subs({sp.Symbol('D', real=True): derivative_trace,
+                                        sp.Symbol('P', real=True): mass_trace}))
+
+
+def derive_absent_axial_pseudoscalar_pp():
+    """Extract a Phi^2 from the LO cA,cP sources, keeping matrix order.
+
+    The polynomial degree is sufficient: LO kinetic terms require the
+    mesonic vielbein through Phi^3 and the axial one through Phi^2, while
+    chi_plus contains the sine of its anticommutator map. The anomaly can
+    alter bilinear mixing but cannot supply an a Phi^2 vertex.
+    """
+    field_order, alp_order = sp.symbols('t z')
+    field, derivative, axial, mass_source = [sp.MatrixSymbol(name, 3, 3)
+        for name in ('phi', 'partial_mu_phi', 'c_q^A', 'chi_P_over_a')]
+    alp_derivative, alp_field, alp_scale, decay_constant = sp.symbols(
+        'partial_mu_a a f_a f_pi', real=True)
+    def commutator(first, second):
+        return first*second-second*first
+    def anticommutator(first, second):
+        return first*second+second*first
+    ordinary = -2*field_order*derivative + field_order**3*commutator(
+        field, commutator(field, derivative))/3
+    source = 2*alp_order*alp_derivative/alp_scale*(axial-field_order**2*
+        commutator(field, commutator(field, axial))/2)
+    kinetic = decay_constant**2*sp.Trace(ordinary*source+source*ordinary)/4
+    mass = decay_constant**2*alp_order*alp_field*sp.Trace(
+        2*field_order*anticommutator(field, mass_source)
+        -field_order**3*anticommutator(field, anticommutator(
+            field, anticommutator(field, mass_source)))/3)/4
+    kinetic, mass = expand_traces(kinetic), expand_traces(mass)
+    return kinetic, mass, (sp.expand(kinetic+mass).coeff(alp_order)
+                           .coeff(field_order, 2))
+
+
+def derive_axial_routing_signs():
+    """Reduce epsilon(q_R,p_i,p_j,p_k) for q_R=p_a-p_i.
+
+    P_i leaves the axial source, P_j leaves VVP, and (P_k,P_l)
+    leave VPP. The sign multiplies epsilon(p1,p2,p3,p4).
+    Determinants use momentum conservation before any mass-shell choice.
+    """
+    from itertools import permutations
+    momenta = sp.eye(4)
+    alp_momentum = sum((momenta[index, :] for index in range(4)), sp.zeros(1, 4))
+    result = []
+    for first, second in permutations(range(4), 2):
+        third, fourth = [index for index in range(4) if index not in (first, second)]
+        routed = alp_momentum-momenta[first, :]
+        coefficient = sp.det(sp.Matrix.vstack(routed, momenta[first, :],
+                                               momenta[second, :], momenta[third, :]))
+        result.append(((first+1, second+1, third+1, fourth+1), coefficient))
+    return result
+
+
+def derive_contracted_amplitudes():
+    """Sew the canonical odd vertex with classical full-tensor responses.
+
+    Fourier convention: the ALP has exp(-i p_a x), outgoing mesons
+    exp(+i p_i x). The odd-vertex normalization is inherited from the
+    executable VVP operator contraction and its canonical VV amplitude:
+    N epsilon(e_R,e_S,q_R,q_S)/(M_R M_S). Each tensor wave is
+    i(q wedge e)/M. Matching that wave to a response includes its Fourier
+    i; no additional propagator i or vertex i is inserted afterwards.
+
+    Traces are scalar symbols here solely to display the contraction.
+    The printed trace definitions specify the physical matrices.
+    """
+    coupling, decay_constant, alp_scale = sp.symbols('G_V f_pi f_a', positive=True)
+    first_denominator, second_denominator = sp.symbols('s_R_minus_M_R_squared s_S_minus_M_S_squared')
+    first_pair_trace, second_pair_trace, axial_trace = sp.symbols(
+        'Tr_T_R_comm_lambda_i_lambda_j Tr_T_S_comm_lambda_k_lambda_l Tr_T_R_comm_cA_lambda_i')
+    alp_numerator, meson_numerator = sp.symbols('N_a_RS N_j_RS')
+    # iG/sqrt2 Tr(V u_mu u_nu), two outgoing derivatives give i*i=-1.
+    pair_current = -sp.I*coupling*second_pair_trace/(2*sp.sqrt(2)*decay_constant**2)
+    pair_response = 2*pair_current/second_denominator
+    # wedge(pk+pl,pk)=-wedge(pk,pl), hence divide by -i.
+    pair_polarization = sp.simplify(pair_response/(-sp.I))
+    # The incoming ALP derivative (-i) and outgoing meson derivative (+i)
+    # have product +1. Convert V pa pi to half its wedge before the Hessian.
+    axial_current = -sp.sqrt(2)*sp.I*coupling*axial_trace/(2*decay_constant*alp_scale)
+    axial_response = 2*axial_current/first_denominator
+    # At the odd vertex the crossed vector momentum is -q_R and
+    # wedge(-q_R,pi)=-wedge(pa,pi).
+    axial_polarization = sp.simplify(axial_response/(-sp.I))
+    first_pair_polarization = pair_polarization.subs({
+        second_pair_trace:first_pair_trace, second_denominator:first_denominator})
+    basis = sp.eye(4)
+    first_vector = basis[0, :]+basis[1, :]
+    second_vector = basis[2, :]+basis[3, :]
+    pair_epsilon = sp.det(sp.Matrix.vstack(basis[0, :],basis[2, :],
+                                           first_vector,second_vector))
+    crossed_vector = -(basis[1, :]+basis[2, :]+basis[3, :])
+    axial_epsilon = sp.det(sp.Matrix.vstack(basis[0, :],basis[2, :],
+                                            crossed_vector,second_vector))
+    pair_amplitude = sp.simplify(alp_numerator*first_pair_polarization*
+                                 pair_polarization*pair_epsilon)
+    axial_amplitude = sp.simplify(meson_numerator*axial_polarization*
+                                  pair_polarization*axial_epsilon)
+    return {'pair_current':pair_current, 'pair_response':pair_response,
+            'axial_current':axial_current, 'axial_response':axial_response,
+            'pair_epsilon':pair_epsilon, 'axial_epsilon':axial_epsilon,
+            'pair_amplitude':pair_amplitude, 'axial_amplitude':axial_amplitude}
+
+
 def show(label, expression):
     """Print deterministic symbolic expressions in the standard LaTeX format."""
     print(f'{label}:\n{sp.latex(expression)}\n')
@@ -182,6 +323,38 @@ def main():
          expand_traces(derive_general_vector_source_vertices()))
     show('Rotated scalar-source aVV Lagrangian coefficient, contracted Lorentz indices',
          derive_scalar_mass_vertices())
+    axial_lagrangian, axial_coefficient, axial_residual = derive_axial_vp_source()
+    show('G_V axial-source polarized Lagrangian', axial_lagrangian)
+    show('Coefficient of partial_mu_a partial_nu_P_i in the axial source', axial_coefficient)
+    show('Axial-source coefficient minus -sqrt(2) i G_V Tr(T_R[c_q^A,lambda_i_dagger])/(f_pi f_a)', axial_residual)
+    kinetic, mass, absent_pp = derive_absent_axial_pseudoscalar_pp()
+    show('LO axial kinetic source through t cubed, t counts Phi', kinetic)
+    show('LO pseudoscalar mass source through t cubed, t counts Phi', mass)
+    show('LO aPP coefficient for c_q^A and c_q^P', absent_pp)
+    show('Odd aVV numerator with explicit no-mixing axial and pseudoscalar sources',
+         derive_axial_pseudoscalar_vv())
+    for assignment, sign in derive_axial_routing_signs():
+        show(f'epsilon(q_R,p_i,p_j,p_k), (i,j,k,l)={assignment}', sign)
+    for label, expression in derive_contracted_amplitudes().items():
+        show('Sewn canonical scalar amplitude: '+label, expression)
+    print('For the pair family sum the displayed pair_amplitude over '
+          '(ij)(kl)=(12)(34),(13)(24),(14)(23), with permutation signs '
+          '+,-,+, and over real orthonormal vector generators R,S. '
+          'For the axial family sum axial_amplitude over ordered distinct '
+          'i,j, put the remaining labels in k<l, multiply by the parity of '
+          '(i,j,k,l), and sum R,S. The common Lorentz factor is '
+          'epsilon(p1,p2,p3,p4). N_a_RS is the odd numerator with '
+          'U=2cA/fa,Y=-2{cP,chi}/fa and qR²=sij,qS²=skl. '
+          'N_j_RS uses U=-lambda_j_dagger/fpi,Y={lambda_j_dagger,chi}/fpi, '
+          'source mass squared=mj², qR²=(pa-pi)²,qS²=(pk+pl)². '
+          'N already includes both vector assignments; do not double it. '
+          'Tree propagators have +i0. No widths are inserted.')
+    print('For c_q^A,c_q^P only, the aPP+VPP+VPP family is absent. '
+          'Its LO source coefficient is zero before introducing an internal '
+          'pseudoscalar propagator. The remaining families are odd aVV '
+          'and axial aVP+VVP+VPP. The polarized axial source is a '
+          'Lagrangian coefficient; the sewn expressions above include '
+          'Fourier factors through matching to the canonical odd amplitude.')
     print('aVV has separate odd VVP-source and even vector-source tensors. '
           'aVP is the axial G_V source; aVPP and even aVV arise from the '
           'vector source. aPP followed by VPP and VPP has one internal '
@@ -221,6 +394,21 @@ if __name__ == '__main__':
             source = sp.MatrixSymbol('c_q^VS', 3, 3)
             self.assertEqual(sp.simplify(derive_scalar_mass_vertices().subs(
                 source, sp.Identity(3)).doit()), 0)
+
+        def test_axial_source_antisymmetry(self):
+            self.assertEqual(derive_axial_vp_source()[2], 0)
+
+        def test_no_axial_or_pseudoscalar_a_pp(self):
+            self.assertEqual(derive_absent_axial_pseudoscalar_pp()[2], 0)
+
+        def test_axial_routing(self):
+            self.assertEqual(len(derive_axial_routing_signs()), 12)
+            self.assertTrue(all(abs(sign) == 1 for _, sign in derive_axial_routing_signs()))
+
+        def test_sewn_epsilon_signs(self):
+            sewn = derive_contracted_amplitudes()
+            self.assertEqual(sewn['pair_epsilon'], -1)
+            self.assertEqual(sewn['axial_epsilon'], 1)
 
     if '--test' in sys.argv:
         unittest.main(argv=[sys.argv[0]])
