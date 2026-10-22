@@ -58,49 +58,6 @@ def _meson_inputs():
     return generators, tree_masses
 
 
-@dataclass(frozen=True)
-class _VectorTwoPseudoscalarAmplitude:
-    """Prepared invariant coefficients for one ordered V,P1,P2 state.
-
-    ``terms`` stores (coefficient index, invariant index, pole mass, width,
-    constant numerator, linear numerator). Invariant indices 0,1,2 denote
-    s,t,u. Coefficient indices denote F_odd,F_1,F_2. All units are GeV.
-    """
-    ma: float
-    masses: tuple
-    final_state: tuple
-    terms: tuple
-
-    def __call__(self, s, t):
-        """Return the coherent F_odd, F_1, F_2 coefficients at (s,t)."""
-        invariants = (s, t, self.ma**2 + sum(m**2 for m in self.masses) - s - t)
-        result = np.zeros(3, dtype=complex)
-        for coefficient, invariant, mass, width, constant, linear in self.terms:
-            virtuality = invariants[invariant]
-            result[coefficient] += (constant + linear * virtuality) / (
-                virtuality - mass**2 + 1j * mass * width)
-        return tuple(result)
-
-    def squared(self, s, t):
-        """Return the polarization-summed squared amplitude (no spin average)."""
-        vector_mass, first_mass, second_mass = self.masses
-        u = self.ma**2 + sum(m**2 for m in self.masses) - s - t
-        vector_first = (u - vector_mass**2 - first_mass**2) / 2
-        vector_second = (t - vector_mass**2 - second_mass**2) / 2
-        first_second = (s - first_mass**2 - second_mass**2) / 2
-        gram = np.array([[vector_mass**2, vector_first, vector_second],
-                         [vector_first, first_mass**2, first_second],
-                         [vector_second, first_second, second_mass**2]])
-        odd, first, second = self(s, t)
-        transverse_first = vector_first**2 / vector_mass**2 - first_mass**2
-        transverse_second = vector_second**2 / vector_mass**2 - second_mass**2
-        transverse_cross = vector_first * vector_second / vector_mass**2 - first_second
-        return max(0., float(max(0., np.linalg.det(gram)) * abs(odd)**2
-                             + transverse_first * abs(first)**2
-                             + transverse_second * abs(second)**2
-                             + 2 * transverse_cross * (first * second.conjugate()).real))
-
-
 def vector_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
                                       vector: str, meson_1: str, meson_2: str):
     """Return callable (F_odd,F_1,F_2) for a -> V P1 P2.
@@ -125,7 +82,7 @@ def vector_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcoupli
     state = (vector, first_name, second_name)
     charges = {'pi+': 1, 'K+': 1, 'pi-': -1, 'K-': -1}
     if ma <= sum(masses) or charges.get(first_name, 0)+charges.get(second_name, 0):
-        return _VectorTwoPseudoscalarAmplitude(ma, masses, state, ())
+        return _prepare_amplitude(ma, masses, state, ())
     vector_source = np.zeros((3, 3), complex)
     vector_source[1, 2], vector_source[2, 1] = cqVS[1, 2], cqVS[2, 1]
     generators, tree_masses = _meson_inputs()
@@ -185,49 +142,153 @@ def vector_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcoupli
         constant, linear = map(_sum_flavour_coefficients, (constants, linears))
         if constant != 0j or linear != 0j:
             terms.append((*key, constant, linear))
-    return _VectorTwoPseudoscalarAmplitude(ma, masses, state, tuple(terms))
+    return _prepare_amplitude(ma, masses, state, tuple(terms))
+
+@dataclass(frozen=True)
+class _VectorTwoPseudoscalarAmplitude:
+    """Scalar-prepared coefficients and polarization sum for one VPP state.
+
+    The original terms remain available for identical pole subdivisions.
+    Prepared terms contain coefficient index, complex pole and numerator.
+    Masses and widths use GeV throughout.
+    """
+    ma: float
+    masses: tuple
+    final_state: tuple
+    terms: tuple
+    prepared_terms: tuple
+    squared_masses: tuple
+    total_squared: float
+
+    def t_limits(self, s):
+        """Return the physical t interval in GeV squared at fixed s."""
+        vector_squared, first_squared, second_squared = self.squared_masses
+        parent_squared = self.ma*self.ma
+        center = vector_squared+second_squared + (
+            (parent_squared-vector_squared-s)*(s+second_squared-first_squared)/(2*s))
+        first_kallen = (parent_squared-vector_squared-s)**2-4*vector_squared*s
+        second_kallen = (s-first_squared-second_squared)**2-4*first_squared*second_squared
+        half_range = math.sqrt(max(0., first_kallen)*max(0., second_kallen))/(2*s)
+        return center-half_range, center+half_range
+
+    def coefficients_at_fixed_s(self, s):
+        """Prepare F_odd,F_1,F_2 evaluation with all s poles computed once."""
+        fixed = [0j, 0j, 0j]
+        for coefficient, pole, constant, linear in self.prepared_terms[0]:
+            fixed[coefficient] += (constant+linear*s)/(s-pole)
+        fixed_odd, fixed_first, fixed_second = fixed
+        crossed_offset = self.total_squared-s
+        t_terms, u_terms = self.prepared_terms[1:]
+
+        def coefficients(t):
+            """Evaluate the three coherent coefficients with scalar arithmetic."""
+            odd, first, second = fixed_odd, fixed_first, fixed_second
+            for coefficient, pole, constant, linear in t_terms:
+                contribution = (constant+linear*t)/(t-pole)
+                if coefficient == 0:
+                    odd += contribution
+                elif coefficient == 1:
+                    first += contribution
+                else:
+                    second += contribution
+            u = crossed_offset-t
+            for coefficient, pole, constant, linear in u_terms:
+                contribution = (constant+linear*u)/(u-pole)
+                if coefficient == 0:
+                    odd += contribution
+                elif coefficient == 1:
+                    first += contribution
+                else:
+                    second += contribution
+            return odd, first, second
+
+        return coefficients
+
+    def __call__(self, s, t):
+        """Return coherent F_odd,F_1,F_2 with the reference normalization."""
+        return self.coefficients_at_fixed_s(s)(t)
+
+    def at_fixed_s(self, s, lower=None, upper=None):
+        """Prepare the scalar polarization sum for repeated inner evaluations.
+
+        The exact Gram determinant is s*(t-t_minus)*(t_plus-t)/4.
+        Its t dependence retains the angular zero at either boundary.
+        """
+        if lower is None:
+            lower, upper = self.t_limits(s)
+        coefficients = self.coefficients_at_fixed_s(s)
+        vector_squared, first_squared, second_squared = self.squared_masses
+        inverse_vector_squared = 1/vector_squared
+        first_second = (s-first_squared-second_squared)/2
+        first_offset = (self.total_squared-s-vector_squared-first_squared)/2
+        second_offset = (vector_squared+second_squared)/2
+        odd_factor = s/4
+
+        def squared(t):
+            """Evaluate the polarization sum without NumPy arrays or determinant."""
+            vector_first = first_offset-t/2
+            vector_second = t/2-second_offset
+            odd, first, second = coefficients(t)
+            gram = max(0., odd_factor*(t-lower)*(upper-t))
+            transverse_first = vector_first*vector_first*inverse_vector_squared-first_squared
+            transverse_second = vector_second*vector_second*inverse_vector_squared-second_squared
+            transverse_cross = vector_first*vector_second*inverse_vector_squared-first_second
+            return max(0., float(gram*abs(odd)**2 + transverse_first*abs(first)**2
+                                 + transverse_second*abs(second)**2
+                                 + 2*transverse_cross*(first*second.conjugate()).real))
+
+        return squared
+
+    def squared(self, s, t):
+        """Return the pointwise polarization sum for direct callers."""
+        return self.at_fixed_s(s)(t)
+
+
+def _prepare_amplitude(ma, masses, final_state, terms):
+    """Prepare complex poles and squared GeV masses for scalar evaluation."""
+    groups = [[], [], []]
+    for coefficient, invariant, mass, width, constant, linear in terms:
+        groups[invariant].append((coefficient, complex(mass*mass, -mass*width),
+                                  complex(constant), complex(linear)))
+    squared_masses = tuple(mass*mass for mass in masses)
+    return _VectorTwoPseudoscalarAmplitude(
+        ma, masses, final_state, terms, tuple(tuple(group) for group in groups),
+        squared_masses, ma*ma+sum(squared_masses))
 
 
 def vector_two_pseudoscalar_width(ma: float, fa: float, couplings: ALPcouplings,
                                   vector: str, meson_1: str, meson_2: str) -> float:
-    """Return Gamma(a -> V P1 P2) in GeV for one selected channel.
+    """Return scalar-prepared Gamma(a -> VPP), in GeV.
 
-    Uses nested Dalitz quadrature with relative tolerance 1e-5, internal pole
-    subdivisions and the identical-pseudoscalar factor 1/2!. Threshold and
-    charge-forbidden channels return zero before integration. SciPy reports
-    quadrature convergence warnings to the caller.
+    Uses relative tolerance 1e-5, internal pole subdivisions and the
+    identical-pseudoscalar factor 1/2!. Fixed-s coefficients are reused
+    by all evaluations of the inner quadrature.
     """
-    amplitude = vector_two_pseudoscalar_amplitude(ma, fa, couplings, vector, meson_1, meson_2)
-    epsabs, epsrel, limit = 0., 1e-5, 150
+    amplitude = vector_two_pseudoscalar_amplitude(
+        ma, fa, couplings, vector, meson_1, meson_2)
     if not amplitude.terms:
         return 0.
-    ma = amplitude.ma
     vector_mass, first_mass, second_mass = amplitude.masses
-    total_squared = ma**2 + sum(mass**2 for mass in amplitude.masses)
-
-    def kallen(first, second, third):
-        """Return the Kallen polynomial for squared invariant arguments."""
-        return first**2 + second**2 + third**2 - 2*(first*second + first*third + second*third)
+    total_squared = amplitude.total_squared
+    crossed_poles = tuple((invariant, mass*mass)
+                          for _, invariant, mass, _, _, _ in amplitude.terms
+                          if invariant in (1, 2))
 
     def integrate_t(s):
-        """Integrate the polarization sum over t at fixed s."""
-        center = vector_mass**2 + second_mass**2 + (
-            (ma**2-vector_mass**2-s)*(s+second_mass**2-first_mass**2)/(2*s))
-        half_range = math.sqrt(max(0., kallen(ma**2, vector_mass**2, s))
-                               * max(0., kallen(s, first_mass**2, second_mass**2))) / (2*s)
-        lower, upper = center-half_range, center+half_range
+        """Integrate a prepared scalar polarization sum over t at fixed s."""
+        lower, upper = amplitude.t_limits(s)
         points = set()
-        for _, invariant, mass, _, _, _ in amplitude.terms:
-            pole = mass**2 if invariant == 1 else total_squared-s-mass**2
-            if invariant in (1, 2) and lower < pole < upper:
+        for invariant, mass_squared in crossed_poles:
+            pole = mass_squared if invariant == 1 else total_squared-s-mass_squared
+            if lower < pole < upper:
                 points.add(pole)
-        return quad(lambda t: amplitude.squared(s, t), lower, upper,
-                    points=sorted(points), epsabs=epsabs, epsrel=epsrel, limit=limit)[0]
+        return quad(amplitude.at_fixed_s(s, lower, upper), lower, upper,
+                    points=sorted(points), epsabs=0., epsrel=1e-5, limit=150)[0]
 
     lower, upper = (first_mass+second_mass)**2, (ma-vector_mass)**2
-    points = sorted({mass**2 for _, invariant, mass, _, _, _ in amplitude.terms
-                     if invariant == 0 and lower < mass**2 < upper})
+    points = sorted({mass*mass for _, invariant, mass, _, _, _ in amplitude.terms
+                     if invariant == 0 and lower < mass*mass < upper})
     integral = quad(integrate_t, lower, upper, points=points,
-                    epsabs=epsabs, epsrel=epsrel, limit=limit)[0]
+                    epsabs=0., epsrel=1e-5, limit=150)[0]
     identical_factor = 2 if amplitude.final_state[1] == amplitude.final_state[2] else 1
-    return integral / (256*math.pi**3*ma**3*identical_factor)
+    return integral/(256*math.pi**3*ma**3*identical_factor)

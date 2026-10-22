@@ -75,6 +75,8 @@ def three_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
     Supported particles: pi+, pi-, pi0, K+, K-, K0, K0bar, KS, KL,
     eta, eta_prime. Outgoing generators are Hermitian conjugated.
     All six labelled permutations retain identical-particle multiplicities.
+    Masses, decay constants and widths use GeV. Scalar factors are prepared
+    once, with finite-width poles and matching retained exactly.
     """
     particles = _pseudoscalars()
     masses, generators = zip(*(particles[name] for name in (meson_1, meson_2, meson_3)))
@@ -106,35 +108,55 @@ def three_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
         if abs(flavour) > 64*np.finfo(float).eps*coefficient_scale:
             exchanges.append((*key, flavour))
 
+    squared_masses = tuple(float(mass*mass) for mass in masses)
+    parent_squared = ma*ma
+    total_squared = parent_squared + sum(squared_masses)
+    normalization = 12*fa*F_PI
+    # Substitute s13=total_squared-s12-s23 in the LO chiral polynomial.
+    chiral_constant = complex(-mass_trace/(6*fa*F_PI) + sum(
+        derivative_traces[index]*(parent_squared+squared_masses[index])
+        for index in range(3))/normalization
+        - derivative_traces[1]*total_squared/normalization)
+    chiral_first = complex((derivative_traces[1]-derivative_traces[2])/normalization)
+    chiral_second = complex((derivative_traces[1]-derivative_traces[0])/normalization)
+    invariant_indices = {(0, 1): 0, (1, 2): 1, (0, 2): 2}
+    grouped_exchanges = {}
+    for spectator, first, second, mass, width, flavour in exchanges:
+        pole = complex(mass*mass, -mass*width)
+        grouped_exchanges.setdefault((spectator, first, second), []).append(
+            (pole, complex(flavour*pole/(8*F_PI*fa*mass*mass))))
+    prepared_exchanges = tuple((
+        invariant_indices[(first, second)],
+        invariant_indices[tuple(sorted((first, spectator)))],
+        invariant_indices[tuple(sorted((second, spectator)))],
+        (squared_masses[second]-squared_masses[first])
+        *(parent_squared-squared_masses[spectator]), tuple(poles))
+        for (spectator, first, second), poles in grouped_exchanges.items())
+
     def amplitude(s12, s23):
-        """Evaluate the invariant amplitude for the requested ordered channel."""
-        invariants = {(0, 1): s12, (1, 2): s23,
-                      (0, 2): ma**2+sum(mass**2 for mass in masses)-s12-s23}
-        result = -mass_trace/(6*fa*F_PI)
-        for differentiated in range(3):
-            pair = tuple(index for index in range(3) if index != differentiated)
-            result += derivative_traces[differentiated]*(
-                ma**2+masses[differentiated]**2-invariants[pair])/(12*fa*F_PI)
-        for spectator, first, second, mass, width, flavour in exchanges:
-            pair_invariant = invariants[(first, second)]
-            first_invariant = invariants[tuple(sorted((first, spectator)))]
-            second_invariant = invariants[tuple(sorted((second, spectator)))]
-            first_squared, second_squared, spectator_squared = (
-                masses[index]**2 for index in (first, second, spectator))
-            pole_numerator = pair_invariant/4*(
-                (pair_invariant+second_squared-first_squared)*(first_invariant-first_squared-spectator_squared)
-                -(pair_invariant+first_squared-second_squared)*(second_invariant-second_squared-spectator_squared))
-            matching = ((first_invariant-first_squared-spectator_squared)*(ma**2+second_squared-first_invariant)
-                        -(second_invariant-second_squared-spectator_squared)*(ma**2+first_squared-second_invariant))/4
-            result += flavour/(2*F_PI*fa*mass**2)*(
-                pole_numerator/(mass**2-pair_invariant-1j*mass*width)+matching)
+        """Evaluate the same coherent amplitude with prepared scalar factors.
+
+        On shell, the pole numerator is s_ij times the matching polynomial.
+        Their exact sum is evaluated with the same complex pole and width.
+        No zero-width or low-energy expansion is made.
+        """
+        invariants = s12, s23, total_squared-s12-s23
+        result = chiral_constant + chiral_first*s12 + chiral_second*s23
+        for pair, first, second, constant, poles in prepared_exchanges:
+            pair_invariant = invariants[pair]
+            numerator = pair_invariant*(invariants[first]-invariants[second])+constant
+            residue = 0j
+            for pole, coefficient in poles:
+                residue += coefficient/(pole-pair_invariant)
+            result += numerator*residue
         return complex(result)
+
     return amplitude
 
 
 def three_pseudoscalar_width(ma: float, fa: float, couplings: ALPcouplings,
                               meson_1: str, meson_2: str, meson_3: str) -> float:
-    """Return Gamma(a -> P1 P2 P3) in GeV, including vector interference.
+    """Return the scalar-prepared Gamma(a -> P1 P2 P3) in GeV.
 
     Identical particles contribute 1/prod(n!). Numerical integration uses
     relative tolerance 1e-5. Thresholds use observed pseudoscalar masses.
@@ -146,12 +168,20 @@ def three_pseudoscalar_width(ma: float, fa: float, couplings: ALPcouplings,
         return 0.0
     amplitude = three_pseudoscalar_amplitude(ma, fa, couplings, *names)
 
+    first_squared, second_squared, third_squared = (
+        mass*mass for mass in (first_mass, second_mass, third_mass))
+    parent_squared = ma*ma
+    pair_threshold = (first_mass+second_mass)**2
+    pair_difference = (first_mass-second_mass)**2
+    upper_invariant = (ma-third_mass)**2
+    upper_sum = (ma+third_mass)**2
+
     def integrate_second_invariant(s12):
         """Integrate over the second Dalitz invariant at fixed s12."""
-        center = second_mass**2+third_mass**2+(
-            (s12+second_mass**2-first_mass**2)*(ma**2-s12-third_mass**2))/(2*s12)
-        product = ((s12-(first_mass+second_mass)**2)*(s12-(first_mass-second_mass)**2)
-                   *((ma-third_mass)**2-s12)*((ma+third_mass)**2-s12))
+        center = second_squared+third_squared+(
+            (s12+second_squared-first_squared)*(parent_squared-s12-third_squared))/(2*s12)
+        product = ((s12-pair_threshold)*(s12-pair_difference)
+                   *(upper_invariant-s12)*(upper_sum-s12))
         half_width = np.sqrt(max(0., product))/(2*s12)
         return quad(lambda s23: abs(amplitude(s12, s23))**2,
                     center-half_width, center+half_width, epsabs=0., epsrel=1e-5, limit=200)[0]

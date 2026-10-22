@@ -19,6 +19,8 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [alp-three-meson-widths-numerical.md](alp-three-meson-widths-numerical.md) — numerical width implementation.
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — candidate methods to speed up three-body integrations and open trade-offs for mass scans and four-body decays.
 - [photon-pp-scalar-optimization.md](photon-pp-scalar-optimization.md) — completed and approved scalar evaluation optimization for $a\to\gamma PP$, with validation and timing results.
+- [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md) — completed scalar amplitude and width optimization for production $a\to3P$, with exact pole-plus-matching reduction and benchmarks.
+- [vpp-scalar-optimization.md](vpp-scalar-optimization.md) — completed scalar polarization-sum and width optimization for production $a\to VPP$, with pointwise validation and benchmarks.
 - [a3p-vector-exchange-classifier.md](a3p-vector-exchange-classifier.md) — vector-exchange flavor classifier.
 - [a3p-vector-exchange-amplitude.md](a3p-vector-exchange-amplitude.md) — vector-pole and representation-matching amplitudes.
 - [flavor-conserving-neutral-vector-selection-rule.md](flavor-conserving-neutral-vector-selection-rule.md) — neutral-vector flavor selection rule.

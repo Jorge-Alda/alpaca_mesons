@@ -25,7 +25,7 @@ Resonances and threshold boundaries can spoil convergence of a global fixed grid
 
 ### Cheaper integrand evaluation
 
-Prepare flavor traces, pole groupings, masses, mass-square combinations, and invariant-independent coefficients once per width call. Profile amplitude construction separately from quadrature. The inspected vector--pseudoscalar--pseudoscalar implementation performs small NumPy allocations and a determinant in its pointwise polarization contraction; the photon--pseudoscalar--pseudoscalar path recomputes quantities such as Dalitz limits inside the inner evaluation. These are candidates for algebraically equivalent scalar expressions, hoisted constants, batched evaluation, or compilation. Their benefit should be measured before expanding the implementation complexity.
+Scalar-prepared evaluators have been implemented, benchmarked, and promoted to the production APIs for $a\to\gamma PP$, $a\to3P$, and $a\to VPP$. See [photon-pp-scalar-optimization.md](photon-pp-scalar-optimization.md), [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md), and [vpp-scalar-optimization.md](vpp-scalar-optimization.md). The former slow evaluators for $a\to3P$ and $a\to VPP$ have been removed from production code and are retained only in the benchmark script as reference calculations. These results validate the named scalar transformations, not a general speedup claim for other channels or integration methods.
 
 ### Analytic inner integration
 
