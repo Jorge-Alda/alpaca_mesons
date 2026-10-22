@@ -39,3 +39,4 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [alp-vpp-width.md](alp-vpp-width.md) — invariant polarization sum and two-variable $a\to VPP$ width with the $|\Delta S|=1$ even-source restriction.
 - [alp-vpp-width-numerical.md](alp-vpp-width-numerical.md) — selected-channel numerical calculator, fit inputs, kaon cancellations, and line-shape assumptions.
 - [alp-vpp-selection-rules.md](alp-vpp-selection-rules.md) — trace-derived channels for the even amplitude and odd amplitude with diagonal or neutral $|\Delta S|=1$ ALP sources.
+- [alp-four-pseudoscalar-vector-exchange.md](alp-four-pseudoscalar-vector-exchange.md) — complete tree topology inventory and derived vertex ingredients for $a\to4P$ vector exchange; full Lorentz and routing assembly remains incomplete.
