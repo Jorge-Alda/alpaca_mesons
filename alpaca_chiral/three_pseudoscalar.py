@@ -115,7 +115,6 @@ def three_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
             pair = tuple(index for index in range(3) if index != differentiated)
             result += derivative_traces[differentiated]*(
                 ma**2+masses[differentiated]**2-invariants[pair])/(12*fa*F_PI)
-        return complex(result)
         for spectator, first, second, mass, width, flavour in exchanges:
             pair_invariant = invariants[(first, second)]
             first_invariant = invariants[tuple(sorted((first, spectator)))]

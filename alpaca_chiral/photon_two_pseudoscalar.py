@@ -32,38 +32,6 @@ def _canonicalize_terms(terms):
     return tuple(terms)
 
 
-@dataclass(frozen=True)
-class _PhotonTwoPseudoscalarAmplitude:
-    """One prepared ordered meson pair and its scalar amplitude in GeV^-3.
-
-    Terms contain (invariant index, pole mass, pole width, constant, linear).
-    Indices 0,1,2 denote s=(p1+p2)^2,t=(k+p2)^2,u=(k+p1)^2.
-    Coefficients of identical propagators are summed before evaluation.
-    """
-    ma: float
-    masses: tuple
-    final_state: tuple
-    terms: tuple
-
-    def __call__(self, s, t):
-        """Evaluate the coherent scalar; an empty model returns exact zero."""
-        if not self.terms:
-            return 0j
-        invariants = (s, t, self.ma**2 + sum(m*m for m in self.masses)-s-t)
-        return sum(((constant+linear*invariants[index]) /
-                    (invariants[index]-mass**2+1j*mass*width)
-                    for index, mass, width, constant, linear in self.terms), 0j)
-
-    def squared(self, s, t):
-        """Photon-polarization sum, using the stable physical Dalitz form."""
-        if not self.terms:
-            return 0.
-        lower, upper = _photon_two_pseudoscalar_t_limits(self.ma, *self.masses, s)
-        # det Gram = s (t-t_minus)(t_plus-t)/4 in the physical region.
-        determinant = max(0., s*(t-lower)*(upper-t)/4)
-        return determinant*abs(self(s, t))**2
-
-
 def _photon_two_pseudoscalar_t_limits(ma, first_mass, second_mass, s):
     """Return the physical t boundaries in GeV^2 at fixed s (GeV^2)."""
     discriminant = (s-(first_mass+second_mass)**2)*(s-(first_mass-second_mass)**2)
@@ -87,18 +55,13 @@ def _canonical_meson_name(name):
     raise ValueError(f'unsupported pseudoscalar: {name!r}')
 
 
-def photon_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcouplings,
-                                       meson_1: str, meson_2: str):
-    """Return the callable odd scalar coefficient in GeV^-3 for a -> gamma PP.
+def _prepare_photon_two_pseudoscalar_terms(ma: float, fa: float, couplings: ALPcouplings,
+                                           meson_1: str, meson_2: str):
+    """Prepare flavour coefficients for the odd scalar amplitude.
 
-    The amplitude is epsilon(eps_gamma,p1,p2,k) times this coefficient,
-    with metric (+---) and epsilon^0123=+1. The callable takes
-    s=(p1+p2)^2 and t=(k+p2)^2 in GeV^2 and supplies the photon polarization
-    sum through squared(s,t). Meson names follow three_pseudoscalar_amplitude.
-    KS and KL use coherent outgoing states with the library's complex
-    epsilon_K. ALPcouplings is rotated to the no-mixing basis with
-    pseudoscalar_diag.py. Sources are assumed to commute with electric charge.
-    Threshold and charge-forbidden pairs return an empty amplitude.
+    Returns the external-state metadata and ungrouped pole terms used by the
+    optimized scalar evaluator. The physics inputs and channel selection are
+    unchanged from the former public amplitude constructor.
     """
     first_name, second_name = map(_canonical_meson_name, (meson_1, meson_2))
     state = (first_name, second_name)
@@ -106,7 +69,7 @@ def photon_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcoupli
     masses = tuple(particles[name][0] for name in state)
     charges = {'pi+': 1, 'K+': 1, 'pi-': -1, 'K-': -1}
     if ma <= sum(masses) or sum(charges.get(name, 0) for name in state):
-        return _PhotonTwoPseudoscalarAmplitude(ma, masses, state, ())
+        return ma, masses, state, ()
     axial, pseudoscalar, _ = _no_mixing_couplings(couplings, ma)
     fitted = _read_vector_inputs()
     g_v = fitted['even_parameters']['G_V_GeV']
@@ -163,40 +126,133 @@ def photon_two_pseudoscalar_amplitude(ma: float, fa: float, couplings: ALPcoupli
         if constant != 0j or linear != 0j:
             terms.append((*key, constant, linear))
     terms = _canonicalize_terms(terms)
-    return _PhotonTwoPseudoscalarAmplitude(ma, masses, state, terms)
+    return ma, masses, state, terms
 
 
-def photon_two_pseudoscalar_width(ma: float, fa: float, couplings: ALPcouplings,
-                                   meson_1: str, meson_2: str) -> float:
-    """Return the retained odd Gamma(a -> gamma P1 P2) in GeV.
+@dataclass(frozen=True)
+class _PhotonTwoPseudoscalarAmplitudeOptimized:
+    """Prepared scalar arithmetic for the same odd amplitude, in GeV^-3.
 
-    Nested Dalitz quadrature uses relative tolerance 1e-5 and subdivisions
-    at internal vector poles. The identical-meson factor is included.
-    Closed, charge-forbidden and exactly cancelled channels return zero;
-    SciPy quadrature convergence warnings propagate to the caller.
+    Each invariant group contains (complex pole, constant, linear), with
+    pole = m_V^2 - i m_V Gamma_V. No propagator approximation is made.
     """
-    amplitude = photon_two_pseudoscalar_amplitude(ma, fa, couplings, meson_1, meson_2)
-    epsabs, epsrel, limit = 0., 1e-5, 150
+    ma: float
+    masses: tuple
+    final_state: tuple
+    terms: tuple
+    invariant_terms: tuple
+    total_squared: float
+    threshold_squared: float
+    mass_difference_squared: float
+    second_mass_squared: float
+    daughter_squared_difference: float
+
+    def t_limits(self, s):
+        """Physical t boundaries in GeV^2 using prepared mass combinations."""
+        photon_energy_factor = (self.ma*self.ma-s)/(2*s)
+        center = self.second_mass_squared + photon_energy_factor*(
+            s+self.daughter_squared_difference)
+        half_range = photon_energy_factor*math.sqrt(max(
+            0., (s-self.threshold_squared)*(s-self.mass_difference_squared)))
+        return center-half_range, center+half_range
+
+    def at_fixed_s(self, s):
+        """Return the scalar evaluator with all s-only work already done."""
+        s_terms, t_terms, u_terms = self.invariant_terms
+        scalar_s = 0j
+        for pole, constant, linear in s_terms:
+            scalar_s += (constant+linear*s)/(s-pole)
+        u_offset = self.total_squared-s
+
+        def scalar(t):
+            """Coherent scalar coefficient at the prepared s, in GeV^-3."""
+            value = scalar_s
+            for pole, constant, linear in t_terms:
+                value += (constant+linear*t)/(t-pole)
+            u = u_offset-t
+            for pole, constant, linear in u_terms:
+                value += (constant+linear*u)/(u-pole)
+            return value
+
+        return scalar
+
+    def __call__(self, s, t):
+        """Evaluate the coherent scalar coefficient in GeV^-3."""
+        if not self.terms:
+            return 0j
+        return self.at_fixed_s(s)(t)
+
+    def squared(self, s, t):
+        """Return the photon polarization sum at physical Dalitz coordinates."""
+        if not self.terms:
+            return 0.
+        lower, upper = self.t_limits(s)
+        return max(0., s*(t-lower)*(upper-t)/4)*abs(self(s, t))**2
+
+
+def photon_two_pseudoscalar_amplitude(
+        ma: float, fa: float, couplings: ALPcouplings,
+        meson_1: str, meson_2: str):
+    """Return the optimized callable odd scalar coefficient in GeV^-3.
+
+    Inputs, units, retained contributions and conventions are those of
+    the retained odd $a\to\gamma PP$ model. The amplitude is
+    epsilon(eps_gamma,p1,p2,k) times this coefficient, with metric (+---) and
+    epsilon^0123=+1. The callable takes s=(p1+p2)^2 and t=(k+p2)^2 in GeV^2.
+    `at_fixed_s(s)` reuses the s-channel contribution in inner integrations.
+    Threshold and charge-forbidden pairs return an empty amplitude.
+    """
+    ma, masses, state, terms = _prepare_photon_two_pseudoscalar_terms(
+        ma, fa, couplings, meson_1, meson_2)
+    first_mass, second_mass = masses
+    groups = tuple(tuple((complex(mass*mass, -mass*width),
+                          complex(constant), complex(linear))
+                         for index, mass, width, constant, linear in terms
+                         if index == invariant) for invariant in range(3))
+    return _PhotonTwoPseudoscalarAmplitudeOptimized(
+        ma, masses, state, terms,
+        groups, ma*ma+first_mass*first_mass+second_mass*second_mass,
+        (first_mass+second_mass)**2, (first_mass-second_mass)**2,
+        second_mass*second_mass, second_mass*second_mass-first_mass*first_mass)
+
+
+def photon_two_pseudoscalar_width(
+        ma: float, fa: float, couplings: ALPcouplings,
+        meson_1: str, meson_2: str) -> float:
+    """Return the odd photon PP width in GeV using prepared scalar algebra.
+
+    Uses the original width's tolerances, pole subdivisions and symmetry
+    factor. Bounds and the s-channel scalar are computed once per outer
+    quadrature call; complex poles and mass combinations once per width.
+    No phase-space or propagator approximation is introduced.
+    """
+    amplitude = photon_two_pseudoscalar_amplitude(
+        ma, fa, couplings, meson_1, meson_2)
     if not amplitude.terms:
         return 0.
-    ma, (first_mass, second_mass) = amplitude.ma, amplitude.masses
-    total_squared = ma**2+first_mass**2+second_mass**2
+    s_poles, t_poles, u_poles = (
+        tuple(sorted({pole.real for pole, _, _ in group}))
+        for group in amplitude.invariant_terms)
 
     def integrate_t(s):
-        """Integrate the photon polarization sum over t at fixed s."""
-        lower, upper = _photon_two_pseudoscalar_t_limits(ma, first_mass, second_mass, s)
-        points = set()
-        for index, mass, _, _, _ in amplitude.terms:
-            pole = mass**2 if index == 1 else total_squared-s-mass**2
-            if index in (1, 2) and lower < pole < upper:
-                points.add(pole)
-        return quad(lambda t: amplitude.squared(s, t), lower, upper,
-                    points=sorted(points), epsabs=epsabs, epsrel=epsrel, limit=limit)[0]
+        """Integrate the prepared polarization sum over t at fixed s."""
+        lower, upper = amplitude.t_limits(s)
+        scalar = amplitude.at_fixed_s(s)
+        quarter_s = s/4
+        points = sorted({pole for pole in t_poles if lower < pole < upper}
+                        | {amplitude.total_squared-s-pole for pole in u_poles
+                           if lower < amplitude.total_squared-s-pole < upper})
 
-    lower, upper = (first_mass+second_mass)**2, ma**2
-    points = sorted({mass**2 for index, mass, _, _, _ in amplitude.terms
-                     if index == 0 and lower < mass**2 < upper})
+        def squared(t):
+            """Polarization sum with fixed-s bounds already evaluated."""
+            return max(0., quarter_s*(t-lower)*(upper-t))*abs(scalar(t))**2
+
+        return quad(squared, lower, upper, points=points,
+                    epsabs=0., epsrel=1e-5, limit=150)[0]
+
+    lower, upper = amplitude.threshold_squared, ma*ma
+    points = [pole for pole in s_poles if lower < pole < upper]
     integral = quad(integrate_t, lower, upper, points=points,
-                    epsabs=epsabs, epsrel=epsrel, limit=limit)[0]
+                    epsabs=0., epsrel=1e-5, limit=150)[0]
     symmetry = 2 if amplitude.final_state[0] == amplitude.final_state[1] else 1
     return integral/(256*math.pi**3*ma**3*symmetry)
