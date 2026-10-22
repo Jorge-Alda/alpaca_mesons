@@ -27,6 +27,8 @@ Resonances and threshold boundaries can spoil convergence of a global fixed grid
 
 Scalar-prepared evaluators have been implemented, benchmarked, and promoted to the production APIs for $a\to\gamma PP$, $a\to3P$, and $a\to VPP$. See [photon-pp-scalar-optimization.md](photon-pp-scalar-optimization.md), [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md), and [vpp-scalar-optimization.md](vpp-scalar-optimization.md). The former slow evaluators for $a\to3P$ and $a\to VPP$ have been removed from production code and are retained only in the benchmark script as reference calculations. These results validate the named scalar transformations, not a general speedup claim for other channels or integration methods.
 
+For applying the same process to future channels, follow [optimized-decay-integrand-guidelines.md](optimized-decay-integrand-guidelines.md).
+
 ### Analytic inner integration
 
 For the present constant-width propagator prescriptions, investigate whether the complete coherent inner integral can be performed analytically at fixed outer invariant. The polarization contractions are polynomial in invariants, while amplitudes contain rational pole terms. A derivation must retain crossed exchanges and interference and handle coincident poles, narrow widths, collapsed intervals near threshold, and cancellation among primitive terms. Keep numerical integration as a fallback if stable formulas are unavailable. Running widths or added non-rational amplitude components could change this conclusion.
