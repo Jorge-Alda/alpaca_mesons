@@ -218,41 +218,118 @@ def photon_two_pseudoscalar_amplitude(
 
 def photon_two_pseudoscalar_width(
         ma: float, fa: float, couplings: ALPcouplings,
-        meson_1: str, meson_2: str) -> float:
-    """Return the odd photon PP width in GeV using prepared scalar algebra.
+        meson_1: str, meson_2: str, *, order: int = 16,
+        epsrel: float = 1e-5) -> float:
+    """Return the odd photon PP width in GeV with hybrid quadrature.
 
-    Uses the original width's tolerances, pole subdivisions and symmetry
-    factor. Bounds and the s-channel scalar are computed once per outer
-    quadrature call; complex poles and mass combinations once per width.
-    No phase-space or propagator approximation is introduced.
+    Equal-mass pairs use vectorized Gauss-Legendre quadrature in both Dalitz
+    variables, with a sine map in s to smooth the threshold. Unequal-mass
+    pairs retain adaptive outer integration because crossed-pole entry can
+    converge slowly with a global rule. Both variables are split at poles
+    and at two and eight m_V Gamma_V on either side. Orders n and 2n are
+    compared, doubling up to 8n before adaptive fallback. Inner convergence
+    uses epsrel/4. The amplitude, finite widths, physical Dalitz domain and
+    symmetry factor are unchanged. Only numerical quadrature is approximated.
+
+    ``order`` is the initial positive integer quadrature order; ``epsrel``
+    controls the outer relative tolerance and inner convergence requirement.
     """
     amplitude = photon_two_pseudoscalar_amplitude(
         ma, fa, couplings, meson_1, meson_2)
     if not amplitude.terms:
         return 0.
-    s_poles, t_poles, u_poles = (
-        tuple(sorted({pole.real for pole, _, _ in group}))
-        for group in amplitude.invariant_terms)
+    from scipy.special import roots_legendre
+
+    rules = [roots_legendre(order*factor) for factor in (1, 2, 4, 8)]
+    polynomial_nodes, polynomial_weights = roots_legendre(2)
+    polynomial_integral = float(polynomial_weights@(1-polynomial_nodes**2))
+    s_terms, t_terms, u_terms = amplitude.invariant_terms
 
     def integrate_t(s):
-        """Integrate the prepared polarization sum over t at fixed s."""
+        """Integrate t with explicit finite-width resonance subdivisions."""
         lower, upper = amplitude.t_limits(s)
+        if upper <= lower:
+            return 0.
         scalar = amplitude.at_fixed_s(s)
-        quarter_s = s/4
-        points = sorted({pole for pole in t_poles if lower < pole < upper}
-                        | {amplitude.total_squared-s-pole for pole in u_poles
-                           if lower < amplitude.total_squared-s-pole < upper})
+        if not t_terms and not u_terms:
+            # The polarization factor is quadratic in t; two nodes are exact.
+            half_range = (upper-lower)/2
+            return s/4*half_range**3*polynomial_integral*abs(scalar((lower+upper)/2))**2
+        boundaries = {lower, upper}
+        for reflected, terms in ((False, t_terms), (True, u_terms)):
+            for pole, _, _ in terms:
+                center = amplitude.total_squared-s-pole.real if reflected else pole.real
+                for offset in (-8., -2., 0., 2., 8.):
+                    point = center+offset*abs(pole.imag)
+                    if lower < point < upper:
+                        boundaries.add(point)
+        boundaries = np.array(sorted(boundaries))
+        centers = (boundaries[1:]+boundaries[:-1])/2
+        half_ranges = (boundaries[1:]-boundaries[:-1])/2
+        previous = None
+        for nodes, weights in rules:
+            coordinates = centers[:, None]+half_ranges[:, None]*nodes
+            integrand = (s/4*(coordinates-lower)*(upper-coordinates)
+                         * np.abs(scalar(coordinates))**2)
+            integral = float(np.sum(half_ranges*(integrand@weights)))
+            if previous is not None and abs(integral-previous) <= epsrel/4*abs(integral):
+                return integral
+            previous = integral
 
         def squared(t):
-            """Polarization sum with fixed-s bounds already evaluated."""
-            return max(0., quarter_s*(t-lower)*(upper-t))*abs(scalar(t))**2
+            """Scalar evaluation for the unresolved inner integral."""
+            return max(0., s/4*(t-lower)*(upper-t))*abs(scalar(t))**2
 
-        return quad(squared, lower, upper, points=points,
-                    epsabs=0., epsrel=1e-5, limit=150)[0]
+        return quad(squared, lower, upper, points=boundaries[1:-1],
+                    epsabs=0., epsrel=epsrel/4, limit=150)[0]
 
     lower, upper = amplitude.threshold_squared, ma*ma
-    points = [pole for pole in s_poles if lower < pole < upper]
-    integral = quad(integrate_t, lower, upper, points=points,
-                    epsabs=0., epsrel=1e-5, limit=150)[0]
+    points = sorted({pole.real for pole, _, _ in s_terms if lower < pole.real < upper})
+    s_boundaries = {lower, upper, *points}
+    for pole, _, _ in s_terms:
+        for offset in (-8., -2., 2., 8.):
+            point = pole.real+offset*abs(pole.imag)
+            if lower < point < upper:
+                s_boundaries.add(point)
+    s_boundaries = np.array(sorted(s_boundaries))
+    previous = None
+    outer_rules = rules if amplitude.masses[0] == amplitude.masses[1] else ()
+    for nodes, weights in outer_rules:
+        # Evaluate all outer nodes together, including the crossed-pole splits.
+        angles = (nodes+1)*math.pi/4
+        fractions = np.sin(angles)**2
+        s_intervals = np.diff(s_boundaries)
+        s_values = (s_boundaries[:-1, None]+s_intervals[:, None]*fractions).ravel()
+        s_weights = (s_intervals[:, None]*weights*math.pi/4*np.sin(2*angles)).ravel()
+        photon_factor = (ma*ma-s_values)/(2*s_values)
+        t_centers = amplitude.second_mass_squared+photon_factor*(
+            s_values+amplitude.daughter_squared_difference)
+        t_half_ranges = photon_factor*np.sqrt(np.maximum(
+            0., (s_values-amplitude.threshold_squared)*
+            (s_values-amplitude.mass_difference_squared)))
+        t_lower, t_upper = t_centers-t_half_ranges, t_centers+t_half_ranges
+        t_boundaries = [t_lower, t_upper]
+        for reflected, terms in ((False, t_terms), (True, u_terms)):
+            for pole, _, _ in terms:
+                center = amplitude.total_squared-s_values-pole.real if reflected else pole.real
+                for offset in (-8., -2., 0., 2., 8.):
+                    t_boundaries.append(np.clip(
+                        np.broadcast_to(center+offset*abs(pole.imag), s_values.shape),
+                        t_lower, t_upper))
+        t_boundaries = np.sort(np.array(t_boundaries).T, axis=1)
+        t_ranges = np.diff(t_boundaries, axis=1)/2
+        t_values = ((t_boundaries[:, 1:]+t_boundaries[:, :-1])[:, :, None]/2
+                    +t_ranges[:, :, None]*nodes)
+        s_grid = s_values[:, None, None]
+        squared = (s_grid/4*(t_values-t_lower[:, None, None])*
+                   (t_upper[:, None, None]-t_values)*np.abs(amplitude(np.broadcast_to(s_grid, t_values.shape), t_values))**2)
+        inner_integrals = np.sum(t_ranges*(squared@weights), axis=1)
+        integral = float(s_weights@inner_integrals)
+        if previous is not None and abs(integral-previous) <= epsrel/4*abs(integral):
+            break
+        previous = integral
+    else:
+        integral = quad(integrate_t, lower, upper, points=points,
+                        epsabs=0., epsrel=epsrel, limit=150)[0]
     symmetry = 2 if amplitude.final_state[0] == amplitude.final_state[1] else 1
     return integral/(256*math.pi**3*ma**3*symmetry)

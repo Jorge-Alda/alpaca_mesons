@@ -4,7 +4,9 @@ from .three_pseudoscalar import three_pseudoscalar_amplitude, three_pseudoscalar
 from .vector_pair import neutral_vector_pair_amplitude, neutral_vector_pair_width
 from .vector_photon import vector_photon_amplitude, vector_photon_width
 from .vector_two_pseudoscalar import vector_two_pseudoscalar_amplitude, vector_two_pseudoscalar_width
-from .photon_two_pseudoscalar import photon_two_pseudoscalar_amplitude, photon_two_pseudoscalar_width
+from .photon_two_pseudoscalar import (
+    photon_two_pseudoscalar_amplitude, photon_two_pseudoscalar_width,
+)
 from .two_photon import photon_coupling, two_photon_width
 
 __all__ = [

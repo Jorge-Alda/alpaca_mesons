@@ -20,6 +20,7 @@ LO chiral, generic-generator, vector-exchange, and numerical three-meson records
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — candidate methods to speed up three-body integrations and open trade-offs for mass scans and four-body decays.
 - [optimized-decay-integrand-guidelines.md](optimized-decay-integrand-guidelines.md) — reusable derivation, implementation, verification, and promotion guidelines for future decay-width integrands.
 - [photon-pp-scalar-optimization.md](photon-pp-scalar-optimization.md) — completed and approved scalar evaluation optimization for $a\to\gamma PP$, with validation and timing results.
+- [photon-pp-gauss-legendre-quadrature.md](photon-pp-gauss-legendre-quadrature.md) — implemented official resonance-aware Gauss–Legendre width for $a\to\gamma PP$, with adaptive fallback, agreement tests, and benchmarks.
 - [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md) — completed scalar amplitude and width optimization for production $a\to3P$, with exact pole-plus-matching reduction and benchmarks.
 - [vpp-scalar-optimization.md](vpp-scalar-optimization.md) — completed scalar polarization-sum and width optimization for production $a\to VPP$, with pointwise validation and benchmarks.
 - [a3p-vector-exchange-classifier.md](a3p-vector-exchange-classifier.md) — vector-exchange flavor classifier.

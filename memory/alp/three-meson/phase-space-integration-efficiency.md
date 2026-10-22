@@ -19,7 +19,7 @@ The leading-order chiral-only implementation has analytic reductions for repeate
 
 ### Fixed quadrature on mapped phase space
 
-Map the outer invariant to a fixed interval and the inner invariant to $z\in[-1,1]$ using the Dalitz boundaries. Evaluate tensor-product Gauss--Legendre nodes in batches. For smooth integrands, this may remove substantial nested-adaptive overhead. Increase quadrature order until the integrated width stabilizes, and compare against independently converged adaptive results.
+For $a\to\gamma PP$, a resonance-aware hybrid Gauss--Legendre implementation is now the official width calculation; its algorithm, validation, and measured timings are recorded in [photon-pp-gauss-legendre-quadrature.md](photon-pp-gauss-legendre-quadrature.md). It uses vectorized fixed rules in both Dalitz variables for equal-mass daughters and adaptive outer integration with fixed inner rules for unequal-mass daughters, with pole subdivisions and adaptive fallback when order doubling does not converge. The earlier general proposal to map both variables to fixed intervals remains applicable to other channels only after channel-specific profiling and validation. Further improvements such as resonance-aware outer mappings or analytic integration still require separate convergence studies.
 
 Resonances and threshold boundaries can spoil convergence of a global fixed grid. Partition the domain around accessible pole bands or choose coordinates that resolve the resonant structure; retain an adaptive fallback for difficult points. Existing pole subdivision in a given calculator should be accounted for before claiming this as a new benefit.
 
