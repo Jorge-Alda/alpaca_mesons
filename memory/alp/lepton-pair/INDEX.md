@@ -12,3 +12,4 @@ provenance: assumption
 - [alp-lepton-pair-calculation-plan.md](alp-lepton-pair-calculation-plan.md) — staged plan for the two-photon-loop decay $a\to\ell^+\ell^-$ using a doubly virtual ALP transition form factor.
 - [alp-doubly-virtual-tff.md](alp-doubly-virtual-tff.md) — initial tree-level source-resolved ALP TFF with VJP/VVP resonance terms and both virtualities.
 - [alp-lepton-pair-normalization.md](alp-lepton-pair-normalization.md) — executable spin, phase-space, width-ratio and universal two-real-photon-cut normalization for the ALP loop.
+- [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — source-linear low-energy two-pion double-spectral representation for the ALP TFF, with its borrowed normalization and missing inputs stated.

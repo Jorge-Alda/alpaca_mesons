@@ -127,12 +127,17 @@ leading-QED width normalization and universal two-real-photon discontinuity
 are derived in [the loop normalization record](alp-lepton-pair-normalization.md)
 and its executable script. This establishes the normalization for the next
 loop calculation, but does not provide the dispersive real part or full width.
+The low-energy isovector two-pion double-spectral representation is now
+specified in [the isovector construction record](alp-isovector-tff-spectral-construction.md),
+with its source-linear ALP replacement and unverified amplitude-normalization
+match clearly separated. Its numerical density still requires the ALP
+$a\gamma^*\to\pi^+\pi^-$ $P$-wave and pion-vector-form-factor inputs.
 The ALP mass and couplings are free runtime inputs by design. The library's
 source-response basis, vector residues/pole prescription, ALP-specific
 short-distance coefficient and matching scheme, hadronic cuts, and local
 ALP--lepton matching prescription remain to be specified or derived. The next
 calculation should implement a clearly labelled pole-model prototype, then
-build the source-dependent two-pion spectral component and its QCD matching;
+derive the source-dependent two-pion partial wave and its QCD matching;
 the two-photon cut alone must not be used as the full result.
 
 1. **Construct the ALP-to-two-photon TFF.** Define
