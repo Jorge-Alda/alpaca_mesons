@@ -1,8 +1,8 @@
 ---
-title: Preliminary fit null projection onto the isovector ALP TFF
+title: Preliminary fit null projection onto the neutral-rho ALP TFF term
 status: numerical
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
 provenance: numerical-computation
 ---
@@ -47,7 +47,7 @@ The rho-rho and rho-isoscalar VVP numerators have zero projection because
 $d_1,d_2,d_3$ do not vary along the fit null space, while the neutral $d_4$
 contraction vanishes. Therefore
 $$
-\boxed{\delta F^{(I=1)}_{a\gamma^*\gamma^*}(s_1,s_2)
+\boxed{\left.\delta F_{a\gamma^*\gamma^*}(s_1,s_2)\right|_{\text{at least one rho}}
 =\frac{8\sqrt2 A_\rho}{M_V}\delta c_1
 \left[s_2W_\rho(s_1)+s_1W_\rho(s_2)\right].}
 $$
@@ -82,4 +82,9 @@ its rho TFF value is not uniquely determined by the measured fit rows: the
 unmeasured coordinate $\delta c_1$ changes its off-shell shape. Setting that
 coordinate to zero selects the stored representative and is not a measured
 constraint. The result applies to the retained tree-level operator set and
-fixed fitted nuisances only.
+fixed fitted nuisances only. It is the neutral-rho pole projection; the
+two-pion double-spectral contribution is a separate representation and must
+not be added without a matching prescription, as explained in the
+[spectral-construction record](alp-isovector-tff-spectral-construction.md).
+The related charged-pion P-wave projection is recorded in
+[the virtual-photon pion null note](alp-virtual-photon-pion-null-sensitivity.md).

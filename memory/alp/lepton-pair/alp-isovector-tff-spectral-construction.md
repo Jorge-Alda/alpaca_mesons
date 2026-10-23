@@ -2,7 +2,7 @@
 title: Low-energy isovector double-spectral construction for the ALP TFF
 status: mixed
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
@@ -78,7 +78,12 @@ pieces in the same amplitude only when their photon and source placements
 contribute to this $P$ wave; maintain the no-mixing bookkeeping so meson-pole
 terms already absorbed in $\widehat c_\gamma$ are not counted again. The
 tree-level neutral-vector TFF in the linked record does not itself determine
-the two-pion discontinuity.
+the two-pion discontinuity. The linked
+[neutral-rho pole expression](alp-isovector-doubly-virtual-tff.md) is a stable
+pole approximation, while this record describes a two-pion spectral component.
+The latter contains rho dynamics through the pion vector form factor and
+production partial wave. Do not add the two contributions without a
+decomposition and matching prescription that prevents double counting.
 
 For a first hadronic model, the needed partial wave can be organized by
 two-pion unitarity and a dispersive $P$-wave representation: the right-hand

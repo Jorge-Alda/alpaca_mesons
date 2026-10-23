@@ -1,8 +1,8 @@
 ---
-title: Isovector part of the doubly virtual no-mixing ALP TFF
+title: Neutral-rho pole contribution to the doubly virtual no-mixing ALP TFF
 status: derived
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 bibtex_keys: [Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Messerli:2025rnv, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
@@ -10,8 +10,11 @@ provenance: analytical-derivation
 # Scope and conventions
 
 This record isolates every retained tree contribution with at least one
-neutral isovector $\rho^0$ response in the doubly virtual ALP TFF. It is the
-low-energy rho-pole part needed as an input to the two-photon loop for
+neutral $\rho^0$ response in the doubly virtual ALP TFF. It is a rho-pole
+approximation to part of the low-energy isovector dynamics, not the two-pion
+double-spectral contribution described in the
+[spectral construction record](alp-isovector-tff-spectral-construction.md).
+The rho-pole expression may be used as an input to the two-photon loop for
 $a\to\ell^+\ell^-$. The full TFF convention is
 $$
 i\mathcal M=i e^2 R F_{a\gamma^*\gamma^*}(s_1,s_2),\qquad
@@ -103,13 +106,15 @@ $$
 These are the contractions in the canonical $c_i,d_i$ convention. The
 neutral $c_4,c_7,d_4$ structures do not contribute here.
 
-# Isovector TFF
+# Neutral-rho pole contribution
 
-The contribution with at least one rho response is
+The contribution with at least one rho response is the following expression.
+It is not the complete low-energy isovector TFF and must not be added to the
+two-pion spectral component without a matching prescription that avoids
+double counting rho dynamics:
 $$
 \boxed{\begin{aligned}
-F^{(I=1)}_{a\gamma^*\gamma^*}(s_1,s_2)={}&
-2\sqrt2\left[W_\rho(s_1)V_{\rho\gamma}(s_1,s_2)
+&2\sqrt2\left[W_\rho(s_1)V_{\rho\gamma}(s_1,s_2)
 +W_\rho(s_2)V_{\rho\gamma}(s_2,s_1)\right]\\
 &-2W_\rho(s_1)W_\rho(s_2)P_{\rho\rho}(s_1,s_2)\\
 &-2\sum_{I=\omega,\phi}\left[

@@ -2,7 +2,7 @@
 title: Calculation plan for gluon- and quark-coupled ALPs decaying to lepton pairs
 status: mixed
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-24
 bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp]
 provenance: assumption
 ---
@@ -119,10 +119,17 @@ controlled dispersive prediction.
 
 ## Ordered calculation
 
-## Progress recorded on 2026-10-23
+## Progress recorded on 2026-10-24
 
 The tree-level, source-resolved neutral-vector TFF in the no-mixing basis is
-derived in [the doubly virtual TFF record](alp-doubly-virtual-tff.md). The
+derived in [the doubly virtual TFF record](alp-doubly-virtual-tff.md). Its
+neutral-rho pole terms and four-dimensional preliminary-fit null projection
+are given in [the rho-pole record](alp-isovector-doubly-virtual-tff.md) and
+[its fit-null projection](alp-isovector-tff-fit-null-projection.md). One
+unmeasured coefficient combination changes the generic virtual-photon rho
+term, so the central fit representative is only a conditional benchmark.
+The pole term and the two-pion spectral component are not additive without
+matching to avoid double counting rho dynamics. The
 leading-QED width normalization and universal two-real-photon discontinuity
 are derived in [the loop normalization record](alp-lepton-pair-normalization.md)
 and its executable script. This establishes the normalization for the next
@@ -132,12 +139,17 @@ specified in [the isovector construction record](alp-isovector-tff-spectral-cons
 with its source-linear ALP replacement and unverified amplitude-normalization
 match clearly separated. Its numerical density still requires the ALP
 $a\gamma^*\to\pi^+\pi^-$ $P$-wave and pion-vector-form-factor inputs.
-The ALP mass and couplings are free runtime inputs by design. The library's
+The charged-pion P-wave fit-null projection is separately recorded in
+[the virtual-photon pion note](alp-virtual-photon-pion-null-sensitivity.md);
+it identifies the same coefficient direction with different kinematic
+weights, but does not supply the complete rescattered spectral input. The
+ALP mass and couplings are free runtime inputs by design. The library's
 source-response basis, vector residues/pole prescription, ALP-specific
 short-distance coefficient and matching scheme, hadronic cuts, and local
 ALP--lepton matching prescription remain to be specified or derived. The next
-calculation should implement a clearly labelled pole-model prototype, then
-derive the source-dependent two-pion partial wave and its QCD matching;
+calculation should implement a pole-model prototype only as a separate
+approximation, then complete the source-dependent two-pion partial wave and
+its QCD matching;
 the two-photon cut alone must not be used as the full result.
 
 1. **Construct the ALP-to-two-photon TFF.** Define
