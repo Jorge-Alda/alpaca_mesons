@@ -18,4 +18,4 @@ ALP-specific records, organized by the final state or calculation method.
 - [Four pseudoscalars](four-pseudoscalar/INDEX.md) — process overview, source-specific $a\to4P$ vector amplitudes and flavor selection rules.
 - [Shared decay notes](shared/INDEX.md) — conventions and numerical guidance used across ALP decay processes.
 - [Photon](photon/INDEX.md) — WZW/mixing invariant in Bauer's photon coefficient convention, canonical Levi-Civita dual/action matching, real-photon vector-conversion contribution, resonance null audit and amplitude completion plan.
-- [Lepton pairs](lepton-pair/INDEX.md) — planned extension of the doubly virtual ALP transition form factor to $a\to\ell^+\ell^-$ for gluon and/or quark couplings in the no-mixing basis.
+- [Lepton pairs](lepton-pair/INDEX.md) — initial source-resolved tree-level doubly virtual TFF and staged plan for $a\to\ell^+\ell^-$ in the no-mixing basis.
