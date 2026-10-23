@@ -20,7 +20,7 @@ R=\epsilon_{\mu\nu\rho\sigma}\varepsilon_1^\mu\varepsilon_2^\nu
 q_1^\rho q_2^\sigma,
 $$
 with $s_i=q_i^2$, $p_a+q_1+q_2=0$, metric $(+---)$, and
-$\epsilon^{0123}=+1$. The scalar $F$ has dimension GeV$^{-1}$.
+$\epsilon^{0123}=+1$. The scalar $F$ has dimension $\mathrm{GeV}^{-1}$.
 Messerli:2025rnv's normalized form factor is a separate quantity,
 $\widetilde F_{a\gamma^*\gamma^*}=F_{a\gamma^*\gamma^*}/F_{a\gamma\gamma}$,
 with $F_{a\gamma\gamma}=F_{a\gamma^*\gamma^*}(0,0)$ [@Messerli:2025rnv,
