@@ -3,7 +3,7 @@ title: Axial and pseudoscalar ALP contributions to four-pseudoscalar vector exch
 status: derived
 created: 2026-10-23
 updated: 2026-10-23
-bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
+bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, ParticleDataGroup:2024cfk, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
 
@@ -93,8 +93,24 @@ $$
 \epsilon(p_1,p_2,p_3,p_4)=\epsilon_{\mu\nu\rho\sigma}
 p_1^\mu p_2^\nu p_3^\rho p_4^\sigma.
 $$
-Each vector index is summed over the real orthonormal vector nonet. A
-denominator means $q^2-M_R^2+i0$; no widths are inserted.
+Each vector index is summed over the real orthonormal vector nonet. For a
+vector $R$ with virtuality $q^2$, use the same constant-width line shape as
+the $a\to3P$ exchange implementation,
+$$
+D_R(q^2)=q^2-M_R^2+iM_R\Gamma_R.
+$$
+This is the negative of the $a\to3P$ denominator
+$M_R^2-q^2-iM_R\Gamma_R$; the overall sign convention in the sewn
+amplitudes below is kept unchanged. The widths are the PDG 2024 total-width
+central values adopted by that implementation: $\Gamma_{\rho^0}=0.1474$,
+$\Gamma_{\rho^\pm}=0.1491$, $\Gamma_{K^{*\pm}}=0.0514$,
+$\Gamma_{K^{*0},\bar K^{*0}}=0.0473$, $\Gamma_\omega=0.00868$, and
+$\Gamma_\phi=0.004249$ GeV [@ParticleDataGroup:2024cfk]. Neutral-vector
+masses and generators remain those of the preliminary fit; charged-vector
+masses remain $M_{\rho^\pm}=0.77511$, $M_{K^{*\pm}}=0.89167$, and
+$M_{K^{*0},\bar K^{*0}}=0.89555$ GeV, as in the $a\to3P$ implementation.
+These constant-width choices are a phenomenological line-shape assumption,
+not a claim that the PDG listings specify a universal Breit--Wigner model.
 
 For the odd $aVV$ source followed by two $VPP$ vertices,
 $$
@@ -105,7 +121,7 @@ $$
 \frac{-G_V^2\mathcal N^a_{RS}(s_{ij},s_{kl})
 \operatorname{tr}(T_R[\lambda_i^\dagger,\lambda_j^\dagger])
 \operatorname{tr}(T_S[\lambda_k^\dagger,\lambda_l^\dagger])}
-{2f_\pi^4(s_{ij}-M_R^2+i0)(s_{kl}-M_S^2+i0)},
+{2f_\pi^4D_R(s_{ij})D_S(s_{kl})},
 \\
 &(\sigma_{12|34},\sigma_{13|24},\sigma_{14|23})=(+1,-1,+1).
 \end{aligned}
@@ -122,7 +138,7 @@ $$
 \frac{G_V^2\mathcal N^j_{RS}((p_a-p_i)^2,s_{kl})
 \operatorname{tr}(T_R[c_q^A,\lambda_i^\dagger])
 \operatorname{tr}(T_S[\lambda_k^\dagger,\lambda_l^\dagger])}
-{f_\pi^3f_a((p_a-p_i)^2-M_R^2+i0)(s_{kl}-M_S^2+i0)}.
+{f_\pi^3f_aD_R((p_a-p_i)^2)D_S(s_{kl})}.
 $$
 The sign is the parity of $(i,j,k,l)$ relative to $(1,2,3,4)$; the vector
 momentum at the odd vertex is crossed, $q_R=-(p_a-p_i)$. The strong odd

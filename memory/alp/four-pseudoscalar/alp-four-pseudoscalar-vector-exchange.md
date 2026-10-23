@@ -69,9 +69,12 @@ proportional to the wedge $p_i^\mu p_j^\nu-p_j^\mu p_i^\nu$. If its full
 flavor and coupling coefficient is denoted by $J_{ij}$, inversion of the
 antisymmetric-tensor Hessian gives
 $$
-V_R^{\mu\nu}(q)=\frac{2J_{ij}}{q^2-M_R^2}
+V_R^{\mu\nu}(q)=\frac{2J_{ij}}{D_R(q^2)}
 \left(p_i^\mu p_j^\nu-p_j^\mu p_i^\nu\right),\qquad q=p_i+p_j.
 $$
+Here $D_R(q^2)=q^2-M_R^2+iM_R\Gamma_R$ uses the same constant-width
+prescription as the $a\to3P$ vector-exchange calculation; the finite width
+is inserted phenomenologically after deriving the full tensor response.
 The full tensor propagator response is derived by the script from the
 antisymmetric-tensor Hessian. It must be used on each $VPP$ current; replacing
 it by a Proca pole alone omits the local tensor contribution. For the four

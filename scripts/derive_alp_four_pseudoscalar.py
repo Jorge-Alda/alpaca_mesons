@@ -9,6 +9,9 @@ Lagrangian at first order in ALP sources and zero electromagnetic coupling.
 It does not add independent VPPP operators. The generic tensor contractions
 printed below specify topology and combinatorics; they are not numerical
 channel amplitudes.
+Vector exchanges use the same constant PDG total widths as a -> 3P:
+1/(s-M_R^2+i M_R Gamma_R), with fitted neutral vector masses and the
+charged-vector masses used in alpaca_chiral/three_pseudoscalar.py.
 """
 from dataclasses import dataclass
 from itertools import combinations, combinations_with_replacement, product
@@ -262,7 +265,11 @@ def derive_contracted_amplitudes():
     The printed trace definitions specify the physical matrices.
     """
     coupling, decay_constant, alp_scale = sp.symbols('G_V f_pi f_a', positive=True)
-    first_denominator, second_denominator = sp.symbols('s_R_minus_M_R_squared s_S_minus_M_S_squared')
+    first_virtuality, second_virtuality = sp.symbols('s_R s_S', real=True)
+    first_mass, second_mass, first_width, second_width = sp.symbols(
+        'M_R M_S Gamma_R Gamma_S', positive=True)
+    first_denominator = first_virtuality-first_mass**2+sp.I*first_mass*first_width
+    second_denominator = second_virtuality-second_mass**2+sp.I*second_mass*second_width
     first_pair_trace, second_pair_trace, axial_trace = sp.symbols(
         'Tr_T_R_comm_lambda_i_lambda_j Tr_T_S_comm_lambda_k_lambda_l Tr_T_R_comm_cA_lambda_i')
     alp_numerator, meson_numerator = sp.symbols('N_a_RS N_j_RS')
@@ -418,7 +425,8 @@ def print_invariant_phase_space():
           'For polynomial |F|² use the printed moments after substitution. '
           'For rational tree amplitudes the same substitution makes this '
           'a rational trigonometric integral and it can in principle be evaluated '
-          'analytically term by term, but poles require a specified prescription. '
+          'analytically term by term. The adopted constant PDG widths place '
+          'the vector poles away from the real integration interval. '
           'A single aVV pairing has F(s12,s34): all three angles integrate exactly, '
           'giving dGamma/(ds12 ds34)=lambda_a^(3/2) lambda_12^(3/2) '
           'lambda_34^(3/2)|F|²/(1179648 pi^5 ma^3 s12² s34² S). '
@@ -434,8 +442,9 @@ def derive_semicircle_integrals():
     squared with no poles on the interval to polynomial moments and the
     displayed Cauchy integral. Its square root is analytic off [-r,r] and
     tends to z at infinity. Repeated poles follow by differentiating in z.
-    This includes finite, prescribed complex resonance poles, but does not
-    assign any resonance width or regularize an on-shell tree pole.
+    This includes the finite complex resonance poles from the adopted
+    a -> 3P constant-width prescription; the integral identity itself does
+    not determine the physical widths.
     """
     radius, pole_distance = sp.symbols('r z', positive=True)
     tangent, positive_ratio = sp.symbols('t b', positive=True)
@@ -476,10 +485,8 @@ def print_semicircle_integrals():
           'J(z)=pi[sqrt(z²-r²)-z], sqrt(z²-r²)~z at infinity. '
           'Hence the complete rational tree amplitude permits exactly four '
           'remaining numerical integrations, including crossed interference. '
-          'This requires no pole on the integration interval. For physical '
-          'on-shell vector poles the zero-width squared amplitude is divergent; '
-          'a finite-width prescription must be specified first. Constant-width '
-          'propagators preserve rationality, whereas general running widths '
+          'The adopted a -> 3P constant PDG widths leave no vector pole on '
+          'the real integration interval and preserve rationality. General running widths '
           'or nonrational form factors need separate analysis. Near coincident '
           'poles use repeated-pole limits to avoid numerical cancellation.')
 
@@ -634,7 +641,18 @@ def main():
           'N_j_RS uses U=-lambda_j_dagger/fpi,Y={lambda_j_dagger,chi}/fpi, '
           'source mass squared=mj², qR²=(pa-pi)²,qS²=(pk+pl)². '
           'N already includes both vector assignments; do not double it. '
-          'Tree propagators have +i0. No widths are inserted.')
+          'For every internal vector use 1/(s-M_R²+i M_R Gamma_R), '
+          'with the appropriate two- or three-particle invariant s. This is '
+          'minus 1/(M_R²-s-i M_R Gamma_R), the denominator convention used '
+          'in a -> 3P. Adopt the same constant PDG total widths in GeV: '
+          'rho0 0.1474; rho+ and rho- 0.1491; K*+ and K*- 0.0514; '
+          'K*0 and K*0bar 0.0473; omega 0.00868; phi 0.004249. '
+          'Neutral rho0, omega and phi masses remain the fitted values. '
+          'The other masses in GeV match a -> 3P: rho+ and rho- 0.77511; '
+          'K*+ and K*- 0.89167; K*0 and K*0bar 0.89555. '
+          'These widths are a phenomenological prescription applied after '
+          'the zero-width tensor contraction, with no running-width or '
+          'narrow-width approximation.')
     print('For c_q^A,c_q^P only, the aPP+VPP+VPP family is absent. '
           'Its LO source coefficient is zero before introducing an internal '
           'pseudoscalar propagator. The remaining families are odd aVV '

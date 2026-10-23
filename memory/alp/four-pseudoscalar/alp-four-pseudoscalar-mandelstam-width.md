@@ -3,7 +3,7 @@ title: Mandelstam representation and integration reduction for ALP to four pseud
 status: derived
 created: 2026-10-23
 updated: 2026-10-23
-bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
+bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, ParticleDataGroup:2024cfk, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
 
@@ -15,9 +15,12 @@ tree-level axial/pseudoscalar-source amplitude in the
 The amplitude model, no-mixing source convention, pseudoscalar and vector
 normalizations, and exclusions are those stated there. In particular,
 electromagnetic interactions, loops, and interactions outside the retained
-vector-exchange fit truncation are not included. The derivation uses natural
-units, metric $(+---)$, and $\epsilon^{0123}=+1$. It does not add literature
-inputs beyond the records cited above.
+vector-exchange fit truncation are not included. The propagators use the
+constant-width line shape from the linked $a\to3P$ exchange record, with
+PDG total-width values; this is a phenomenological implementation choice,
+not a claim that the PDG specifies a universal Breit--Wigner model
+[@ParticleDataGroup:2024cfk]. We use natural units, metric $(+---)$, and
+$\epsilon^{0123}=+1$.
 
 The symbolic derivation is implemented in
 [`scripts/derive_alp_four_pseudoscalar.py`](../../../scripts/derive_alp_four_pseudoscalar.py):
@@ -137,18 +140,14 @@ $$
 where the square root is chosen to approach $z$ at infinity. A pole of order
 $k$ follows by differentiating $J(z)$ $k-1$ times and dividing by
 $(k-1)!$. This applies to the full coherent rational tree amplitude,
-including crossed terms, if its propagators have a specified constant-width
-or other rational prescription. It reduces the numerical integration from
-five dimensions to four. It is an analytic method in principle; the resulting
+including crossed terms, with the constant-width propagators specified in
+the linked source record. It reduces the numerical integration from five
+dimensions to four. It is an analytic method in principle; the resulting
 partial-fraction expressions can be ill-conditioned near coincident poles
-and need stable limiting formulas in a production integrator.
-
-The retained amplitude record currently uses zero-width $+i0$ vector
-propagators. If such a pole lies inside the physical integration region, the
-squared tree amplitude is not integrable there. A finite-width prescription
-or a controlled sequential-decay treatment must be specified before a finite
-numerical width is quoted. Running widths and nonrational form factors also
-need a separate inner-integration analysis.
+and need stable limiting formulas in a production integrator. The finite
+widths move vector poles away from the real integration domain, removing the
+zero-width on-shell divergence. Energy-dependent widths and nonrational form
+factors require a separate inner-integration analysis.
 
 # Special two-dimensional case
 
@@ -172,9 +171,11 @@ not remove that dependence.
 # Inputs and provenance
 
 The amplitude and vector-tree truncation are taken from the linked source
-derivation and fit record. The five-invariant Gram determinant, phase-space
-normalization, physical coordinate bounds, and conditional analytic
-integration are derived in the cited SymPy script. No new literature source
-was consulted. The inner integration claim assumes a rational integrand with
-no unprescribed pole on the physical interval; it is not a finite-width
-prediction for the zero-width propagators in the current amplitude record.
+derivation and fit record. The line shape and PDG width inputs follow the
+[$a\to3P$ vector-exchange record](../three-pseudoscalar/a3p-vector-exchange-amplitude.md)
+and the [light-vector input record](../../extracts/ParticleDataGroup:2024cfk/light-vector-pole-parameters.md)
+[@ParticleDataGroup:2024cfk]. The five-invariant Gram determinant,
+phase-space normalization, physical coordinate bounds, and conditional
+analytic integration are derived in the cited SymPy script. The four-
+dimensional reduction assumes the stated constant widths and does not apply
+unchanged to energy-dependent widths.
