@@ -1,0 +1,117 @@
+---
+title: Calculation plan for gluon- and quark-coupled ALPs decaying to lepton pairs
+status: mixed
+created: 2026-10-23
+updated: 2026-10-23
+bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp]
+provenance: assumption
+---
+
+# Scope
+
+This is a staged calculation plan, not a derived ALP width. The target is the
+leading two-photon contribution to $a\to\ell^+\ell^-$ for an ALP whose UV
+couplings are only to gluons and/or quarks. Use Alda:2026nrd's no-mixing basis
+and the project's positive Bauer photon-operator normalization. The input is
+the doubly virtual ALP transition form factor (TFF); the final state is
+$\ell^+\ell^-$.
+
+The template is Messerli:2025rnv, which writes the two-photon contribution in
+terms of a reduced amplitude and a normalized TFF, separates low-energy
+spectral contributions from a high-energy asymptotic contribution, and
+evaluates the latter with finite pseudoscalar-mass effects. Its dispersive
+construction also resolves imaginary parts from hadronic intermediate states
+beyond the two-photon cut. These ingredients identify the main calculation
+tasks, but its $\eta^{(\prime)}$ TFF, spectral densities, asymptotic constants,
+and numerical inputs cannot simply be reused for an ALP.
+
+## Existing inputs and conventions
+
+- [Alda:2026nrd's no-mixing prescription](../../extracts/Alda:2026nrd/appendix-a-expansion.md)
+  fixes the transformed quark sources for a one-ALP amplitude. In particular,
+  $\widehat c_q^A=-\mathbb M_a^{-1}(C)$,
+  $\widehat c_q^P=-c_q^{AP}-\mathbb M_a^{-1}(C)$,
+  $\widehat c_q^V=c_q^{VS}$, and $\widehat c_q^S=0$. For a purely gluonic
+  UV source, use the source-dependent $C$ from that prescription; do not
+  replace it with a meson mixing angle without deriving the matching.
+- The [ALP photon invariant](../photon/alp-photon-invariant-from-mixing.md)
+  already includes the leading WZW/contact contribution in its specified
+  approximation. The [vector-conversion note](../photon/alp-photon-vector-mixing.md)
+  supplies a real-photon resonance result only. Neither by itself determines
+  the doubly virtual TFF required in the loop.
+- Use the photon operator normalization
+  $\mathcal L\supset (\alpha_{\rm em}/4\pi f_a)
+  C_{a\gamma\gamma}aF_{\mu\nu}\widetilde F^{\mu\nu}$ and the canonical
+  $\epsilon^{0123}=+1$ convention recorded in the photon branch. Keep explicit
+  whether the $e^2$, $f_a^{-1}$, and $C_{a\gamma\gamma}$ factors are inside
+  or outside the scalar TFF and reduced loop amplitude.
+
+## Ordered calculation
+
+1. **Construct the ALP-to-two-photon TFF.** Define
+   $\mathcal F_{a\gamma^*\gamma^*}(q_1^2,q_2^2)$ by the same signed tensor
+   structure as the project's photon amplitude. First fix
+   $\mathcal F_{a\gamma\gamma}(0,0)$ from the complete invariant contact,
+   WZW and resonance contributions in one basis. Then derive the virtuality
+   dependence from the source-matched hadronic amplitudes. In the no-mixing
+   basis, do not add meson-pole WZW terms already absorbed into the transformed
+   contact coefficient. Extend the existing vector-conversion calculation
+   away from $q_1^2=q_2^2=0$ and include the source-specific pseudoscalar and
+   multiparticle cuts required by the chosen precision.
+2. **Match the low- and high-virtuality regions.** Build a symmetric
+   double-spectral representation or a validated alternative for the low
+   region. Constrain it with relevant singly- and doubly-virtual data,
+   source-specific low-energy amplitudes, and hadronic discontinuities. Derive
+   the ALP's own short-distance coefficient and matching scale from the
+   relevant QCD matrix elements / operator product expansion; do not transfer
+   the $\eta$ or $\eta'$ asymptotic coefficient. Include finite-$m_a$ terms
+   when the matching scale is not parametrically above $m_a$.
+3. **Insert the TFF in the lepton-loop functional.** Adapt the symmetric
+   two-photon kernel and reduced-amplitude normalization in Messerli:2025rnv
+   to the project's TFF convention. Treat the $a$ mass as the external
+   invariant and retain the full lepton-mass dependence. Compute the real
+   dispersive part and the imaginary parts from every open cut represented in
+   the TFF. The two-real-photon cut gives a useful normalization and unitarity
+   check, but is not a substitute for the full imaginary part when other
+   channels are open.
+4. **Add independent local contributions consistently.** Match any induced
+   ALP-lepton pseudoscalar/axial operator at the same scale and combine its
+   amplitude coherently with the two-photon term. Keep the local term's
+   renormalization convention explicit; avoid double counting contributions
+   already incorporated in the TFF or its high-virtuality matching.
+5. **Compute the width and uncertainties.** Derive the spin-summed width and
+   branching fraction with explicit identical-particle and normalization
+   conventions. Propagate uncertainties from source matching, hadronic
+   spectral input, high-energy matching, and numerical integration separately.
+   State clearly whether the result is leading-order QED or includes radiative
+   corrections and the photon-cut convention used for any comparison.
+
+## Reproducibility and checks
+
+When the calculation is undertaken, derive normalization and tensor algebra
+in an executable script under `scripts/`, then implement deterministic loop
+and spectral integrations with units and a minimal invocation example. Pair
+each script with a derivation record that cites every input. Verify the local
+pointlike-TFF limit, the two-photon absorptive part, Bose symmetry under
+$q_1\leftrightarrow q_2$, electromagnetic Ward identities, the $m_\ell$
+helicity suppression of the two-photon contribution, and invariance under
+the field redefinition to the no-mixing basis. Check the zero-virtuality limit
+against the existing $C_{a\gamma\gamma}$ result and verify that the high-energy
+tail matches the independently derived short-distance behavior.
+
+The main unresolved inputs are a source-resolved doubly virtual ALP TFF and
+its high-energy coefficient, the hadronic discontinuities for the chosen ALP
+mass, and the status or boundary assumption for a local ALP-lepton
+coefficient. The hadronic-scale ALP couplings are supplied by ALP-aca; their
+UV evolution is outside this calculation. The current real-photon ALP-photon
+notes do not settle the doubly virtual quantities.
+
+## Literature source
+
+Messerli:2025rnv, Secs. 2--4, provides the reduced-amplitude/TFF formalism,
+low-energy dispersive construction, and asymptotic matching with finite-mass
+terms. Its Sec. 6 also discusses local pseudoscalar, axial, and gluonic
+operators and their meson matrix elements. Alda:2026nrd, Sec. III E and
+Appendix A, supplies the no-mixing source conventions used here. The
+photon-operator normalization follows Bauer:2020jbp as recorded in the ALP
+photon branch.
