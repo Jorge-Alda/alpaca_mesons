@@ -66,3 +66,5 @@ Each child folder is a source-specific extract collection; see its files for the
 
 - [Kucukarslan:2006wk](Kucukarslan:2006wk/INDEX.md) — direct antisymmetric-tensor omega–phi mixing and off-shell convention audit.
 - [Messerli:2025rnv](Messerli:2025rnv/INDEX.md) — reduced dilepton-loop normalization, TFF convention, and model-independent two-photon absorptive part.
+- [Adlarson:2016hpp](Adlarson:2016hpp/INDEX.md) — A2 electron-channel spectra for $\omega\to\pi^0 e^+e^-$ and the associated eta Dalitz measurement.
+- [NA60:2016nad](NA60:2016nad/INDEX.md) — NA60 muon-channel spectra for $\omega\to\pi^0\mu^+\mu^-$ and the associated eta Dalitz measurement.
