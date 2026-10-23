@@ -13,3 +13,4 @@ provenance: assumption
 - [alp-doubly-virtual-tff.md](alp-doubly-virtual-tff.md) — initial tree-level source-resolved ALP TFF with VJP/VVP resonance terms and both virtualities.
 - [alp-lepton-pair-normalization.md](alp-lepton-pair-normalization.md) — executable spin, phase-space, width-ratio and universal two-real-photon-cut normalization for the ALP loop.
 - [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — source-linear low-energy two-pion double-spectral representation for the ALP TFF, with its borrowed normalization and missing inputs stated.
+- [alp-virtual-photon-pion-null-sensitivity.md](alp-virtual-photon-pion-null-sensitivity.md) — exact projection of the preliminary odd-fit null directions onto the virtual-photon charged-pion P wave and comparison with Messerli:2025rnv's eta construction.
