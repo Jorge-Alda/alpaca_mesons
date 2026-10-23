@@ -16,14 +16,85 @@ and the project's positive Bauer photon-operator normalization. The input is
 the doubly virtual ALP transition form factor (TFF); the final state is
 $\ell^+\ell^-$.
 
-The template is Messerli:2025rnv, which writes the two-photon contribution in
-terms of a reduced amplitude and a normalized TFF, separates low-energy
-spectral contributions from a high-energy asymptotic contribution, and
-evaluates the latter with finite pseudoscalar-mass effects. Its dispersive
+The method reference is Messerli:2025rnv, which writes the two-photon
+contribution in terms of a reduced amplitude and normalized TFF, separates
+low-energy spectral contributions from a high-energy asymptotic contribution,
+and evaluates the latter with finite pseudoscalar-mass effects. Its dispersive
 construction also resolves imaginary parts from hadronic intermediate states
-beyond the two-photon cut. These ingredients identify the main calculation
-tasks, but its $\eta^{(\prime)}$ TFF, spectral densities, asymptotic constants,
-and numerical inputs cannot simply be reused for an ALP.
+beyond the two-photon cut. Its $\eta^{(\prime)}$ spectral weights,
+asymptotic coefficients, and numerical inputs cannot simply be reused for an
+ALP. The method can be adapted if the library builds the corresponding
+source-dependent hadronic amplitudes and short-distance response.
+
+## Library interface and source dependence
+
+The intended deliverable is a library function whose runtime physics inputs
+are the ALP mass and its gluon and quark couplings, together with the lepton
+species. These remain free parameters; no single benchmark ALP is selected.
+The coupling scale and convention must be explicit at the function boundary.
+Unless UV running is added as a separate library component, the supplied
+couplings are inputs at the scale expected by the source matching. The
+library supplies a declared hadronic and short-distance model. It converts
+the supplied couplings to the project's hadronic-scale, no-mixing source
+convention, constructs the ALP TFF from that source, evaluates the lepton
+loop, and returns the width or branching fraction and a separated uncertainty
+estimate. Any local ALP--lepton coupling is a separate input or matching
+prescription and must interfere coherently with the two-photon amplitude.
+
+Because the leading TFF is linear in the ALP source coefficients, implement
+source responses for a documented independent basis of hadronic-scale quark and gluon
+operators, then combine them with the supplied couplings. Include the
+source-dependent contact term in the same combination. Keep the loop in terms
+of the unnormalized TFF whenever possible: normalization by
+$F_{a\gamma\gamma}=F_{a\gamma^*\gamma^*}(0,0)$ is singular for coupling
+choices where source contributions cancel at the real-photon point. The
+normalized Messerli:2025rnv formula remains useful for derivation and checks
+when this value is nonzero.
+
+## Spectral construction to adapt from Messerli:2025rnv
+
+Messerli:2025rnv decomposes the normalized $\eta^{(\prime)}$ TFF into
+isovector, isoscalar, effective-pole, and asymptotic pieces. The source
+extract [records the reduced loop and TFF conventions](../../extracts/Messerli:2025rnv/dilepton-loop-formalism.md).
+For an ALP, keep this decomposition as a starting strategy, while deriving
+the weights and amplitudes for each source basis element:
+
+- **Low-energy isovector part:** use a symmetric double-spectral
+  representation in the two photon virtualities. In Messerli:2025rnv, its
+  density is built from the pion vector form factor and the
+  $\eta^{(\prime)}\to\pi\pi\gamma^*$ amplitude, with the two-pion cut
+  treated dispersively. For an ALP, replace that decay amplitude with the
+  source-dependent $a\to\pi\pi\gamma^*$ amplitude derived from the ALP
+  sources. This is a promising first hadronic cut, not a complete spectrum.
+- **Low-energy isoscalar part:** begin with narrow $\omega$ and $\phi$ poles,
+  using source-dependent $a\to V\gamma$ residues and the electromagnetic
+  vector residues. Add dispersive finite-width propagators if the desired
+  precision or mass range requires them. Messerli:2025rnv found the narrow
+  treatment adequate for its $\eta^{(\prime)}$ isoscalar contribution; that
+  accuracy conclusion must be checked for the ALP model.
+- **Higher resonances:** use one or more effective poles to represent
+  spectral strength not captured by the low-energy states. Constrain their
+  parameters with available single-virtual data, normalization conditions,
+  and matching constraints. Compare alternative pole parameterizations to
+  estimate model dependence, as Messerli:2025rnv did.
+- **High virtualities:** derive the source-basis asymptotic coefficients from
+  the appropriate QCD matrix elements and operator product/light-cone
+  expansion. Join this tail to the low-energy representation at a declared
+  matching scale, vary that scale, and retain finite-$m_a$ corrections in the
+  loop kernel when needed. Do not import the $\eta$ or $\eta'$ coefficient.
+- **Additional open channels:** include further hadronic cuts when their
+  source amplitudes are available and their thresholds are open. This is
+  needed for the full imaginary part and may invalidate a lower bound based
+  only on the two-photon cut. State the supported ALP mass range and the
+  omitted-channel uncertainty.
+
+Thus a Messerli-like dispersive library is feasible in stages. A first
+version can use the computed tree-level ALP TFF and explicit pole terms, with
+the high-energy coefficient exposed as a model parameter and uncertainty.
+The improved version should replace those assumptions with source-resolved
+spectral densities and independently derived QCD matching. The two versions
+must be labelled separately; the pole model alone does not establish a
+controlled dispersive prediction.
 
 ## Existing inputs and conventions
 
@@ -56,11 +127,13 @@ leading-QED width normalization and universal two-real-photon discontinuity
 are derived in [the loop normalization record](alp-lepton-pair-normalization.md)
 and its executable script. This establishes the normalization for the next
 loop calculation, but does not provide the dispersive real part or full width.
-The source profile, ALP mass, vector residues/pole prescription, ALP-specific
-short-distance coefficient, hadronic cuts, and local ALP--lepton matching
-remain unspecified. The next calculation should construct or choose a
-source-specific TFF input and matching prescription before numerical loop
-integration; the two-photon cut alone must not be used as the full result.
+The ALP mass and couplings are free runtime inputs by design. The library's
+source-response basis, vector residues/pole prescription, ALP-specific
+short-distance coefficient and matching scheme, hadronic cuts, and local
+ALP--lepton matching prescription remain to be specified or derived. The next
+calculation should implement a clearly labelled pole-model prototype, then
+build the source-dependent two-pion spectral component and its QCD matching;
+the two-photon cut alone must not be used as the full result.
 
 1. **Construct the ALP-to-two-photon TFF.** Define
    $\mathcal F_{a\gamma^*\gamma^*}(q_1^2,q_2^2)$ by the same signed tensor
