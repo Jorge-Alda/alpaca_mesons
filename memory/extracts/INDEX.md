@@ -65,3 +65,4 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Moussallam:2021dpk](Moussallam:2021dpk/INDEX.md) — nonideal vector mixing from mass and decay inputs.
 
 - [Kucukarslan:2006wk](Kucukarslan:2006wk/INDEX.md) — direct antisymmetric-tensor omega–phi mixing and off-shell convention audit.
+- [Messerli:2025rnv](Messerli:2025rnv/INDEX.md) — reduced dilepton-loop normalization, TFF convention, and model-independent two-photon absorptive part.

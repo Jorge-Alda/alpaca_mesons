@@ -48,6 +48,20 @@ and numerical inputs cannot simply be reused for an ALP.
 
 ## Ordered calculation
 
+## Progress recorded on 2026-10-23
+
+The tree-level, source-resolved neutral-vector TFF in the no-mixing basis is
+derived in [the doubly virtual TFF record](alp-doubly-virtual-tff.md). The
+leading-QED width normalization and universal two-real-photon discontinuity
+are derived in [the loop normalization record](alp-lepton-pair-normalization.md)
+and its executable script. This establishes the normalization for the next
+loop calculation, but does not provide the dispersive real part or full width.
+The source profile, ALP mass, vector residues/pole prescription, ALP-specific
+short-distance coefficient, hadronic cuts, and local ALP--lepton matching
+remain unspecified. The next calculation should construct or choose a
+source-specific TFF input and matching prescription before numerical loop
+integration; the two-photon cut alone must not be used as the full result.
+
 1. **Construct the ALP-to-two-photon TFF.** Define
    $\mathcal F_{a\gamma^*\gamma^*}(q_1^2,q_2^2)$ by the same signed tensor
    structure as the project's photon amplitude. First fix
