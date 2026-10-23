@@ -64,14 +64,19 @@ def tff_components(couplings,x,s1=0.,s2=0.):
     return values
 
 
-def radiative_components(couplings,x,TV,Mvector,e):
-    """Signed direct/exchange G, GeV^-1; external tensor reduction uses 1/Mvector."""
+def radiative_components(couplings,x,TV,Mvector,e,photon_mass_squared=0.):
+    """Signed direct/exchange G in GeV^-1 at photon invariant mass squared.
+
+    The external tensor reduction uses 1/Mvector. The virtual photon is
+    contracted with a conserved electromagnetic current. Tree poles and
+    source residues follow the supplied sector, without an inserted width.
+    """
     if not isinstance(couplings,OddParityCouplings) or not isinstance(x,VectorAmplitudeInputs):
         raise TypeError('expected OddParityCouplings and VectorAmplitudeInputs')
     TV=_source_matrix(TV,'TV'); Mvector=_positive_real(Mvector,'Mvector');e=_positive_real(e,'e')
     fk=np.trace(TV@_comm(_comm(x.TP,Q),x.chi))
-    direct=2*math.sqrt(2)*e/(x.F*Mvector*x.MV)*(_C(couplings.vjp,x,TV,Q,Mvector**2,0)-4*couplings.vjp.c4*fk)
-    exchange=-4*e/(x.F*Mvector)*_H(couplings.vvp,x,TV,x.sector.response(),Mvector**2,0)
+    direct=2*math.sqrt(2)*e/(x.F*Mvector*x.MV)*(_C(couplings.vjp,x,TV,Q,Mvector**2,photon_mass_squared)-4*couplings.vjp.c4*fk)
+    exchange=-4*e/(x.F*Mvector)*_H(couplings.vvp,x,TV,x.sector.response(photon_mass_squared),Mvector**2,photon_mass_squared)
     if not np.all(np.isfinite((direct,exchange))): raise ValueError('radiative components must be finite')
     return complex(direct),complex(exchange)
 

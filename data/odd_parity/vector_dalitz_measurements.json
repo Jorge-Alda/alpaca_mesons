@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "bibtex_references": [
+      "Adlarson:2016hpp",
+      "NA60:2016nad"
+    ],
+    "observable": "published |F_omega_pi0(m_ll)|^2 transition-form-factor values",
+    "mass_unit": "GeV",
+    "uncertainty_unit": "dimensionless",
+    "covariance": "No bin covariance matrix is reported in either source. The first conditional comparison may use diagonal statistical and systematic errors combined in quadrature; this is an explicit approximation, not an experimental independence claim.",
+    "bin_observable": "The source tables report values at bin centers (A2 center with half-width; NA60 mass interval). The bin-center approximation must be compared with QED-weighted bin integration. A2's table gives one quoted total uncertainty; it is placed in stat_sigma for adapter compatibility and is not a statistical-only error.",
+    "normalization": "Both tables report the form factor normalized to unity at q^2=0. Do not use the separate Dalitz branching-ratio measurement as an extra bin or count a shared radiative width twice."
+  },
+  "experiments": [
+    {
+      "bibtex_key": "Adlarson:2016hpp",
+      "channel": "omega_to_pi0_electron_pair",
+      "lepton_mass_gev": 0.00051099895,
+      "bins": [
+        {"mass_low_gev": 0.030, "mass_high_gev": 0.050, "mass_center_gev": 0.040, "value": 1.002, "stat_sigma": 0.162, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.050, "mass_high_gev": 0.070, "mass_center_gev": 0.060, "value": 1.011, "stat_sigma": 0.120, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.070, "mass_high_gev": 0.090, "mass_center_gev": 0.080, "value": 1.027, "stat_sigma": 0.121, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.090, "mass_high_gev": 0.120, "mass_center_gev": 0.105, "value": 1.058, "stat_sigma": 0.140, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.120, "mass_high_gev": 0.150, "mass_center_gev": 0.135, "value": 1.126, "stat_sigma": 0.239, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.150, "mass_high_gev": 0.200, "mass_center_gev": 0.175, "value": 1.146, "stat_sigma": 0.128, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.200, "mass_high_gev": 0.250, "mass_center_gev": 0.225, "value": 1.227, "stat_sigma": 0.161, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.250, "mass_high_gev": 0.300, "mass_center_gev": 0.275, "value": 1.390, "stat_sigma": 0.215, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.300, "mass_high_gev": 0.350, "mass_center_gev": 0.325, "value": 1.648, "stat_sigma": 0.279, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.350, "mass_high_gev": 0.400, "mass_center_gev": 0.375, "value": 1.946, "stat_sigma": 0.431, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.400, "mass_high_gev": 0.450, "mass_center_gev": 0.425, "value": 2.553, "stat_sigma": 0.692, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.450, "mass_high_gev": 0.510, "mass_center_gev": 0.480, "value": 3.32, "stat_sigma": 1.08, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.510, "mass_high_gev": 0.570, "mass_center_gev": 0.540, "value": 6.32, "stat_sigma": 2.90, "syst_sigma": 0.0},
+        {"mass_low_gev": 0.570, "mass_high_gev": 0.630, "mass_center_gev": 0.600, "value": 10.63, "stat_sigma": 6.14, "syst_sigma": 0.0}
+      ]
+    },
+    {
+      "bibtex_key": "NA60:2016nad",
+      "channel": "omega_to_pi0_muon_pair",
+      "lepton_mass_gev": 0.1056583755,
+      "bins": [
+        {"mass_low_gev": 0.20, "mass_high_gev": 0.22, "mass_center_gev": 0.21, "value": 1.27, "stat_sigma": 0.50, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.22, "mass_high_gev": 0.24, "mass_center_gev": 0.23, "value": 1.46, "stat_sigma": 0.29, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.24, "mass_high_gev": 0.26, "mass_center_gev": 0.25, "value": 1.00, "stat_sigma": 0.29, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.26, "mass_high_gev": 0.28, "mass_center_gev": 0.27, "value": 1.66, "stat_sigma": 0.31, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.28, "mass_high_gev": 0.30, "mass_center_gev": 0.29, "value": 1.57, "stat_sigma": 0.33, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.30, "mass_high_gev": 0.32, "mass_center_gev": 0.31, "value": 1.92, "stat_sigma": 0.35, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.32, "mass_high_gev": 0.34, "mass_center_gev": 0.33, "value": 1.47, "stat_sigma": 0.36, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.34, "mass_high_gev": 0.36, "mass_center_gev": 0.35, "value": 1.69, "stat_sigma": 0.37, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.36, "mass_high_gev": 0.38, "mass_center_gev": 0.37, "value": 1.82, "stat_sigma": 0.38, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.38, "mass_high_gev": 0.40, "mass_center_gev": 0.39, "value": 2.28, "stat_sigma": 0.40, "syst_sigma": 0.01},
+        {"mass_low_gev": 0.40, "mass_high_gev": 0.42, "mass_center_gev": 0.41, "value": 2.24, "stat_sigma": 0.40, "syst_sigma": 0.02},
+        {"mass_low_gev": 0.42, "mass_high_gev": 0.44, "mass_center_gev": 0.43, "value": 2.59, "stat_sigma": 0.41, "syst_sigma": 0.03},
+        {"mass_low_gev": 0.44, "mass_high_gev": 0.46, "mass_center_gev": 0.45, "value": 3.56, "stat_sigma": 0.42, "syst_sigma": 0.05},
+        {"mass_low_gev": 0.46, "mass_high_gev": 0.48, "mass_center_gev": 0.47, "value": 3.93, "stat_sigma": 0.42, "syst_sigma": 0.08},
+        {"mass_low_gev": 0.48, "mass_high_gev": 0.50, "mass_center_gev": 0.49, "value": 5.33, "stat_sigma": 0.45, "syst_sigma": 0.12},
+        {"mass_low_gev": 0.50, "mass_high_gev": 0.52, "mass_center_gev": 0.51, "value": 4.73, "stat_sigma": 0.42, "syst_sigma": 0.14},
+        {"mass_low_gev": 0.52, "mass_high_gev": 0.54, "mass_center_gev": 0.53, "value": 6.69, "stat_sigma": 0.54, "syst_sigma": 0.22},
+        {"mass_low_gev": 0.54, "mass_high_gev": 0.56, "mass_center_gev": 0.55, "value": 9.59, "stat_sigma": 0.76, "syst_sigma": 0.33},
+        {"mass_low_gev": 0.56, "mass_high_gev": 0.58, "mass_center_gev": 0.57, "value": 10.6, "stat_sigma": 1.0, "syst_sigma": 0.47},
+        {"mass_low_gev": 0.58, "mass_high_gev": 0.60, "mass_center_gev": 0.59, "value": 15.1, "stat_sigma": 1.6, "syst_sigma": 0.82},
+        {"mass_low_gev": 0.60, "mass_high_gev": 0.62, "mass_center_gev": 0.61, "value": 28.6, "stat_sigma": 3.4, "syst_sigma": 1.8},
+        {"mass_low_gev": 0.62, "mass_high_gev": 0.64, "mass_center_gev": 0.63, "value": 63.1, "stat_sigma": 9.9, "syst_sigma": 5.9}
+      ]
+    }
+  ]
+}
