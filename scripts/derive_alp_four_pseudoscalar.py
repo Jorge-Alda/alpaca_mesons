@@ -1,4 +1,4 @@
-"""Enumerate a -> 4P vector trees and derive their odd vertex polynomial.
+"""Derive a -> 4P vector amplitudes and their invariant phase-space integral.
 
 Run: .venv/bin/python scripts/derive_alp_four_pseudoscalar.py
 Natural units (GeV), metric (+---), epsilon^{0123}=+1. Pseudoscalar
@@ -304,6 +304,187 @@ def show(label, expression):
 
 
 @lru_cache(maxsize=1)
+def derive_invariant_phase_space():
+    """Derive the five-invariant measure and its one-variable integration.
+
+    Let s=s12, t=s34, z1=s13+s14, z2=s13+s23 and u=s13.
+    These are linear combinations of Mandelstam invariants, with unit
+    Jacobian relative to (s12,s34,s13,s14,s23). The physical interval in u
+    is fixed by -det(p_i.p_j)>=0. Both orientations of the final momenta
+    are included; a parity-conserving pseudoscalar amplitude squared is
+    identical for them. There is no identical-particle factor in dPhi4.
+
+    The last integration is analytical whenever the scalar amplitude is
+    independent of u. Polynomial moments are also provided exactly.
+    For the full crossed vector-exchange sum this independence is generally
+    absent, so the measure alone does not reduce five integrations to four.
+    """
+    alp_mass_squared = sp.Symbol('m_a_squared', positive=True)
+    mass_squared = sp.symbols('m1_squared m2_squared m3_squared m4_squared', nonnegative=True)
+    first_pair, second_pair, first_sum, second_sum, crossed_pair = sp.symbols(
+        's12 s34 s13_plus_s14 s13_plus_s23 s13', real=True)
+    pair_invariants = {(0, 1): first_pair, (2, 3): second_pair,
+                       (0, 2): crossed_pair, (0, 3): first_sum-crossed_pair,
+                       (1, 2): second_sum-crossed_pair}
+    pair_invariants[1, 3] = (alp_mass_squared+2*sum(mass_squared)
+                             -sum(pair_invariants.values()))
+    gram = sp.diag(*mass_squared)
+    for (first, second), invariant in pair_invariants.items():
+        gram[first, second] = gram[second, first] = (
+            invariant-mass_squared[first]-mass_squared[second])/2
+    epsilon_squared = sp.Poly(-gram.det(method='domain-ge'), crossed_pair)
+    quadratic_coefficient = sp.factor(epsilon_squared.coeff_monomial(crossed_pair**2))
+    linear_coefficient = epsilon_squared.coeff_monomial(crossed_pair)
+    constant_coefficient = epsilon_squared.coeff_monomial(1)
+    kallen = sp.expand(alp_mass_squared**2+first_pair**2+second_pair**2
+                       -2*alp_mass_squared*first_pair-2*alp_mass_squared*second_pair
+                       -2*first_pair*second_pair)
+    def pair_kallen(invariant, first_mass_squared, second_mass_squared):
+        return invariant**2+first_mass_squared**2+second_mass_squared**2-2*(
+            invariant*first_mass_squared+invariant*second_mass_squared
+            +first_mass_squared*second_mass_squared)
+    first_sum_centre = (2*mass_squared[0]+mass_squared[2]+mass_squared[3]
+        +(first_pair+mass_squared[0]-mass_squared[1])
+        *(alp_mass_squared-first_pair-second_pair)/(2*first_pair))
+    second_sum_centre = (mass_squared[0]+mass_squared[1]+2*mass_squared[2]
+        +(second_pair+mass_squared[2]-mass_squared[3])
+        *(alp_mass_squared-first_pair-second_pair)/(2*second_pair))
+    first_sum_half_range = sp.sqrt(kallen*pair_kallen(
+        first_pair, mass_squared[0], mass_squared[1]))/(2*first_pair)
+    second_sum_half_range = sp.sqrt(kallen*pair_kallen(
+        second_pair, mass_squared[2], mass_squared[3]))/(2*second_pair)
+    centre = -linear_coefficient/(2*quadratic_coefficient)
+    radius_squared = (linear_coefficient**2-4*quadratic_coefficient*constant_coefficient)/(4*quadratic_coefficient**2)
+    # Recursive dPhi4 = ds dt/(2pi)^2 times three dPhi2 factors.
+    # Integrate the overall orientation (4pi) and common azimuth (2pi).
+    angular_coefficient = sp.simplify((4*sp.pi)*(2*sp.pi)/(2*sp.pi)**2/(32*sp.pi**2)**3)
+    # The Jacobian to five invariants is sqrt(lambda_a lambda_12 lambda_34)
+    # *sqrt(epsilon_squared)/(s*t). The angular measure has that same
+    # first factor/(s*t); phi and 2pi-phi give two inverse images.
+    invariant_coefficient = sp.simplify(2*angular_coefficient/alp_mass_squared)
+    angle = sp.Symbol('theta', real=True)
+    angular_moments = tuple(sp.integrate(sp.sin(angle)**2*sp.cos(angle)**order,
+                                        (angle, 0, sp.pi)) for order in range(5))
+    # epsilon² supplies lambda_a lambda_12 lambda_34/(64*s*t).
+    # The full relative azimuth is 0..2pi, so its sin² integral is pi.
+    # Include the decay flux 1/(2ma), separately from dPhi4.
+    single_pair_width_coefficient = sp.simplify(
+        angular_coefficient*sp.Rational(1, 64)*sp.Rational(1, 2)
+        *sp.Rational(4, 3)**2*sp.pi)
+    return {'gram': gram, 'pair_invariants': pair_invariants,
+            'epsilon_squared': epsilon_squared.as_expr(),
+            'quadratic_coefficient': quadratic_coefficient,
+            'quadratic_coefficient_residual': sp.factor(quadratic_coefficient+kallen/16),
+            'centre': centre, 'radius_squared': radius_squared,
+            'first_sum_bounds': (first_sum_centre-first_sum_half_range,
+                                 first_sum_centre+first_sum_half_range),
+            'second_sum_bounds': (second_sum_centre-second_sum_half_range,
+                                  second_sum_centre+second_sum_half_range),
+            'angular_coefficient': angular_coefficient,
+            'invariant_coefficient': invariant_coefficient,
+            'angular_moments': angular_moments,
+            'single_pair_width_coefficient': single_pair_width_coefficient}
+
+
+def print_invariant_phase_space():
+    """Display Mandelstam-only width and exact conditional reduction."""
+    result = derive_invariant_phase_space()
+    show('Gram matrix p_i dot p_j; s24 fixed by sum sij=ma²+2 sum mi²', result['gram'])
+    show('Coefficient of s13 squared in -det Gram', result['quadratic_coefficient'])
+    show('Angular phase-space coefficient before sqrt(lambda_a lambda_12 lambda_34)/(ma² s12 s34)',
+         result['angular_coefficient'])
+    show('Invariant phase-space coefficient before ds12 ds34 dz1 dz2 ds13/sqrt(-det Gram)',
+         result['invariant_coefficient'])
+    show('Integral_0^pi sin(theta)^2 cos(theta)^n dtheta, n=0,...,4',
+         sp.Tuple(*result['angular_moments']))
+    show('Independent bounds for s13+s14 at fixed s12,s34',
+         sp.Tuple(*result['first_sum_bounds']))
+    show('Independent bounds for s13+s23 at fixed s12,s34',
+         sp.Tuple(*result['second_sum_bounds']))
+    show('Single-pair angular integration coefficient including decay flux',
+         result['single_pair_width_coefficient'])
+    print('For M=epsilon(p1,p2,p3,p4) F(sij), |M|²=(-det Gram)|F|². '
+          'Gamma=1/(16384 pi^6 ma^3 S) integral ds12 ds34 dz1 dz2 ds13 '
+          'sqrt(-det Gram)|F|², where S=product n_identical!. '
+          's12 lies between (m1+m2)^2 and (ma-m3-m4)^2; '
+          's34 lies between (m3+m4)^2 and (ma-sqrt(s12))^2. '
+          'The two sums lie in the displayed independent intervals. '
+          'At fixed s12,s34,z1,z2, write -det Gram=lambda(ma²,s12,s34)/16 '
+          '*[r²-(s13-c)²], with c=-B/(2A), r²=(B²-4AC)/(4A²), '
+          'where A,B,C are its quadratic coefficients. '
+          'Then s13=c+r cos(theta), theta in [0,pi]. '
+          'If F is independent of s13 the last integral equals '
+          'pi sqrt(lambda) r² |F|²/8. '
+          'For polynomial |F|² use the printed moments after substitution. '
+          'For rational tree amplitudes the same substitution makes this '
+          'a rational trigonometric integral and it can in principle be evaluated '
+          'analytically term by term, but poles require a specified prescription. '
+          'A single aVV pairing has F(s12,s34): all three angles integrate exactly, '
+          'giving dGamma/(ds12 ds34)=lambda_a^(3/2) lambda_12^(3/2) '
+          'lambda_34^(3/2)|F|²/(1179648 pi^5 ma^3 s12² s34² S). '
+          'Crossed-pair interference and the axial aVP family generally retain '
+          'all five invariant dependences. No narrow-width approximation is used.')
+
+
+def derive_semicircle_integrals():
+    """Derive the rational-amplitude inner integral using a semicircle weight.
+
+    With u=c+x, the invariant measure contains sqrt(r²-x²). Polynomial
+    division and partial fractions therefore reduce any rational amplitude
+    squared with no poles on the interval to polynomial moments and the
+    displayed Cauchy integral. Its square root is analytic off [-r,r] and
+    tends to z at infinity. Repeated poles follow by differentiating in z.
+    This includes finite, prescribed complex resonance poles, but does not
+    assign any resonance width or regularize an on-shell tree pole.
+    """
+    radius, pole_distance = sp.symbols('r z', positive=True)
+    tangent, positive_ratio = sp.symbols('t b', positive=True)
+    # For real z>r the tangent substitution gives
+    # int_0^pi dtheta/(z-r cos theta)
+    # =2/(z+r) int_0^infty dt/(t²+(z-r)/(z+r)).
+    elementary_integral = sp.integrate(1/(tangent**2+positive_ratio**2),
+                                        (tangent, 0, sp.oo))
+    inverse_linear = sp.simplify(2/(pole_distance+radius)*elementary_integral.subs(
+        positive_ratio, sp.sqrt((pole_distance-radius)/(pole_distance+radius))))
+    cosine = sp.Symbol('cos_theta', real=True)
+    quotient, remainder = sp.div(radius**2*(1-cosine**2),
+                                  radius*cosine-pole_distance, cosine)
+    # Polynomial quotient is -r cos(theta)-z; its integral is -pi*z.
+    cauchy_integral = sp.pi*(-pole_distance+sp.sqrt(pole_distance**2-radius**2))
+    return {'elementary_integral': elementary_integral,
+            'inverse_linear_integral': inverse_linear,
+            'quotient': quotient, 'remainder': remainder,
+            'division_residual': sp.expand(radius**2*(1-cosine**2)
+                -(radius*cosine-pole_distance)*quotient-remainder),
+            'cauchy_integral': cauchy_integral,
+            'first_five_polynomial_moments': tuple(
+                0 if order % 2 else sp.pi*radius**(order+2)*sp.catalan(order//2)
+                /2**(order+1) for order in range(5))}
+
+
+def print_semicircle_integrals():
+    """Explain the exact one-invariant reduction for rational amplitudes."""
+    result = derive_semicircle_integrals()
+    for label, expression in result.items():
+        show('Semicircle rational integration: '+label, sp.Tuple(*expression)
+             if isinstance(expression, tuple) else expression)
+    print('For a rational |F(u)|² write R(c+x)=P(x)+sum a_(z,k)/(x-z)^k '
+          'by polynomial division and partial fractions. The inner integral is '
+          'sqrt(lambda_a)/4 times [sum P_n mu_n + '
+          'sum a_(z,k) (d/dz)^(k-1) J(z)/(k-1)!], '
+          'mu_(2n)=pi r^(2n+2) Catalan(n)/2^(2n+1), mu_(2n+1)=0, '
+          'J(z)=pi[sqrt(z²-r²)-z], sqrt(z²-r²)~z at infinity. '
+          'Hence the complete rational tree amplitude permits exactly four '
+          'remaining numerical integrations, including crossed interference. '
+          'This requires no pole on the integration interval. For physical '
+          'on-shell vector poles the zero-width squared amplitude is divergent; '
+          'a finite-width prescription must be specified first. Constant-width '
+          'propagators preserve rationality, whereas general running widths '
+          'or nonrational form factors need separate analysis. Near coincident '
+          'poles use repeated-pole limits to avoid numerical cancellation.')
+
+
+@lru_cache(maxsize=1)
 def derive_flavour_selection_rules():
     """Enumerate nonzero flavour routings before summing Lorentz amplitudes.
 
@@ -471,6 +652,8 @@ def main():
           'each inequivalent assignment of four external labelled legs must '
           'be summed. Identical-particle phase-space factors do not multiply '
           'the amplitude.')
+    print_invariant_phase_space()
+    print_semicircle_integrals()
 
 
 if __name__ == '__main__':
@@ -547,8 +730,32 @@ if __name__ == '__main__':
             self.assertEqual(sewn['pair_epsilon'], -1)
             self.assertEqual(sewn['axial_epsilon'], 1)
 
+        def test_gram_quadratic_and_phase_space_normalization(self):
+            result = derive_invariant_phase_space()
+            self.assertEqual(result['quadratic_coefficient_residual'], 0)
+            self.assertEqual(result['angular_coefficient'], 1/(16384*sp.pi**6))
+            self.assertEqual(result['invariant_coefficient'],
+                1/(8192*sp.pi**6*sp.Symbol('m_a_squared', positive=True)))
+            self.assertEqual(result['angular_moments'],
+                             (sp.pi/2, 0, sp.pi/8, 0, sp.pi/16))
+
+        def test_semicircle_partial_fraction_integrals(self):
+            result = derive_semicircle_integrals()
+            self.assertEqual(result['division_residual'], 0)
+            # An independent convergent geometric expansion at large z
+            # reproduces the first nonzero semicircle moments.
+            inverse_distance = sp.Symbol('w', positive=True)
+            radius, distance = sp.symbols('r z', positive=True)
+            expanded = sp.series(result['cauchy_integral'].subs(distance, 1/inverse_distance),
+                                  inverse_distance, 0, 7).removeO().expand()
+            for order, moment in enumerate(result['first_five_polynomial_moments']):
+                self.assertEqual(sp.simplify(expanded.coeff(inverse_distance, order+1)+moment), 0)
+
     if '--selection-rules' in sys.argv:
         print_flavour_selection_rules()
+    elif '--phase-space' in sys.argv:
+        print_invariant_phase_space()
+        print_semicircle_integrals()
     elif '--test' in sys.argv:
         unittest.main(argv=[sys.argv[0]])
     else:
