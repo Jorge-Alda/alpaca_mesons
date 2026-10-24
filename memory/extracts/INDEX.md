@@ -12,6 +12,8 @@ provenance: literature
 - [Bauer:2020jbp](Bauer:2020jbp/INDEX.md) — source-backed positive ALP photon-operator normalization in Eqs. (39)/(54) and upper-index dual convention.
 
 - [Graf:2020yxt](Graf:2020yxt/INDEX.md) — chiral Hilbert series with external sources, disconnected character projections and IBP qualifications.
+- [Gerardin:2019vio](Gerardin:2019vio/INDEX.md) — pion TFF leading-twist factorization at unequal virtualities.
+- [Bali:2021qem](Bali:2021qem/INDEX.md) — lattice octet/singlet eta decay constants, singlet evolution and asymptotic TFF inputs.
 
 Modular source digests grouped by their INSPIRE-HEP BibTeX key.
 

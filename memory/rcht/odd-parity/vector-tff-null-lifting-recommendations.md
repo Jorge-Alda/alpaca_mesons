@@ -3,7 +3,7 @@ title: Recommended route to a reliable constraint on the ALP TFF null direction
 status: mixed
 created: 2026-10-24
 updated: 2026-10-24
-bibtex_keys: [Alda:2026nrd, Knecht:2001qf, BaBar:2009rrj, BaBar:2018zpn, Adlarson:2016hpp, NA60:2016nad]
+bibtex_keys: [Alda:2026nrd, Bali:2021qem, Gerardin:2019vio, Knecht:2001qf, BaBar:2009rrj, BaBar:2018zpn, Adlarson:2016hpp, NA60:2016nad]
 provenance: assumption
 ---
 
@@ -25,6 +25,27 @@ data through shared odd-parity coefficients, while keeping the physical
 meson source matrices used in the data fit distinct from the ALP no-mixing
 source. The ALP-specific projection is documented in the
 [rho-pole null record](../../alp/lepton-pair/alp-isovector-tff-fit-null-projection.md).
+
+# Derivation progress
+
+The two-vector pion meromorphic ansatz has now been constrained by the
+anomaly, the single-virtual $1/Q^2$ coefficient, and the symmetric double-
+virtual coefficient. It reproduces the symmetric limit but fails the
+leading-twist result at general fixed ratios of hard photon virtualities:
+the factorization coefficient contains $\log r$, while the finite-pole
+polynomial ansatz gives a rational function of $r$. The derivation and
+low-energy map to the original $c_i,d_i$ combinations are in
+[the two-vector pion record](improved-pion-tff-two-vector-matching.md).
+This candidate therefore cannot serve as the full hard-matched predictor.
+The source-backed $\eta,\eta'$ single-virtual coefficients are available
+with their singlet-current evolution and $N_f=4$ matching in
+[the Bali:2021qem extract](../../extracts/Bali:2021qem/eta-eta-prime-tff-hard-inputs.md).
+Under the asymptotic quark-DA assumption, the leading-order fixed-ratio
+shape is the pion convolution multiplied by each channel's single-virtual
+coefficient; this gives symmetric coefficients $-53.50\pm3.33$ MeV for
+$\eta$ and $-76.83\pm3.37$ MeV for $\eta'$. These are QCD hard limits, not
+finite-virtuality vector predictions. The coefficients do not supply the
+source-specific ALP hard matching or the finite-virtuality completion.
 
 # What a short-distance-compatible TFF means
 

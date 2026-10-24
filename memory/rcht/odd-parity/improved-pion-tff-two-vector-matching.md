@@ -3,7 +3,7 @@ title: Two-vector pion TFF constraints and odd-coefficient slope map
 status: derived
 created: 2026-10-24
 updated: 2026-10-24
-bibtex_keys: [Alda:2026nrd, Knecht:2001qf, Ruiz-Femenia:2003jdx]
+bibtex_keys: [Alda:2026nrd, Bali:2021qem, Gerardin:2019vio, Knecht:2001qf, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
 
@@ -18,7 +18,11 @@ one-vector amplitude, phase, and original-coefficient dependence are in
 short-distance targets and the limitation of LMD versus LMD+V are in the
 [Knecht extract](../../extracts/Knecht:2001qf/pion-tff-short-distance.md)
 [@Knecht:2001qf]. The odd-operator basis is sourced in the linked amplitude
-record [@Ruiz-Femenia:2003jdx].
+record [@Ruiz-Femenia:2003jdx]. The unequal-virtuality leading-twist
+convolution is from [Gerardin:2019vio](../../extracts/Gerardin:2019vio/pion-tff-unequal-virtuality-asymptotics.md).
+The physical $\eta,\eta'$ single-virtual hard coefficients are indexed in
+[the lattice-input extract](../../extracts/Bali:2021qem/eta-eta-prime-tff-hard-inputs.md)
+[@Bali:2021qem].
 
 Use natural units, $\epsilon^{0123}=+1$, the same external-pion phase as the
 canonical amplitude, and $F_{\pi}(0,0)<0$. Following Alda:2026nrd, identify
@@ -72,9 +76,62 @@ $$
 $$
 
 This ray dependence is a model prediction, not a sourced factorization
-coefficient. The unequal-ratio leading-twist input must be derived before
-claiming full hard matching. The symmetric limit alone does not establish
-that matching.
+coefficient. The unequal-ratio leading-twist input follows from the
+factorization equation in [Gerardin:2019vio](../../extracts/Gerardin:2019vio/pion-tff-unequal-virtuality-asymptotics.md).
+At leading order in $\alpha_s$, use the asymptotic pion distribution
+amplitude $\varphi_\pi(x)=6x(1-x)$ and set
+$Q_1^2=rQ^2$, $Q_2^2=Q^2$, $\overline Q^2=(r+1)Q^2$,
+$\omega=(1-r)/(1+r)$. SymPy integrates the source convolution and obtains
+the canonical signed coefficient
+
+$$
+\lim_{Q^2\to\infty}Q^2F_\pi(-rQ^2,-Q^2)
+=-2f_\pi\frac{r^2-1-2r\log r}{(r-1)^3}.
+$$
+
+Its continuous symmetric value is $-2f_\pi/3$, as before. The two-vector
+coefficient instead equals $-f_\pi(r+1)/(3r)$, which does not reproduce the
+QCD function over general hard-ray ratios;
+as $r\to0$ the QCD coefficient tends to $-2f_\pi$ while the ansatz
+diverges, and as $r\to\infty$ the QCD coefficient tends to zero while the
+ansatz tends to $-f_\pi/3$. The single-virtual constraint therefore fixes
+$C_\pi^{\rm single}=-2f_\pi$ and $h_5=6M_1^2M_2^2$, but cannot repair the
+two-hard-ray mismatch. $h_2$ also does not enter this leading hard-ray
+coefficient. This two-pole polynomial is not a full short-distance match.
+The conclusion assumes the asymptotic DA and leading order; finite-scale
+DA moments, perturbative corrections and higher twists are omitted.
+
+## Physical eta and eta-prime hard coefficients
+
+For a pseudoscalar channel $P$ with the same asymptotic quark distribution
+amplitude, the leading-order fixed-ratio shape is the universal normalized
+function
+
+$$
+\Phi(r)=\frac{r^2-1-2r\log r}{(r-1)^3},\qquad \Phi(1)=\frac13,
+$$
+
+so that $Q^2F_P(-rQ^2,-Q^2)=C_P^{\rm single}\Phi(r)$, where
+$C_P^{\rm single}=\lim_{Q^2\to\infty}Q^2F_P(-Q^2,0)$ in the canonical
+signed convention. This channel extension assumes the asymptotic quark DA
+for each flavor component; the singlet evolution and $N_f=4$ threshold
+matching are included in the source-specific $C_P^{\rm single}$.
+
+The [Bali:2021qem extract](../../extracts/Bali:2021qem/eta-eta-prime-tff-hard-inputs.md)
+gives the canonical single-virtual inputs
+$C_\eta^{\rm single}=-0.1605(100)\,\mathrm{GeV}$ and
+$C_{\eta'}^{\rm single}=-0.2305(101)\,\mathrm{GeV}$. Thus the conditional
+symmetric double-virtual coefficients are
+
+$$
+\lim_{Q^2\to\infty}Q^2F_\eta(-Q^2,-Q^2)=-0.05350\pm0.00333\,\mathrm{GeV},\qquad
+\lim_{Q^2\to\infty}Q^2F_{\eta'}(-Q^2,-Q^2)=-0.07683\pm0.00337\,\mathrm{GeV}.
+$$
+
+These are leading-twist QCD constraints. They are not the predictions of a
+completed RChT model. The physical hard inputs do not remove the need to
+match each low-energy TFF to the corresponding original odd-coefficient
+combinations and to profile any completion parameters.
 
 # Low-energy map to the original odd coefficients
 
@@ -109,15 +166,18 @@ and single-virtual coefficient set $h_7$ and $h_5$ respectively.
 This calculation replaces the incorrect constant single-virtual limit of
 the original one-vector expression and reproduces the sourced symmetric
 pion coefficient. It also makes explicit which local low-energy derivatives
-carry the original $c_i,d_i$ combinations. It does not show that a
-two-vector ansatz is sufficient: its unequal-hard-ray coefficient needs an
-independent QCD comparison, and higher virtuality dependence may require
-more terms or spectral strength.
+carry the original $c_i,d_i$ combinations. The unequal-hard-ray comparison
+shows that this two-vector ansatz is not a full QCD completion. Its
+finite-pole rational dependence cannot reproduce the logarithm in the
+factorization function exactly over all hard-ray ratios. It can be fitted as
+an approximation over a finite ratio range; exact matching requires a
+representation with the needed logarithmic dependence, such as a dispersive
+continuum contribution.
 
-The value of $C_\pi^{\rm single}$ is kept symbolic rather than copied from
-an unstated convention. No physical $\eta,\eta'$ axial-decay-constant
-matrix, singlet matching/evolution, or source-specific ALP hard coefficient
-is supplied by this pion calculation. Do not transfer the pion inputs to
-those sources. This distinction is required before fitting shared odd
-coefficients with the proposed improved TFFs; see the
+The value of $C_\pi^{\rm single}$ is sourced and equals $-2f_\pi$ under the
+declared canonical convention. The physical $\eta,\eta'$ hard coefficients
+are separate source inputs, not pion values. They do not by themselves
+supply a matched finite-virtuality TFF or the source-specific ALP hard
+coefficient. This distinction is required before fitting shared odd
+coefficients with improved TFFs; see the
 [TFF null-lifting recommendations](vector-tff-null-lifting-recommendations.md).
