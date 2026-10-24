@@ -3,7 +3,7 @@ title: Recommended route to a reliable constraint on the ALP TFF null direction
 status: mixed
 created: 2026-10-24
 updated: 2026-10-24
-bibtex_keys: [Alda:2026nrd, Bali:2021qem, Gerardin:2019vio, Knecht:2001qf, BaBar:2009rrj, BaBar:2018zpn, Adlarson:2016hpp, NA60:2016nad]
+bibtex_keys: [Alda:2026nrd, Bali:2021qem, Gerardin:2019vio, Hoferichter:2018kwz, Knecht:2001qf, BaBar:2009rrj, BaBar:2018zpn, Adlarson:2016hpp, NA60:2016nad]
 provenance: assumption
 ---
 
@@ -46,6 +46,35 @@ coefficient; this gives symmetric coefficients $-53.50\pm3.33$ MeV for
 $\eta$ and $-76.83\pm3.37$ MeV for $\eta'$. These are QCD hard limits, not
 finite-virtuality vector predictions. The coefficients do not supply the
 source-specific ALP hard matching or the finite-virtuality completion.
+
+An executable interpolation diagnostic now adds a shifted leading-twist
+convolution to a rapidly decreasing symmetric remainder. It can satisfy the
+anomaly, preserve both original pion derivatives, and retain the sourced
+single- and double-hard limits. This is an existence construction only:
+the smoothing scale, repeated poles, and continuum discontinuity are not
+physical spectral inputs. With the two remainder coefficients fixed by
+matching, the original odd combinations remain. If independent subtraction
+terms are profiled, they absorb both derivative combinations. Thus the
+construction does not establish useful coefficient sensitivity; the planned
+next step remains a source-backed dispersive representation with explicit
+spectral data and a no-double-counting prescription. Details and exact
+residuals are in the [interpolation record](improved-pion-tff-two-vector-matching.md).
+
+The source-backed next construction is now explicit in
+[Hoferichter:2018kwz](../../extracts/Hoferichter:2018kwz/pion-tff-dispersive-asymptotic-representation.md):
+low-energy $2\pi/3\pi$ spectral strength, a fitted effective pole, and a
+high-energy double-spectral term. The last term reproduces the interior
+fixed-ratio hard limit but vanishes identically on a real-photon axis. The
+paper's OPE justification is restricted to $|\omega|<1/2$; its singly-virtual
+endpoint is a formal continuation. Symbolic matching shows that the anomaly
+and formal endpoint condition constrain the effective-pole normalization
+and mass only after the low-energy normalization and single-hard spectral
+moment are supplied. The original pion slope combinations then require the
+low-energy slope and mixed moments. Freely profiling these two moments
+absorbs both coefficient combinations, while a physical correlated spectral
+calculation needs $F_\pi^V$, the $\gamma^*\to3\pi$ partial wave, threshold
+choices, and matching uncertainties. No numerical TFF refit is justified
+until those inputs are selected.
 
 # What a short-distance-compatible TFF means
 

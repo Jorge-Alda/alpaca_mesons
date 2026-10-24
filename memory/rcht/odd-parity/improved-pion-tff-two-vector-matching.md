@@ -3,7 +3,7 @@ title: Two-vector pion TFF constraints and odd-coefficient slope map
 status: derived
 created: 2026-10-24
 updated: 2026-10-24
-bibtex_keys: [Alda:2026nrd, Bali:2021qem, Gerardin:2019vio, Knecht:2001qf, Ruiz-Femenia:2003jdx]
+bibtex_keys: [Alda:2026nrd, Bali:2021qem, Gerardin:2019vio, Hoferichter:2018kwz, Knecht:2001qf, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
 
@@ -161,6 +161,117 @@ an optional low-energy matching assumption. Neither equation follows from
 the leading OPE. The hard constraints leave $h_2$ free, while the anomaly
 and single-virtual coefficient set $h_7$ and $h_5$ respectively.
 
+## Finite-virtuality interpolation diagnostic
+
+The executable derivation also constructs an existence example that combines
+the leading-twist ray function with adjustable low-energy terms. Let $M_1$ be
+an arbitrary positive mass scale and define
+
+$$
+H(s_1,s_2)=-\frac{2f_\pi}{3}\int_0^1 dx\,
+\frac{6x(1-x)}{M_1^2-xs_1-(1-x)s_2},\qquad
+R(s_1,s_2)=\frac{M_1^{12}}{(M_1^2-s_1)^3(M_1^2-s_2)^3}.
+$$
+
+Use $F_{\rm int}=H+R[a+b(s_1+s_2)+c s_1s_2]$. The shifted convolution has
+$H(0,0)=-2f_\pi/(3M_1^2)$,
+$H_{,1}(0,0)=-f_\pi/(3M_1^4)$, and
+$H_{,12}(0,0)=-4f_\pi/(15M_1^6)$. Requiring the anomaly and the two
+original odd-coefficient derivatives fixes
+
+$$
+a=F_{\rm anom}-H(0,0),\quad
+b=F_{\pi,1}(0,0)-H_{,1}(0,0)-\frac{3a}{M_1^2},\quad
+c=F_{\pi,12}(0,0)-H_{,12}(0,0)-\frac{6b}{M_1^2}-\frac{9a}{M_1^4}.
+$$
+
+The script obtains zero residuals for all three low-energy conditions. The
+shift by $M_1^2$ vanishes in the fixed-positive-ratio hard limit, so $H$
+retains the logarithmic leading-twist coefficient. The correction falls
+faster than $1/Q^2$ both when one photon is real and when both virtualities
+are hard at fixed ratio. Its hard-limit residuals are therefore zero.
+
+This is only a mathematical interpolation. $M_1$, the repeated poles in
+$R$, and the implied discontinuity of $H$ are not fitted or identified with
+the physical vector spectrum. No measured spectral function or matching
+prescription is used. If $b,c$ are fixed by the displayed matching, the two
+odd-coefficient combinations remain encoded in the derivatives. If instead
+independent finite-energy contributions to $b,c$ are profiled, their
+two-dimensional derivative map is invertible and can absorb every variation
+of those two combinations; the local derivatives then provide no standalone
+coefficient identification. A physical dispersive representation with
+specified spectral input and no duplicated resonance strength remains the
+next step.
+
+## Source-based dispersive continuum and moment matching
+
+The dispersive construction in
+[Hoferichter:2018kwz](../../extracts/Hoferichter:2018kwz/pion-tff-dispersive-asymptotic-representation.md)
+separates low-energy spectral strength, an effective pole for omitted higher
+and mixed regions, and a high-energy double-spectral term. In the canonical
+negative-scalar convention and with $f_\pi=93\,\mathrm{MeV}$, the latter is
+
+$$
+F_{\rm asym}(s_1,s_2)=-2f_\pi\int_{s_m}^{\infty}dx\,
+\frac{s_1s_2}{(x-s_1)^2(x-s_2)^2}.
+$$
+
+The executable derivation gives $F_{\rm asym}(0,0)=0$,
+$F_{{\rm asym},1}(0,0)=0$,
+$F_{{\rm asym},12}(0,0)=-2f_\pi/(3s_m^3)$, and
+$F_{\rm asym}(s,0)=0$ for every finite $s$. Along a fixed ray with both
+virtualities hard it reproduces
+
+$$
+\lim_{Q^2\to\infty}Q^2F_{\rm asym}(-rQ^2,-Q^2)
+=-2f_\pi\frac{r^2-1-2r\log r}{(r-1)^3}.
+$$
+
+The source states that the leading-twist expansion is justified only for
+$|\omega|<1/2$, with $\omega=(1-r)/(1+r)$ on this ray. The singly-virtual
+endpoint is therefore a formal continuation of the hard formula. Also, the
+fixed-ray hard limit and the real-photon limit do not commute: the asymptotic
+term vanishes identically at $s_2=0$, while its fixed-positive-$r$ limit is
+nonzero. The singly-virtual coefficient must be supplied by the low-energy
+spectral and effective-pole pieces.
+
+Write the effective pole as
+
+$$
+F_{\rm eff}(s_1,s_2)=E_0\frac{T^2}{(T-s_1)(T-s_2)},\qquad T=M_{\rho'}^2.
+$$
+
+Its slope, mixed derivative, and formal single-hard coefficient are
+$E_0/T$, $E_0/T^2$, and $E_0T$. Denote the low-energy spectral contribution
+by $F_{\rm disp}$, with derivatives $F_{{\rm disp},1}$ and
+$F_{{\rm disp},12}$ at the origin, and denote its singly-virtual hard
+coefficient by $C_{\rm disp}$. Anomaly and formal endpoint matching give
+
+$$
+E_0=-\frac{1}{4\pi^2f_\pi}-F_{\rm disp}(0,0),\qquad
+T=\frac{-2f_\pi-C_{\rm disp}}{E_0}.
+$$
+
+The slope and mixed-curvature matches then require
+
+$$
+F_{{\rm disp},1}(0,0)=F_{\pi,1}(0,0)-\frac{E_0}{T},\qquad
+F_{{\rm disp},12}(0,0)=F_{\pi,12}(0,0)-\frac{E_0}{T^2}
++\frac{2f_\pi}{3s_m^3}.
+$$
+
+These are symbolic conditions, not numerical predictions: the low-energy
+spectral normalization, $C_{\rm disp}$, and $s_m$ are unspecified inputs.
+The low-energy spectral density fixes correlated moments
+$(F_{\rm disp}(0,0),F_{{\rm disp},1},F_{{\rm disp},12},C_{\rm disp})$;
+this repository has not supplied the needed $F_\pi^V$ and $f_1$ functions or
+their uncertainties. If $F_{{\rm disp},1}$ and $F_{{\rm disp},12}$ are
+allowed to float independently, their Jacobian in the two derivative
+conditions is the identity, so profiling them removes all local sensitivity
+to the two original odd-coefficient combinations. This rank statement does
+not replace a statistical profile with a sourced correlated spectral model.
+The effective-pole mass solution additionally requires $E_0\ne0$ and $T>0$.
+
 # Interpretation and limits
 
 This calculation replaces the incorrect constant single-virtual limit of
@@ -174,8 +285,10 @@ an approximation over a finite ratio range; exact matching requires a
 representation with the needed logarithmic dependence, such as a dispersive
 continuum contribution.
 
-The value of $C_\pi^{\rm single}$ is sourced and equals $-2f_\pi$ under the
-declared canonical convention. The physical $\eta,\eta'$ hard coefficients
+The leading-twist convolution formally gives $C_\pi^{\rm single}=-2f_\pi$
+under the declared canonical convention, but the source limits the rigorous
+OPE domain to nonzero virtuality ratios away from the singly-virtual endpoint.
+The physical $\eta,\eta'$ hard coefficients
 are separate source inputs, not pion values. They do not by themselves
 supply a matched finite-virtuality TFF or the source-specific ALP hard
 coefficient. This distinction is required before fitting shared odd

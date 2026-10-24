@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-15
+updated: 2026-10-24
 bibtex_keys: []
 provenance: literature
 ---
@@ -14,6 +14,7 @@ provenance: literature
 - [Graf:2020yxt](Graf:2020yxt/INDEX.md) — chiral Hilbert series with external sources, disconnected character projections and IBP qualifications.
 - [Gerardin:2019vio](Gerardin:2019vio/INDEX.md) — pion TFF leading-twist factorization at unequal virtualities.
 - [Bali:2021qem](Bali:2021qem/INDEX.md) — lattice octet/singlet eta decay constants, singlet evolution and asymptotic TFF inputs.
+- [Hoferichter:2018kwz](Hoferichter:2018kwz/INDEX.md) — dispersive low-energy pion TFF, effective higher-state pole, and asymptotic spectral contribution.
 
 Modular source digests grouped by their INSPIRE-HEP BibTeX key.
 

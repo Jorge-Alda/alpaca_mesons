@@ -10,7 +10,15 @@ The leading-twist convolution is Gerardin:2019vio, Eqs. (DIS),
 (TFF_asympt), in memory/sources/Gerardin:2019vio/main.tex.
 Eta and eta-prime asymptotic coefficients: Bali:2021qem Eq. (5.80),
 memory/extracts/Bali:2021qem/eta-eta-prime-tff-hard-inputs.md.
-This is a diagnostic completion, not a full arbitrary-ratio QCD match.
+Sourced dispersive, asymptotic and effective-pole components follow
+Hoferichter:2018kwz Eqs. (4.1), (4.9), (4.10), as recorded in
+memory/extracts/Hoferichter:2018kwz/pion-tff-dispersive-asymptotic-representation.md.
+That source states the OPE domain |omega|<1/2; its singly-virtual
+|omega|=1 evaluation is a formal endpoint, not a consequence within
+that OPE domain. The separate Brodsky-Lepage constraint is stated explicitly.
+This script derives a symbolic source-based hard completion and an
+illustrative interpolation. Unspecified low-energy spectral inputs prevent
+its use as a physical finite-virtuality predictor.
 """
 import sympy as sp
 
@@ -90,6 +98,41 @@ def derive():
     eta_prime_symmetric_coefficient = sp.limit(eta_prime_hard_ray,hard_ratio,1)
     eta_symmetric_uncertainty = sp.Rational(100,10000)*sp.limit(normalized_hard_ray,hard_ratio,1)
     eta_prime_symmetric_uncertainty = sp.Rational(101,10000)*sp.limit(normalized_hard_ray,hard_ratio,1)
+    # Illustrative finite-virtuality interpolation, not a sourced hadronic
+    # spectral density. M1 is an unfixed smoothing scale in this expression.
+    shifted_convolution = -2*decay_constant*sp.Integral(distribution_amplitude/
+        (first_mass**2-momentum_fraction*first_virtuality-(1-momentum_fraction)*second_virtuality),
+        (momentum_fraction,0,1))/3
+    shifted_normalization = -2*decay_constant*sp.integrate(distribution_amplitude/first_mass**2,(momentum_fraction,0,1))/3
+    shifted_slope = -2*decay_constant*sp.integrate(distribution_amplitude*momentum_fraction/first_mass**4,(momentum_fraction,0,1))/3
+    shifted_mixed = -2*decay_constant*sp.integrate(distribution_amplitude*2*momentum_fraction*(1-momentum_fraction)/first_mass**6,(momentum_fraction,0,1))/3
+    correction_response = sp.prod((first_mass**2/(first_mass**2-virtuality))**3
+        for virtuality in (first_virtuality,second_virtuality))
+    response_slope = sp.diff(correction_response,first_virtuality).subs({first_virtuality:0,second_virtuality:0})
+    response_mixed = sp.diff(correction_response,first_virtuality,second_virtuality).subs({first_virtuality:0,second_virtuality:0})
+    normalization_difference = anomaly-shifted_normalization
+    slope_difference = original_slope-shifted_slope
+    mixed_difference = original_mixed-shifted_mixed
+    constant_correction = normalization_difference
+    linear_correction = sp.factor(slope_difference-response_slope*constant_correction)
+    mixed_correction = sp.factor(mixed_difference-2*response_slope*linear_correction-response_mixed*constant_correction)
+    finite_correction = correction_response*(constant_correction+linear_correction*(first_virtuality+second_virtuality)+mixed_correction*first_virtuality*second_virtuality)
+    interpolated_form_factor = shifted_convolution+finite_correction
+    normalization_residual = sp.factor(shifted_normalization+finite_correction.subs({first_virtuality:0,second_virtuality:0})-anomaly)
+    slope_residual = sp.simplify(shifted_slope+sp.diff(finite_correction,first_virtuality).subs({first_virtuality:0,second_virtuality:0})-original_slope)
+    mixed_residual = sp.simplify(shifted_mixed+sp.diff(finite_correction,first_virtuality,second_virtuality).subs({first_virtuality:0,second_virtuality:0})-original_mixed)
+    correction_single_hard = sp.limit(hard_scale*finite_correction.subs({first_virtuality:-hard_scale,second_virtuality:0}),hard_scale,sp.oo)
+    correction_double_hard = sp.limit(hard_scale*finite_correction.subs({first_virtuality:-hard_ratio*hard_scale,second_virtuality:-hard_scale}),hard_scale,sp.oo)
+    odd_derivative_map = sp.Matrix([original_slope,original_mixed]).jacobian([c1,c2,c5,c6,d3])
+    odd_derivative_rank = odd_derivative_map.rank()
+    shifted_hard_integrand = sp.limit(hard_scale*distribution_amplitude/
+        (first_mass**2+momentum_fraction*hard_ratio*hard_scale+(1-momentum_fraction)*hard_scale),hard_scale,sp.oo)
+    shifted_hard_coefficient = sp.factor(-2*decay_constant*sp.integrate(shifted_hard_integrand,(momentum_fraction,0,1))/3)
+    hard_coefficient_residual = sp.factor(shifted_hard_coefficient-leading_twist_ray)
+    # Subtraction variations produce an invertible triangular map to the two
+    # low-energy derivatives, independently of the odd-coefficient values.
+    subtraction_derivative_map = sp.Matrix([[1,0],[2*response_slope,1]])
+    compensated_odd_variations = -subtraction_derivative_map.inv()*odd_derivative_map
     return locals()
 
 
@@ -152,6 +195,101 @@ def main():
                                ('Eta-prime','eta_prime_symmetric_coefficient','eta_prime_symmetric_uncertainty')]:
         print(f"{label} symmetric coefficient [GeV]: {sp.N(result[central],12)} +/- {sp.N(result[error],12)}")
     print('These are conditional leading-twist limits, not an all-ratio vector representation or finite-virtuality fit.')
+    print('Diagnostic finite-virtuality interpolation: M1 below is an unfixed smoothing scale, not an identified physical pole.')
+    for label,name in [('Shifted leading-twist convolution','shifted_convolution'),
+        ('Shifted normalization','shifted_normalization'),('Shifted slope','shifted_slope'),
+        ('Shifted mixed derivative','shifted_mixed'),('Rapidly falling correction response','correction_response'),
+        ('Constant subtraction coefficient','constant_correction'),('Linear subtraction coefficient','linear_correction'),
+        ('Mixed subtraction coefficient','mixed_correction'),('Finite correction','finite_correction'),
+        ('Normalization residual','normalization_residual'),('Slope residual','slope_residual'),
+        ('Mixed derivative residual','mixed_residual'),('Q_squared times correction, single virtual','correction_single_hard'),
+        ('Q_squared times correction, fixed positive ratio','correction_double_hard'),
+        ('Odd-coupling derivative map','odd_derivative_map'),('Odd-coupling derivative rank','odd_derivative_rank')]:
+        show(label,result[name])
+    show('Shifted convolution hard coefficient minus QCD coefficient',result['hard_coefficient_residual'])
+    show('Linear/mixed subtraction derivative map',result['subtraction_derivative_map'])
+    show('Subtraction variations compensating every odd-coefficient variation',result['compensated_odd_variations'])
+    print('The shifted convolution retains the leading-twist hard-ray function: its mass shift is suppressed at fixed r>0.')
+    print('The rational correction preserves single and double hard coefficients while fixing anomaly and two derivatives.')
+    print('Its repeated poles and shifted continuum are interpolation assumptions; no physical spectral discontinuity is inferred.')
+    print('The two low-energy derivatives measure at most two odd-coupling combinations when the interpolation is fixed.')
+    print('Independent linear and mixed subtraction terms can absorb both combinations; marginalizing them removes this coefficient identification.')
+    print('A physical dispersive construction still requires channel spectral densities, subtraction information and matching without duplicated resonance strength.')
+    derive_sourced_dispersive(result)
+
+
+def derive_sourced_dispersive(result):
+    """Derive Hoferichter:2018kwz continuum and symbolic moment matching.
+
+    All low-energy moments are independent unspecified inputs. The canonical
+    scalar reverses the source sign; f_pi retains the Alda:2026nrd value.
+    The profile below is algebraic, without a likelihood or invented data.
+    """
+    first,second = result['first_virtuality'],result['second_virtuality']
+    pion_decay_constant = result['decay_constant']
+    threshold = sp.Symbol('s_m',positive=True)
+    spectral_variable,scaled_variable = sp.symbols('x_spectral t',positive=True)
+    hard_ratio,hard_scale = result['hard_ratio'],result['hard_scale']
+    asymptotic_integrand = -2*pion_decay_constant*first*second/((spectral_variable-first)**2*(spectral_variable-second)**2)
+    asymptotic_component = sp.Integral(asymptotic_integrand,(spectral_variable,threshold,sp.oo))
+    origin = {first:0,second:0}
+    continuum_normalization = sp.integrate(asymptotic_integrand.subs(origin),(spectral_variable,threshold,sp.oo))
+    continuum_slope = sp.integrate(sp.diff(asymptotic_integrand,first).subs(origin),(spectral_variable,threshold,sp.oo))
+    continuum_mixed = sp.integrate(sp.diff(asymptotic_integrand,first,second).subs(origin),(spectral_variable,threshold,sp.oo))
+    # Scale x=Q_squared*t before taking the fixed-positive-r limit. Integrate
+    # SymPy's partial fractions to keep the logarithmic result explicit.
+    scaled_integrand = sp.factor(hard_scale**2*asymptotic_integrand.subs(
+        {first:-hard_ratio*hard_scale,second:-hard_scale,spectral_variable:hard_scale*scaled_variable}))
+    primitive = sp.integrate(sp.apart(scaled_integrand,scaled_variable),scaled_variable)
+    continuum_hard = sp.simplify(sp.limit(primitive,scaled_variable,sp.oo)-sp.limit(primitive,scaled_variable,0,dir='+'))
+    low_normalization,low_slope,low_mixed,low_single_hard = sp.symbols('F_disp_0 F_disp_s F_disp_12 C_disp_single',real=True)
+    effective_normalization = sp.Symbol('F_eff_0',real=True)
+    effective_mass_squared = sp.Symbol('M_rhop_squared',positive=True)
+    effective_pole = effective_normalization*effective_mass_squared**2/((effective_mass_squared-first)*(effective_mass_squared-second))
+    effective_slope = sp.diff(effective_pole,first).subs(origin)
+    effective_mixed = sp.diff(effective_pole,first,second).subs(origin)
+    effective_single = sp.limit(hard_scale*effective_pole.subs({first:-hard_scale,second:0}),hard_scale,sp.oo)
+    physical_anomaly = result['anomaly'].subs(result['colors'],3)
+    single_hard = -2*pion_decay_constant
+    normalization_solution = sp.solve(low_normalization+effective_normalization-physical_anomaly,effective_normalization)[0]
+    mass_solution = sp.solve(low_single_hard+effective_single.subs(effective_normalization,normalization_solution)-single_hard,effective_mass_squared)[0]
+    matched_effective = {effective_normalization:normalization_solution,effective_mass_squared:mass_solution}
+    low_slope_solution = sp.factor(sp.solve(low_slope+effective_slope.subs(matched_effective,simultaneous=True)-result['original_slope'],low_slope)[0])
+    low_mixed_solution = sp.factor(sp.solve(low_mixed+effective_mixed.subs(matched_effective,simultaneous=True)+continuum_mixed-result['original_mixed'],low_mixed)[0])
+    profiled_slope = low_slope+effective_slope.subs(matched_effective,simultaneous=True)
+    profiled_mixed = low_mixed+effective_mixed.subs(matched_effective,simultaneous=True)+continuum_mixed
+    nuisance_profile_map = sp.Matrix([profiled_slope,profiled_mixed]).jacobian(
+        [low_slope,low_mixed,low_normalization,low_single_hard,threshold]).applyfunc(sp.factor)
+    spectral_x,spectral_y = sp.symbols('x y',positive=True)
+    source_density = sp.Function('rho_disp')(spectral_x,spectral_y)
+    spectral_integrand = -source_density/sp.pi**2*(1/((spectral_x-first)*(spectral_y-second))+
+        1/((spectral_x-second)*(spectral_y-first)))
+    low_moment_integrands = sp.Tuple(spectral_integrand.subs(origin),
+        sp.diff(spectral_integrand,first).subs(origin),
+        sp.diff(spectral_integrand,first,second).subs(origin),
+        sp.limit(hard_scale*spectral_integrand.subs({first:-hard_scale,second:0}),hard_scale,sp.oo))
+    print('Hoferichter:2018kwz Eqs. (4.1), (4.9), (4.10), canonical negative scalar; f_pi=0.093 GeV.')
+    for label,expression in [('Asymptotic continuum','asymptotic_component'),
+        ('Continuum anomaly contribution','continuum_normalization'),('Continuum first slope','continuum_slope'),
+        ('Continuum mixed derivative','continuum_mixed'),('Continuum fixed-r hard coefficient','continuum_hard'),
+        ('Continuum hard coefficient minus sourced leading twist',sp.simplify(continuum_hard-result['leading_twist_ray'])),
+        ('Continuum with second photon real',asymptotic_integrand.subs(second,0)),
+        ('Distinct effective pole','effective_pole'),('Effective-pole first slope','effective_slope'),
+        ('Effective-pole mixed derivative','effective_mixed'),('Effective-pole single-hard coefficient','effective_single'),
+        ('Anomaly fixes effective normalization conditionally','normalization_solution'),
+        ('Single-hard coefficient fixes effective mass squared conditionally','mass_solution'),
+        ('Unsubstituted low-energy slope relation',sp.Eq(low_slope,result['original_slope']-effective_slope)),
+        ('Unsubstituted low-energy mixed relation',sp.Eq(low_mixed,result['original_mixed']-effective_mixed-continuum_mixed)),
+        ('Remaining low-energy slope moment','low_slope_solution'),('Remaining low-energy mixed moment','low_mixed_solution'),
+        ('Low-energy spectral integrands for normalization, slope, mixed, single-hard moments',low_moment_integrands),
+        ('Symbolic nuisance sensitivity of slope and mixed derivative','nuisance_profile_map')]:
+        show(label,locals().get(expression,expression) if isinstance(expression,str) else expression)
+    print('No spectral function, F_pi^V or f1 is supplied here. Low-energy normalization, single-hard moment and threshold remain free.')
+    print('The moment integrands use the source positive rho_disp with a canonical overall minus sign, integrated over its finite low-energy domain.')
+    print('The effective mass solution requires nonzero effective normalization and positive mass squared; normalization zero is a separate degenerate case.')
+    print('Independent low-energy slope and mixed moments give an identity submatrix in the nuisance derivative map.')
+    print('Thus profiling these unspecified moments leaves both original slope combinations unconstrained; no statistical interval follows.')
+    print('The continuum contributes zero singly virtual at every finite virtuality, despite its nonzero fixed-r hard endpoint limit: the limits do not commute.')
 
 
 if __name__ == '__main__':
