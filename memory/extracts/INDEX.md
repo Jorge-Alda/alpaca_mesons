@@ -15,6 +15,8 @@ provenance: literature
 - [Gerardin:2019vio](Gerardin:2019vio/INDEX.md) — pion TFF leading-twist factorization at unequal virtualities.
 - [Bali:2021qem](Bali:2021qem/INDEX.md) — lattice octet/singlet eta decay constants, singlet evolution and asymptotic TFF inputs.
 - [Hoferichter:2018kwz](Hoferichter:2018kwz/INDEX.md) — dispersive low-energy pion TFF, effective higher-state pole, and asymptotic spectral contribution.
+- [Hoferichter:2025lcz](Hoferichter:2025lcz/INDEX.md) — updated dispersive global fit of the $\gamma^*\to3\pi$ normalization to SND, CMD-2, and BaBar data, with a separate Belle II tension study.
+- [Hoferichter:2023bjm](Hoferichter:2023bjm/INDEX.md) — dispersive $e^+e^-\to3\pi$ amplitude and resonance parameterization used by the updated global fit.
 
 Modular source digests grouped by their INSPIRE-HEP BibTeX key.
 
