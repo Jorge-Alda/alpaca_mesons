@@ -24,6 +24,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Aston:1987ir](Aston:1987ir/INDEX.md) — source-specific literature extracts.
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.
 - [BaBar:2009rrj](BaBar:2009rrj/INDEX.md) — source-specific literature extracts.
+- [BaBar:2018zpn](BaBar:2018zpn/INDEX.md) — BaBar double-tag measurement of the spacelike doubly virtual $\eta'$ transition form factor.
 - [BaBar:2014asx](BaBar:2014asx/INDEX.md) — source-specific literature extracts.
 - [BaBar:2015kii](BaBar:2015kii/INDEX.md) — source-specific literature extracts.
 - [Bai:2025fvl](Bai:2025fvl/INDEX.md) — source-specific literature extracts.

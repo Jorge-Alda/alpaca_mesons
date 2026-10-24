@@ -1,0 +1,66 @@
+{
+  "bibtex_key": "BaBar:2018zpn",
+  "source": "memory/sources/BaBar:2018zpn/journal.tex",
+  "source_sha256": "ef042fd633de607555190841e31364350c35b306026488091b0a655094d87e90",
+  "table": "cross_table0",
+  "units": {
+    "virtualities": "GeV^2",
+    "form_factor": "GeV^-1"
+  },
+  "statistical_prescription": "Primary Gaussian: arithmetic mean of upper and lower statistical errors, quadrature systematic and model errors. Sensitivity: split Gaussian with upper error for prediction above central value and lower otherwise.",
+  "covariance": "No published covariance; all bins and systematic/model errors treated as diagonal. Independent of other measurement blocks.",
+  "bin_prescription": "Evaluate at published efficiency-corrected average virtualities; broad-bin unfolding is source-model dependent, covered only by published model errors.",
+  "upper_limit_prescription": "Sensitivity replaces central measurements in bins 2 and 5 by normalized Gaussian censoring deviance at the published 90 percent upper limits, with sigma=UL/1.2815515655446004. This is an assumed surrogate, not the published Poisson likelihood; central values and limits never counted together.",
+  "bins": [
+    {
+      "q1_squared_gev2": 6.48,
+      "q2_squared_gev2": 6.48,
+      "value_gev_inverse": 0.014320000000000001,
+      "stat_upper_gev_inverse": 0.00195,
+      "stat_lower_gev_inverse": 0.00189,
+      "syst_gev_inverse": 0.00083,
+      "model_gev_inverse": 0.00014000000000000001,
+      "upper_limit_90_gev_inverse": null
+    },
+    {
+      "q1_squared_gev2": 16.85,
+      "q2_squared_gev2": 16.85,
+      "value_gev_inverse": 0.00535,
+      "stat_upper_gev_inverse": 0.00171,
+      "stat_lower_gev_inverse": 0.00215,
+      "syst_gev_inverse": 0.00031,
+      "model_gev_inverse": 0.00042,
+      "upper_limit_90_gev_inverse": 0.01453
+    },
+    {
+      "q1_squared_gev2": 14.83,
+      "q2_squared_gev2": 4.27,
+      "value_gev_inverse": 0.00824,
+      "stat_upper_gev_inverse": 0.00116,
+      "stat_lower_gev_inverse": 0.00113,
+      "syst_gev_inverse": 0.00048,
+      "model_gev_inverse": 0.0006500000000000001,
+      "upper_limit_90_gev_inverse": null
+    },
+    {
+      "q1_squared_gev2": 38.11,
+      "q2_squared_gev2": 14.95,
+      "value_gev_inverse": 0.006070000000000001,
+      "stat_upper_gev_inverse": 0.00109,
+      "stat_lower_gev_inverse": 0.00107,
+      "syst_gev_inverse": 0.00035,
+      "model_gev_inverse": 0.00121,
+      "upper_limit_90_gev_inverse": null
+    },
+    {
+      "q1_squared_gev2": 45.63,
+      "q2_squared_gev2": 45.63,
+      "value_gev_inverse": 0.00871,
+      "stat_upper_gev_inverse": 0.00396,
+      "stat_lower_gev_inverse": 0.00871,
+      "syst_gev_inverse": 0.0005,
+      "model_gev_inverse": 0.0010400000000000001,
+      "upper_limit_90_gev_inverse": 0.03203
+    }
+  ]
+}
