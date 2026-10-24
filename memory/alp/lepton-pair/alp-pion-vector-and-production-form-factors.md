@@ -62,11 +62,85 @@ $$
 \mathcal F_{a\pi\pi\gamma^*}(s,y)=\mathcal N_P
 \int_{-1}^{1} dz\,w_P(z)\,\mathcal A_a(s,y,z).
 $$
-The weight $w_P$ and normalization $\mathcal N_P$ must be derived in a
-declared helicity or partial-wave convention and matched to
-Messerli:2025rnv's $\mathcal F_{P\pi\pi\gamma^*}$ normalization by deriving
-the two-pion unitarity relation. They are not fixed by an integrated
-real-photon width.
+For the scalar coefficient in the crossed decay tensor used below, the
+repository defines the reduced $J=1$ coefficient
+$$
+f_1(s,y)=\frac34\int_{-1}^{1}dz\,(1-z^2)\,
+\mathcal A^{\rm odd}_{a\pi\pi\gamma^*}(s,t(z),u(z);y).
+$$
+Thus this particular scalar projection has $w_P(z)=1-z^2$ and
+$\mathcal N_P=3/4$. It extracts the $P'_1(z)=1$ coefficient when the scalar
+is expanded in derivatives of Legendre polynomials; the full helicity
+amplitude also contains the $\sin\theta$ from the epsilon tensor. This
+defines $f_1$ as a reduced $J=1$ coefficient for the tree decay amplitude.
+It does not by itself set the current-amplitude phase or electromagnetic
+normalization of $\mathcal F_{a\pi\pi\gamma^*}$.
+
+## Two-pion cut normalization
+
+The angular weight and its normalization follow directly from the transverse
+tensor in the two-pion cut. Use relativistically normalized, distinct
+$\pi^+$ and $\pi^-$ states, $d\Phi_2=\sigma_\pi(s)\,d\phi\,dz/(32\pi^2)$,
+and $2\operatorname{Im}T=T^\dagger T$. Let $f_{1,\mathrm{current}}$ be the
+reduced $J=1$ coefficient of the charge-stripped current amplitude, with the
+same epsilon-tensor scalar convention as the TFF. In the dipion rest frame,
+the azimuth-integrated transverse contraction is
+$$
+\int_0^{2\pi}d\phi\,\frac{d\Phi_2}{d\phi\,dz}
+\frac{J^x_{\pi\pi}\,H^y_{a\gamma^*\to\pi\pi}}
+     {\epsilon^{xy\alpha\beta}q_{1\alpha}q_{2\beta}}
+=\frac{s\sigma_\pi^3(s)}{64\pi}(1-z^2)
+F_\pi^V(s)^*\,\mathcal A_{a,\mathrm{current}}(s,y,z).
+$$
+Since $\int_{-1}^1(1-z^2)dz=4/3$, the projector is exactly
+$$
+f_{1,\mathrm{current}}(s,y)=\frac34\int_{-1}^1dz\,(1-z^2)
+\mathcal A_{a,\mathrm{current}}(s,y,z),
+$$
+and unitarity gives
+$$
+\operatorname{Im}_s F_{a\gamma^*\gamma^*}
+=\frac{s\sigma_\pi^3(s)}{96\pi}
+[F_\pi^V(s)]^* f_{1,\mathrm{current}}(s,y).
+$$
+There is no identical-particle factor: the intermediate charged pions are
+distinct. The factor $1/2$ in this result comes from $2\operatorname{Im}T$
+and is already included.
+
+Messerli:2025rnv's production-wave dispersion relation, Eq. (3.3), has the
+same $1/(96\pi^2)$ coefficient implied by this single-cut result. Therefore
+its current partial wave is the same reduced current coefficient:
+$$
+\mathcal F_{a\pi\pi\gamma^*}(s,y)=f_{1,\mathrm{current}}(s,y).
+$$
+The $1/(192\pi)$ in the double-spectral density is half the $1/(96\pi)$
+single-cut coefficient. It is the per-ordering density convention of
+Eqs. (3.4)--(3.5): the TFF representation explicitly adds the term with
+$q_1\leftrightarrow q_2$. It is not an identical-pion factor and does not
+mean that the production wave is twice the current partial wave
+[@Messerli:2025rnv, Eqs. (3.3)--(3.5)].
+
+For the repository decay scalar, choose the crossed-current convention in
+which the coefficient of the same epsilon tensor is real and continue the
+photon momentum as $k=-q$. In this convention, crossing and removing the
+explicit electromagnetic coupling gives
+$$
+f_{1,\mathrm{current}}(s,y)=\frac{f_1(s,y)}{e},
+\qquad
+\mathcal F_{a\pi\pi\gamma^*}(s,y)
+=\frac{f_1(s,y)}{e}.
+$$
+An alternative convention with an explicit $i$ in the current epsilon
+tensor carries that same phase in both partial waves and the density. This
+is a convention change, not a free physical normalization or missing
+hadronic input. The derivation is recorded in
+[`derive_alp_pion_partial_wave_unitarity.py`](../../../scripts/derive_alp_pion_partial_wave_unitarity.py).
+
+The $f_1$ here is also distinct from Messerli:2025rnv's $f_1(s,t)$ in
+Eq. (3.3), which is the four-pion decay partial wave used as input to the
+dispersive construction of $\mathcal F_{\eta^{(\prime)}\pi\pi\gamma^*}$.
+That equation constructs a rescattered current P wave; it does not define
+the simple angular projector above [@Messerli:2025rnv].
 
 The following is the tree odd-resonance contribution from the retained
 seven-VJP/four-VVP operators and leading $G_V$ $VPP$ vertex. It is not the
@@ -164,8 +238,8 @@ proportional to $\chi_d-\chi_u$. The equations are the output of the
 executable symbolic derivation
 [`derive_alp_virtual_photon_pion_amplitude.py`](../../../scripts/derive_alp_virtual_photon_pion_amplitude.py).
 
-For the partial-wave convention used in the existing fit-null audit, expand
-the scalar coefficient in derivatives of Legendre polynomials and set
+For the tree amplitude, the reduced partial-wave convention used in the
+existing fit-null audit is
 $$
 f_1(s,y)=\frac34\int_{-1}^1dz\,(1-z^2)
 \mathcal A^{\rm odd}_{a\pi\pi\gamma^*}(s,t(z),u(z);y).
@@ -203,13 +277,24 @@ $$
 The continuous $B_\pi\to0$ limit is
 $I(A_\rho,B_\pi)=1/(A_\rho+i0)$. Thus the retained tree
 P wave is explicit once the source coefficients, vector residues, and pole
-prescription are selected. The sign and common phase must still be matched
-to Messerli:2025rnv's partial-wave definition before using its $192\pi$
-spectral prefactor. The calculated $f_1$ includes the electromagnetic factor
-$e$ and is the scalar in the crossed decay tensor above. Messerli:2025rnv's
-current partial wave has an explicit current phase and its own electromagnetic
-normalization; conversion between that quantity and $f_1$ is not yet
-established here.
+prescription are selected. The $192\pi$ coefficient belongs to the
+per-ordering double-spectral density; the production wave itself has no
+extra factor of two. In the declared real-epsilon convention, crossing and
+stripping $e$ gives $\mathcal F=f_{1,\mathrm{current}}=f_1/e$.
+The retained tree result is therefore explicitly
+$$
+\boxed{
+\mathcal F_{a\pi\pi\gamma^*}^{\rm tree}(s,y)=\frac{1}{e}
+\left[
+\frac{N_s(s,y)}{s-M_\rho^2+i0}
++2\frac{\partial N_t(r,y)}{\partial r}
++2N_t(M_\rho^2,y)I(A_\rho,B_\pi)
+\right].
+}
+$$
+Here $I$, $A_\rho$, and $B_\pi$ are defined above. This is the retained
+odd-resonance contribution; local anomalous and rescattering pieces are
+separate physical completion terms.
 
 In a strictly elastic approximation, if the production kernel has no
 additional right-hand-cut phase, Watson's theorem implies
@@ -222,8 +307,8 @@ inelastic channels require a more general representation.
 
 # Use in the spectral density
 
-After matching the conversion from $f_1$ to Messerli:2025rnv's current
-partial-wave convention, the density has the form
+With $\mathcal F=f_1/e$ in the declared current convention, the density has
+the form
 $$
 \rho_a^{I=1}(s,y)=\frac{s\,\sigma_\pi^3(s)}{192\pi}
 \operatorname{Im}\!\left[(F_\pi^V(s))^*
@@ -256,9 +341,9 @@ dynamics remain separate inputs [@Messerli:2025rnv].
   affects the virtual-photon P wave. A numerical prediction must specify a
   representative or constrain that direction independently.
 - The local anomalous current amplitude and rescattering completion have
-  not been supplied. Also, the normalization and phase of $f_1$ must be
-  matched directly to Messerli:2025rnv before inserting the quoted spectral
-  prefactor.
+  not been supplied. The cut normalization and angular weight are derived
+  above. Any alternative overall current phase convention must be applied
+  consistently to both partial waves in the density.
 
 # Reproducibility
 
@@ -273,8 +358,8 @@ flavor/isospin structure, and compare the logarithmic angular integral to
 direct quadrature. The checks were run with
 `.venv/bin/python scripts/derive_alp_virtual_photon_pion_amplitude.py --test`
 and passed. These checks validate the retained tree construction, not the
-missing anomalous term, rescattering, or its normalization match to
-Messerli:2025rnv.
+missing anomalous term or rescattering. The separate two-pion-cut derivation
+fixes the partial-wave normalization and weight.
 
 # Inputs and provenance
 

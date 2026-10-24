@@ -51,11 +51,22 @@ TFF through its off-shell VJP numerator, although the two observables have
 different kinematic weights.
 
 For the allowed equal light-quark axial profile $c_u^A=c_d^A=c$, the crossed
-terms cancel. With the projector convention
+terms cancel. Here $f_1$ denotes the reduced $J=1$ coefficient of the scalar
+invariant amplitude, not the full helicity amplitude. The epsilon tensor in
+the amplitude supplies a factor proportional to $\sin\theta$; expand the
+remaining scalar as $\mathcal A(s,y,z)=\sum_{J\geq1}a_J(s,y)P'_J(z)$.
+The derivative-Legendre orthogonality relation
 $$
-f_1=\frac34\int_{-1}^{1}dz\,(1-z^2)\,\mathcal A(z),
+\int_{-1}^{1}(1-z^2)P'_J(z)P'_1(z)\,dz
+=\frac43\delta_{J1}
 $$
-the remaining constant scalar has
+then shows that the weighted integral extracts $a_1$ and leaves a constant
+scalar unchanged:
+$$
+f_1(s,y)=\frac34\int_{-1}^{1}dz\,(1-z^2)\,\mathcal A(s,y,z),
+$$
+For the equal-profile null variation, only that constant term remains, so
+$$
 $$
 \delta f_1=-\frac{16\sqrt2 eG_Vcy\alpha}
 {M_Vf_af_\pi^2(s-M_\rho^2)}.
@@ -64,6 +75,13 @@ It is nonzero at $y\ne0$ and vanishes at $y=0$. Thus a chosen zero-null
 representative is needed for a numerical virtual-photon partial wave unless
 the ALP source profile or additional information fixes this coefficient
 combination.
+
+This $f_1$ is not Messerli:2025rnv's $f_1(s,t)$ in Eq. (3.3). There,
+$f_1(s,t)$ denotes the partial-wave input for $\eta^{(\prime)}\to4\pi$ used
+to construct the rescattered $\eta^{(\prime)}\gamma^*\to\pi^+\pi^-$ P-wave
+amplitude. The matching of the ALP reduced coefficient above to the
+normalization of $\mathcal F_{a\pi\pi\gamma^*}$ in the spectral density is a
+separate step [@Messerli:2025rnv].
 
 # Relation to Messerli:2025rnv
 

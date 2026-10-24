@@ -35,11 +35,18 @@ $$
 \operatorname{Im}\!\left\{[F_\pi^V(x)]^*\,
 \mathcal F_{a\pi\pi\gamma^*}(x,y)\right\}.
 $$
-The $x\sigma_\pi^3/(192\pi)$ factor is the two-pion $P$-wave phase-space
-factor in the normalization of Messerli:2025rnv, Eq. (5.14). $F_\pi^V$ is
-the charged-pion vector form factor, normalized by $F_\pi^V(0)=1$;
-the phase convention of the $P$-wave amplitude must be fixed consistently
-with it [@Messerli:2025rnv].
+The $x\sigma_\pi^3/(192\pi)$ factor and production-wave conversion are
+derived from the charged two-pion cut in the linked [pion-vector and
+production-amplitude record](alp-pion-vector-and-production-form-factors.md).
+The production partial wave matches the current coefficient,
+$\mathcal F_{a\pi\pi\gamma^*}=f_{1,\mathrm{current}}$; in the declared
+real-epsilon current convention, this is $f_1/e$. The $1/(192\pi)$ density
+is half the single-cut $1/(96\pi)$ coefficient because the double-spectral
+representation explicitly includes the exchanged photon ordering. Thus the
+normalization and angular weight are determined, not free inputs.
+$F_\pi^V$ is normalized by $F_\pi^V(0)=1$ and
+its phase convention must agree with the current partial wave
+[@Messerli:2025rnv].
 
 For spacelike $s_i=-Q_i^2$ and a declared low-energy cutoff $\Lambda$, the
 isovector TFF is
@@ -81,8 +88,15 @@ tree-level neutral-vector TFF in the linked record does not itself determine
 the two-pion discontinuity. The linked
 [neutral-rho pole expression](alp-isovector-doubly-virtual-tff.md) is a stable
 pole approximation, while this record describes a two-pion spectral component.
-The latter contains rho dynamics through the pion vector form factor and
-production partial wave. Do not add the two contributions without a
+The production partial wave is the current-amplitude quantity matched to
+Messerli:2025rnv's convention. The repository's $f_1$ is the reduced $J=1$
+projection of the crossed ALP decay scalar; in the declared real-epsilon
+current convention, $\mathcal F_{a\pi\pi\gamma^*}=f_1/e$. Also,
+Messerli:2025rnv's internal
+$f_1(s,t)$ in Eq. (3.3) denotes an $\eta^{(\prime)}\to4\pi$ partial-wave
+input, not the repository's projector. The latter contains rho dynamics
+through the pion vector form factor and production partial wave. Do not add
+the two contributions without a
 decomposition and matching prescription that prevents double counting.
 
 For a first hadronic model, the needed partial wave can be organized by
@@ -96,18 +110,16 @@ terms are retained. No such decomposition or subtraction constants are
 numerically specified here.
 
 The project's existing [odd $a\to\gamma PP$ amplitude](../photon-two-pseudoscalar/alp-photon-pp-amplitude.md)
-provides a tree-level starting kernel for the charged-pion channel, including
-the $a\to V^*\gamma$ and crossed $a\to\pi V^*$ placements. Its formula is
-for a real photon, retains only the stated odd resonance-exchange terms, and
-explicitly omits local anomalous contributions [@Ecker:1988te; @Ecker:1989yg;
-@Ruiz-Femenia:2003jdx]. For the required virtual current one must rederive
-the amplitude with $q_\gamma^2=y$: replace the real-photon response
-$\mathcal W_\gamma(0)$ by the virtual vector response where applicable, keep
-the $y$-dependent VJP/VVP numerators and all crossed placements, then project
-the result onto the dipion $P$ wave. In particular, a real-photon width or
-its integrated Dalitz spectrum cannot determine this virtuality dependence.
-The projector normalization must be matched to Messerli:2025rnv's
-$\mathcal F_{P\pi\pi\gamma^*}$ convention.
+provides the real-photon starting point for the charged-pion channel,
+including the $a\to V^*\gamma$ and crossed $a\to\pi V^*$ placements. The
+virtual-current extension has been derived in the linked
+[pion-vector and production-amplitude record](alp-pion-vector-and-production-form-factors.md):
+it replaces $\mathcal W_\gamma(0)$ by the virtual vector response where
+applicable, retains the $y$-dependent VJP/VVP numerators and crossed
+placements, and projects onto the dipion $P$ wave. The retained odd
+resonance terms still omit local anomalous contributions
+[@Ecker:1988te; @Ecker:1989yg; @Ruiz-Femenia:2003jdx]. A real-photon width
+alone cannot determine this virtuality dependence.
 
 Completeness of the double-spectral term must be checked after this
 projection. A local $a\pi\pi\gamma^*$ term, or a subtraction contribution
@@ -123,10 +135,9 @@ declared the complete low-energy isovector TFF until this audit is done.
 - Isospin-symmetric charged-pion threshold and the two-pion $P$-wave are used
   for this first low-energy isovector component. Isospin breaking and other
   intermediate states are outside this record.
-- The two-pion unitarity relation and the quoted prefactor are borrowed in
-  Messerli:2025rnv's partial-wave normalization. A direct ALP amplitude
-  derivation must verify the normalization, sign, and phase before numerical
-  use. A real tree-level ALP kernel alone is not a spectral density: the
+- The two-pion cut fixes the numerical prefactor and weight as stated in the
+  linked production-amplitude record. A real tree-level ALP
+  kernel alone is not a spectral density: the
   density is the imaginary part of the product with the conjugate pion vector
   form factor, with the required rescattering phases treated consistently.
 - Required inputs are a source-resolved $a\gamma^*\to\pi^+\pi^-$ $P$-wave
@@ -148,6 +159,8 @@ double-dispersion denominators. It is a formal scaffold: until the physical
 $\mathcal F_A$ and $F_\pi^V$ inputs are supplied, it does not evaluate a
 spectral density or a numerical TFF. Run
 `.venv/bin/python scripts/derive_alp_isovector_tff_spectral.py`.
+The normalization and projector derivation is recorded in
+[`derive_alp_pion_partial_wave_unitarity.py`](../../../scripts/derive_alp_pion_partial_wave_unitarity.py).
 
 ## Literature source
 
