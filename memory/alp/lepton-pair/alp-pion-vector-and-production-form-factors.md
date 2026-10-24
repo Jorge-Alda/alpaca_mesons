@@ -78,19 +78,76 @@ normalization of $\mathcal F_{a\pi\pi\gamma^*}$.
 
 ## Two-pion cut normalization
 
-The angular weight and its normalization follow directly from the transverse
-tensor in the two-pion cut. Use relativistically normalized, distinct
-$\pi^+$ and $\pi^-$ states, $d\Phi_2=\sigma_\pi(s)\,d\phi\,dz/(32\pi^2)$,
-and $2\operatorname{Im}T=T^\dagger T$. Let $f_{1,\mathrm{current}}$ be the
-reduced $J=1$ coefficient of the charge-stripped current amplitude, with the
-same epsilon-tensor scalar convention as the TFF. In the dipion rest frame,
-the azimuth-integrated transverse contraction is
+The angular weight and its normalization follow from the two-pion cut of the
+current-current tensor
 $$
-\int_0^{2\pi}d\phi\,\frac{d\Phi_2}{d\phi\,dz}
-\frac{J^x_{\pi\pi}\,H^y_{a\gamma^*\to\pi\pi}}
-     {\epsilon^{xy\alpha\beta}q_{1\alpha}q_{2\beta}}
+T^{\mu\nu}=i\int d^4x\,e^{iq_1\cdot x}
+\langle 0|T\{J_{\rm em}^\mu(x)J_{\rm em}^\nu(0)\}|a(P)\rangle,
+\qquad P=q_1+q_2.
+$$
+The scalar form factor is defined by
+$$
+T^{\mu\nu}=\epsilon^{\mu\nu\alpha\beta}q_{1\alpha}q_{2\beta}
+F_{a\gamma^*\gamma^*}(q_1^2,q_2^2),
+$$
+with any common overall $i$ fixed by the stated S-matrix convention. Here
+$J_{\rm em}^\mu=\sum_f Q_f\bar q_f\gamma^\mu q_f$ is the electromagnetic
+quark current, with the electric charge $e$ kept outside the current matrix
+elements. The two factors on the cut are defined by
+$$
+J^\mu_{\pi\pi}=\langle0|J_{\rm em}^\mu|\pi^+(p_+)\pi^-(p_-)\rangle,
+\qquad
+H^\nu_{a\pi\pi}=\langle\pi^+(p_+)\pi^-(p_-)|J_{\rm em}^\nu|a(P)\rangle.
+$$
+The first is the pion vector-current matrix element; the second is the ALP to
+two-pion matrix element of the current, which is the hadronic part of
+$a\gamma^*\to\pi^+\pi^-$. In the convention used here,
+$$
+J^\mu_{\pi\pi}=(p_+-p_-)^\mu[F_\pi^V(s)]^*,
+\qquad
+H^\nu_{a\pi\pi}=\epsilon^{\nu\alpha\beta\gamma}
+p_{+\alpha}p_{-\beta}q_{2\gamma}\,
+\mathcal A_{a,\mathrm{current}}(s,y,z),
+$$
+where $s=q_1^2=(p_++p_-)^2$, $y=q_2^2$, and
+$\mathcal A_{a,\mathrm{current}}$ is the charge-stripped scalar coefficient.
+The overall sign follows the epsilon and current conventions fixed above.
+
+To do the contraction, work in the $q_1$ rest
+frame and choose $\mathbf q_2$ along $+z$. Write
+$$
+q_1=(\sqrt{s},\mathbf0),\quad
+q_2=(q_2^0,0,0,K),\quad
+p_\pm=(\sqrt{s}/2,\,\pm p\,\mathbf n),
+$$
+$$
+p=\frac{\sqrt{s}}{2}\sigma_\pi(s),\qquad
+\mathbf n=(\sqrt{1-z^2}\cos\phi,\sqrt{1-z^2}\sin\phi,z).
+$$
+Select the $\mu=x,\nu=y$ components of the cut tensor. With the tensor
+sign fixed as above, the component factors are
+$$
+J^x_{\pi\pi}=2p\sqrt{1-z^2}\cos\phi\,[F_\pi^V(s)]^*,
+\qquad
+H^y_{a\pi\pi}=\sqrt{s}\,pK\sqrt{1-z^2}\cos\phi\,
+\mathcal A_{a,\mathrm{current}}(s,y,z).
+$$
+The corresponding TFF tensor component is
+$T^{xy}=\pm\sqrt{s}K F_{a\gamma^*\gamma^*}$; the sign is the selected
+epsilon-index convention.
+Thus one compares coefficients of this component, after the ordinary scalar
+division by the kinematic factor $\sqrt{s}K$; no Levi-Civita tensor or
+multi-index object is divided by. The two-body phase space is
+$$
+d\Phi_2=\frac{\sigma_\pi(s)}{32\pi^2}\,d\phi\,dz,
+\qquad \int_0^{2\pi}\cos^2\phi\,d\phi=\pi.
+$$
+These component equations give
+$$
+\frac{1}{\sqrt{s}K}\int_0^{2\pi}d\phi\,
+\frac{d\Phi_2}{d\phi\,dz}J^x_{\pi\pi}H^y_{a\pi\pi}
 =\frac{s\sigma_\pi^3(s)}{64\pi}(1-z^2)
-F_\pi^V(s)^*\,\mathcal A_{a,\mathrm{current}}(s,y,z).
+[F_\pi^V(s)]^*\mathcal A_{a,\mathrm{current}}(s,y,z).
 $$
 Since $\int_{-1}^1(1-z^2)dz=4/3$, the projector is exactly
 $$
