@@ -3,7 +3,7 @@ title: Plan and status audit for the low-energy isoscalar ALP TFF
 status: mixed
 created: 2026-10-25
 updated: 2026-10-25
-bibtex_keys: [Alda:2026nrd, Messerli:2025rnv, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
+bibtex_keys: [Alda:2026nrd, Messerli:2025rnv, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: assumption
 ---
 
@@ -33,7 +33,8 @@ the tree pole expression without a matching prescription.
 | No-mixing ALP sources and scalar TFF convention | **Complete** for the stated LO source assembly and tensor convention. | The source/LSZ relations and contact bookkeeping are derived in the [LO source assembly](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md); the full retained tree TFF is in [the tree TFF record](alp-doubly-virtual-tff.md). |
 | Tree-level omega/phi responses | **Complete** within the retained stable-pole, original-operator truncation. | The source-resolved tree expression sums neutral-vector responses. This is a pole approximation, not a complete low-energy isoscalar spectral function; widths, cuts, additional operators, and short-distance matching are absent. |
 | Three-pion dispersive framework | **Partly complete** as a literature method and fit-input audit; no ALP spectral predictor exists. | The Khuri--Treiman equations and fitted current normalization are documented in [the 2023 amplitude digest](../../extracts/Hoferichter:2023bjm/three-pion-amplitude-and-normalization.md) and [the 2025 fit digest](../../extracts/Hoferichter:2025lcz/gamma-star-to-three-pion-fit.md). The framework has not been implemented for the ALP source. |
-| Source-specific $a\gamma^*\to3\pi$ amplitude | **LO Born contribution derived and executed; full isoscalar amplitude requires additional derivation and inputs.** | The [LO current record](alp-three-pion-current-born-amplitude.md) derives the gauged $a\Phi^3$ contribution and Ward identity. Its minimal light-quark isoscalar-current part vanishes. The SM current partial wave does not determine the ALP transition amplitude. The existing [three-pion treatment plan](../../rcht/odd-parity/dispersive-three-pion-treatment-plan.md) also notes missing direct $V3\pi$ operators in the original one-pseudoscalar basis. |
+| Source-specific $a\gamma^*\to3\pi$ amplitude | **LO Born term derived, executed, and recorded in matrix-trace form; full isoscalar amplitude still needs additional derivation and inputs.** | The [LO current record](alp-three-pion-current-born-amplitude.md) gives the gauged $a\Phi^3$ contribution. SymPy finds equal shifted charged-pion vertices, zero contact coefficient, and a vanishing Ward contraction. The minimal light-quark isoscalar-current coupling vanishes. The SM current partial wave does not determine the ALP transition amplitude. |
+| $aV_i\gamma^*$ followed by $V_i\to3\pi$ | **Strict spin-one pole factorization derived and executed under an explicit transverse decay-source lift.** | The [pole-factorization record](alp-three-pion-vector-pole-factorization.md) inverts the six-component tensor Hessian, verifies transversality and derives the ordered source numerator and pole contraction. The on-shell $V_i\to3\pi$ decay function and relative crossing/LSZ phase remain inputs; regular terms and direct contacts are not fixed. |
 | Numerical three-pion spectral density | **Requires additional inputs.** | Needs complex source-dependent ALP production amplitudes, a compatible complex $\gamma^*\to3\pi$ current amplitude, phase conventions, and correlated variations of fit and phase inputs. The cited 2023/2025 records do not supply a complete complex partial-wave grid or correlated replicas. |
 | Three-pion contribution to the doubly virtual TFF | **Not started.** | Derive single- and double-spectral pieces, including exchanged photon ordering and subtraction terms; establish the unitarity normalization for the chosen ALP source and tensor convention. A prescription must separate explicit omega/phi poles from continuum strength. |
 | $K\bar K$ cut and phi region | **Partly complete:** real-photon odd-resonance $a\to\gamma K\bar K$ amplitudes and neutral-kaon projections exist; the dispersive TFF construction is not started. | The real-photon [ALP photon-pseudoscalar-pair amplitude](../photon-two-pseudoscalar/alp-photon-pp-amplitude.md) is a starting point, not the required virtual-current isoscalar amplitude. Derive the virtual-current extension and isoscalar projection; obtain complex charged/neutral kaon vector form factors, phases, and correlated uncertainties; define how overlapping phi-to-three-pion and phi-to-kaon strength is handled. |
@@ -66,26 +67,35 @@ by replacing its normalization with ALP couplings. A Khuri--Treiman solution
 can describe a selected $V\to3\pi$ subamplitude after a partial-wave
 projection; it is not by itself the full five-point ALP production amplitude.
 
-The first LO step gauges the existing [one-ALP $a\Phi^3$ chiral
+The LO Born step gauges the existing [one-ALP $a\Phi^3$ chiral
 interaction](../three-pseudoscalar/alp-phi3-lo-chipt-derivation.md), retains
-the charged-pion pole graphs and computes the contact term, then checks the
-current Ward identity. The executed [SymPy derivation](../../../scripts/derive_alp_virtual_photon_three_pion_born.py)
-finds equal shifted source vertices, a zero contact coefficient, and a zero
-Ward contraction. The equations and exact scope are recorded in the [LO
-current-amplitude record](alp-three-pion-current-born-amplitude.md).
+the charged-pion pole graphs and contact term, and checks the Ward identity.
+The executed result is recorded in the [LO current-amplitude
+record](alp-three-pion-current-born-amplitude.md). The next resonance step
+has now been derived separately in the [spin-one pole-factorization
+record](alp-three-pion-vector-pole-factorization.md).
 
-In exact light-quark isospin, decompose the electromagnetic charge matrix as
-$Q_{u,d}=\frac16\mathbf1+\frac12\tau_3$. The isoscalar light-quark current
-commutes with pure-pion generators, so its minimal gauged LO contribution
-vanishes. This is only a statement about that LO current coupling. It does not
-exclude the resonance mechanism in which an ALP-vector-photon vertex produces
-an isoscalar vector which then decays to three pions. The existing
+In exact light-quark isospin, the isoscalar electromagnetic generator is
+$Q^{(0)}_\ell=\frac16\mathbf1_2$. It commutes with the charged-pion
+generators, so its minimal gauged LO contribution vanishes. The executed
+matrix-trace calculation also finds equal shifted source vertices and a zero
+contact coefficient, making the Born current transverse. These are results
+for the stated LO chiral contribution; they do not exclude a resonance
+mechanism in which an ALP-vector-photon vertex produces an isoscalar vector
+which then decays to three pions. The existing
 [$a\to V\gamma$ record](../../rcht/odd-parity/alp-vgamma-amplitude.md) is
 for an on-shell vector and a real photon; the literature $V\to3\pi$ record
 also lacks the direct contact terms needed for a complete amplitude. These
 records do not yet close the off-shell $a\gamma^*\to3\pi$ isoscalar
 amplitude. Keep arbitrary diagonal ALP sources until the isospin projection
-is explicitly applied.
+is explicitly applied. Selecting $V_i=\omega,\phi$ on the three-pion leg
+selects the isoscalar quantum numbers on that cut; it does not project the
+other electromagnetic current onto $Q^{(0)}_\ell$. Retain the full charge
+matrix and all neutral intermediate-vector responses, including mixed
+isovector-isoscalar trace terms. The zero of the minimal isoscalar-current
+Born term alone does not establish zero overlap with the isoscalar three-pion
+cut; that requires the explicit three-pion isospin and partial-wave
+projection.
 
 ## 1. Freeze source basis and isoscalar current decomposition
 
@@ -101,21 +111,30 @@ check for this stage, not a complete spectral representation.
 the two photon labels, and agreement with the existing tree expression in its
 stable-pole limit.
 
-## 2. Build the three-pion production amplitude
+## 2. Spin-one pole factorization: derived
 
-Derive $a\gamma^*(y)\to\pi^+\pi^-\pi^0$ for each independent ALP source,
-including its Lorentz/tensor decomposition, isospin and charge factors,
-subtractions, and left-hand-cut terms. Adapt the Khuri--Treiman treatment of
-the three-pion state, but do not substitute the SM
-$\gamma^*\to3\pi$ amplitude for the ALP transition amplitude. Obtain or
-reproduce a numerical complex solution with correlated variations of the
-three-pion fit, pion phase, and required vector-current inputs
+The [pole-factorization record](alp-three-pion-vector-pole-factorization.md)
+derives the full free antisymmetric-tensor response from its six-component
+Hessian and contracts it with the transverse spin-one lift of the on-shell
+$V_i\to3\pi$ current. The local tensor-projector term vanishes for that
+declared endpoint, and the executed SymPy calculation verifies the three-pion
+current transversality, photon Ward identity, vector transversality, and
+projector reduction. The source-resolved production residue uses the ordered
+VJP/VVP numerators with the ALP mass and the full neutral-vector photon
+response.
+
+This result is restricted to the strict $V_i$ pole residue. The relative
+crossing/LSZ phase must be matched to the selected decay-current convention.
+On-shell $V_i\to3\pi$ data do not determine regular off-shell terms or direct
+$V3\pi$ contacts; do not extend the pole numerator into those terms without a
+separate source model.
+
+**Next gate:** obtain the complex $V_i\to3\pi$ partial-wave function and its
+correlated variations in a phase convention matched to the production
+residue. Keep the full electromagnetic charge matrix and mixed
+isovector-isoscalar traces on the ALP-current side. Use the SM
+$\gamma^*\to3\pi$ amplitude only on the current side of the unitarity cut
 [@Hoferichter:2023bjm; @Hoferichter:2025lcz].
-
-**Acceptance:** the amplitude has the declared phase and normalization,
-source responses are independently available, its current Ward identity
-holds, the required three-pion partial-wave projection is explicit, and
-correlated variations can be propagated to the spectral density.
 
 ## 3. Derive the three-pion discontinuity and TFF terms
 
