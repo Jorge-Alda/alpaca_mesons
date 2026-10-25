@@ -123,3 +123,17 @@ The BaBar ISR Born cross section is fitted with a **coherent sum of fixed-width 
 3. The dispersive Dalitz plot shape is a **parameter-free prediction** (up to normalization) from the $\pi\pi$ phase shift.
 
 **For an RChT predictor:** Using the BaBar ISR spectrum to constrain $d_i$ couplings requires a line-shape model that includes at least the dispersive $\rho$ propagator (Omnès function) and crossed-channel effects. A simple Breit-Wigner sum with fixed widths (as in BaBar's fit) will not correctly map the RChT amplitude parameters to the measured cross section, especially in the $\phi$ region where the $\rho$ bands are visible.
+
+## Numerical output and phase limits
+
+The article shows real and imaginary parts of the unit-subtraction solution
+$\mathcal F_a(s)$ and its upper/lower uncertainty bands in Figs. 7--8, but the
+arXiv source archive contains the TeX and figures rather than tabulated
+complex Dalitz-grid values [@Niecknig:2012sj]. Its quoted upper/lower
+variation combines selected phase parameterizations and Omnès subtraction
+choices; it is a sensitivity band, not a joint covariance or an ensemble of
+correlated replicas [@Niecknig:2012sj, Secs. 4.4--5.2]. The decay width or
+Dalitz fit fixes the amplitude normalization, but the decay distribution
+does not fix its overall phase relative to a separate production amplitude.
+Any use in an ALP pole residue therefore still needs a common S-matrix and
+LSZ phase convention [@Niecknig:2012sj].

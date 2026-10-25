@@ -26,6 +26,14 @@ terms, and short-distance contribution distinct until their overlap is
 specified. In particular, do not add a dispersive omega/phi contribution to
 the tree pole expression without a matching prescription.
 
+The specified application is $2m_e<m_a<2m_\tau$, with the full photon
+virtualities required by the two-photon lepton loop. Its integration is
+unbounded and crosses timelike hadronic singularities. A low-energy or
+narrow-$\phi$ approximation alone therefore cannot complete this application;
+the high-energy continuation, additional open cuts, and ultraviolet/local-term
+matching must also be controlled. This scope is a user-specified requirement,
+not an assumption about the validity range of the retained tree expression.
+
 # Status summary
 
 | Component | Status | Evidence and next gate |
@@ -36,14 +44,31 @@ the tree pole expression without a matching prescription.
 | Source-specific $a\gamma^*\to3\pi$ amplitude | **LO Born term derived, executed, and recorded in matrix-trace form; full isoscalar amplitude still needs additional derivation and inputs.** | The [LO current record](alp-three-pion-current-born-amplitude.md) gives the gauged $a\Phi^3$ contribution. SymPy finds equal shifted charged-pion vertices, zero contact coefficient, and a vanishing Ward contraction. The minimal light-quark isoscalar-current coupling vanishes. The SM current partial wave does not determine the ALP transition amplitude. |
 | $aV_i\gamma^*$ followed by $V_i\to3\pi$ | **Partial-wave relation derived and recorded; numerical decay function still requires inputs.** | The new [vector partial-wave record](alp-three-pion-vector-partial-wave.md) writes the Bose-symmetric decay amplitude as three pair-channel functions and identifies $f_{1,i}(s)=\mathcal F_i(s)+\widehat{\mathcal F}_i(s)$ from the Khuri--Treiman equation. The approved executable pole derivation verifies the strict residue structure. A complex normalized $F_i^{\rm on}(t,u)$ grid, correlated variations, and matched relative phase remain unavailable; regular terms and direct contacts are not fixed. |
 | Numerical three-pion spectral density | **Requires additional inputs.** | Needs complex source-dependent ALP production amplitudes, a compatible complex $\gamma^*\to3\pi$ current amplitude, phase conventions, and correlated variations of fit and phase inputs. The cited 2023/2025 records do not supply a complete complex partial-wave grid or correlated replicas. |
-| Three-pion contribution to the doubly virtual TFF | **Not started.** | Derive single- and double-spectral pieces, including exchanged photon ordering and subtraction terms; establish the unitarity normalization for the chosen ALP source and tensor convention. A prescription must separate explicit omega/phi poles from continuum strength. |
-| $K\bar K$ cut and phi region | **Partly complete:** real-photon odd-resonance $a\to\gamma K\bar K$ amplitudes and neutral-kaon projections exist; the dispersive TFF construction is not started. | The real-photon [ALP photon-pseudoscalar-pair amplitude](../photon-two-pseudoscalar/alp-photon-pp-amplitude.md) is a starting point, not the required virtual-current isoscalar amplitude. Derive the virtual-current extension and isoscalar projection; obtain complex charged/neutral kaon vector form factors, phases, and correlated uncertainties; define how overlapping phi-to-three-pion and phi-to-kaon strength is handled. |
-| Higher isoscalar strength | **Not started.** | Select spectral inputs or an effective-pole parameterization only after the low-energy cuts are defined. Constrain it with suitable data and compare parameterizations; report model dependence separately. |
-| Short-distance matching | **Not started for the ALP source basis.** | Derive high-virtuality coefficients from source-specific QCD matrix elements and the relevant short-distance expansion. Match the isoscalar and isovector pieces at an explicit scale and vary that scale. Do not use meson asymptotic coefficients as ALP inputs. |
-| Two-photon lepton loop | **Universal normalization complete; ALP-specific full-TFF result not started.** | The [loop normalization record](alp-lepton-pair-normalization.md) fixes the universal normalization, but full use requires the completed source-resolved TFF, its cuts and high-energy continuation, and a decision on the separately matched local ALP--lepton term; see the [lepton-pair calculation plan](alp-lepton-pair-calculation-plan.md). |
-| Reproducibility and validation | **Complete for supporting tree derivations only; spectral implementation not started.** | The isoscalar spectral derivations, deterministic integration, and covariance propagation remain to be implemented and checked for the supported kinematics. |
+| Three-pion contribution to the doubly virtual TFF | **Conditional unitarity and dispersion normalization derived and executed.** | The [discontinuity record](alp-three-pion-discontinuity.md) derives the charged-state phase space, scalar projector, spin-one angular weight, subtracted single/double representation, and stable-pole replacement identity. Physical spectral weights, double discontinuity, subtractions and pole/continuum separation remain open. |
+| $K\bar K$ cut and phi region | **Retained virtual-current production and conditional cut normalization derived and executed.** | The [virtual-kaon record](alp-virtual-photon-kaon-amplitude.md) retains the independent virtuality terms, charged-kaon $c_4$, full photon response and crossed $K^*$ exchanges. Complex current form factors, rescattering, correlated uncertainties and a common phi-region treatment are still required. |
+| Higher isoscalar strength | **Input requirements audited; numerical model not selected.** | The [input-requirement record](alp-isoscalar-tff-input-gates.md) specifies the low-energy separation and independent source-resolved constraints required before fitting omitted strength. No effective-pole parameters have been invented. |
+| Short-distance matching | **Leading local hard-current coefficient derived and executed; source matching remains open.** | The [hard-current OPE record](alp-hard-current-ope.md) derives the tree-level parity-odd coefficient and nearly symmetric deep-Euclidean scalar projection with explicit ALP axial-current matrix elements. Their renormalized source matching, other hard limits, flavor thresholds and continuation are not fixed. |
+| Two-photon lepton loop | **Unnormalized linear functional and ultraviolet bookkeeping derived and executed; full numerical result open.** | The [unnormalized-loop record](alp-unnormalized-lepton-loop.md) derives the coherent width, two-photon discontinuity and pointlike logarithm/local subtraction. A completed TFF, its analytic continuation and matched local finite part remain necessary. |
+| Reproducibility and validation | **Executed checks for new source/current, conditional three-pion, virtual-kaon and unnormalized-loop derivations.** | The paired scripts and their tests pass. Physical spectral integration, correlated input propagation, high-energy continuation and full-loop numerics are not yet validated. |
 
 # Staged work plan
+
+## Delegated continuation on 2026-10-25
+
+Each open stage is assigned separately and its result is incorporated here
+before dependent work proceeds. The current continuation preserves arbitrary
+no-mixing sources and uses the supported ALP-mass and photon-virtuality
+range fixed above. Existing uncommitted manuscript changes are outside this work.
+
+| Open stage | Assignment and progress |
+|---|---|
+| 1: source/current decomposition | Coder completed the [retained-tree decomposition](alp-isoscalar-tff-source-decomposition.md); the executed derivation and four tests verify recombination, source linearity, Bose symmetry, Ward identities and the stored stable-pole normalization. Mixed rho--isoscalar VVP selections overlap and must be subtracted once. The total electromagnetic contact remains separate. |
+| 2: complex three-pion input and relative phase | Literature subagent completed the [input/phase audit](alp-three-pion-numerical-input-status.md). Separate second-iteration coders are matching the crossing/propagator convention and implementing a central once-subtracted omega/phi Khuri--Treiman solution from the stored phase prescription. Unavailable covariance does not prevent a declared central calculation; correlated variations and any physical decay phase unresolved by rate data remain separate. |
+| 3: three-pion unitarity and dispersion | Coder completed the [conditional discontinuity derivation](alp-three-pion-discontinuity.md); derivation and five tests pass. Actual production/current amplitudes, double discontinuity, subtraction information and physical pole/continuum prescription remain open. |
+| 4: virtual kaon production and phi region | Coder completed the [retained virtual-kaon derivation](alp-virtual-photon-kaon-amplitude.md); derivation and four tests pass. Physical complex form factors, completed production, rescattering and common phi-region matching remain open. |
+| 5: higher strength and short distance | Scientific consultation established the [input requirements](alp-isoscalar-tff-input-gates.md). A second-iteration coder completed the [leading local OPE derivation](alp-hard-current-ope.md); derivation and four tests pass. Independent source matrix elements, other hard limits, higher strength and full matching remain open. |
+| 6: lepton loop | Coder completed the [unnormalized-loop derivation](alp-unnormalized-lepton-loop.md); derivation and four tests pass. Numerical evaluation depends on the completed TFF and finite local matching. |
+| Reproducibility | Each new derivation must have an executed repository-Python script, a paired atomic record, and explicit limits. |
 
 ## Framework adaptation: keep the two three-pion amplitudes distinct
 
@@ -112,6 +137,14 @@ check for this stage, not a complete spectral representation.
 the two photon labels, and agreement with the existing tree expression in its
 stable-pole limit.
 
+**Progress:** the [executed source/current decomposition](alp-isoscalar-tff-source-decomposition.md)
+meets these checks for the retained resonance expression. It separates
+full-three-flavor isoscalar/isovector photon currents from omega/phi
+hadronic-pole selection and derives the mixed VVP overlap explicitly.
+The supplied electromagnetic contact fixes the total current pair only;
+independent projected contact weights require an external-source completion
+or an explicitly declared allocation. No allocation is imposed here.
+
 ## 2. Spin-one pole factorization: derived
 
 The [pole-factorization record](alp-three-pion-vector-pole-factorization.md)
@@ -157,6 +190,16 @@ before adding either representation.
 matches the unitarity result; the TFF is Bose symmetric; and the pole/continuum
 prescription avoids double counting.
 
+**Progress:** the [conditional discontinuity derivation](alp-three-pion-discontinuity.md)
+establishes the relativistic three-body measure, absence of a charged-state
+factorial, epsilon-tensor scalar projection, and spin-one orientation factor.
+Its subtracted Cauchy representation has the expected discontinuity and
+photon exchange, conditional on compatible physical spectral inputs and
+convergence. It does not derive an unknown double discontinuity from the
+single three-pion cut. The stable-pole distribution identity specifies how
+a pole must be removed when replaced by a spectral contribution; the
+physical finite-width separation remains to be chosen and validated.
+
 ## 4. Add the $K\bar K$ cut and resolve the phi region
 
 Derive source-resolved $a\gamma^*\to K^+K^-$ and
@@ -172,6 +215,15 @@ real-photon starting point.
 pole/continuum separation are fixed and checked against available data or
 source records.
 
+**Progress:** the [virtual-kaon derivation](alp-virtual-photon-kaon-amplitude.md)
+extends the original eleven-operator resonance contribution with independent
+virtuality terms and the charged-kaon $c_4$ contribution. It derives the
+allowed neutral/$K^*$ exchanges, Ward identity, real-photon limit, source
+linearity and conditional distinct-kaon cut normalization, with separate
+charged and neutral thresholds. The complex kaon form factors, complete
+production amplitudes and shared three-pion/kaon phi description are still
+needed; these executed tree checks do not close the physical cut.
+
 ## 5. Add higher isoscalar strength and short-distance matching
 
 After the low-energy cuts are controlled, add higher isoscalar spectral
@@ -184,6 +236,16 @@ cutoff, and higher-state parameterization to estimate model uncertainty
 **Acceptance:** the matched TFF has the required source-specific asymptotics;
 the low-energy normalization and discontinuities remain unchanged within the
 stated matching uncertainty.
+
+**Progress:** the [hard-current OPE derivation](alp-hard-current-ope.md)
+calculates both free hard-quark contractions and the gamma-five trace,
+fixing the leading parity-odd local Wilson coefficient at leading order in
+$\alpha_s$. Its scalar projection retains the explicit vacuum-to-ALP axial
+current matrix elements. The nearly symmetric Euclidean limit with fixed
+soft ALP momentum is controlled at this order; the local term does not
+establish arbitrary unequal-ratio or singly virtual asymptotics. Those
+limits, the source-specific renormalized matrix elements, active-flavor
+thresholds, higher-state information and timelike continuation remain open.
 
 ## 6. Insert the TFF in the lepton loop
 
@@ -198,6 +260,16 @@ absorptive part, and report separate uncertainties from source matching,
 three-pion input, kaon input, pole/continuum separation, higher states, and
 short-distance matching.
 
+**Progress:** the [unnormalized-loop derivation](alp-unnormalized-lepton-loop.md)
+removes the real-photon denominator before integration, retains source
+linearity even when the real-photon value cancels, and derives the coherent
+width with a consistently converted local coefficient. It reproduces the
+two-real-photon discontinuity and derives the logarithmic ultraviolet
+divergence of a constant TFF. Thus a finite pointlike limit requires a
+specified renormalization and finite local matching; it is not a universal
+finite number. Full spectral-loop numerics and the uncertainty budget remain
+open.
+
 # Immediate prerequisites
 
 The next work should not be a numerical isoscalar spectral integral. First
@@ -210,9 +282,10 @@ obtain or produce:
    equation;
 3. the matched current-amplitude normalization and phase convention needed
    for the three-pion unitarity product;
-4. a decision on the target mass/virtuality range, which controls whether a
-   narrow phi approximation is adequate and which additional channels are
-   open;
+4. the user-specified scope $2m_e<m_a<2m_\tau$ with the full loop virtualities
+   is fixed; establish the additional open channels and a high-energy
+   continuation over that scope, rather than restricting the answer to a
+   narrow phi approximation;
 5. source-resolved virtual-photon kaon amplitudes and kaon-current form
    factors before claiming a $K\bar K$ spectral contribution;
 6. ALP-source short-distance matrix elements before claiming a matched
