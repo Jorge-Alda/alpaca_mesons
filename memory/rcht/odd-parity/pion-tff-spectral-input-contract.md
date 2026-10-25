@@ -2,8 +2,8 @@
 title: Numerical input contract for the pion TFF spectral representation
 status: derived
 created: 2026-10-24
-updated: 2026-10-24
-bibtex_keys: [Hoferichter:2018kwz]
+updated: 2026-10-25
+bibtex_keys: [Hoferichter:2018kwz, GomezDumm:2013sib]
 provenance: analytical-derivation
 ---
 
@@ -73,17 +73,27 @@ specified in the script. The isoscalar threshold is explicit because the
 included channel set determines it; the hadronic $3\pi$ threshold and the
 $\pi^0\gamma$ threshold are not interchangeable.
 
-The repository currently has no selected numerical $P$-wave phase/input
-replicas for $F_\pi^V$, nor a numerical complex $f_1(x,y)$ grid with
-correlated fit variations. A total $e^+e^-\to3\pi$ cross section constrains
-the amplitude modulus but does not by itself supply this complex partial
-wave. Consequently, the script reports no physical density, moments,
-uncertainty, or coefficient constraint until these inputs are sourced and
-matched. A standalone tree $\rho$ term must not be added to a spectral input
-that already contains the same resonance strength [@Hoferichter:2018kwz].
+## Progress through 2026-10-25
 
-The next calculation is to provide phase-dependent correlated grids or
-replicas for both amplitudes, validate their threshold and normalization
-conventions, then evaluate grid and cutoff convergence. Only after that may
-the moments be matched to the anomaly/effective-pole/asymptotic pieces and
-used to constrain the original odd-parity coefficient combinations.
+A central complex $F_\pi^V(x)$ grid is now calculated using the
+three-subtracted Omnès representation and exact-isospin fit I from
+GomezDumm:2013sib. Its explicit phase continuation and limits are recorded
+in [the central-grid derivation](pion-vector-form-factor-central-grid.md),
+and the values are stored in
+[`pion_vector_form_factor_central.json`](../../../data/odd_parity/pion_vector_form_factor_central.json).
+This is one fixed central model, not correlated phase or fit replicas. The
+complex $f_1(x,y)$ grid with correlated fit variations is still missing. A
+total $e^+e^-\to3\pi$ cross section constrains the amplitude modulus but
+does not by itself supply this complex partial wave. Consequently, this
+script still reports no complete physical density, spectral moments,
+uncertainty, or coefficient constraint. A standalone tree $\rho$ term must
+not be added to a spectral input that already contains the same resonance
+strength [@Hoferichter:2018kwz].
+
+The next calculation is to reconstruct the central $f_1(x,y)$ with a
+declared Khuri--Treiman prescription, then combine it with the central
+$F_\pi^V$ grid and check threshold, normalization, and grid convergence.
+Source covariance or a reproduced likelihood fit is needed before claiming
+statistical replicas. Only after that may the moments be matched to the
+anomaly/effective-pole/asymptotic pieces and used to constrain the original
+odd-parity coefficient combinations.

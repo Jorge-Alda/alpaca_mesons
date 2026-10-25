@@ -3,7 +3,7 @@ title: Source audit for physical pion TFF spectral amplitudes
 status: mixed
 created: 2026-10-25
 updated: 2026-10-25
-bibtex_keys: [Hoferichter:2018kwz, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj, Hanhart:2012wi]
+bibtex_keys: [Hoferichter:2018kwz, Hoferichter:2023bjm, Hoferichter:2025lcz, GomezDumm:2013sib, Niecknig:2012sj, Hanhart:2012wi]
 provenance: literature
 ---
 
@@ -33,7 +33,13 @@ formalism and discusses Dalitz data for vector-meson decays. It does not
 provide the off-shell $\gamma^*(y)\to3\pi$ partial-wave grid required here.
 The local Hanhart:2012wi extract specifies the elastic Omnès structure for
 $F_\pi^V$, but not the phase-shift tables and fitted variants needed to
-generate numerical complex replicas. The repository's existing
+generate numerical complex replicas. A central $F_\pi^V$ grid is now
+calculated using the explicit phase model and exact-isospin fit I in
+GomezDumm:2013sib; see
+[the numerical derivation](pion-vector-form-factor-central-grid.md).
+This does not reproduce the separate Bern/Madrid phase variants used in
+Hoferichter:2018kwz, and it has no correlated uncertainty replicas. The
+repository's existing
 `PelaezRodas2016ElasticPhase` implementation is for $K\pi$ S waves and is
 not a valid substitute for the $\pi\pi$ P wave.
 
@@ -52,18 +58,19 @@ so they should remain a separate data scenario. See the
 
 # Consequence and next input
 
-No physical spectral density or correlated moment can be computed from the
-currently indexed numerical inputs. Do not infer $f_1$ from a total
-$e^+e^-\to3\pi$ cross section alone, or combine independent midpoints of
-published parameter ranges as if they were a correlated fit replica.
+The central $F_\pi^V$ is available, but no full spectral density or moments
+can be computed until the complex $f_1$ input is reconstructed. Do not infer
+$f_1$ from a total $e^+e^-\to3\pi$ cross section alone, or combine
+independent midpoints of published parameter ranges as if they were a
+correlated fit replica.
 
 The next executable milestone is a fixed-prescription central reconstruction
 of $f_1(x,y)$ using the global SND/CMD-2/BaBar fit in Hoferichter:2025lcz,
 with one declared $\pi\pi$ P-wave phase and continuation. It needs the
-numerical phase input, complex-contour prescription for crossed-channel
-integrals, numerical Khuri--Treiman solution, full normalization parameter
-set and energy-dependent widths, and matched $F_\pi^V(x)$ prescription.
-First reproduce selected $e^+e^-\to3\pi$ cross sections and on-shell
+complex-contour prescription for crossed-channel integrals, numerical
+Khuri--Treiman solution, full normalization parameter set, and energy-
+dependent widths. Reuse the calculated central $F_\pi^V(x)$ grid. First
+reproduce selected $e^+e^-\to3\pi$ cross sections and on-shell
 $\omega,\phi\to3\pi$ normalizations and demonstrate grid convergence. Keep
 the fixed central calculation, complete discrete model variants, and
 statistical uncertainty propagation distinct. Do not call independent
