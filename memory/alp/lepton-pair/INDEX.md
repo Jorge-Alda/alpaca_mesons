@@ -16,6 +16,7 @@ provenance: assumption
 - [alp-isoscalar-tff-plan.md](alp-isoscalar-tff-plan.md) — staged isoscalar TFF plan and audit of completed components, missing ALP-specific amplitudes, and additional inputs.
 - [alp-three-pion-current-born-amplitude.md](alp-three-pion-current-born-amplitude.md) — executed LO gauged $a\Phi^3$ Born current for $a\gamma^*\to\pi^+\pi^-\pi^0$, its Ward identity, and isoscalar-current limitation.
 - [alp-three-pion-vector-pole-factorization.md](alp-three-pion-vector-pole-factorization.md) — executed antisymmetric-tensor propagator contraction and strict $V_i$ spin-one pole factorization for the ALP three-pion current.
+- [alp-three-pion-vector-partial-wave.md](alp-three-pion-vector-partial-wave.md) — isoscalar $V_i\to3\pi$ Khuri--Treiman partial wave and its insertion into the strict ALP production pole residue, with numerical-input limits.
 - [alp-pion-vector-and-production-form-factors.md](alp-pion-vector-and-production-form-factors.md) — elastic dispersive $F_\pi^V$, the source-resolved production P wave, and its derived two-pion-cut normalization and angular weight.
 - [alp-isovector-tff-fit-null-projection.md](alp-isovector-tff-fit-null-projection.md) — projection of the preliminary fit's four fixed-nuisance odd-coefficient null directions onto the neutral-$\rho$ pole contribution.
 - [alp-virtual-photon-pion-null-sensitivity.md](alp-virtual-photon-pion-null-sensitivity.md) — projection of the same fit null directions onto the virtual-photon charged-pion P wave.

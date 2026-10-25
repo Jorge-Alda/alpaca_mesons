@@ -34,7 +34,7 @@ the tree pole expression without a matching prescription.
 | Tree-level omega/phi responses | **Complete** within the retained stable-pole, original-operator truncation. | The source-resolved tree expression sums neutral-vector responses. This is a pole approximation, not a complete low-energy isoscalar spectral function; widths, cuts, additional operators, and short-distance matching are absent. |
 | Three-pion dispersive framework | **Partly complete** as a literature method and fit-input audit; no ALP spectral predictor exists. | The Khuri--Treiman equations and fitted current normalization are documented in [the 2023 amplitude digest](../../extracts/Hoferichter:2023bjm/three-pion-amplitude-and-normalization.md) and [the 2025 fit digest](../../extracts/Hoferichter:2025lcz/gamma-star-to-three-pion-fit.md). The framework has not been implemented for the ALP source. |
 | Source-specific $a\gamma^*\to3\pi$ amplitude | **LO Born term derived, executed, and recorded in matrix-trace form; full isoscalar amplitude still needs additional derivation and inputs.** | The [LO current record](alp-three-pion-current-born-amplitude.md) gives the gauged $a\Phi^3$ contribution. SymPy finds equal shifted charged-pion vertices, zero contact coefficient, and a vanishing Ward contraction. The minimal light-quark isoscalar-current coupling vanishes. The SM current partial wave does not determine the ALP transition amplitude. |
-| $aV_i\gamma^*$ followed by $V_i\to3\pi$ | **Strict spin-one pole factorization derived and executed under an explicit transverse decay-source lift.** | The [pole-factorization record](alp-three-pion-vector-pole-factorization.md) inverts the six-component tensor Hessian, verifies transversality and derives the ordered source numerator and pole contraction. The on-shell $V_i\to3\pi$ decay function and relative crossing/LSZ phase remain inputs; regular terms and direct contacts are not fixed. |
+| $aV_i\gamma^*$ followed by $V_i\to3\pi$ | **Partial-wave relation derived and recorded; numerical decay function still requires inputs.** | The new [vector partial-wave record](alp-three-pion-vector-partial-wave.md) writes the Bose-symmetric decay amplitude as three pair-channel functions and identifies $f_{1,i}(s)=\mathcal F_i(s)+\widehat{\mathcal F}_i(s)$ from the Khuri--Treiman equation. The approved executable pole derivation verifies the strict residue structure. A complex normalized $F_i^{\rm on}(t,u)$ grid, correlated variations, and matched relative phase remain unavailable; regular terms and direct contacts are not fixed. |
 | Numerical three-pion spectral density | **Requires additional inputs.** | Needs complex source-dependent ALP production amplitudes, a compatible complex $\gamma^*\to3\pi$ current amplitude, phase conventions, and correlated variations of fit and phase inputs. The cited 2023/2025 records do not supply a complete complex partial-wave grid or correlated replicas. |
 | Three-pion contribution to the doubly virtual TFF | **Not started.** | Derive single- and double-spectral pieces, including exchanged photon ordering and subtraction terms; establish the unitarity normalization for the chosen ALP source and tensor convention. A prescription must separate explicit omega/phi poles from continuum strength. |
 | $K\bar K$ cut and phi region | **Partly complete:** real-photon odd-resonance $a\to\gamma K\bar K$ amplitudes and neutral-kaon projections exist; the dispersive TFF construction is not started. | The real-photon [ALP photon-pseudoscalar-pair amplitude](../photon-two-pseudoscalar/alp-photon-pp-amplitude.md) is a starting point, not the required virtual-current isoscalar amplitude. Derive the virtual-current extension and isoscalar projection; obtain complex charged/neutral kaon vector form factors, phases, and correlated uncertainties; define how overlapping phi-to-three-pion and phi-to-kaon strength is handled. |
@@ -71,9 +71,10 @@ The LO Born step gauges the existing [one-ALP $a\Phi^3$ chiral
 interaction](../three-pseudoscalar/alp-phi3-lo-chipt-derivation.md), retains
 the charged-pion pole graphs and contact term, and checks the Ward identity.
 The executed result is recorded in the [LO current-amplitude
-record](alp-three-pion-current-born-amplitude.md). The next resonance step
-has now been derived separately in the [spin-one pole-factorization
-record](alp-three-pion-vector-pole-factorization.md).
+record](alp-three-pion-current-born-amplitude.md). The resonance pole and
+decay partial-wave steps are recorded separately in the [spin-one
+pole-factorization record](alp-three-pion-vector-pole-factorization.md) and
+the [vector partial-wave record](alp-three-pion-vector-partial-wave.md).
 
 In exact light-quark isospin, the isoscalar electromagnetic generator is
 $Q^{(0)}_\ell=\frac16\mathbf1_2$. It commutes with the charged-pion
@@ -129,12 +130,18 @@ On-shell $V_i\to3\pi$ data do not determine regular off-shell terms or direct
 $V3\pi$ contacts; do not extend the pole numerator into those terms without a
 separate source model.
 
-**Next gate:** obtain the complex $V_i\to3\pi$ partial-wave function and its
-correlated variations in a phase convention matched to the production
-residue. Keep the full electromagnetic charge matrix and mixed
-isovector-isoscalar traces on the ALP-current side. Use the SM
-$\gamma^*\to3\pi$ amplitude only on the current side of the unitarity cut
-[@Hoferichter:2023bjm; @Hoferichter:2025lcz].
+**Completed step:** the [partial-wave record](alp-three-pion-vector-partial-wave.md)
+derives the Bose-symmetric Khuri--Treiman representation and identifies the
+on-shell decay function multiplying the strict pole residue. The symbolic
+pole derivation was executed with approval. This does not provide a numerical
+complex decay grid or its correlated variations.
+
+**Next gate:** produce or obtain the complex, normalized $V_i\to3\pi$
+solution and correlated phase/fit variations, and match its S-matrix phase to
+the production residue. Then derive the three-pion discontinuity using the
+full electromagnetic charge matrix and mixed isovector-isoscalar traces on
+the ALP-current side; use the SM $\gamma^*\to3\pi$ amplitude only on the
+current side of the unitarity cut [@Hoferichter:2023bjm; @Hoferichter:2025lcz].
 
 ## 3. Derive the three-pion discontinuity and TFF terms
 
@@ -211,8 +218,10 @@ obtain or produce:
 6. ALP-source short-distance matrix elements before claiming a matched
    high-energy tail.
 
-The first three items are prerequisites to the leading low-energy three-pion
-component. Items 4--6 become prerequisites as the calculation expands to the
+Items 1--3 remain prerequisites to the leading low-energy three-pion
+discontinuity; the vector decay partial-wave representation is now derived,
+but its complex numerical solution and matched phase are still missing.
+Items 4--6 become prerequisites as the calculation expands to the
 phi/kaon region and a full TFF for the lepton loop.
 
 # Literature boundary
