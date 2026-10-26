@@ -2,7 +2,7 @@
 title: Plan and status audit for the low-energy isoscalar ALP TFF
 status: mixed
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-10-26
 bibtex_keys: [Alda:2026nrd, Messerli:2025rnv, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj, Ruiz-Femenia:2003jdx, Ecker:1988te, Ecker:1989yg]
 provenance: assumption
 ---
@@ -63,9 +63,10 @@ range fixed above. Existing uncommitted manuscript changes are outside this work
 | Open stage | Assignment and progress |
 |---|---|
 | 1: source/current decomposition | Coder completed the [retained-tree decomposition](alp-isoscalar-tff-source-decomposition.md); the executed derivation and four tests verify recombination, source linearity, Bose symmetry, Ward identities and the stored stable-pole normalization. Mixed rho--isoscalar VVP selections overlap and must be subtracted once. The total electromagnetic contact remains separate. |
-| 2: complex three-pion input and relative phase | Literature subagent completed the [input/phase audit](alp-three-pion-numerical-input-status.md). Separate second-iteration coders are matching the crossing/propagator convention and implementing a central once-subtracted omega/phi Khuri--Treiman solution from the stored phase prescription. Unavailable covariance does not prevent a declared central calculation; correlated variations and any physical decay phase unresolved by rate data remain separate. |
+| 2: complex three-pion input and relative phase | Literature subagent completed the [input/phase audit](alp-three-pion-numerical-input-status.md). The [strict-pole crossing/LSZ convention](alp-three-pion-pole-phase.md) is executed and fixes the conventional factor $\zeta_i=-1$ for the declared routing. It does not fix the physical overall decay phase from rate data. A central once-subtracted omega/phi Khuri--Treiman solution still requires a declared phase-shift input, subtraction prescription and normalization; correlated variations remain separate. |
 | 3: three-pion unitarity and dispersion | Coder completed the [conditional discontinuity derivation](alp-three-pion-discontinuity.md); derivation and five tests pass. Actual production/current amplitudes, double discontinuity, subtraction information and physical pole/continuum prescription remain open. |
 | 4: virtual kaon production and phi region | Coder completed the [retained virtual-kaon derivation](alp-virtual-photon-kaon-amplitude.md); derivation and four tests pass. Physical complex form factors, completed production, rescattering and common phi-region matching remain open. |
+| 4a: common finite-width vector response | The [self-energy record](alp-isoscalar-vector-self-energy.md) derives the absorptive sign, positive spectral density, subtracted self-energy dispersion and stable-pole replacement. It is formal and diagonal; physical decay amplitudes, subtraction conditions, and possible omega--phi mixing remain open. |
 | 5: higher strength and short distance | Scientific consultation established the [input requirements](alp-isoscalar-tff-input-gates.md). A second-iteration coder completed the [leading local OPE derivation](alp-hard-current-ope.md); derivation and four tests pass. Independent source matrix elements, other hard limits, higher strength and full matching remain open. |
 | 6: lepton loop | Coder completed the [unnormalized-loop derivation](alp-unnormalized-lepton-loop.md); derivation and four tests pass. Numerical evaluation depends on the completed TFF and finite local matching. |
 | Reproducibility | Each new derivation must have an executed repository-Python script, a paired atomic record, and explicit limits. |
