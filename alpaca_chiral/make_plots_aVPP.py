@@ -75,7 +75,7 @@ def make_plot_cG():
     for j, mesonP1 in enumerate(mesons):
         for k, mesonP2 in enumerate(mesons):
             if j <= k:
-                channel = f"\gamma {mesons_tex[mesonP1]} {mesons_tex[mesonP2]}"
+                channel = f"\\gamma {mesons_tex[mesonP1]} {mesons_tex[mesonP2]}"
                 print("Computing channel", channel)
                 t0 = time()
                 dw = [photon_two_pseudoscalar_width(m, fa, cG, mesonP1, mesonP2) for m in ma]
@@ -100,7 +100,7 @@ def make_plot_cG():
     plt.ylabel(r'$\Gamma(a \to V P P/\gamma P P)$ [GeV]')
     plt.legend(ncols=3, fontsize=6, borderpad=0.2, labelspacing=0.1, handlelength=1.4)
     plt.ylim(1e-12, 1e-3)
-    fig.savefig(pathlib.Path(__file__).parent / 'plots/dw_aVPP_cG.pdf', bbox_inches='tight')
+    fig.savefig(pathlib.Path(__file__).parent / 'plots/dw_aVPP_cG_WZW.pdf', bbox_inches='tight')
 
 if __name__ == '__main__':
     make_plot_cG()

@@ -145,6 +145,11 @@ hadronic-pole selection and derives the mixed VVP overlap explicitly.
 The supplied electromagnetic contact fixes the total current pair only;
 independent projected contact weights require an external-source completion
 or an explicitly declared allocation. No allocation is imposed here.
+The [assembled production-current derivation](alp-three-pion-production-amplitude.md)
+now combines the gauged LO Born term with the strict omega/phi pole residues
+and verifies the photon Ward identity. It does not yet project the Born term
+onto the isoscalar three-pion state or supply the complex rescattered decay
+functions, so the physical three-pion discontinuity remains open.
 
 ## 2. Spin-one pole factorization: derived
 
