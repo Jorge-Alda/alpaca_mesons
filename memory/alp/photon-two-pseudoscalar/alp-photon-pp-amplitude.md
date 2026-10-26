@@ -35,11 +35,13 @@ derivation is
 .venv/bin/python scripts/derive_alp_photon_two_pseudoscalar.py --test
 ```
 
-This is the odd resonance-exchange piece, not a complete physical amplitude:
-independent local WZW/anomalous terms and the even scalar/vector-source
-radiative contributions are not included. The full antisymmetric-tensor
-propagator is used, including the local part required by representation
-equivalence [@Ecker:1989yg].
+This derivation is the odd resonance-exchange piece. The public library
+amplitude now adds the leading local WZW contribution coherently, using the
+no-mixing coefficient in the companion
+[WZW derivation](wzw-alp-photon-pp-amplitude.md). The even scalar/vector-source
+radiative contributions remain outside the implemented amplitude. The full
+antisymmetric-tensor propagator is used, including the local part required by
+representation equivalence [@Ecker:1989yg].
 
 # Kinematics and radiative source kernels
 

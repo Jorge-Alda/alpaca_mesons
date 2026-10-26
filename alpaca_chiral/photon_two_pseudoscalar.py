@@ -1,11 +1,12 @@
-"""Odd resonance contribution to ALP decays to a photon and two mesons.
+"""WZW and odd resonance contributions to ALP photon and two-meson decays.
 
 Masses, fa, G_V and widths use GeV. The tree amplitude retains the original
 seven VJP and four VVP operators, including direct photon insertion, vector
-conversion and the charged-source c4 term. Local anomalous contacts, even
-radiative terms, loops and rescattering are omitted. Internal vectors use
-fitted masses and constant PDG widths; external mesons have physical masses
-and vertices have the library's LO Alda:2026nrd masses and generators.
+conversion and the charged-source c4 term, coherently combined with the
+leading local WZW contact. Even radiative terms, loops and rescattering are
+omitted. Internal vectors use fitted masses and constant PDG widths; external
+mesons have physical masses and vertices have the library's LO Alda:2026nrd
+masses and generators.
 """
 from dataclasses import dataclass
 import math
@@ -55,13 +56,31 @@ def _canonical_meson_name(name):
     raise ValueError(f'unsupported pseudoscalar: {name!r}')
 
 
+def _wzw_scalar_coefficient(fa, axial, first, second, electric_charge):
+    """Return the leading no-mixing WZW contact coefficient in GeV^-3.
+
+    ``axial`` is Alda:2026nrd's no-mixing u,d,s axial matrix, and ``first``
+    and ``second`` are outgoing physical meson generators. The six-term
+    alternating trace and its sign follow the executable WZW derivation in
+    scripts/derive_wzw_alp_photon_two_pseudoscalar.py, with orientation +1.
+    The amplitude multiplies epsilon(eps_gamma,p1,p2,k), with (+---) and
+    epsilon^0123=+1. This leading anomalous contact has no Dalitz dependence.
+    """
+    charge = np.diag([2/3, -1/3, -1/3])
+    flavour = np.trace(charge @ (
+        axial @ first @ second + first @ second @ axial
+        + second @ axial @ first - axial @ second @ first
+        - second @ first @ axial - first @ axial @ second))
+    return complex(3*electric_charge*flavour/(12*math.pi**2*fa*F_PI**2))
+
+
 def _prepare_photon_two_pseudoscalar_terms(ma: float, fa: float, couplings: ALPcouplings,
                                            meson_1: str, meson_2: str):
     """Prepare flavour coefficients for the odd scalar amplitude.
 
-    Returns the external-state metadata and ungrouped pole terms used by the
-    optimized scalar evaluator. The physics inputs and channel selection are
-    unchanged from the former public amplitude constructor.
+    Returns external-state metadata, ungrouped pole terms and the local WZW
+    coefficient used by the optimized scalar evaluator. All contributions
+    use the same axial source after the ALPcouplings basis conversion.
     """
     first_name, second_name = map(_canonical_meson_name, (meson_1, meson_2))
     state = (first_name, second_name)
@@ -69,7 +88,7 @@ def _prepare_photon_two_pseudoscalar_terms(ma: float, fa: float, couplings: ALPc
     masses = tuple(particles[name][0] for name in state)
     charges = {'pi+': 1, 'K+': 1, 'pi-': -1, 'K-': -1}
     if ma <= sum(masses) or sum(charges.get(name, 0) for name in state):
-        return ma, masses, state, ()
+        return ma, masses, state, (), 0j
     axial, pseudoscalar, _ = _no_mixing_couplings(couplings, ma)
     fitted = _read_vector_inputs()
     g_v = fitted['even_parameters']['G_V_GeV']
@@ -78,6 +97,8 @@ def _prepare_photon_two_pseudoscalar_terms(ma: float, fa: float, couplings: ALPc
     chi, odd = fitted['quark_mass_matrix'], fitted['odd_coefficients']
     charge = np.diag([2/3, -1/3, -1/3])
     electric_charge = math.sqrt(4*math.pi*fitted['alpha_em'])
+    wzw_coefficient = _wzw_scalar_coefficient(
+        fa, axial, first, second, electric_charge)
     photon_response = sum(
         fitted['photon_vector_residues'][name]/fitted['vector_masses'][name]**2
         * fitted['vector_generators'][name] for name in ('rho0', 'omega', 'phi'))
@@ -126,21 +147,23 @@ def _prepare_photon_two_pseudoscalar_terms(ma: float, fa: float, couplings: ALPc
         if constant != 0j or linear != 0j:
             terms.append((*key, constant, linear))
     terms = _canonicalize_terms(terms)
-    return ma, masses, state, terms
+    return ma, masses, state, terms, wzw_coefficient
 
 
 @dataclass(frozen=True)
 class _PhotonTwoPseudoscalarAmplitudeOptimized:
     """Prepared scalar arithmetic for the same odd amplitude, in GeV^-3.
 
-    Each invariant group contains (complex pole, constant, linear), with
-    pole = m_V^2 - i m_V Gamma_V. No propagator approximation is made.
+    The local WZW coefficient is prepared once. Each invariant group
+    contains (complex pole, constant, linear), with pole = m_V^2 - i m_V
+    Gamma_V. No propagator approximation is made.
     """
     ma: float
     masses: tuple
     final_state: tuple
     terms: tuple
     invariant_terms: tuple
+    wzw_coefficient: complex
     total_squared: float
     threshold_squared: float
     mass_difference_squared: float
@@ -159,7 +182,7 @@ class _PhotonTwoPseudoscalarAmplitudeOptimized:
     def at_fixed_s(self, s):
         """Return the scalar evaluator with all s-only work already done."""
         s_terms, t_terms, u_terms = self.invariant_terms
-        scalar_s = 0j
+        scalar_s = self.wzw_coefficient
         for pole, constant, linear in s_terms:
             scalar_s += (constant+linear*s)/(s-pole)
         u_offset = self.total_squared-s
@@ -178,13 +201,13 @@ class _PhotonTwoPseudoscalarAmplitudeOptimized:
 
     def __call__(self, s, t):
         """Evaluate the coherent scalar coefficient in GeV^-3."""
-        if not self.terms:
+        if not self.terms and self.wzw_coefficient == 0j:
             return 0j
         return self.at_fixed_s(s)(t)
 
     def squared(self, s, t):
         """Return the photon polarization sum at physical Dalitz coordinates."""
-        if not self.terms:
+        if not self.terms and self.wzw_coefficient == 0j:
             return 0.
         lower, upper = self.t_limits(s)
         return max(0., s*(t-lower)*(upper-t)/4)*abs(self(s, t))**2
@@ -196,13 +219,15 @@ def photon_two_pseudoscalar_amplitude(
     """Return the optimized callable odd scalar coefficient in GeV^-3.
 
     Inputs, units, retained contributions and conventions are those of
-    the retained odd $a\to\gamma PP$ model. The amplitude is
+    the retained WZW + VJP + VVP $a\to\gamma PP$ model. The amplitude is
     epsilon(eps_gamma,p1,p2,k) times this coefficient, with metric (+---) and
     epsilon^0123=+1. The callable takes s=(p1+p2)^2 and t=(k+p2)^2 in GeV^2.
-    `at_fixed_s(s)` reuses the s-channel contribution in inner integrations.
+    The ALPcouplings input is rotated to the no-mixing basis once.
+    `at_fixed_s(s)` reuses the WZW and s-channel contributions in inner
+    integrations.
     Threshold and charge-forbidden pairs return an empty amplitude.
     """
-    ma, masses, state, terms = _prepare_photon_two_pseudoscalar_terms(
+    ma, masses, state, terms, wzw_coefficient = _prepare_photon_two_pseudoscalar_terms(
         ma, fa, couplings, meson_1, meson_2)
     first_mass, second_mass = masses
     groups = tuple(tuple((complex(mass*mass, -mass*width),
@@ -211,7 +236,7 @@ def photon_two_pseudoscalar_amplitude(
                          if index == invariant) for invariant in range(3))
     return _PhotonTwoPseudoscalarAmplitudeOptimized(
         ma, masses, state, terms,
-        groups, ma*ma+first_mass*first_mass+second_mass*second_mass,
+        groups, wzw_coefficient, ma*ma+first_mass*first_mass+second_mass*second_mass,
         (first_mass+second_mass)**2, (first_mass-second_mass)**2,
         second_mass*second_mass, second_mass*second_mass-first_mass*first_mass)
 
@@ -220,7 +245,9 @@ def photon_two_pseudoscalar_width(
         ma: float, fa: float, couplings: ALPcouplings,
         meson_1: str, meson_2: str, *, order: int = 16,
         epsrel: float = 1e-5) -> float:
-    """Return the odd photon PP width in GeV with hybrid quadrature.
+    """Return the WZW + odd-resonance photon PP width in GeV.
+
+    Hybrid quadrature is used for the Dalitz integral.
 
     Equal-mass pairs use vectorized Gauss-Legendre quadrature in both Dalitz
     variables, with a sine map in s to smooth the threshold. Unequal-mass
@@ -236,7 +263,7 @@ def photon_two_pseudoscalar_width(
     """
     amplitude = photon_two_pseudoscalar_amplitude(
         ma, fa, couplings, meson_1, meson_2)
-    if not amplitude.terms:
+    if not amplitude.terms and amplitude.wzw_coefficient == 0j:
         return 0.
     from scipy.special import roots_legendre
 
