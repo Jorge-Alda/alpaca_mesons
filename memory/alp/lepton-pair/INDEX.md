@@ -21,6 +21,7 @@ provenance: assumption
 - [alp-three-pion-current-born-amplitude.md](alp-three-pion-current-born-amplitude.md) — executed LO gauged $a\Phi^3$ Born current for $a\gamma^*\to\pi^+\pi^-\pi^0$, its Ward identity, and isoscalar-current limitation.
 - [alp-three-pion-vector-pole-factorization.md](alp-three-pion-vector-pole-factorization.md) — executed antisymmetric-tensor propagator contraction and strict $V_i$ spin-one pole factorization for the ALP three-pion current.
 - [alp-three-pion-vector-partial-wave.md](alp-three-pion-vector-partial-wave.md) — isoscalar $V_i\to3\pi$ Khuri--Treiman partial wave and its insertion into the strict ALP production pole residue, with numerical-input limits.
+- [alp-isoscalar-vector-three-pion-offshell.md](alp-isoscalar-vector-three-pion-offshell.md) — fixed-convention tree-level sequential rho-exchange contribution to off-shell isoscalar $V_i\to3\pi$, with contact-term, rescattering, and ideal-phi limits.
 - [alp-three-pion-pole-phase.md](alp-three-pion-pole-phase.md) — executed crossing and LSZ phase match for the strict ALP three-pion vector pole; the physical decay normalization phase remains unresolved.
 - [alp-three-pion-numerical-input-status.md](alp-three-pion-numerical-input-status.md) — availability, uncertainty, normalization, and phase-matching audit for the complex $V_i\to3\pi$ input.
 - [alp-three-pion-discontinuity.md](alp-three-pion-discontinuity.md) — executed conditional three-pion unitarity measure, scalar projection, spin-one weight, subtracted dispersion, and pole-replacement normalization.

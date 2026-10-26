@@ -2,7 +2,7 @@
 title: Isoscalar vector to three-pion partial wave for the ALP TFF
 status: derived
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-10-26
 bibtex_keys: [Alda:2026nrd, Niecknig:2012sj, Hoferichter:2023bjm, Hoferichter:2025lcz]
 provenance: analytical-derivation
 ---
@@ -69,8 +69,12 @@ The factorized ALP production residue multiplies $F_i^{\rm on}(t,u)$ and
 the transverse tensor contraction given in the linked pole-factorization
 record. Its relative phase $\zeta_i$ remains explicit until the on-shell
 $a\to V_i\gamma$ and $V_i\to3\pi$ amplitudes are matched in one convention.
-This fixes the on-shell pole residue only. It supplies no regular off-shell
-continuation or direct $V3\pi$ contact term.
+This fixes the on-shell pole residue only. A retained tree-level sequential
+rho-exchange contribution has since been derived in a declared off-shell
+tensor-source convention; see the
+[off-shell vector-to-three-pion record](alp-isoscalar-vector-three-pion-offshell.md).
+That term is not a complete physical continuation: direct $V3\pi$ contacts
+and pion rescattering remain undetermined.
 
 # Inputs and provenance
 
