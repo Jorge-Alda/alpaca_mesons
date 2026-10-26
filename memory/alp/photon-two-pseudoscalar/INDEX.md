@@ -10,6 +10,7 @@ provenance: assumption
 # ALP photon and two-pseudoscalar records
 
 - [alp-photon-pp-amplitude.md](alp-photon-pp-amplitude.md) — odd vector-exchange amplitude for $a\to\gamma PP$.
+- [wzw-alp-photon-pp-amplitude.md](wzw-alp-photon-pp-amplitude.md) — direct WZW contact in the no-mixing basis, generic-basis ALP--meson mixing, and the invariant $a\to\gamma PP$ contribution.
 - [alp-photon-pp-width.md](alp-photon-pp-width.md) — photon polarization sum, phase space and selected-channel widths.
 - [odd-photon-neutral-kaon-selection-rules.md](odd-photon-neutral-kaon-selection-rules.md) — coherent neutral-kaon selection rules for the odd amplitude.
 - [photon-pp-kaon-pion-profile.md](photon-pp-kaon-pion-profile.md) — adaptive-width profiles for charged kaon and pion channels.
