@@ -2,7 +2,7 @@
 title: RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-22
+updated: 2026-10-26
 bibtex_keys: []
 provenance: assumption
 ---

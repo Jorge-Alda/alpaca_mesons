@@ -2,8 +2,8 @@
 title: Anomalous WZW contribution to V -> 3pi and e+e- -> 3pi
 status: literature
 created: 2026-10-04
-updated: 2026-10-15
-bibtex_keys: [Ruiz-Femenia:2003jdx, Niecknig:2012sj]
+updated: 2026-10-26
+bibtex_keys: [Wess:1971yu, Ruiz-Femenia:2003jdx, Niecknig:2012sj]
 provenance: literature
 ---
 
@@ -34,9 +34,18 @@ $$
 \frac{N_C}{8\pi^2 r^2}.
 $$
 
-**For $V\to 3\pi$:** The WZW term does **not** directly generate a $V\to 3\pi$ vertex. The WZW term has one pseudoscalar and two vector currents; to get $V\to 3\pi$, one would need to replace one vector current by two pseudoscalars (via the chiral Lagrangian), which is a higher-order effect. The paper does not write a WZW-induced $V\to 3\pi$ amplitude.
+**Correction:** The gauged WZW functional does contain a direct one-photon, three-pion anomalous vertex. In the convention $U=\exp(i\Phi/f_\pi)$ and $v_\mu=-eQA_\mu$, its magnitude is
+$$
+\mathcal L_{\gamma3\pi}
+=\frac{N_C e}{12\pi^2 f_\pi^3}
+\epsilon^{\mu\nu\alpha\beta}A_\mu
+\partial_\nu\pi^+\partial_\alpha\pi^-\partial_\beta\pi^0,
+$$
+up to the common WZW orientation and field-phase convention. This is the low-energy anomaly vertex [@Wess:1971yu]. The earlier statement that the WZW term does not generate $\gamma3\pi$ was incorrect.
 
-**For $e^+e^-\to 3\pi$:** The process $e^+e^-\to 3\pi$ proceeds via $e^+e^-\to \gamma^* \to V \to 3\pi$ (with $V=\omega,\phi,\omega',\omega''$). The WZW term contributes to the $\gamma^*\to 3\pi$ vertex only through the anomaly-induced $\pi^0\gamma^*\gamma$ coupling (which is not the $3\pi$ final state) or through the $\langle VVP\rangle$ function with one vector current being the photon. The paper does not give an explicit $e^+e^-\to 3\pi$ amplitude from WZW.
+In antisymmetric-tensor RChT, however, $V_{\mu\nu}$ is a separate resonance field and $Z_{\rm WZ}[v,a]$ depends on external sources. Diagonalizing photon--vector mixing inserts a vector-field component into the photon appearing in this vertex. The resulting local $V_i3\pi$ term is proportional to $e(g_i/M_i)$ and hence is $O(e^2)$ when $g_i=O(e)$; it is an electromagnetic, field-basis-induced contribution, not the leading strong decay vertex. Keep it distinct from any independent chirally invariant odd-parity resonance operator and do not double count it against explicit photon exchange. See the [derived WZW contribution record](../../rcht/odd-parity/wzw-gamma3pi-contribution.md).
+
+**For $e^+e^-\to 3\pi$:** The process is initiated by $e^+e^-\to\gamma^*$. Its low-energy current amplitude contains the direct WZW $\gamma^*\to3\pi$ term above, together with resonance and rescattering contributions at higher energies. Ruiz-Femenia:2003jdx does not assemble a full $e^+e^-\to3\pi$ amplitude; this does not remove the WZW contact fixed by the anomaly.
 
 ## $\phi\to 3\pi$ and the Anomaly in Niecknig:2012sj
 
@@ -52,11 +61,11 @@ The paper notes that the $K\bar K$ intermediate state in $\phi\to 3\pi$ factoriz
 
 ## Is the Anomaly Required for a Quantitative $\phi\to 3\pi$ Line Shape?
 
-**No explicit WZW/anomaly term appears in the dispersive $\phi\to 3\pi$ amplitude.** The line shape is determined by:
+**No separate WZW term is added to the strong dispersive $\phi\to 3\pi$ decay amplitude in Niecknig:2012sj.** That analysis is a strong decay representation; its line shape is determined by:
 1. The $\pi\pi$ P-wave phase shift (input from Roy equations)
 2. Crossed-channel rescattering (three-particle cuts)
 3. Subtraction constants (normalization from $\Gamma_{\phi\to 3\pi}$)
 
-The dispersive representation achieves $\chi^2/\mathrm{ndof} \approx 1.17$ (KLOE) and $\approx 1.0$ (twice-subtracted) **without an explicit anomaly term** [@Niecknig:2012sj, Tables 1 and 2]. The anomaly is implicitly contained in the $\pi\pi$ phase shift input (which comes from data/Roy equations that include all QCD effects).
+The dispersive representation achieves $\chi^2/\mathrm{ndof} \approx 1.17$ (KLOE) and $\approx 1.0$ (twice-subtracted) without a separately displayed anomaly term [@Niecknig:2012sj, Tables 1 and 2]. This does not imply that the $\gamma3\pi$ anomaly is absent or encoded in the $\pi\pi$ phase shift. The strong-decay subtraction constants are fixed from the decay normalization; the electromagnetic $\gamma^*\to3\pi$ dispersive amplitude requires its own low-energy normalization, conventionally matched to the anomaly.
 
-**Conclusion:** For a quantitative $\phi\to 3\pi$ line shape, the dispersive approach uses the empirical $\pi\pi$ phase shift as input, which already encodes the full QCD dynamics including anomaly effects. An explicit WZW term is not added separately. In RChT, the anomaly is matched onto the resonance couplings via the $\langle VVP\rangle$ short-distance constraints (which fix combinations of $c_i,d_i$), but the direct WZW contribution to $V\to 3\pi$ is not a separate piece in the amplitude.
+**Conclusion:** Keep three statements separate: the WZW functional fixes the low-energy $\gamma3\pi$ anomalous vertex; photon--vector diagonalization induces an electromagnetic $V_i3\pi$ term in the chosen field basis; and a strong $V_i\to3\pi$ resonance amplitude may also contain independent odd-parity local operators and rescattering. The $\langle VVP\rangle$ short-distance constraints on $c_i,d_i$ do not by themselves complete that one-vector, three-pion operator basis.

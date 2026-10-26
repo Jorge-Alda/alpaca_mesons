@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-24
+updated: 2026-10-26
 bibtex_keys: []
 provenance: assumption
 ---
@@ -19,6 +19,8 @@ odd coefficients and tensor scalars require that record's adapter before
 being combined with canonical photon or resonance amplitudes.
 - [odd-parity-physics-draft.md](odd-parity-physics-draft.md) — physics-only manuscript narrative and precise physical wording, direct Alda:2026nrd conventions, audited photon contact and appendix/missing-work comments.
 - [two-source-alp-rcht-odd-parity-extension.md](two-source-alp-rcht-odd-parity-extension.md) — two-source anomaly seed and ALP insertion.
+- [wzw-gamma3pi-contribution.md](wzw-gamma3pi-contribution.md) — gauged-WZW $\gamma3\pi$ vertex and the photon--vector-mixing contribution it induces.
+- [vector-three-pion-contact.md](vector-three-pion-contact.md) — symmetry-allowed local $V3\pi$ contact, its nonzero vertex and its IBP/leading-EOM reduction into the $VPPP$ basis plus an SU($N_f$) double trace.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
 - [odd-prescription-matching.md](odd-prescription-matching.md) — neutral pole matching for Aloni:2018vki and Bai:2025fvl, derived even-parity $G_V$, split flat-schema inputs and the separate rank-five octet OPE family.
