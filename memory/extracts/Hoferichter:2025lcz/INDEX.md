@@ -2,7 +2,7 @@
 title: Hoferichter:2025lcz literature extract index
 status: literature
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-10-27
 bibtex_keys: [Hoferichter:2025lcz]
 provenance: literature
 ---

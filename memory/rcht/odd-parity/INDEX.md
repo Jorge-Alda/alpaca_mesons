@@ -22,6 +22,8 @@ being combined with canonical photon or resonance amplitudes.
 - [wzw-gamma3pi-contribution.md](wzw-gamma3pi-contribution.md) — gauged-WZW $\gamma3\pi$ vertex and the photon--vector-mixing contribution it induces.
 - [vector-three-pion-contact.md](vector-three-pion-contact.md) — symmetry-allowed local $V3\pi$ contact, its nonzero vertex and its IBP/leading-EOM reduction into the $VPPP$ basis plus an SU($N_f$) double trace.
 - [isoscalar-vppp-three-pion-projection.md](isoscalar-vppp-three-pion-projection.md) — explicit five-operator isoscalar charged-three-pion projection, two coefficient combinations, rank/null directions, and consequences for off-shell TFF input.
+- [isoscalar-vppp-photon-response.md](isoscalar-vppp-photon-response.md) — tree photon-source insertion for the local isoscalar VPPP vertex and its exact pole/contact degeneracy.
+- [isoscalar-vppp-fit-preparation.md](isoscalar-vppp-fit-preparation.md) — parameterization, likelihood, identifiability checks, data audit, and prerequisites for extracting the two local combinations.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
 - [odd-prescription-matching.md](odd-prescription-matching.md) — neutral pole matching for Aloni:2018vki and Bai:2025fvl, derived even-parity $G_V$, split flat-schema inputs and the separate rank-five octet OPE family.
