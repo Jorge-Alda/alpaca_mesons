@@ -27,6 +27,9 @@ being combined with canonical photon or resonance amplitudes.
 - [isoscalar-vppp-fit-preparation.md](isoscalar-vppp-fit-preparation.md) — parameterization, likelihood, identifiability checks, data audit, and prerequisites for extracting the two local combinations.
 - [babar-2021-three-pion-fit-input.md](babar-2021-three-pion-fit-input.md) — extracted 114-bin low-energy cross section with covariance and 72-bin higher-energy table for the new fit.
 - [vppp-dispersive-profile-input-contract.md](vppp-dispersive-profile-input-contract.md) — finite-width spectral/profile calculator, exact sum-rule elimination, zero-width check, and remaining physical inputs.
+- [vppp-finite-width-spectral-templates.md](vppp-finite-width-spectral-templates.md) — SymPy-derived finite-width resonance and conformal spectral bases, upper-lip convention, and required width/tail inputs.
+- [vppp-two-body-partial-width-inputs.md](vppp-two-body-partial-width-inputs.md) — conditional $k^3$ and $k^3/s$ running-width shapes for caller-supplied two-body channels; rescattered $3\pi$ widths remain external.
+- [vppp-three-pion-running-width.md](vppp-three-pion-running-width.md) — phase-space integral of a supplied full KT scalar and its normalized running-width relation to the vector-current cross section.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
 - [odd-prescription-matching.md](odd-prescription-matching.md) — neutral pole matching for Aloni:2018vki and Bai:2025fvl, derived even-parity $G_V$, split flat-schema inputs and the separate rank-five octet OPE family.

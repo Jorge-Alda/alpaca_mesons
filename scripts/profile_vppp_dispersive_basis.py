@@ -7,8 +7,8 @@ No physical inputs, widths, covariance, priors or amplitude data are provided.
 Natural units GeV. Input spectral_s is in GeV^2; spectral_weights integrate
 in that variable and include the caller's declared tail prescription. The
 spectral grid must span all retained strength. Im resonance basis has units
-GeV^-2 (unit residue); Im conformal basis and subtraction_map have units
-GeV^-3. residue_map has units GeV^-1. These maps differentiate with respect
+GeV^-2 (unit residue); Im conformal basis is dimensionless per coefficient
+of units GeV^-3; subtraction_map has units GeV^-3. residue_map has units GeV^-1. These maps differentiate with respect
 to the literal combinations (g1-g2-g3), (2g4+g5).
 
 NPZ fields: spectral_s (n,), spectral_weights (n,), resonance_spectral

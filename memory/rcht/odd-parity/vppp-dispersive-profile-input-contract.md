@@ -3,14 +3,21 @@ title: Input contract for the VPPP finite-width dispersive profile
 status: mixed
 created: 2026-10-27
 updated: 2026-10-27
-bibtex_keys: [Hoferichter:2023bjm, Hoferichter:2025lcz, BABAR:2021cde]
+bibtex_keys: [Hoferichter:2019mqg, Hoferichter:2023bjm, Hoferichter:2025lcz, BABAR:2021cde]
 provenance: numerical-computation
 ---
 
 # Implemented profile layer
 
-The executable [profile calculator](../../../scripts/profile_vppp_dispersive_basis.py)
-accepts finite-width resonance spectral templates, conformal spectral
+The [two-body width builder](../../../scripts/build_vppp_partial_widths.py)
+calculates conditional $V\to P\gamma$ and $V\to P_1P_2$ channel shapes from
+caller-supplied on-pole widths. The [three-pion width builder](../../../scripts/build_vppp_three_pion_width.py)
+converts a caller-supplied full KT scalar grid to a normalized $3\pi$ width.
+The [spectral template builder](../../../scripts/build_vppp_spectral_templates.py)
+then calculates per-residue finite-width resonance and conformal absorptive
+templates from explicit inputs, following [@Hoferichter:2019mqg]. The
+[profile calculator](../../../scripts/profile_vppp_dispersive_basis.py)
+accepts those templates, conformal spectral
 templates, quadrature weights, the previously derived subtraction/residue
 maps, complex evaluation points, a reference-prediction residual, a local
 observation-response Jacobian, and its covariance. It constructs the
@@ -38,10 +45,11 @@ validate any finite-width spectral model.
 
 # Inputs still required for a physical profile
 
-- Dispersively improved finite-width spectral functions for each retained
-  resonance, with the same high-energy tails, thresholds, source overlaps,
-  and $\rho$--$\omega$ correction used in the fit. No physical spectral grid
-  is currently stored.
+- Rescattered full KT scalar grids, on-pole $3\pi$ partial widths, and the
+  source-backed two-body on-pole partial widths needed by the width builders.
+  No physical $\Gamma_V(s)$ grid is currently stored. High-energy tails,
+  thresholds, source overlaps, and the $\rho$--$\omega$ correction must match
+  the selected fit prescription.
 - A complete complex Khuri--Treiman solution and its bin-integrated
   $e^+e^-\to3\pi$ prediction, including the declared final-state-radiation
   convention, to construct `observation_response` and the reference

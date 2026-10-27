@@ -2,12 +2,33 @@
 title: Scoped plan for a dispersive three-pion final-state treatment
 status: mixed
 created: 2026-10-04
-updated: 2026-10-04
-bibtex_keys: [Niecknig:2012sj, GomezDumm:2013sib, KLOE:2003kas, BaBar:2004ytv]
+updated: 2026-10-27
+bibtex_keys: [Niecknig:2012sj, GomezDumm:2013sib, KLOE:2003kas, BaBar:2004ytv, Hoferichter:2019mqg, Hoferichter:2025lcz]
 provenance: assumption
 ---
 
 # Dispersive $V\to3\pi$ Treatment: Scoped Project and Staged Alternative
+
+## Fit-specific scope correction for the isoscalar spectral functions
+
+The older work breakdown below concerns a complete RChT $V\to3\pi$ decay
+shape and should not be read as the minimum model for the current
+finite-width $a(q^2)$ spectral basis. The baseline used by
+[@Hoferichter:2019mqg; @Hoferichter:2025lcz] solves the odd-partial-wave
+reconstruction with the dominant $P$ wave and its crossed-channel average;
+higher-partial-wave discontinuities are neglected below the $\rho_3(1690)$
+region, with the $F$-wave effect treated as a separate truncation check.
+Accordingly, the current width pipeline requires the normalized full scalar
+from a unit-subtraction $P$-wave Khuri--Treiman solution and its Dalitz
+integral. It does not require adding an independent crossed $S$-wave or a
+coupled $\rho\pi/\omega\pi$ system to reproduce that cited baseline.
+
+The present implementation now has a phase-space adapter
+([running-width record](vppp-three-pion-running-width.md)) and finite-width
+spectral-template builders. The complex rescattered $P$-wave grid and its
+input $\pi\pi$ phase remain absent. The older full-amplitude/operator-basis
+caveats below remain relevant if the separate goal is to extract the $d_i$
+from a model decomposition of $V\to3\pi$.
 
 ## Why this is on the table
 
@@ -47,7 +68,7 @@ $$
 | Component | Content | Size |
 |---|---|---|
 | Omnès $\Omega(s)$ | **already implemented** — `scripts/implementation/omnes.py`, `PelaezRodas2016ElasticPhase` [@Pelaez:2016tgi] | done |
-| $\hat{\mathcal F}(s)$ inhomogeneity | $\pi\pi$ P- **and** S-wave crossed-channel angular averages, including $\rho\pi$ and $\pi\pi\pi$ crossed topologies | 1--2 weeks |
+| $\hat{\mathcal F}(s)$ inhomogeneity | For the published isoscalar spectral baseline, the $\pi\pi$ P-wave crossed-channel angular average; higher-partial-wave corrections are a separate systematic | required for the width grid |
 | Unitarity integral equation | solve on an $s$-grid for a complex function; iterative relaxation | 3--5 days |
 | Dalitz density | 2-D Dalitz integration, normalized to $\Gamma_{V\to3\pi}$ | 1 week |
 | WZW/anomaly in the same formalism | anomalous inhomogeneity and $L_\mu^{KZ}$ handling, so the subtraction constant $a$ is the RChT quantity we want to fit | 1--2 weeks |
