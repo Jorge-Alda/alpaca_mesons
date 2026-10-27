@@ -108,4 +108,5 @@ being combined with canonical photon or resonance amplitudes.
 - [odd-low-energy-profiles.md](odd-low-energy-profiles.md) — finite sign searches, re-anchored source-boundary fits and independently certified source profiles; global minima and precise level crossings remain unproven.
 - [odd-alp-measured-null-audit.md](odd-alp-measured-null-audit.md) — 448 finite neutral target/null projections, source/contact certificates and correction-model witnesses.
 
-- [vppp-external-kt-grid.md](vppp-external-kt-grid.md) — external one-subtraction KT grid adapter, pion-unit correction and synthetic software diagnostic.
+- [vppp-external-kt-grid.md](vppp-external-kt-grid.md) — external one-subtraction KT grid adapter, pion-unit correction, prepared Madrid phase alternatives and historical synthetic software diagnostic.
+- [vppp-pipi-phase-input.md](vppp-pipi-phase-input.md) — corrected Madrid P-wave phase tables in pion units, mass assumptions and fixed KT-continuation caveat.

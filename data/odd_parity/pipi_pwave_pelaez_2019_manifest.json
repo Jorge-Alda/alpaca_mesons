@@ -1,0 +1,110 @@
+{
+  "bibtex_keys": [
+    "Pelaez:2019eqa",
+    "ParticleDataGroup:2024cfk"
+  ],
+  "erratum_url": "https://link.springer.com/article/10.1140/epjc/s10052-024-13589-6",
+  "source": "arXiv:1907.13162v3, Eq. (20)-(24), P-wave coefficient tables tab:para11, tab:para112, tab:para113",
+  "pion_mass_GeV": 0.13957039,
+  "kaon_mass_GeV": 0.495644,
+  "rho_mass_GeV": 0.7749,
+  "rho_mass_error_GeV": 0.0012,
+  "mass_assumption": "Charged pion mass and common (0.493677+0.497611)/2 GeV kaon mass (isospin-average approximation).",
+  "conformal_alpha": 0.3,
+  "conformal_scale_GeV2": 2.0448999999999997,
+  "columns": [
+    "s/m_pi^2",
+    "delta_1^1 [rad]"
+  ],
+  "covariance": null,
+  "uncertainty_note": "Marginal parameter errors only; three global fits are alternatives, not covariance samples.",
+  "fits": {
+    "I": {
+      "B": [
+        0.96,
+        0.09,
+        -0.07,
+        0.58,
+        1.39
+      ],
+      "B_errors": [
+        0.01,
+        0.03,
+        0.08,
+        0.19,
+        0.38
+      ],
+      "K": [
+        0.049,
+        -0.0051
+      ],
+      "K_errors": [
+        0.002,
+        0.0003
+      ],
+      "filename": "pipi_pwave_pelaez_2019_I.dat",
+      "sha256": "8c451c1427b189734cf48984433c5a9849d4457f4c280d507ca954e3658edd5e",
+      "phase_at_80_rad": 2.9218643240889994,
+      "derivative_at_80_per_pion_unit": 0.00433064898728297,
+      "minimum_phase_increment_rad": 1.3510807806621538e-05
+    },
+    "II": {
+      "B": [
+        0.96,
+        0.09,
+        -0.03,
+        0.64,
+        1.1
+      ],
+      "B_errors": [
+        0.01,
+        0.03,
+        0.08,
+        0.19,
+        0.32
+      ],
+      "K": [
+        0.054,
+        -0.0062
+      ],
+      "K_errors": [
+        0.001,
+        0.0001
+      ],
+      "filename": "pipi_pwave_pelaez_2019_II.dat",
+      "sha256": "a718f27883e1587da10b31dba923577d74d3fae261366b81720569a1bcb87b13",
+      "phase_at_80_rad": 2.915044409128732,
+      "derivative_at_80_per_pion_unit": 0.004063830378431277,
+      "minimum_phase_increment_rad": 1.3495037174338678e-05
+    },
+    "III": {
+      "B": [
+        0.97,
+        0.07,
+        -0.003,
+        0.67,
+        1.0
+      ],
+      "B_errors": [
+        0.01,
+        0.03,
+        0.08,
+        0.18,
+        0.34
+      ],
+      "K": [
+        0.045,
+        -0.0037
+      ],
+      "K_errors": [
+        0.002,
+        0.0002
+      ],
+      "filename": "pipi_pwave_pelaez_2019_III.dat",
+      "sha256": "b60c454eeb2bf28f36e9b797b17bc1dd4e8b25e062fddfa1cc77676650e7d1c4",
+      "phase_at_80_rad": 2.9209761474011744,
+      "derivative_at_80_per_pion_unit": 0.004394348257030778,
+      "minimum_phase_increment_rad": 1.3303954350875054e-05
+    }
+  }
+}

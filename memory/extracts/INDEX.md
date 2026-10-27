@@ -77,3 +77,4 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Messerli:2025rnv](Messerli:2025rnv/INDEX.md) — reduced dilepton-loop normalization, TFF convention, and model-independent two-photon absorptive part.
 - [Adlarson:2016hpp](Adlarson:2016hpp/INDEX.md) — A2 electron-channel spectra for $\omega\to\pi^0 e^+e^-$ and the associated eta Dalitz measurement.
 - [NA60:2016nad](NA60:2016nad/INDEX.md) — NA60 muon-channel spectra for $\omega\to\pi^0\mu^+\mu^-$ and the associated eta Dalitz measurement.
+- [Pelaez:2019eqa](Pelaez:2019eqa/INDEX.md) — full Madrid isovector P-wave parameterization with 2024 corrected coefficients for KT phase inputs.

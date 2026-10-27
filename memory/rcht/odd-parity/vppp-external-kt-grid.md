@@ -3,7 +3,7 @@ title: External one-subtraction KT amplitude grid and software diagnostic
 status: numerical
 created: 2026-10-27
 updated: 2026-10-27
-bibtex_keys: [Niecknig:2012sj, Hoferichter:2019mqg, Hoferichter:2025lcz]
+bibtex_keys: [Niecknig:2012sj, Hoferichter:2019mqg, Hoferichter:2025lcz, Pelaez:2019eqa]
 provenance: numerical-computation
 ---
 
@@ -34,6 +34,22 @@ hard-coded, so supplying a phase file is not enough to select an arbitrary
 high-energy prescription. Its matching requires a nonzero phase derivative;
 an exactly constant zero-phase file is unsuitable.
 
+# Prepared physical phase alternatives
+
+The [physical phase-input record](vppp-pipi-phase-input.md) now supplies
+three Madrid/GKPY central phase tables from [@Pelaez:2019eqa], with its
+2024 erratum included. They cover $s/m_\pi^2=4\ldots80$ in radians and
+use the same common pion mass as this adapter. They are documented
+alternatives to the exact Bern phase of [@Hoferichter:2019mqg], which has
+not been obtained. The solver's fixed continuation above 80 remains an
+additional model assumption. Above the common kaon threshold, using only
+the phase in a single-channel KT equation also neglects inelastic channels.
+
+The historical calculation below used a synthetic phase and remains a
+software diagnostic. Preparing physical phase tables does not turn that
+calculation into a physical result. Each selected physical phase requires
+its own KT solution and numerical convergence checks.
+
 # Method
 
 1. Import `_khuri_pinocchio` from the explicitly supplied build directory.
@@ -56,7 +72,7 @@ an exactly constant zero-phase file is unsuitable.
 
 # Synthetic diagnostic, not physical input
 
-No physical Bern phase table was found. The numerical check used a
+No exact physical Bern phase table was available for this historical diagnostic. The numerical check used a
 **synthetic**, smooth phase
 $\delta(s)=\pi[1-\exp(-(s/m_\pi^2-4)/25)]$,
 1921 equally spaced nodes in $s/m_\pi^2\in[4,100]$. This is a software

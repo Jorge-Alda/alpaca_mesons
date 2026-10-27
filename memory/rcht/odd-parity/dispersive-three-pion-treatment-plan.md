@@ -3,7 +3,7 @@ title: Scoped plan for a dispersive three-pion final-state treatment
 status: mixed
 created: 2026-10-04
 updated: 2026-10-27
-bibtex_keys: [Niecknig:2012sj, GomezDumm:2013sib, KLOE:2003kas, BaBar:2004ytv, Hoferichter:2019mqg, Hoferichter:2025lcz]
+bibtex_keys: [Niecknig:2012sj, GomezDumm:2013sib, KLOE:2003kas, BaBar:2004ytv, Hoferichter:2019mqg, Hoferichter:2025lcz, Pelaez:2019eqa]
 provenance: assumption
 ---
 
@@ -24,9 +24,17 @@ integral. It does not require adding an independent crossed $S$-wave or a
 coupled $\rho\pi/\omega\pi$ system to reproduce that cited baseline.
 
 The present implementation now has a phase-space adapter
-([running-width record](vppp-three-pion-running-width.md)) and finite-width
-spectral-template builders. The complex rescattered $P$-wave grid and its
-input $\pi\pi$ phase remain absent. The older full-amplitude/operator-basis
+([running-width record](vppp-three-pion-running-width.md)), an
+[external one-subtraction KT adapter](vppp-external-kt-grid.md), and
+finite-width spectral-template builders. Three corrected Madrid/GKPY
+$P$-wave phase alternatives from [@Pelaez:2019eqa] are prepared in the
+[phase-input record](vppp-pipi-phase-input.md). The exact Bern phase used
+by [@Hoferichter:2019mqg] remains unavailable. A converged, validated
+physical rescattered grid remains to be produced; the historical
+synthetic-phase calculation establishes only the software interface.
+The fixed solver continuation above $s/m_\pi^2=80$ and omission of
+inelastic channels from the single-channel equation are additional model
+assumptions when using the prepared alternatives. The older full-amplitude/operator-basis
 caveats below remain relevant if the separate goal is to extract the $d_i$
 from a model decomposition of $V\to3\pi$.
 
