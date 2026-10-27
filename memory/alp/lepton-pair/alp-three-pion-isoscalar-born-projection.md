@@ -69,7 +69,9 @@ The paired derivation script and six focused tests pass. The tests check the
 Ward identity, charged-pion exchange antisymmetry, cancellation of the
 pseudoscalar-source constants, the isospin-symmetric axial-source zero, and
 agreement between the matrix-trace and expanded source expressions.
-The derivation is an isospin projection only: it does not perform the
-$J=1$ angular projection needed for the spin-one unitarity integral, add
-rescattering, or determine resonance and regular terms. It therefore does
-not complete the physical isoscalar $a\gamma^*\to3\pi$ amplitude.
+This record derives the isospin projection, not its angular average. The
+normalized total-orientation overlap with the geometric spin-one current is
+derived separately in the [Born spin-one projection
+record](alp-three-pion-born-spin-one-projection.md). Neither record adds
+rescattering or determines the full resonance and regular production terms;
+the physical isoscalar $a\gamma^*\to3\pi$ amplitude remains incomplete.

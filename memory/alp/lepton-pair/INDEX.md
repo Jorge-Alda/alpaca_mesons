@@ -20,7 +20,8 @@ provenance: assumption
 - [alp-isoscalar-tff-source-decomposition.md](alp-isoscalar-tff-source-decomposition.md) — executed current/source decomposition of the retained tree TFF, stable-pole checks, and mixed rho--isoscalar overlap.
 - [alp-three-pion-current-born-amplitude.md](alp-three-pion-current-born-amplitude.md) — executed LO gauged $a\Phi^3$ Born current for $a\gamma^*\to\pi^+\pi^-\pi^0$, its Ward identity, and isoscalar-current limitation.
 - [alp-three-pion-production-amplitude.md](alp-three-pion-production-amplitude.md) — assembled source-resolved Born current and strict $\omega/\phi$ pole residues, with Ward checks and the open three-pion state projection.
-- [alp-three-pion-isoscalar-born-projection.md](alp-three-pion-isoscalar-born-projection.md) — exact-isospin $I=0$ charged component of the full-charge LO Born current; a $J=1$ projection remains open.
+- [alp-three-pion-isoscalar-born-projection.md](alp-three-pion-isoscalar-born-projection.md) — exact-isospin $I=0$ charged component of the full-charge LO Born current in flavor-trace notation.
+- [alp-three-pion-born-spin-one-projection.md](alp-three-pion-born-spin-one-projection.md) — normalized total-orientation overlap of the $I=0$ Born current with the geometric three-pion spin-one current.
 - [alp-three-pion-conditional-regular-remainder.md](alp-three-pion-conditional-regular-remainder.md) — pole-plus-regular division of the retained affine VJP/VVP numerator under its declared off-shell continuation.
 - [alp-three-pion-vector-pole-factorization.md](alp-three-pion-vector-pole-factorization.md) — executed antisymmetric-tensor propagator contraction and strict $V_i$ spin-one pole factorization for the ALP three-pion current.
 - [alp-three-pion-vector-partial-wave.md](alp-three-pion-vector-partial-wave.md) — isoscalar $V_i\to3\pi$ Khuri--Treiman partial wave and its insertion into the strict ALP production pole residue, with numerical-input limits.
