@@ -10,6 +10,10 @@ Ensure that all drafts are internally consistent and properly cite any sources r
 Separate physical matters from implementation details, ensuring that theoretical discussions are clearly distinguished from practical considerations.
 Implementation should be separated to an appendix or supplementary section, ensuring that the main text remains focused on the theoretical and conceptual aspects of the research. The main text must be self-contained and comprehensible without requiring the reader to refer to the supplementary material.
 
+Equations are better than text. An equation can be later explained in subsequent refinements of the draft. However, if a relation is only explained by words and not equations, since the equation to words conversion is lossy, it can not be fully recovered.
+
+A physics draft is like a police case, not like a jigsaw puzzle. In a jigsaw puzzle, you start with a complete set of pieces that you already know they will form a picture, and assemble them together. On the other hand, in a police investigation you start with a question, and as new evidence comes to light, more questions arise, guiding the direction of the investigation and shaping the narrative of the draft. Be sure that every subsection starts with a question (but  do not literally use a "?" sign), and develops the necessary ingredients to answer it, and not the other way around.
+
 The LaTeX files are stored in the folder `latex/`. This folder is synchronized as a git submodule inside the main repository. Before doing any modifications, ensure that the submodule is properly initialized and updated.
 
 Run the LLM model with temperature set to medium (around 0.5).

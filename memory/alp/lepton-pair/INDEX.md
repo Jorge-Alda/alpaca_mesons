@@ -13,6 +13,7 @@ provenance: assumption
 - [alp-doubly-virtual-tff.md](alp-doubly-virtual-tff.md) — initial tree-level source-resolved ALP TFF with VJP/VVP resonance terms and both virtualities.
 - [alp-isovector-doubly-virtual-tff.md](alp-isovector-doubly-virtual-tff.md) — neutral-$\rho$ pole contribution, including possible mixed $\rho$–isoscalar VVP exchange, in no-mixing couplings.
 - [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — low-energy two-pion double-spectral contribution and the source-resolved inputs still needed for a numerical density.
+- [alp-vppp-isovector-tff.md](alp-vppp-isovector-tff.md) — executed five-operator local ALP pion production wave with vielbein and mass-source insertions, photon–vector mixing, and its isovector TFF cut.
 - [alp-isoscalar-tff-plan.md](alp-isoscalar-tff-plan.md) — staged isoscalar TFF plan and audit of completed components, missing ALP-specific amplitudes, and additional inputs.
 - [alp-isoscalar-tff-input-gates.md](alp-isoscalar-tff-input-gates.md) — higher-isoscalar-strength and source-specific short-distance inputs required before fitting or assigning asymptotic coefficients.
 - [alp-isoscalar-vector-self-energy.md](alp-isoscalar-vector-self-energy.md) — conditional finite-width vector self-energy dispersion, spectral density, and stable-pole replacement; physical channel inputs remain open.
