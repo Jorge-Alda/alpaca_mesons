@@ -2,7 +2,7 @@
 title: Fixed-convention off-shell sequential rho exchange in vector to three pions
 status: derived
 created: 2026-10-26
-updated: 2026-10-26
+updated: 2026-10-27
 bibtex_keys: [Alda:2026nrd, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, Niecknig:2012sj]
 provenance: analytical-derivation
 ---
@@ -113,11 +113,15 @@ vector vertex is field dependent: regular terms and direct $V3\pi$
 operators can shift under field redefinitions while leaving the on-shell
 amplitude unchanged.
 
-# Remaining inputs
+# Local contact completion and remaining inputs
 
-- The direct local $V3\pi$ basis coefficients are absent from the retained
-  one-pseudoscalar VVP calculation; they require separate matching or
-  phenomenological input.
+The source-backed five-operator local endpoint and its contraction with the
+full antisymmetric-tensor ALP production source are now derived in the
+[contact record](alp-isoscalar-vector-three-pion-contact.md). Its independent
+$g_i$ are not fixed by the retained VVP calculation. The contact endpoint
+also has a complementary tensor component, so the strict spin-one pole
+residue alone does not contain its full tree contribution.
+
 - A physical finite-width prediction needs a rescattered complex
   three-pion amplitude, compatible subtraction and normalization inputs,
   and a common phase with the ALP production residue.

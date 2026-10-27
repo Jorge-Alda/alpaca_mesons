@@ -41,6 +41,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Ecker:1989yg](Ecker:1989yg/INDEX.md) — source-specific literature extracts.
 - [Fariborz:1999gr](Fariborz:1999gr/INDEX.md) — source-specific literature extracts.
 - [GomezDumm:2013sib](GomezDumm:2013sib/INDEX.md) — source-specific literature extracts.
+- [GomezDumm:2010ra](GomezDumm:2010ra/INDEX.md) — five-operator local $VPPP$ basis and the ideal-mixing on-shell $ω\to3\pi$ contact combination.
 - [Hanhart:2012wi](Hanhart:2012wi/INDEX.md) — source-specific literature extracts.
 - [Harada:2003jx](Harada:2003jx/INDEX.md) — source-specific literature extracts.
 - [Herrera-Siklody:1996tqr](Herrera-Siklody:1996tqr/INDEX.md) — source-specific literature extracts.

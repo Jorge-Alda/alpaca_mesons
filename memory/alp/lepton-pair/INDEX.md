@@ -3,7 +3,7 @@ title: ALP lepton-pair memory index
 status: mixed
 created: 2026-10-23
 updated: 2026-10-27
-bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
+bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
 provenance: assumption
 ---
 
@@ -26,6 +26,8 @@ provenance: assumption
 - [alp-three-pion-vector-pole-factorization.md](alp-three-pion-vector-pole-factorization.md) — executed antisymmetric-tensor propagator contraction and strict $V_i$ spin-one pole factorization for the ALP three-pion current.
 - [alp-three-pion-vector-partial-wave.md](alp-three-pion-vector-partial-wave.md) — isoscalar $V_i\to3\pi$ Khuri--Treiman partial wave and its insertion into the strict ALP production pole residue, with numerical-input limits.
 - [alp-isoscalar-vector-three-pion-offshell.md](alp-isoscalar-vector-three-pion-offshell.md) — fixed-convention tree-level sequential rho-exchange contribution to off-shell isoscalar $V_i\to3\pi$, with the literature contact basis, rescattering, and ideal-phi limits.
+- [alp-isoscalar-vector-three-pion-contact.md](alp-isoscalar-vector-three-pion-contact.md) — five-operator local isoscalar $V3\pi$ term and its full antisymmetric-tensor contraction with the ALP production source.
+- [alp-isoscalar-vector-three-pion-contact.md](alp-isoscalar-vector-three-pion-contact.md) — source-backed local $VPPP$ basis and its isoscalar $V_i\to3\pi$ contribution with independent couplings.
 - [alp-three-pion-pole-phase.md](alp-three-pion-pole-phase.md) — executed crossing and LSZ phase match for the strict ALP three-pion vector pole; the physical decay normalization phase remains unresolved.
 - [alp-three-pion-numerical-input-status.md](alp-three-pion-numerical-input-status.md) — availability, uncertainty, normalization, and phase-matching audit for the complex $V_i\to3\pi$ input.
 - [alp-three-pion-discontinuity.md](alp-three-pion-discontinuity.md) — executed conditional three-pion unitarity measure, scalar projection, spin-one weight, subtracted dispersion, and pole-replacement normalization.
