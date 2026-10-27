@@ -3,7 +3,7 @@ title: Physical pion-scattering phase tables for the external KT calculation
 status: numerical
 created: 2026-10-27
 updated: 2026-10-27
-bibtex_keys: [Pelaez:2019eqa, ParticleDataGroup:2024cfk, Hoferichter:2019mqg]
+bibtex_keys: [Pelaez:2019eqa, ParticleDataGroup:2024cfk, Hoferichter:2019mqg, Colangelo:2018mtw]
 provenance: numerical-computation
 ---
 
@@ -63,8 +63,11 @@ Invocation:
 - [Solution II](../../../data/odd_parity/pipi_pwave_pelaez_2019_II.dat).
 - [Solution III](../../../data/odd_parity/pipi_pwave_pelaez_2019_III.dat).
 
-These are **Madrid/GKPY alternatives**, not the exact Bern phase input
-of [@Hoferichter:2019mqg]. Above the kaon threshold the physical scattering
+These are **Madrid/GKPY alternatives**, not the Roy/VFF input from
+[@Colangelo:2018mtw] adopted by [@Hoferichter:2019mqg]. The two prescriptions
+are reported compatible within uncertainties, with a maximum difference
+below $1.5^\circ$ around $0.8\,\mathrm{GeV}$ [@Pelaez:2019eqa]. Above the
+kaon threshold the physical scattering
 amplitude is inelastic; the single-channel KT solver retains its phase
 only. This approximation must accompany any ensuing three-pion result.
 The solver further fixes a continuation toward $\pi$ above $s/m_\pi^2=80$;

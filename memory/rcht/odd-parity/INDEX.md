@@ -110,3 +110,5 @@ being combined with canonical photon or resonance amplitudes.
 
 - [vppp-external-kt-grid.md](vppp-external-kt-grid.md) — external one-subtraction KT grid adapter, pion-unit correction, prepared Madrid phase alternatives and historical synthetic software diagnostic.
 - [vppp-pipi-phase-input.md](vppp-pipi-phase-input.md) — corrected Madrid P-wave phase tables in pion units, mass assumptions and fixed KT-continuation caveat.
+
+- [vppp-physical-kt-convergence.md](vppp-physical-kt-convergence.md) — physical-input KT iteration, external phase-space quadrature, cutoff and Madrid-phase sensitivity checks.
