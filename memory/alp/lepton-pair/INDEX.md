@@ -11,6 +11,8 @@ provenance: assumption
 
 - [alp-lepton-pair-calculation-plan.md](alp-lepton-pair-calculation-plan.md) — staged plan for the two-photon-loop decay $a\to\ell^+\ell^-$ using a doubly virtual ALP transition form factor.
 - [alp-doubly-virtual-tff.md](alp-doubly-virtual-tff.md) — initial tree-level source-resolved ALP TFF with VJP/VVP resonance terms and both virtualities.
+- [alp-tff-mixed-vector-strategy.md](alp-tff-mixed-vector-strategy.md) — first-deliverable choice to treat the broad $\rho$ dispersively and the narrower $\omega,\phi$ as poles, with matching rules and deferred error quantification.
+- [alp-tff-dispersive-treatment-explained.md](alp-tff-dispersive-treatment-explained.md) — didactic explanation of unitarity cuts, the two-pion and three-pion thresholds, how resonance poles relate to cuts, finite vector widths, and the mixed strategy's limits.
 - [alp-isovector-doubly-virtual-tff.md](alp-isovector-doubly-virtual-tff.md) — neutral-$\rho$ pole contribution, including possible mixed $\rho$–isoscalar VVP exchange, in no-mixing couplings.
 - [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — low-energy two-pion double-spectral contribution and the source-resolved inputs still needed for a numerical density.
 - [alp-vppp-isovector-tff.md](alp-vppp-isovector-tff.md) — executed five-operator local ALP pion production wave with vielbein and mass-source insertions, photon–vector mixing, and its isovector TFF cut.

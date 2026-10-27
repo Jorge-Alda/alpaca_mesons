@@ -19,6 +19,29 @@ Alda:2026nrd [@Alda:2026nrd]. The dispersive decomposition is a method input
 from Messerli:2025rnv, not a source of ALP spectral weights
 [@Messerli:2025rnv]. Do not import the eta or eta-prime weights.
 
+## First deliverable: mixed vector treatment
+
+The first TFF deliverable is to establish a consistent mixed strategy for
+the neutral vectors: use a dispersive two-pion treatment for the broad
+isovector $\rho$, and narrow-pole terms for the isoscalar $\omega$ and
+$\phi$. This is a modeling choice motivated by the broad $\rho$ line shape
+and the comparatively narrow $\omega$ and $\phi$; it is not an exact
+separation of poles from cuts. In the physical amplitude, resonance poles
+and multiparticle cuts are related parts of the same analytic structure.
+The stable-pole terms for $\omega$ and $\phi$ approximate their spectral
+strength over the intended kinematic range. Their finite-width effects may
+still matter near their timelike peaks or when phase precision is required.
+
+The prescription must include the $\rho$ dynamics once only: where the
+dispersive two-pion amplitude contains the $\rho$, do not add the stable
+$\rho$ pole for the same contribution. Mixed $\rho$--isoscalar terms must
+use the dispersive $\rho$ response on the isovector leg and state explicitly
+how the $\omega$ or $\phi$ leg is represented. The first deliverable
+establishes this construction and its assumptions; it does not quantify its
+error. Quantitative error estimates and a full dispersive treatment of all
+vectors are future extensions. This scope decision is recorded in
+[the mixed vector strategy note](alp-tff-mixed-vector-strategy.md).
+
 For every independent hadronic-scale ALP source, construct its response first
 and combine responses only with the source coefficients in the stated
 convention. Keep the explicit neutral-vector poles, hadronic cuts, subtraction
@@ -39,7 +62,8 @@ not an assumption about the validity range of the retained tree expression.
 | Component | Status | Evidence and next gate |
 |---|---|---|
 | No-mixing ALP sources and scalar TFF convention | **Complete** for the stated LO source assembly and tensor convention. | The source/LSZ relations and contact bookkeeping are derived in the [LO source assembly](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md); the full retained tree TFF is in [the tree TFF record](alp-doubly-virtual-tff.md). |
-| Tree-level omega/phi responses | **Complete** within the retained stable-pole, original-operator truncation. | The source-resolved tree expression sums neutral-vector responses. This is a pole approximation, not a complete low-energy isoscalar spectral function; widths, cuts, additional operators, and short-distance matching are absent. |
+| Mixed vector treatment (first deliverable) | **Strategy selected; construction and matching remain to be completed.** | Use the dispersive two-pion treatment for the broad $\rho$ and narrow-pole $\omega,\phi$ terms. Specify mixed-leg terms and avoid counting $\rho$ strength in both pole and continuum pieces. Error quantification and full dispersive treatment of all vectors are future extensions. |
+| Tree-level omega/phi responses | **Available** within the retained stable-pole, original-operator truncation. | These terms provide the narrow-pole part of the selected first-deliverable strategy. They approximate the isoscalar spectral strength and do not resolve finite-width effects near timelike peaks. |
 | Three-pion dispersive framework | **Partly complete** as a literature method and fit-input audit; no ALP spectral predictor exists. | The Khuri--Treiman equations and fitted current normalization are documented in [the 2023 amplitude digest](../../extracts/Hoferichter:2023bjm/three-pion-amplitude-and-normalization.md) and [the 2025 fit digest](../../extracts/Hoferichter:2025lcz/gamma-star-to-three-pion-fit.md). The framework has not been implemented for the ALP source. |
 | Source-specific $a\gamma^*\to3\pi$ amplitude | **The exact-isospin Born current, its spin-one overlap, and the local $VPPP$ source contribution are derived; the physical isoscalar amplitude remains incomplete.** | The [trace-based Born projection](alp-three-pion-isoscalar-born-projection.md) gives the charged $I=0$ component, and the [spin-one overlap](alp-three-pion-born-spin-one-projection.md) includes the analytic pion-denominator integral. The [contact derivation](alp-isoscalar-vector-three-pion-contact.md) derives the full local endpoint and contracts it with the unconstrained source-resolved ALP vertex, including the complementary tensor-projector term. Its independent $g_i$ remain unmatched. Rescattering and matched complex decay functions remain absent; the SM current partial wave does not determine the ALP transition amplitude. |
 | $aV_i\gamma^*$ followed by $V_i\to3\pi$ | **Pole factorization, partial-wave representation, local $VPPP$ tree term, and conventional crossing/LSZ factor derived; numerical decay input and physical relative phase remain unavailable.** | The [partial-wave record](alp-three-pion-vector-partial-wave.md) gives the Khuri--Treiman relation, the [off-shell tree record](alp-isoscalar-vector-three-pion-offshell.md) derives retained sequential rho exchange, and the [contact derivation](alp-isoscalar-vector-three-pion-contact.md) adds the five-operator local endpoint and full tensor propagation. The [pole-phase record](alp-three-pion-pole-phase.md) fixes $\zeta_i=-1$ for the declared routing and decay convention; it does not infer the physical phase from decay rates. The [numerical-input audit](alp-three-pion-numerical-input-status.md) finds no machine-readable complex grid or correlated replicas in the cited records. The $g_i$ require compatible matching or independent input; rescattering and the ideal-mixing single-trace phi limit remain as stated in the linked records. |
