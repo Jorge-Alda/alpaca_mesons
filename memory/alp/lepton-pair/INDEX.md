@@ -2,7 +2,7 @@
 title: ALP lepton-pair memory index
 status: mixed
 created: 2026-10-23
-updated: 2026-10-26
+updated: 2026-10-27
 bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
 provenance: assumption
 ---
@@ -20,6 +20,8 @@ provenance: assumption
 - [alp-isoscalar-tff-source-decomposition.md](alp-isoscalar-tff-source-decomposition.md) — executed current/source decomposition of the retained tree TFF, stable-pole checks, and mixed rho--isoscalar overlap.
 - [alp-three-pion-current-born-amplitude.md](alp-three-pion-current-born-amplitude.md) — executed LO gauged $a\Phi^3$ Born current for $a\gamma^*\to\pi^+\pi^-\pi^0$, its Ward identity, and isoscalar-current limitation.
 - [alp-three-pion-production-amplitude.md](alp-three-pion-production-amplitude.md) — assembled source-resolved Born current and strict $\omega/\phi$ pole residues, with Ward checks and the open three-pion state projection.
+- [alp-three-pion-isoscalar-born-projection.md](alp-three-pion-isoscalar-born-projection.md) — exact-isospin $I=0$ charged component of the full-charge LO Born current; a $J=1$ projection remains open.
+- [alp-three-pion-conditional-regular-remainder.md](alp-three-pion-conditional-regular-remainder.md) — pole-plus-regular division of the retained affine VJP/VVP numerator under its declared off-shell continuation.
 - [alp-three-pion-vector-pole-factorization.md](alp-three-pion-vector-pole-factorization.md) — executed antisymmetric-tensor propagator contraction and strict $V_i$ spin-one pole factorization for the ALP three-pion current.
 - [alp-three-pion-vector-partial-wave.md](alp-three-pion-vector-partial-wave.md) — isoscalar $V_i\to3\pi$ Khuri--Treiman partial wave and its insertion into the strict ALP production pole residue, with numerical-input limits.
 - [alp-isoscalar-vector-three-pion-offshell.md](alp-isoscalar-vector-three-pion-offshell.md) — fixed-convention tree-level sequential rho-exchange contribution to off-shell isoscalar $V_i\to3\pi$, with the literature contact basis, rescattering, and ideal-phi limits.

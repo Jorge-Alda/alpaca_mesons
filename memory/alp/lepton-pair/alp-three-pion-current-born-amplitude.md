@@ -2,7 +2,7 @@
 title: LO ALP electromagnetic-current amplitude to three pions
 status: derived
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-10-27
 bibtex_keys: [Alda:2026nrd, Hoferichter:2025lcz]
 provenance: analytical-derivation
 ---
@@ -59,19 +59,26 @@ The coefficients of $\partial\pi^+$, $\partial\pi^-$ and $\partial\pi^0$
 in the kinetic trace are the following matrix traces:
 $$
 \begin{aligned}
-K_+&=\operatorname{tr}\!\left[c_q^A\left(
-T_- [T_0,T_+]+T_0[T_-,T_+]
-\right)\right],\\
-K_-&=\operatorname{tr}\!\left[c_q^A\left(
-T_+ [T_0,T_-]+T_0[T_+,T_-]
-\right)\right],\\
-K_0&=\operatorname{tr}\!\left[c_q^A\left(
-T_+ [T_-,T_0]+T_- [T_+,T_0]
-\right)\right].
+K_+&=\left\langle c_q^A\left(
+[T_0,[T_-,T_+]]+[T_-,[T_0,T_+]]
+\right)\right\rangle,\\
+K_-&=\left\langle c_q^A\left(
+[T_0,[T_+,T_-]]+[T_+,[T_0,T_-]]
+\right)\right\rangle,\\
+K_0&=\left\langle c_q^A\left(
+[T_+,[T_-,T_0]]+[T_-,[T_+,T_0]]
+\right)\right\rangle.
 \end{aligned}
 $$
-For diagonal $c_q^A$ and neutral $T_0$, the explicit SymPy trace evaluation
-gives $K_+=K_-$ and $K_0=-2K_+$. The coefficient of
+These are the full coefficients obtained by expanding
+$\langle c_q^A[\Phi,[\Phi,\partial^\mu\Phi]]\rangle$. For diagonal
+$c_q^A$ and $T_0=\lambda_3$, the explicit SymPy trace evaluation gives
+$$
+K_+=K_-=-4\langle c_q^AT_0\rangle,
+\qquad K_0=-2K_+,
+\qquad M_{+-0}=2\langle X_PT_0\rangle.
+$$
+The coefficient of
 $\pi^+\pi^-\pi^0$ in the mass-source trace is
 $$
 M_{+-0}=\sum_{\sigma\in S_3}
