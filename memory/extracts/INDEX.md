@@ -30,6 +30,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.
 - [BaBar:2009rrj](BaBar:2009rrj/INDEX.md) — source-specific literature extracts.
 - [BaBar:2018zpn](BaBar:2018zpn/INDEX.md) — BaBar double-tag measurement of the spacelike doubly virtual $\eta'$ transition form factor.
+- [BABAR:2021cde](BABAR:2021cde/INDEX.md) — BaBar 2021 $e^+e^-\to3\pi$ cross section, with separate statistical and systematic covariance inputs below 1.1 GeV.
 - [BaBar:2014asx](BaBar:2014asx/INDEX.md) — source-specific literature extracts.
 - [BaBar:2015kii](BaBar:2015kii/INDEX.md) — source-specific literature extracts.
 - [Bai:2025fvl](Bai:2025fvl/INDEX.md) — source-specific literature extracts.

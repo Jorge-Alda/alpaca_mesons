@@ -1,0 +1,57 @@
+{
+  "bibtex_key": "BABAR:2021cde",
+  "cross_region_correlations": "Luminosity, radiative correction and efficiency uncertainties are shared between regions. No cross-region covariance is invented.",
+  "cross_section_definition": "Published Born cross sections; no additional undressing or final-state-radiation conversion performed.",
+  "high_energy": {
+    "bins": 72,
+    "errors": "First statistical, second total systematic. No high-energy covariance is supplied here. For its a_mu integral over 1.1-2.0 GeV, the paper conservatively treats systematics as 100% correlated; this is not imposed on the full table.",
+    "nonresonant_bins": "3.0-3.1 and 3.1-3.2 GeV have J/psi contribution subtracted.",
+    "range_GeV": [
+      1.1,
+      3.5
+    ],
+    "table": "V"
+  },
+  "invocation": ".venv/bin/python scripts/extract_babar_2021_three_pion.py",
+  "latex_member": "babar-pub-2104.tex",
+  "latex_member_sha256": "f79d49bab105eaf7447faf9672f4e06c3a1e194ba342a5854fc87160b5250db3",
+  "low_energy": {
+    "bins": 114,
+    "correlated_systematic": "Second printed error retained as a vector; includes luminosity, radiative correction, efficiency and unfolding. No rank-one covariance or independent-bin approximation imposed.",
+    "covariance_order": "rows/columns ordered by increasing mass, identical to below_1p1.csv",
+    "maximum_diagonal_error_rounding_difference": {
+      "residual_systematic_nb": 0.0004995347171332515,
+      "statistical_nb": 0.0004913740684857615
+    },
+    "range_GeV": [
+      0.62,
+      1.1
+    ],
+    "residual_systematic": "Third printed error: background subtraction and Lorentzian/Gaussian resolution uncertainties; use supplied covariance.",
+    "residual_systematic_covariance": "babar_2021_3pi_below_1p1_residual_systematic_covariance.csv",
+    "statistical_covariance": "babar_2021_3pi_below_1p1_statistical_covariance.csv",
+    "table": "IV"
+  },
+  "method": "Parse original source Tables IV/V; retain all published error components separately.",
+  "outputs_sha256": {
+    "babar_2021_3pi_above_1p1.csv": "e2efec1907095caa736015b6f19daf21cf46d15baccf80f7876f45d27222539e",
+    "babar_2021_3pi_below_1p1.csv": "336729cf91d1599d48d6ddfff8e5cf2c43ae73edc14873302a143f9341dcbb78",
+    "babar_2021_3pi_below_1p1_residual_systematic_covariance.csv": "4e663fcbcfd6277ada617cd6c8e7600acaf8383a498c715d70732c134be57642",
+    "babar_2021_3pi_below_1p1_statistical_covariance.csv": "340cc5af6da6775868982f51a5077062b61dc99071f5af233d9fe9d43457bd66"
+  },
+  "source_files_sha256": {
+    "arxiv-source.tar": "8a13b1fd969e94197b9f8ac3ee2971f544d33bb19dabdfc94d0a6e6889731e39",
+    "matrix_cov_syst_sum.dat": "e9139ac494c7ffb743350289a1df8c2456a6906d6bb1cb8619af26de11f7dc56",
+    "rec_cov_cr.dat": "126880baf5cd9497926e4236190a05ba3907cb8f661564eec58bc52a96ef7b4b"
+  },
+  "source_urls": {
+    "archive": "https://arxiv.org/src/2110.00520",
+    "residual_systematic_covariance": "https://raw.githubusercontent.com/eakozyrev/3pi_unfold/main/matrix_cov_syst_sum.dat",
+    "statistical_covariance": "https://raw.githubusercontent.com/eakozyrev/3pi_unfold/main/rec_cov_cr.dat"
+  },
+  "units": {
+    "covariance": "nb^2",
+    "cross_section": "nb",
+    "mass": "GeV"
+  }
+}

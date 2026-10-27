@@ -68,10 +68,14 @@ model. Do not describe that phase as independently measured.
 
 # Present data and blockers
 
-- The repository's [BaBar three-pion table](../../../data/odd_parity/babar_3pi_born_spectrum.csv)
-  contains 78 validated bins from $\sqrt{s}=1.0625$ to $2.9875$ GeV. It misses
-  the $\omega$ and $\phi$ peaks and includes excited isoscalar resonances, so
-  it cannot determine the desired low-energy combinations by itself.
+- The cached [BaBar 2004 table](../../../data/odd_parity/babar_3pi_born_spectrum.csv)
+  contains 78 bins from $\sqrt{s}=1.0625$ to $2.9875$ GeV and misses the
+  $\omega$ and $\phi$ peaks.
+- The source-backed [BaBar 2021 extraction](babar-2021-three-pion-fit-input.md)
+  supplies 114 bins with statistical and residual-systematic covariance from
+  0.62 to 1.10 GeV, plus 72 bins from 1.10 to 3.50 GeV. It is a usable
+  measurement input, but its dispersive response and a complete cross-section
+  prediction are still missing.
 - The held [KLOE $\phi\to3\pi$ table](kloe-phi-three-pion-fit-blocker.md)
   contains a fit summary rather than reusable Dalitz bins. Its tree-level
   amplitude decomposition is not an appropriate replacement for the
@@ -85,17 +89,18 @@ model. Do not describe that phase as independently measured.
   phase and fit variations needed for joint TFF uncertainty propagation do
   not.
 
-Therefore the repository currently supports a fit specification and a
-reproducible source-level coefficient map, but not defensible numerical
-estimates for either combination. The necessary next input is a machine-
-readable ground-state $3\pi$ dataset with covariance or nuisance provenance,
-followed by a validated complex dispersive amplitude and its fit covariance.
-Only then can fitted amplitude replicas be used in the existing pion-TFF
-spectral input and moment calculation.
+Therefore the repository now has one covariance-backed ground-state
+cross-section input, but still lacks a validated finite-width Khuri--Treiman
+response and the corresponding full likelihood. Defensible numerical
+estimates for either combination require that response, declared source and
+nonlocal-residue inputs, and additional SND/CMD-2 data or a justified
+single-experiment fit scope. Only then can fitted amplitude replicas be used
+in the existing pion-TFF spectral input and moment calculation.
 
 # Fit preparation status
 
-The fit is prepared at the operator/source level. No measurement likelihood
-or numerical parameter estimate is claimed. The fit should not proceed by
-fitting only the cached high-energy BaBar bins or by reading central values
+The fit is prepared at the operator/source level with the BaBar 2021 data
+connected as a verified measurement input. No measurement likelihood or
+numerical parameter estimate is claimed. The fit should not proceed by
+fitting only the cached older BaBar bins or by reading central values
 from published marginal parameter errors as if they were correlated samples.

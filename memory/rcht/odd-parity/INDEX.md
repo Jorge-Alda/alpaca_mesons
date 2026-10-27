@@ -25,6 +25,8 @@ being combined with canonical photon or resonance amplitudes.
 - [isoscalar-vppp-photon-response.md](isoscalar-vppp-photon-response.md) — tree photon-source insertion for the local isoscalar VPPP vertex and its exact pole/contact degeneracy.
 - [isoscalar-vppp-dispersive-matching.md](isoscalar-vppp-dispersive-matching.md) — conditional map to the $a(q^2)$ subtraction and vector residues, including rank and sum-rule mismatch.
 - [isoscalar-vppp-fit-preparation.md](isoscalar-vppp-fit-preparation.md) — parameterization, likelihood, identifiability checks, data audit, and prerequisites for extracting the two local combinations.
+- [babar-2021-three-pion-fit-input.md](babar-2021-three-pion-fit-input.md) — extracted 114-bin low-energy cross section with covariance and 72-bin higher-energy table for the new fit.
+- [vppp-dispersive-profile-input-contract.md](vppp-dispersive-profile-input-contract.md) — finite-width spectral/profile calculator, exact sum-rule elimination, zero-width check, and remaining physical inputs.
 - [u3-nonet-odd-parity-extension-options.md](u3-nonet-odd-parity-extension-options.md) — U(3) nonet and OZI options.
 - [odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md](odd-parity-coupling-prescriptions-and-direct-alp-vgamma.md) — $c_i,d_i$ prescriptions and direct $aV\gamma$ terms.
 - [odd-prescription-matching.md](odd-prescription-matching.md) — neutral pole matching for Aloni:2018vki and Bai:2025fvl, derived even-parity $G_V$, split flat-schema inputs and the separate rank-five octet OPE family.
