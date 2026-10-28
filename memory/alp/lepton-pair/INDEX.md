@@ -41,3 +41,4 @@ provenance: assumption
 - [alp-virtual-photon-pion-null-sensitivity.md](alp-virtual-photon-pion-null-sensitivity.md) — projection of the same fit null directions onto the virtual-photon charged-pion P wave.
 - [alp-lepton-pair-normalization.md](alp-lepton-pair-normalization.md) — executable spin, phase-space, width-ratio and universal two-real-photon-cut normalization for the ALP loop.
 - [alp-unnormalized-lepton-loop.md](alp-unnormalized-lepton-loop.md) — executed source-linear unnormalized loop, coherent local-term width, two-real-photon discontinuity and pointlike ultraviolet subtraction.
+- [alp-tff-real-photon-normalization.md](alp-tff-real-photon-normalization.md) — initial zero-virtuality normalization constraint, conditional effective-pole residue, and distinction from the dilepton cut bound.
