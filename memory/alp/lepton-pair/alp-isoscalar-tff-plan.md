@@ -34,13 +34,18 @@ still matter near their timelike peaks or when phase precision is required.
 
 The prescription must include the $\rho$ dynamics once only: where the
 dispersive two-pion amplitude contains the $\rho$, do not add the stable
-$\rho$ pole for the same contribution. Mixed $\rho$--isoscalar terms must
-use the dispersive $\rho$ response on the isovector leg and state explicitly
-how the $\omega$ or $\phi$ leg is represented. The first deliverable
+$\rho$ pole for the same contribution. Retain the source-dependent mixed
+$\rho I$ VVP contribution rather than omitting it; dress its $\rho$ leg with
+the $\pi\pi$ self-energy response and use the narrow-pole $\omega$ or $\phi$
+response on the other leg. The real self-energy part is fixed dispersively
+with stated subtractions; a constant physical width is not the selected
+prescription. Match this mixed term to the two-pion continuum so that the
+same $\rho$ strength is counted once. This matching remains open. The first deliverable
 establishes this construction and its assumptions; it does not quantify its
 error. Quantitative error estimates and a full dispersive treatment of all
 vectors are future extensions. This scope decision is recorded in
-[the mixed vector strategy note](alp-tff-mixed-vector-strategy.md).
+[the mixed vector strategy note](alp-tff-mixed-vector-strategy.md) and the
+[mixed VVP record](alp-tff-mixed-rho-isoscalar-vvp.md).
 
 For every independent hadronic-scale ALP source, construct its response first
 and combine responses only with the source coefficients in the stated

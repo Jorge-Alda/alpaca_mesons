@@ -27,22 +27,29 @@ quantitative error estimate is part of this first deliverable.
 
 # Matching rule
 
-Include the $\rho$ dynamics once. If the dispersive two-pion production
-amplitude and pion vector form factor contain the $\rho$, do not also add a
-stable $\rho$ pole for the same contribution. For mixed $\rho$--isoscalar
-terms, use the dispersive response on the $\rho$ leg and specify whether the
-other leg is the $\omega$ or $\phi$ narrow-pole response. Keep any residual
-terms separate until their overlap has been established.
+The selected low-energy isovector piece is the source-specific two-pion
+double-spectral contribution. The modeled isoscalar resonance piece
+contains the pure narrow-pole $\omega,\phi$ terms and the source-dependent
+mixed $\rho I$ VVP contribution, $I=\omega,\phi$. Retain the mixed term;
+dropping it omits a generally nonzero contribution. In that term use a
+propagator-level dressed $\rho$ response on the $\rho$ leg and the selected
+narrow-pole $\omega$ or $\phi$ response on the other leg. The dressed
+response has a $\pi\pi$ self-energy whose imaginary part is
+$\sqrt{s}\,\Gamma_{\rho\to\pi\pi}(s)$ and whose real part follows from a
+subtracted dispersion relation. It is neither a constant-width denominator
+nor the complete source-specific two-pion double-spectral TFF. Match the
+mixed term to the two-pion continuum so the same $\rho$ strength is counted
+once; that numerical matching remains open. See the
+[mixed VVP record](alp-tff-mixed-rho-isoscalar-vvp.md).
 
-The stable-pole TFF expression in the
-[neutral-rho pole record](alp-isovector-doubly-virtual-tff.md) is a tree-level
-component with widths and hadronic cuts omitted; the
-[two-pion spectral construction](alp-isovector-tff-spectral-construction.md)
-is a separate dispersive component. Combining them requires the matching
-rule above rather than direct addition. The formal
+The [two-pion spectral construction](alp-isovector-tff-spectral-construction.md)
+defines the isovector low-energy component. The formal
 [finite-width self-energy record](alp-isoscalar-vector-self-energy.md)
 shows how open channels generate an absorptive self-energy and spectral
-response, but does not yet supply a numerical common prescription.
+response, but does not yet supply a numerical common prescription. In the
+selected approximation, add the dressed mixed $\rho I$ term to the pure
+$\omega,\phi$ pole contribution; do not subtract it from the pure pole
+term, which does not contain it.
 The didactic explanation of cuts, thresholds, widths, and the pole picture
 is recorded in [the TFF dispersive-treatment note](alp-tff-dispersive-treatment-explained.md).
 
