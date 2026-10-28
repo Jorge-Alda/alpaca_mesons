@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-27
+updated: 2026-10-28
 bibtex_keys: []
 provenance: assumption
 ---
@@ -76,6 +76,7 @@ being combined with canonical photon or resonance amplitudes.
 - [odd-higher-covariant-operator-count.md](odd-higher-covariant-operator-count.md) — complete bounded action count: 228 independent operators, original rank eleven, 217 new and an explicit basis.
 - [odd-trace-scalar-kernels.md](odd-trace-scalar-kernels.md) — normalized leading single/double-trace SM kernels, tests and 15 additional formal scalar EM directions.
 - [alp-target-amplitude-audit.md](alp-target-amplitude-audit.md) — inventory of the four ALP target amplitudes, fresh blind-direction checks and missing-calculation decisions.
+- [alp-vector-channel-coefficient-overview.md](alp-vector-channel-coefficient-overview.md) — coefficient map for even, VVP, VJP, and VPPP operators across ALP channels; exact TFF insensitivity to the common $c_2,c_5,c_6$ shift.
 - [alp-two-boson-blind-direction-audit.md](alp-two-boson-blind-direction-audit.md) — exact VJP/VVP null projections for canonical vector and photon tensor legs.
 - [alp-vv-completion-plan.md](alp-vv-completion-plan.md) — steps to assemble the normalized physical ALP two-vector amplitude and width.
 - [alp-vgamma-completion-plan.md](alp-vgamma-completion-plan.md) — steps to complete the ALP vector-photon amplitude including exchange and source/contact terms.
