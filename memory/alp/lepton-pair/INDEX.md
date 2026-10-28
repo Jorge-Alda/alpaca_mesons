@@ -2,7 +2,7 @@
 title: ALP lepton-pair memory index
 status: mixed
 created: 2026-10-23
-updated: 2026-10-27
+updated: 2026-10-28
 bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
 provenance: assumption
 ---
@@ -15,6 +15,7 @@ provenance: assumption
 - [alp-tff-dispersive-treatment-explained.md](alp-tff-dispersive-treatment-explained.md) — didactic explanation of unitarity cuts, the two-pion and three-pion thresholds, how resonance poles relate to cuts, finite vector widths, and the mixed strategy's limits.
 - [alp-isovector-doubly-virtual-tff.md](alp-isovector-doubly-virtual-tff.md) — neutral-$\rho$ pole contribution, including possible mixed $\rho$–isoscalar VVP exchange, in no-mixing couplings.
 - [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — low-energy two-pion double-spectral contribution and the source-resolved inputs still needed for a numerical density.
+- [alp-isovector-pion-production-amplitude.md](alp-isovector-pion-production-amplitude.md) — consolidated charged-pion production input for the isovector TFF, combining WZW, VJP/VVP, and local VPPP contributions with cut normalization.
 - [alp-vppp-isovector-tff.md](alp-vppp-isovector-tff.md) — executed five-operator local ALP pion production wave with vielbein and mass-source insertions, photon–vector mixing, and its isovector TFF cut.
 - [alp-isoscalar-tff-plan.md](alp-isoscalar-tff-plan.md) — staged isoscalar TFF plan and audit of completed components, missing ALP-specific amplitudes, and additional inputs.
 - [alp-isoscalar-tff-input-gates.md](alp-isoscalar-tff-input-gates.md) — higher-isoscalar-strength and source-specific short-distance inputs required before fitting or assigning asymptotic coefficients.

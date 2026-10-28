@@ -2,8 +2,8 @@
 title: Gauged Wess-Zumino-Witten gamma three-pion contribution
 status: derived
 created: 2026-10-26
-updated: 2026-10-26
-bibtex_keys: [Wess:1971yu, Ruiz-Femenia:2003jdx, Ecker:1988te, Alda:2026nrd]
+updated: 2026-10-28
+bibtex_keys: [Wess:1971yu, Bai:2025fvl, Ruiz-Femenia:2003jdx, Ecker:1988te, Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -16,14 +16,12 @@ The Wess--Zumino functional is the anomaly-matching term in
 separates it from chirally invariant resonance operators
 [@Ruiz-Femenia:2003jdx].
 
-Use $U=\exp(i\Phi/f_\pi)$, the charged-pion matrices and source convention
-of [the Alda:2026nrd expansion](../../extracts/Alda:2026nrd/appendix-a-expansion.md),
-natural units, and the repository's canonical Levi-Civita convention
-$\epsilon^{0123}=+1$. Write the electromagnetic source as
-$v_\mu=-eQA_\mu$, with
-$Q=\operatorname{diag}(2/3,-1/3,-1/3)$. The sign of the Wess--Zumino
-functional's overall orientation is left explicit; reversing it reverses
-all anomalous vertices together.
+Use the charged-pion and source conventions in
+[Alda:2026nrd](../../extracts/Alda:2026nrd/appendix-a-expansion.md), natural
+units, and the canonical Levi-Civita convention in
+[the tensor record](levi-civita-convention.md). Matching the full Bai:2025fvl
+functional to the signed canonical $\pi^0\to\gamma\gamma$ TFF fixes the
+common source-functional multiplier to $-1$ [@Bai:2025fvl].
 
 # The $\gamma3\pi$ term in the full functional
 
@@ -31,7 +29,7 @@ The full gauged functional contains a term linear in the vector source whose
 leading three-Goldstone part can be represented by
 $$
 Z_{\rm WZ}[v,a]\big|_{v\Phi^3}
-=\frac{N_c}{48\pi^2}\,\mathrm{orientation}
+=-\frac{N_c}{48\pi^2}
 \int d^4x\,\epsilon^{\mu\nu\rho\sigma}
 \left\langle v_\mu(R_\nu R_\rho R_\sigma+L_\nu L_\rho L_\sigma)\right\rangle,
 \qquad
@@ -49,7 +47,7 @@ $$
 Consequently, in the script's field and source normalization,
 $$
 \mathcal L_{\gamma3\pi}
-=i\,\mathrm{orientation}\,
+=-i\,
 \frac{N_c e}{12\pi^2f_\pi^3}
 \epsilon^{\mu\nu\rho\sigma}A_\mu
 \partial_\nu\pi^+\partial_\rho\pi^-\partial_\sigma\pi^0.
@@ -73,8 +71,9 @@ $$
 \frac{N_c e}{12\pi^2f_\pi^3}\frac{g_i}{M_i}
 =\frac{N_c\sqrt2e^2R_i}{12\pi^2M_if_\pi^3},
 $$
-up to the common orientation and field-redefinition sign. It is of order
-$e^2$ in this source convention. It is therefore an electromagnetic,
+with the common WZW sign fixed above and the vector-field insertion convention
+of the linked photon--vector record. It is of order $e^2$ in this source
+convention. It is therefore an electromagnetic,
 field-basis-induced contribution, not the leading strong $V_i\to3\pi$
 amplitude. It must not be counted again if the photon-mediated contribution
 is retained explicitly. The mixing residue $R_i$ can be nonzero for ideal
@@ -92,6 +91,10 @@ the separate contact-operator checks documented in the
 
     .venv/bin/python scripts/derive_wzw_gamma_three_pion_and_vector_contact.py
 
-Six focused checks pass. The WZW-specific checks reproduce the charged
-flavor trace and anomaly coefficient; they do not enumerate the full odd
-sector.
+The WZW-specific calculation reproduces the charged flavor trace and
+coefficient magnitude. The signed functional match and common orientation
+are checked by
+[derive_wzw_external_currents.py](../../../scripts/derive_wzw_external_currents.py),
+which expands both the two-pion ALP vertex and the one-pion two-photon
+normalization from Bai:2025fvl Eq. (A11). The older script does not enumerate
+the full odd sector.

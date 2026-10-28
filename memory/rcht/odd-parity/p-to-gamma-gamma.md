@@ -2,7 +2,7 @@
 title: Real-photon pseudoscalar decays and coupling sensitivity
 status: derived
 created: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-28
 bibtex_keys: [Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
@@ -46,11 +46,19 @@ onto their homogeneous nullspace. Run:
 
 ## Results
 
-For the signed amplitude convention in the TFF record,
+This script and the formula below retain the legacy reference tensor and
+coupling convention. In particular, the positive WZW scalar shown here is
+not the canonical signed TFF coefficient. The conversion is
+$F_P(c,d)=-F_P^R(-c,-d)$, as recorded in the
+[Levi-Civita convention record](levi-civita-convention.md). The width is
+unchanged by this signed conversion. Use the
+[canonical TFF amplitude](radiative-tff-amplitude.md) for signed interference.
+
+For the legacy reference scalar, denoted $F_P^R$,
 
 $$
 \begin{aligned}
-F_P(0,0)={}&\frac{\sqrt2N_CF_Q}{8\pi^2F}
+ F_P^R(0,0)={}&\frac{\sqrt2N_CF_Q}{8\pi^2F}
 +\frac{8F_V}{FM_V^3}\left[F_Qm_P^2(c_1+c_2-c_5)+4c_3F_H\right]\\
 &-\frac{4\sqrt2F_V^2}{FM_V^4}
 \left[F_Qm_P^2(d_1-d_3)+4d_2F_H\right].
@@ -61,13 +69,13 @@ The polarization sum of the squared Lorentz tensor is $m_P^4/2$, yielding
 
 $$
 \boxed{\Gamma(P\to\gamma\gamma)
-=\frac{\pi\alpha_{\rm em}^2m_P^3}{4}|F_P(0,0)|^2.}
+=\frac{\pi\alpha_{\rm em}^2m_P^3}{4}|F_P^R(0,0)|^2.}
 $$
 
 After imposing the OPE relations, define $\Delta_H=F_H-2m_P^2F_Q$:
 
 $$
-F_P(0,0)=\frac{\sqrt2N_CF_Q}{8\pi^2F}
+F_P^R(0,0)=\frac{\sqrt2N_CF_Q}{8\pi^2F}
 -\frac{\sqrt2FF_Qm_P^2}{2M_V^4}
 +\Delta_H\left[\frac{32F_Vc_3}{FM_V^3}
 -\frac{16\sqrt2F_V^2d_2}{FM_V^4}\right].
