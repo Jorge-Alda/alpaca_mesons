@@ -60,28 +60,35 @@ additional VJP/VVP photon-conversion result from the existing calculation.
 
 # Effective-pole normalization
 
-The low-energy dispersive part and the effective contribution must sum to
-the calculated real-photon normalization. Denote the explicitly integrated
-low-energy spectral contribution by $F_{\rm disp}$. If the omitted strength
-is represented by the symmetric pole
+Write the completed TFF as
+$$
+F_{a\gamma^*\gamma^*}=F_{\rm local}+F_{\rm low}^{I=1}
++F_{\rm low}^{I=0}+F_{\rm eff}+F_{\rm asym},
+$$
+where $F_{\rm low}^{I=1}$ and $F_{\rm low}^{I=0}$ are the explicitly
+included low-energy spectral contributions. The local term is already
+fixed, $F_{\rm local}(0,0)=C_{a\gamma\gamma}/(4\pi^2f_a)$. If omitted
+strength is represented by the symmetric pole
 $$
 F_{\rm eff}(s_1,s_2)=g_{\rm eff}
 \frac{M_{\rm eff}^4}
 {(M_{\rm eff}^2-s_1)(M_{\rm eff}^2-s_2)},
 $$
-then $F_{\rm eff}(0,0)=g_{\rm eff}$, and normalization requires
+then $F_{\rm eff}(0,0)=g_{\rm eff}$. The normalization condition
+$F_{a\gamma\gamma}=F_{a\gamma\gamma}^{\rm calc}$ gives
 $$
 \boxed{g_{\rm eff}
-=\frac{C_{a\gamma\gamma}^{\rm eff}}{4\pi^2f_a}
--F_{\rm disp}(0,0).}
+=\frac{\Delta C_{a\gamma\gamma}^{\rm vector}}{4\pi^2f_a}
+-F_{\rm low}^{I=1}(0,0)-F_{\rm low}^{I=0}(0,0)-F_{\rm asym}(0,0).}
 $$
-Thus the effective contribution restores the **full calculated real-photon
-coupling**, including the vector-photon correction, after subtracting the
-low-energy dispersive strength already included. It is not an extra copy of
-the vector correction. If the low-energy dispersive integral already
-contains that vector strength, it is subtracted through $F_{\rm disp}(0,0)$;
-if it does not, the pole normalization includes it in the difference above.
-The same strength must appear only once in the sum.
+Here the known contact term has canceled between the full normalization
+$F_{a\gamma\gamma}^{\rm calc}=(C_{a\gamma\gamma}
++\Delta C_{a\gamma\gamma}^{\rm vector})/(4\pi^2f_a)$ and
+$F_{\rm local}(0,0)$. Thus the pole residue supplies the vector correction
+and any other origin strength required by the chosen spectral completion,
+after subtracting the low-energy and asymptotic terms already included. If
+the low-energy spectra represent some or all of the vector strength, that
+overlap is subtracted in the displayed terms and counted only once.
 
 This fixes the pole residue under the stated one-pole model; it does not fix
 $M_{\rm eff}$ or establish that one pole accurately represents the omitted
@@ -95,7 +102,7 @@ does not include omitted operators, widths, or loops
 The two-real-photon cut constrains the imaginary part of the reduced
 dilepton-loop amplitude after normalizing the TFF by $F_{a\gamma\gamma}$,
 when nonzero [@Messerli:2025rnv]. It does not determine
-$F_{\rm disp}(0,0)$ or the pole residue. Here the residue follows from the
+$F_{\rm low}^{I=1}(0,0)$, $F_{\rm low}^{I=0}(0,0)$, or the pole residue. Here the residue follows from the
 real-photon normalization sum above, not from the dilepton cut. If
 $F_{a\gamma\gamma}=0$, the normalized loop representation is undefined;
 the unnormalized TFF and loop remain the appropriate quantities.
@@ -113,8 +120,8 @@ $F_{a\gamma\gamma}^{\rm calc}$ yields the boxed residue.
 Inputs are the [source/WZW photon coefficient](../photon/alp-photon-invariant-from-mixing.md),
 the [calculated vector-photon correction](../photon/alp-photon-vector-mixing.md),
 the [canonical tensor conversion](../photon/alp-photon-odd-action-phase-matching.md),
-and the [tree TFF convention](alp-doubly-virtual-tff.md). $F_{\rm disp}$ is
-not yet calculated for the ALP. The next step is to construct its
-source-dependent spectral integral and use the residue equation above;
-there is no free choice between normalizing to the contact term alone and
-normalizing to the contact-plus-vector coupling.
+and the [tree TFF convention](alp-doubly-virtual-tff.md). The two low-energy
+spectral contributions and the ALP asymptotic term are not yet calculated.
+The next step is to calculate the two spectral contributions and the
+source-specific asymptotic term, then use the residue equation with a
+pole/continuum separation that counts each vector contribution once.
