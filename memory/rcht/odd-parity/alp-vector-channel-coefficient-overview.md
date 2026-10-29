@@ -34,6 +34,18 @@ The cells show coefficient combinations only; common source traces, pole respons
 
 The $a\to\gamma PP$ $c_4$ term is in crossed pseudoscalar-source vertices and vanishes for the charged-pion projection in exact strong isospin. The $a\to VV$ width uses both VJP assignments; $c_4,c_7,d_4$ vanish in the neutral on-shell projection. The VPPP entries for $a\to VPP$ and $a\to\gamma PP$ follow the source-dependent $aVPP$ vertex, with the latter followed by photon-vector conversion. The provisional TFF scope uses the isovector $2\pi$ component, narrow $\omega,\phi$ poles, and mixed $\rho^0$--$\omega/\phi$ VVP terms with the $\rho$ response dressed; it does not use a separate stable-$\rho$ pole. The isoscalar $3\pi$ row is retained for completeness but remains outside that scope. Its VPPP combinations are the isoscalar vector-current projection. Pole and cut contributions require spectral matching before combination [@Messerli:2025rnv]. See the [channel derivations](../../alp/three-pseudoscalar/a3p-vector-exchange-amplitude.md), [photon-PP amplitude](../../alp/photon-two-pseudoscalar/alp-photon-pp-amplitude.md), [vector-PP amplitude](../../alp/vector-two-pseudoscalar/alp-vpp-amplitude.md), [two-vector amplitude](alp-vv-amplitude.md), [two-vector width](alp-vv-width.md), [isovector TFF construction](../../alp/lepton-pair/alp-isovector-tff-spectral-construction.md), [isoscalar pole decomposition](../../alp/lepton-pair/alp-isoscalar-tff-source-decomposition.md), [mixed $\rho I$ term](../../alp/lepton-pair/alp-tff-mixed-rho-isoscalar-vvp.md), and [isoscalar VPPP projection](isoscalar-vppp-three-pion-projection.md).
 
+# Ranks and simpler spanning bases
+
+Taking the union of the combinations displayed in the channel map, the coefficient-linear-form ranks are $5$ for VJP, $3$ for VVP, and $4$ for VPPP. Equivalent bases with simpler combinations are
+$$
+\begin{aligned}
+\text{VJP: }&\{c_1,\ c_2-c_5,\ c_2+c_5-2c_6,\ c_3,\ c_4\},\\
+\text{VVP: }&\{d_1,\ d_2,\ d_3\},\\
+\text{VPPP: }&\{g_1-g_3,\ g_2,\ g_4,\ g_5\}.
+\end{aligned}
+$$
+For VJP, the first three elements span the three independent combinations in $c_1,c_2,c_5,c_6$: the two table combinations $c_1+c_2-c_5$ and $-c_1+c_2+c_5-2c_6$ are recovered by adding/subtracting the displayed basis elements, and $c_1-c_2+c_5$ is also in their span. For VVP, replacing $d_1-d_3,d_3$ by $d_1,d_3$ is an invertible basis change. The isoscalar VPPP combinations $g_1-g_2-g_3$ and $2g_4+g_5$ are already in the listed VPPP span, so they do not raise its rank. These are ranks of the coefficient combinations in the overview, not channel-specific measurement ranks.
+
 # Doubly-virtual TFF sensitivity to the common shift
 
 Consider the coefficient displacement
