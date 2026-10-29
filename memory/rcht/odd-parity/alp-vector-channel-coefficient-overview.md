@@ -39,12 +39,26 @@ The $a\to\gamma PP$ $c_4$ term is in crossed pseudoscalar-source vertices and va
 Taking the union of the combinations displayed in the channel map, the coefficient-linear-form ranks are $5$ for VJP, $3$ for VVP, and $4$ for VPPP. Equivalent bases with simpler combinations are
 $$
 \begin{aligned}
-\text{VJP: }&\{c_1,\ c_2-c_5,\ c_2+c_5-2c_6,\ c_3,\ c_4\},\\
+\text{VJP: }&\{c_1,\ c_2-c_5,\ c_2-c_6,\ c_3,\ c_4\},\\
 \text{VVP: }&\{d_1,\ d_2,\ d_3\},\\
 \text{VPPP: }&\{g_1-g_3,\ g_2,\ g_4,\ g_5\}.
 \end{aligned}
 $$
 For VJP, the first three elements span the three independent combinations in $c_1,c_2,c_5,c_6$: the two table combinations $c_1+c_2-c_5$ and $-c_1+c_2+c_5-2c_6$ are recovered by adding/subtracting the displayed basis elements, and $c_1-c_2+c_5$ is also in their span. For VVP, replacing $d_1-d_3,d_3$ by $d_1,d_3$ is an invertible basis change. The isoscalar VPPP combinations $g_1-g_2-g_3$ and $2g_4+g_5$ are already in the listed VPPP span, so they do not raise its rank. These are ranks of the coefficient combinations in the overview, not channel-specific measurement ranks.
+
+# Coverage by the current vector fits
+
+The preliminary low-energy fit covers only the original VJP and VVP coefficients $c_i,d_i$; at its fixed even/source inputs its measured amplitude image has rank seven in the eleven-dimensional coefficient space. Resolving that rank against the overview basis, the fit covers four VJP directions and all three listed VVP directions. The missing eighth direction in the combined VJP/VVP overview span is
+$$
+c_1-c_2+c_5.
+$$
+The measured VJP combinations include $c_1+c_2-c_5$, $-c_1+c_2+c_5-2c_6$, $c_3$, and $c_4$; the fit null vectors in $(c_1,c_2,c_5,c_6)$ annihilate the first two but not the displayed missing combination. The other null directions are $c_7$ and $d_4$, which are outside the overview's rank-eight span. Thus the exported central $c_i,d_i$ values remain a representative, not a determination of the null coordinates. The fit has no $g_i$ or VPPP observable. The separate four-row $G_V$ fit constrains only the leading even-parity $VPP$ coupling, conditionally on the preliminary fit inputs; it supplies no constraint on $c_i,d_i$ or $g_i$.
+
+The VPPP fit is still at the preparation stage, with no numerical result. Its proposed isoscalar $3\pi$ analysis targets only
+$$
+A_{3\pi}=g_1-g_2-g_3,\qquad B_{3\pi}=2g_4+g_5,
+$$
+and hence has rank two within the four-dimensional overview VPPP span. The two missing independent VPPP directions can be chosen as $g_2$ and $g_4$ alongside the proposed pair: from $g_1-g_2-g_3$ and $g_2$ one recovers $g_1-g_3$, and from $2g_4+g_5$ and $g_4$ one recovers $g_5$. The cited on-shell $\omega$ rate gives one fixed-energy combination, while the quoted conditional $B_{3\pi}$ value in [@GomezDumm:2010ra] depends on imposed short-distance relations and $G_V=F_V/F^2$; it is not an independent fit constraint. The validated dispersive response and full likelihood are still missing, so even the two intended directions are not yet numerically fitted. In particular, none of the four VPPP combinations needed for the isovector $2\pi$ cut and local $a\to VPP$ and $a\to\gamma PP$ terms has a repository fit result.
 
 # Doubly-virtual TFF sensitivity to the common shift
 
