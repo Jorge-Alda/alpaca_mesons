@@ -1,0 +1,47 @@
+{
+  "bibtex_key": "BaBar:2007ceh",
+  "arxiv_id": "0710.4451v3",
+  "source_url": "https://arxiv.org/html/0710.4451v3",
+  "source_table": 7,
+  "source_section": "VI.1",
+  "observable": "isovector e+e- -> K*(892)K cross section from Dalitz fit",
+  "energy_unit": "GeV",
+  "cross_section_unit": "nb",
+  "number_of_bins": 19,
+  "selection": "All published bins contained in [1.40, 1.78] GeV",
+  "bin_interpretation": "Published bin estimates, not point values or bin integrals",
+  "statistical_errors": "Table 7 quoted errors; statistical covariance unavailable",
+  "dalitz_fit_systematic_relative": 0.15,
+  "dalitz_fit_systematic_source": "Paragraph following Tables 6 and 7",
+  "dalitz_fit_systematic_relation_to_table_1": "Additional to the Table 1 systematic uncertainties",
+  "dalitz_fit_systematic_correlation": {
+    "source_statement": "No bin correlation matrix or correlation prescription supplied",
+    "optional_model": "One common multiplicative nuisance with standard deviation 0.15",
+    "optional_model_status": "Assumption, equivalent to full bin correlation; not a measured covariance"
+  },
+  "table_1_systematics": {
+    "total_relative": 0.051,
+    "components_relative": {
+      "ISR luminosity": 0.03,
+      "qqbar background": 0.011,
+      "ISR background": 0.005,
+      "track reconstruction efficiency": 0.01,
+      "PID efficiency": 0.02,
+      "KS reconstruction efficiency": 0.011,
+      "KS to pi+pi- branching fraction": 0.007,
+      "MC model": 0.03
+    },
+    "correlations": "Unavailable; no correlation prescription introduced",
+    "treatment": "Recorded separately; not included in the CSV statistical errors",
+    "published_corrections": "The +4.2% total correction is already applied; do not apply it again"
+  },
+  "kinematic_qualifications": [
+    "K*(892)K nominal threshold lies below the first 1.40 GeV bin; finite K* width belongs to the amplitude model",
+    "The 1.76-1.78 GeV bin straddles the physical tau endpoint; do not truncate or treat it as a full tau-accessible bin",
+    "No numerical tau mass or CVC/isospin normalization has been introduced"
+  ],
+  "fit_qualifications": [
+    "Dalitz-model-dependent K*(892)K component, not the inclusive KKpi spectrum",
+    "No RChT coefficient extraction or higher-resonance subtraction performed"
+  ]
+}

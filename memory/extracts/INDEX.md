@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-27
+updated: 2026-10-29
 bibtex_keys: []
 provenance: literature
 ---
@@ -29,6 +29,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Aloni:2018vki](Aloni:2018vki/INDEX.md) — source-specific literature extracts.
 - [Aston:1987ir](Aston:1987ir/INDEX.md) — source-specific literature extracts.
 - [BaBar:2004ytv](BaBar:2004ytv/INDEX.md) — source-specific literature extracts.
+- [BaBar:2007ceh](BaBar:2007ceh/INDEX.md) — BaBar isovector $K^*(892)K$ spectrum and its limits for low-energy KK pi coefficient extraction.
 - [BaBar:2009rrj](BaBar:2009rrj/INDEX.md) — source-specific literature extracts.
 - [BaBar:2018zpn](BaBar:2018zpn/INDEX.md) — BaBar double-tag measurement of the spacelike doubly virtual $\eta'$ transition form factor.
 - [BABAR:2021cde](BABAR:2021cde/INDEX.md) — BaBar 2021 $e^+e^-\to3\pi$ cross section, with separate statistical and systematic covariance inputs below 1.1 GeV.

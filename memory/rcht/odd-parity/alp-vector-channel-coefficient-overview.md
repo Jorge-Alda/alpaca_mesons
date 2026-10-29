@@ -2,8 +2,8 @@
 title: Even- and odd-sector coefficient directions for ALP vector channels
 status: derived
 created: 2026-10-28
-updated: 2026-10-28
-bibtex_keys: [Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, GomezDumm:2010ra, Messerli:2025rnv, Ruiz-Femenia:2003jdx]
+updated: 2026-10-29
+bibtex_keys: [Alda:2026nrd, BaBar:2007ceh, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, GomezDumm:2010ra, Messerli:2025rnv, Ruiz-Femenia:2003jdx]
 provenance: analytical-derivation
 ---
 
@@ -70,6 +70,8 @@ $$
 \tau^-\to K^+K^-\pi^-\nu_\tau.
 $$
 The first channel contains the local combination $(g_1+2g_2-g_3)(x-y)$, which is $(A_{3\pi}+3g_2)(x-y)$; together with the isoscalar $A_{3\pi}$ projection it can resolve $g_2$. The second channel contains a different mass polynomial in $g_2,g_4,g_5$. Once $A_{3\pi}$, $g_2$, and $B_{3\pi}=2g_4+g_5$ are constrained, its remaining $g_4$ dependence is proportional to $m_\pi^2-m_K^2$, allowing $g_4$ in principle to be separated. The source form factors give this operator-level dependence, but a new fit must recompute the full coefficient Jacobian in the conventions used here and include resonance, rescattering, and vector/axial-current uncertainties. Isovector $e^+e^-\to K\bar K\pi$ distributions related by CVC can add statistics and a cross-check when the isospin component is separated [@GomezDumm:2010ra].
+
+A candidate is now available: [@BaBar:2007ceh] separates the isovector $K^*(892)K$ component in $e^+e^-\to K^0_S K^\pm\pi^\mp$. Its 19 cross-section bins from $1.40$ to $1.78\,\mathrm{GeV}$ and the statistical errors are transcribed in [the KK pi input record](kkpi-isovector-spectrum-input-and-extraction-readiness.md). The final bin straddles the tau endpoint, and the paper's broad $\rho'$ contribution is not in the low-energy single-multiplet predictor; these data are therefore not yet a coefficient fit. See the [source-backed extraction-readiness note](kkpi-isovector-spectrum-input-and-extraction-readiness.md) for the uncertainty and CVC requirements.
 
 Use energy spectra and Dalitz distributions jointly, retaining the vector-current structure functions rather than only integrated branching fractions. An amplitude term odd under exchange of two Dalitz variables does not by itself imply an odd event-rate asymmetry. These channels are proposed measurements and projections, not fit results; short-distance relations used in the cited analysis must not be imposed as if they were independent experimental constraints.
 

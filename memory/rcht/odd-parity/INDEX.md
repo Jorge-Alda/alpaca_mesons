@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-28
+updated: 2026-10-29
 bibtex_keys: []
 provenance: assumption
 ---
@@ -26,6 +26,7 @@ being combined with canonical photon or resonance amplitudes.
 - [isoscalar-vppp-dispersive-matching.md](isoscalar-vppp-dispersive-matching.md) — conditional map to the $a(q^2)$ subtraction and vector residues, including rank and sum-rule mismatch.
 - [isoscalar-vppp-fit-preparation.md](isoscalar-vppp-fit-preparation.md) — parameterization, likelihood, identifiability checks, data audit, and prerequisites for extracting the two local combinations.
 - [kkpi-vector-current-coefficient-rank.md](kkpi-vector-current-coefficient-rank.md) — exact KK pi vector-current VJP/VVP/VPPP coefficient maps, charged/neutral ranks, cross-sector compensation and combination with the preliminary and isoscalar spans.
+- [kkpi-isovector-spectrum-input-and-extraction-readiness.md](kkpi-isovector-spectrum-input-and-extraction-readiness.md) — BaBar's isovector $K^*(892)K$ bins in the tau-overlap region, covariance limits, and missing higher-resonance/CVC ingredients for a coefficient fit.
 - [babar-2021-three-pion-fit-input.md](babar-2021-three-pion-fit-input.md) — extracted 114-bin low-energy cross section with covariance and 72-bin higher-energy table for the new fit.
 - [vppp-dispersive-profile-input-contract.md](vppp-dispersive-profile-input-contract.md) — finite-width spectral/profile calculator, exact sum-rule elimination, zero-width check, and remaining physical inputs.
 - [vppp-finite-width-spectral-templates.md](vppp-finite-width-spectral-templates.md) — SymPy-derived finite-width resonance and conformal spectral bases, upper-lip convention, and required width/tail inputs.
