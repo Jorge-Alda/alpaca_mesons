@@ -48,17 +48,30 @@ For VJP, the first three elements span the three independent combinations in $c_
 
 # Coverage by the current vector fits
 
-The preliminary low-energy fit covers only the original VJP and VVP coefficients $c_i,d_i$; at its fixed even/source inputs its measured amplitude image has rank seven in the eleven-dimensional coefficient space. Resolving that rank against the overview basis, the fit covers four VJP directions and all three listed VVP directions. The missing eighth direction in the combined VJP/VVP overview span is
+The preliminary low-energy fit covers only the original VJP and VVP coefficients $c_i,d_i$; at its fixed even/source inputs its measured amplitude image has rank seven in the eleven-dimensional coefficient space. Resolving that rank against the overview basis, the fit covers four VJP directions and all three listed VVP directions. The missing eighth direction in the preliminary fit's combined VJP/VVP overview span is
 $$
 c_1-c_2+c_5.
 $$
-The measured VJP combinations include $c_1+c_2-c_5$, $-c_1+c_2+c_5-2c_6$, $c_3$, and $c_4$; the fit null vectors in $(c_1,c_2,c_5,c_6)$ annihilate the first two but not the displayed missing combination. The other null directions are $c_7$ and $d_4$, which are outside the overview's rank-eight span. Thus the exported central $c_i,d_i$ values remain a representative, not a determination of the null coordinates. The fit has no $g_i$ or VPPP observable. The separate four-row $G_V$ fit constrains only the leading even-parity $VPP$ coupling, conditionally on the preliminary fit inputs; it supplies no constraint on $c_i,d_i$ or $g_i$.
+The measured VJP combinations include $c_1+c_2-c_5$, $-c_1+c_2+c_5-2c_6$, $c_3$, and $c_4$; the fit null vectors in $(c_1,c_2,c_5,c_6)$ annihilate the first two but not the displayed missing combination. Later finite-virtuality $\omega\to\pi^0\ell^+\ell^-$ and pion-TFF fits raise the original odd-coefficient rank to eight by probing $c_1-c_2+c_5$. Their retained tree-level description is poor, so this is an algebraic sensitivity result rather than an accepted coefficient calibration. The other null directions include $c_7$ and $d_4$, outside the overview's rank-eight span. Thus the exported central $c_i,d_i$ values remain a representative, not a determination of the null coordinates. The fit has no $g_i$ or VPPP observable. The separate four-row $G_V$ fit constrains only the leading even-parity $VPP$ coupling, conditionally on the preliminary fit inputs; it supplies no constraint on $c_i,d_i$ or $g_i$.
 
 The VPPP fit is still at the preparation stage, with no numerical result. Its proposed isoscalar $3\pi$ analysis targets only
 $$
 A_{3\pi}=g_1-g_2-g_3,\qquad B_{3\pi}=2g_4+g_5,
 $$
 and hence has rank two within the four-dimensional overview VPPP span. The two missing independent VPPP directions can be chosen as $g_2$ and $g_4$ alongside the proposed pair: from $g_1-g_2-g_3$ and $g_2$ one recovers $g_1-g_3$, and from $2g_4+g_5$ and $g_4$ one recovers $g_5$. The cited on-shell $\omega$ rate gives one fixed-energy combination, while the quoted conditional $B_{3\pi}$ value in [@GomezDumm:2010ra] depends on imposed short-distance relations and $G_V=F_V/F^2$; it is not an independent fit constraint. The validated dispersive response and full likelihood are still missing, so even the two intended directions are not yet numerically fitted. In particular, none of the four VPPP combinations needed for the isovector $2\pi$ cut and local $a\to VPP$ and $a\to\gamma PP$ terms has a repository fit result.
+
+# Mesonic observables for the uncovered combinations
+
+The finite-virtuality $\omega\to\pi^0\ell^+\ell^-$ spectrum and pion transition form factor already provide shape sensitivity to $c_1-c_2+c_5$, the direction absent from the preliminary real-photon fit. A renewed determination needs a finite-width, dispersive description that gives an acceptable account of both data sets before its coefficient profile can be treated as a calibration. The $KK\pi$ vector-current form factors also contain this VJP combination multiplying the total invariant mass squared, so their energy dependence offers a separate cross-check [@GomezDumm:2010ra].
+
+The most direct mesonic candidates for the two VPPP directions not targeted by the proposed isoscalar fit are the vector-current Dalitz distributions in
+$$
+\tau^-\to K^-K^0\pi^0\nu_\tau,\qquad
+\tau^-\to K^+K^-\pi^-\nu_\tau.
+$$
+The first channel contains the local combination $(g_1+2g_2-g_3)(x-y)$, which is $(A_{3\pi}+3g_2)(x-y)$; together with the isoscalar $A_{3\pi}$ projection it can resolve $g_2$. The second channel contains a different mass polynomial in $g_2,g_4,g_5$. Once $A_{3\pi}$, $g_2$, and $B_{3\pi}=2g_4+g_5$ are constrained, its remaining $g_4$ dependence is proportional to $m_\pi^2-m_K^2$, allowing $g_4$ in principle to be separated. The source form factors give this operator-level dependence, but a new fit must recompute the full coefficient Jacobian in the conventions used here and include resonance, rescattering, and vector/axial-current uncertainties. Isovector $e^+e^-\to K\bar K\pi$ distributions related by CVC can add statistics and a cross-check when the isospin component is separated [@GomezDumm:2010ra].
+
+Use energy spectra and Dalitz distributions jointly, retaining the vector-current structure functions rather than only integrated branching fractions. An amplitude term odd under exchange of two Dalitz variables does not by itself imply an odd event-rate asymmetry. These channels are proposed measurements and projections, not fit results; short-distance relations used in the cited analysis must not be imposed as if they were independent experimental constraints.
 
 # Doubly-virtual TFF sensitivity to the common shift
 
