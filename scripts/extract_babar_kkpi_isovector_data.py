@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Transcribe BaBar:2007ceh Table 7 below 1.78 GeV.
+"""Transcribe BaBar:2007ceh Table 7 below 1.78 and 2.00 GeV.
 
 Run from the repository root:
     .venv/bin/python scripts/extract_babar_kkpi_isovector_data.py
@@ -22,6 +22,19 @@ CROSS_SECTIONS_NB = (
     ("1.83", "0.37"), ("2.82", "0.50"), ("2.10", "0.36"),
     ("1.28", "0.30"), ("1.53", "0.35"), ("1.60", "0.32"),
     ("1.44", "0.32"),
+)
+
+EXTENDED_BINS = (
+    ("1.78", "1.80", "1.34", "0.32"),
+    ("1.80", "1.82", "0.58", "0.18"),
+    ("1.82", "1.84", "1.44", "0.31"),
+    ("1.84", "1.86", "1.02", "0.24"),
+    ("1.86", "1.88", "0.96", "0.29"),
+    ("1.88", "1.90", "0.59", "0.26"),
+    ("1.90", "1.92", "0.26", "0.14"),
+    ("1.92", "1.94", "0.51", "0.17"),
+    ("1.94", "1.96", "0.40", "0.12"),
+    ("1.96", "2.00", "0.75", "0.16"),
 )
 
 
@@ -88,7 +101,34 @@ def write_data(output_directory: Path) -> tuple[Path, Path]:
     return csv_path, json_path
 
 
+def write_below_2gev_data(output_directory: Path) -> tuple[Path, Path]:
+    """Extend the published transcription to the end of the low-energy region."""
+    original_path = output_directory / "babar_2007_isovector_kstar_k_tau_region.csv"
+    if not original_path.exists():
+        write_data(output_directory)
+    with original_path.open(newline="") as input_file:
+        original_rows = list(csv.reader(input_file))
+    csv_path = output_directory / "babar_2007_isovector_kstar_k_below_2gev.csv"
+    with csv_path.open("w", newline="") as output_file:
+        writer = csv.writer(output_file, lineterminator="\n")
+        writer.writerows(original_rows)
+        writer.writerows(EXTENDED_BINS)
+    metadata = json.loads(original_path.with_suffix(".json").read_text())
+    metadata["number_of_bins"] = len(CROSS_SECTIONS_NB) + len(EXTENDED_BINS)
+    metadata["selection"] = "All Table 7 bins from 1.40 GeV through the 1.96-2.00 GeV bin"
+    metadata.pop("kinematic_qualifications")
+    metadata["fit_qualifications"] = [
+        "Dalitz-model-dependent K*(892)K component, not the inclusive KKpi spectrum",
+        "BaBar identifies K*K as the dominant KKpi contribution below 2.0 GeV",
+        "No RChT coefficient extraction or higher-resonance subtraction is implicit in the transcription",
+    ]
+    json_path = csv_path.with_suffix(".json")
+    json_path.write_text(json.dumps(metadata, indent=2) + "\n")
+    return csv_path, json_path
+
+
 if __name__ == "__main__":
     repository_root = Path(__file__).resolve().parents[1]
-    for written_path in write_data(repository_root / "data" / "vector_sector"):
+    output_directory = repository_root / "data" / "vector_sector"
+    for written_path in (*write_data(output_directory), *write_below_2gev_data(output_directory)):
         print(written_path.relative_to(repository_root))

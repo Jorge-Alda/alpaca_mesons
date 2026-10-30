@@ -2,7 +2,7 @@
 title: KK pi isovector spectrum input and extraction readiness
 status: mixed
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-10-30
 bibtex_keys: [BaBar:2007ceh, GomezDumm:2010ra, Alda:2026nrd]
 provenance: assumption
 ---
@@ -17,10 +17,18 @@ The paper assigns a 15% systematic uncertainty to the Dalitz fit, in addition to
 
 The isovector projection is a promising energy-dependent input for the $KK\pi$ vector-current coefficient map in the [rank audit](kkpi-vector-current-coefficient-rank.md). The spectrum provides substantially more leverage than an integrated branching fraction. It is a Dalitz-fit component for $K^*(892)K$, not an inclusive $KK\pi$ rate. A numerical conversion to the charged-current tau mode requires an explicit CVC/isospin normalization, charge-state conventions, and consistent treatment of the $K^*$ decay fractions.
 
-This table alone does not yield a coefficient determination. The low-energy single-multiplet form-factor expressions in [@GomezDumm:2010ra] do not include an explicit excited isovector vector contribution. BaBar describes the isovector spectrum with a broad $\rho'$ and notes the single-resonance description may be insufficient. The current repository has the exact coefficient-function rank audit but no physical, finite-width $KK\pi$ likelihood predictor, CVC implementation, or fitted energy-dependent higher-resonance term. A fit that omits these ingredients would risk assigning the $ρ'$ shape to the low-energy missing coefficient, especially the VJP combination $c_1-c_2+c_5$.
+The exact coefficient-function rank audit identified the additional VJP direction $c_1-c_2+c_5$. A direct crossed $K^*\to K\gamma^*$ quasi-two-body fit now profiles that direction and $c_4$; its coefficient results, profiles, resonance-model sensitivity, and retained nulls are recorded in [the coefficient-fit record](babar-kkpi-rcht-coefficient-fit.md). The full inclusive weak-current predictor below remains separate. BaBar reports a broad $\rho'$ and notes that a single-resonance description may be insufficient, so the coefficient profiles retain excited-pole and fit-window sensitivities.
 
-# Extraction gate
+# Remaining combined-fit gate
 
-Before treating this as coefficient information, construct the charged-current or neutral-current observable from the canonical amplitudes in the [overview](alp-vector-channel-coefficient-overview.md), integrate over the measured bins, and include the $K^*$ line shape and excited-vector terms. Map the isovector normalization with a cited CVC convention. Then fit jointly with the preliminary coefficient combinations while retaining its unconstrained directions and profile the normalization, resonance, and axial contributions. Keep the Table 1 and Dalitz-fit systematics distinct until a covariance prescription is justified. The first result should be a nuisance-profiled sensitivity/rank report; a coefficient profile is meaningful only if it survives reasonable excited-vector and covariance variants.
+The direct crossed $K^*K$ coefficient fits are complete as reported in
+[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md).
+The earlier proposed inclusive route remains separate: it requires a
+charge-resolved current predictor, the experimental Dalitz projection, and
+a cited CVC map before combining those rates with tau data. The current
+quasi-two-body coefficient profiles retain the measured statistical errors,
+the 15% Dalitz systematic, the 5.1% Table 1 uncertainty, and the explicit
+excited-pole/window variants; these remain conditional because the published
+bin covariance and a common excited-vector/RChT fit are unavailable.
 
-The present step establishes a source-backed data input and a concrete path to the fit. It does not report a fitted coefficient or likelihood rank.
+The data input and extraction path were established on 2026-10-29. The subsequent coefficient fit is documented in [babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md); it constrains selected coefficient coordinates conditionally and leaves the stated coefficient null directions unresolved.

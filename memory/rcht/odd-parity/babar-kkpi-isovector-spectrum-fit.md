@@ -118,4 +118,6 @@ component removes the local VPPP terms, so it has no $g_i$ sensitivity; the
 full electromagnetic charge map and a coefficient-matched excited-vector
 amplitude are also absent. A coefficient extraction needs those physical
 ingredients and stability against the allowed resonance and covariance
-variants.
+variants. The subsequent crossed quasi-two-body coefficient fits, including
+$c_4$ and $c_1-c_2+c_5$, are recorded in
+[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md).

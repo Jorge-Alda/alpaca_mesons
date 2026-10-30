@@ -15,8 +15,11 @@ $K^+K^-\pi^-$ and $K^-K^0\pi^0$, using Eqs. (30), (35) and Appendix A
 of [@GomezDumm:2010ra]. It also integrates an explicitly supplied
 electromagnetic scalar amplitude into a Born cross section and energy-bin
 averages. This is a reusable calculation for a future inclusive or Dalitz
-likelihood. It does not yet predict the experimental component in Table 7
-of [@BaBar:2007ceh].
+likelihood. It does not predict the experimental component in Table 7 of
+[@BaBar:2007ceh]. A separate direct crossed $K^*K$ current calculation now
+fits that quasi-two-body component in
+[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md);
+it does not use the inclusive $F_3$ integration implemented here.
 
 Inputs are the [coefficient polynomials and their invariant ordering](kkpi-vector-current-coefficient-rank.md),
 the [canonical tensor and coefficient conversion](levi-civita-convention.md),
@@ -111,10 +114,10 @@ $$
 These mathematical fixtures are not physical predictions for the data.
 
 The `babar_table7_prediction` entry explicitly refuses an inclusive $F_3$
-integral. A numerical Table 7 predictor still requires the experimental
-$K^*(892)K$ component projection, electromagnetic charge/isospin
-normalization and coherent excited-vector model. The source's Dalitz
-coefficients and the full electromagnetic amplitude are not available as
-interchangeable observables. No coefficient fit or information rank is
-reported. The separately recorded statistical and systematic covariance
-limitations also remain relevant.
+integral. The direct crossed quasi-two-body fit instead uses the BaBar
+isovector $K^*K$ definition and its own isovector normalization. It reports
+coefficient profiles and nulls in
+[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md).
+The module here still has no inclusive electromagnetic charge/isospin map,
+full Dalitz-component projection, or combined tau likelihood. Published
+statistical/systematic covariance limitations remain relevant.
