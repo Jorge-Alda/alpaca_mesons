@@ -1,0 +1,823 @@
+{
+  "bibtex_keys": [
+    "BaBar:2007ceh",
+    "ParticleDataGroup:2024cfk"
+  ],
+  "observable": "BaBar Table 7 isovector K*(892)K component, 19 bins 1.40-1.78 GeV",
+  "inputs": {
+    "kaon_mass_GeV": 0.493677,
+    "pion_mass_GeV": 0.13957039,
+    "kstar_mass_GeV": 0.89166,
+    "background_reference_GeV": 1.709
+  },
+  "assumptions": [
+    "Stable K* phase space from source Eq.12; no finite-K* convolution",
+    "Uniform energy-bin averages; ISR luminosity and acceptance response unavailable",
+    "Table7 statistical covariance unavailable; statistical errors treated as diagonal",
+    "15% Dalitz and 5.1% Table1 common nuisances are correlation assumptions",
+    "Real background and zero resonance phase as source Table15",
+    "The Table15 benchmark takes the positive square root of its background cross section; its sign is not tabulated",
+    "Fixed four-pion fraction 0.64 uses Table15 central value and is conditional, not an independent prior",
+    "Only Table7 tau-overlap bins fitted; source Table15 global fit is a benchmark, not reproduced",
+    "No RChT coefficient extraction; VPPP dependence cannot be inferred from this component"
+  ],
+  "parameter_bounds": {
+    "mass_GeV": [
+      1.385437,
+      1.9
+    ],
+    "width_GeV": [
+      0.03,
+      1.5
+    ],
+    "ee_width_times_branching_eV": [
+      1e-06,
+      5000
+    ],
+    "signed_sqrt_background_nb": [
+      -5,
+      5
+    ],
+    "four_pion_fraction": [
+      0,
+      1
+    ]
+  },
+  "table15_benchmark": {
+    "parameters": {
+      "rho_prime_mass_GeV": 1.508,
+      "rho_prime_width_GeV": 0.418,
+      "rho_prime_ee_width_times_branching_eV": 129.0,
+      "signed_sqrt_background_cross_section_nb": 0.9486832980505138,
+      "rho_prime_four_pion_branching_fraction": 0.64
+    },
+    "predictions_nb": [
+      0.2808332145299013,
+      0.6591815527909753,
+      1.0993298853343978,
+      1.5508551242394266,
+      1.9707647490602813,
+      2.3260803839269917,
+      2.5969216972747633,
+      2.776963408504025,
+      2.8710429150099506,
+      2.8911979712697136,
+      2.85266971987842,
+      2.770852787803155,
+      2.6594676592752755,
+      2.5297687101432835,
+      2.39044014633086,
+      2.2478597226158676,
+      2.10650613658052,
+      1.9693803602017592,
+      1.8383791500458007
+    ],
+    "statistical_chi_squared": 54.395251942220845
+  },
+  "bin_quadrature_refinement_max_absolute_nb": 1.3322676295501878e-15,
+  "bin_edges_GeV": [
+    [
+      1.4,
+      1.42
+    ],
+    [
+      1.42,
+      1.44
+    ],
+    [
+      1.44,
+      1.46
+    ],
+    [
+      1.46,
+      1.48
+    ],
+    [
+      1.48,
+      1.5
+    ],
+    [
+      1.5,
+      1.52
+    ],
+    [
+      1.52,
+      1.54
+    ],
+    [
+      1.54,
+      1.56
+    ],
+    [
+      1.56,
+      1.58
+    ],
+    [
+      1.58,
+      1.6
+    ],
+    [
+      1.6,
+      1.62
+    ],
+    [
+      1.62,
+      1.64
+    ],
+    [
+      1.64,
+      1.66
+    ],
+    [
+      1.66,
+      1.68
+    ],
+    [
+      1.68,
+      1.7
+    ],
+    [
+      1.7,
+      1.72
+    ],
+    [
+      1.72,
+      1.74
+    ],
+    [
+      1.74,
+      1.76
+    ],
+    [
+      1.76,
+      1.78
+    ]
+  ],
+  "observed_nb": [
+    0.32,
+    0.68,
+    1.4,
+    1.27,
+    2.33,
+    2.96,
+    2.83,
+    3.08,
+    2.05,
+    1.67,
+    3.46,
+    1.52,
+    1.83,
+    2.82,
+    2.1,
+    1.28,
+    1.53,
+    1.6,
+    1.44
+  ],
+  "statistical_errors_nb": [
+    0.67,
+    0.4,
+    0.43,
+    0.39,
+    0.5,
+    0.58,
+    0.52,
+    0.55,
+    0.42,
+    0.33,
+    0.68,
+    0.38,
+    0.37,
+    0.5,
+    0.36,
+    0.3,
+    0.35,
+    0.32,
+    0.32
+  ],
+  "fits": {
+    "rho_prime_statistical": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4676297762081805,
+        "rho_prime_width_GeV": 0.18797486546054015,
+        "rho_prime_ee_width_times_branching_eV": 46.79945917709386,
+        "signed_sqrt_background_cross_section_nb": 0.0,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.018949807918882716,
+        "rho_prime_width_GeV": 0.01799466686522241,
+        "rho_prime_ee_width_times_branching_eV": 10.64988557964406
+      },
+      "fixed_parameters": [
+        "signed_sqrt_background_cross_section_nb",
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 20.36768978875483,
+      "degrees_of_freedom": 16,
+      "degrees_of_freedom_using_local_rank": 16,
+      "chi_squared_probability": 0.20411465378162222,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [],
+      "common_gaussian_nuisances": [],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.22830760117743326,
+        0.630670546742266,
+        1.1822802399897243,
+        1.7553181861212699,
+        2.2000550035612143,
+        2.4454122179231197,
+        2.5153261998248952,
+        2.4723673075912638,
+        2.3717421168034507,
+        2.2486768239319783,
+        2.1221428610724793,
+        2.0011582828368244,
+        1.8893778118759124,
+        1.7877784110322206,
+        1.6960906932862359,
+        1.6135251465028622,
+        1.5391271491668486,
+        1.4719426923868797,
+        1.4110894997429075
+      ],
+      "local_jacobian_rank": 3,
+      "scaled_jacobian_singular_values": [
+        339.8005760066635,
+        10.873685899534513,
+        4.358134822583204
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 9,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_statistical": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4743532946341722,
+        "rho_prime_width_GeV": 0.14682269978266466,
+        "rho_prime_ee_width_times_branching_eV": 40.83723424741007,
+        "signed_sqrt_background_cross_section_nb": -0.23799820688301204,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.01349782223895254,
+        "rho_prime_width_GeV": 0.04919725817642544,
+        "rho_prime_ee_width_times_branching_eV": 12.097585434283223,
+        "signed_sqrt_background_cross_section_nb": 0.29434794174338724
+      },
+      "fixed_parameters": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 19.95634829918375,
+      "degrees_of_freedom": 15,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.17361362526151775,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [],
+      "common_gaussian_nuisances": [],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.1508757955310289,
+        0.48265869809339923,
+        1.047646597568954,
+        1.7398697718828624,
+        2.3032427684380896,
+        2.5729275557285565,
+        2.5953565124896567,
+        2.491183037065822,
+        2.3455398099702416,
+        2.1986814805577017,
+        2.0653121750046415,
+        1.9489029629131276,
+        1.8486852938574099,
+        1.762591282821081,
+        1.6883845981228158,
+        1.6240475025020127,
+        1.5678772571040034,
+        1.518476591062356,
+        1.4747114608038427
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        277.59508900839916,
+        11.583839667718658,
+        6.482061804769369,
+        0.7673164497790331
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_free_fraction_statistical": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4708686865002791,
+        "rho_prime_width_GeV": 0.14598952273428958,
+        "rho_prime_ee_width_times_branching_eV": 37.937570987476946,
+        "signed_sqrt_background_cross_section_nb": -0.2390694957038745,
+        "rho_prime_four_pion_branching_fraction": 2.431639416267396e-11
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": null,
+        "rho_prime_width_GeV": null,
+        "rho_prime_ee_width_times_branching_eV": null,
+        "signed_sqrt_background_cross_section_nb": null,
+        "rho_prime_four_pion_branching_fraction": null
+      },
+      "fixed_parameters": [],
+      "chi_squared": 19.956078583653856,
+      "degrees_of_freedom": 14,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.13153225649770758,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [],
+      "common_gaussian_nuisances": [],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.15082963390660048,
+        0.482541215878496,
+        1.0475003746615625,
+        1.7398179025166658,
+        2.3033342213232846,
+        2.573069016035577,
+        2.5954525113323212,
+        2.491208595107406,
+        2.3455108808236353,
+        2.1986222911669935,
+        2.065242807709753,
+        1.9488374277552096,
+        1.8486326545879581,
+        1.7625571314889128,
+        1.6883722155388767,
+        1.6240586591028443,
+        1.5679127412918032,
+        1.5185365532045516,
+        1.474795637358846
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        292.19481321261264,
+        12.098580778261496,
+        5.856016924611187,
+        0.7726477690365298,
+        2.304380613851095e-06
+      ],
+      "parameters_at_bounds": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_dalitz_common": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4676297759092505,
+        "rho_prime_width_GeV": 0.18797486500670796,
+        "rho_prime_ee_width_times_branching_eV": 46.799459132996574,
+        "signed_sqrt_background_cross_section_nb": 0.0,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.01894980368239397,
+        "rho_prime_width_GeV": 0.017994666978042424,
+        "rho_prime_ee_width_times_branching_eV": 12.755364728464354
+      },
+      "fixed_parameters": [
+        "signed_sqrt_background_cross_section_nb",
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 20.367689788754824,
+      "degrees_of_freedom": 16,
+      "degrees_of_freedom_using_local_rank": 16,
+      "chi_squared_probability": 0.2041146537816226,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [
+        0.15
+      ],
+      "common_gaussian_nuisances": [
+        -1.905792797911933e-08
+      ],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.22830760313253717,
+        0.6306705520454041,
+        1.1822802491126203,
+        1.7553181975777739,
+        2.2000550148392435,
+        2.445412227326899,
+        2.515326207022487,
+        2.4723673129979424,
+        2.3717421209709917,
+        2.2486768273012263,
+        2.1221428639406454,
+        2.0011582853905985,
+        1.889377814229261,
+        1.7877784132541246,
+        1.696090695418496,
+        1.6135251485709556,
+        1.539127151186428,
+        1.4719426943676484,
+        1.4110895016909457
+      ],
+      "local_jacobian_rank": 3,
+      "scaled_jacobian_singular_values": [
+        133.4491152584166,
+        10.72309336697942,
+        3.6548153354193715
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 9,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_dalitz_common": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4743532906905625,
+        "rho_prime_width_GeV": 0.14682271036176447,
+        "rho_prime_ee_width_times_branching_eV": 40.837234953870755,
+        "signed_sqrt_background_cross_section_nb": -0.23799815093272464,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.013497821859631382,
+        "rho_prime_width_GeV": 0.04919726532249051,
+        "rho_prime_ee_width_times_branching_eV": 13.560029736961571,
+        "signed_sqrt_background_cross_section_nb": 0.2948887101820851
+      },
+      "fixed_parameters": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 19.95634829918559,
+      "degrees_of_freedom": 15,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.17361362526144686,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [
+        0.15
+      ],
+      "common_gaussian_nuisances": [
+        -2.206207519013617e-08
+      ],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.150875824211373,
+        0.4826587651938412,
+        1.0476466806630227,
+        1.7398698141293927,
+        2.303242745089681,
+        2.5729275021506464,
+        2.595356467845142,
+        2.491183014420047,
+        2.3455398064817086,
+        2.198681489512155,
+        2.0653121905392107,
+        1.9489029808955807,
+        1.8486853116148494,
+        1.762591298704387,
+        1.6883846111555614,
+        1.6240475121385638,
+        1.5678772630717368,
+        1.5184765932606652,
+        1.4747114592397563
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        148.46363128301076,
+        9.936958036624155,
+        4.588944208137471,
+        0.7669255748895504
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_free_fraction_dalitz_common": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.470868695934144,
+        "rho_prime_width_GeV": 0.14598946252795614,
+        "rho_prime_ee_width_times_branching_eV": 37.93756307063386,
+        "signed_sqrt_background_cross_section_nb": -0.23906984168688636,
+        "rho_prime_four_pion_branching_fraction": 2.489134634663887e-11
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": null,
+        "rho_prime_width_GeV": null,
+        "rho_prime_ee_width_times_branching_eV": null,
+        "signed_sqrt_background_cross_section_nb": null,
+        "rho_prime_four_pion_branching_fraction": null
+      },
+      "fixed_parameters": [],
+      "chi_squared": 19.95607858365124,
+      "degrees_of_freedom": 14,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.13153225649779085,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [
+        0.15
+      ],
+      "common_gaussian_nuisances": [
+        -1.046203690293328e-08
+      ],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.15082952723567217,
+        0.482540999407434,
+        1.0475001838350444,
+        1.7398179425321192,
+        2.3033344798139472,
+        2.5730692782987505,
+        2.5954526418622357,
+        2.4912085939535413,
+        2.3455107978285135,
+        2.1986221730192024,
+        2.065242685878715,
+        1.9488373208069731,
+        1.848632572565259,
+        1.7625570792797918,
+        1.6883721950330717,
+        1.6240586704878186,
+        1.5679127838140805,
+        1.518536625613526,
+        1.4747957381646497
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        151.1128471749776,
+        10.176006819296362,
+        4.37316047133949,
+        0.7721563136957287,
+        2.3059852263587756e-06
+      ],
+      "parameters_at_bounds": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_dalitz_and_table1_common": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.467629774589605,
+        "rho_prime_width_GeV": 0.18797486557387968,
+        "rho_prime_ee_width_times_branching_eV": 46.79945811224741,
+        "signed_sqrt_background_cross_section_nb": 0.0,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.01894980400879888,
+        "rho_prime_width_GeV": 0.017994666970970807,
+        "rho_prime_ee_width_times_branching_eV": 12.97674926761598
+      },
+      "fixed_parameters": [
+        "signed_sqrt_background_cross_section_nb",
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 20.36768978875486,
+      "degrees_of_freedom": 16,
+      "degrees_of_freedom_using_local_rank": 16,
+      "chi_squared_probability": 0.20411465378162094,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [
+        0.15,
+        0.051
+      ],
+      "common_gaussian_nuisances": [
+        1.6430069219998217e-08,
+        5.586223206173374e-09
+      ],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.22830760635995215,
+        0.6306705581161389,
+        1.18228025349016,
+        1.7553181933836453,
+        2.2000549990059337,
+        2.445412202855937,
+        2.515326179281826,
+        2.4723672861180397,
+        2.371742097033019,
+        2.248676806941972,
+        2.1221428470607497,
+        2.0011582716003518,
+        1.8893778030703776,
+        1.7877784042935647,
+        1.6960906882802513,
+        1.6135251429408362,
+        1.539127146806493,
+        1.4719426910276339,
+        1.411089499219681
+      ],
+      "local_jacobian_rank": 3,
+      "scaled_jacobian_singular_values": [
+        129.34451429719397,
+        10.71214552388947,
+        3.59342939070666
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 9,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_dalitz_and_table1_common": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4743533083212415,
+        "rho_prime_width_GeV": 0.14682265922195584,
+        "rho_prime_ee_width_times_branching_eV": 40.83723087971261,
+        "signed_sqrt_background_cross_section_nb": -0.23799842175162655,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.013497812996834231,
+        "rho_prime_width_GeV": 0.04919723253028008,
+        "rho_prime_ee_width_times_branching_eV": 13.719034433749092,
+        "signed_sqrt_background_cross_section_nb": 0.2949509865418342
+      },
+      "fixed_parameters": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 19.95634829917828,
+      "degrees_of_freedom": 15,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.17361362526172938,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [
+        0.15,
+        0.051
+      ],
+      "common_gaussian_nuisances": [
+        6.826023155057444e-08,
+        2.3208478642818394e-08
+      ],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.15087569057753658,
+        0.4826584551643405,
+        1.0476463025726694,
+        1.7398696313741813,
+        2.3032428636463935,
+        2.572927750706684,
+        2.595356665670412,
+        2.4911831053714173,
+        2.345539807406441,
+        2.198681433624256,
+        2.065312105981902,
+        1.9489028871709415,
+        1.8486852211557836,
+        1.7625912190605864,
+        1.6883845467040584,
+        1.6240474652448365,
+        1.5678772348393148,
+        1.518476584006887,
+        1.474711468796748
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        146.40921040791196,
+        9.885775072697893,
+        4.4531107268505234,
+        0.7668808591996754
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_free_fraction_dalitz_and_table1_common": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4708686886065847,
+        "rho_prime_width_GeV": 0.1459894724210555,
+        "rho_prime_ee_width_times_branching_eV": 37.93756127023945,
+        "signed_sqrt_background_cross_section_nb": -0.2390697950902884,
+        "rho_prime_four_pion_branching_fraction": 3.622779856831872e-10
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": null,
+        "rho_prime_width_GeV": null,
+        "rho_prime_ee_width_times_branching_eV": null,
+        "signed_sqrt_background_cross_section_nb": null,
+        "rho_prime_four_pion_branching_fraction": null
+      },
+      "fixed_parameters": [],
+      "chi_squared": 19.95607858365212,
+      "degrees_of_freedom": 14,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.13153225649776312,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [
+        0.15,
+        0.051
+      ],
+      "common_gaussian_nuisances": [
+        3.6534044420736474e-08,
+        1.2421575151900225e-08
+      ],
+      "four_pion_power": 1.5,
+      "predictions_nb": [
+        0.15082956210950932,
+        0.4825410847984354,
+        1.0475002953148391,
+        1.739818001279203,
+        2.303334436668329,
+        2.573069171307081,
+        2.5954525300972935,
+        2.4912085060735585,
+        2.345510737760715,
+        2.198622135528429,
+        2.065242664424746,
+        1.9488373099614411,
+        1.8486325683384688,
+        1.762557078873428,
+        1.6883721965216663,
+        1.6240586725577728,
+        1.5679127855744166,
+        1.5185366264645468,
+        1.4747957377080998
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        148.81671344538717,
+        10.102874411385834,
+        4.25833784774707,
+        0.7720981586024446,
+        2.305791539088403e-06
+      ],
+      "parameters_at_bounds": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    },
+    "rho_prime_background_power_5_over_2_statistical": {
+      "parameters": {
+        "rho_prime_mass_GeV": 1.4796293450720752,
+        "rho_prime_width_GeV": 0.15032090684508242,
+        "rho_prime_ee_width_times_branching_eV": 45.714627530262554,
+        "signed_sqrt_background_cross_section_nb": -0.24897939674744107,
+        "rho_prime_four_pion_branching_fraction": 0.64
+      },
+      "conditional_local_errors": {
+        "rho_prime_mass_GeV": 0.012889875303841981,
+        "rho_prime_width_GeV": 0.05272009661807044,
+        "rho_prime_ee_width_times_branching_eV": 15.420530142559626,
+        "signed_sqrt_background_cross_section_nb": 0.28533661350270456
+      },
+      "fixed_parameters": [
+        "rho_prime_four_pion_branching_fraction"
+      ],
+      "chi_squared": 19.961756112639936,
+      "degrees_of_freedom": 15,
+      "degrees_of_freedom_using_local_rank": 15,
+      "chi_squared_probability": 0.17340468590506458,
+      "probability_qualification": "Nominal parameter count; not calibrated for boundaries or unresolved directions",
+      "common_relative_systematic_errors": [],
+      "common_gaussian_nuisances": [],
+      "four_pion_power": 2.5,
+      "predictions_nb": [
+        0.1503690724712533,
+        0.4819013904026407,
+        1.0473139710366541,
+        1.7401835484185626,
+        2.3034437625515123,
+        2.5725003471385337,
+        2.5946074629478844,
+        2.4905791357530753,
+        2.3453111554899184,
+        2.1988456864742205,
+        2.0657815993528175,
+        1.9495545019496197,
+        1.8493927673484563,
+        1.7632376359140707,
+        1.6888651423043248,
+        1.6242696441338853,
+        1.5677590733454425,
+        1.51794519934657,
+        1.4737015232365909
+      ],
+      "local_jacobian_rank": 4,
+      "scaled_jacobian_singular_values": [
+        255.65068060559344,
+        10.348368315706576,
+        7.527442311402533,
+        0.8102451576434587
+      ],
+      "parameters_at_bounds": [],
+      "optimizer_success": true,
+      "optimizer_message": "`ftol` termination condition is satisfied.",
+      "number_of_deterministic_starts": 18,
+      "local_errors_qualification": "Conditional linearized errors; unreliable at bounds or for unresolved degeneracies"
+    }
+  }
+}
