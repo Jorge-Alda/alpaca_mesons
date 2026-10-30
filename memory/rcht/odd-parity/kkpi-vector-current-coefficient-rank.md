@@ -110,12 +110,12 @@ VVP, and VPPP sector ranks: one VJP/VPPP displacement compensates between the
 sectors in both full amplitudes. The script gives an explicit symbolic
 compensation. The preliminary rows remove that degeneracy.
 
-These are amplitude ranks, not information ranks. A physical determination
-still needs measured, charge-resolved spectra, vector-current separation in
-$\tau$ decays (or isovector $e^+e^-$ data related through CVC), finite-width
-propagators, and a likelihood with the relevant experimental and model
-uncertainties. The local repository currently has no $KK\pi$ measurement
-tables or fitted coefficient result. The measured vector-current
-$KK\pi$ distributions must include both energy and Dalitz dependence; a
-term odd in a Dalitz-variable exchange does not by itself imply an odd rate
-asymmetry.
+These are amplitude ranks, not information ranks. BaBar Tables 2 and 3 are
+now transcribed as inclusive charge-resolved spectra and fitted jointly in
+[babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md).
+The full electromagnetic $KK\pi$ form factors retain VPPP sensitivity, and
+the integrated-rate coefficient Jacobian has rank ten in the chosen
+combination basis. The four $g_i$ combinations remain weakly constrained:
+their profile minima include zero and their outer profile points have
+optimizer/bound failures. The $K^*K$ isobar-only Table 7 fit still has zero
+local VPPP sensitivity.

@@ -17,18 +17,20 @@ The paper assigns a 15% systematic uncertainty to the Dalitz fit, in addition to
 
 The isovector projection is a promising energy-dependent input for the $KK\pi$ vector-current coefficient map in the [rank audit](kkpi-vector-current-coefficient-rank.md). The spectrum provides substantially more leverage than an integrated branching fraction. It is a Dalitz-fit component for $K^*(892)K$, not an inclusive $KK\pi$ rate. A numerical conversion to the charged-current tau mode requires an explicit CVC/isospin normalization, charge-state conventions, and consistent treatment of the $K^*$ decay fractions.
 
-The exact coefficient-function rank audit identified the additional VJP direction $c_1-c_2+c_5$. A direct crossed $K^*\to K\gamma^*$ quasi-two-body fit now profiles that direction and $c_4$; its coefficient results, profiles, resonance-model sensitivity, and retained nulls are recorded in [the coefficient-fit record](babar-kkpi-rcht-coefficient-fit.md). The full inclusive weak-current predictor below remains separate. BaBar reports a broad $\rho'$ and notes that a single-resonance description may be insufficient, so the coefficient profiles retain excited-pole and fit-window sensitivities.
+The exact coefficient-function rank audit identified the additional VJP direction $c_1-c_2+c_5$. A direct crossed $K^*\to K\gamma^*$ quasi-two-body fit profiles that direction and $c_4$; its results and resonance-model sensitivity are in [the isobar fit record](babar-kkpi-rcht-coefficient-fit.md). A unified fit to the inclusive Tables 2/3 now varies all ten $c,d,g$ combinations simultaneously; its rate rank, coefficient profiles and remaining nulls are in [the unified coefficient record](babar-kkpi-unified-vector-coefficient-fit.md). BaBar reports a broad $\rho'$ and notes that a single-resonance description may be insufficient, so both fits retain excited-pole sensitivity.
 
 # Remaining combined-fit gate
 
-The direct crossed $K^*K$ coefficient fits are complete as reported in
-[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md).
-The earlier proposed inclusive route remains separate: it requires a
-charge-resolved current predictor, the experimental Dalitz projection, and
-a cited CVC map before combining those rates with tau data. The current
-quasi-two-body coefficient profiles retain the measured statistical errors,
-the 15% Dalitz systematic, the 5.1% Table 1 uncertainty, and the explicit
-excited-pole/window variants; these remain conditional because the published
-bin covariance and a common excited-vector/RChT fit are unavailable.
+The direct crossed $K^*K$ coefficient fits and the inclusive electromagnetic
+coefficient fit are both documented separately. The latter uses Tables 2/3
+and the full current, with 5.1% and 6.5% normalization nuisances. It has an
+acceptable nominal spectrum residual and rate rank ten, but the $g_i$
+profiles include zero and do not yet provide certified confidence
+intervals. A joint inclusive-plus-tau likelihood remains separate because
+it requires a shared charge-resolved predictor and an explicit covariance
+treatment.
 
-The data input and extraction path were established on 2026-10-29. The subsequent coefficient fit is documented in [babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md); it constrains selected coefficient coordinates conditionally and leaves the stated coefficient null directions unresolved.
+The isobar-only coefficient fit is documented in
+[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md);
+the unified inclusive coefficient fit is documented in
+[babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md).

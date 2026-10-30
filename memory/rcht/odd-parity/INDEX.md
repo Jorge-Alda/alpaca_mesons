@@ -30,6 +30,8 @@ being combined with canonical photon or resonance amplitudes.
 - [kkpi-vector-current-predictor.md](kkpi-vector-current-predictor.md) — charged and neutral weak-current coefficient amplitudes, normalized electromagnetic phase-space and bin integration, and the unresolved BaBar Dalitz-component projection.
 - [babar-kkpi-isovector-spectrum-fit.md](babar-kkpi-isovector-spectrum-fit.md) — conditional BaBar isovector $K^*(892)K$ cross-section fit with an explicit broad $\rho'$ and covariance/model qualifications.
 - [babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md) — BaBar isovector $K^*K$ fits of $c_4$ and $c_1-c_2+c_5$, their profiles, rho-prime model sensitivity, and remaining coefficient nulls.
+- [babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md) — one joint BaBar inclusive likelihood for ten $c_i,d_i,g_i$ combinations with exact null, rate-rank and profile diagnostics.
+- [kkpi-a2-subchannel-sensitivity.md](kkpi-a2-subchannel-sensitivity.md) — possible tensor-exchange sensitivity in inclusive kaon-pion spectra.
 - [babar-2021-three-pion-fit-input.md](babar-2021-three-pion-fit-input.md) — extracted 114-bin low-energy cross section with covariance and 72-bin higher-energy table for the new fit.
 - [vppp-dispersive-profile-input-contract.md](vppp-dispersive-profile-input-contract.md) — finite-width spectral/profile calculator, exact sum-rule elimination, zero-width check, and remaining physical inputs.
 - [vppp-finite-width-spectral-templates.md](vppp-finite-width-spectral-templates.md) — SymPy-derived finite-width resonance and conformal spectral bases, upper-lip convention, and required width/tail inputs.

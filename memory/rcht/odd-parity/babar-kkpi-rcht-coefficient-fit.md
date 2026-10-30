@@ -149,3 +149,8 @@ Recreate the two data files and run the deterministic coefficient analysis:
 The [saved fit output](../../../data/vector_sector/babar_kkpi_rcht_coefficient_fit.json)
 contains all minima, profiles, covariance diagnostics, fitted coefficient
 vectors, bin predictions and normalization/systematic assumptions.
+
+This is the isobar-component fit and therefore has no local VPPP
+contribution. The unified inclusive fit to the full electromagnetic
+amplitudes, with all ten $c,d,g$ combinations varied together, is recorded
+in [babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md).

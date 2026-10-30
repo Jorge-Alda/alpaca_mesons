@@ -1,0 +1,19 @@
+{
+  "bibtex_key": "BaBar:2007ceh",
+  "arxiv_id": "0710.4451v3",
+  "source_url": "https://arxiv.org/html/0710.4451v3",
+  "source_table": 3,
+  "source_section": "V",
+  "observable": "inclusive e+e- -> K+ K- pi0 cross section",
+  "energy_unit": "GeV",
+  "cross_section_unit": "nb",
+  "number_of_bins": 21,
+  "selection": "All Table 3 bins from threshold through 1.76-1.78 GeV",
+  "bin_interpretation": "Published cross section bin estimates, not point values or bin integrals",
+  "statistical_errors": "Table 3 quoted errors; bin covariance unavailable",
+  "systematic_relative": 0.065,
+  "systematic_source": "Table 4 total for inclusive K+ K- pi0 cross section",
+  "systematic_correlation": "No bin correlation matrix supplied; fit uses an explicit common normalization nuisance and a diagonal sensitivity variant",
+  "published_corrections": "The +4.6% correction is already applied; do not apply it again",
+  "fit_qualification": "Inclusive charge-conjugation-even final state; fit with the coherent full K Kbar pi amplitude, distinct from the Table 7 K*K isobar component"
+}

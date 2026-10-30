@@ -19,7 +19,9 @@ likelihood. It does not predict the experimental component in Table 7 of
 [@BaBar:2007ceh]. A separate direct crossed $K^*K$ current calculation now
 fits that quasi-two-body component in
 [babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md);
-it does not use the inclusive $F_3$ integration implemented here.
+it does not use the inclusive $F_3$ integration implemented here. The full
+inclusive electromagnetic coefficient fit is documented separately in
+[babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md).
 
 Inputs are the [coefficient polynomials and their invariant ordering](kkpi-vector-current-coefficient-rank.md),
 the [canonical tensor and coefficient conversion](levi-civita-convention.md),
@@ -114,10 +116,10 @@ $$
 These mathematical fixtures are not physical predictions for the data.
 
 The `babar_table7_prediction` entry explicitly refuses an inclusive $F_3$
-integral. The direct crossed quasi-two-body fit instead uses the BaBar
-isovector $K^*K$ definition and its own isovector normalization. It reports
-coefficient profiles and nulls in
-[babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md).
-The module here still has no inclusive electromagnetic charge/isospin map,
-full Dalitz-component projection, or combined tau likelihood. Published
-statistical/systematic covariance limitations remain relevant.
+integral. The separate full-current fit uses the source-specific
+electromagnetic form factors and the inclusive BaBar Tables 2/3 data,
+including the local VPPP terms, and reports the coefficient map and rate
+rank in
+[babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md).
+The weak-current module here still has no combined tau likelihood.
+Published bin-covariance limitations remain relevant.

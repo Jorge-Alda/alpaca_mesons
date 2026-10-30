@@ -66,6 +66,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Pelaez:2016tgi](Pelaez:2016tgi/INDEX.md) — source-specific literature extracts.
 - [Pelaez:2020gnd](Pelaez:2020gnd/INDEX.md) — source-specific literature extracts.
 - [Pich:2010sm](Pich:2010sm/INDEX.md) — source-specific literature extracts.
+- [Qin:2024ulb](Qin:2024ulb/INDEX.md) — inclusive electromagnetic $KK\pi$ RChT form factors, including local VPPP terms and fit assumptions.
 - [Roig:2013baa](Roig:2013baa/INDEX.md) — odd-sector coupling dictionaries and TFF compatibility adapted to the canonical tensor/coupling convention.
 - [Rosell:2004mn](Rosell:2004mn/INDEX.md) — source-specific literature extracts.
 - [Ruiz-Femenia:2003jdx](Ruiz-Femenia:2003jdx/INDEX.md) — source-specific extracts adapted to the canonical upper-index Levi-Civita convention with explicit source conversion.
