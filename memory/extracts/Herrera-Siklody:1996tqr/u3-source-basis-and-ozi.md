@@ -21,3 +21,16 @@ $$\begin{aligned}
 their Eq. (3.7). The $W_{4,5,6}$ terms are explicit multi-trace/topological-source examples [@Herrera-Siklody:1996tqr].
 
 The authors count $\chi=O(p^2)$ and identify the anomaly contribution to the singlet mass as $O(1/N_c)$ (source lines 694--710). They also state that the extra U(1)$_A$ terms carry high powers of $1/N_c$, and that the singlet-only/OZI-violating couplings are $1/N_c$ suppressed (source lines 550--558 and 773--830). This supports setting independent double traces to zero as a declared leading-OZI truncation, but not claiming that symmetry makes them vanish [@Herrera-Siklody:1996tqr].
+
+Appendix C lists further $p^4$ operators with derivatives of the topological source. In its notation, $C_\mu=U^\dagger D_\mu U$, $M=U^\dagger\chi+\chi^\dagger U$, and $\hat\theta=i\theta$. Four relevant structures are
+
+$$
+\begin{aligned}
+O_{46}&=D_\mu\hat\theta\langle C^\mu M\rangle,&
+O_{47}&=D_\mu\hat\theta\langle C^\mu\rangle\langle M\rangle,\\
+O_{50}&=D_\mu\hat\theta D^\mu\hat\theta\langle M\rangle,&
+O_{52}&=iD_\mu D^\mu\hat\theta\langle M\rangle.
+\end{aligned}
+$$
+
+These are among the source-dependent structures listed with the $p^4$ operators; their presence in the unrestricted basis is distinct from whether a chosen large-$N_c$ truncation retains them [@Herrera-Siklody:1996tqr, App. C, Eq. (70)].
