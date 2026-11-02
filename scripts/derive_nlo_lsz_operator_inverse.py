@@ -60,16 +60,23 @@ def derive():
     anomaly_coefficient = sources["m_zero_squared"] / 3
     trace_equation = sp.Eq(trace_solution, trace_inverse_source - anomaly_coefficient * trace_solution * trace_inverse_identity)
     leading_trace_solution = sp.solve(trace_equation, trace_solution)[0]
-    inverse_diagonal_source = sp.MatrixSymbol("D_a^{-1}(C)", 3, 3)
-    inverse_diagonal_powers = [sp.MatrixSymbol(f"D_a^{{-1}}(chi_0^{power})", 3, 3) for power in range(3)]
-    leading_inverse = inverse_diagonal_source - anomaly_coefficient * leading_trace_solution * inverse_diagonal_powers[0]
+    inverse_leading_source = sp.MatrixSymbol("D_{a,0}^{-1}[Y]", 3, 3)
+    inverse_leading_identity = sp.MatrixSymbol("D_{a,0}^{-1}[I]", 3, 3)
+    leading_inverse = inverse_leading_source - anomaly_coefficient * leading_trace_solution.subs({
+        trace_inverse_source: sp.Trace(inverse_leading_source),
+        trace_inverse_identity: sp.Trace(inverse_leading_identity),
+    }) * inverse_leading_identity
     moment_matrix = sp.MatrixSymbol("G", 3, 3)
     coefficient_matrix = sp.MatrixSymbol("H", 3, 3)
     source_moments = sp.MatrixSymbol("b", 3, 1)
     solved_moments = (sp.Identity(3) + moment_matrix * coefficient_matrix).I * source_moments
-    moment_solution_symbol = sp.MatrixSymbol("T", 3, 1)
-    trace_weights = coefficient_matrix * moment_solution_symbol
-    exact_truncated_inverse = inverse_diagonal_source - sum((inverse_diagonal_powers[power] * trace_weights[power, 0] for power in range(3)), sp.ZeroMatrix(3, 3))
+    trace_weights = coefficient_matrix * solved_moments
+    source_matrix = sp.MatrixSymbol("Y", 3, 3)
+    identity_weight, linear_weight, quadratic_weight = sp.symbols("q_0 q_1 q_2")
+    inverse_source_argument = source_matrix - identity_weight * sp.Identity(3) - linear_weight * chi - quadratic_weight * chi**2
+    # The undefined function is only a display of the linear operator applied
+    # to its derived matrix argument. The executable inverse is below.
+    exact_truncated_inverse = sp.Function(r"\mathbb{D}_a^{-1}")(inverse_source_argument)
     # The first-order solution is obtained by equating coefficients in the
     # operator equation, retaining the order of all matrix products.
     expansion_parameter = sp.Symbol("epsilon")
@@ -142,12 +149,14 @@ def main():
         if name != "LO":
             show(f"Kinetic correction operator, {name}", expression)
     show("Diagonal anticommutator part D_a[Phi]", result["diagonal_operator"])
+    show("Full local NLO operator M_a[Phi], in matrices and traces", result["total_operator"])
     show("Trace coefficient matrix H", result["trace_coefficients"])
-    show("Denominator d_ij of D_a inverse", result["denominator_expression"])
+    show("Component-level denominator d_ij of D_a inverse", result["denominator_expression"])
     show("LO trace equation", result["trace_equation"])
     show("LO solved trace", result["leading_trace_solution"])
     show("LO rank-one inverse", result["leading_inverse"])
     show("Three trace moments solved", result["solved_moments"])
+    show("Trace-system coefficient vector q", result["trace_weights"])
     show("Exact inverse of the truncated local operator", result["exact_truncated_inverse"])
     show("Leading solution", result["leading_solution"])
     show("First correction source", result["source_remainder"])

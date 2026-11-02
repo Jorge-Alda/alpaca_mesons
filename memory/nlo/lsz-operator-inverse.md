@@ -19,7 +19,17 @@ $$
 \mathbb M_{a,0}[X]=\frac12\{\chi_0,X\}+g\operatorname{tr}(X)\mathbf1-wX.
 $$
 
-This is the full-matrix form of Alda:2026nrd's neutral equation $(\chi_i-w)S_i+gT_S=C_i$. The source is $C$ from [the invariant-source result](lsz-invariant-split.md), and $S_0=\mathbb M_{a,0}^{-1}[C]$.
+This is the full-matrix form of Alda:2026nrd's neutral equation $(\chi_i-w)S_i+gT_S=C_i$. The source is $C$ from [the invariant-source result](lsz-invariant-split.md), and $S_0=\mathbb M_{a,0}^{-1}[C]$. Its matrix inverse can be written without component sums:
+
+$$
+\mathbb M_{a,0}^{-1}[Y]
+=\mathbb D_{a,0}^{-1}[Y]
+-\frac{g\,\operatorname{tr}(\mathbb D_{a,0}^{-1}[Y])}
+{1+g\,\operatorname{tr}(\mathbb D_{a,0}^{-1}[\mathbf1])}
+\mathbb D_{a,0}^{-1}[\mathbf1],
+\qquad
+\mathbb D_{a,0}[X]=\frac12\{\chi_0,X\}-wX.
+$$
 
 ## Explicit LO inverse for a general source
 
@@ -48,12 +58,19 @@ These expressions follow by first applying $\mathbb D_{a,0}^{-1}$ and then solvi
 
 ## NLO operator
 
-The operator obtained from the meson two-point function at $p^2=w$ has the form
+The operator obtained from the meson two-point function at $p^2=w$ is the following matrix expression:
 
 $$
-\mathbb M_a^{\rm loc,NLO}[X]
-=\mathbb D_a[X]
-+\sum_{r,t=0}^{2}\chi_0^r H_{rt}\operatorname{tr}(\chi_0^tX),
+\begin{aligned}
+\mathbb M_a^{\rm loc,NLO}[X]={}&\mathbb D_a[X]
++\frac{m_0^2-w\Lambda_1}{3}\operatorname{tr}(X)\mathbf1\\
+&+\left(\frac{\Lambda_2}{3}-\frac{4wL_{18}}{f_\pi^2}\right)
+\left[\operatorname{tr}(\chi_0X)\mathbf1+\operatorname{tr}(X)\chi_0\right]
+\\
+&+\frac{16L_7}{f_\pi^2}\operatorname{tr}(\chi_0X)\chi_0
+-\frac{8L_{25}}{f_\pi^2}
+\left[\operatorname{tr}(\chi_0^2X)\mathbf1+\operatorname{tr}(X)\chi_0^2\right].
+\end{aligned}
 $$
 
 where
@@ -98,7 +115,7 @@ d_{ij}={}&\frac{\chi_i+\chi_j}{2}-w
 \end{aligned}
 $$
 
-For a source $Y$, define three trace moments and the $3\times3$ matrix
+For the component-level trace system, define the three trace moments and its $3\times3$ matrices by
 
 $$
 b_r=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[Y]\right),\qquad
@@ -106,12 +123,11 @@ G_{rt}=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[\chi_0^t]\right),
 \qquad r,t=0,1,2.
 $$
 
-The trace moments of the solution are $T=(I+GH)^{-1}b$, and the exact inverse of this **truncated local operator** is
+The trace moments of the solution are $T=(I_3+GH)^{-1}b$, and set $q=HT$. The exact inverse of this **truncated local operator**, written as a matrix expression, is
 
 $$
-(\mathbb M_a^{\rm loc,NLO})^{-1}[Y]
-=\mathbb D_a^{-1}[Y]
--\sum_{r,t=0}^{2}\mathbb D_a^{-1}[\chi_0^r]H_{rt}T_t.
+\boxed{(\mathbb M_a^{\rm loc,NLO})^{-1}[Y]
+=\mathbb D_a^{-1}\!\left[Y-q_0\mathbf1-q_1\chi_0-q_2\chi_0^2\right].}
 $$
 
 No inverse of $H$ is needed. At LO, $H_{00}=g$ is the only nonzero entry; the formula reduces to the rank-one trace inverse above. Exact inversion of the truncated operator resums products of LECs, so it should be distinguished from a strict NLO expansion.
