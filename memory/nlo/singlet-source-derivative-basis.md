@@ -3,7 +3,7 @@ title: Singlet-source derivative operators in Alda notation
 status: derived
 created: 2026-11-02
 updated: 2026-11-02
-bibtex_keys: [Kaiser:1998ds, Alda:2026nrd]
+bibtex_keys: [Kaiser:1998ds,Herrera-Siklody:1996tqr,  Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -75,6 +75,32 @@ The script output explicitly gives the $V_4$ operator as $X_\mu Q^\mu-Q_\mu Q^\m
 ## Scope beyond the retained quadratic basis
 
 At the two-derivative level, the relevant singlet derivative structures are $D_\mu\psi D^\mu\psi$, $D_\mu\psi D^\mu\theta$, and $D_\mu\theta D^\mu\theta$. At order $p^4$, there are further source-derivative operators in the unrestricted $U(3)$ basis. Kaiser:1998ds describes 57 potentials before the reduction to the subset used for masses and decay constants; its $O_{46}$ and $O_{52}$ source-derivative terms are removable by a higher-order meson-field redefinition [the source extract](../extracts/Kaiser:1998ds/singlet-source-derivative-terms.md) [@Kaiser:1998ds]. Other terms in the full list involve additional meson derivatives or external field strengths, and their relevance depends on the observables and sources being retained. Therefore, within the project's retained quadratic NLO basis the relevant source-derivative contribution is the $V_5$ square, while a claim about the complete $p^4$ generating functional requires specifying the source and observable content.
+
+### Notation
+
+The building blocks used in Herrera-Siklody:1996tqr adapted to the notation of Alda:2026nrd are
+
+$$
+\begin{aligned}
+C_\mu &= U^\dagger D_\mu U = -u u^\dagger u_\mu u\\
+M &= U^\dagger \chi + \chi^\dagger U = u^\dagger \chi_+ u\\
+N &= U^\dagger \chi - \chi^\dagger U = u^\dagger \chi_- u\\
+D_\mu\hat\theta &= iD_\mu\theta = i(\langle u_\mu\rangle -\partial_\mu X_{TC}) = 2i c_{GA} \frac{\partial_\mu a}{f_a}
+\end{aligned}
+$$
+
+### Operators
+
+The operators that modify the kinetic terms must include exactly two derivatives and no field without a derivative. The operators from Herrera-Siklody:1996tqr fulfilling these conditions, and where at least one of the derivatives is the singlet $D_\mu\theta$, are:
+
+$$
+\begin{aligned}
+O_{46} &= (\langle u_\mu\rangle - \partial_\mu X_{TC})\langle u^\mu \chi_+\rangle,\\
+O_{47} &= (\langle u_\mu\rangle - \partial_\mu X_{TC})\langle u^\mu\rangle \langle\chi_+\rangle,\\
+O_{50} &= -(\langle u_\mu\rangle - \partial_\mu X_{TC})(\langle u^\mu\rangle - \partial^\mu X_{TC})\langle\chi_+\rangle,\\
+O_{52} &= -\nabla^\mu(\langle u_\mu\rangle - \partial_\mu X_{TC})\langle\chi_+\rangle.
+\end{aligned}
+$$
 
 ## Reproducibility
 
