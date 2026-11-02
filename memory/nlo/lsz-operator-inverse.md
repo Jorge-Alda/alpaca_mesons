@@ -56,9 +56,53 @@ $$
 
 These expressions follow by first applying $\mathbb D_{a,0}^{-1}$ and then solving the scalar trace equation $T_Y=\operatorname{tr}\mathbb D_{a,0}^{-1}[Y]-gT_Y\operatorname{tr}\mathbb D_{a,0}^{-1}[\mathbf1]$. Apparent individual denominators can be removable; the full operator must be nonsingular, and the ALP–meson overlaps must remain perturbative.
 
-## NLO operator
+## Step-by-step construction of the NLO operator
 
-The operator obtained from the meson two-point function at $p^2=w$ is the following matrix expression:
+Use the flavor-matrix inner product $\langle X,Y\rangle=\frac12\operatorname{tr}(XY)$ for Hermitian fields. The quadratic meson Lagrangian is organized as $\frac12\langle\partial\Phi,K\partial\Phi\rangle-\frac12\langle\Phi,M^2\Phi\rangle$. At the ALP pole, $w=m_a^2$, the linear operator is $M^2-wK$.
+
+### 1. Read the kinetic and mass Hessians from the bilinears
+
+The local NLO kinetic bilinears in [quadratic-lagrangian.md](quadratic-lagrangian.md) are
+
+$$
+\mathcal L_{\rm kin,NLO}^{(2)}=
+\frac{2L_5}{f_\pi^2}\operatorname{tr}(\chi_0\partial\Phi\partial\Phi)
++\frac{\Lambda_1}{12}\operatorname{tr}(\partial\Phi)^2
++\frac{2L_4}{f_\pi^2}\operatorname{tr}(\partial\Phi\partial\Phi)\operatorname{tr}(\chi_0)
++\frac{2L_{18}}{f_\pi^2}\operatorname{tr}(\chi_0\partial\Phi)\operatorname{tr}(\partial\Phi).
+$$
+
+Differentiating these quadratic forms with respect to the meson matrix gives the kinetic correction operator
+
+$$
+\begin{aligned}
+\delta K[X]={}&\frac{4L_5}{f_\pi^2}\{\chi_0,X\}
++\frac{\Lambda_1}{3}\operatorname{tr}(X)\mathbf1
++\frac{8L_4}{f_\pi^2}\operatorname{tr}(\chi_0)X\\
+&+\frac{4L_{18}}{f_\pi^2}
+\left[\operatorname{tr}(\chi_0X)\mathbf1+\operatorname{tr}(X)\chi_0\right].
+\end{aligned}
+$$
+
+The nondifferentiated NLO bilinears give
+
+$$
+\begin{aligned}
+\delta M^2[X]={}&\frac{4L_8}{f_\pi^2}\{\chi_0,\{\chi_0,X\}\}
++\frac{8L_6}{f_\pi^2}\operatorname{tr}(\chi_0)\{\chi_0,X\}
++\frac{16L_7}{f_\pi^2}\operatorname{tr}(\chi_0X)\chi_0\\
+&+\frac{\Lambda_2}{3}
+\left[\operatorname{tr}(\chi_0X)\mathbf1+\operatorname{tr}(X)\chi_0\right]
+-\frac{8L_{25}}{f_\pi^2}
+\left[\operatorname{tr}(\chi_0^2X)\mathbf1+\operatorname{tr}(X)\chi_0^2\right].
+\end{aligned}
+$$
+
+These are matrix identities for arbitrary Hermitian $X$; no coupling matrix is commuted through $\chi_0$.
+
+### 2. Form the pole operator $M^2-wK$
+
+The LO Hessians give $\frac12\{\chi_0,X\}+g\operatorname{tr}(X)\mathbf1$ for $M^2$ and $X$ for $K$. Add the NLO mass operator and subtract $w$ times the NLO kinetic operator. This produces
 
 $$
 \begin{aligned}
@@ -69,11 +113,11 @@ $$
 \\
 &+\frac{16L_7}{f_\pi^2}\operatorname{tr}(\chi_0X)\chi_0
 -\frac{8L_{25}}{f_\pi^2}
-\left[\operatorname{tr}(\chi_0^2X)\mathbf1+\operatorname{tr}(X)\chi_0^2\right].
+\left[\operatorname{tr}(\chi_0^2X)\mathbf1+\operatorname{tr}(X)\chi_0^2\right],
 \end{aligned}
 $$
 
-where
+where the non-trace part is grouped into
 
 $$
 \begin{aligned}
@@ -83,11 +127,37 @@ $$
 &-w\left[
 \frac{4L_5}{f_\pi^2}\{\chi_0,X\}
 +\frac{8L_4}{f_\pi^2}\operatorname{tr}(\chi_0)X
-\right],
+\right].
 \end{aligned}
 $$
 
-and the trace coefficient matrix, in the ordered trace basis $(\mathbf1,\chi_0,\chi_0^2)$, is
+The trace terms left outside $\mathbb D_a$ only depend on $X$ through $\operatorname{tr}(X)$, $\operatorname{tr}(\chi_0X)$, and $\operatorname{tr}(\chi_0^2X)$. Their output lies in the span of $\mathbf1,\chi_0,\chi_0^2$. This is why $\mathbb D_a$ is useful: it contains the part that can be inverted element by element, leaving only a three-dimensional trace problem. It is a computational decomposition of $\mathbb M_a^{\rm loc,NLO}$, not an additional physical operator.
+
+### 3. Invert the elementwise part
+
+Since $\chi_0$ is diagonal, write $E_{ij}$ for a flavor matrix unit. Then $\{\chi_0,E_{ij}\}=(\chi_i+\chi_j)E_{ij}$ and $\{\chi_0,\{\chi_0,E_{ij}\}\}=(\chi_i+\chi_j)^2E_{ij}$. Therefore $\mathbb D_a[E_{ij}]=d_{ij}E_{ij}$ and
+
+$$
+(\mathbb D_a^{-1}[Y])_{ij}=\frac{Y_{ij}}{d_{ij}},
+$$
+
+with
+
+$$
+\begin{aligned}
+d_{ij}={}&\frac{\chi_i+\chi_j}{2}-w
++\frac{4L_8}{f_\pi^2}(\chi_i+\chi_j)^2
++\frac{8L_6\operatorname{tr}(\chi_0)}{f_\pi^2}(\chi_i+\chi_j)\\
+&-\frac{4wL_5}{f_\pi^2}(\chi_i+\chi_j)
+-\frac{8wL_4\operatorname{tr}(\chi_0)}{f_\pi^2}.
+\end{aligned}
+$$
+
+This is a component-level equation; the preceding operator equations remain in matrix form.
+
+### 4. Solve the remaining trace system
+
+The trace terms in the matrix operator have coefficient matrix, in the ordered trace basis $(\mathbf1,\chi_0,\chi_0^2)$,
 
 $$
 H=\begin{pmatrix}
@@ -97,7 +167,22 @@ H=\begin{pmatrix}
 \end{pmatrix}.
 $$
 
-Thus all NLO terms beyond the anticommutator polynomial enter through at most three trace moments. Since $\chi_0$ is diagonal, $\mathbb D_a$ is diagonal on matrix units:
+For the component-level trace system define
+
+$$
+b_r=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[Y]\right),\qquad
+G_{rt}=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[\chi_0^t]\right),
+\qquad r,t=0,1,2.
+$$
+
+Solving its three equations gives $T=(I_3+GH)^{-1}b$ and $q=HT$. Substituting the three solved scalar coefficients back as a flavor matrix gives
+
+$$
+\boxed{(\mathbb M_a^{\rm loc,NLO})^{-1}[Y]
+=\mathbb D_a^{-1}\!\left[Y-q_0\mathbf1-q_1\chi_0-q_2\chi_0^2\right].}
+$$
+
+At LO only the identity trace direction remains, and this reduces to the rank-one inverse given above. The exact inverse here is for the truncated local operator and resums products of retained LECs; use the strict first-order expression below when claiming NLO accuracy.
 
 $$
 (\mathbb D_a^{-1}[Y])_{ij}=\frac{Y_{ij}}{d_{ij}},

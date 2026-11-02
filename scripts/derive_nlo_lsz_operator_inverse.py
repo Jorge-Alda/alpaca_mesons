@@ -30,6 +30,25 @@ def derive():
         name: expand_standard(-2 * trace_gradient(expression, flavor_matrix))
         for name, expression in sources["meson_potential"].items()
     }
+    total_kinetic_operator = expand_standard(
+        kinetic_operators["LO"] + sum(
+            (couplings[name] * expression for name, expression in kinetic_operators.items() if name != "LO"),
+            sp.ZeroMatrix(3, 3),
+        )
+    )
+    total_mass_operator = expand_standard(
+        mass_operators["LO"] + sum(
+            (couplings[name] * expression for name, expression in mass_operators.items() if name != "LO"),
+            sp.ZeroMatrix(3, 3),
+        )
+    )
+    inverse_operator_contributions = {
+        name: expand_standard(
+            mass_operators.get(name, sp.ZeroMatrix(3, 3))
+            - momentum_squared * kinetic_operators.get(name, sp.ZeroMatrix(3, 3))
+        )
+        for name in ("LO", *couplings)
+    }
     leading_operator = expand_standard(mass_operators["LO"] - momentum_squared * kinetic_operators["LO"])
     correction_operator = sum((couplings[name] * expression for name, expression in mass_operators.items() if name != "LO"), sp.ZeroMatrix(3, 3))
     correction_operator -= momentum_squared * sum((couplings[name] * expression for name, expression in kinetic_operators.items() if name != "LO"), sp.ZeroMatrix(3, 3))
@@ -44,6 +63,7 @@ def derive():
     trace_substitution[sp.Trace(flavor_matrix)] = trace_moments[0]
     marked_operator = total_operator.xreplace(trace_substitution)
     diagonal_operator = marked_operator.subs(dict.fromkeys(trace_moments, 0))
+    trace_operator = expand_standard(total_operator - diagonal_operator)
     trace_columns = [sp.diff(marked_operator, marker) for marker in trace_moments]
     polynomial_variable = sp.Symbol("z", real=True)
     trace_coefficients = sp.Matrix(3, 3, lambda row, column: sp.expand(trace_columns[column].subs(chi, polynomial_variable * sp.Identity(3)).doit().as_explicit()[0, 0]).coeff(polynomial_variable, row))
@@ -55,6 +75,10 @@ def derive():
     matrix_unit[0, 1] = 1
     denominator_expression = diagonal_operator.subs({chi: sp.diag(eigenvalue_left, eigenvalue_right, trace_chi - eigenvalue_left - eigenvalue_right), flavor_matrix: matrix_unit}).doit().as_explicit()[0, 1]
     denominator_expression = sp.factor(denominator_expression)
+    matrix_unit_action = diagonal_operator.subs({
+        chi: sp.diag(eigenvalue_left, eigenvalue_right, trace_chi - eigenvalue_left - eigenvalue_right),
+        flavor_matrix: matrix_unit,
+    }).doit().as_explicit().applyfunc(sp.factor)
     # Derive the LO trace equation and its solution, rather than insert it.
     trace_inverse_source, trace_inverse_identity, trace_solution = sp.symbols("tr_Dinv_C tr_Dinv_1 tr_S")
     anomaly_coefficient = sources["m_zero_squared"] / 3
@@ -69,6 +93,15 @@ def derive():
     moment_matrix = sp.MatrixSymbol("G", 3, 3)
     coefficient_matrix = sp.MatrixSymbol("H", 3, 3)
     source_moments = sp.MatrixSymbol("b", 3, 1)
+    solution_moments = sp.MatrixSymbol("T", 3, 1)
+    trace_system_equation = sp.Eq(
+        solution_moments,
+        source_moments - moment_matrix * coefficient_matrix * solution_moments,
+    )
+    collected_trace_equation = sp.Eq(
+        (sp.Identity(3) + moment_matrix * coefficient_matrix) * solution_moments,
+        source_moments,
+    )
     solved_moments = (sp.Identity(3) + moment_matrix * coefficient_matrix).I * source_moments
     trace_weights = coefficient_matrix * solved_moments
     source_matrix = sp.MatrixSymbol("Y", 3, 3)
@@ -110,6 +143,16 @@ def inverse_from_trace_system(source, chi_values, momentum_squared, anomaly_coef
 
 
 class OperatorInverseTests(unittest.TestCase):
+    def test_operator_normalization_recovers_quadratic_forms(self):
+        result = derive()
+        for name, expression in result["sources"]["meson_kinetic"].items():
+            variable = result["sources"]["derivative_phi"]
+            reconstructed = sp.Trace(variable * result["kinetic_operators"][name].subs(result["flavor_matrix"], variable)) / 4
+            self.assertEqual(expand_standard(reconstructed - expression), 0)
+        for name, expression in result["sources"]["meson_potential"].items():
+            reconstructed = -sp.Trace(result["flavor_matrix"] * result["mass_operators"][name]) / 4
+            self.assertEqual(expand_standard(reconstructed - expression), 0)
+
     def test_leading_diagonal_reduction(self):
         source = sp.diag(2, 4, 7)
         chi_values = [sp.Integer(3), sp.Integer(5), sp.Integer(8)]
@@ -141,23 +184,40 @@ def show(label, expression):
 def main():
     result = derive()
     print("Natural units; general U(3) matrices; exact inverse of retained local terms and strict first-order expansion; no loops.")
-    show("LO operator", result["leading_operator"])
-    for name, expression in result["mass_operators"].items():
-        if name != "LO":
-            show(f"Mass correction operator, {name}", expression)
-    for name, expression in result["kinetic_operators"].items():
-        if name != "LO":
-            show(f"Kinetic correction operator, {name}", expression)
-    show("Diagonal anticommutator part D_a[Phi]", result["diagonal_operator"])
+    print("1. Derive the kinetic and mass operators from the quadratic Lagrangian.")
+    print("The U(3) normalization is L_kin = tr(Z K[Z])/4 and L_pot = -tr(Phi M^2[Phi])/4.")
+    print("Thus K[Z] is twice the kinetic trace gradient, and M^2[Phi] is minus twice the potential trace gradient.")
+    for name, expression in result["sources"]["meson_kinetic"].items():
+        show(f"Input quadratic kinetic term, coefficient of {name}", expression)
+        show(f"Twice its trace gradient, K_{name}[Phi]", result["kinetic_operators"][name])
+    show("Full kinetic operator K[Phi]", result["total_kinetic_operator"])
+    for name, expression in result["sources"]["meson_potential"].items():
+        show(f"Input quadratic potential term, coefficient of {name}", expression)
+        show(f"Minus twice its trace gradient, M^2_{name}[Phi]", result["mass_operators"][name])
+    show("Full mass operator M^2[Phi]", result["total_mass_operator"])
+    print("2. At p^2=w the operator to invert is M^2-wK.")
+    for name, expression in result["inverse_operator_contributions"].items():
+        show(f"Coefficient of {name} in (M^2-wK)[Phi]", expression)
     show("Full local NLO operator M_a[Phi], in matrices and traces", result["total_operator"])
+    print("3. Separate terms with Phi outside all traces from terms depending on its three trace moments.")
+    show("Terms with Phi outside all traces, D_a[Phi]", result["diagonal_operator"])
+    show("Remaining trace operator (M_a-D_a)[Phi]", result["trace_operator"])
     show("Trace coefficient matrix H", result["trace_coefficients"])
+    print("4. Component-level derivation: apply D_a to the matrix unit E_12 in the quark-mass basis.")
+    show("Component-level representative matrix unit E_12", result["matrix_unit"])
+    show("Component-level D_a[E_12]", result["matrix_unit_action"])
     show("Component-level denominator d_ij of D_a inverse", result["denominator_expression"])
+    print("Consequently D_a is inverted by dividing each flavor component by d_ij; the trace operator is the only remaining coupling between components.")
+    print("5. Solve the trace moments after applying D_a^{-1} to the matrix equation.")
     show("LO trace equation", result["trace_equation"])
     show("LO solved trace", result["leading_trace_solution"])
     show("LO rank-one inverse", result["leading_inverse"])
+    show("Three-trace equation before collecting unknown moments", result["trace_system_equation"])
+    show("Collected three-trace equation", result["collected_trace_equation"])
     show("Three trace moments solved", result["solved_moments"])
     show("Trace-system coefficient vector q", result["trace_weights"])
     show("Exact inverse of the truncated local operator", result["exact_truncated_inverse"])
+    print("6. Expand the operator equation once for a strict first-order result.")
     show("Leading solution", result["leading_solution"])
     show("First correction source", result["source_remainder"])
     show("Strict first-order solution", result["expanded_solution"])
