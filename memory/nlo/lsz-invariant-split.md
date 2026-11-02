@@ -11,108 +11,100 @@ provenance: analytical-derivation
 
 ## Assumptions and inputs
 
-Use the real neutral meson vector $P=(\pi_3,\eta_8,\eta_0)^T$ and the local quadratic convention
+Use the full-field notation of Alda:2026nrd, with $\Phi_I=(P_i,a)$ and $P=(\pi_3,\eta_8,\eta_0)^T$. Write the local quadratic Lagrangian as
 
 $$
 \mathcal L_{\rm quad}=
-\frac12\partial_\mu P^T K\partial^\mu P
--\frac12P^T M^2P
-+\frac12(\partial a)^2-\frac12m_a^2a^2
-+\partial_\mu a\,k^T\partial^\mu P-a\,\mu^TP.
+\frac12(\partial_\mu\Phi_I)K_{IJ}(\partial^\mu\Phi_J)
+-\frac12\Phi_I M^2_{IJ}\Phi_J.
 $$
 
-$K$ and $M^2$ are symmetric, $K$ and $M^2-sK$ are invertible at the pole under consideration, and only first order in the ALP–meson mixing is retained. The local NLO contributions to the meson matrices are those in [the neutral meson matrix record](neutral-meson-matrices.md); the local ALP–meson terms are to be projected from [the quadratic NLO Lagrangian](quadratic-lagrangian.md). The operator basis and ALP source conventions are those of [@Kaiser:1998ds; @Alda:2026nrd]. Loops and the displayed higher-order remainder in the NLO operator basis are omitted.
+The real symmetric matrices $K_{IJ}$ and $M^2_{IJ}$ are divided into meson blocks $K_{ij}$, $M^2_{ij}$ and ALP–meson blocks $K_{i\hat a}$, $M^2_{i\hat a}$. The meson kinetic matrix and the pole operator $M^2_{ij}-m_a^2K_{ij}$ are assumed invertible at the pole. Retain only first order in ALP–meson mixing. Use Alda:2026nrd's trace convention $\langle Y\rangle=\operatorname{tr}(Y)$. The local NLO meson blocks are in [the neutral meson matrix record](neutral-meson-matrices.md); the mixed blocks follow from [the quadratic NLO Lagrangian](quadratic-lagrangian.md). The operator basis and source conventions are those of [@Kaiser:1998ds; @Alda:2026nrd]. Loops and the displayed higher-order remainder in the NLO operator basis are omitted.
 
-## Derivation
+## LSZ components and invariant source
 
-Let $s=p^2$ and define the meson and mixed inverse-propagator blocks
-
-$$
-A(s)=sK-M^2,\qquad B(s)=sk-\mu.
-$$
-
-To first order in the off-diagonal block, the ALP-pole meson overlap is
+Let $s=p^2$. The LSZ eigenvector equation of Alda:2026nrd, with $w_{\hat a}^{(a)}=1$ at this order, gives
 
 $$
-x(s)=-A(s)^{-1}B(s)=-(sK-M^2)^{-1}(sk-\mu).
+(sK_{ij}-M^2_{ij})w_j^{(a)}(s)
++(sK_{i\hat a}-M^2_{i\hat a})=0.
 $$
 
-The combination
+Define the field-redefinition-invariant meson source in this quadratic basis by
 
 $$
-\mathcal I=M^2K^{-1}k-\mu
+\mathcal C_i^{\rm pole}
+=M^2_{ij}(K_{\rm meson}^{-1})_{jk}K_{k\hat a}-M^2_{i\hat a},
+\qquad (K_{\rm meson})_{ij}=K_{ij}.
 $$
 
-does not depend on $s$. The identity
+This source has no dependence on $s$. The identity
 
 $$
-sk-\mu=\mathcal I-(sK-M^2)K^{-1}k
+sK_{i\hat a}-M^2_{i\hat a}
+=\mathcal C_i^{\rm pole}+(sK_{ij}-M^2_{ij})(K_{\rm meson}^{-1})_{jk}K_{k\hat a}
 $$
 
-then gives the split
+then splits the LSZ meson components into a pole contribution and the term associated with the ALP–meson kinetic block:
 
 $$
-\boxed{x(s)=-(sK-M^2)^{-1}\mathcal I-K^{-1}k.}
+\mathbb M_a^{\rm NLO}\equiv M^2_{ij}-m_a^2K_{ij},
+\qquad
+w_i^{(a)}(s)
+=[(M^2-sK)^{-1}]_{ij}\mathcal C_j^{\rm pole}
+-(K_{\rm meson}^{-1})_{ij}K_{j\hat a}.
 $$
 
-Now make a general ALP-dependent meson field shift $P=P'-r a$. Direct substitution into the quadratic form gives
+At the ALP pole the first term is $(\mathbb M_a^{\rm NLO})^{-1}_{ij}\mathcal C_j^{\rm pole}$. At LO, this operator reduces in flavor-matrix notation to Alda:2026nrd's Eq. (III.27),
 
 $$
-k'=k-Kr,\qquad \mu'=\mu-M^2r.
+\mathbb M_a(\bm{\mathcal C})
+=B_0\{m_q,\bm{\mathcal C}\}
++\frac{m_0^2}{3}\langle\bm{\mathcal C}\rangle\mathbf 1
+-m_a^2\bm{\mathcal C}.
 $$
 
-Therefore
+For the ALP-dependent field shift $P_i=P_i'-\rho_i a$, the mixed blocks become
 
 $$
-M^2K^{-1}k'-\mu'
-=M^2K^{-1}(k-Kr)-(\mu-M^2r)
-=M^2K^{-1}k-\mu=\mathcal I.
+K'_{i\hat a}=K_{i\hat a}-K_{ij}\rho_j,
+\qquad
+M_{i\hat a}^{2\prime}=M^2_{i\hat a}-M^2_{ij}\rho_j.
 $$
 
-Thus $\mathcal I$ is invariant under this field shift. The other term in the split transforms as
+It follows that $\mathcal C_i^{\rm pole}$ is unchanged, while the second term in the split shifts by $+\rho_i$. Thus $w_i^{(a)\prime}=w_i^{(a)}+\rho_i$, as required by $P_i=P_i'-\rho_i a$. Under a regular change of meson coordinates, $\mathcal C_i^{\rm pole}$ transforms as a source covector and $w_i^{(a)}$ as a field vector.
 
-$$
--(K^{-1}k')=-K^{-1}k+r,
-$$
-
-so $x'=x+r$, as required by $P=P'-ra$. The resolvent term is unchanged. Under a regular meson coordinate change $P=R Q$, $\mathcal I$ transforms as a source covector, while $x$ and $K^{-1}k$ transform as field vectors; the expression is consequently basis covariant.
-
-For an arbitrary source linearized as $\mathcal J=V_a a+V^TP$, the same field shift gives $V_a'=V_a-V^Tr$. The direct-plus-pole coefficient is
-
-$$
-V_a+V^Tx(s),
-$$
-
-and is unchanged because $V_a'+V^Tx'=V_a+V^Tx$. In the split form,
-
-$$
-V_a+V^Tx(s)
-=\underbrace{V_a-V^TK^{-1}k}_{\text{shift invariant}}
--V^T(sK-M^2)^{-1}\mathcal I.
-$$
-
-The first bracket is invariant since both $V_a$ and $K^{-1}k$ shift by the compensating amount. Equivalently, if the source is expressed in the shifted no-mixing fields, its direct coefficient is $V_a'=V_a-V^Tr$; it is the bare direct coefficient by itself that is basis dependent. The invariant source $\mathcal I$ and the pole resolvent give the compact NLO generalization of the LO LSZ organization. Its explicit U(3) flavor form follows from the general-matrix projection of the quadratic ALP–meson Lagrangian below.
-
-## U(3) source through the retained local NLO terms
-
-Use a complete normalized $U(3)$ generator basis and arbitrary Hermitian flavor matrices $c_q^A$ and $c_q^P$. No commutativity with the diagonal quark-mass spurion is assumed. Define
-
-$$
-(r_A)_i=\frac{f_\pi}{f_a}\operatorname{tr}(\lambda_i c_q^A).
-$$
-
-Projection of every derivative bilinear gives $k=-Kr_A$, including the $L_4,L_5,L_{18},\Lambda_1$ terms. Hence $-K^{-1}k=r_A$. With the established source combinations $c_q^{AP}=c_q^A-c_q^P$ and $c_{GA}=c_G+\operatorname{tr}c_q^A$, the invariant source is
-
-$$
-\mathcal I_i=\frac{f_\pi}{f_a}\operatorname{tr}\!\left[\lambda_i\left(C+\Delta C_{\rm NLO}\right)\right],
-\qquad C=-\frac12\{\chi_0,c_q^{AP}\}-\frac{m_0^2}{3}c_{GA}\mathbf 1,
-$$
-
-and, to first order in each retained local LEC,
+For a linear source $\mathcal J=V_{\hat a}a+V_iP_i$, the field shift gives $V'_{\hat a}=V_{\hat a}-V_i\rho_i$. Its direct-plus-pole coefficient is invariant:
 
 $$
 \begin{aligned}
-\Delta C_{\rm NLO}={}&-
+V_{\hat a}+V_iw_i^{(a)}(s)
+&=\underbrace{V_{\hat a}-V_i(K_{\rm meson}^{-1})_{ij}K_{j\hat a}}_{\text{shift invariant}}\\
+&\quad+V_i[(M^2-sK)^{-1}]_{ij}\mathcal C_j^{\rm pole}.
+\end{aligned}
+$$
+
+The invariant source and pole operator are the NLO generalization of the leading-order LSZ organization in Alda:2026nrd, Secs. III.C–D.
+
+## U(3) invariant source through the retained local NLO terms
+
+Use a complete normalized $U(3)$ generator basis and arbitrary Hermitian flavor matrices $c_q^A$ and $c_q^P$, without assuming they commute with the diagonal quark-mass spurion. Set $\chi_0=2B_0m_q$, $c_q^{AP}=c_q^A-c_q^P$, $c_{GA}=c_G+\operatorname{tr}c_q^A$, and $N_f=3$. Alda:2026nrd's invariant flavor matrix is
+
+$$
+\bm{\mathcal C}=-\frac12\{\chi_0,c_q^{AP}\}-\frac{m_0^2}{3}c_{GA}\mathbf 1.
+$$
+
+Including the retained local NLO operators gives
+
+$$
+\bm{\mathcal C}_{\rm NLO}=\bm{\mathcal C}+\Delta\bm{\mathcal C}_{\rm NLO},
+$$
+
+where, to first order in each retained local LEC,
+
+$$
+\begin{aligned}
+\Delta\bm{\mathcal C}_{\rm NLO}={}&-
 \frac{4L_8}{f_\pi^2}\{\chi_0,\{\chi_0,c_q^{AP}\}\}
 -\frac{8L_6}{f_\pi^2}\operatorname{tr}(\chi_0)\{\chi_0,c_q^{AP}\}
 -\frac{16L_7}{f_\pi^2}\operatorname{tr}(\chi_0c_q^{AP})\chi_0
@@ -126,25 +118,41 @@ c_{GA}\chi_0^2+\operatorname{tr}(\chi_0^2c_q^{AP})\mathbf 1
 \end{aligned}
 $$
 
-For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the LO term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown; and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from $\mathcal I_i$ after combining $M^2K^{-1}k$ with $\mu$. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ affect $K$ and $k$ together and do not enter this invariant source.
+Projection onto the meson basis gives the source in the LSZ equation:
+
+$$
+\mathcal C_i^{\rm pole}
+=\frac{f_\pi}{f_a}\left\langle\bm{\mathcal C}_{\rm NLO}\lambda_i^\dagger\right\rangle.
+$$
+
+For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the leading term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown, and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from $\bm{\mathcal C}_{\rm NLO}$ when the mixed kinetic and mass blocks are combined. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ change these blocks together and do not enter this invariant source.
+
+For these local terms, the derivative bilinears give
+
+$$
+-(K_{\rm meson}^{-1})_{ij}K_{j\hat a}
+=\frac{f_\pi}{f_a}\left\langle c_q^A\lambda_i^\dagger\right\rangle.
+$$
 
 The ALP-pole overlap is therefore
 
 $$
-\langle0|P|a\rangle
-=r_A-(m_a^2K-M^2)^{-1}\mathcal I
-=r_A+(M^2-m_a^2K)^{-1}\mathcal I.
+\boxed{
+\langle0|P_i|a\rangle=w_i^{(a)}(m_a^2)
+=\frac{f_\pi}{f_a}\left\langle c_q^A\lambda_i^\dagger\right\rangle
++[(\mathbb M_a^{\rm NLO})^{-1}]_{ij}\mathcal C_j^{\rm pole}.
+}
 $$
 
-This matrix result applies to the retained local operators without a diagonal-coupling assumption. It does not include loops or omitted higher-order operators.
+At LO this is Eq. (III.25) of Alda:2026nrd, with $K_{ij}=\delta_{ij}$ and diagonal $M^2_{ij}=m_i^2\delta_{ij}$. The displayed NLO expression retains the local operators above for general, noncommuting flavor matrices. It does not include loops or omitted higher-order operators.
 
 ## Reproducibility
 
-The general field-shift derivation is [`scripts/derive_nlo_lsz_invariant_split.py`](../../scripts/derive_nlo_lsz_invariant_split.py); the general noncommuting flavor-matrix derivation is [`scripts/derive_nlo_lsz_source_projection.py`](../../scripts/derive_nlo_lsz_source_projection.py). Run
+The general field-shift derivation is [`scripts/derive_nlo_lsz_invariant_split.py`](../../scripts/derive_nlo_lsz_invariant_split.py); the noncommuting flavor-matrix derivation is [`scripts/derive_nlo_lsz_source_projection.py`](../../scripts/derive_nlo_lsz_source_projection.py). Run
 
 ```text
 .venv/bin/python scripts/derive_nlo_lsz_invariant_split.py
 .venv/bin/python scripts/derive_nlo_lsz_source_projection.py
 ```
 
-The first script constructs the inverse-propagator block matrix and derives the invariant split and direct-plus-pole cancellation. The second differentiates the LO and NLO trace operators using noncommuting $3\times3$ matrix symbols and tests the ordered formulas on a non-diagonal Hermitian example. Its tests establish $k=-Kr_A$, cancellation of $c_q^A$, recovery of the general LO $C$, and the NLO spurion structures.
+The first script constructs the inverse-propagator block matrix and derives the invariant source split and direct-plus-pole cancellation. The second differentiates the LO and NLO trace operators using noncommuting $3\times3$ matrix symbols and tests the ordered formulas on a non-diagonal Hermitian example. Its tests establish the axial-block cancellation, recovery of Alda:2026nrd's leading invariant matrix $\bm{\mathcal C}$, and the NLO spurion structures.
