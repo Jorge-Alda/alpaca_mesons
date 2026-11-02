@@ -13,3 +13,4 @@ provenance: assumption
 - [Quadratic NLO Lagrangian](quadratic-lagrangian.md) — Two-meson and meson–ALP terms derived from the NLO basis
 - [Neutral meson matrices](neutral-meson-matrices.md) — NLO kinetic and mass matrices in the $(3,8,0)$ Gell-Mann basis
 - [LSZ invariant split](lsz-invariant-split.md) — invariant mixing source and the single field-dependent term in the generalized ALP–meson pole overlap
+- [LSZ operator inverse](lsz-operator-inverse.md) — full-flavor NLO extension of Alda:2026nrd's linear operator, its trace-system inverse, and strict-order solution
