@@ -91,39 +91,31 @@ V_a+V^Tx(s)
 -V^T(sK-M^2)^{-1}\mathcal I.
 $$
 
-The first bracket is invariant since both $V_a$ and $K^{-1}k$ shift by the compensating amount. Equivalently, if the source is expressed in the shifted no-mixing fields, its direct coefficient is $V_a'=V_a-V^Tr$; it is the bare direct coefficient by itself that is basis dependent. The invariant source $\mathcal I$ and the pole resolvent give the compact NLO generalization of the LO LSZ organization. To obtain explicit U(3) flavor combinations, one must still insert the projected NLO $k$ and $\mu$ from the quadratic ALP–meson Lagrangian.
+The first bracket is invariant since both $V_a$ and $K^{-1}k$ shift by the compensating amount. Equivalently, if the source is expressed in the shifted no-mixing fields, its direct coefficient is $V_a'=V_a-V^Tr$; it is the bare direct coefficient by itself that is basis dependent. The invariant source $\mathcal I$ and the pole resolvent give the compact NLO generalization of the LO LSZ organization. Its explicit U(3) flavor form follows from the general-matrix projection of the quadratic ALP–meson Lagrangian below.
 
-## Neutral U(3) source through the retained local NLO terms
+## U(3) source through the retained local NLO terms
 
-For diagonal $c_q^A$, $c_q^P$, and quark masses, define the axial shift components using the established generators:
-
-$$
-(r_A)_i=\frac{f_\pi}{f_a}\operatorname{tr}(\lambda_i c_q^A),\qquad i\in\{3,8,0\}.
-$$
-
-Projection of every derivative bilinear in the quadratic Lagrangian gives $k=-Kr_A$. This follows operator by operator for $L_4,L_5,L_{18},\Lambda_1$; hence the single field-dependent term in the overlap is
+Use a complete normalized $U(3)$ generator basis and arbitrary Hermitian flavor matrices $c_q^A$ and $c_q^P$. No commutativity with the diagonal quark-mass spurion is assumed. Define
 
 $$
--K^{-1}k=r_A
+(r_A)_i=\frac{f_\pi}{f_a}\operatorname{tr}(\lambda_i c_q^A).
 $$
 
-also with the retained NLO kinetic terms. Introduce the already defined source combinations $c_q^{AP}=c_q^A-c_q^P$ and $c_{GA}=c_G+\operatorname{tr}c_q^A$. Reconstructing the invariant neutral source from the $(3,8,0)$ projections yields
+Projection of every derivative bilinear gives $k=-Kr_A$, including the $L_4,L_5,L_{18},\Lambda_1$ terms. Hence $-K^{-1}k=r_A$. With the established source combinations $c_q^{AP}=c_q^A-c_q^P$ and $c_{GA}=c_G+\operatorname{tr}c_q^A$, the invariant source is
 
 $$
 \mathcal I_i=\frac{f_\pi}{f_a}\operatorname{tr}\!\left[\lambda_i\left(C+\Delta C_{\rm NLO}\right)\right],
-\qquad C=-\chi_0 c_q^{AP}-\frac{m_0^2}{3}c_{GA}\mathbf 1,
+\qquad C=-\frac12\{\chi_0,c_q^{AP}\}-\frac{m_0^2}{3}c_{GA}\mathbf 1,
 $$
 
-where, retaining terms linear in each LEC present in the current NLO basis,
+and, to first order in each retained local LEC,
 
 $$
 \begin{aligned}
 \Delta C_{\rm NLO}={}&-
-\frac{16}{f_\pi^2}\left[
-L_8\chi_0^2c_q^{AP}
-+L_6\operatorname{tr}(\chi_0)\chi_0c_q^{AP}
-+L_7\operatorname{tr}(\chi_0c_q^{AP})\chi_0
-\right]
+\frac{4L_8}{f_\pi^2}\{\chi_0,\{\chi_0,c_q^{AP}\}\}
+-\frac{8L_6}{f_\pi^2}\operatorname{tr}(\chi_0)\{\chi_0,c_q^{AP}\}
+-\frac{16L_7}{f_\pi^2}\operatorname{tr}(\chi_0c_q^{AP})\chi_0
 \\
 &-\frac{\Lambda_2}{3}\left[
 c_{GA}\chi_0+\operatorname{tr}(\chi_0c_q^{AP})\mathbf 1
@@ -134,7 +126,9 @@ c_{GA}\chi_0^2+\operatorname{tr}(\chi_0^2c_q^{AP})\mathbf 1
 \end{aligned}
 $$
 
-Thus the axial matrix $c_q^A$ cancels from $\mathcal I_i$ after combining $M^2K^{-1}k$ with $\mu$. The LECs $L_4,L_5,L_{18},\Lambda_1$ change the meson kinetic matrix and the kinetic mixing together, but do not enter this invariant source. The LECs $L_8,\Lambda_2,L_6,L_7,L_{25}$ give the displayed potential-source corrections. The same field-coordinate identity then writes the ALP-pole overlap as
+For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the LO term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown; and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from $\mathcal I_i$ after combining $M^2K^{-1}k$ with $\mu$. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ affect $K$ and $k$ together and do not enter this invariant source.
+
+The ALP-pole overlap is therefore
 
 $$
 \langle0|P|a\rangle
@@ -142,15 +136,15 @@ $$
 =r_A+(M^2-m_a^2K)^{-1}\mathcal I.
 $$
 
-This is the sought compact organization: one axial term $r_A$ changes with the ALP-dependent meson field choice, while the resolvent source is built only from $c_q^{AP}$ and $c_{GA}$ (and their NLO spurion dressings). The cancellation is established for diagonal neutral sources and the retained local operators; it is not a statement that loop corrections or omitted higher-order operators vanish.
+This matrix result applies to the retained local operators without a diagonal-coupling assumption. It does not include loops or omitted higher-order operators.
 
 ## Reproducibility
 
-The general field-shift derivation is [`scripts/derive_nlo_lsz_invariant_split.py`](../../scripts/derive_nlo_lsz_invariant_split.py); the explicit neutral projection is [`scripts/derive_nlo_lsz_source_projection.py`](../../scripts/derive_nlo_lsz_source_projection.py). Run
+The general field-shift derivation is [`scripts/derive_nlo_lsz_invariant_split.py`](../../scripts/derive_nlo_lsz_invariant_split.py); the general noncommuting flavor-matrix derivation is [`scripts/derive_nlo_lsz_source_projection.py`](../../scripts/derive_nlo_lsz_source_projection.py). Run
 
 ```text
 .venv/bin/python scripts/derive_nlo_lsz_invariant_split.py
 .venv/bin/python scripts/derive_nlo_lsz_source_projection.py
 ```
 
-The first script constructs the inverse-propagator block matrix, applies $P=P'-ra$, derives $k'$ and $\mu'$, forms $\mathcal I$, splits the overlap, and transforms the generic direct-plus-pole source. The second differentiates the indexed LO and NLO bilinears, projects them into the neutral generators, and reconstructs the flavor matrix using generator completeness. The scripts' symbolic tests establish field-shift invariance, cancellation of $c_q^A$ from the source, recovery of the LO $C$ combination, and agreement of the reconstructed flavor source with all three neutral projections.
+The first script constructs the inverse-propagator block matrix and derives the invariant split and direct-plus-pole cancellation. The second differentiates the LO and NLO trace operators using noncommuting $3\times3$ matrix symbols and tests the ordered formulas on a non-diagonal Hermitian example. Its tests establish $k=-Kr_A$, cancellation of $c_q^A$, recovery of the general LO $C$, and the NLO spurion structures.
