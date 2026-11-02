@@ -131,7 +131,21 @@ $$
 \end{aligned}
 $$
 
-The trace terms left outside $\mathbb D_a$ only depend on $X$ through $\operatorname{tr}(X)$, $\operatorname{tr}(\chi_0X)$, and $\operatorname{tr}(\chi_0^2X)$. Their output lies in the span of $\mathbf1,\chi_0,\chi_0^2$. This is why $\mathbb D_a$ is useful: it contains the part that can be inverted element by element, leaving only a three-dimensional trace problem. It is a computational decomposition of $\mathbb M_a^{\rm loc,NLO}$, not an additional physical operator.
+The trace terms left outside $\mathbb D_a$ only depend on $X$ through the three scalar moments $t_0=\operatorname{tr}(X)$, $t_1=\operatorname{tr}(\chi_0X)$, and $t_2=\operatorname{tr}(\chi_0^2X)$. Substituting these moments into the remaining operator gives
+
+$$
+\begin{aligned}
+\mathbb R_a[X]={}&
+\left[\frac{m_0^2-w\Lambda_1}{3}t_0
++\left(\frac{\Lambda_2}{3}-\frac{4wL_{18}}{f_\pi^2}\right)t_1
+-\frac{8L_{25}}{f_\pi^2}t_2\right]\mathbf1\\
+&+\left[\left(\frac{\Lambda_2}{3}-\frac{4wL_{18}}{f_\pi^2}\right)t_0
++\frac{16L_7}{f_\pi^2}t_1\right]\chi_0
+-\frac{8L_{25}}{f_\pi^2}t_0\chi_0^2.
+\end{aligned}
+$$
+
+Thus $\mathbb R_a[X]$ always lies in the three-dimensional span of $\mathbf1,\chi_0,\chi_0^2$, even though $X$ ranges over the full nine-dimensional flavor-matrix space. This is why $\mathbb D_a$ is useful: it contains the part that can be inverted element by element, leaving only three scalar moments to determine. It is a computational decomposition of $\mathbb M_a^{\rm loc,NLO}$, not an additional physical operator.
 
 ### 3. Invert the elementwise part
 
@@ -153,11 +167,31 @@ d_{ij}={}&\frac{\chi_i+\chi_j}{2}-w
 \end{aligned}
 $$
 
-This is a component-level equation; the preceding operator equations remain in matrix form.
+This is a component-level equation; the preceding operator equations remain in matrix form. In particular, $\mathbb D_a$ does not mix different $E_{ij}$ directions. For each $E_{ij}$ the two anticommutators multiply by $\chi_i+\chi_j$ and $(\chi_i+\chi_j)^2$, respectively; the displayed $d_{ij}$ is the resulting scalar eigenvalue. Inverting $\mathbb D_a$ therefore means dividing each matrix entry by its own $d_{ij}$. The trace operator $\mathbb R_a$ is what couples those entries back together.
 
 ### 4. Solve the remaining trace system
 
-The trace terms in the matrix operator have coefficient matrix, in the ordered trace basis $(\mathbf1,\chi_0,\chi_0^2)$,
+The trace operator just written has output coefficients $h_0,h_1,h_2$ multiplying $\mathbf1,\chi_0,\chi_0^2$. These coefficients are linear in the input moments:
+
+$$
+\begin{pmatrix}h_0\\h_1\\h_2\end{pmatrix}
+=H\begin{pmatrix}t_0\\t_1\\t_2\end{pmatrix}.
+$$
+
+In components of this three-dimensional trace space, this says
+
+$$
+\begin{aligned}
+h_0&=\frac{m_0^2-w\Lambda_1}{3}t_0
++\left(\frac{\Lambda_2}{3}-\frac{4wL_{18}}{f_\pi^2}\right)t_1
+-\frac{8L_{25}}{f_\pi^2}t_2,\\
+h_1&=\left(\frac{\Lambda_2}{3}-\frac{4wL_{18}}{f_\pi^2}\right)t_0
++\frac{16L_7}{f_\pi^2}t_1,\\
+h_2&=-\frac{8L_{25}}{f_\pi^2}t_0.
+\end{aligned}
+$$
+
+The coefficient matrix, in the ordered trace basis $(\mathbf1,\chi_0,\chi_0^2)$, is
 
 $$
 H=\begin{pmatrix}
@@ -167,7 +201,13 @@ H=\begin{pmatrix}
 \end{pmatrix}.
 $$
 
-For the component-level trace system define
+To solve $\mathbb M_a^{\rm loc,NLO}[X]=Y$, first move the trace part to the right and apply the elementwise inverse:
+
+$$
+X=\mathbb D_a^{-1}\!\left[Y-h_0\mathbf1-h_1\chi_0-h_2\chi_0^2\right].
+$$
+
+Now take the three traces of this equation. The input source gives the vector $b$, while the response to each basis matrix gives $G$:
 
 $$
 b_r=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[Y]\right),\qquad
@@ -175,51 +215,32 @@ G_{rt}=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[\chi_0^t]\right),
 \qquad r,t=0,1,2.
 $$
 
-Solving its three equations gives $T=(I_3+GH)^{-1}b$ and $q=HT$. Substituting the three solved scalar coefficients back as a flavor matrix gives
+In this component-level notation $T=(t_0,t_1,t_2)^T$, $h=HT$, and the three trace equations read
+
+$$
+T=b-Gh=b-GHT,
+\qquad (I_3+GH)T=b.
+$$
+
+$I_3$ is the identity in this three-dimensional trace-moment space; it is distinct from the flavor identity $\mathbf1$. Solving gives $T=(I_3+GH)^{-1}b$ and then $q=h=HT$. Substituting these three scalar coefficients back into the matrix equation gives
 
 $$
 \boxed{(\mathbb M_a^{\rm loc,NLO})^{-1}[Y]
 =\mathbb D_a^{-1}\!\left[Y-q_0\mathbf1-q_1\chi_0-q_2\chi_0^2\right].}
 $$
 
-At LO only the identity trace direction remains, and this reduces to the rank-one inverse given above. The exact inverse here is for the truncated local operator and resums products of retained LECs; use the strict first-order expression below when claiming NLO accuracy.
-
-$$
-(\mathbb D_a^{-1}[Y])_{ij}=\frac{Y_{ij}}{d_{ij}},
-$$
-
-with
-
-$$
-\begin{aligned}
-d_{ij}={}&\frac{\chi_i+\chi_j}{2}-w
-+\frac{4L_8}{f_\pi^2}(\chi_i+\chi_j)^2
-+\frac{8L_6\operatorname{tr}(\chi_0)}{f_\pi^2}(\chi_i+\chi_j)\\
-&-\frac{4wL_5}{f_\pi^2}(\chi_i+\chi_j)
--\frac{8wL_4\operatorname{tr}(\chi_0)}{f_\pi^2}.
-\end{aligned}
-$$
-
-For the component-level trace system, define the three trace moments and its $3\times3$ matrices by
-
-$$
-b_r=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[Y]\right),\qquad
-G_{rt}=\operatorname{tr}\!\left(\chi_0^r\mathbb D_a^{-1}[\chi_0^t]\right),
-\qquad r,t=0,1,2.
-$$
-
-The trace moments of the solution are $T=(I_3+GH)^{-1}b$, and set $q=HT$. The exact inverse of this **truncated local operator**, written as a matrix expression, is
-
-$$
-\boxed{(\mathbb M_a^{\rm loc,NLO})^{-1}[Y]
-=\mathbb D_a^{-1}\!\left[Y-q_0\mathbf1-q_1\chi_0-q_2\chi_0^2\right].}
-$$
-
-No inverse of $H$ is needed. At LO, $H_{00}=g$ is the only nonzero entry; the formula reduces to the rank-one trace inverse above. Exact inversion of the truncated operator resums products of LECs, so it should be distinguished from a strict NLO expansion.
+At LO, $H_{00}=g$ is the only nonzero entry; the formula reduces to the rank-one trace inverse above. No inverse of $H$ is needed. This exact inverse is for the truncated local operator and resums products of retained LECs, so it should be distinguished from a strict NLO expansion.
 
 ## Strict NLO source solution
 
-Write $\mathbb M_a^{\rm loc,NLO}=\mathbb M_{a,0}+\Delta\mathbb M_a$ and $C_{\rm NLO}=C+\Delta C_{\rm NLO}$, with $C$ and $\Delta C_{\rm NLO}$ given in [the invariant-source record](lsz-invariant-split.md). Expanding the operator equation $\mathbb M_a^{\rm loc,NLO}[S]=C_{\rm NLO}$ to first order gives
+Write $\mathbb M_a^{\rm loc,NLO}=\mathbb M_{a,0}+\Delta\mathbb M_a$, $S=S_0+\Delta S$, and $C_{\rm NLO}=C+\Delta C_{\rm NLO}$, with $C$ and $\Delta C_{\rm NLO}$ given in [the invariant-source record](lsz-invariant-split.md). Substitute these into $\mathbb M_a^{\rm loc,NLO}[S]=C_{\rm NLO}$ and retain first order:
+
+$$
+\mathbb M_{a,0}[S_0]+\mathbb M_{a,0}[\Delta S]
++\Delta\mathbb M_a[S_0]=C+\Delta C_{\rm NLO}.
+$$
+
+The LO equation is $\mathbb M_{a,0}[S_0]=C$. Subtracting it leaves $\mathbb M_{a,0}[\Delta S]=\Delta C_{\rm NLO}-\Delta\mathbb M_a[S_0]$, and applying the LO inverse gives
 
 $$
 S_0=\mathbb M_{a,0}^{-1}[C],\qquad
