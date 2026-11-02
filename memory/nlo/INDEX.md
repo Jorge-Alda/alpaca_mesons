@@ -9,10 +9,11 @@ provenance: assumption
 
 # NLO
 
-- [NLO Lagrangian](lagrangian.md) — Full NLO Lagrangian in the notation of Alda:2026nrd
+- [NLO Lagrangian](lagrangian.md) — Retained NLO Lagrangian in Alda:2026nrd notation and the reduced $V_4=0$ source convention
 - [Quadratic NLO Lagrangian](quadratic-lagrangian.md) — Two-meson and meson–ALP terms derived from the NLO basis
 - [Neutral meson matrices](neutral-meson-matrices.md) — NLO kinetic and mass matrices in the $(3,8,0)$ Gell-Mann basis
 - [LSZ invariant split](lsz-invariant-split.md) — Alda:2026nrd quadratic-matrix and LSZ-component notation with the NLO invariant source
 - [ALP–meson kinetic-block alignment](kinetic-block-alignment.md) — Condition and derivation for the universal axial-coupling contribution to the ALP–meson overlap
+- [Singlet-source derivative basis](singlet-source-derivative-basis.md) — Mapping of Kaiser’s removable cross term and remaining source square into Alda:2026nrd notation
 - [LSZ operator inverse](lsz-operator-inverse.md) — full-flavor NLO extension of Alda:2026nrd's linear operator, its trace-system inverse, and strict-order solution
 - [Resonance saturation and dynamical masses](resonance-saturation-and-dynamical-masses.md) — tree-level matching of resonance exchange to NLO LECs and retention of pseudoscalar masses and mixings with explicit resonances

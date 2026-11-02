@@ -58,7 +58,7 @@ In one dimension this is $v-\Delta/K$, displaying the failure without the common
 
 ## Scope
 
-The claim is limited to the displayed local derivative operators, with loops and omitted higher-order operators excluded as in [the invariant-split record](lsz-invariant-split.md). Extra derivative interactions containing independent ALP sources can change the mixed kinetic block. The algebraic factorization itself is exact for any symmetric $K$ obeying it; when $K$ is truncated at NLO, it is understood to that truncation order.
+The claim is limited to the displayed local derivative operators in the $V_4=0$ field convention, with loops and omitted higher-order operators excluded as in [the invariant-split record](lsz-invariant-split.md). The general source-dependent derivative expansion includes $V_4D_\mu\psi D^\mu\theta$; Kaiser:1998ds removes it by a meson-field redefinition, as recorded in [the source extract](../extracts/Kaiser:1998ds/singlet-source-derivative-terms.md). If retained explicitly, it can add independent ALP–meson kinetic mixing, so the vielbein-only alignment relation does not apply to that block without also accounting for the field redefinition. The algebraic factorization itself is exact for any symmetric $K$ obeying it; when $K$ is truncated at NLO, it is understood to that truncation order.
 
 ## Reproducibility
 

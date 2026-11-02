@@ -1,5 +1,5 @@
 ---
-title: Full NLO Chiral perturbation Lagrangian
+title: Retained NLO chiral Lagrangian in the V4=0 convention
 status: derived
 created: 2026-11-02
 updated: 2026-11-02
@@ -40,6 +40,8 @@ D_\mu\psi = -\langle \bm{u_\mu}\rangle
 $$
 
 ## NLO Lagrangian
+
+The source's most general derivative expansion already contains a term proportional to $V_4 D_\mu\psi D^\mu\theta$. It is not excluded by chiral symmetry. Kaiser:1998ds then uses the freedom in the meson field variables, $U\to U\exp[i f(\psi+\theta)]$, to set $V_4=0$; it also discards the pure-source $V_5 D_\mu\theta D^\mu\theta$ term for the meson masses, decay constants, and photonic transition rates considered there [the source extract](../extracts/Kaiser:1998ds/singlet-source-derivative-terms.md) [@Kaiser:1998ds]. The basis below is therefore the reduced convention used for the retained calculation, not the unrestricted source-dependent derivative basis.
 
 Kaiser:1998ds organizes the NLO terms according to their power counting in the combined $p$, $m_q$ and $1/N_c$ expansion, with expansion parameter $\delta$,
 

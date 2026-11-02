@@ -53,6 +53,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Jamin:2006tj](Jamin:2006tj/INDEX.md) — source-specific literature extracts.
 - [KLOE:2003kas](KLOE:2003kas/INDEX.md) — source-specific literature extracts.
 - [Knecht:2001qf](Knecht:2001qf/INDEX.md) — pion TFF single-virtual falloff and symmetric OPE coefficient adapted to the canonical fixed-phase signed scalar.
+- [Kaiser:1998ds](Kaiser:1998ds/INDEX.md) — general singlet-source derivative terms and the field redefinition that removes the $V_4$ cross term.
 - [Kaiser:2000gs](Kaiser:2000gs/INDEX.md) — source-specific literature extracts.
 - [Kastner:2008ch](Kastner:2008ch/INDEX.md) — source-specific literature extracts.
 - [Kubis:2001bx](Kubis:2001bx/INDEX.md) — source-specific literature extracts.
