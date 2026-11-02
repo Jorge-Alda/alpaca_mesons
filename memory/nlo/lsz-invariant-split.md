@@ -127,7 +127,7 @@ $$
 
 For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the leading term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown, and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from $\bm{\mathcal C}_{\rm NLO}$ when the mixed kinetic and mass blocks are combined. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ change these blocks together and do not enter this invariant source.
 
-For these local terms, the derivative bilinears give
+For these local terms, the derivative bilinears give the kinetic-block relation derived in [the kinetic-alignment record](kinetic-block-alignment.md):
 
 $$
 -(K_{\rm meson}^{-1})_{ij}K_{j\hat a}
