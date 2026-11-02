@@ -12,6 +12,7 @@ provenance: literature
 Source-specific literature extracts for BibTeX key `Alda:2026nrd`.
 
 - [appendix-a-expansion.md](appendix-a-expansion.md) — source-verified CCWZ commutator ordering, vielbein/source expansion and no-bilinear-mixing field redefinition.
+- [baryon-couplings.md](baryon-couplings.md) — Section V octet-baryon CCWZ operators and the first-order no-mixing ALP couplings.
 - [photon-anomaly-normalization.md](photon-anomaly-normalization.md) — evidenced axial rotation and conditional photon Jacobian in the canonical upper-index dual convention, with reference conversion in memory.
 
 - [neutral-meson-generators.md](neutral-meson-generators.md) — arXiv-v1 mass-diagonalization appendix generators, normalization and fitted spurion inputs.

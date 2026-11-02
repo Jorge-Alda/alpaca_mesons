@@ -2,7 +2,7 @@
 title: Finite ALP-meson mixing and one-ALP amplitudes
 status: derived
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-03
 bibtex_keys: [Alda:2026nrd, DiLuzio:2026poh]
 provenance: analytical-derivation
 ---
@@ -23,7 +23,7 @@ Use the CCWZ building blocks and spurion transformations in the [Appendix-A sour
 
 ## Chiral covariance
 
-The starting point is the invariant chiral Lagrangian, not a component mixing angle. Under $U(3)_L\times U(3)_R$, take $U\to LUR^\dagger$ and the mass spurion $\chi\to L\chi R^\dagger$; external sources and the CCWZ blocks transform as specified in the Appendix-A record. If the ALP phase appears in a dynamical spurion, its transformation must be included in the spurion rule. Thus $\langle u_\mu u^\mu\rangle$, $\langle\chi_+\rangle$, and the topological invariant remain covariant/invariant before any expansion. A linear field redefinition among $a$ and pseudoscalar coordinates is a change of coordinates on this same theory and does not break chiral covariance.
+The LO theory is expressed through the CCWZ building blocks $u_\mu$, $\chi_\pm$, and $X_{TC}$. Under a chiral transformation they transform as $u_\mu\to h u_\mu h^\dagger$, $\chi_\pm\to h\chi_\pm h^\dagger$, and $X_{TC}\to X_{TC}$, with external sources and the anomalous singlet source transformed consistently as recorded in the [Appendix-A extract](../../extracts/Alda:2026nrd/appendix-a-expansion.md) and [topological-source extract](../../extracts/Alda:2026nrd/lo-topological-action.md). Consequently, $\langle u_\mu u^\mu\rangle$, $\langle\chi_+\rangle$, and $X_{TC}^2$ are unchanged. The field redefinition below is treated in these same CCWZ variables.
 
 ## Exact quadratic theory
 
@@ -64,55 +64,154 @@ $$
 \mathcal L_{\rm kin}^{(2)}=\frac12(\partial_\mu P_i-v_i\partial_\mu a)^2+\frac12(\partial_\mu a)^2.
 $$
 
-Set $P_i=Q_i+v_i a$. This preserves chiral covariance as a change of field coordinates, makes the quadratic kinetic terms canonical, and gives
+Set $P_i=P'_i+v_i a$. This makes the quadratic kinetic terms canonical and gives
 
 $$
-M_{Q Q}^2=M_{PP}^2,\qquad
-M_{Qa}^2=b_i=M^2_{ia}+M^2_{ij}v_j,\qquad
-M_{aa,\rm can}^2=d=M^2_{aa}+2v_iM^2_{ia}+v_iM^2_{ij}v_j.
+M_{P'P'}^2=M_{PP}^2,\qquad
+M_{P'\hat a}^2=M^2_{i\hat a}+M^2_{ij}v_j,\qquad
+M_{\hat a\hat a,\rm can}^2=M^2_{\hat a\hat a}+2v_iM^2_{i\hat a}+v_iM^2_{ij}v_j.
 $$
 
-Thus the exact canonical mass matrix is $\begin{pmatrix}M^2_{PP}&b\\b^T&d\end{pmatrix}$. It must be diagonalized as a whole. In particular, $m_{a,0}^2$ alone is not the physical ALP mass, and the off-diagonal block $b$ need not be small when $f_a\simeq f_\pi$. Stability requires the full mass Hessian to be nonnegative (strictly positive for massive, nondegenerate poles); a positive bare $m_{a,0}^2$ alone does not ensure this for arbitrary source choices.
+The exact canonical mass matrix is the full matrix with these blocks, and must be diagonalized as a whole. In particular, $m_{a,0}^2$ alone is not the physical ALP mass, and $M^2_{i\hat a}+M^2_{ij}v_j$ need not be small when $f_a\simeq f_\pi$. Stability requires the full mass Hessian to be nonnegative (strictly positive for massive, nondegenerate poles); a positive bare $m_{a,0}^2$ alone does not ensure this for arbitrary source choices.
 
 For an isolated single meson coordinate with diagonal mass $m_P^2$, the two exact eigenvalues are
 
 $$
-m_\pm^2=\frac{m_P^2+d}{2}\pm\frac12\sqrt{(d-m_P^2)^2+4b^2}.
+m_\pm^2=\frac{m_P^2+M_{\hat a\hat a,\rm can}^2}{2}
+\pm\frac12\sqrt{(M_{\hat a\hat a,\rm can}^2-m_P^2)^2+4(M_{P\hat a,\rm can}^2)^2}.
 $$
 
-At degeneracy the splitting is $2|b|$, so the small-mixing expansion in $b/(d-m_P^2)$ fails precisely where the levels approach. In the full neutral sector this is replaced by diagonalizing the complete $(P_i,a)$ matrix; a particular pion can receive a mass shift only through the components and source structure that mix with it.
+At degeneracy the splitting is $2|M_{P\hat a,\rm can}^2|$, so the small-mixing expansion fails precisely where the levels approach. In the full neutral sector this is replaced by diagonalizing the complete $(P_i,a)$ matrix; a particular pion can receive a mass shift only through the components and source structure that mix with it.
 
-Equivalently, before the kinetic-coordinate change, solve the generalized eigenproblem
-
-$$
-M^2 v^{(n)}=m_n^2 K v^{(n)},\qquad v^{(n)T}K v^{(m)}=\delta_{nm}.
-$$
-
-If $O$ is the orthogonal matrix that diagonalizes the canonical matrix, the pole masses are its eigenvalues and the canonical fields are $(Q_i,a)^T=O_{In}\varphi_n$. Equivalently, for a simple pole $s=m_n^2$, the meson components in the original coordinates relative to an $a$ component equal to one are
+For the physical pole $s=m_a^2$, write the eigenvector in Alda:2026nrd's normalization as $(w_i^{(a)}(s),1)^T$. It obeys the exact mixed-field equation
 
 $$
-P_i=(O_{in}+v_iO_{an})\varphi_n,\qquad a=O_{an}\varphi_n.
+\begin{aligned}
+(sK_{ij}-M^2_{ij})w_j^{(a)}(s)&+(sK_{i\hat a}-M^2_{i\hat a})=0,\\
+w_i^{(a)}(s)&=[(M^2-sK)^{-1}]_{ij}(sK_{j\hat a}-M^2_{j\hat a}).
+\end{aligned}
 $$
 
-This relation displays both the meson content and the overlap of the physical pole with the original ALP field. It is exact for the stated LO quadratic theory.
+When the inverse exists, this gives the meson overlap exactly; at exceptional points use the full generalized eigenproblem. The pole normalization is
+
+$$
+K_{\hat a\hat a}+2K_{i\hat a}w_i^{(a)}(s)+K_{ij}w_i^{(a)}(s)w_j^{(a)}(s).
+$$
+
+For a simple stable pole, its external-leg factor is the inverse square root of this expression, evaluated at $s=m_a^2$.
 
 ## One-ALP amplitudes
 
-Let $v^{(a)}$ be the $K$-normalized eigenvector for the physical pole identified continuously with the ALP as the mixing is turned off. For any amputated interaction vertex with one external scalar leg and arbitrary other on-shell legs, the physical amplitude is the coherent projection
+At finite mixing, use the exact ALP-pole eigenvector $w_i^{(a)}(m_a^2)$ from the preceding section. The general one-leg amplitude, with all other external legs already projected onto their physical states, is
 
 $$
-\mathcal M(a_{\rm phys},X)=v_I^{(a)}\,\Gamma_I(X),
+\mathcal M(a_{\rm phys},X)=
+\frac{\mathcal V_{\hat a}(m_a^2;X)+\mathcal V_i(m_a^2;X)w_i^{(a)}(m_a^2)}
+{\sqrt{K_{\hat a\hat a}+2K_{i\hat a}w_i^{(a)}+K_{ij}w_i^{(a)}w_j^{(a)}}}.
 $$
 
-where $\Gamma_I$ is the set of vertices with one original-coordinate field $\Phi_I$ on that leg, evaluated at the physical pole with the same field coordinates and full quadratic prescription. In the canonical coordinates the expression is
+Here $\mathcal V_{\hat a}$ and $\mathcal V_i$ are amputated interaction vertices with one $a$ or $P_i$ leg. This formula applies to an incoming or outgoing ALP, with the usual crossing of momenta and complex conjugation.
+
+Now make a finite ALP-dependent axial change of variables with group element
 
 $$
-\mathcal M(\varphi_n,X)=O_{an}\Gamma_a(X)+(O_{in}+v_iO_{an})\Gamma_i(X).
+L_a=\exp\!\left[-\frac{ia}{2f_\pi}w_i^{(a)}(m_a^2)\lambda_i\right],
+\qquad R_a=L_a^\dagger.
 $$
 
-For the pole continuously connected to the bare ALP, the second term is its meson component and can be order one. This applies to initial or final one-ALP states; crossing changes momenta and conjugation conventions, not the pole eigenvector. If eigenvalues are degenerate or nearly degenerate, use the full pole subspace instead of assigning a unique ALP label by continuity. All other external legs must also be projected onto their physical eigenvectors.
+In CCWZ language, the transformed building blocks obey
 
-The result is invariant under a nonsingular linear field-coordinate change when $K,M^2$, vertices, and external eigenvectors are all transformed together. In particular, removing $K_{i\hat a}$ and then keeping only the shifted direct vertex is incorrect: the mass mixing and the transformed interaction vertices must also be retained. At first order in mixing, the general expression reduces to the direct-plus-meson-pole LSZ organization in [the invariant LSZ split](../../../nlo/lsz-invariant-split.md); that record explicitly assumes first order and is not itself a finite-mixing result.
+$$
+u_\mu' = h u_\mu h^\dagger,\qquad
+\chi_\pm'=h\chi_\pm h^\dagger,\qquad
+X_{TC}'=X_{TC},
+$$
+
+where $h$ is the compensator associated with the composed chiral transformation. The external left and right sources transform with the local chiral connection terms, and the anomalous singlet source includes the axial Jacobian. Therefore the LO invariants are unchanged:
+
+$$
+\langle u_\mu'u'^{\mu}\rangle=\langle u_\mu u^{\mu}\rangle,\qquad
+\langle\chi_+'\rangle=\langle\chi_+\rangle,\qquad
+(X_{TC}')^2=X_{TC}^2.
+$$
+
+This establishes covariance without using $U$ or $\chi$ as working variables. The mixing vector $w_i^{(a)}(m_a^2)$ is kept exact. Only the coordinate map is expanded about the vacuum to determine the quadratic Hessian: with $\phi=\Phi/(2f_\pi)$,
+
+$$
+\phi'=\phi-\frac{a}{2f_\pi}w_i^{(a)}(m_a^2)\lambda_i
++O(\text{fields}^2),
+\qquad P'_i=P_i-w_i^{(a)}(m_a^2)a+O(\text{fields}^2).
+$$
+
+This truncation is sufficient for the quadratic blocks because their Hessian at the vacuum depends only on the linear part of a field redefinition. It is not an expansion in the mixing or in $f_\pi/f_a$. For interaction amplitudes with several mesons, higher terms in the CCWZ coordinate map generate additional vertices. The complete transformed direct vertex must include them; retaining only the tangent-space shift would generally omit contact contributions. If the other external legs are also expressed in primed coordinates, their projections must be transformed as well.
+
+In the following block formulas, $w_i^{(a)}$ means $w_i^{(a)}(m_a^2)$. The finite linear map gives the following quadratic-block transformation (the displayed blocks are exact for the quadratic Lagrangian):
+
+$$
+\begin{aligned}
+K'_{ij}&=K_{ij}, & K'_{i\hat a}&=K_{i\hat a}+K_{ij}w_j^{(a)},
+&K'_{\hat a\hat a}&=K_{\hat a\hat a}+2w_i^{(a)}K_{i\hat a}+w_i^{(a)}K_{ij}w_j^{(a)},\\
+M_{ij}^{2\prime}&=M^2_{ij}, & M_{i\hat a}^{2\prime}&=M^2_{i\hat a}+M^2_{ij}w_j^{(a)},
+&M_{\hat a\hat a}^{2\prime}&=M^2_{\hat a\hat a}+2w_i^{(a)}M^2_{i\hat a}+w_i^{(a)}M^2_{ij}w_j^{(a)}.
+\end{aligned}
+$$
+
+Consequently, the mixed inverse-propagator block transforms as
+
+$$
+sK'_{i\hat a}-M_{i\hat a}^{2\prime}
+=(sK_{i\hat a}-M^2_{i\hat a})+(sK_{ij}-M^2_{ij})w_j^{(a)}.
+$$
+
+The ALP-pole equation is $(m_a^2K_{ij}-M^2_{ij})w_j^{(a)}+(m_a^2K_{i\hat a}-M^2_{i\hat a})=0$. Therefore
+
+$$
+m_a^2K'_{i\hat a}-M_{i\hat a}^{2\prime}=0,\qquad
+w_i^{(a)\prime}(m_a^2)=w_i^{(a)}(m_a^2)-w_i^{(a)}(m_a^2)=0.
+$$
+
+Thus the mixing vanishes on the chosen pole in the primed coordinates. The kinetic and mass mixed blocks need not vanish separately, nor does this choice diagonalize the propagator at every $s$; it aligns the fields with this one exact pole.
+
+For the interaction source, write the amputated term linear in the external leg as
+
+$$
+\mathcal V^{(1)}=a\mathcal V_{\hat a}+P_i\mathcal V_i.
+$$
+
+Substituting $P_i=P'_i+w_i^{(a)}a$ gives
+
+$$
+\mathcal V'_{\hat a}=\mathcal V_{\hat a}+w_i^{(a)}\mathcal V_i,
+\qquad \mathcal V'_i=\mathcal V_i.
+$$
+
+For a vertex linear in the external fields, the linear part of the redefinition gives the direct primed source
+
+$$
+\mathcal V'_{\hat a}(m_a^2;X)
+=\mathcal V_{\hat a}(m_a^2;X)+\mathcal V_i(m_a^2;X)w_i^{(a)}(m_a^2).
+$$
+
+The normalization transforms into the ALP diagonal kinetic entry:
+
+$$
+K'_{\hat a\hat a}
+=K_{\hat a\hat a}+2K_{i\hat a}w_i^{(a)}+K_{ij}w_i^{(a)}w_j^{(a)}.
+$$
+
+For the full chiral transformation, define $\mathcal V_{\hat a,\mathrm{full}}'$ by substituting the exact exponential map and transformed spurions into the complete LO interaction Lagrangian, then taking the amputated vertex with one $a$ leg. This includes the nonlinear contact vertices mentioned above. The physical amplitude in primed variables is
+
+$$
+\boxed{\displaystyle
+\mathcal M(a_{\rm phys},X)=
+\frac{\mathcal V'_{\hat a,\mathrm{full}}(m_a^2;X)}
+{\sqrt{K'_{\hat a\hat a}}}.
+}
+$$
+
+In CCWZ terms, construct $\mathcal L'_{\rm LO}=\mathcal L_{\rm LO}[u_\mu',\chi_+',X_{TC}']$ with the transformed sources, then differentiate with respect to the external $a$ and expand in the meson coordinates needed for $X$. The chain rule differentiates the complete building blocks, including their nonlinear dependence on $\phi$; this generates the contact terms. Thus $\mathcal V_{\hat a}+w_i^{(a)}\mathcal V_i$ is the tangent-space one-leg contribution, while the full CCWZ prescription supplies the rest for multi-meson channels.
+
+The quadratic pole alignment and normalization are exact. In the transformed interaction, all meson contributions are now part of the direct physical-ALP vertex; this includes the explicit linear contribution $\mathcal V_{\hat a}+w_i^{(a)}\mathcal V_i$ and, for multi-meson channels, the nonlinear contact terms fixed by the exponential map. Substituting the invertible chiral field redefinition into the full covariant LO Lagrangian leaves the generating functional unchanged (with the external sources and anomalous singlet source transformed as stated), so its on-shell S-matrix is unchanged. This is the finite-mixing counterpart of Alda:2026nrd's no-mixing organization. It does not permit retaining the original direct ALP vertices while discarding meson vertices. At first order, the transformed source reduces to the local prescription organized in [the LSZ invariant-split record](../../../nlo/lsz-invariant-split.md); at finite mixing it depends on the full pole vector and the complete transformed interactions.
 
 ## What changes relative to the small-mixing regime
 
