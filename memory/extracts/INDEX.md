@@ -82,3 +82,4 @@ Each child folder is a source-specific extract collection; see its files for the
 - [NA60:2016nad](NA60:2016nad/INDEX.md) — NA60 muon-channel spectra for $\omega\to\pi^0\mu^+\mu^-$ and the associated eta Dalitz measurement.
 - [Pelaez:2019eqa](Pelaez:2019eqa/INDEX.md) — full Madrid isovector P-wave parameterization with 2024 corrected coefficients for KT phase inputs.
 - [Colangelo:2018mtw](Colangelo:2018mtw/INDEX.md) — updated Roy-equation P-wave phase input fitted to $e^+e^-\to\pi^+\pi^-$ data and its uncertainty/continuation treatment.
+- [DiLuzio:2026poh](DiLuzio:2026poh/INDEX.md) — CP-odd axion–meson mass matrix from a dynamical Peccei–Quinn field and its quark-mass spurion.
