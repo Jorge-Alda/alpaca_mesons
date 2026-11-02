@@ -18,6 +18,7 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 - [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
 - [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
 - [RChT](rcht/INDEX.md) — foundations, odd-sector conventions and operators, normalized kernels, literature prescription matching and flat inputs, external KT amplitude grid adapter, corrected Madrid pion-scattering phase tables, physical-input KT numerical checks and focused original-operator preliminary fit, conditional calibration/profiles, finite ALP target/null audits and matching/completion plans.
+- [NLO ChiPT](nlo/INDEX.md) — Extension of the ChiPT Lagrangian to Next to leading order terms, diagonalisation of the resulting quadratic terms and matching to Resonance ChiPT assuming resonance saturation.
 - [Literature extracts](extracts/INDEX.md) — source-backed modular paper digests, including Alda:2026nrd's commutator/source conventions and the Bauer photon-operator normalization and tensor convention.
 
 The ignored [source archive](sources/INDEX.md) contains downloaded source material rather than research records.
