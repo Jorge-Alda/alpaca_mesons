@@ -283,9 +283,51 @@ def main():
           +r"+\frac{"+"+".join(neutral_corrections)+r"}{"+incoming_norm+r"}+\mathcal M_{000}^{\rm exchange}.")
     print("Away from degeneracy, incoming normalization-1 and the outgoing meson correction are O((f_pi/fa)^2); the outgoing bare-ALP projection is O(f_pi/fa). The linear amplitude is O(f_pi/fa), and each finite-minus-linear contribution starts at O((f_pi/fa)^3), giving relative O((f_pi/fa)^2). This counting fails near a mixed pole degeneracy.")
     print("The small-mixing comparison uses the external-pion phase chosen continuously so its normalized meson projection tends to lambda_pi0.")
+    print("Explicit nonzero cubic trace example with a charge-allowed d-s vector/scalar invariant:")
+    print(r"\mathcal V^{(3)}[(0,1),(\lambda_{\pi^+},0),(\lambda_{K^-},0)]"
+          r"=\frac{iB_0}{2f_a}\operatorname{tr}([c_q^{VS},m_q]\{\lambda_{\pi^+},\lambda_{K^-}\})\ne0.")
+    print(r"\mathcal V^{(3)}[(0,\{1+2f_\pi^2\operatorname{tr}[(\mathbb M_{m_{\pi^0}^2}^{-1}(C))^2]/f_a^2\}^{-1/2}),(\lambda_{\pi^-},0),(\lambda_{K^+},0)]"
+          r"=\frac{iB_0\operatorname{tr}([c_q^{VS},m_q]\{\lambda_{\pi^-},\lambda_{K^+}\})}{2f_a\sqrt{1+2f_\pi^2\operatorname{tr}[(\mathbb M_{m_{\pi^0}^2}^{-1}(C))^2]/f_a^2}}.")
+    example_coupling=sp.Matrix([[0,0,0],[0,0,1],[0,1,0]])
+    example_masses=sp.diag(*sp.symbols("m_u m_d m_s",real=True))
+    pion_plus=sp.zeros(3)
+    pion_plus[0,1]=sp.sqrt(2)
+    kaon_minus=sp.zeros(3)
+    kaon_minus[2,0]=sp.sqrt(2)
+    pion_alp_overlap=1/pion_denominator
+    example_derivative=-4*sp.I*B_0*commutator(example_coupling,example_masses)/f_a
+    example_first=cubic_vertex((sp.zeros(3),1),(pion_plus,0),(kaon_minus,0),
+                               example_derivative,sp.zeros(3),sp.zeros(3)).doit()
+    example_second=cubic_vertex((sp.zeros(3),pion_alp_overlap),(pion_plus.T,0),(kaon_minus.T,0),
+                                example_derivative,sp.zeros(3),sp.zeros(3)).doit()
+    show("Illustrative non-diagonal c_q^VS matrix",example_coupling)
+    show("Evaluated a pi+ K- cubic vertex for this matrix",sp.simplify(example_first))
+    show("Evaluated neutral-pion-ALP-component pi- K+ cubic vertex for this matrix",sp.simplify(example_second))
+    example_kaon_mass_sq,example_t=sp.symbols("m_K^2 t",real=True)
+    show("Product in the t-channel kaon exchange, before external LSZ factors",
+         sp.simplify(example_first*example_second/(example_kaon_mass_sq-example_t)))
+    print("This is an example contribution, not an assumption restricting the general source matrices. Both exchanged-kaon cubic vertices are explicit nonzero traces.")
+    print("In strict no mixing, the all-pion cubic vertex vanishes: the neutral pion has no bare-ALP component, so the second displayed vertex and this exchange vanish.")
+    print("At finite mixing the neutral-pion ALP component can make the exchange nonzero. After LSZ projection it is O((f_pi/fa)^3) away from degeneracy: each cubic coupling supplies one power 1/fa and the physical pion ALP overlap supplies one power f_pi/fa.")
 
 
 class CcwzThreePionTests(unittest.TestCase):
+    def test_nonzero_charge_allowed_cubic_exchange_example(self):
+        quark_masses=sp.diag(*sp.symbols("m_u m_d m_s",real=True))
+        coupling=sp.Matrix([[0,0,0],[0,0,1],[0,1,0]])
+        pion_plus=sp.zeros(3)
+        pion_plus[0,1]=sp.sqrt(2)
+        kaon_minus=sp.zeros(3)
+        kaon_minus[2,0]=sp.sqrt(2)
+        overlap=sp.Symbol("w_pi")
+        derivative=-4*sp.I*B_0*commutator(coupling,quark_masses)/f_a
+        first=cubic_vertex((sp.zeros(3),1),(pion_plus,0),(kaon_minus,0),derivative,sp.zeros(3),sp.zeros(3)).doit()
+        second=cubic_vertex((sp.zeros(3),overlap),(pion_plus.T,0),(kaon_minus.T,0),derivative,sp.zeros(3),sp.zeros(3)).doit()
+        expected=sp.I*B_0*(quark_masses[2,2]-quark_masses[1,1])/f_a
+        self.assertEqual(sp.simplify(first-expected),0)
+        self.assertEqual(sp.simplify(second+overlap*expected),0)
+        self.assertEqual(second.subs(overlap,0),0)
+
     def test_first_derivatives(self):
         axial=sp.Matrix([[1,2],[2,3]])
         pseudoscalar=sp.Matrix([[2,1],[1,-1]])

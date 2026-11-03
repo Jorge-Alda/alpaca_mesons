@@ -288,6 +288,44 @@ $$
 \end{aligned}}
 $$
 
+These cubic vertices are not identically zero. For the charge-allowed
+Hermitian source matrix
+$c_q^{VS}=|d\rangle\langle s|+|s\rangle\langle d|$ and $m_s\ne m_d$,
+take $\lambda_{K^-}=\sqrt2|s\rangle\langle u|$ and
+$\lambda_{K^+}=\lambda_{K^-}^\dagger$. The two vertices are
+
+$$
+\begin{aligned}
+\mathcal V^{(3)}[(0,1),(\lambda_{\pi^+},0),(\lambda_{K^-},0)]
+&=\frac{iB_0}{2f_a}\operatorname{tr}\!\left(
+[c_q^{VS},m_q]\{\lambda_{\pi^+},\lambda_{K^-}\}\right)
+=\frac{iB_0(m_s-m_d)}{f_a},\\
+\mathcal V^{(3)}\!\left[\left(0,
+\frac{1}{\sqrt{1+\frac{2f_\pi^2}{f_a^2}
+\operatorname{tr}[(\mathbb M_a^{-1}(\mathcal C))^2]_{m_{\pi^0}^2}}}\right),
+(\lambda_{\pi^-},0),(\lambda_{K^+},0)\right]
+&=\frac{iB_0}{2f_a\sqrt{1+\frac{2f_\pi^2}{f_a^2}
+\operatorname{tr}[(\mathbb M_a^{-1}(\mathcal C))^2]_{m_{\pi^0}^2}}}
+\operatorname{tr}\!\left(
+[c_q^{VS},m_q]\{\lambda_{\pi^-},\lambda_{K^+}\}\right)\\
+&=-\frac{iB_0(m_s-m_d)}{f_a\sqrt{1+\frac{2f_\pi^2}{f_a^2}
+\operatorname{tr}[(\mathbb M_a^{-1}(\mathcal C))^2]_{m_{\pi^0}^2}}}.
+\end{aligned}
+$$
+
+They give a $K^\pm$ exchange contribution in the $t$ channel,
+
+$$
+\frac{B_0^2(m_s-m_d)^2}
+{f_a^2(m_K^2-t)\sqrt{1+\frac{2f_\pi^2}{f_a^2}
+\operatorname{tr}[(\mathbb M_a^{-1}(\mathcal C))^2]_{m_{\pi^0}^2}}},
+$$
+
+before the incoming-ALP LSZ factor. It vanishes if the pion has no
+ALP component. This explicit allowed example shows why the exchange is
+generically present at finite mixing, while other source choices can make it
+zero.
+
 For four directions $(X_r,x_r)$ and incoming momenta $k_r$, the tensor
 vertex is
 
@@ -497,6 +535,12 @@ The three contact corrections retain the full $\mathcal V^{(4)}$, including
 its kinetic part. Their sum preserves the neutral kinetic zero when the three
 exact pion columns are identical. Away from a mixed-pole degeneracy, these
 finite corrections start at relative order $(f_\pi/f_a)^2$.
+
+In the strict no-mixing limit the outgoing-pion ALP components vanish, and
+the pure-meson cubic vertex is zero by the displayed $\mathcal V^{(3)}$
+formula. Thus the exchange terms vanish in that limit. At large but finite
+$f_a$, they can be nonzero but start beyond the linear $1/f_a$ amplitude;
+the example above is suppressed by the small $\pi^0$ ALP component.
 
 The script checks the CCWZ source derivatives, the pole inverse, the explicit
 vertices and contacts, the charge-protected charged poles, and the linear
