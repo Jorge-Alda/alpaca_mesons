@@ -192,6 +192,93 @@ spurion coefficients. For example, $\widehat M_2$ contains $C_{R,1}$ and
 $C_{L,1}$; their vector part $C_{V,1}=ic_q^{V,2}$ contributes
 $[c_q^{V,2},M_0]$ together with the other lower-order terms.
 
+
+## Matching to the $U(3)$ CCWZ theory
+
+The invariant partonic functions specify ALP-dependent chiral sources. They
+do not specify the complete meson Lagrangian or its higher-order low-energy
+constants. For the leading meson theory, use the $U(3)$ conventions of
+[Alda:2026nrd](../../extracts/Alda:2026nrd/appendix-a-expansion.md):
+$$
+U=u^2=\exp(i\Phi/f_\pi),\qquad \langle\lambda_a\lambda_b\rangle=2\delta_{ab}.
+$$
+Take the chirality-changing source and its CCWZ spurion to be
+$$
+\widehat M(x)=\widehat S(x)+i\widehat P(x),\qquad
+\chi(x)=2B_0\widehat M(x).
+$$
+Here $M(0)=m_q$ has the partonic mass normalization in the preceding
+sections; $B_0$ converts it to the conventional dimension-two chiral source.
+If the input mass function already includes $2B_0$, use it directly as
+$\chi$.
+$$
+\chi_+=u^\dagger\chi u^\dagger+u\chi^\dagger u,\qquad
+\chi_-=u^\dagger\chi u^\dagger-u\chi^\dagger u.
+$$
+The leading even-parity meson Lagrangian is
+$$
+\mathcal L_2=\frac{f_\pi^2}{4}\langle u_\mu u^\mu+\chi_+\rangle+
+\mathcal L_{\rm singlet},
+$$
+where the singlet potential and topological-source dependence must be fixed
+in the selected $U(3)$ power counting.
+
+For the derivative source, decompose $C_R=C_V+C_A$ and $C_L=C_V-C_A$ and
+set
+$$
+r_\mu=(\partial_\mu x)C_R(x),\qquad
+\ell_\mu=(\partial_\mu x)C_L(x),\qquad x=a/f_a.
+$$
+The CCWZ blocks, in the convention of [Alda:2026nrd], are
+$$
+u_\mu=i\left[u^\dagger(\partial_\mu-ir_\mu)u-u(\partial_\mu-i\ell_\mu)u^\dagger\right],\qquad
+\Gamma_\mu=\frac12\left[u^\dagger(\partial_\mu-ir_\mu)u+u(\partial_\mu-i\ell_\mu)u^\dagger\right].
+$$
+The covariant derivative uses $\Gamma_\mu$; $u_\mu$ contains the Goldstone
+vielbein and axial source. At $\Phi=0$,
+$u_\mu=(\partial_\mu x)(C_R-C_L)=2(\partial_\mu x)C_A$, fixing the
+normalization. Under the CCWZ compensator, $u_\mu\to h u_\mu h^\dagger$
+and $\Gamma_\mu\to h\Gamma_\mu h^\dagger+h\partial_\mu h^\dagger$.
+
+There is also a useful exact covariant form of the field-redefinition
+invariant construction. Define
+$$
+\widehat U=W_R^\dagger U W_L,\qquad
+D_\mu U=\partial_\mu U-ir_\mu U+iU\ell_\mu,
+$$
+with $r_\mu=(\partial_\mu x)C_R$ and $\ell_\mu=(\partial_\mu x)C_L$.
+The transport equations imply
+$$
+\partial_\mu\widehat U=W_R^\dagger(D_\mu U)W_L,
+$$
+and the mass spurion becomes $\widehat M=W_R^\dagger M W_L$. Thus the
+representative with vanishing ALP-dependent quark connections has
+$\widehat U$ as its Goldstone coordinate, zero $r_\mu,\ell_\mu$, and mass
+spurion $2B_0\widehat M$. The pullback connections have zero field strengths
+$F_R=F_L=0$, even for noncommuting $C_{R,L}(x)$, since they depend on the
+single coordinate $x$ only. This is a source-level change of variables;
+the anomalous Wess-Zumino and QCD topological terms must still be transformed
+with their anomaly.
+
+The coefficient of $x^n/n!$ in $\chi(x)$ is $2B_0\widehat M_n$. At first
+order, specialize to the Alda:2026nrd source parametrization
+$$
+S(x)=m_q+ix[c_q^S,m_q]+\cdots,\quad
+P(x)=x\{c_q^P,m_q\}+\cdots,\quad
+C_V(x)=c_q^V+\cdots,\quad C_A(x)=c_q^A+\cdots.
+$$
+Then the first-order invariant combinations are
+$c_q^{VS}=c_q^V-c_q^S$ and $c_q^{AP}=c_q^A-c_q^P$. The singlet axial
+anomaly is carried separately by the invariant topological source. The
+selected partonic record writes the raw coefficient $\Theta_{\rm raw}$ of
+$G\widetilde G$; before using the normalized convention of
+[Alda:2026nrd](../../extracts/Alda:2026nrd/appendix-a-expansion.md),
+convert it as $\Theta_{\rm Alda}=(4\pi/\alpha_s)\Theta_{\rm raw}$.
+At higher order the CCWZ spurion uses the dressed $\widehat M_n$ and is not
+given by same-order pairwise differences. Physical amplitudes also depend on
+the Goldstone expansion, loops, and independent higher-order CCWZ operators;
+the leading $p^2$ matching does not determine those corrections.
+
 ## Inputs and reproducible calculation
 
 The endpoint transformations and source conventions follow
