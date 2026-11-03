@@ -2,7 +2,7 @@
 title: Invariant split of the ALP–meson LSZ overlap
 status: derived
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-03
 bibtex_keys: [Alda:2026nrd, Kaiser:1998ds]
 provenance: analytical-derivation
 ---
@@ -55,6 +55,14 @@ w_i^{(a)}(s)
 -(K_{\rm meson}^{-1})_{ij}K_{j\hat a}.
 $$
 
+For CCWZ derivative terms, write $K_{i\hat a}=-K_{ij}v_j+\Delta_i$, where $v_i=(f_\pi/f_a)\operatorname{tr}(c_q^A\lambda_i)$ and $\Delta_i$ contains contributions involving the pure-ALP building block $D_\mu\theta$. Then
+
+$$
+w^{(a)}(s)=(M^2-sK)^{-1}\mathcal C^{\rm pole}+v-K^{-1}\Delta.
+$$
+
+The retained $u_\mu$-quadratic basis has $\Delta=0$. If source-dependent operators such as $O_{47}$ are included, alignment need not hold; the $O_{47}$ contribution to $\Delta$ is singlet before multiplication by $K^{-1}$. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for its explicit form.
+
 At the ALP pole the first term is $(\mathbb M_a^{\rm NLO})^{-1}_{ij}\mathcal C_j^{\rm pole}$. At LO, this operator reduces in flavor-matrix notation to Alda:2026nrd's Eq. (III.27),
 
 $$
@@ -72,7 +80,7 @@ K'_{i\hat a}=K_{i\hat a}-K_{ij}\rho_j,
 M_{i\hat a}^{2\prime}=M^2_{i\hat a}-M^2_{ij}\rho_j.
 $$
 
-It follows that $\mathcal C_i^{\rm pole}$ is unchanged, while the second term in the split shifts by $+\rho_i$. Thus $w_i^{(a)\prime}=w_i^{(a)}+\rho_i$, as required by $P_i=P_i'-\rho_i a$. Under a regular change of meson coordinates, $\mathcal C_i^{\rm pole}$ transforms as a source covector and $w_i^{(a)}$ as a field vector.
+It follows that $\mathcal C_i^{\rm pole}$ and $\Delta_i=K_{i\hat a}+K_{ij}v_j$ are unchanged, while the second term in the split shifts by $+\rho_i$. Thus $w_i^{(a)\prime}=w_i^{(a)}+\rho_i$, as required by $P_i=P_i'-\rho_i a$. For the ALP-dependent axial transformation $c_q^A\to c_q^A+\kappa$, $c_G\to c_G-\operatorname{tr}\kappa$, one has $\rho_i=\delta v_i=(f_\pi/f_a)\operatorname{tr}(\kappa\lambda_i)$. Hence $w_i^{(a)}$ is an affine field-coordinate component, whereas $w_i^{(a)}-v_i$ is invariant, even when $\Delta\ne0$. Under a regular change of meson coordinates, $\mathcal C_i^{\rm pole}$ transforms as a source covector and $w_i^{(a)}$ as a field vector.
 
 For a linear source $\mathcal J=V_{\hat a}a+V_iP_i$, the field shift gives $V'_{\hat a}=V_{\hat a}-V_i\rho_i$. Its direct-plus-pole coefficient is invariant:
 
