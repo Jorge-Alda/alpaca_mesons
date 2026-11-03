@@ -14,5 +14,6 @@ provenance: assumption
 - [higher-order-alp-quark-bilinears.md](higher-order-alp-quark-bilinears.md) — Higher-order derivatives of the leading mass and kinetic-current sources under finite chiral transformations.
 - [alp-shift-symmetric-quark-eft-operators.md](alp-shift-symmetric-quark-eft-operators.md) — Partonic quark-bilinear generators at fixed ALP insertion number and canonical dimension.
 - [alp-general-chiral-redefinition-invariants.md](alp-general-chiral-redefinition-invariants.md) — QCD, quark masses, and at-most-one-ALP-derivative interactions under arbitrary-order $g_L,g_R$ transformations.
+- [alp-qcd-topological-cp.md](alp-qcd-topological-cp.md) — Anomalous shifts and CP selection rules for multi-ALP QCD gluonic terms.
 - [optimized-decay-integrand-guidelines.md](optimized-decay-integrand-guidelines.md) — reusable derivation, implementation and verification guidance for decay integrands.
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — integration methods, trade-offs and current numerical evidence across decay channels.

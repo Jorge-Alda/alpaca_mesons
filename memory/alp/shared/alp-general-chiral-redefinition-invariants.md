@@ -40,18 +40,22 @@ $$
 &+\frac{\partial_\mu a}{f_a}
 \left(\bar q_R\gamma^\mu C_R(x)q_R+
 \bar q_L\gamma^\mu C_L(x)q_L\right)
-+\mathcal L_{\mathrm{top}}(x).
++\Phi(x)G^A_{\mu\nu}G^{A\mu\nu}
++\Theta(x)G^A_{\mu\nu}\widetilde G^{A\mu\nu}.
 \end{aligned}
 $$
 Here $X_{RL}(x)=M(x)=S(x)+iP(x)$ is the full chirality-changing mass
-function, with $M(0)=m_q$.
-The $C_{R,L}(x)$ are Hermitian current coefficient functions. The optional
-$\mathcal L_{\mathrm{top}}(x)$ contains the QCD topological term, including
-the contribution induced by the singlet axial anomaly. Every ALP interaction
-in this truncation has at most one factor of $\partial_\mu a$.
+function, with $M(0)=m_q$. The $C_{R,L}(x)$ are Hermitian current
+coefficient functions. $\Phi(x)$ and $\Theta(x)$ are the ALP-dependent
+coefficients of the scalar and topological gluon terms, respectively. Every
+ALP interaction in this truncation has at most one factor of $\partial_\mu a$.
+Absorb $\Phi(0)$ into the QCD gauge coupling; $\Theta(0)$ contributes to the
+physical QCD vacuum angle together with the phase of $M(0)$.
 Since $g_{L,R}$ depend only on $x$, transforming the QCD kinetic term
 generates only one such derivative; this restricted operator set closes
-under the field redefinitions considered here.
+under the field redefinitions considered here. The anomaly shift and CP
+selection rules for the gluonic coefficient functions are in the separate
+[QCD topological-sector note](alp-qcd-topological-cp.md).
 
 ## Chiral transformations of the retained functions
 
@@ -137,9 +141,9 @@ $$
 At higher orders, take the Hermitian and anti-Hermitian parts of the Taylor
 coefficients $M_n'$ above. These transformations apply to every scalar and
 pseudoscalar mass coupling retained in this Lagrangian. For a flavor-singlet
-axial rotation, include its anomalous shift of $\mathcal L_{\mathrm{top}}(x)$
-separately; it is a QCD topological term, not another quark-bilinear
-coefficient [@Alda:2026nrd].
+axial rotation, include its anomalous shift of $\Theta(x)$ separately; it is
+a QCD topological coefficient, not another quark-bilinear coefficient
+[@Alda:2026nrd].
 
 ## Invariants at every order
 
