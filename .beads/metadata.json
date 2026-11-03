@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "alpaca_mesons",
+  "project_id": "5a7bcf68-7f84-4212-93d5-20ea799768db"
+}
