@@ -185,7 +185,15 @@ such as $c_q^{V,2}-[\kappa,c_q^A]$ reconstructs the coefficient before one
 specified rotation, but it is not invariant under arbitrary higher-order
 $g_L,g_R$. The full dressed coefficient functions supply the general
 invariant combinations of $c_q^{V,A}$, $c_q^{S,P}$, and every higher
-partonic Wilson coefficient.
+partonic Wilson coefficient. At first order, applying Alda:2026nrd's source
+normalization reduces these dressed combinations to the familiar
+$c_q^{VS}=c_q^V-c_q^S$ and $c_q^{AP}=c_q^A-c_q^P$
+[@Alda:2026nrd]. At higher orders they are not obtained by taking the same
+pairwise differences of coefficients at that order: each dressed Taylor
+coefficient contains products and commutators of lower-order current and
+spurion coefficients. For example, $\widehat M_2$ contains $C_{R,1}$ and
+$C_{L,1}$; their vector part $C_{V,1}=ic_q^{V,2}$ contributes
+$[c_q^{V,2},M_0]$ together with the other lower-order terms.
 
 ## Inputs and reproducible calculation
 
