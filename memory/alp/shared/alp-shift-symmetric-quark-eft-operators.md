@@ -9,6 +9,10 @@ provenance: analytical-derivation
 
 # Partonic quark-bilinear operator generators at arbitrary ALP order
 
+This is the unrestricted partonic operator generator. The current working
+Lagrangian retains QCD, quark mass functions, and ALP interactions with at
+most one ALP derivative; see the [general chiral-redefinition note](alp-general-chiral-redefinition-invariants.md).
+
 ## Assumptions and scope
 
 Take a neutral pseudoscalar $a$ and partonic quark fields in specified
