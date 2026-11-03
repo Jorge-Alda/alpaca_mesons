@@ -2,7 +2,7 @@
 title: ALP three-pseudoscalar memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-03
 bibtex_keys: []
 provenance: assumption
 ---
@@ -10,6 +10,7 @@ provenance: assumption
 # ALP three-pseudoscalar records
 
 - [alp-phi3-lo-chipt-derivation.md](alp-phi3-lo-chipt-derivation.md) — LO chiral interactions with one ALP and three pseudoscalars.
+- [alp-finite-mixing-three-pion-amplitudes.md](alp-finite-mixing-three-pion-amplitudes.md) — exact-LO finite-mixing pole projections for $a\to3\pi^0$ and $a\to\pi^0\pi^+\pi^-$.
 - [alp-three-meson-generic-generators.md](alp-three-meson-generic-generators.md) — generic-generator expansion of the interactions.
 - [alp-three-meson-amplitudes-widths.md](alp-three-meson-amplitudes-widths.md) — amplitudes, symmetry factors and widths.
 - [alp-three-meson-widths-numerical.md](alp-three-meson-widths-numerical.md) — numerical implementation of the three-meson widths.
