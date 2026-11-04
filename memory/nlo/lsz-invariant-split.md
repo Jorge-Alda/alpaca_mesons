@@ -2,7 +2,7 @@
 title: Invariant split of the ALP–meson LSZ overlap
 status: derived
 created: 2026-11-02
-updated: 2026-11-04
+updated: 2026-11-05
 bibtex_keys: [Alda:2026nrd, Kaiser:1998ds]
 provenance: analytical-derivation
 ---
@@ -64,18 +64,27 @@ $$
 In the reduced $V_4=0$ basis, the retained $u_\mu$-quadratic terms have $\Delta_i=0$. The source-dependent operator $O_{47}=D_\mu\hat\theta\langle C^\mu\rangle\langle M\rangle$ supplies
 
 $$
-\Delta_i^{(47)}=-\frac{4g_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\operatorname{tr}(\lambda_i).
+\Delta_i^{(47)}=-\frac{4L_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\operatorname{tr}(\lambda_i).
 $$
 
-The column is singlet in a trace-orthogonal generator basis. Its contribution to the invariant LSZ source is
+The column is singlet in a trace-orthogonal generator basis. For a strict NLO result, this already-NLO column is multiplied by the LO meson inverse kinetic matrix, $K_{\rm meson}^{-1}=\mathbf 1$, and the LO mass map
 
 $$
-\delta_{47}\mathcal C_i^{\rm pole}=\left[M^2K^{-1}\Delta^{(47)}\right]_i,
+M^2[X]=\frac12\{\chi_0,X\}+\frac{m_0^2}{3}\operatorname{tr}(X)\mathbf 1.
+$$
+
+Using $\sum_i\operatorname{tr}(\lambda_i)\lambda_i=2\mathbf 1$ and the stated $U(3)$ normalization gives the fully evaluated flavor-matrix contribution
+
+$$
+\delta_{47}\bm{\mathcal C}_{\rm NLO}
+=-\frac{4L_{47}c_{GA}\langle\chi_0\rangle}{f_\pi^2}
+\left(\chi_0+m_0^2\mathbf 1\right),
 \qquad
-\delta_{47}\bm{\mathcal C}_{\rm NLO}=\frac{f_a}{2f_\pi}\sum_i\left[M^2K^{-1}\Delta^{(47)}\right]_i\lambda_i,
+\delta_{47}\mathcal C_i^{\rm pole}
+=\frac{f_\pi}{f_a}\operatorname{tr}\!\left(\delta_{47}\bm{\mathcal C}_{\rm NLO}\lambda_i^\dagger\right).
 $$
 
-where the second relation reconstructs the flavor matrix using $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$. In general $K^{-1}$ spreads this singlet input over meson directions. This term corrects the source, not the meson-only pole operator: $O_{47}$ has no $\Phi^2$ quadratic term and therefore leaves $K_{ij}$ and $M^2_{ij}$ unchanged. Thus $\mathbb M_a$ remains the full linear map $X\mapsto(M^2-m_a^2K)[X]$ on the space of flavor matrices, and its inverse acts on the complete corrected source. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for the expansion of $\Delta_i^{(47)}$.
+This term corrects the source, not the meson-only pole operator: $O_{47}$ has no $\Phi^2$ quadratic term and therefore leaves $K_{ij}$ and $M^2_{ij}$ unchanged. Thus $\mathbb M_a$ remains the full linear map $X\mapsto(M^2-m_a^2K)[X]$ on the space of flavor matrices, and its inverse acts on the complete corrected source. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for the expansion of $\Delta_i^{(47)}$.
 
 At the ALP pole the first term is the component representation of $(\mathbb M_a^{\rm NLO})^{-1}[\bm{\mathcal C}_{\rm NLO}]$. Here $\mathbb M_a$ is a linear operator on the space of flavor matrices, not a $3\times3$ array indexed by meson labels. At LO it reduces to Alda:2026nrd's Eq. (III.27),
 
@@ -136,7 +145,10 @@ c_{GA}\chi_0+\operatorname{tr}(\chi_0c_q^{AP})\mathbf 1
 \right]
 +\frac{8L_{25}}{f_\pi^2}\left[
 c_{GA}\chi_0^2+\operatorname{tr}(\chi_0^2c_q^{AP})\mathbf 1
-\right].
+\right]
+\\
+&-\frac{4L_{47}c_{GA}\langle\chi_0\rangle}{f_\pi^2}
+\left(\chi_0+m_0^2\mathbf 1\right).
 \end{aligned}
 $$
 
@@ -147,7 +159,7 @@ $$
 =\frac{f_\pi}{f_a}\left\langle\bm{\mathcal C}_{\rm NLO}\lambda_i^\dagger\right\rangle.
 $$
 
-For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the leading term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown, and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from the aligned contributions to $\bm{\mathcal C}_{\rm NLO}$ when the mixed kinetic and mass blocks are combined. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ change these blocks together and do not enter this invariant source. When retained, $O_{47}$ adds the displayed $\delta_{47}\bm{\mathcal C}_{\rm NLO}$ to $\Delta\bm{\mathcal C}_{\rm NLO}$.
+For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the leading term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown, and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from the aligned contributions to $\bm{\mathcal C}_{\rm NLO}$ when the mixed kinetic and mass blocks are combined. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ change these blocks together and do not enter this invariant source. The final term in the displayed $\Delta\bm{\mathcal C}_{\rm NLO}$ is the fully evaluated $O_{47}$ contribution, obtained with the LO $M^2$ map and $K_{\rm meson}=\mathbf 1$ as required at strict NLO.
 
 For the aligned local terms, the derivative bilinears give the kinetic-block relation derived in [the kinetic-alignment record](kinetic-block-alignment.md):
 

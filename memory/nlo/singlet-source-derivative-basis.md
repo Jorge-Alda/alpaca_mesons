@@ -2,7 +2,7 @@
 title: Singlet-source derivative operators in Alda notation
 status: derived
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 bibtex_keys: [Kaiser:1998ds,Herrera-Siklody:1996tqr,  Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -116,7 +116,7 @@ $O_{47}$ is a distinct double-trace structure and is not removed by these two re
 
 ## Explicit meson-field shift for the $O_{47}$ bilinear
 
-For a unit coefficient multiplying $O_{47}$, its quadratic contribution is
+The expressions below first show the quadratic expansion of $O_{47}$ with unit coefficient. In the convention $\mathcal L=\sum_i L_iO_i$, the contribution to the Lagrangian is multiplied by $L_{47}$:
 
 $$
 \mathcal L_{47}^{(a\Phi)}
@@ -132,7 +132,7 @@ $$
 \partial_\mu\eta_0\,\partial^\mu a.
 $$
 
-Multiply these expressions by the coefficient of $O_{47}$ in the chosen Lagrangian if it is not unity. Let $\Delta K_i^{(47)}$ denote this operator's contribution to the mixed kinetic column. Under
+Accordingly, the mixed kinetic column $\Delta K_i^{(47)}$ includes the factor $L_{47}$. Under
 
 $$
 P_i=P_i'-\rho_i a,
@@ -144,7 +144,7 @@ $$
 \rho_i=(K^{-1})_{ij}\Delta K_j^{(47)}
 $$
 
-removes only the $O_{47}$ addition to the kinetic block. In the leading canonical meson basis $K_{ij}=\delta_{ij}$, this is a pure singlet shift with $\rho_0=-4\sqrt6\,c_{GA}\langle\chi_0\rangle/(f_af_\pi)$ for unit $O_{47}$ coefficient and $\rho_3=\rho_8=0$. With a nontrivial meson kinetic matrix, $K^{-1}$ can spread the shift over the neutral basis.
+removes only the $O_{47}$ addition to the kinetic block. In the leading canonical meson basis $K_{ij}=\delta_{ij}$, this is a pure singlet shift with $\rho_0=-4\sqrt6\,L_{47}c_{GA}\langle\chi_0\rangle/(f_af_\pi)$ and $\rho_3=\rho_8=0$. With a nontrivial meson kinetic matrix, $K^{-1}$ can spread the shift over the neutral basis.
 
 The contribution is transferred to mass mixing,
 

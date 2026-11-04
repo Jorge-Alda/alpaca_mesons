@@ -2,7 +2,7 @@
 title: Condition for ALP–meson kinetic-block alignment
 status: derived
 created: 2026-11-02
-updated: 2026-11-03
+updated: 2026-11-05
 bibtex_keys: [Alda:2026nrd, Kaiser:1998ds]
 provenance: analytical-derivation
 ---
@@ -70,19 +70,19 @@ which is purely ALP and already $O(1/f_a)$. Consequently, terms quadratic in $u_
 For $O_{47}=D_\mu\hat\theta\langle C^\mu\rangle\langle M\rangle$, expansion about the real-mass vacuum gives
 
 $$
-\mathcal L_{47}^{(a\Phi)}=-\frac{4g_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\,\partial_\mu a\,\langle\partial^\mu\Phi\rangle,
+\mathcal L_{47}^{(a\Phi)}=-\frac{4L_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\,\partial_\mu a\,\langle\partial^\mu\Phi\rangle,
 \qquad
-\Delta_i^{(47)}=-\frac{4g_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\,\operatorname{tr}(\lambda_i),
+\Delta_i^{(47)}=-\frac{4L_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\,\operatorname{tr}(\lambda_i),
 $$
 
-where $g_{47}$ is the operator coefficient and $\Phi=\lambda_iP_i$. Thus $O_{47}$ contributes only to the $U(1)$ singlet component in a trace-orthogonal generator basis. A non-diagonal meson kinetic matrix can spread $K^{-1}\Delta^{(47)}$ across components, while the operator's own mixed column remains singlet. The single-trace $O_{46}$ gives a mass-spurion-weighted direction and is removed by the higher-order field redefinition recorded in [the singlet-source record](singlet-source-derivative-basis.md). For the retained $L_4,L_5,L_{18},\Lambda_1$ basis, no independent $D_\mu\theta$ term is present, so $\Delta_i=0$ and the alignment result applies.
+Here the operator coefficient is $L_{47}$, consistently with $\mathcal L=\sum_i L_iO_i$, and $\Phi=\lambda_iP_i$. Thus $O_{47}$ contributes only to the $U(1)$ singlet component in a trace-orthogonal generator basis. A non-diagonal meson kinetic matrix can spread $K^{-1}\Delta^{(47)}$ across components, while the operator's own mixed column remains singlet. The single-trace $O_{46}$ gives a mass-spurion-weighted direction and is removed by the higher-order field redefinition recorded in [the singlet-source record](singlet-source-derivative-basis.md). For the retained $L_4,L_5,L_{18},\Lambda_1$ basis, no independent $D_\mu\theta$ term is present, so $\Delta_i=0$ and the alignment result applies.
 
 More generally, at this order the source-dependent derivative structures listed in [the singlet-source record](singlet-source-derivative-basis.md) give the following candidate directions:
 
 $$
 \Delta_i^{(V_4)}=\frac{2V_4c_{GA}}{f_af_\pi}\operatorname{tr}(\lambda_i),\qquad
 \Delta_i^{(46)}=-\frac{4g_{46}c_{GA}}{f_af_\pi}\operatorname{tr}(\lambda_i\chi_0),\qquad
-\Delta_i^{(47)}=-\frac{4g_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\operatorname{tr}(\lambda_i).
+\Delta_i^{(47)}=-\frac{4L_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\operatorname{tr}(\lambda_i).
 $$
 
 The $V_4$ term is removed in the chosen reduced convention, and $O_{46}$ is removable by the cited higher-order field redefinition. $O_{50}$ contains two factors of $D_\mu\theta$ and therefore has no $a\Phi$ kinetic term at first order in $1/f_a$. These directions are the restriction on the possible $\Delta_i$ at this derivative and field order; they do not permit an arbitrary independent flavor vector.
