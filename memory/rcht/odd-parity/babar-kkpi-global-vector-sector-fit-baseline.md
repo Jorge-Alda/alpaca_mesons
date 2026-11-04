@@ -102,3 +102,42 @@ metadata values identify the exact source snapshot used for the fit. The
 numerical statements above were checked against the corresponding JSON fields
 and against the script's row-count assertions, parameter declarations, block
 boundaries, and output construction.
+
+## Distinction from the older BaBar-only fit
+
+This global likelihood is not a second optimization of the older BaBar-only
+inclusive analysis. It combines the 12 odd low-energy summaries, 7
+mass/leptonic summaries, 7 shared total-width summaries, 2
+$\phi\to K\bar K$ branching summaries, 45 inclusive BaBar bins, and 2
+normalization constraints. Its current stored snapshot is therefore
+
+$$
+\chi^2=307.98485223991514\ \text{for}\ 43\ \text{dof},
+$$
+
+with `success=false` and the evaluation limit reached.
+
+The older record
+[`babar-kkpi-unified-vector-coefficient-fit.md`](babar-kkpi-unified-vector-coefficient-fit.md)
+describes a separate likelihood containing only the two inclusive BaBar
+$KK\pi$ channels (Tables 2 and 3), through the $1.76$--$1.78\,\mathrm{GeV}$
+bin. It varies ten $c_i,d_i,g_i$ combinations and normalization nuisances;
+it does not include the low-energy, mass, leptonic, shared-width, or
+$\phi\to K\bar K$ blocks. Its stored output gives
+
+$$
+\chi^2=35.71636391362228\ \text{for}\ 29\ \text{dof},
+$$
+
+quoted in the existing record as $\chi^2=35.7164$ for 29 dof with
+$p=0.182$. The values are not competing results for one dataset: they refer
+to different likelihood scopes and parameterizations. The global value is the
+current nonconverged baseline snapshot, whereas the older value is the
+converged BaBar-only inclusive fit.
+
+The comparison was verified against both memory records and the outputs: the
+global JSON fields `measurement_count`, `constraint_count`, `chi2`, `dof`,
+`success`, and `nfev` give $(73,2,307.98485223991514,43,\mathrm{false},1500)$,
+while `babar_kkpi_unified_vector_coefficients_fit.json` stores
+`fit.chi_squared=35.71636391362228` and
+`fit.nominal_degrees_of_freedom=29`.
