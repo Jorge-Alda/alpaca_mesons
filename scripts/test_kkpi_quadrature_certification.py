@@ -3,10 +3,12 @@
 Run: .venv/bin/python -m unittest scripts.test_kkpi_quadrature_certification
 """
 import copy
+import json
 import unittest
 from unittest.mock import patch
 
 import numpy as np
+from scipy.integrate import quad
 
 from scripts import fit_babar_kkpi_global_vector_sector as fit
 
@@ -66,6 +68,75 @@ class QuadratureComparisonTests(unittest.TestCase):
 
 
 class IndependentRefinementTests(unittest.TestCase):
+    def test_maximum_orders_retain_all_failing_output_differences(self):
+        class Model:
+            phase='original'
+            babar={channel:dict(errors=np.ones(2)) for channel in fit.CHANNELS}
+            def residual(self,values):return np.array([float(self.phase[0])])
+            def jacobian(self,values,finite_difference_steps):
+                return np.full((1,32),1.+.01*self.phase[0])
+            def unpack(self,values):return None
+            def babar_blocks(self,values,state):
+                return None,{channel:np.full(2,float(self.phase[0])) for channel in fit.CHANNELS}
+        model=Model()
+        with patch.object(fit,'phase_points',side_effect=lambda data,*orders:orders):
+            result=fit.audit_quadrature(model,np.zeros(32),
+                dict(energy=[1,2,4],pair=[2,4],angle=[2,4]))
+        result=json.loads(json.dumps(result))
+        self.assertEqual(result['status'],'uncertified')
+        self.assertFalse(result['passed'])
+        comparison=result['refinements']['energy']['comparisons'][-1]
+        self.assertEqual(comparison['from_orders'],dict(energy=2,pair=2,angle=2))
+        self.assertEqual(comparison['to_orders'],dict(energy=4,pair=2,angle=2))
+        for output in ('predictions','residuals','jacobian','chi2'):
+            self.assertFalse(comparison[output]['passed'])
+        self.assertEqual(comparison['predictions']['maximum_change_in_sigma'],2.)
+        self.assertEqual(comparison['residuals']['maximum_absolute_change'],2.)
+        self.assertEqual(comparison['chi2']['absolute_change'],12.)
+        self.assertAlmostEqual(comparison['jacobian']['columns'][0]['relative_change'],.02/1.04)
+        self.assertIs(model.phase,Model.phase)
+
+    def test_invalid_physical_points_are_unevaluated_with_reason_and_orders(self):
+        model=fit.GlobalLikelihood(1,2,2)
+        original_phase=model.phase
+        for parameter,value in ((6,0.),(26,6.)):
+            with self.subTest(parameter=fit.PARAMETER_NAMES[parameter]):
+                values=model.initial();values[parameter]=value
+                result=fit.audit_quadrature(model,values,
+                    dict(energy=[1,2],pair=[2,3],angle=[2,3]))
+                result=json.loads(json.dumps(result))
+                self.assertEqual(result['status'],'unevaluated')
+                self.assertFalse(result['passed'])
+                self.assertIn('domain crossed',result['reason'])
+                self.assertEqual(result['error_type'],'ValueError')
+                self.assertEqual(result['attempted_orders'],dict(energy=1,pair=2,angle=2))
+                self.assertEqual(result['refinements']['energy']['comparisons'],[])
+                self.assertIs(model.phase,original_phase)
+                self.assertIsNone(model.babar_cache_key)
+
+    def test_later_evaluation_failure_preserves_finished_comparisons(self):
+        class Model:
+            phase='original'
+            babar={channel:dict(errors=np.ones(2)) for channel in fit.CHANNELS}
+            def residual(self,values):
+                if self.phase[0]==4:raise FloatingPointError('nonfinite pole evaluation')
+                return np.zeros(2)
+            def jacobian(self,values,finite_difference_steps):return np.ones((2,32))
+            def unpack(self,values):return None
+            def babar_blocks(self,values,state):
+                return None,{channel:np.ones(2) for channel in fit.CHANNELS}
+        model=Model()
+        with patch.object(fit,'phase_points',side_effect=lambda data,*orders:orders):
+            result=fit.audit_quadrature(model,np.zeros(32),
+                dict(energy=[1,2,4],pair=[2,4],angle=[2,4]))
+        self.assertEqual(result['status'],'unevaluated')
+        self.assertEqual(result['reason'],'nonfinite pole evaluation')
+        self.assertEqual(result['attempted_orders'],dict(energy=4,pair=2,angle=2))
+        self.assertEqual(len(result['refinements']['energy']['comparisons']),1)
+        self.assertTrue(result['refinements']['energy']['comparisons'][0]['passed'])
+        self.assertFalse(result['refinements']['energy']['passed'])
+        self.assertEqual(model.phase,'original')
+
     def test_early_failure_keeps_ladder_and_point_uncertified(self):
         class Model:
             phase='original'
@@ -147,6 +218,63 @@ class IndependentRefinementTests(unittest.TestCase):
         self.assertEqual(len(comparison['jacobian']['columns']),32)
         self.assertTrue(all(np.isfinite(column['absolute_change']) for column in comparison['jacobian']['columns']))
         self.assertIs(model.phase,original_phase)
+
+
+class PoleMappingTests(unittest.TestCase):
+    def test_phi_and_both_kstar_pole_integrals_match_adaptive_dalitz_integration(self):
+        energy=1.65
+        data={channel:dict(edges=np.array([[energy,energy]])) for channel in fit.CHANNELS}
+        mapped=fit.phase_points(data,1,64,32)
+        for channel,masses in (('kkpi0',(.493677,.493677,.1349768)),
+                ('kskpi',(.497611,.493677,.13957039))):
+            first_mass,second_mass,third_mass=masses
+            invariant_mass_squared=energy**2
+            pair_lower=(first_mass+second_mass)**2
+            pair_upper=(energy-third_mass)**2
+            phase=mapped[channel]
+            invariant_sum=invariant_mass_squared+sum(mass**2 for mass in masses)
+            self.assertTrue(np.all(phase['s']>pair_lower))
+            self.assertTrue(np.all(phase['s']<pair_upper))
+            self.assertTrue(np.all(phase['weight']>=0))
+            outer=fit.triangle(invariant_mass_squared,phase['s'],third_mass**2)
+            inner=fit.triangle(phase['s'],first_mass**2,second_mass**2)
+            span=np.sqrt(outer*inner)/phase['s']
+            other_center=(first_mass**2+third_mass**2+(phase['s']+first_mass**2-second_mass**2)
+                *(invariant_mass_squared-phase['s']-third_mass**2)/(2*phase['s']))
+            center=invariant_sum-phase['s']-other_center
+            self.assertTrue(np.all(phase['t']>center-span/2))
+            self.assertTrue(np.all(phase['t']<center+span/2))
+            coefficient=389379.3656*fit.ALPHA**2/(48*np.pi*invariant_mass_squared**3)
+            coefficient*=np.exp(-2*invariant_mass_squared**3/2.5**6)*(2 if channel=='kskpi' else 1)
+            for pole in ('phi','Kstar_t','Kstar_u'):
+                with self.subTest(channel=channel,pole=pole):
+                    pole_position,pole_scale=((1.019461**2,1.019461*.004249)
+                        if pole=='phi' else (.8917**2,.8917*.05))
+                    def pair_integrand(pair_invariant):
+                        outer=fit.triangle(invariant_mass_squared,pair_invariant,third_mass**2)
+                        inner=fit.triangle(pair_invariant,first_mass**2,second_mass**2)
+                        span=np.sqrt(max(outer*inner,0))/pair_invariant
+                        other_center=(first_mass**2+third_mass**2+(pair_invariant+first_mass**2-second_mass**2)
+                            *(invariant_mass_squared-pair_invariant-third_mass**2)/(2*pair_invariant))
+                        center=invariant_sum-pair_invariant-other_center
+                        lower,upper=center-span/2,center+span/2
+                        def angular_integrand(pair_t):
+                            selected=(pair_invariant if pole=='phi' else pair_t if pole=='Kstar_t'
+                                else invariant_sum-pair_invariant-pair_t)
+                            return max(1-(2*(pair_t-center)/span)**2,0)/((selected-pole_position)**2+pole_scale**2)
+                        angular_pole=(pole_position if pole=='Kstar_t'
+                            else invariant_sum-pair_invariant-pole_position)
+                        points=[angular_pole] if pole!='phi' and lower<angular_pole<upper else None
+                        angular_integral=quad(angular_integrand,lower,upper,points=points,
+                            epsabs=1e-9,epsrel=1e-9)[0]
+                        return outer*inner/(16*pair_invariant)*angular_integral
+                    points=[pole_position] if pole=='phi' else None
+                    reference=coefficient*quad(pair_integrand,pair_lower,pair_upper,points=points,
+                        epsabs=1e-9,epsrel=1e-8)[0]
+                    selected=(phase['s'] if pole=='phi' else phase['t'] if pole=='Kstar_t'
+                        else invariant_sum-phase['s']-phase['t'])
+                    numerical=float(np.sum(phase['weight']/((selected-pole_position)**2+pole_scale**2)))
+                    self.assertAlmostEqual(numerical/reference,1.,delta=1e-5)
 
 
 if __name__=='__main__':unittest.main()

@@ -398,8 +398,12 @@ def audit_quadrature(model,values,orders,parameter_scales=None,tolerances=None):
     baseline=tuple(orders[name][0] for name in dimensions)
     original_phase=model.phase
     evaluations={}
+    refinements={}
+    attempted_orders=None
     def evaluate(order_tuple):
+        nonlocal attempted_orders
         if order_tuple not in evaluations:
+            attempted_orders=dict(zip(dimensions,order_tuple))
             model.phase=phase_points(model.babar,*order_tuple)
             model.babar_cache_key=None
             residual=model.residual(values)
@@ -412,26 +416,32 @@ def audit_quadrature(model,values,orders,parameter_scales=None,tolerances=None):
     def compare(lower,higher):
         result=compare_quadrature_outputs(evaluate(lower),evaluate(higher),errors,parameter_scales,tolerances)
         return dict(from_orders=dict(zip(dimensions,lower)),to_orders=dict(zip(dimensions,higher)),**result)
+    def compare_sequence(name,sequence):
+        refinements[name]=dict(comparisons=[],passed=False)
+        for lower,higher in zip(sequence,sequence[1:]):
+            refinements[name]['comparisons'].append(compare(lower,higher))
+        refinements[name]['passed']=all(comparison['passed']
+            for comparison in refinements[name]['comparisons'])
     try:
-        refinements={}
         for index,name in enumerate(dimensions):
             sequence=[]
             for order in orders[name]:
                 current=list(baseline);current[index]=order;sequence.append(tuple(current))
-            comparisons=[compare(lower,higher) for lower,higher in zip(sequence,sequence[1:])]
-            refinements[name]=dict(comparisons=comparisons,
-                passed=all(comparison['passed'] for comparison in comparisons))
+            compare_sequence(name,sequence)
         combined=[tuple(orders[name][min(level,len(orders[name])-1)] for name in dimensions)
             for level in range(max(map(len,orders.values()))) ]
-        comparisons=[compare(lower,higher) for lower,higher in zip(combined,combined[1:])]
-        refinements['combined']=dict(comparisons=comparisons,
-            passed=all(comparison['passed'] for comparison in comparisons))
+        compare_sequence('combined',combined)
         passed=all(result['passed'] for result in refinements.values())
         return dict(status='certified' if passed else 'uncertified',passed=passed,
             tolerances=tolerances,orders={name:list(sequence) for name,sequence in orders.items()},
             derivative_settings=dict(method='analytic odd columns; forward differences for remaining columns',
                 finite_difference_steps=steps.tolist(),parameter_scales=parameter_scales.tolist()),
             pole_mapping='phi s-pole mapping and both Kstar t/u-pole mappings',refinements=refinements)
+    except (ValueError,FloatingPointError,np.linalg.LinAlgError) as error:
+        return dict(status='unevaluated',passed=False,reason=str(error),
+            error_type=type(error).__name__,attempted_orders=attempted_orders,
+            orders={name:list(sequence) for name,sequence in orders.items()},
+            refinements=refinements)
     finally:
         model.phase=original_phase
         model.babar_cache_key=None

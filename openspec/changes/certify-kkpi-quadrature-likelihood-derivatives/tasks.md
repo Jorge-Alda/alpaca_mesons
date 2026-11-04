@@ -3,7 +3,7 @@
 ## 1. Independent refinement and output comparisons
 
 - [x] 1.1 Have the coder extend the joint KKπ fit tooling to refine energy, pair, and angular orders independently and compare predictions, standardized residuals, Jacobian columns, and χ² against the declared tolerances; verify with focused tests that each dimension is varied independently and each comparison reports pass or failure.
-- [ ] 1.2 Have the coder add tests for pole-aware ϕ/K* integration, failed maximum-order convergence, and invalid sampled points; verify the focused quadrature certification test suite passes and preserves failure diagnostics.
+- [x] 1.2 Have the coder add tests for pole-aware ϕ/K* integration, failed maximum-order convergence, and invalid sampled points; verify the focused quadrature certification test suite passes and preserves failure diagnostics.
 
 ## 2. Fitted-region sampling and reproducible results
 
