@@ -1,0 +1,107 @@
+{
+  "baseline_output": "data/vector_sector/babar_kkpi_global_vector_sector_fit_baseline_20261104_rerun.json",
+  "stored_reference_output": "data/vector_sector/babar_kkpi_global_vector_sector_fit.json",
+  "command": "time -p .venv/bin/python scripts/fit_babar_kkpi_global_vector_sector.py --output data/vector_sector/babar_kkpi_global_vector_sector_fit_baseline_20261104_rerun.json",
+  "elapsed_seconds_real": 1955.96,
+  "elapsed_seconds_user": 1928.76,
+  "elapsed_seconds_system": 26.49,
+  "environment": {
+    "python": "3.14.8",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "platform": "Linux 7.3.0-4-cachyos x86_64, glibc 2.44",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "logical_cpu_count": 12
+  },
+  "fit_settings": {
+    "optimizer_method": "trf",
+    "svd_optimizer_coordinates": false,
+    "optimizer_ftol": 1e-8,
+    "initialization": "preliminary",
+    "max_nfev": 1500,
+    "energy_order": 2,
+    "pair_order": 16,
+    "angle_order": 16
+  },
+  "rerun_result": {
+    "chi2": 307.984932373217,
+    "success": false,
+    "message": "The maximum number of function evaluations is exceeded.",
+    "nfev": 1500,
+    "njev": 1453
+  },
+  "stored_reference_result": {
+    "chi2": 307.98485223991514,
+    "success": false,
+    "message": "The maximum number of function evaluations is exceeded.",
+    "nfev": 1500,
+    "njev": 1453
+  },
+  "same_candidate_replay": {
+    "candidate_source": "stored_reference_output.parameter_values",
+    "chi2_difference": -1.1368683772161603e-13,
+    "maximum_absolute_residual_difference": 7.432943149865423e-14,
+    "maximum_absolute_prediction_difference_by_channel_nb": {
+      "kkpi0": 2.220446049250313e-16,
+      "kskpi": 2.6645352591003757e-15
+    },
+    "input_hashes_match": true,
+    "fit_settings_match": true
+  },
+  "endpoint_comparison": {
+    "chi2_difference_rerun_minus_stored": 8.013330187850443e-05,
+    "maximum_absolute_parameter_difference": 2.4400641986943583e-06,
+    "maximum_absolute_residual_difference": 8.526285772081366e-06,
+    "maximum_absolute_prediction_difference_by_channel_nb": {
+      "kkpi0": 4.4927006043193884e-07,
+      "kskpi": 8.421071986397521e-07
+    },
+    "interpretation": "Same inputs and settings; the default optimizer runs are numerically close but do not end at exactly the same parameter vector. The stored parameter vector itself reproduces the stored residuals and predictions to floating-point precision."
+  },
+  "input_sha256": {
+    "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
+    "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+    "data/vector_sector/gv_measurements.json": "b3efa02d9a9d0f07aa8d0f0b8633a428aef85c8bd41a13f1ecb44d2748d17bf8",
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "data/vector_sector/babar_2007_kkpi0_inclusive_below_1p78.csv": "39435b20ce6adad3c0b69cb4a74017c26bc56c788a8fcfa0bff0e5b697a87a07",
+    "data/vector_sector/babar_2007_kskpi_inclusive_below_1p78.csv": "d48837107b828f5c698199ca7ab277dba37249bf5958c8ecd05e29d86539f2f3"
+  },
+  "profiling": {
+    "method": "Python cProfile at the stored candidate; separately profiled one residual, one full analytic-plus-finite-difference Jacobian, and a representative SciPy least_squares execution limited to max_nfev=3. Profiler timings are diagnostic and excluded from elapsed_seconds_real.",
+    "single_residual_seconds_profiled": 0.090,
+    "jacobian_seconds_profiled": 1.439,
+    "residual_calls_per_jacobian": 21,
+    "representative_least_squares_seconds_profiled": 1.556,
+    "representative_least_squares_max_nfev": 3,
+    "dominant_costs": [
+      {
+        "routine": "reference propagator calculation (fit_babar_kkpi_g_coefficients.py:48)",
+        "calls_in_jacobian_profile": 864,
+        "self_seconds_in_jacobian_profile": 0.680,
+        "cumulative_seconds_in_jacobian_profile": 1.032,
+        "calls_in_representative_fit_profile": 960,
+        "self_seconds_in_representative_fit_profile": 0.752,
+        "cumulative_seconds_in_representative_fit_profile": 1.141
+      },
+      {
+        "routine": "running-width threshold phase helper (fit_babar_kkpi_g_coefficients.py:71)",
+        "calls_in_jacobian_profile": 576,
+        "self_seconds_in_jacobian_profile": 0.276,
+        "cumulative_seconds_in_jacobian_profile": 0.310,
+        "calls_in_representative_fit_profile": 640,
+        "self_seconds_in_representative_fit_profile": 0.306,
+        "cumulative_seconds_in_representative_fit_profile": 0.343
+      },
+      {
+        "routine": "BaBar residual block including coherent-current integration (_babar_blocks_full)",
+        "calls_in_jacobian_profile": 22,
+        "self_seconds_in_jacobian_profile": 0.173,
+        "cumulative_seconds_in_jacobian_profile": 1.301,
+        "calls_in_representative_fit_profile": 25,
+        "self_seconds_in_representative_fit_profile": 0.155,
+        "cumulative_seconds_in_representative_fit_profile": 1.397
+      }
+    ],
+    "selected_bottleneck": "Repeated vector propagator evaluation during the 20 forward-difference residual evaluations in each Jacobian; this path dominates the measured representative least_squares execution."
+  }
+}

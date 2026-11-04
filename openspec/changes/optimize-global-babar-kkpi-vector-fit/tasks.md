@@ -2,8 +2,8 @@
 
 ## 1. Establish the baseline and profile
 
-- [ ] 1.1 Run the current default fit with a preserved output snapshot and record exact command, input hashes, Python/SciPy/NumPy versions, machine context, elapsed wall time, `nfev`/`njev`, success/message, chi-squared, parameter values, and predictions; verify the output matches the stored baseline at the same candidate and settings.
-- [ ] 1.2 Profile representative residual, Jacobian, and full-fit execution without including profiler overhead in timing claims; document cumulative and per-call costs and verify the selected optimization target is among the measured dominant costs.
+- [x] 1.1 Run the current default fit with a preserved output snapshot and record exact command, input hashes, Python/SciPy/NumPy versions, machine context, elapsed wall time, `nfev`/`njev`, success/message, chi-squared, parameter values, and predictions; verify the output matches the stored baseline at the same candidate and settings.
+- [x] 1.2 Profile representative residual, Jacobian, and full-fit execution without including profiler overhead in timing claims; document cumulative and per-call costs and verify the selected optimization target is among the measured dominant costs.
 
 ## 2. Optimize the measured bottleneck
 
