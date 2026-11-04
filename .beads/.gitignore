@@ -21,6 +21,7 @@ push-state.json
 
 # Credential key (encryption key for federation peer auth — never commit)
 .beads-credential-key
+config.yaml
 
 # Local version tracking (prevents upgrade notification spam after git ops)
 .local_version
