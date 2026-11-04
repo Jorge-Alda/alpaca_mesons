@@ -131,6 +131,8 @@ $$
 \end{aligned}
 $$
 
+The operator $O_{47}$ contributes to the ALP–meson mixed kinetic column $\Delta_i$ and hence to the invariant source $\mathcal C_i^{\rm pole}$, as specified in the [LSZ invariant-source record](lsz-invariant-split.md). It has no meson-only $\Phi^2$ quadratic term, so it adds no term to $K_{ij}$, $M^2_{ij}$, or the linear map $\mathbb M_a^{\rm loc,NLO}:X\mapsto(M^2-wK)[X]$ derived here. The corrected NLO solution is obtained by applying this same operator inverse to the source including $\delta_{47}\bm{\mathcal C}_{\rm NLO}$.
+
 The trace terms left outside $\mathbb D_a$ only depend on $X$ through the three scalar moments $t_0=\operatorname{tr}(X)$, $t_1=\operatorname{tr}(\chi_0X)$, and $t_2=\operatorname{tr}(\chi_0^2X)$. Substituting these moments into the remaining operator gives
 
 $$

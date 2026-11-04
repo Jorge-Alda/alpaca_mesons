@@ -2,7 +2,7 @@
 title: Invariant split of the ALP–meson LSZ overlap
 status: derived
 created: 2026-11-02
-updated: 2026-11-03
+updated: 2026-11-04
 bibtex_keys: [Alda:2026nrd, Kaiser:1998ds]
 provenance: analytical-derivation
 ---
@@ -61,9 +61,23 @@ $$
 w^{(a)}(s)=(M^2-sK)^{-1}\mathcal C^{\rm pole}+v-K^{-1}\Delta.
 $$
 
-The retained $u_\mu$-quadratic basis has $\Delta=0$. If source-dependent operators such as $O_{47}$ are included, alignment need not hold; the $O_{47}$ contribution to $\Delta$ is singlet before multiplication by $K^{-1}$. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for its explicit form.
+In the reduced $V_4=0$ basis, the retained $u_\mu$-quadratic terms have $\Delta_i=0$. The source-dependent operator $O_{47}=D_\mu\hat\theta\langle C^\mu\rangle\langle M\rangle$ supplies
 
-At the ALP pole the first term is $(\mathbb M_a^{\rm NLO})^{-1}_{ij}\mathcal C_j^{\rm pole}$. At LO, this operator reduces in flavor-matrix notation to Alda:2026nrd's Eq. (III.27),
+$$
+\Delta_i^{(47)}=-\frac{4g_{47}c_{GA}\langle\chi_0\rangle}{f_af_\pi}\operatorname{tr}(\lambda_i).
+$$
+
+The column is singlet in a trace-orthogonal generator basis. Its contribution to the invariant LSZ source is
+
+$$
+\delta_{47}\mathcal C_i^{\rm pole}=\left[M^2K^{-1}\Delta^{(47)}\right]_i,
+\qquad
+\delta_{47}\bm{\mathcal C}_{\rm NLO}=\frac{f_a}{2f_\pi}\sum_i\left[M^2K^{-1}\Delta^{(47)}\right]_i\lambda_i,
+$$
+
+where the second relation reconstructs the flavor matrix using $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$. In general $K^{-1}$ spreads this singlet input over meson directions. This term corrects the source, not the meson-only pole operator: $O_{47}$ has no $\Phi^2$ quadratic term and therefore leaves $K_{ij}$ and $M^2_{ij}$ unchanged. Thus $\mathbb M_a$ remains the full linear map $X\mapsto(M^2-m_a^2K)[X]$ on the space of flavor matrices, and its inverse acts on the complete corrected source. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for the expansion of $\Delta_i^{(47)}$.
+
+At the ALP pole the first term is the component representation of $(\mathbb M_a^{\rm NLO})^{-1}[\bm{\mathcal C}_{\rm NLO}]$. Here $\mathbb M_a$ is a linear operator on the space of flavor matrices, not a $3\times3$ array indexed by meson labels. At LO it reduces to Alda:2026nrd's Eq. (III.27),
 
 $$
 \mathbb M_a(\bm{\mathcal C})
@@ -80,7 +94,7 @@ K'_{i\hat a}=K_{i\hat a}-K_{ij}\rho_j,
 M_{i\hat a}^{2\prime}=M^2_{i\hat a}-M^2_{ij}\rho_j.
 $$
 
-It follows that $\mathcal C_i^{\rm pole}$ and $\Delta_i=K_{i\hat a}+K_{ij}v_j$ are unchanged, while the second term in the split shifts by $+\rho_i$. Thus $w_i^{(a)\prime}=w_i^{(a)}+\rho_i$, as required by $P_i=P_i'-\rho_i a$. For the ALP-dependent axial transformation $c_q^A\to c_q^A+\kappa$, $c_G\to c_G-\operatorname{tr}\kappa$, one has $\rho_i=\delta v_i=(f_\pi/f_a)\operatorname{tr}(\kappa\lambda_i)$. Hence $w_i^{(a)}$ is an affine field-coordinate component, whereas $w_i^{(a)}-v_i$ is invariant, even when $\Delta\ne0$. Under a regular change of meson coordinates, $\mathcal C_i^{\rm pole}$ transforms as a source covector and $w_i^{(a)}$ as a field vector.
+It follows that $\mathcal C_i^{\rm pole}$ and $\Delta_i=K_{i\hat a}+K_{ij}v_j$ are unchanged, while the second term in the split shifts by $+\rho_i$. Thus $w_i^{(a)\prime}=w_i^{(a)}+\rho_i$, as required by $P_i=P_i'-\rho_i a$. At the ALP pole choose $\rho_i=-w_i^{(a)}(m_a^2)$; then $w_i^{(a)\prime}(m_a^2)=0$. This pole-specific coordinate choice shifts the direct ALP couplings at the same time, leaving direct-plus-pole amplitudes unchanged. It does not remove the invariant source or the $O_{47}$ contribution to $\mathcal C_i^{\rm pole}$. For the ALP-dependent axial transformation $c_q^A\to c_q^A+\kappa$, $c_G\to c_G-\operatorname{tr}\kappa$, one has $\rho_i=\delta v_i=(f_\pi/f_a)\operatorname{tr}(\kappa\lambda_i)$. Hence $w_i^{(a)}$ is an affine field-coordinate component, whereas $w_i^{(a)}-v_i$ is invariant, even when $\Delta\ne0$. Under a regular change of meson coordinates, $\mathcal C_i^{\rm pole}$ transforms as a source covector and $w_i^{(a)}$ as a field vector.
 
 For a linear source $\mathcal J=V_{\hat a}a+V_iP_i$, the field shift gives $V'_{\hat a}=V_{\hat a}-V_i\rho_i$. Its direct-plus-pole coefficient is invariant:
 
@@ -133,9 +147,9 @@ $$
 =\frac{f_\pi}{f_a}\left\langle\bm{\mathcal C}_{\rm NLO}\lambda_i^\dagger\right\rangle.
 $$
 
-For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the leading term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown, and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from $\bm{\mathcal C}_{\rm NLO}$ when the mixed kinetic and mass blocks are combined. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ change these blocks together and do not enter this invariant source.
+For diagonal spurions, the anticommutators reduce to the corresponding products. For general $c_q^{AP}$, the leading term is not $-\chi_0c_q^{AP}$; the $L_8$ term is the nested anticommutator shown, and the $L_6$ term also requires an anticommutator. The $L_7$, $\Lambda_2$, and $L_{25}$ trace structures retain the displayed orderings. The axial matrix cancels from the aligned contributions to $\bm{\mathcal C}_{\rm NLO}$ when the mixed kinetic and mass blocks are combined. The derivative LECs $L_4,L_5,L_{18},\Lambda_1$ change these blocks together and do not enter this invariant source. When retained, $O_{47}$ adds the displayed $\delta_{47}\bm{\mathcal C}_{\rm NLO}$ to $\Delta\bm{\mathcal C}_{\rm NLO}$.
 
-For these local terms, the derivative bilinears give the kinetic-block relation derived in [the kinetic-alignment record](kinetic-block-alignment.md):
+For the aligned local terms, the derivative bilinears give the kinetic-block relation derived in [the kinetic-alignment record](kinetic-block-alignment.md):
 
 $$
 -(K_{\rm meson}^{-1})_{ij}K_{j\hat a}
@@ -147,12 +161,12 @@ The ALP-pole overlap is therefore
 $$
 \boxed{
 \langle0|P_i|a\rangle=w_i^{(a)}(m_a^2)
-=\frac{f_\pi}{f_a}\left\langle c_q^A\lambda_i^\dagger\right\rangle
+=v_i-(K^{-1})_{ij}\Delta_j
 +[(\mathbb M_a^{\rm NLO})^{-1}]_{ij}\mathcal C_j^{\rm pole}.
 }
 $$
 
-At LO this is Eq. (III.25) of Alda:2026nrd, with $K_{ij}=\delta_{ij}$ and diagonal $M^2_{ij}=m_i^2\delta_{ij}$. The displayed NLO expression retains the local operators above for general, noncommuting flavor matrices. It does not include loops or omitted higher-order operators.
+Here $v_i=(f_\pi/f_a)\langle c_q^A\lambda_i^\dagger\rangle$, and $\mathcal C_i^{\rm pole}$ includes the $O_{47}$ source term when that operator is retained. At LO this is Eq. (III.25) of Alda:2026nrd, with $K_{ij}=\delta_{ij}$ and diagonal $M^2_{ij}=m_i^2\delta_{ij}$. The displayed NLO expression retains the local operators above for general, noncommuting flavor matrices. It does not include loops or omitted higher-order operators.
 
 ## Reproducibility
 
