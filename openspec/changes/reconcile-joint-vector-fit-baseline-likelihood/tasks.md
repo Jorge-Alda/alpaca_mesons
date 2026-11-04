@@ -8,4 +8,4 @@
 
 ## 2. Review the record
 
-- [ ] 2.1 Run the repository memory-index/link validation available in the project and verify the stored fit snapshot still reports `success=false`, `nfev=1500`, and $\chi^2=307.9848522$ for 43 dof.
+- [x] 2.1 Run the repository memory-index/link validation available in the project and verify the stored fit snapshot still reports `success=false`, `nfev=1500`, and $\chi^2=307.9848522$ for 43 dof.
