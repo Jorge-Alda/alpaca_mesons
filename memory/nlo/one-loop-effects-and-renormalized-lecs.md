@@ -99,7 +99,27 @@ B_{47}={}&-\frac{n_l}{2}\omega_1^{(2)}\omega_2+\frac{i}{2}\omega_1^{(2)}\omega_3
 \end{aligned}
 $$
 
-This is not a universal numerical $\Gamma_{47}$ until the singlet potentials $W_i(X)$ are specified and matched to the Alda source convention. The operator itself is present in [the singlet-source derivative basis](singlet-source-derivative-basis.md), so it should not be silently assigned zero when retained.
+The same paper then imposes its large-$N_c$ truncation to evaluate the counterterms. It expands
+
+$$
+W_1(X)=\frac{f^2}{4}(1+v_{12}X^2+\cdots),\quad
+W_2(X)=\frac{f^2}{4}(1+v_{22}X^2+\cdots),\quad
+W_3(X)=-i\frac{f^2}{4}(v_{31}X+\cdots),
+$$
+
+so at $X=0$, $\omega_1^{(1)}=0$, $\omega_1^{(2)}=2v_{12}$, $\omega_2=1$, and $\omega_3^{(1)}=-iv_{31}$. The general expression therefore reduces to
+
+$$
+B_{47}(0)=v_{12}(v_{31}-n_l)=v_{12}(v_{31}-3)\qquad(n_l=3).
+$$
+
+The large-$N_c$ rules in [@Herrera-Siklody:1996tqr] give $v_{12}=O(N_c^{-2})$ and $v_{31}=O(N_c^{-1})$. Hence $B_{47}(0)=O(N_c^{-2})$, beyond the paper's retained $O(1/N_c)$ correction to the $O(p^4)$ counterterms. Under that same truncation used for the other quoted $\Gamma_i$, the result is therefore
+
+$$
+\Gamma_{47}=0\quad\text{at the retained order of [@Herrera-Siklody:1996tqr].}
+$$
+
+This zero is a consequence of that specified truncation, not a general identity: at the next $1/N_c$ order, the general $B_{47}(X)$ need not vanish. The operator itself is present in [the singlet-source derivative basis](singlet-source-derivative-basis.md), so it must be kept with its matched counterterm if that higher order is retained.
 
 ## Constants entering the retained quadratic Lagrangian
 
