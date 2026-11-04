@@ -1,0 +1,815 @@
+{
+  "scope": "Reproducible diagnostic of one stored nonconverged joint-fit snapshot; subset fits are not additional likelihood data.",
+  "units": "Masses and widths GeV; branching fractions dimensionless; covariance uses corresponding squared units.",
+  "bibtex_keys": [
+    "Alda:2026nrd",
+    "Ruiz-Femenia:2003jdx",
+    "ParticleDataGroup:2024cfk",
+    "BaBar:2007ceh",
+    "Qin:2024ulb",
+    "Ecker:1988te",
+    "Ecker:1989yg"
+  ],
+  "input_sha256": {
+    "data/vector_sector/babar_kkpi_global_vector_sector_fit.json": "b6f2034d7e180e931ca67ec63f6fcf5b814c07cd53c0fcb0ca9613315b0f8a00",
+    "data/vector_sector/gv_measurements.json": "b3efa02d9a9d0f07aa8d0f0b8633a428aef85c8bd41a13f1ecb44d2748d17bf8",
+    "data/vector_sector/gv_conditional_fit.json": "dd9e54066ae7bf2c8730b499c71a38dccb2df7ff99c200a25ab8508db41909d3",
+    "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+    "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "memory/extracts/ParticleDataGroup:2024cfk/vector-to-two-pseudoscalar-inputs.md": "9799e8b95967b21d985aa07bd333a9db9dad0e70df0bca3a49c70f2987053a35",
+    "data/vector_sector/odd_preliminary_fit.json": "cbf3f0a4f326ebf81d4b537d849f6d97ce098523d402959e456901ee45c49c37",
+    "data/vector_sector/stage3_results.json": "e528e5128902b17c4d19ccdf4d000c221cde864c7b7e87b6d0ca46ba58b37a2b",
+    "scripts/fit_vector_gv.py": "b54999bf036acb992bddedaadb1d02de039d61be27014ea9cbf3734ab4ef28b0",
+    "scripts/fit_babar_kkpi_global_vector_sector.py": "3f9322e1e852f44da88abaa3e886442410e7beee00fff315bb7ce1b134d1da8d",
+    "scripts/audit_shared_even_gv.py": "eaee927e9a82b72be445e5a628b5cd2dd489834a2fd68030ab1bce0116a0fe5b"
+  },
+  "baseline_recorded_input_sha256": {
+    "data/odd_parity/odd_low_energy_measurements.json": {
+      "recorded": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
+      "current": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
+      "matches": true
+    },
+    "data/vector_sector/pdg2024.json": {
+      "recorded": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+      "current": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+      "matches": true
+    },
+    "data/vector_sector/gv_measurements.json": {
+      "recorded": "b3efa02d9a9d0f07aa8d0f0b8633a428aef85c8bd41a13f1ecb44d2748d17bf8",
+      "current": "b3efa02d9a9d0f07aa8d0f0b8633a428aef85c8bd41a13f1ecb44d2748d17bf8",
+      "matches": true
+    },
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": {
+      "recorded": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+      "current": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+      "matches": true
+    },
+    "data/vector_sector/babar_2007_kkpi0_inclusive_below_1p78.csv": {
+      "recorded": "39435b20ce6adad3c0b69cb4a74017c26bc56c788a8fcfa0bff0e5b697a87a07",
+      "current": "39435b20ce6adad3c0b69cb4a74017c26bc56c788a8fcfa0bff0e5b697a87a07",
+      "matches": true
+    },
+    "data/vector_sector/babar_2007_kskpi_inclusive_below_1p78.csv": {
+      "recorded": "d48837107b828f5c698199ca7ab277dba37249bf5958c8ecd05e29d86539f2f3",
+      "current": "d48837107b828f5c698199ca7ab277dba37249bf5958c8ecd05e29d86539f2f3",
+      "matches": true
+    }
+  },
+  "source_archive_sha256": {
+    "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf": {
+      "recorded": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9",
+      "current": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9",
+      "matches": true
+    },
+    "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf": {
+      "recorded": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e",
+      "current": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e",
+      "matches": true
+    },
+    "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf": {
+      "recorded": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0",
+      "current": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0",
+      "matches": true
+    }
+  },
+  "input_inventory": {
+    "even_rows": [
+      {
+        "category": "charged only, tau decays and e+e-; OUR AVERAGE",
+        "name": "rho_charged",
+        "value_mev": 775.11,
+        "sigma_mev": 0.34,
+        "source": "rho",
+        "page": 2,
+        "scale_factor": null,
+        "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+      },
+      {
+        "category": "charged only, hadroproduced; OUR AVERAGE",
+        "name": "kstar_charged",
+        "value_mev": 891.67,
+        "sigma_mev": 0.26,
+        "source": "kstar",
+        "page": 1,
+        "scale_factor": null,
+        "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+      },
+      {
+        "category": "OUR AVERAGE",
+        "name": "omega",
+        "value_mev": 782.66,
+        "sigma_mev": 0.13,
+        "source": "omega",
+        "page": 1,
+        "scale_factor": 2.0,
+        "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+      },
+      {
+        "category": "OUR AVERAGE",
+        "name": "phi",
+        "value_mev": 1019.461,
+        "sigma_mev": 0.016,
+        "source": "phi",
+        "page": 1,
+        "scale_factor": null,
+        "scale_factor_note": "Quoted error already includes any stated scale; null means no factor stated."
+      },
+      {
+        "category": "OUR FIT (identical OUR AVERAGE)",
+        "name": "rho",
+        "value_kev": 7.04,
+        "sigma_kev": 0.06,
+        "source": "rho",
+        "page": 14,
+        "scale_factor": null
+      },
+      {
+        "category": "OUR EVALUATION",
+        "name": "omega",
+        "value_kev": 0.6,
+        "sigma_kev": 0.02,
+        "source": "omega",
+        "page": 5,
+        "scale_factor": null
+      },
+      {
+        "category": "OUR EVALUATION",
+        "name": "phi",
+        "value_kev": 1.27,
+        "sigma_kev": 0.04,
+        "source": "phi",
+        "page": 6,
+        "scale_factor": null
+      }
+    ],
+    "even_sources": {
+      "rho": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-rho-770.pdf",
+        "sha256": "26e9d547439a48387dcee94839ccd01687d90f3ac8c49342a4b92c3d82fb589f",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-rho-770.pdf",
+        "listing_created": "2024-05-31",
+        "accessed": "2026-10-13"
+      },
+      "omega": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-782.pdf",
+        "sha256": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf",
+        "listing_created": "2024-05-31",
+        "accessed": "2026-10-13"
+      },
+      "phi": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1020.pdf",
+        "sha256": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf",
+        "listing_created": "2024-05-31",
+        "accessed": "2026-10-13"
+      },
+      "kstar": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-892.pdf",
+        "sha256": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf",
+        "listing_created": "2024-05-31",
+        "accessed": "2026-10-13"
+      }
+    },
+    "shared_total_width_rows": {
+      "rho0": {
+        "value_gev": 0.1474,
+        "sigma_gev": 0.0008,
+        "source": "rho",
+        "page": 7,
+        "status": "PDG OUR AVERAGE"
+      },
+      "rhoplus": {
+        "value_gev": 0.1491,
+        "sigma_gev": 0.0008,
+        "source": "rho",
+        "page": 8,
+        "status": "PDG OUR AVERAGE"
+      },
+      "omega": {
+        "value_gev": 0.00868,
+        "sigma_gev": 0.00013,
+        "source": "omega",
+        "page": 2,
+        "status": "PDG OUR AVERAGE"
+      },
+      "phi": {
+        "value_gev": 0.004249,
+        "sigma_gev": 1.3e-05,
+        "source": "phi",
+        "page": 3,
+        "status": "PDG OUR AVERAGE"
+      },
+      "Kstar0": {
+        "value_gev": 0.0473,
+        "sigma_gev": 0.0005,
+        "source": "kstar",
+        "page": 6,
+        "status": "PDG OUR AVERAGE (quoted error includes S=2.0)"
+      },
+      "Kstarplus": {
+        "value_gev": 0.0514,
+        "sigma_gev": 0.0008,
+        "source": "kstar",
+        "page": 5,
+        "status": "PDG OUR AVERAGE"
+      },
+      "etap": {
+        "value_gev": 0.00023,
+        "sigma_gev": 2.1e-05,
+        "source": "etap",
+        "page": 1,
+        "status": "PDG OUR AVERAGE"
+      }
+    },
+    "shared_width_sources": {
+      "rho": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-rho-770.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-rho-770.pdf",
+        "sha256": "26e9d547439a48387dcee94839ccd01687d90f3ac8c49342a4b92c3d82fb589f"
+      },
+      "omega": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-782.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf",
+        "sha256": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0"
+      },
+      "phi": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1020.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf",
+        "sha256": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e"
+      },
+      "kstar": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-892.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf",
+        "sha256": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9"
+      },
+      "etap": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-eta-prime-958.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-eta-prime-958.pdf",
+        "sha256": "fc0bbc12bc817f2e13d997e7d8f680ae31b0c5c05af3aba18070822296147f15"
+      },
+      "pi0": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-pi-zero.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-pi-zero.pdf",
+        "sha256": "1d738eed1677e11d929fe59c23eec64b2f8ba039a10510b132dc2d6d94340821"
+      },
+      "eta": {
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-eta.pdf",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-eta.pdf",
+        "sha256": "fb2ff98bf01c593145c4eea1cb0a3e3a7b6d75f336d0796302bff61300001e7c"
+      }
+    },
+    "conditional_G_V_rows": [
+      {
+        "channel": "kstar_charged_Kpi",
+        "vector": "kstar_charged",
+        "physical_vector_mass_GeV": 0.89167,
+        "observable": "partial_width_GeV",
+        "value": 0.0514,
+        "sigma": 0.0008,
+        "source": "ParticleDataGroup:2024cfk",
+        "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+      },
+      {
+        "channel": "kstar_neutral_Kpi",
+        "vector": "kstar_neutral",
+        "physical_vector_mass_GeV": 0.89555,
+        "observable": "partial_width_GeV",
+        "value": 0.0473,
+        "sigma": 0.0005,
+        "source": "ParticleDataGroup:2024cfk",
+        "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+      },
+      {
+        "channel": "phi_K+_K-",
+        "vector": "phi",
+        "physical_vector_mass_GeV": 1.019461,
+        "observable": "branching_fraction",
+        "value": 0.491,
+        "sigma": 0.005,
+        "source": "ParticleDataGroup:2024cfk",
+        "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+      },
+      {
+        "channel": "phi_KL_KS",
+        "vector": "phi",
+        "physical_vector_mass_GeV": 1.019461,
+        "observable": "branching_fraction",
+        "value": 0.339,
+        "sigma": 0.004,
+        "source": "ParticleDataGroup:2024cfk",
+        "daughter_mass_source": "PDG physical phase-space masses in alda_2026nrd_arxiv_v1.json"
+      }
+    ],
+    "conditional_G_V_sources": {
+      "kstar": {
+        "bibtex_key": "ParticleDataGroup:2024cfk",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-892.pdf",
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-892.pdf",
+        "entries": "Charged Kpi partial width 51.4 +/- 0.8 MeV; neutral Kpi partial width 47.3 +/- 0.5 MeV, constrained total and partial width fits. Neutral error includes S=2.0, no further rescaling.",
+        "sha256": "287f930468723e1c2f4d3ffca1c774598b9ee29940ce25c98ae02a925a3e76b9"
+      },
+      "phi": {
+        "bibtex_key": "ParticleDataGroup:2024cfk",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1020.pdf",
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1020.pdf",
+        "entries": "K+K- BR .491 +/- .005; KLKS BR .339 +/- .004; constrained-fit correlation x1,x2=-72 percent; no further rescaling.; pi+ pi- BR (7.3 +/- 1.3) x 10^-5, diagnostic only.",
+        "sha256": "6ce364c51d8620cb39b8e82e5a35e7d5b305d5bac43eeed4f1894de9e8833d2e"
+      },
+      "omega": {
+        "bibtex_key": "ParticleDataGroup:2024cfk",
+        "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-782.pdf",
+        "sha256": "8c5f033aa882afb066ae9f3c2e57cf4b8bb898bfad1e8c55cf72b905a58bd3a0",
+        "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-782.pdf",
+        "entries": "pi+ pi- BR (1.53 +/- .12) percent, diagnostic only"
+      }
+    },
+    "conditional_G_V_covariance": [
+      [
+        6.4e-07,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.5e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.5e-05,
+        -1.44e-05
+      ],
+      [
+        0.0,
+        0.0,
+        -1.44e-05,
+        1.6e-05
+      ]
+    ],
+    "covariance_assumption": "Quoted summary covariance; phi BR correlation -0.72 retained, other cross-correlations unavailable and set to zero; no fixed-parameter uncertainty propagated.",
+    "physical_daughter_masses_GeV": {
+      "pi0": 0.1349768,
+      "eta": 0.547862,
+      "etap": 0.95778,
+      "pi_charged": 0.13957039,
+      "K_charged": 0.493677,
+      "K_neutral": 0.497611
+    },
+    "Kstar_daughter_modes": [
+      [
+        [
+          "K_charged",
+          "pi0",
+          "kstar_charged_K+_pi0"
+        ],
+        [
+          "K_neutral",
+          "pi_charged",
+          "kstar_charged_K0_pi+"
+        ]
+      ],
+      [
+        [
+          "K_neutral",
+          "pi0",
+          "kstar_neutral_K0_pi0"
+        ],
+        [
+          "K_charged",
+          "pi_charged",
+          "kstar_neutral_K+_pi-"
+        ]
+      ]
+    ],
+    "fitted_common_Kstar_tensor_mass_GeV": 0.8909260808294115,
+    "physical_vector_masses_GeV": [
+      0.89167,
+      0.89555,
+      1.019461,
+      1.019461
+    ],
+    "joint_candidate_G_V_GeV": 0.05900262828236636,
+    "joint_shared_widths_GeV": {
+      "rho0": 0.14679148299460232,
+      "rhoplus": 0.14909662706944918,
+      "omega": 0.008643811247298546,
+      "phi": 0.004283108099035954,
+      "etap": 0.00019306604462426756,
+      "Kstarplus": 0.04467706328964325,
+      "Kstar0": 0.04499783646540686
+    },
+    "joint_Kstar_internal_width_GeV": 0.044837449877525054,
+    "duplicate_policy": "Kstar Kpi row values and errors match shared total-width rows; each appears once in shared_widths. Phi branching rows occur once in phi_KK. The four-row conditional diagnostic overlaps these and is not added.",
+    "saturation": "The joint model sets each Kstar total width equal to its predicted K-pion partial width; the data summaries are not counted twice."
+  },
+  "baseline": {
+    "chi2": 307.98485223991514,
+    "dof": 43,
+    "success": false,
+    "message": "The maximum number of function evaluations is exceeded.",
+    "nfev": 1500,
+    "quadrature": {
+      "energy": 2,
+      "pair_per_segment": 16,
+      "pair_segments": 3,
+      "angle_per_segment": 16,
+      "angle_segments": 2,
+      "method": "phi s-pole mapping and both Kstar t/u-pole mappings"
+    },
+    "assumptions": [
+      "Negative single-trace source; near-ideal inverse-mass branch.",
+      "No coefficient or previous-fit chi-square priors.",
+      "Kstar Kpi saturation; each of the two duplicate experimental widths counted once.",
+      "PDG summaries diagonal apart from phi KK BR correlation -0.72; missing cross-covariances set to zero.",
+      "Full rotated ground neutral propagator; excited multiplets ideal; averaged vertex masses and physical phase-space masses.",
+      "Ground rho/Kstar reference running shapes rescaled to shared on-shell widths; Kstar propagator uses charge-mean width.",
+      "Fixed source excited poles, regulator 2.5 GeV; no K2star contribution."
+    ],
+    "stored_blocks": {
+      "odd": {
+        "chi2": 11.154174549835913,
+        "count": 12
+      },
+      "masses_and_leptonic": {
+        "chi2": 10.029707538403345,
+        "count": 7
+      },
+      "shared_widths": {
+        "chi2": 102.45464257297881,
+        "count": 7
+      },
+      "phi_KK": {
+        "chi2": 16.73735273513131,
+        "count": 2
+      },
+      "BaBar": {
+        "chi2": 156.6343800174444,
+        "count": 45
+      },
+      "normalization_constraints": {
+        "chi2": 10.974594826121375,
+        "count": 2
+      }
+    },
+    "recomputed_blocks": {
+      "odd": {
+        "count": 12,
+        "chi2": 11.154174549835735
+      },
+      "masses_and_leptonic": {
+        "count": 7,
+        "chi2": 10.029707538403345
+      },
+      "shared_widths": {
+        "count": 7,
+        "chi2": 102.45464257297881
+      },
+      "phi_KK": {
+        "count": 2,
+        "chi2": 16.73735273513131
+      },
+      "BaBar": {
+        "count": 45,
+        "chi2": 156.63438001744444
+      },
+      "normalization_constraints": {
+        "count": 2,
+        "chi2": 10.974594826121375
+      }
+    },
+    "maximum_residual_difference": 7.432943149865423e-14,
+    "shared_even_diagnostic_stored": {
+      "scope": "Diagnostic only; never added to the joint likelihood.",
+      "selected_residual_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        26,
+        27
+      ],
+      "chi2": 125.02918429680327,
+      "residuals": [
+        0.6135302936171495,
+        -2.6293271963103626,
+        0.29152077250900355,
+        0.09190892837074305,
+        0.2412816561251032,
+        -0.8393954563187158,
+        -0.12303805624801369,
+        -4.614364408165261,
+        -8.409899504475751,
+        2.685136051751396,
+        3.4853700558791667,
+        2.343395659278899
+      ],
+      "success": true,
+      "nfev": 11,
+      "message": "`ftol` termination condition is satisfied.",
+      "exact_Kstar_pair_minimum_chi2": 22.210662498202176,
+      "predicted_Kstar_neutral_over_charged_ratio": 1.0071798178336842,
+      "observed_Kstar_neutral_over_charged_ratio": 0.9202334630350195,
+      "exact_phi_pair_minimum_chi2": 4.923901856660445,
+      "predicted_phi_charged_over_neutral_ratio": 1.5155786161606315,
+      "observed_phi_charged_over_neutral_ratio": 1.4483775811209438
+    },
+    "shared_even_diagnostic_recomputed": {
+      "scope": "Diagnostic only; never added to the joint likelihood.",
+      "selected_residual_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        26,
+        27
+      ],
+      "chi2": 125.02918429669454,
+      "residuals": [
+        0.6135142558666101,
+        -2.62931113225344,
+        0.29152183134834453,
+        0.09190886143817245,
+        0.24128093178945234,
+        -0.8393931751918298,
+        -0.12303776506770081,
+        -4.614368986306669,
+        -8.409902345416688,
+        2.6851377071196794,
+        3.4853705658581147,
+        2.3433967944782417
+      ],
+      "success": true,
+      "nfev": 11,
+      "message": "`ftol` termination condition is satisfied.",
+      "exact_Kstar_pair_minimum_chi2": 22.210662498202176,
+      "predicted_Kstar_neutral_over_charged_ratio": 1.0071798178336842,
+      "observed_Kstar_neutral_over_charged_ratio": 0.9202334630350195,
+      "exact_phi_pair_minimum_chi2": 4.923901856660445,
+      "predicted_phi_charged_over_neutral_ratio": 1.5155786161606315,
+      "observed_phi_charged_over_neutral_ratio": 1.4483775811209438
+    },
+    "diagnostic_maximum_residual_difference": 1.6064056922449055e-05
+  },
+  "pair_minima": {
+    "scope": "Separate one-scale diagnostic minima; they overlap the joint likelihood and are not additional chi-squared contributions.",
+    "Kstar": {
+      "free_scale": "nonnegative G_V squared, with the common tensor mass fixed",
+      "coefficients": [
+        12.83340507990339,
+        12.92554659056297
+      ],
+      "observations": [
+        0.0514,
+        0.0473
+      ],
+      "covariance": [
+        [
+          6.4e-07,
+          0.0
+        ],
+        [
+          0.0,
+          2.5e-07
+        ]
+      ],
+      "best_scale": 0.0037555451014569716,
+      "predictions": [
+        0.04819643158284419,
+        0.04854247318184262
+      ],
+      "differences": [
+        -0.0032035684171558138,
+        0.0012424731818426182
+      ],
+      "whitened_residuals": [
+        -4.004460521444767,
+        2.4849463636852365
+      ],
+      "chi2": 22.210662498202176,
+      "nominal_degrees_of_freedom": 1
+    },
+    "phi": {
+      "free_scale": "nonnegative common normalization containing G_V squared, phi flavor factor, tensor mass and total width",
+      "coefficients": [
+        0.7534404499154888,
+        0.49713056246739357
+      ],
+      "observations": [
+        0.491,
+        0.339
+      ],
+      "covariance": [
+        [
+          2.5e-05,
+          -1.44e-05
+        ],
+        [
+          -1.44e-05,
+          1.6e-05
+        ]
+      ],
+      "best_scale": 0.665109735096385,
+      "predictions": [
+        0.5011205780541919,
+        0.33064637671100505
+      ],
+      "differences": [
+        0.010120578054191864,
+        -0.008353623288994971
+      ],
+      "whitened_residuals": [
+        2.024115610838373,
+        -0.9093172442117468
+      ],
+      "chi2": 4.923901856660445,
+      "nominal_degrees_of_freedom": 1
+    }
+  },
+  "conditional_four_row_fit": {
+    "G_V_GeV": 0.059251378529790906,
+    "G_V_delta_chi2_one_GeV": [
+      0.05914147870822033,
+      0.05936107488553636
+    ],
+    "G_V_squared_GeV2": 0.003510725857680567,
+    "chi2": 95.99208489897453,
+    "nominal_dof": 3,
+    "predictions": [
+      0.04498111506040438,
+      0.04530407127249406,
+      0.5078400627039106,
+      0.3350799868042518
+    ],
+    "residuals": [
+      -0.006418884939595623,
+      -0.0019959287275059384,
+      0.016840062703910585,
+      -0.003920013195748251
+    ],
+    "scope": "Four-row fit at fixed provisional masses, mixing angle and phi total width; its data overlap the joint likelihood.",
+    "overlaps_joint_likelihood": true,
+    "added_to_joint_chi2": false,
+    "coefficients": [
+      12.812482912044313,
+      12.904474205349981,
+      144.6538645542166,
+      95.44464603272363
+    ],
+    "observations": [
+      0.0514,
+      0.0473,
+      0.491,
+      0.339
+    ],
+    "covariance": [
+      [
+        6.4e-07,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.5e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.5e-05,
+        -1.44e-05
+      ],
+      [
+        0.0,
+        0.0,
+        -1.44e-05,
+        1.6e-05
+      ]
+    ],
+    "stored_G_V_GeV": 0.059251378529790906
+  },
+  "comparisons": {
+    "physical_tensor_mass_sensitivity": {
+      "scope": "Fixed joint candidate sensitivity, not a refit or a complete isospin-breaking model.",
+      "prescription": "Each physical K* mass replaces the common fitted tensor mass only in its external K-pion width normalization; the charge-mean internal propagator prescription is retained and its shared width is recomputed.",
+      "fixed": "All stored joint parameter coordinates, physical phase-space masses, data and covariance.",
+      "free_in_pair_minimum": "One nonnegative common G_V squared; no joint parameters are refitted.",
+      "tensor_masses_GeV": [
+        0.89167,
+        0.89555
+      ],
+      "shared_widths_GeV": [
+        0.04460254635077936,
+        0.044534368847148426
+      ],
+      "joint_chi2_at_fixed_candidate": 320.37901185514954,
+      "delta_joint_chi2_at_fixed_candidate": 12.394159615234514,
+      "blocks_at_fixed_candidate": {
+        "odd": {
+          "count": 12,
+          "chi2": 10.981980314718795
+        },
+        "masses_and_leptonic": {
+          "count": 7,
+          "chi2": 10.029707538403345
+        },
+        "shared_widths": {
+          "count": 7,
+          "chi2": 113.4238932915557
+        },
+        "phi_KK": {
+          "count": 2,
+          "chi2": 16.73735273513131
+        },
+        "BaBar": {
+          "count": 45,
+          "chi2": 158.23148314921897
+        },
+        "normalization_constraints": {
+          "count": 2,
+          "chi2": 10.974594826121375
+        }
+      },
+      "delta_blocks_at_fixed_candidate": {
+        "odd": -0.17219423511694032,
+        "masses_and_leptonic": 0.0,
+        "shared_widths": 10.969250718576887,
+        "phi_KK": 0.0,
+        "BaBar": 1.5971031317745314,
+        "normalization_constraints": 0.0
+      },
+      "kstar_pair_minimum": {
+        "coefficients": [
+          12.812000224898597,
+          12.79241636112134
+        ],
+        "observations": [
+          0.0514,
+          0.0473
+        ],
+        "covariance": [
+          [
+            6.4e-07,
+            0.0
+          ],
+          [
+            0.0,
+            2.5e-07
+          ]
+        ],
+        "best_scale": 0.003786001119950174,
+        "predictions": [
+          0.04850624720026797,
+          0.04843210267007433
+        ],
+        "differences": [
+          -0.00289375279973203,
+          0.0011321026700743253
+        ],
+        "whitened_residuals": [
+          -3.6171909996650373,
+          2.2642053401486506
+        ],
+        "chi2": 18.210696550415417,
+        "nominal_degrees_of_freedom": 1
+      },
+      "delta_kstar_pair_minimum_chi2": -3.999965947786759
+    },
+    "non_saturated_Kstar_likelihood": {
+      "status": "unavailable",
+      "source": "memory/extracts/ParticleDataGroup:2024cfk/vector-to-two-pseudoscalar-inputs.md",
+      "branching_fractions": {
+        "Kstarplus": {
+          "value": 0.99902,
+          "sigma": 9e-05,
+          "central_deficit_from_one": 0.00098
+        },
+        "Kstar0": {
+          "value": 0.99754,
+          "sigma": 0.00021,
+          "central_deficit_from_one": 0.00246
+        }
+      },
+      "reason": "These source fractions and the partial/total width summaries arise from overlapping constrained fits; their cross-covariance is unavailable. They are not independent added measurements."
+    }
+  }
+}

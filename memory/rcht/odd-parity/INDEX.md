@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-29
+updated: 2026-11-04
 bibtex_keys: []
 provenance: assumption
 ---
@@ -32,6 +32,7 @@ being combined with canonical photon or resonance amplitudes.
 - [babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md) — BaBar isovector $K^*K$ fits of $c_4$ and $c_1-c_2+c_5$, their profiles, rho-prime model sensitivity, and remaining coefficient nulls.
 - [babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md) — one joint BaBar inclusive likelihood for ten $c_i,d_i,g_i$ combinations with exact null, rate-rank and profile diagnostics.
 - [babar-kkpi-global-vector-sector-fit-baseline.md](babar-kkpi-global-vector-sector-fit-baseline.md) — stored global preliminary-plus-conditional-$G_V$-plus-BaBar likelihood baseline, with six input blocks, shared nuisances, duplicate-input exclusions, and its current nonconverged fit snapshot.
+- [shared-even-sector-gv-constraint-audit.md](shared-even-sector-gv-constraint-audit.md) — reproducible blockwise diagnosis of the shared even-sector and conditional $G_V$ rows, overlap/covariance audit, $K^*\to K\pi$ saturation caveat, and fixed-candidate mass-normalization sensitivity.
 - [kkpi-likelihood-quadrature-certification.md](kkpi-likelihood-quadrature-certification.md) — reproducible quadrature comparisons at the saved reference candidate and deterministic fitted-region displacements; all five points remain explicitly uncertified at the recorded maximum orders.
 - [kkpi-high-order-quadrature-certification.md](kkpi-high-order-quadrature-certification.md) — high-order qualification from pair/angular orders 64 to 128 using bounded energy-bin blocks; all five points pass the unchanged prediction, residual, Jacobian, and $\chi^2$ tolerances.
 - [kkpi-a2-subchannel-sensitivity.md](kkpi-a2-subchannel-sensitivity.md) — possible tensor-exchange sensitivity in inclusive kaon-pion spectra.
