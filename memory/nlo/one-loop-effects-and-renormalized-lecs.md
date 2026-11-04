@@ -60,7 +60,46 @@ L_8&=L_8^r(\mu)+\frac{5}{48}\Lambda(\mu).
 \end{aligned}
 $$
 
-These coefficients are for the conventional $SU(3)$ renormalization scheme. They are not automatically the complete $U(3)$ counterterm prescription when the singlet and anomaly are dynamical. In the $U(3)$ treatment, the coefficient functions of the invariant singlet variable and the additional singlet-source operators also renormalize; see the full operator/counterterm construction in [@Herrera-Siklody:1996tqr]. In particular, the present records do not establish subtraction coefficients or running for $\Lambda_1,\Lambda_2,L_{18},L_{25}$ in the reduced large-$N_c$ basis. Those must be matched from the chosen $U(3)$ loop scheme, rather than inferred from the five $SU(3)$ values above.
+These coefficients are for the conventional $SU(3)$ scheme. They are not the $U(3)$ prescription when the singlet and anomaly are dynamical. In the $U(3)$ scheme used by [@Kaiser:1998ds],
+
+$$
+\Gamma_4=\frac18,\quad \Gamma_5=\frac38,\quad \Gamma_6=\frac1{16},\quad \Gamma_7=0,\quad \Gamma_8=\frac3{16}.
+$$
+
+Thus $L_6=L_6^r+\lambda/16$ and $L_8=L_8^r+3\lambda/16$ in this scheme, replacing the $SU(3)$ values above. Here
+
+$$
+L_i=L_i^r(\mu_\chi)+\Gamma_i\lambda(\mu_\chi),\qquad
+\lambda(\mu_\chi)=\frac{\mu_\chi^{d-4}}{16\pi^2}\left[\frac1{d-4}-\frac12(\log4\pi+\Gamma'(1)+1)\right].
+$$
+
+Kaiser:1998ds states that $F,\tau,\Lambda_1,\Lambda_2$ do not acquire chiral-loop renormalization at this order. Hence $\Lambda_{1,2}$ have no pole in $\lambda$ at fixed QCD scale. They do depend on the QCD renormalization scale through the singlet axial-current anomalous dimension: $1+\Lambda_1$ transforms as $Z_A^2$ and $1+\Lambda_2$ as $Z_A$. The combinations $2L_5+3L_{18}$ and $2L_8-3L_{25}$ transform as $Z_A$.
+
+The $U(3)$ chiral counterterms for the additional NLO constants are
+
+$$
+L_{18}=L_{18}^r(\mu_\chi)-\frac14\lambda(\mu_\chi),\qquad L_{25}=L_{25}^r(\mu_\chi),
+$$
+
+so $\Gamma_{18}=-1/4$ and $\Gamma_{25}=0$, consistent with the $n_l=3$ functions in [@Herrera-Siklody:1996tqr]. The vanishing chiral pole for $L_{25}$ does not remove its QCD-scale transformation through $2L_8-3L_{25}$.
+
+For $L_{47}$, [@Herrera-Siklody:1996tqr] includes $O_{47}=D_\mu\hat\theta\langle C^\mu\rangle\langle M\rangle$ and gives a generally nonzero, singlet-function-dependent divergence. With that paper's definitions $\omega_i=W_i/W_1$ and $\omega_i^{(n)}=W_i^{(n)}/W_1$ (the superscript differentiates $W_i$, not $\omega_i$),
+
+$$
+L_{47}(X)=L_{47}^r(X,\mu_\chi)+B_{47}(X)\lambda(\mu_\chi),
+$$
+
+where
+
+$$
+\begin{aligned}
+B_{47}={}&-\frac{n_l}{2}\omega_1^{(2)}\omega_2+\frac{i}{2}\omega_1^{(2)}\omega_3^{(1)}+\frac{n_l}{2}(\omega_1^{(1)})^2\omega_2\\
+&+\frac14(n_l-n_l^3)\omega_1^{(1)}\omega_1^{(2)}\omega_2^{(1)}+i\left(-\frac12+\frac{n_l^2}{4}\right)\omega_1^{(1)}\omega_1^{(2)}\omega_3\\
+&-\frac{i}{2}(\omega_1^{(1)})^2\omega_3^{(1)}-\frac14(n_l-n_l^3)(\omega_1^{(1)})^3\omega_2^{(1)}+\frac{i}{2}(1-n_l^2)(\omega_1^{(1)})^3\omega_3.
+\end{aligned}
+$$
+
+This is not a universal numerical $\Gamma_{47}$ until the singlet potentials $W_i(X)$ are specified and matched to the Alda source convention. The operator itself is present in [the singlet-source derivative basis](singlet-source-derivative-basis.md), so it should not be silently assigned zero when retained.
 
 ## Constants entering the retained quadratic Lagrangian
 
@@ -70,10 +109,10 @@ The quadratic expansion already derived in the [quadratic-lagrangian](quadratic-
 |---|---|---|
 | Two-meson kinetic | $L_4^r,L_5^r,\Lambda_1^r,L_{18}^r$ | Octet and singlet-trace kinetic normalization and mixing |
 | Two-meson mass | $L_6^r,L_7^r,L_8^r,\Lambda_2^r,L_{25}^r$ | Quark-mass and singlet/topological mass entries |
-| Meson--ALP kinetic | $L_4^r,L_5^r,\Lambda_1^r,L_{18}^r$ | Derivative mixing entries |
+| Meson--ALP kinetic | $L_4^r,L_5^r,\Lambda_1^r,L_{18}^r,L_{47}^r$ | Derivative mixing entries |
 | Meson--ALP mass | $L_6^r,L_7^r,L_8^r,\Lambda_2^r,L_{25}^r$ | Mass mixing entries |
 
-Here $L_4^r,L_5^r,L_6^r,L_7^r,L_8^r$ mean the standard constants with the subtraction just displayed. Superscript $r$ on $\Lambda_{1,2}$ and $L_{18},L_{25}$ is a reminder that these are renormalized parameters in a specified $U(3)$ scheme; their explicit counterterm formulas are not supplied here. The ALP--meson terms are proportional to the ALP sources already shown in the[quadratic-lagrangian](quadratic-lagrangian.md). There is no claim that every listed constant has nonzero contribution for every source choice or flavor channel.
+Here $L_4^r,L_5^r,L_6^r,L_7^r,L_8^r,L_{18}^r,L_{25}^r$ use the $U(3)$ subtraction stated above; $\Lambda_{1,2}$ have no chiral-loop pole at this order, and $L_{47}$ has the function-valued counterterm $B_{47}(X)$. The ALP--meson terms are proportional to the ALP sources already shown in the [quadratic-lagrangian](quadratic-lagrangian.md) and [singlet-source derivative basis](singlet-source-derivative-basis.md). There is no claim that every listed constant has nonzero contribution for every source choice or flavor channel.
 
 ## Relation to the current quadratic record
 
