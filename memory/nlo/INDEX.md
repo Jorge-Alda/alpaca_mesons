@@ -17,3 +17,4 @@ provenance: assumption
 - [Singlet-source derivative basis](singlet-source-derivative-basis.md) — Mapping of Kaiser’s removable cross term and remaining source square into Alda:2026nrd notation
 - [LSZ operator inverse](lsz-operator-inverse.md) — full-flavor NLO extension of Alda:2026nrd's linear operator, its trace-system inverse, and strict-order solution
 - [Resonance saturation and dynamical masses](resonance-saturation-and-dynamical-masses.md) — tree-level matching of resonance exchange to NLO LECs and retention of pseudoscalar masses and mixings with explicit resonances
+- [One-loop effects and renormalized LECs](one-loop-effects-and-renormalized-lecs.md) — distinction between nonlocal loop self-energies and local counterterms, with the standard $SU(3)$ subtraction for constants entering the quadratic sector
