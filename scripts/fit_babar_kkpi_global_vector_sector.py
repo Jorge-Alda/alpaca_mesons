@@ -320,7 +320,7 @@ class GlobalLikelihood:
         except (ValueError,FloatingPointError,np.linalg.LinAlgError):
             return np.full(75,1e8+np.linalg.norm(values))
 
-    def jacobian(self,values):
+    def jacobian(self,values,finite_difference_steps=None):
         """Exact odd derivatives; forward differences for remaining parameters."""
         baseline=self.residual(values)
         jacobian=np.zeros((75,32))
@@ -329,7 +329,8 @@ class GlobalLikelihood:
         jacobian[:12,12:24]=old_odd
         jacobian[28:73,12:24]=self.babar_blocks(values,state,derivatives=True)
         for index in list(range(12))+list(range(24,32)):
-            step=np.sqrt(np.finfo(float).eps)*max(1.,abs(values[index]))
+            step=(np.sqrt(np.finfo(float).eps)*max(1.,abs(values[index]))
+                if finite_difference_steps is None else finite_difference_steps[index])
             shifted=values.copy();shifted[index]+=step
             jacobian[:,index]=(self.residual(shifted)-baseline)/step
         return jacobian
@@ -342,6 +343,98 @@ class GlobalLikelihood:
         c=self.preliminary
         values[12:24]=[c['c1']-c['c2']+c['c5'],c['c1']-c['c2']-c['c5']+2*c['c6'],c['c1']+c['c2']-c['c5'],c['c3'],c['c4'],c['d1'],c['d2'],c['d3'],0,0,0,0]
         return values
+
+
+QUADRATURE_TOLERANCES=dict(prediction_sigma=.01,residual=.01,
+    jacobian_relative=1e-3,jacobian_absolute=1e-3,jacobian_negligible=1e-12,chi2=.01)
+
+
+def compare_quadrature_outputs(previous,current,errors,parameter_scales,tolerances):
+    """Compare nb predictions and dimensionless residuals/scaled derivatives."""
+    prediction_changes={channel:float(np.max(np.abs(current['predictions'][channel]
+        -previous['predictions'][channel])/errors[channel])) for channel in CHANNELS}
+    residual_change=float(np.max(np.abs(current['residual']-previous['residual'])))
+    previous_jacobian=previous['jacobian']*parameter_scales[None,:]
+    current_jacobian=current['jacobian']*parameter_scales[None,:]
+    column_changes=np.linalg.norm(current_jacobian-previous_jacobian,axis=0)
+    column_norms=np.linalg.norm(current_jacobian,axis=0)
+    previous_norms=np.linalg.norm(previous_jacobian,axis=0)
+    columns=[]
+    for index,(change,norm) in enumerate(zip(column_changes,column_norms)):
+        comparison_norm=max(norm,previous_norms[index])
+        negligible=bool(comparison_norm<=tolerances['jacobian_negligible'])
+        relative=None if negligible else float(change/comparison_norm)
+        passed=bool(change<=tolerances['jacobian_absolute'] if negligible
+            else relative<=tolerances['jacobian_relative'])
+        columns.append(dict(parameter=PARAMETER_NAMES[index],absolute_change=float(change),
+            previous_norm=float(previous_norms[index]),refined_norm=float(norm),relative_change=relative,
+            comparison='absolute' if negligible else 'relative',passed=passed))
+    chi2_change=float(abs(current['chi2']-previous['chi2']))
+    comparisons=dict(predictions=dict(maximum_change_in_sigma=max(prediction_changes.values()),
+            by_channel=prediction_changes,passed=bool(max(prediction_changes.values())<=tolerances['prediction_sigma'])),
+        residuals=dict(maximum_absolute_change=residual_change,passed=bool(residual_change<=tolerances['residual'])),
+        jacobian=dict(columns=columns,passed=all(column['passed'] for column in columns)),
+        chi2=dict(absolute_change=chi2_change,passed=bool(chi2_change<=tolerances['chi2'])))
+    return dict(comparisons,passed=all(comparison['passed'] for comparison in comparisons.values()))
+
+
+def audit_quadrature(model,values,orders,parameter_scales=None,tolerances=None):
+    """Refine each dimension separately and then all dimensions together.
+
+    Each order sequence includes its baseline and at least one larger order.
+    Every reported successive comparison must pass. All derivatives use
+    the same steps and scales.
+    """
+    dimensions=('energy','pair','angle')
+    orders={name:tuple(orders[name]) for name in dimensions}
+    for name,sequence in orders.items():
+        if len(sequence)<2 or any(int(order)!=order or order<1 for order in sequence) or any(
+                higher<=lower for lower,higher in zip(sequence,sequence[1:])):
+            raise ValueError(f'{name} requires at least two strictly increasing positive integer orders')
+    tolerances=dict(QUADRATURE_TOLERANCES,**(tolerances or {}))
+    parameter_scales=(np.ones(len(values)) if parameter_scales is None else np.asarray(parameter_scales))
+    steps=np.sqrt(np.finfo(float).eps)*np.maximum(1.,np.abs(values))
+    errors={channel:model.babar[channel]['errors'] for channel in CHANNELS}
+    baseline=tuple(orders[name][0] for name in dimensions)
+    original_phase=model.phase
+    evaluations={}
+    def evaluate(order_tuple):
+        if order_tuple not in evaluations:
+            model.phase=phase_points(model.babar,*order_tuple)
+            model.babar_cache_key=None
+            residual=model.residual(values)
+            jacobian=model.jacobian(values,finite_difference_steps=steps)
+            _,predictions=model.babar_blocks(values,model.unpack(values))
+            evaluations[order_tuple]=dict(residual=residual.copy(),jacobian=jacobian.copy(),
+                predictions={channel:prediction.copy() for channel,prediction in predictions.items()},
+                chi2=float(residual@residual))
+        return evaluations[order_tuple]
+    def compare(lower,higher):
+        result=compare_quadrature_outputs(evaluate(lower),evaluate(higher),errors,parameter_scales,tolerances)
+        return dict(from_orders=dict(zip(dimensions,lower)),to_orders=dict(zip(dimensions,higher)),**result)
+    try:
+        refinements={}
+        for index,name in enumerate(dimensions):
+            sequence=[]
+            for order in orders[name]:
+                current=list(baseline);current[index]=order;sequence.append(tuple(current))
+            comparisons=[compare(lower,higher) for lower,higher in zip(sequence,sequence[1:])]
+            refinements[name]=dict(comparisons=comparisons,
+                passed=all(comparison['passed'] for comparison in comparisons))
+        combined=[tuple(orders[name][min(level,len(orders[name])-1)] for name in dimensions)
+            for level in range(max(map(len,orders.values()))) ]
+        comparisons=[compare(lower,higher) for lower,higher in zip(combined,combined[1:])]
+        refinements['combined']=dict(comparisons=comparisons,
+            passed=all(comparison['passed'] for comparison in comparisons))
+        passed=all(result['passed'] for result in refinements.values())
+        return dict(status='certified' if passed else 'uncertified',passed=passed,
+            tolerances=tolerances,orders={name:list(sequence) for name,sequence in orders.items()},
+            derivative_settings=dict(method='analytic odd columns; forward differences for remaining columns',
+                finite_difference_steps=steps.tolist(),parameter_scales=parameter_scales.tolist()),
+            pole_mapping='phi s-pole mapping and both Kstar t/u-pole mappings',refinements=refinements)
+    finally:
+        model.phase=original_phase
+        model.babar_cache_key=None
 
 
 def projected_rank(jacobian):
@@ -406,6 +499,9 @@ def main():
     parser.add_argument('--profiles',action='store_true')
     parser.add_argument('--g-profiles',action='store_true')
     parser.add_argument('--audit-quadrature',action='store_true')
+    for dimension in ('energy','pair','angle'):
+        parser.add_argument(f'--audit-{dimension}-orders',type=int,nargs='+',
+            help='Increasing orders including the fit order; default: fit order, twice, four times')
     parser.add_argument('--profile-max-nfev',type=int,default=200)
     args=parser.parse_args()
     model=GlobalLikelihood(args.energy_order,args.pair_order,args.angle_order)
@@ -481,16 +577,12 @@ def main():
         'Fixed source excited poles, regulator 2.5 GeV; no K2star contribution.'],local_quadratic_profiles={name:dict(variance=float(covariance[12+index,12+index]),zero_delta_chi2=float(fit.x[12+index]**2/covariance[12+index,12+index])) for index,name in enumerate(ODD_NAMES)},profiles={})
     output['shared_even_gv_diagnostic']=even_gv_residual_diagnostic(model,fit.x)
     if args.audit_quadrature:
-        original_phase=model.phase;previous_predictions=predictions
-        output['quadrature_refinement']=[]
-        for order in (16,24,32):
-            model.phase=phase_points(model.babar,4,order,order);model.babar_cache_key=None
-            refined_residual,refined_predictions=model.babar_blocks(fit.x,state)
-            output['quadrature_refinement'].append(dict(energy_order=4,base_pair_and_angle_order=order,
-                babar_chi2=float(refined_residual@refined_residual),total_chi2=float(old@old+refined_residual@refined_residual+fit.x[30:32]@fit.x[30:32]),
-                maximum_bin_change_from_previous_nb=max(float(np.max(abs(refined_predictions[channel]-previous_predictions[channel]))) for channel in CHANNELS)))
-            previous_predictions=refined_predictions
-        model.phase=original_phase;model.babar_cache_key=None
+        audit_orders={dimension:getattr(args,f'audit_{dimension}_orders') or [order,2*order,4*order]
+            for dimension,order in zip(('energy','pair','angle'),(args.energy_order,args.pair_order,args.angle_order))}
+        if any(sequence[0]!=order for sequence,order in zip(audit_orders.values(),
+                (args.energy_order,args.pair_order,args.angle_order))):
+            parser.error('audit order sequences must begin at the corresponding fit order')
+        output['quadrature_refinement']=audit_quadrature(model,fit.x,audit_orders)
     destination=ROOT/args.output;destination.parent.mkdir(parents=True,exist_ok=True)
     destination.write_text(json.dumps(output,indent=2)+'\n')
     if args.profiles or args.g_profiles:
