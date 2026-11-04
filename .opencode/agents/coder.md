@@ -1,8 +1,8 @@
 ---
 description: Implements and verifies reproducible analytical and numerical HEP-ph calculations.
 mode: subagent
-model: openai/gpt-6.1-sol
-reasoningEffort: low
+model: openai/gpt-6.1-terra
+reasoningEffort: high
 temperature: 0.2
 ---
 

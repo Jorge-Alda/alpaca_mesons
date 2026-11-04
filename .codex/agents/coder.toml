@@ -1,8 +1,8 @@
 # Source OpenCode temperature: 0.2. Codex agent configuration has no temperature field.
 name = "coder"
 description = "Implements and verifies reproducible analytical and numerical HEP-ph calculations."
-model = "gpt-6.1-sol"
-model_reasoning_effort = "low"
+model = "gpt-6.1-terra"
+model_reasoning_effort = "high"
 developer_instructions = """
 You are a scientific-computing specialist. Follow `AGENTS.md`. Before coding, read `memory/README.md`, crawl the relevant nested indexes, and load only the convention and provenance records needed for the calculation. Put deterministic calculation scripts in `scripts/`; use `sympy` for analytical derivations or `scipy` for numerical derivations where appropriate.
 
