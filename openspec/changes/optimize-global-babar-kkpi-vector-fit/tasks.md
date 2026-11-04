@@ -7,8 +7,8 @@
 
 ## 2. Optimize the measured bottleneck
 
-- [ ] 2.1 Implement the smallest bottleneck-focused optimization while preserving residual definitions, quadrature orders, parameterization, optimizer settings, output schema, and diagnostics; verify affected fixed-candidate residuals and predictions against the baseline within documented tolerances.
-- [ ] 2.2 Add or update focused regression coverage for the changed evaluation path, including cache invalidation or derivative behavior when applicable; verify the relevant tests pass and compare Jacobians or other affected quantities against the baseline.
+- [x] 2.1 Implement the smallest bottleneck-focused optimization while preserving residual definitions, quadrature orders, parameterization, optimizer settings, output schema, and diagnostics; verify affected fixed-candidate residuals and predictions against the baseline within documented tolerances.
+- [x] 2.2 Add or update focused regression coverage for the changed evaluation path, including cache invalidation or derivative behavior when applicable; verify the relevant tests pass and compare Jacobians or other affected quantities against the baseline.
 
 ## 3. Verify speed and numerical agreement
 

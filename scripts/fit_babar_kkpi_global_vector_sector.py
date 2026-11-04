@@ -40,6 +40,21 @@ NORMALIZATION_START=30
 RELATIVE_SYSTEMATICS={'kkpi0':.065,'kskpi':.051}
 
 
+def running_propagator(name,invariant,beta,mass,shared_width,reference):
+    """Rescale the reference running width to the shared on-shell width.
+
+    Masses and widths are in GeV, and the invariant is in GeV squared. The
+    zero-excitation propagator is reused only within this call, so changes of
+    parameters or quadrature grids cannot reuse a result from an earlier call.
+    """
+    ground=reference_propagator(name,invariant,reference,0.)
+    denominator=1/ground
+    on_shell=1/reference_propagator(name,mass**2,reference,0.)
+    width=-denominator.imag/mass*shared_width/(-on_shell.imag/mass)
+    excited=reference_propagator(name,invariant,reference,beta)-ground
+    return 1/(mass**2-invariant-1j*mass*width)+excited
+
+
 def odd_representative(coordinates):
     """Represent the 12 measured combinations with c5=c7=d4=g3=0."""
     a,b,p,c3,c4,d1,d2,d3,g_a,g2,g4,g_mass=coordinates
@@ -312,11 +327,7 @@ class GlobalLikelihood:
         def running(name,invariant,beta):
             mass=point[0] if name=='rho' else mk
             shared=totals['rho0'] if name=='rho' else (totals['Kstar0']+totals['Kstarplus'])/2
-            # Extract the reference imaginary denominator and normalize at pole.
-            denominator=1/reference_propagator(name,invariant,reference,0.)
-            on_shell=1/reference_propagator(name,mass**2,reference,0.)
-            width=-denominator.imag/mass*shared/(-on_shell.imag/mass)
-            return 1/(mass**2-invariant-1j*mass*width)+excited(name,invariant,beta)
+            return running_propagator(name,invariant,beta,mass,shared,reference)
         cache_key=tuple(values[:12])+tuple(values[26:30])
         if getattr(self,'babar_cache_key',None)!=cache_key:
             self.babar_cache_key=cache_key;self.babar_cached={}
