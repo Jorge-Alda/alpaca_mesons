@@ -6,7 +6,7 @@ The stored certification evaluated five representative points only through pair 
 
 ## What Changes
 
-- Extend the certification run through pair and angular orders 64 and 128, retaining independent refinements and the combined sequence.
+- Run a new high-order qualification with pair and angular orders 64→128, retaining independent refinements and the combined sequence. Keep the failed 16→32 results in the existing certification file as historical diagnostics, separate from the new pass/fail comparisons.
 - Keep the existing uncertainty, residual, Jacobian, and $\chi^2$ tolerances fixed. Use bounded-memory energy-bin blocks for the higher-order grids without changing the physical domain, pole mappings, or likelihood.
 - Store and replay the resulting comparison for every saved point, including explicit `uncertified` outcomes and limiting differences if any tolerance still fails.
 - Update `alp-uzh.2` only after the saved points pass every declared comparison.

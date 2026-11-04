@@ -13,7 +13,7 @@ from scripts import certify_kkpi_quadrature as certification
 
 
 class Model:
-    def __init__(self,*orders):pass
+    def __init__(self,*orders,**options):pass
     def unpack(self,values):
         if np.max(abs(values))>1:raise ValueError('outside physical branch')
     def residual(self,values):return np.zeros(75)
@@ -66,6 +66,32 @@ class PointSelectionTests(unittest.TestCase):
                 (root/'saved.json').write_text(json.dumps(saved))
                 with patch.object(certification,'ROOT',root),self.assertRaisesRegex(ValueError,f'{category} hash changed'):
                     certification.main(['--replay','saved.json','--output','repeated.json'])
+
+    def test_high_order_run_reuses_historical_vectors_and_selection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            (root/'reference.json').write_text(json.dumps(reference()))
+            points,selection=certification.select_points(Model(),reference(),'reference.json')
+            historical=dict(parameter_names=list(certification.fit.PARAMETER_NAMES),
+                selected_points=points,point_selection=selection,
+                provenance=dict(input_sha256={}))
+            (root/'historical.json').write_text(json.dumps(historical))
+            provenance=dict(input_sha256={},software=dict(source_sha256={}))
+            with patch.object(certification,'ROOT',root),patch.object(certification.fit,'GlobalLikelihood',Model),\
+                    patch.object(certification,'source_metadata',return_value=provenance),\
+                    patch.object(certification,'select_points',side_effect=AssertionError('must reuse saved points')),\
+                    patch.object(certification.fit,'audit_quadrature',return_value=dict(status='certified',passed=True)):
+                certification.main(['--reference','reference.json','--competing-fit',
+                    '--points-from','historical.json','--energy-orders','2','4',
+                    '--pair-orders','64','128','--angle-orders','64','128','--output','higher.json'])
+            result=json.loads((root/'higher.json').read_text())
+            self.assertEqual(result['selected_points'],historical['selected_points'])
+            self.assertEqual(result['point_selection'],historical['point_selection'])
+            self.assertEqual(result['orders'],dict(energy=[2,4],pair=[64,128],angle=[64,128]))
+            expected=certification.file_hash(root/'historical.json')
+            self.assertEqual(result['selected_points_source'],dict(path='historical.json',sha256=expected))
+            self.assertEqual(result['provenance']['input_sha256']['historical.json'],expected)
+            self.assertEqual(result['quadrature_evaluation']['bin_block_size'],1)
 
     def test_saved_command_replays_every_selected_point_and_reports_invalid_points(self):
         def audit(model,values,orders):

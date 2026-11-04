@@ -12,8 +12,8 @@ all comparisons.
 
 **Goals:**
 
-- Evaluate the independent and combined ladders through pair and angle order
-  128 while keeping peak grid memory bounded.
+- Evaluate the independent and combined qualification comparisons from pair
+  and angle order 64 to 128 while keeping peak grid memory bounded.
 - Determine pass/failure from the existing per-bin prediction, standardized
   residual, residual-Jacobian, and total-$\chi^2$ comparisons.
 - Keep the saved point vectors, physical Dalitz limits, pole maps, derivative
@@ -38,17 +38,23 @@ all comparisons.
    high-order grid was considered, but it scales as the product of all three
    orders and all bins and risks exhausting memory before order 128.
 
-2. **Keep the quadrature ladder explicit and independent.** Use energy orders
-   $2,4$, pair orders $16,32,64,128$, and angular orders $16,32,64,128$.
-   Each one-dimensional ladder holds the other dimensions at their saved base
-   orders; the combined ladder advances through corresponding levels. Record
-   every successive comparison, including intermediate failures.
+2. **Use a distinct high-order qualification baseline.** The previous result
+   already records the failed $16\to32$ comparisons. Keep that file unchanged
+   as historical diagnostic evidence; do not mix its failures into the new
+   qualification status. Compare energy orders $2\to4$ with pair and angle
+   held at 64; compare pair orders $64\to128$ with energy 2 and angle 64; and
+   compare angular orders $64\to128$ with energy 2 and pair 64. The combined
+   comparison is $(2,64,64)\to(4,128,128)$. The new result reports these
+   comparisons and applies the unchanged rule that every comparison in this
+   high-order run must pass.
 
 3. **Keep the certification contract unchanged.** Reuse the saved five point
    vectors and the existing prediction, residual, Jacobian, and $\chi^2$
-   tolerances. Every reported comparison must pass for the final status to be
-   `certified`. If order 128 still fails, preserve the observed differences
-   and report `uncertified`; do not change thresholds or discard points.
+   tolerances. Every reported comparison in the new high-order run must pass
+   for its status to be `certified`. The earlier $16\to32$ result remains
+   separately linked historical evidence. If order 128 still fails, preserve
+   the observed differences and report `uncertified`; do not change thresholds
+   or discard points.
 
 4. **Verify chunking against the current implementation at supported orders.**
    For both channels, compare predictions and derivatives from block evaluation

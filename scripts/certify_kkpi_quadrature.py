@@ -1,6 +1,7 @@
 """Certify saved KKpi fit points without refitting; GeV and nb conventions.
 
 Run: .venv/bin/python scripts/certify_kkpi_quadrature.py --output data/vector_sector/kkpi_quadrature_certification.json
+Higher orders: add --points-from data/vector_sector/kkpi_quadrature_certification.json --energy-orders 2 4 --pair-orders 64 128 --angle-orders 64 128
 Repeat: .venv/bin/python scripts/certify_kkpi_quadrature.py --replay data/vector_sector/kkpi_quadrature_certification.json --output /tmp/kkpi_repeated.json
 """
 import argparse
@@ -127,14 +128,21 @@ def main(argv=None):
     parser.add_argument('--reference',default=REFERENCE)
     parser.add_argument('--competing-fit',nargs='*',default=None)
     parser.add_argument('--replay',help='Repeat exact saved point vectors and integration orders')
+    parser.add_argument('--points-from',help='Use exact selected points and selection provenance from an earlier result')
+    parser.add_argument('--bin-block-size',type=int,default=1,help='Energy bins evaluated together (default: 1)')
     for dimension in ('energy','pair','angle'):
         parser.add_argument(f'--{dimension}-orders',nargs='+',type=int)
     parser.add_argument('--output',required=True)
     args=parser.parse_args(argv)
+    if args.bin_block_size<1:parser.error('bin block size must be positive')
+    point_source=None
+    block_size=args.bin_block_size
     command=shlex.join([sys.executable,'scripts/certify_kkpi_quadrature.py',*(sys.argv[1:] if argv is None else argv)])
     if args.replay:
         saved=json.loads((ROOT/args.replay).read_text())
         orders=saved['orders']
+        block_size=saved.get('quadrature_evaluation',{}).get('bin_block_size',1)
+        point_source=saved.get('selected_points_source')
         if any(getattr(args,f'{name}_orders') is not None for name in orders):
             parser.error('replay uses recorded orders; do not override them')
         for path,expected in saved['provenance']['input_sha256'].items():
@@ -148,21 +156,30 @@ def main(argv=None):
         recorded=reference['quadrature']
         base=dict(energy=recorded['energy'],pair=recorded['pair_per_segment'],angle=recorded['angle_per_segment'])
         orders={name:getattr(args,f'{name}_orders') or [order,2*order,4*order] for name,order in base.items()}
-        if any(orders[name][0]!=base[name] for name in base):
-            parser.error('order sequences must start at the saved fit orders')
         model=fit.GlobalLikelihood(*(base[name] for name in ('energy','pair','angle')))
         competing_paths=(args.competing_fit if args.competing_fit is not None else
             [str(path.relative_to(ROOT)) for path in sorted((ROOT/'data/vector_sector').glob('babar_kkpi_global_vector_sector_fit*.json'))
                 if path.resolve()!=(ROOT/args.reference).resolve() and not path.name.endswith('.progress.json')])
         competing=[(path,read_fit(ROOT/path)) for path in competing_paths]
-        points,selection=select_points(model,reference,args.reference,competing)
+        if args.points_from:
+            historical=json.loads((ROOT/args.points_from).read_text())
+            if historical['parameter_names']!=list(fit.PARAMETER_NAMES):
+                raise ValueError('saved points use different fitted coordinates')
+            for path,expected in historical['provenance']['input_sha256'].items():
+                if file_hash(ROOT/path)!=expected:raise ValueError(f'input hash changed: {path}')
+            points=historical['selected_points'];selection=historical['point_selection']
+            point_source=dict(path=args.points_from,sha256=file_hash(ROOT/args.points_from))
+        else:
+            points,selection=select_points(model,reference,args.reference,competing)
         provenance=source_metadata(args.reference,reference,competing_paths)
-    model=fit.GlobalLikelihood(*(orders[name][0] for name in ('energy','pair','angle')))
+        if point_source:provenance['input_sha256'][point_source['path']]=point_source['sha256']
+    model=fit.GlobalLikelihood(*(orders[name][0] for name in ('energy','pair','angle')),bin_block_size=block_size)
     results=certify_points(model,points,orders)
     counts={name:sum(point['status']==name for point in results) for name in ('certified','uncertified','unevaluated')}
     output=dict(schema_version=1,command=command,working_directory=str(ROOT),
         parameter_names=list(fit.PARAMETER_NAMES),selected_points=points,point_selection=selection,
         orders=orders,tolerances=fit.QUADRATURE_TOLERANCES,
+        selected_points_source=point_source,quadrature_evaluation=dict(bin_block_size=block_size),
         pole_mapping='phi s-pole mapping and both Kstar t/u-pole mappings',
         derivative_settings=dict(method='analytic odd columns; forward differences for remaining columns',
             step_rule='sqrt(machine epsilon) * max(1, abs(fitted coordinate)); fixed per point',

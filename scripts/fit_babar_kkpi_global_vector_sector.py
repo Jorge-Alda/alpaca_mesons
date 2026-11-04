@@ -69,6 +69,20 @@ def exact_odd_map():
         coordinate_matrix=[[str(v) for v in row] for row in matrix.tolist()])
 
 
+class EnergyBinBlocks:
+    """Quadrature orders and fixed energy-bin slices; grids are built on use."""
+    def __init__(self,data,orders,block_size):
+        self.data=data
+        self.orders=tuple(orders)
+        self.block_size=block_size
+
+    def blocks(self):
+        for start in range(0,max(len(self.data[channel]['edges']) for channel in CHANNELS),self.block_size):
+            yield {channel:{name:(value[start:start+self.block_size]
+                if isinstance(value,np.ndarray) and value.ndim and len(value)==len(self.data[channel]['edges'])
+                else value) for name,value in self.data[channel].items()} for channel in CHANNELS}
+
+
 def phase_points(data,energy_order=4,pair_order=32,angle_order=32):
     """Bin-averaged Dalitz weights in nb, with exact phi/Kstar pole mappings.
 
@@ -134,7 +148,7 @@ def phase_points(data,energy_order=4,pair_order=32,angle_order=32):
 
 class GlobalLikelihood:
     """All experimental blocks and every shared nuisance in one residual vector."""
-    def __init__(self,energy_order=2,pair_order=16,angle_order=16):
+    def __init__(self,energy_order=2,pair_order=16,angle_order=16,bin_block_size=None):
         self.preliminary,self.babar=load_inputs()
         self.odd_data=json.loads((ROOT/'data/odd_parity/odd_low_energy_measurements.json').read_text())
         self.observations=[x for x in self.odd_data['observations'] if x.get('status')!='deferred']
@@ -165,7 +179,8 @@ class GlobalLikelihood:
         for row,total in zip(self.gv_data['rows'][:2],('Kstarplus','Kstar0')):
             width=self.odd_data['total_widths'][total]
             assert row['value']==width['value_gev'] and row['sigma']==width['sigma_gev']
-        self.phase=phase_points(self.babar,energy_order,pair_order,angle_order)
+        self.bin_block_size=bin_block_size
+        self.phase=self.quadrature_phase((energy_order,pair_order,angle_order))
         self.cache=None
         assert len(self.observations)==12 and sum(len(self.babar[c]['observed']) for c in CHANNELS)==45
         self.measurement_count=12+7+7+2+45
@@ -228,7 +243,44 @@ class GlobalLikelihood:
             odd_predictions=list(map(float,predictions)),phi_branching_predictions=phi_predictions,
             canonical_reference_squared_amplitude_defect=adapter_defect,shared_totals=totals)
 
+    def quadrature_phase(self,orders):
+        """Choose full grids or bounded-memory energy-bin evaluation."""
+        if self.bin_block_size is None:return phase_points(self.babar,*orders)
+        return EnergyBinBlocks(self.babar,orders,self.bin_block_size)
+
     def babar_blocks(self,values,state,derivatives=False):
+        """Integrate each bin in fixed order, optionally building one block at a time."""
+        if not isinstance(self.phase,EnergyBinBlocks):
+            return self._babar_blocks_full(values,state,derivatives)
+        original_phase=self.phase;original_data=self.babar
+        channel_predictions={channel:[] for channel in CHANNELS}
+        try:
+            for data in original_phase.blocks():
+                self.babar=data
+                self.phase=phase_points(data,*original_phase.orders)
+                self.babar_cache_key=None
+                _,predictions=self._babar_blocks_full(values,state)
+                if derivatives:
+                    rows=self._babar_blocks_full(values,state,True)
+                    offset=0
+                    for channel in CHANNELS:
+                        count=len(data[channel]['edges'])
+                        channel_predictions[channel].append(rows[offset:offset+count])
+                        offset+=count
+                else:
+                    for channel in CHANNELS:channel_predictions[channel].append(predictions[channel])
+            predictions={channel:np.concatenate(parts,axis=0)
+                for channel,parts in channel_predictions.items()}
+            if derivatives:return np.vstack([predictions[channel] for channel in CHANNELS])
+            residual=np.concatenate([(predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+index])
+                -original_data[channel]['observed'])/original_data[channel]['errors']
+                for index,channel in enumerate(CHANNELS)])
+            return residual,predictions
+        finally:
+            self.phase=original_phase;self.babar=original_data
+            self.babar_cache_key=None;self.babar_cached={};self.current_amplitudes={}
+
+    def _babar_blocks_full(self,values,state,derivatives=False):
         """Integrate the coherent current with the fitted neutral response.
 
         The ground-state light/strange propagator is obtained by rotating both
@@ -404,7 +456,8 @@ def audit_quadrature(model,values,orders,parameter_scales=None,tolerances=None):
         nonlocal attempted_orders
         if order_tuple not in evaluations:
             attempted_orders=dict(zip(dimensions,order_tuple))
-            model.phase=phase_points(model.babar,*order_tuple)
+            model.phase=(model.quadrature_phase(order_tuple) if hasattr(model,'quadrature_phase')
+                else phase_points(model.babar,*order_tuple))
             model.babar_cache_key=None
             residual=model.residual(values)
             jacobian=model.jacobian(values,finite_difference_steps=steps)
