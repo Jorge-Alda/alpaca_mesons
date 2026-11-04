@@ -40,6 +40,22 @@ NORMALIZATION_START=30
 RELATIVE_SYSTEMATICS={'kkpi0':.065,'kskpi':.051}
 
 
+def reference_propagator_pair(name,invariant,beta,reference):
+    """Return the reference propagator with zero and requested excitations.
+
+    Both are evaluated in one call, sharing the invariant-dependent width
+    calculations. The leading dimension selects the two excitation choices.
+    """
+    invariant=np.asarray(invariant)
+    first,second=beta if np.ndim(beta) else (beta,0.)
+    coefficients=np.asarray(((0.,0.),(first,second)))
+    coefficient_shape=(2,)+(1,)*invariant.ndim
+    propagators=reference_propagator(name,invariant[None,...],reference,
+        (coefficients[:,0].reshape(coefficient_shape),
+         coefficients[:,1].reshape(coefficient_shape)))
+    return propagators[0],propagators[1]
+
+
 def running_propagator(name,invariant,beta,mass,shared_width,reference):
     """Rescale the reference running width to the shared on-shell width.
 
@@ -47,11 +63,11 @@ def running_propagator(name,invariant,beta,mass,shared_width,reference):
     zero-excitation propagator is reused only within this call, so changes of
     parameters or quadrature grids cannot reuse a result from an earlier call.
     """
-    ground=reference_propagator(name,invariant,reference,0.)
+    ground,reference_with_excitations=reference_propagator_pair(name,invariant,beta,reference)
     denominator=1/ground
     on_shell=1/reference_propagator(name,mass**2,reference,0.)
     width=-denominator.imag/mass*shared_width/(-on_shell.imag/mass)
-    excited=reference_propagator(name,invariant,reference,beta)-ground
+    excited=reference_with_excitations-ground
     return 1/(mass**2-invariant-1j*mass*width)+excited
 
 
@@ -263,39 +279,39 @@ class GlobalLikelihood:
         if self.bin_block_size is None:return phase_points(self.babar,*orders)
         return EnergyBinBlocks(self.babar,orders,self.bin_block_size)
 
-    def babar_blocks(self,values,state,derivatives=False):
+    def babar_blocks(self,values,state,derivatives=False,channels=CHANNELS):
         """Integrate each bin in fixed order, optionally building one block at a time."""
         if not isinstance(self.phase,EnergyBinBlocks):
-            return self._babar_blocks_full(values,state,derivatives)
+            return self._babar_blocks_full(values,state,derivatives,channels)
         original_phase=self.phase;original_data=self.babar
-        channel_predictions={channel:[] for channel in CHANNELS}
+        channel_predictions={channel:[] for channel in channels}
         try:
             for data in original_phase.blocks():
                 self.babar=data
                 self.phase=phase_points(data,*original_phase.orders)
                 self.babar_cache_key=None
-                _,predictions=self._babar_blocks_full(values,state)
+                _,predictions=self._babar_blocks_full(values,state,channels=channels)
                 if derivatives:
-                    rows=self._babar_blocks_full(values,state,True)
+                    rows=self._babar_blocks_full(values,state,True,channels)
                     offset=0
-                    for channel in CHANNELS:
+                    for channel in channels:
                         count=len(data[channel]['edges'])
                         channel_predictions[channel].append(rows[offset:offset+count])
                         offset+=count
                 else:
-                    for channel in CHANNELS:channel_predictions[channel].append(predictions[channel])
+                    for channel in channels:channel_predictions[channel].append(predictions[channel])
             predictions={channel:np.concatenate(parts,axis=0)
                 for channel,parts in channel_predictions.items()}
-            if derivatives:return np.vstack([predictions[channel] for channel in CHANNELS])
-            residual=np.concatenate([(predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+index])
+            if derivatives:return np.vstack([predictions[channel] for channel in channels])
+            residual=np.concatenate([(predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+CHANNELS.index(channel)])
                 -original_data[channel]['observed'])/original_data[channel]['errors']
-                for index,channel in enumerate(CHANNELS)])
+                for channel in channels])
             return residual,predictions
         finally:
             self.phase=original_phase;self.babar=original_data
             self.babar_cache_key=None;self.babar_cached={};self.current_amplitudes={}
 
-    def _babar_blocks_full(self,values,state,derivatives=False):
+    def _babar_blocks_full(self,values,state,derivatives=False,channels=CHANNELS):
         """Integrate the coherent current with the fitted neutral response.
 
         The ground-state light/strange propagator is obtained by rotating both
@@ -316,7 +332,8 @@ class GlobalLikelihood:
         rotation=np.array([[np.trace(generator@basis).real for generator in sector.generators[1:]]
             for basis in (light_generator,strange_generator)])
         def excited(name,invariant,beta):
-            return reference_propagator(name,invariant,reference,beta)-reference_propagator(name,invariant,reference,0.)
+            ground,with_excitations=reference_propagator_pair(name,invariant,beta,reference)
+            return with_excitations-ground
         def neutral(invariant,beta):
             omega=1/(sector.masses[1]**2-invariant-1j*sector.masses[1]*totals['omega'])
             phi=1/(sector.masses[2]**2-invariant-1j*sector.masses[2]*totals['phi'])
@@ -333,7 +350,8 @@ class GlobalLikelihood:
             self.babar_cache_key=cache_key;self.babar_cached={}
         if not derivatives:self.current_amplitudes={}
         predictions={}
-        for index,channel in enumerate(CHANNELS):
+        for channel in channels:
+            index=CHANNELS.index(channel)
             phase=self.phase[channel];q,s,t=phase['q'],phase['s'],phase['t']
             u=q+2*MK**2+MPI**2-s-t
             beta=(values[26+index],values[28+index])
@@ -369,16 +387,18 @@ class GlobalLikelihood:
                 self.current_amplitudes[channel]=amplitude
                 predictions[channel]=np.sum(phase['weight']*abs(amplitude)**2,axis=(1,2,3))
         if derivatives:
-            return np.vstack([predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+index])/self.babar[channel]['errors'][:,None] for index,channel in enumerate(CHANNELS)])
-        residual=np.concatenate([(predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+index])-self.babar[channel]['observed'])/self.babar[channel]['errors'] for index,channel in enumerate(CHANNELS)])
+            return np.vstack([predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+CHANNELS.index(channel)])/self.babar[channel]['errors'][:,None] for channel in channels])
+        residual=np.concatenate([(predictions[channel]*(1+RELATIVE_SYSTEMATICS[channel]*values[30+CHANNELS.index(channel)])-self.babar[channel]['observed'])/self.babar[channel]['errors'] for channel in channels])
         return residual,predictions
 
     def residual(self,values):
         """Concatenate 73 observed summaries and two normalization constraints."""
+        self.last_babar_predictions=None
         try:
             state=self.unpack(values)
             old,_,_=self.old_blocks(values,state)
-            babar,_=self.babar_blocks(values,state)
+            babar,predictions=self.babar_blocks(values,state)
+            self.last_babar_predictions=predictions
             return np.r_[old,babar,values[30:32]]
         except (ValueError,FloatingPointError,np.linalg.LinAlgError):
             return np.full(75,1e8+np.linalg.norm(values))
@@ -386,15 +406,52 @@ class GlobalLikelihood:
     def jacobian(self,values,finite_difference_steps=None):
         """Exact odd derivatives; forward differences for remaining parameters."""
         baseline=self.residual(values)
+        baseline_predictions=self.last_babar_predictions
         jacobian=np.zeros((75,32))
         state=self.unpack(values)
         _,old_odd,_=self.old_blocks(values,state)
         jacobian[:12,12:24]=old_odd
         jacobian[28:73,12:24]=self.babar_blocks(values,state,derivatives=True)
+        # These two width pulls enter only the first 28 residuals. Keep the
+        # full residual path for invalid or non-finite evaluations.
+        independent_width_pulls=(7+FREE_TOTALS.index('rhoplus'),7+FREE_TOTALS.index('etap'))
+        baseline_is_penalty=np.all(baseline==1e8+np.linalg.norm(values))
+        channel_by_parameter={24:'kskpi',25:'kskpi',26:'kkpi0',27:'kskpi',
+            28:'kkpi0',29:'kskpi',30:'kkpi0',31:'kskpi'}
         for index in list(range(12))+list(range(24,32)):
             step=(np.sqrt(np.finfo(float).eps)*max(1.,abs(values[index]))
                 if finite_difference_steps is None else finite_difference_steps[index])
             shifted=values.copy();shifted[index]+=step
+            if index in independent_width_pulls and np.all(np.isfinite(baseline)) and not baseline_is_penalty:
+                try:
+                    shifted_old,_,_=self.old_blocks(shifted,self.unpack(shifted))
+                except (ValueError,FloatingPointError,np.linalg.LinAlgError):
+                    pass
+                else:
+                    jacobian[:28,index]=(shifted_old-baseline[:28])/step
+                    jacobian[28:,index]=(baseline[28:]-baseline[28:])/step
+                    continue
+            if (index in channel_by_parameter and baseline_predictions is not None
+                    and np.all(np.isfinite(baseline)) and np.all(np.isfinite(shifted))
+                    and not baseline_is_penalty):
+                channel=channel_by_parameter[index]
+                start=28+sum(len(self.babar[name]['observed']) for name in CHANNELS[:CHANNELS.index(channel)])
+                stop=start+len(self.babar[channel]['observed'])
+                try:
+                    shifted_state=self.unpack(shifted)
+                    if index<30:
+                        shifted_channel,_=self.babar_blocks(shifted,shifted_state,channels=(channel,))
+                    else:
+                        shifted_channel=(baseline_predictions[channel]
+                            *(1+RELATIVE_SYSTEMATICS[channel]*shifted[index])
+                            -self.babar[channel]['observed'])/self.babar[channel]['errors']
+                except (ValueError,FloatingPointError,np.linalg.LinAlgError):
+                    pass
+                else:
+                    jacobian[:,index]=(baseline-baseline)/step
+                    jacobian[start:stop,index]=(shifted_channel-baseline[start:stop])/step
+                    jacobian[73:75,index]=(shifted[30:32]-baseline[73:75])/step
+                    continue
             jacobian[:,index]=(self.residual(shifted)-baseline)/step
         return jacobian
 

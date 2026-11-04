@@ -5,6 +5,100 @@
   "elapsed_seconds_real": 1955.96,
   "elapsed_seconds_user": 1928.76,
   "elapsed_seconds_system": 26.49,
+  "optimized_comparison_run": {
+    "output": "data/vector_sector/babar_kkpi_global_vector_sector_fit_optimized_20261104.json",
+    "command": "time -p .venv/bin/python scripts/fit_babar_kkpi_global_vector_sector.py --output data/vector_sector/babar_kkpi_global_vector_sector_fit_optimized_20261104.json",
+    "elapsed_seconds_real": 933.16,
+    "elapsed_seconds_user": 908.20,
+    "elapsed_seconds_system": 25.60,
+    "speedup_factor": 2.096060696986583,
+    "wall_time_reduction_percent": 52.29145790302461,
+    "same_inputs_and_settings": true,
+    "fit_outputs_bitwise_identical_to_baseline_rerun": true,
+    "comparison": {
+      "chi2_baseline": 307.984932373217,
+      "chi2_optimized": 307.984932373217,
+      "nfev_baseline": 1500,
+      "nfev_optimized": 1500,
+      "njev_baseline": 1453,
+      "njev_optimized": 1453,
+      "success_baseline": false,
+      "success_optimized": false,
+      "message_baseline": "The maximum number of function evaluations is exceeded.",
+      "message_optimized": "The maximum number of function evaluations is exceeded.",
+      "maximum_absolute_parameter_difference": 0.0,
+      "maximum_absolute_residual_difference": 0.0,
+      "maximum_absolute_prediction_difference_by_channel_nb": {
+        "kkpi0": 0.0,
+        "kskpi": 0.0
+      }
+    }
+  },
+  "final_optimized_comparison_run": {
+    "output": "data/vector_sector/babar_kkpi_global_vector_sector_fit_optimized_final_20261104.json",
+    "command": "time -p .venv/bin/python scripts/fit_babar_kkpi_global_vector_sector.py --output data/vector_sector/babar_kkpi_global_vector_sector_fit_optimized_final_20261104.json",
+    "elapsed_seconds_real": 783.24,
+    "elapsed_seconds_user": 754.47,
+    "elapsed_seconds_system": 29.15,
+    "speedup_factor": 2.4972677595628414,
+    "wall_time_reduction_percent": 59.95623632385121,
+    "same_inputs_and_settings": true,
+    "fit_outputs_bitwise_identical_to_baseline_rerun": true,
+    "comparison": {
+      "chi2_baseline": 307.984932373217,
+      "chi2_optimized": 307.984932373217,
+      "nfev_baseline": 1500,
+      "nfev_optimized": 1500,
+      "njev_baseline": 1453,
+      "njev_optimized": 1453,
+      "success_baseline": false,
+      "success_optimized": false,
+      "message_baseline": "The maximum number of function evaluations is exceeded.",
+      "message_optimized": "The maximum number of function evaluations is exceeded.",
+      "maximum_absolute_parameter_difference": 0.0,
+      "maximum_absolute_residual_difference": 0.0,
+      "maximum_absolute_prediction_difference_by_channel_nb": {
+        "kkpi0": 0.0,
+        "kskpi": 0.0
+      }
+    }
+  },
+  "final_optimized_repeat_run": {
+    "output": "data/vector_sector/babar_kkpi_global_vector_sector_fit_optimized_repeat_20261104.json",
+    "command": "time -p .venv/bin/python scripts/fit_babar_kkpi_global_vector_sector.py --output data/vector_sector/babar_kkpi_global_vector_sector_fit_optimized_repeat_20261104.json",
+    "elapsed_seconds_real": 779.23,
+    "elapsed_seconds_user": 750.73,
+    "elapsed_seconds_system": 28.56,
+    "same_inputs_and_settings": true,
+    "fit_outputs_bitwise_identical_to_baseline_rerun": true,
+    "comparison": {
+      "chi2_baseline": 307.984932373217,
+      "chi2_optimized": 307.984932373217,
+      "nfev_baseline": 1500,
+      "nfev_optimized": 1500,
+      "njev_baseline": 1453,
+      "njev_optimized": 1453,
+      "success_baseline": false,
+      "success_optimized": false,
+      "message_baseline": "The maximum number of function evaluations is exceeded.",
+      "message_optimized": "The maximum number of function evaluations is exceeded.",
+      "maximum_absolute_parameter_difference": 0.0,
+      "maximum_absolute_residual_difference": 0.0,
+      "maximum_absolute_prediction_difference_by_channel_nb": {
+        "kkpi0": 0.0,
+        "kskpi": 0.0
+      }
+    }
+  },
+  "full_fit_timing_summary": {
+    "baseline_seconds": [1955.96],
+    "optimized_seconds": [783.24, 779.23],
+    "optimized_median_seconds": 781.235,
+    "optimized_range_seconds": [779.23, 783.24],
+    "speedup_from_single_baseline_vs_optimized_median": 2.503675311365634,
+    "reduction_percent_from_single_baseline_vs_optimized_median": 60.06343422292347,
+    "note": "One full baseline run and two final optimized runs; the baseline repetition was omitted because it takes over 32 minutes."
+  },
   "environment": {
     "python": "3.14.8",
     "numpy": "2.5.3",

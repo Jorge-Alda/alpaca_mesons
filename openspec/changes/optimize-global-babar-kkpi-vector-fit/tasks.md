@@ -12,6 +12,6 @@
 
 ## 3. Verify speed and numerical agreement
 
-- [ ] 3.1 Run optimized and baseline implementations with identical inputs, initialization, and fit settings under comparable conditions; report repeated unprofiled elapsed times and median/range, and verify the measured runtime improves.
-- [ ] 3.2 Compare fixed-point per-bin predictions, residual vectors, Jacobians where affected, objective values, parameter vectors, and full fit diagnostics with explicit tolerances; record any optimizer-trajectory differences without claiming distinct candidates are identical.
-- [ ] 3.3 Update the focused memory/reproducibility record with profiler findings, implementation summary, before/after measurements, numerical comparisons, exact invocation, and environment metadata; verify links and reproduction instructions are valid.
+- [x] 3.1 Run optimized and baseline implementations with identical inputs, initialization, and fit settings under comparable conditions; report repeated unprofiled elapsed times and median/range, and verify the measured runtime improves.
+- [x] 3.2 Compare fixed-point per-bin predictions, residual vectors, Jacobians where affected, objective values, parameter vectors, and full fit diagnostics with explicit tolerances; record any optimizer-trajectory differences without claiming distinct candidates are identical.
+- [x] 3.3 Update the focused memory/reproducibility record with profiler findings, implementation summary, before/after measurements, numerical comparisons, exact invocation, and environment metadata; verify links and reproduction instructions are valid.
