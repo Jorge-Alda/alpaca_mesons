@@ -1,0 +1,33 @@
+# Tasks
+
+## 1. Setup and vertices
+
+- [ ] 1.1 Claim alp-gii.2 (`bd update alp-gii.2 --claim`) and verify that `bd show alp-gii.2` reports it in progress
+- [ ] 1.2 Through `bibliography-manager`, check that Gasser:1984gg, Gasser:1983yg, Kaiser:1998ds, Herrera-Siklody:1996tqr, Kaiser:2000gs and Alda:2026nrd are in `bibliography.bib`. Add any further record consulted for $U(3)$ one-loop self-energies. Verify with `grep` on each key
+- [ ] 1.3 Create `memory/nlo/loops/INDEX.md` with front matter, add a topic-level entry to `memory/nlo/INDEX.md`, and verify that all relative links resolve
+- [ ] 1.4 Through `coder`, create `scripts/derive_nlo_loop_vertices.py`: expand $\mathcal L^{(0)}$ with all ALP sources of Alda:2026nrd to quartic order in $\Phi$ and $a$, and list the cubic and quartic terms. Verify that `.venv/bin/python scripts/derive_nlo_loop_vertices.py` exits 0 and asserts that the cubic $\Phi^3$ and $a\Phi^2$ terms vanish for CP-conserving sources and $\theta=0$, and prints which cubic terms appear when a CP-odd source or $\theta\neq0$ is switched on
+- [ ] 1.5 Write `memory/nlo/loops/vertices-and-topologies.md` explaining step by step 1.4, the surviving topologies per source and the assumption of a parity-even vacuum. Verify that the front matter has the six required fields and that the list of vertices matches the script output
+- [ ] 1.6 Ask the user to approve any new notation for loop functions before it is used, and verify that no unapproved symbol appears in the records
+
+## 2. Meson self-energy and subtraction
+
+- [ ] 2.1 Through `coder`, create `scripts/derive_nlo_loop_self_energies.py` with the tadpole loop function, the $\overline{\rm MS}-1$ subtraction of alp-gii.1 and $\Sigma_{ij}(s)$ for the full nonet in the LO mass eigenbasis. Verify that `--meson` prints $\Sigma_{ij}$ in the $(3,8,0)$ basis and that its degenerate-mass limit equals the $SU(3)$ result of Gasser:1984gg (assertion)
+- [ ] 2.2 Write `memory/nlo/loops/loop-functions-and-subtraction.md` and `memory/nlo/loops/meson-self-energy.md`, giving each step with input links to the counting and quadratic-Lagrangian records. Verify that the expressions match the script output and that units (GeV) and the sign convention $Q=sK-M^2+\Sigma$ are stated
+- [ ] 2.3 Extend the script with the symbolic pole cancellation against $L_i^r(\mu)$ and $B^r(\mu)$ for $\Sigma_{ij}$. Verify that `--cancel` asserts finiteness and $\mu_\chi$ independence for $\mu_\chi\in\{0.5,0.77,1.0\}\,$GeV, and that any mismatch with the $\Gamma_i$ of alp-gii.1 is printed as a finding
+
+## 3. Mixed ALP–meson function
+
+- [ ] 3.1 Extend the script with $\Sigma_{i\hat a}(s)$ at first order in $1/f_a$ for each ALP source, with non-commuting flavour matrices. Verify that `--mixed` prints the result per source and asserts the cancellation of poles with the ALP-dependent local terms of [quadratic-lagrangian.md](../../../memory/nlo/quadratic-lagrangian.md)
+- [ ] 3.2 Write `memory/nlo/loops/mixed-alp-meson-self-energy.md` and `memory/nlo/loops/counterterm-cancellation.md`. Verify that the $\Gamma_i$ used agree with [counterterm-basis.md](../../../memory/nlo/counting/counterterm-basis.md), and record any discrepancy (for example $\Gamma_6$, $\Gamma_{25}$) with its origin
+- [ ] 3.3 Write `memory/nlo/loops/thresholds-and-analytic-structure.md` stating, per function, the thresholds or the absence of a cut, with the conditional CP-odd extension marked. Verify that each statement follows from the topology list of 1.5 and that thresholds are given in GeV$^2$
+
+## 4. Derivatives, residues and prescription
+
+- [ ] 4.1 Extend the script with $\partial_s\Sigma_{ij}$, $\partial_s\Sigma_{i\hat a}$, the first-order $\delta w^{(a)}$ and pole shift and the resummation criterion of Decision 8. Verify that `--poles` reproduces the tree-level LSZ solution when $\Sigma\to0$ and that the perturbative and resummed results agree to $\mathcal O(\Sigma^2)$ in a test point
+- [ ] 4.2 Write `memory/nlo/loops/derivatives-and-pole-residues.md` and `memory/nlo/loops/perturbative-and-resummed-prescription.md`. Verify the consistency with [loop-corrections-to-alp-meson-lsz-mixing.md](../../../memory/nlo/loop-corrections-to-alp-meson-lsz-mixing.md) and the $\delta_{\rm est}$ of [validity-range-and-truncation.md](../../../memory/nlo/counting/validity-range-and-truncation.md)
+- [ ] 4.3 Add a one-line cross-link from `memory/nlo/loop-corrections-to-alp-meson-lsz-mixing.md` to the new records and update `updated`; leave the content unchanged. Verify the link
+
+## 5. Integration check
+
+- [ ] 5.1 Run `.venv/bin/python scripts/derive_nlo_loop_vertices.py` and `.venv/bin/python scripts/derive_nlo_loop_self_energies.py` (all checks) and verify exit code 0. Check front matter and status/provenance values of every `memory/nlo/loops/*.md`, and that `memory/README.md` → `memory/nlo/INDEX.md` → `memory/nlo/loops/INDEX.md` links resolve
+- [ ] 5.2 Check the acceptance criteria of alp-gii.2 (renormalized self-energies and mixed functions, counterterm cancellation, thresholds, pole residues, NLO/resummation prescription) against the records. Then close with `bd close alp-gii.2` and verify with `bd ready` that alp-gii.4, alp-gii.5 and alp-gii.8 are no longer blocked by it
