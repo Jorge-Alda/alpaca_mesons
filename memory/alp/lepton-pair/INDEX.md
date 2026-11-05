@@ -2,7 +2,7 @@
 title: ALP lepton-pair memory index
 status: mixed
 created: 2026-10-23
-updated: 2026-10-28
+updated: 2026-11-05
 bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
 provenance: assumption
 ---
@@ -13,6 +13,7 @@ provenance: assumption
 - [alp-doubly-virtual-tff.md](alp-doubly-virtual-tff.md) — initial tree-level source-resolved ALP TFF with VJP/VVP resonance terms and both virtualities.
 - [alp-tff-mixed-vector-strategy.md](alp-tff-mixed-vector-strategy.md) — first-deliverable choice to treat the broad $\rho$ dispersively and the narrower $\omega,\phi$ as poles, with matching rules and deferred error quantification.
 - [alp-tff-mixed-rho-isoscalar-vvp.md](alp-tff-mixed-rho-isoscalar-vvp.md) — retain the general-source mixed $\rho I$ VVP term with a dispersively self-energy-dressed $\rho$ response and narrow-pole $\omega/\phi$ leg; matching to the two-pion continuum remains open.
+- [alp-tff-channel-input-manifest.md](alp-tff-channel-input-manifest.md) — channel-by-channel sources, thresholds, conventions, phases, normalizations, uncertainty provenance, and missing-input status for low-energy TFF assembly.
 - [alp-tff-dispersive-treatment-explained.md](alp-tff-dispersive-treatment-explained.md) — didactic explanation of unitarity cuts, the two-pion and three-pion thresholds, how resonance poles relate to cuts, finite vector widths, and the mixed strategy's limits.
 - [alp-isovector-doubly-virtual-tff.md](alp-isovector-doubly-virtual-tff.md) — neutral-$\rho$ pole contribution, including possible mixed $\rho$–isoscalar VVP exchange, in no-mixing couplings.
 - [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — low-energy two-pion double-spectral contribution and the source-resolved inputs still needed for a numerical density.
