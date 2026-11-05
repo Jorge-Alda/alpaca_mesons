@@ -26,8 +26,8 @@
 
 ## 5. Resonance exchange and residual constants
 
-- [ ] 5.1 Write `memory/nlo/counting/resonance-exchange-and-residual-constants.md`. Use the approved notation from 1.2 to define residual constants, the separation scale, the $\mu_\chi$ independence of exchange, and the labelled saturation assumption. Refer the matching to alp-gii.3. Verify consistency with the explicit-resonance rule in `memory/nlo/resonance-saturation-and-dynamical-masses.md`
-- [ ] 5.2 Add one-line cross-links from `memory/nlo/one-loop-effects-and-renormalized-lecs.md` and `memory/nlo/resonance-saturation-and-dynamical-masses.md` to the new records, without altering their content. Update their `updated` field and verify the links
+- [x] 5.1 Write `memory/nlo/counting/resonance-exchange-and-residual-constants.md`. Use the approved notation from 1.2 to define residual constants, the separation scale, the $\mu_\chi$ independence of exchange, and the labelled saturation assumption. Refer the matching to alp-gii.3. Verify consistency with the explicit-resonance rule in `memory/nlo/resonance-saturation-and-dynamical-masses.md`
+- [x] 5.2 Add one-line cross-links from `memory/nlo/one-loop-effects-and-renormalized-lecs.md` and `memory/nlo/resonance-saturation-and-dynamical-masses.md` to the new records, without altering their content. Update their `updated` field and verify the links
 
 ## 6. Validity range and truncation
 

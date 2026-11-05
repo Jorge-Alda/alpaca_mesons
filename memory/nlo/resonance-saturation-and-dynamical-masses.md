@@ -2,7 +2,7 @@
 title: Resonance saturation of NLO constants and explicit pseudoscalar-resonance mixing
 status: mixed
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-05
 bibtex_keys: [Ecker:1988te, Ecker:1989yg, Kaiser:1998ds, Kaiser:2000gs, Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -142,3 +142,5 @@ For an ALP, append the ALP to the Goldstone-sector field vector and retain its m
 ## Inputs, limitations, and verification
 
 The resonance matching in the table is the leading single-resonance tree approximation of Ecker:1988te, expressed with standard $SU(3)$ resonance couplings; the source's equations for vector, axial-vector, scalar, and pseudoscalar exchange give these assignments. The neutral NLO matrices and normalization are the repository derivations linked above. The explicit bilinear formulas follow by expanding $i d_m\langle P_R\chi_-\rangle$ and block-inverting the quadratic form. They apply for a parity-even vacuum and small mixing; exactly or nearly degenerate states require exact finite-dimensional diagonalization. Loop effects, energy-dependent widths and self-energies, flavor-dependent resonance masses, and OZI-violating $U(3)$ resonance couplings are not included in these tree formulas. The executable derivation is [`scripts/derive_dynamical_pseudoscalar_masses.py`](../../scripts/derive_dynamical_pseudoscalar_masses.py); run `.venv/bin/python scripts/derive_dynamical_pseudoscalar_masses.py` to print the matrices, poles, and mixing coefficients.
+
+See also [the separation of explicit resonance exchange from the residual constants $L_i^r(\mu)$](counting/resonance-exchange-and-residual-constants.md) and the declared power counting in [counting/INDEX.md](counting/INDEX.md).

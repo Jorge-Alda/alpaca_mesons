@@ -147,3 +147,5 @@ $$
 where $I,J$ range over the mesons and, when retained, the ALP. The sign convention for $\Sigma$ is defined by this displayed inverse-propagator equation. The renormalized local terms and loop self-energy are separately scale dependent; their sum is scale independent to the calculated order. The loop matrix includes both diagonal meson self-energies and meson--ALP mixed two-point functions if ALP-dependent vertices are included. Local polynomial pieces may be shifted between $\Sigma$ and the local constants by a finite scheme change, while the nonanalytic thresholds remain.
 
 This note records the scope and renormalization structure, not explicit $\Sigma_{IJ}^{\rm loop}$ formulas. Such formulas require a specified ALP-source specialization and a diagrammatic calculation in the corresponding $U(3)$ scheme.
+
+See also the declared power counting, loop classes, subtraction scheme and counterterm basis in [counting/INDEX.md](counting/INDEX.md).

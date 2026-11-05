@@ -16,3 +16,4 @@ Declared field content, $\delta$ counting, included and excluded loop classes, s
 - [Loop classes](loop-classes.md) — included Goldstone loops, excluded resonance loops starting at $\delta$ and their threshold region, and the treatment of resonance widths
 - [Subtraction scheme and scales](subtraction-scheme-and-scales.md) — chiral subtraction and running, renormalization of $B$, scale-independent combinations, QCD-scale ($Z_A$) laws and the translation between the two $U(3)$ conventions
 - [Counterterm basis](counterterm-basis.md) — per-constant $\delta$ order, chiral coefficient, QCD-scale behaviour and tree-level resonance contribution
+- [Resonance exchange and residual constants](resonance-exchange-and-residual-constants.md) — meaning of $L_i^r(\mu)$ with explicit resonances, the rule against double counting, the saturation assumption and the treatment of singlet constants
