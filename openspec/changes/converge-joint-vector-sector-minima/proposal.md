@@ -1,0 +1,28 @@
+# Proposal
+
+## Why
+
+The certified joint vector-sector likelihood is reproducible and now evaluates substantially faster, but its stored fit still terminates at the 1500-evaluation limit and is explicitly nonconverged. Multiple physically permitted starts, documented scaling, and numerical-refinement checks are needed before any minimum can be reported as accepted.
+
+## What Changes
+
+- Add a reproducible multi-start fit procedure for the same raw 73-summary likelihood, preserving the established shared nuisances, measurement accounting, and physical branch constraints.
+- Record every attempted start, parameter scaling and bounds, quadrature settings, residual diagnostics, competing endpoint, and complete optimizer termination information.
+- Use the established runtime improvements—shared propagator evaluation, cached channel terms, and bounded energy-bin blocks—so repeated starts and high-order refinement remain practical without changing the likelihood.
+- Accept a minimum only after successful optimizer termination, physical-domain and residual checks, and stability under the certified quadrature refinement; preserve failures and competing solutions.
+
+## Capabilities
+
+### New Capabilities
+
+- `joint-vector-fit-minima`: Reproducible, physically constrained multi-start minimization and evidence-based reporting of converged joint vector-sector minima.
+
+### Modified Capabilities
+
+None.
+
+## Impact
+
+- Fit driver and focused regression coverage in `scripts/fit_babar_kkpi_global_vector_sector.py` and related scripts.
+- Machine-readable per-start results under `data/vector_sector/` and an indexed numerical reproducibility record under `memory/rcht/odd-parity/`.
+- Existing likelihood inputs, definitions, parameterization, shared even-sector audit, and certified quadrature tolerances remain authoritative. The existing propagator reuse, channel-specific Jacobian evaluation, and four-bin bounded-memory path should be retained and exercised by the multi-start workflow.
