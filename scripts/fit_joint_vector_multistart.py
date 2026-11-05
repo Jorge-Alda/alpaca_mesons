@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 import platform
+import shlex
 import sys
 import time
 from pathlib import Path
@@ -27,6 +28,10 @@ INPUTS = (REFERENCE, 'data/vector_sector/odd_preliminary_fit.json',
           'data/odd_parity/odd_low_energy_measurements.json',
           *(f'data/vector_sector/babar_2007_{channel}_inclusive_below_1p78.csv'
             for channel in joint_fit.CHANNELS))
+BLOCKS = (('odd', 0, 12), ('masses_and_leptonic', 12, 19),
+          ('shared_widths', 19, 26), ('phi_KK', 26, 28),
+          ('BaBar', 28, 73), ('normalization_constraints', 73, 75))
+CERTIFICATION_ORDERS = {'energy': [2, 4], 'pair': [64, 128], 'angle': [64, 128]}
 
 
 def validate_start(model, values, lower, upper):
@@ -77,6 +82,17 @@ def input_hashes():
     return {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in paths}
 
 
+def source_hashes():
+    """Hash project Python modules loaded by the likelihood implementation."""
+    paths = {Path(module.__file__).resolve() for module in tuple(sys.modules.values())
+             if getattr(module, '__file__', None) and Path(module.__file__).suffix == '.py'
+             and Path(module.__file__).resolve().is_relative_to(ROOT)
+             and not Path(module.__file__).resolve().is_relative_to(ROOT / '.venv')}
+    paths.add(Path(__file__).resolve())
+    return {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in sorted(paths)}
+
+
 def prepare_ledger(model, orders, block_size, settings):
     reference = json.loads((ROOT / REFERENCE).read_text())['parameter_values']
     starts = named_starts(model, reference)
@@ -94,6 +110,7 @@ def prepare_ledger(model, orders, block_size, settings):
             'quadrature': {'energy': orders[0], 'pair_per_segment': orders[1],
                            'angle_per_segment': orders[2], 'bin_block_size': block_size},
             'optimizer_settings': settings, 'input_sha256': input_hashes(),
+            'source_sha256': source_hashes(),
             'software': {'python': sys.version, 'numpy': np.__version__,
                          'scipy': scipy.__version__, 'platform': platform.platform()},
             'attempts': [{'name': name, 'start': values.tolist(), 'state': 'pending',
@@ -105,6 +122,28 @@ def write_ledger(path, ledger):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(ledger, indent=2, allow_nan=False) + '\n')
+
+
+def endpoint_diagnostics(model, values, lower, upper):
+    """Evaluate domain validity, residual blocks and BaBar predictions."""
+    try:
+        values = validate_start(model, values, lower, upper)
+        residual = model.residual(values)
+        if residual.shape != (75,) or not np.all(np.isfinite(residual)):
+            raise ValueError('endpoint residuals are not 75 finite values')
+        if np.all(residual == 1e8 + np.linalg.norm(values)):
+            raise ValueError('likelihood returned its invalid-point penalty')
+        _, predictions = model.babar_blocks(values, model.unpack(values))
+        if not all(np.all(np.isfinite(prediction)) for prediction in predictions.values()):
+            raise ValueError('endpoint predictions are nonfinite')
+        return {'valid': True, 'residuals': residual.tolist(),
+                'chi2': float(residual @ residual),
+                'blocks': {name: {'count': end - start,
+                                  'chi2': float(residual[start:end] @ residual[start:end])}
+                           for name, start, end in BLOCKS},
+                'babar_predictions': {name: values.tolist() for name, values in predictions.items()}}
+    except (ValueError, FloatingPointError, np.linalg.LinAlgError) as error:
+        return {'valid': False, 'error_type': type(error).__name__, 'message': str(error)}
 
 
 def run_attempt(model, attempt, lower, upper, scales, settings):
@@ -120,15 +159,36 @@ def run_attempt(model, attempt, lower, upper, scales, settings):
                        nfev=int(result.nfev), njev=None if result.njev is None else int(result.njev),
                        optimality=float(result.optimality), gradient=result.grad.tolist(),
                        active_bounds=result.active_mask.tolist())
+        attempt['endpoint_diagnostics'] = endpoint_diagnostics(model, result.x, lower, upper)
     except (ValueError, FloatingPointError, np.linalg.LinAlgError) as error:
         attempt.update(state='error', success=False, error_type=type(error).__name__, message=str(error))
     attempt['elapsed_seconds'] = time.perf_counter() - start_time
+
+
+def refine_attempt(model, attempt, lower, upper):
+    """Apply the historical high-order quadrature audit to a successful endpoint."""
+    if not attempt.get('success') or not attempt.get('endpoint_diagnostics', {}).get('valid'):
+        return {'status': 'not_evaluated', 'passed': False,
+                'reason': 'optimizer did not succeed at a valid endpoint'}
+    try:
+        values = validate_start(model, attempt['endpoint'], lower, upper)
+        started = time.perf_counter()
+        refinement = joint_fit.audit_quadrature(model, values, CERTIFICATION_ORDERS,
+                                                parameter_scales=np.ones(32))
+        refinement['elapsed_seconds'] = time.perf_counter() - started
+        refinement['bin_block_size'] = model.bin_block_size
+        return refinement
+    except (ValueError, FloatingPointError, np.linalg.LinAlgError) as error:
+        return {'status': 'unevaluated', 'passed': False,
+                'error_type': type(error).__name__, 'reason': str(error)}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', required=True)
     parser.add_argument('--prepare-only', action='store_true')
+    parser.add_argument('--refine-from', help='Refine successful endpoints in this saved ledger')
+    parser.add_argument('--starts', nargs='+', help='Names of starts to run or refine')
     parser.add_argument('--max-nfev', type=int, default=1500)
     parser.add_argument('--ftol', type=float, default=1e-8)
     parser.add_argument('--xtol', type=float, default=1e-9)
@@ -138,6 +198,32 @@ def main():
     parser.add_argument('--angle-order', type=int, default=16)
     parser.add_argument('--bin-block-size', type=int, default=4)
     args = parser.parse_args()
+    if args.refine_from:
+        if args.prepare_only:
+            parser.error('--prepare-only cannot be combined with --refine-from')
+        ledger = json.loads(Path(args.refine_from).read_text())
+        if ledger['parameter_names'] != list(joint_fit.PARAMETER_NAMES):
+            parser.error('saved parameter coordinates differ from the current fit')
+        for path, expected in ledger['input_sha256'].items():
+            if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
+                parser.error(f'input or fit code changed: {path}')
+        for path, expected in ledger['source_sha256'].items():
+            if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
+                parser.error(f'loaded source changed: {path}')
+        if Path(args.output).resolve() == Path(args.refine_from).resolve():
+            parser.error('refinement output must differ from its input ledger')
+        model = joint_fit.GlobalLikelihood(2, 64, 64, bin_block_size=4)
+        lower, upper = joint_fit.parameter_bounds(model)
+        selected = set(args.starts or [attempt['name'] for attempt in ledger['attempts']])
+        if selected - {attempt['name'] for attempt in ledger['attempts']}:
+            parser.error('unknown start name')
+        ledger['refinement_command'] = shlex.join([sys.executable, *sys.argv])
+        for attempt in ledger['attempts']:
+            if attempt['name'] in selected:
+                attempt['quadrature_refinement'] = refine_attempt(model, attempt, lower, upper)
+                write_ledger(args.output, ledger)
+        print(args.output)
+        return
     if min(args.energy_order, args.pair_order, args.angle_order, args.bin_block_size, args.max_nfev) <= 0:
         parser.error('orders, block size and max-nfev must be positive')
     orders = (args.energy_order, args.pair_order, args.angle_order)
@@ -145,10 +231,17 @@ def main():
     settings = {'method': 'trf', 'max_nfev': args.max_nfev, 'ftol': args.ftol,
                 'xtol': args.xtol, 'gtol': args.gtol}
     ledger = prepare_ledger(model, orders, args.bin_block_size, settings)
+    ledger['command'] = shlex.join([sys.executable, *sys.argv])
+    ledger['working_directory'] = str(Path.cwd())
+    selected = set(args.starts or [attempt['name'] for attempt in ledger['attempts']])
+    if selected - {attempt['name'] for attempt in ledger['attempts']}:
+        parser.error('unknown start name')
     write_ledger(args.output, ledger)
     if not args.prepare_only:
         lower, upper = joint_fit.parameter_bounds(model)
         for attempt in ledger['attempts']:
+            if attempt['name'] not in selected:
+                continue
             attempt['state'] = 'running'
             write_ledger(args.output, ledger)
             run_attempt(model, attempt, lower, upper, np.array(ledger['optimizer_coordinate_scales']), settings)

@@ -8,10 +8,10 @@
 
 ## 2. Run and qualify candidate minima
 
-- [ ] 2.1 Run all named starts against the unchanged raw likelihood using the existing propagator reuse, channel-specific Jacobian path, and bounded-bin evaluation; verify fixed-candidate predictions, residuals, and Jacobians against the established path within recorded tolerances.
-- [ ] 2.2 Preserve per-attempt residual and block diagnostics, objective, active bounds, optimizer status/message, evaluation counts, optimality/gradient, wall time, software versions, and input/source hashes; verify each ledger entry is independently interpretable.
-- [ ] 2.3 Re-evaluate successful promising candidates at $(2,64,64)$ and $(4,128,128)$ with four-bin blocks; verify prediction, standardized residual, scaled-Jacobian, and $\chi^2$ changes against the certified tolerances and reject candidates that fail.
-- [ ] 2.4 Write the separate machine-readable results and indexed memory record documenting inputs, assumptions, exact invocation, outcomes, and limitations; verify index links and replay the recorded invocation.
+- [x] 2.1 Run all named starts against the unchanged raw likelihood using the existing propagator reuse, channel-specific Jacobian path, and bounded-bin evaluation; verify fixed-candidate predictions, residuals, and Jacobians against the established path within recorded tolerances.
+- [x] 2.2 Preserve per-attempt residual and block diagnostics, objective, active bounds, optimizer status/message, evaluation counts, optimality/gradient, wall time, software versions, and input/source hashes; verify each ledger entry is independently interpretable.
+- [x] 2.3 Re-evaluate successful promising candidates at $(2,64,64)$ and $(4,128,128)$ with four-bin blocks; verify prediction, standardized residual, scaled-Jacobian, and $\chi^2$ changes against the certified tolerances and reject candidates that fail. (No attempts succeeded; each was explicitly recorded as not eligible for refinement.)
+- [x] 2.4 Write the separate machine-readable results and indexed memory record documenting inputs, assumptions, exact invocation, outcomes, and limitations; verify index links and replay the recorded invocation.
 
 ## 3. Assess integrated result
 
