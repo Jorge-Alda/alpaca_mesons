@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-29
+updated: 2026-11-05
 bibtex_keys: []
 provenance: literature
 ---
@@ -71,6 +71,8 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Qin:2024ulb](Qin:2024ulb/INDEX.md) — inclusive electromagnetic $KK\pi$ RChT form factors, including local VPPP terms and fit assumptions.
 - [Roig:2013baa](Roig:2013baa/INDEX.md) — odd-sector coupling dictionaries and TFF compatibility adapted to the canonical tensor/coupling convention.
 - [Rosell:2004mn](Rosell:2004mn/INDEX.md) — source-specific literature extracts.
+- [Rosell:2005ai](Rosell:2005ai/INDEX.md) — one-loop divergences of RChT with scalar and pseudoscalar resonances, including the $\mathcal{O}(p^2)$ operators.
+- [Rosell:2006dt](Rosell:2006dt/INDEX.md) — resonance-Goldstone cuts in the NLO scalar minus pseudoscalar correlator.
 - [Ruiz-Femenia:2003jdx](Ruiz-Femenia:2003jdx/INDEX.md) — source-specific extracts adapted to the canonical upper-index Levi-Civita convention with explicit source conversion.
 - [VonDetten:2021rax](VonDetten:2021rax/INDEX.md) — source-specific literature extracts.
 - [Watson:1952ji](Watson:1952ji/INDEX.md) — source-specific literature extracts.

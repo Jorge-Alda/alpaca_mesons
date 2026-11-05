@@ -1,13 +1,25 @@
 #!/usr/bin/env python3
-"""Assign delta orders to the U(3) NLO Lagrangian and to resonance exchange.
+"""Assign delta orders to the U(3) NLO Lagrangian, resonance exchange and loops.
 
 Purpose
     Power counting for the OpenSpec change `fix-u3-nlo-resonance-counting`
-    (task 2.2). The script tabulates the order in the combined expansion
-    parameter delta of Kaiser:1998ds and Kaiser:2000gs for every operator of
+    (tasks 2.2 and 3.1).
+    --orders: tabulates the order in the combined expansion parameter delta
+    of Kaiser:1998ds and Kaiser:2000gs for every operator of
     memory/nlo/lagrangian.md, for the resonance couplings and masses of
     Ecker:1988te, and for the low-energy limit of single-resonance exchange.
-    It only classifies orders; no propagator is expanded in the calculation.
+    --loops: classifies the one-loop topologies (and a two-loop reference
+    row) that contribute to Goldstone/ALP two-point functions and to ALP
+    decay vertices, gives their delta order in the low-energy limit and
+    their status at the declared order delta^2 ("included",
+    "excluded: beyond declared order", "excluded: declared approximation",
+    "excluded: first order in 1/f_a", or, for the resonance self-energy
+    near its pole, "excluded from strict order; line-shape prescription
+    near pole"). It also prints the lowest vector + pseudoscalar
+    thresholds, where loops with an internal resonance line become
+    non-analytic.
+    Neither mode expands a propagator or evaluates a loop integral; they
+    only classify orders.
 
 Conventions
     - delta counting: p = O(sqrt(delta)), m_q = O(delta), 1/N_c = O(delta).
@@ -29,18 +41,50 @@ Conventions
       does not enter delta, and the ALP mass squared counts as p^2.
     - Spin-one resonances are antisymmetric tensor fields (Ecker:1988te),
       so their couplings to Goldstones start at p^2.
+    - Loop rules (--loops), stated as assumptions of the counting:
+      a loop whose internal lines are all Goldstones (eta' included, since
+      m_0^2 = O(delta)) has loop momenta set by the external momenta and
+      masses and multiplies the tree graph built from the same vertices by
+      p^2/(16 pi^2 F^2), i.e. (k, 2n) += (-1, 2). A loop with an internal
+      resonance line has loop momenta of order M_R and multiplies by
+      N_c^{-1} without p^2, i.e. (k, 2n) += (-1, 0). Since the loop
+      momentum ~ M_R supplies the momentum factors of the vertices (e.g.
+      G_V^2 M_V^2/(16 pi^2 F^4) relative to the tree kinetic term), the
+      lowest R-int contribution to a Goldstone two-point function is the
+      generic N_c^{-1} loop factor times the chirally allowed minimum p^2
+      (or m_q) of the F^2-normalized two-point function: N_c^0 p^2, i.e.
+      delta^1. This is the O(p^2) divergence of the V pi and S pi loops in
+      the pion self-energy (Rosell:2004mn, subsection "Pion self-energy",
+      delta Z_pi ~ 6 G_V^2 M_V^2/(16 pi^2 F^4) plus a c_d^2 M_S^2 term),
+      which multiplies <u.u> and <chi_+> (gamma_1, gamma_2 of
+      Rosell:2005ai), so it renormalizes F^2 and F^2 B_0. The O(p^4) part
+      (tree exchange N_c p^4 times N_c^{-1}) is delta^2. A resonance
+      self-energy Sigma_R relative to M_R^2 counts N_c^{-1} p^4 in the
+      low-energy limit and N_c^{-1} near the pole (Gamma_R/M_R ~ 1/N_c).
+      A loop with an internal ALP line is O(1/f_a^2); the 1/f_a^2
+      suppression is not part of delta, so no delta order is assigned to it.
+    - Declared order: delta^2, first order in 1/f_a, Goldstone loops only
+      (loops with internal resonance lines are a declared approximation).
 
 Units
-    Natural units. Only powers of N_c and of the chiral dimension are
-    tabulated; no dimensionful number is used.
+    Natural units. The order tables use only powers of N_c and of the
+    chiral dimension. Masses and thresholds in --loops are in GeV.
 
 Inputs
     memory/nlo/lagrangian.md (L^(0), L^(1), L^(2) operators, Alda:2026nrd
     conventions), Kaiser:1998ds, Kaiser:2000gs (delta counting),
-    Ecker:1988te (resonance couplings and their N_c scaling).
+    Ecker:1988te (resonance couplings and their N_c scaling),
+    Rosell:2004mn, Rosell:2005ai, Rosell:2006dt, Pich:2010sm (one-loop
+    resonance chiral theory: loops with internal resonances, their O(p^2)
+    divergences and their R pi and R R' cuts), memory/rcht/foundations/
+    vector-width-lineshape-prescriptions.md (line shape near the pole).
+    Masses from ParticleDataGroup:2024cfk, in GeV:
+    M_rho = 0.77526, M_omega = 0.78266, M_K*(892)^+- = 0.89167,
+    m_pi^+- = 0.13957, m_K^+- = 0.493677, m_eta = 0.547862.
 
 Invocation
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --orders
+    .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --loops
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py      # all checks
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --test
 """
@@ -312,11 +356,335 @@ class OrderTableTests(unittest.TestCase):
         self.assertTrue(check_orders())
 
 
+# --------------------------------------------------------------------------
+# Loop topologies (--loops, task 3.1)
+# --------------------------------------------------------------------------
+
+DECLARED_EXPONENT = 2
+INCLUDED = "included"
+BEYOND_ORDER = "excluded: beyond declared order"
+DECLARED_APPROXIMATION = "excluded: declared approximation"
+FIRST_ORDER_IN_INVERSE_FA = "excluded: first order in 1/f_a"
+NEAR_POLE_PRESCRIPTION = "excluded from strict order; line-shape prescription near pole"
+
+# PDG 2024 masses in GeV (ParticleDataGroup:2024cfk).
+MASSES_GEV = {
+    "rho": 0.77526,
+    "omega": 0.78266,
+    "K*": 0.89167,
+    "pi": 0.13957,
+    "K": 0.493677,
+    "eta": 0.547862,
+}
+VECTOR_PSEUDOSCALAR_PAIRS = [("rho", "pi"), ("omega", "pi"), ("K*", "K"),
+                             ("rho", "eta"), ("omega", "eta")]
+VALIDITY_LIMIT_GEV = 1.0
+
+
+@dataclass(frozen=True)
+class LoopClass:
+    """One loop topology class.
+
+    nc_power (k) and chiral_dimension (2n) give the low-energy order
+    delta^(n - k); both are None when no delta order applies (internal ALP
+    line, resonance self-energy near its pole).
+    """
+
+    name: str
+    description: str
+    nc_power: object
+    chiral_dimension: object
+    status: str
+    regime: str = "low energy"
+
+    def exponent(self):
+        """Exponent of delta, or None if no delta order is assigned."""
+        if self.nc_power is None:
+            return None
+        return sp.Rational(self.chiral_dimension, 2) - sp.Rational(self.nc_power)
+
+
+def loop_factors():
+    """Multiplicative (k, 2n) factors used to build the loop classes."""
+    return {
+        "LO vertex tree": CountedTerm("LO tree", "L^(0) tree graph", 1, 2),
+        "N_c p^4 vertex tree": CountedTerm("L_5, L_8 tree", "L^(1) N_c p^4 vertex", 1, 4),
+        "N_c^0 p^2 vertex tree": CountedTerm("Lambda tree", "L^(1) N_c^0 p^2 vertex", 0, 2),
+        # Chirally allowed minimum of the F^2-normalized Goldstone two-point
+        # function: F^2 p^2 or F^2 B_0 m_q, i.e. N_c p^2.
+        "minimal two-point tree": CountedTerm("F^2 p^2 tree", "F^2 x minimal p^2 (or m_q)", 1, 2),
+        "resonance exchange": CountedTerm("exchange", "two vertices x 1/M_R^2", 1, 4),
+        "Goldstone loop": CountedTerm("G loop", "p^2/(16 pi^2 F^2)", -1, 2),
+        "resonance loop": CountedTerm("R loop", "1/(16 pi^2 F^2) x M_R^2", -1, 0),
+        "self-energy, low energy": CountedTerm("Sigma_R/M_R^2", "N_c^-1 p^4", -1, 4),
+    }
+
+
+def classify_status(exponent, declared_approximation=False):
+    """Status of a class with delta exponent `exponent` at declared order."""
+    if exponent > DECLARED_EXPONENT:
+        return BEYOND_ORDER
+    if declared_approximation:
+        return DECLARED_APPROXIMATION
+    return INCLUDED
+
+
+def loop_class_from_factors(name, description, factor_names, declared_approximation=False):
+    """Build a LoopClass by multiplying the named loop factors."""
+    factors = loop_factors()
+    combined = combine(name, description, [factors[label] for label in factor_names])
+    exponent = delta_exponent(combined)
+    return LoopClass(name, description, combined.nc_power, combined.chiral_dimension,
+                     classify_status(exponent, declared_approximation))
+
+
+def loop_classes():
+    """All loop topology classes, in printing order."""
+    return [
+        loop_class_from_factors(
+            "G-LO", "Goldstone-only 1 loop, L^(0) vertices (eta' incl.)",
+            ["LO vertex tree", "Goldstone loop"]),
+        # The ALP source vertex (c_q^A, c_q^V, c_q^S, c_q^P, c_G) is a vertex
+        # of L^(0); 1/f_a is not part of delta.
+        loop_class_from_factors(
+            "G-ALP", "as G-LO with one L^(0) ALP-source vertex",
+            ["LO vertex tree", "Goldstone loop"]),
+        loop_class_from_factors(
+            "G-NLO", "Goldstone-only 1 loop, one L_5 or L_8 vertex",
+            ["N_c p^4 vertex tree", "Goldstone loop"]),
+        loop_class_from_factors(
+            "G-NLO", "Goldstone-only 1 loop, one Lambda_1/2 vertex",
+            ["N_c^0 p^2 vertex tree", "Goldstone loop"]),
+        # R-int, O(p^2) part: the loop momentum ~ M_R supplies the momentum
+        # factors of the resonance vertices, so the loop gives the generic
+        # N_c^{-1} factor (e.g. G_V^2 M_V^2/(16 pi^2 F^4)) times the minimal
+        # p^2 (or m_q) of the F^2-normalized two-point function. These are
+        # the O(p^2) divergences of the V pi and S pi loops in the pion
+        # self-energy (Rosell:2004mn, subsection "Pion self-energy") and
+        # gamma_1, gamma_2 of <u.u>, <chi_+> (Rosell:2005ai): they
+        # renormalize F^2 and F^2 B_0.
+        loop_class_from_factors(
+            "R-int", "1 loop with internal resonance line(s): O(p^2) part"
+            " (renormalizes F^2, F^2 B_0)",
+            ["minimal two-point tree", "resonance loop"], declared_approximation=True),
+        # R-int, O(p^4) part: tree exchange (N_c p^4) times N_c^{-1}.
+        loop_class_from_factors(
+            "R-int", "same, O(p^4) part",
+            ["resonance exchange", "resonance loop"], declared_approximation=True),
+        loop_class_from_factors(
+            "R-vertex", "G loop on resonance vertex in tree exchange",
+            ["resonance exchange", "Goldstone loop"]),
+        loop_class_from_factors(
+            "R-dress", "G loop in resonance propagator (Sigma_R)",
+            ["resonance exchange", "self-energy, low energy"]),
+        LoopClass("R-dress", "Sigma_R/M_R^2 ~ N_c^-1 (Gamma_R/M_R)", None, None,
+                  NEAR_POLE_PRESCRIPTION, regime="s ~ M_R^2"),
+        LoopClass("A-int", "loop with internal ALP line, O(1/f_a^2)", None, None,
+                  FIRST_ORDER_IN_INVERSE_FA),
+        loop_class_from_factors(
+            "G-2loop", "Goldstone-only 2 loops, L^(0) vertices",
+            ["LO vertex tree", "Goldstone loop", "Goldstone loop"]),
+    ]
+
+
+def vector_pseudoscalar_thresholds():
+    """Sorted list of (label, threshold in GeV) for vector + pseudoscalar."""
+    thresholds = [(f"{vector}{pseudoscalar}", MASSES_GEV[vector] + MASSES_GEV[pseudoscalar])
+                  for vector, pseudoscalar in VECTOR_PSEUDOSCALAR_PAIRS]
+    return sorted(thresholds, key=lambda item: item[1])
+
+
+def format_loop_table(classes):
+    """Format the loop classification as text."""
+    width = max(52, max(len(loop_class.description) for loop_class in classes) + 2)
+    header = (f"{'class':<9}{'description':<{width}}{'regime':<12}{'k':>4}{'2n':>4}"
+              f"  {'order':<9}status")
+    lines = [header, "-" * (len(header) + 40)]
+    for loop_class in classes:
+        if loop_class.nc_power is None:
+            nc_text, dimension_text, order_text = "-", "-", "-"
+        else:
+            nc_text = str(loop_class.nc_power)
+            dimension_text = str(loop_class.chiral_dimension)
+            order_text = sp.sstr(delta_order(loop_class.nc_power, loop_class.chiral_dimension))
+        lines.append(f"{loop_class.name:<9}{loop_class.description:<{width}}{loop_class.regime:<12}"
+                     f"{nc_text:>4}{dimension_text:>4}  {order_text:<9}{loop_class.status}")
+    return "\n".join(lines)
+
+
+def check_loops():
+    """Print the loop classification and thresholds; assert the rules."""
+    classes = loop_classes()
+    print("Loop topologies for Goldstone/ALP two-point functions and ALP decay"
+          " vertices")
+    print(f"declared order: delta^{DECLARED_EXPONENT}, first order in 1/f_a,"
+          " Goldstone loops only")
+    print("Goldstone loop: (k, 2n) += (-1, 2); resonance loop: (k, 2n) += (-1, 0)\n")
+    print(format_loop_table(classes))
+
+    included_names = {item.name for item in classes if item.status == INCLUDED}
+    assert included_names == {"G-LO", "G-ALP"}, included_names
+    for item in classes:
+        if item.status == BEYOND_ORDER:
+            assert item.exponent() > DECLARED_EXPONENT, item.name
+        if item.status == INCLUDED:
+            assert item.exponent() == DECLARED_EXPONENT, item.name
+    by_name = {}
+    for item in classes:
+        by_name.setdefault(item.name, []).append(item)
+    expected_low_energy = {"G-LO": 2, "G-ALP": 2, "G-NLO": 3,
+                           "R-vertex": 3, "R-dress": 4, "G-2loop": 4}
+    for name, exponent in expected_low_energy.items():
+        rows = [item for item in by_name[name] if item.regime == "low energy"]
+        assert rows and all(item.exponent() == exponent for item in rows), name
+    assert len(by_name["G-NLO"]) == 2
+    assert all(item.status == BEYOND_ORDER for item in by_name["G-NLO"])
+    resonance_internal = by_name["R-int"]
+    assert sorted(item.exponent() for item in resonance_internal) == [1, 2]
+    assert min(item.exponent() for item in resonance_internal) < DECLARED_EXPONENT
+    assert all(item.status == DECLARED_APPROXIMATION for item in resonance_internal)
+    near_pole = [item for item in by_name["R-dress"] if item.regime != "low energy"]
+    assert len(near_pole) == 1 and near_pole[0].status == NEAR_POLE_PRESCRIPTION
+    (alp_internal,) = by_name["A-int"]
+    assert alp_internal.status == FIRST_ORDER_IN_INVERSE_FA
+
+    thresholds = vector_pseudoscalar_thresholds()
+    print("\nVector + pseudoscalar thresholds (GeV, ParticleDataGroup:2024cfk):")
+    for label, value in thresholds:
+        print(f"  {label:<9}{value:.6f}")
+    threshold_by_label = dict(thresholds)
+    assert threshold_by_label["rhopi"] < VALIDITY_LIMIT_GEV
+    assert [value for _, value in thresholds] == sorted(value for _, value in thresholds)
+
+    print("\nNotes:")
+    print("- R-int starts at delta^1: resonance loops renormalize the O(p^2)"
+          " constants F^2 and F^2 B_0 at 1/N_c (Rosell:2004mn, Rosell:2005ai),"
+          " and the O(p^4) constants at delta^2. It is excluded by declared"
+          " choice (Goldstone loops only).")
+    print("- Assumption: below the lowest resonance + Goldstone threshold R-int is"
+          " analytic in s and m_q. Its effect then has the form of local terms"
+          " at O(p^2) and O(p^4), so it is absorbed only if F, B_0, tau"
+          " (m_0^2), Lambda_1, Lambda_2 and L_i^r(mu) are fixed from data"
+          " (physical or fitted values), not from large-N_c or"
+          " resonance-saturation estimates. Its non-analytic part starts at"
+          " the R pi threshold, and its size enters the truncation"
+          " uncertainty.")
+    print("- Resonance-resonance cuts lie at (M_R+M_R')^2 >~ 2 GeV^2"
+          " (Pich:2010sm), outside the validity range; only R pi (and R K,"
+          " R eta) cuts can lie below 1 GeV. In the pseudoscalar channel"
+          " V pi and S pi contribute (Rosell:2006dt).")
+    print(f"- The declared validity range (<~ {VALIDITY_LIMIT_GEV:g} GeV) overlaps the"
+          f" excluded R-int non-analytic region above ~{thresholds[0][1]:.2f} GeV"
+          " (rho pi) in channels where a vector-pseudoscalar state is allowed."
+          " Quantum-number selection rules are not applied here.")
+    print("- R-dress near s ~ M_R^2: Sigma_R/M_R^2 ~ Gamma_R/M_R ~ 1/N_c with no p"
+          " suppression, so it is not small near the pole. It enters only"
+          " through the line-shape prescription of memory/rcht/foundations/"
+          "vector-width-lineshape-prescriptions.md, as a resummation outside"
+          " the strict counting.")
+    print("- A-int: O(1/f_a^2), excluded at first order in 1/f_a; 1/f_a is not"
+          " part of delta, so no delta order is assigned.")
+    print("\n--loops: all assertions passed")
+    return True
+
+
+class LoopClassificationTests(unittest.TestCase):
+    """Unit tests of the loop classification and of the thresholds."""
+
+    def setUp(self):
+        self.classes = loop_classes()
+
+    def rows(self, name, regime="low energy"):
+        return [item for item in self.classes if item.name == name and item.regime == regime]
+
+    def test_included_set(self):
+        included = {item.name for item in self.classes if item.status == INCLUDED}
+        self.assertEqual(included, {"G-LO", "G-ALP"})
+
+    def test_goldstone_one_loop_is_nc0_p4(self):
+        for name in ["G-LO", "G-ALP"]:
+            (row,) = self.rows(name)
+            self.assertEqual((row.nc_power, row.chiral_dimension), (0, 4))
+
+    def test_nlo_vertex_loops_beyond_order_for_both_vertex_types(self):
+        rows = self.rows("G-NLO")
+        self.assertEqual({(row.nc_power, row.chiral_dimension) for row in rows},
+                         {(0, 6), (-1, 4)})
+        for row in rows:
+            self.assertEqual(row.exponent(), 3)
+            self.assertEqual(row.status, BEYOND_ORDER)
+
+    def test_beyond_order_strictly_above_declared(self):
+        for item in self.classes:
+            if item.status == BEYOND_ORDER:
+                self.assertGreater(item.exponent(), DECLARED_EXPONENT, item.name)
+
+    def test_resonance_internal_starts_below_declared_order(self):
+        rows = self.rows("R-int")
+        self.assertEqual({(row.nc_power, row.chiral_dimension) for row in rows},
+                         {(0, 2), (0, 4)})
+        lowest = min(row.exponent() for row in rows)
+        self.assertEqual(lowest, 1)
+        self.assertLess(lowest, DECLARED_EXPONENT)
+        for row in rows:
+            self.assertEqual(row.status, DECLARED_APPROXIMATION)
+
+    def test_resonance_internal_rule_matches_goldstone_two_point_minimum(self):
+        # N_c^-1 loop factor times the F^2-normalized minimum N_c p^2.
+        factors = loop_factors()
+        combined = combine("x", "", [factors["minimal two-point tree"],
+                                     factors["resonance loop"]])
+        self.assertEqual(delta_exponent(combined), 1)
+        self.assertEqual(delta_exponent(combined),
+                         delta_exponent(next(row for row in goldstone_lagrangian_rows()
+                                             if row.name == "Lambda_1")))
+
+    def test_resonance_vertex_and_dressing(self):
+        (vertex_row,) = self.rows("R-vertex")
+        self.assertEqual((vertex_row.nc_power, vertex_row.chiral_dimension, vertex_row.exponent()),
+                         (0, 6, 3))
+        (dress_row,) = self.rows("R-dress")
+        self.assertEqual((dress_row.nc_power, dress_row.chiral_dimension, dress_row.exponent()),
+                         (0, 8, 4))
+        (near_pole,) = self.rows("R-dress", regime="s ~ M_R^2")
+        self.assertEqual(near_pole.status, NEAR_POLE_PRESCRIPTION)
+        self.assertIsNone(near_pole.exponent())
+
+    def test_alp_internal_and_two_loop(self):
+        (alp_row,) = self.rows("A-int")
+        self.assertEqual(alp_row.status, FIRST_ORDER_IN_INVERSE_FA)
+        self.assertIsNone(alp_row.exponent())
+        (two_loop,) = self.rows("G-2loop")
+        self.assertEqual((two_loop.nc_power, two_loop.chiral_dimension, two_loop.exponent()),
+                         (-1, 6, 4))
+        self.assertEqual(two_loop.status, BEYOND_ORDER)
+
+    def test_classify_status(self):
+        self.assertEqual(classify_status(2), INCLUDED)
+        self.assertEqual(classify_status(3), BEYOND_ORDER)
+        self.assertEqual(classify_status(2, declared_approximation=True), DECLARED_APPROXIMATION)
+        self.assertEqual(classify_status(3, declared_approximation=True), BEYOND_ORDER)
+
+    def test_thresholds(self):
+        thresholds = vector_pseudoscalar_thresholds()
+        labels = [label for label, _ in thresholds]
+        self.assertEqual(labels, ["rhopi", "omegapi", "rhoeta", "omegaeta", "K*K"])
+        values = dict(thresholds)
+        self.assertAlmostEqual(values["rhopi"], 0.91483, places=10)
+        self.assertAlmostEqual(values["K*K"], 1.385347, places=10)
+        self.assertLess(values["rhopi"], VALIDITY_LIMIT_GEV)
+
+    def test_check_loops_runs(self):
+        self.assertTrue(check_loops())
+
+
 def main():
     """Parse the command line and run the requested checks."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--orders", action="store_true",
                         help="print the delta order table and assert the orders")
+    parser.add_argument("--loops", action="store_true",
+                        help="classify loop topologies and print thresholds")
     parser.add_argument("--test", action="store_true", help="run the unit tests")
     arguments = parser.parse_args()
 
@@ -324,11 +692,13 @@ def main():
         result = unittest.main(argv=[sys.argv[0]], exit=False).result
         return 0 if result.wasSuccessful() else 1
 
-    selected = {"orders": arguments.orders}
+    selected = {"orders": arguments.orders, "loops": arguments.loops}
     run_all = not any(selected.values())
-    checks = {"orders": check_orders}
-    for name, check in checks.items():
+    checks = {"orders": check_orders, "loops": check_loops}
+    for index, (name, check) in enumerate(checks.items()):
         if run_all or selected[name]:
+            if run_all and index > 0:
+                print()
             check()
     return 0
 

@@ -12,3 +12,4 @@ provenance: literature
 Source-specific literature extracts for BibTeX key `Pich:2010sm`.
 
 - [vector-form-factor-nlo.md](vector-form-factor-nlo.md) — modular extract from Pich:2010sm.
+- [resonance-loop-cuts-and-divergence-structure.md](resonance-loop-cuts-and-divergence-structure.md) — divergence structure and thresholds of $\pi\pi$, $R\pi$ and $RR'$ loops in the NLO vector form factor.

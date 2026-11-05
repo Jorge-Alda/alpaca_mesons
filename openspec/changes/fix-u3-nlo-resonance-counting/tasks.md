@@ -15,8 +15,8 @@
 
 ## 3. Loop classes
 
-- [ ] 3.1 Through `coder`, extend the script with a classification of one-loop topologies (Goldstone-only with LO vertices; with an ALP-source vertex; with an internal resonance line; with a resonance vertex; Goldstone-loop dressing of a resonance propagator), giving each an order and an included/excluded flag. Verify that `--loops` prints the classification and asserts that only the Goldstone-only classes are included
-- [ ] 3.2 Write `memory/nlo/counting/loop-classes.md`, which explains 3.1, cites Rosell:2004mn and Pich:2010sm for the excluded resonance loops, and gives the width-prescription rule with a link to `memory/rcht/foundations/vector-width-lineshape-prescriptions.md`. Verify that the links resolve and the classification matches the script
+- [x] 3.1 Through `coder`, extend the script with a classification of one-loop topologies (Goldstone-only with LO vertices; with an ALP-source vertex; with an internal resonance line; with a resonance vertex; Goldstone-loop dressing of a resonance propagator), giving each an order and an included/excluded flag. Verify that `--loops` prints the classification and asserts that only the Goldstone-only classes are included
+- [x] 3.2 Write `memory/nlo/counting/loop-classes.md`, which explains 3.1, cites Rosell:2004mn and Pich:2010sm for the excluded resonance loops, and gives the width-prescription rule with a link to `memory/rcht/foundations/vector-width-lineshape-prescriptions.md`. Verify that the links resolve and the classification matches the script
 
 ## 4. Subtraction scheme and counterterm basis
 
