@@ -1,0 +1,180 @@
+{
+  "source_ledger": {
+    "path": "data/vector_sector/joint_vector_multistart.json",
+    "sha256": "f155f9b71ce935e1b1da3a6375c4d08da2d9ad8f34e2ac1dc801e7b0527abb80"
+  },
+  "parameter_names": [
+    "scaled_m_rho_GeV",
+    "scaled_m_Kstar_GeV",
+    "scaled_Delta_V_GeV2",
+    "scaled_kappa_V",
+    "scaled_F_V_GeV",
+    "scaled_z_V_GeV_inverse",
+    "G_V_GeV",
+    "total_width_pull_rho0",
+    "total_width_pull_rhoplus",
+    "total_width_pull_omega",
+    "total_width_pull_phi",
+    "total_width_pull_etap",
+    "c1_minus_c2_plus_c5",
+    "c1_minus_c2_minus_c5_plus_2c6",
+    "c1_plus_c2_minus_c5",
+    "c3",
+    "c4",
+    "d1",
+    "d2",
+    "d3",
+    "g1_plus_2g2_minus_g3",
+    "g2",
+    "g4",
+    "2g4_plus_g5",
+    "gT_times_CT_dimensionless",
+    "gT_times_DT_GeV",
+    "beta_first_kkpi0",
+    "beta_first_kskpi",
+    "beta_second_kkpi0",
+    "beta_second_kskpi",
+    "normalization_pull_kkpi0",
+    "normalization_pull_kskpi"
+  ],
+  "optimizer_coordinate_scales": [
+    0.02110803762617416,
+    0.009230593605661681,
+    0.007486911016454035,
+    0.0015286289249138846,
+    0.04903362811847731,
+    0.02167814353091424,
+    0.0001092053063570276,
+    0.9791547746151182,
+    0.9988580821902513,
+    0.908001312009307,
+    0.7965870078599573,
+    0.25234814081571455,
+    0.0005601802986952472,
+    0.0004288929900738509,
+    0.0003888713090946962,
+    0.00015993984395114424,
+    0.00027566632479500603,
+    0.002215155626344528,
+    0.0009275892015774556,
+    0.001294136961417696,
+    0.00412262674279911,
+    0.0013929729545012054,
+    0.016359794907016827,
+    0.01255671556606409,
+    0.0011353236273571557,
+    0.027365678662583385,
+    0.0241400250085809,
+    0.004173828119324908,
+    0.02319622783826274,
+    0.003616955861700689,
+    0.5647036304124069,
+    0.3423147875979159
+  ],
+  "distance_definition": "Euclidean norm of coordinate differences divided by optimizer_coordinate_scales",
+  "objective_ranking": [
+    {
+      "rank": 1,
+      "name": "stored_negative_c4",
+      "chi2": 226.19481021926364,
+      "success": false,
+      "endpoint_valid": true
+    },
+    {
+      "rank": 2,
+      "name": "stored",
+      "chi2": 260.31151910342817,
+      "success": false,
+      "endpoint_valid": true
+    },
+    {
+      "rank": 3,
+      "name": "stored_negative_odd",
+      "chi2": 311.49713665162585,
+      "success": false,
+      "endpoint_valid": true
+    },
+    {
+      "rank": 4,
+      "name": "preliminary",
+      "chi2": 337.14366494796576,
+      "success": false,
+      "endpoint_valid": true
+    }
+  ],
+  "pairwise_distances": [
+    {
+      "first": "preliminary",
+      "second": "stored",
+      "scaled_distance": 203.2381129284851
+    },
+    {
+      "first": "preliminary",
+      "second": "stored_negative_c4",
+      "scaled_distance": 266.5917779081618
+    },
+    {
+      "first": "preliminary",
+      "second": "stored_negative_odd",
+      "scaled_distance": 484.375853505143
+    },
+    {
+      "first": "stored",
+      "second": "stored_negative_c4",
+      "scaled_distance": 149.0745588729793
+    },
+    {
+      "first": "stored",
+      "second": "stored_negative_odd",
+      "scaled_distance": 484.5047669788368
+    },
+    {
+      "first": "stored_negative_c4",
+      "second": "stored_negative_odd",
+      "scaled_distance": 552.4037828152615
+    }
+  ],
+  "continuation_seed": {
+    "name": "stored_negative_c4",
+    "endpoint": [
+      0.30686347288047,
+      -0.8099336704107456,
+      -0.036193356469215475,
+      0.16384316836693497,
+      0.0017351875258910885,
+      -0.012993651945596495,
+      0.059067254190056304,
+      -0.12209392847858712,
+      0.04572819354233183,
+      -0.5669318511030129,
+      2.829670513840208,
+      -3.27258048440838,
+      0.02266958441259021,
+      0.06980316996552012,
+      -0.06580560716960132,
+      0.01136493964827709,
+      -0.004512514927997745,
+      -0.375338771640552,
+      0.02477233752671523,
+      0.021967475919724207,
+      0.2546341025681389,
+      0.09254373116048016,
+      0.2077330930505324,
+      0.07335343094247125,
+      0.048983814854274374,
+      -3.0533220630194724,
+      -0.7963334659735465,
+      -0.2633931642406835,
+      -0.11539958949901469,
+      -0.01805723739516788,
+      -0.25114841325730153,
+      -0.0868741494036877
+    ],
+    "chi2": 226.19481021926364,
+    "success": false,
+    "endpoint_valid": true,
+    "accepted": false,
+    "selection": "lowest objective among the four physically valid endpoints"
+  },
+  "calculation_script_sha256": "fd66917fbb5c79b36fdc30dc0e62047d1fe6e63f7bc1690ca80687b3f4db025e"
+}

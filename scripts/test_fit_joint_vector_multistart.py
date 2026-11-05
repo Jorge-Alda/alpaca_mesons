@@ -3,6 +3,7 @@
 Run: .venv/bin/python -m unittest scripts.test_fit_joint_vector_multistart
 """
 import json
+import hashlib
 import sys
 import tempfile
 import unittest
@@ -150,6 +151,63 @@ class JointVectorStarts(unittest.TestCase):
                                                   expected_predictions[channel].view(np.uint64))
                 np.testing.assert_array_equal(actual_jacobian.view(np.uint64),
                                               expected_jacobian.view(np.uint64))
+
+    def test_continuation_preserves_saved_endpoint_and_scales(self):
+        source_path = multi.ROOT / 'data/vector_sector/joint_vector_multistart.json'
+        source_bytes = source_path.read_bytes()
+        source = json.loads(source_bytes)
+        settings = {'method': 'trf', 'max_nfev': 5000, 'ftol': 1e-8,
+                    'xtol': 1e-9, 'gtol': 1e-7}
+        ledger = multi.prepare_continuation(self.model, source_path, 'stored_negative_c4',
+                                            (1, 3, 4), 4, settings)
+        prior = next(a for a in source['attempts'] if a['name'] == 'stored_negative_c4')
+        self.assertEqual(ledger['attempts'][0]['start'], prior['endpoint'])
+        self.assertEqual(ledger['optimizer_coordinate_scales'], source['optimizer_coordinate_scales'])
+        self.assertEqual(ledger['attempts'][0]['prior_nfev'], prior['nfev'])
+        self.assertEqual(ledger['resume_source']['sha256'], hashlib.sha256(source_bytes).hexdigest())
+        self.assertFalse(ledger['resume_source']['source_success'])
+        self.assertEqual(source_path.read_bytes(), source_bytes)
+
+    def test_continuation_rejects_bounds_and_branch_crossings(self):
+        source = json.loads((multi.ROOT / 'data/vector_sector/joint_vector_multistart.json').read_text())
+        settings = {'method': 'trf', 'max_nfev': 5, 'ftol': 1e-8, 'xtol': 1e-9, 'gtol': 1e-7}
+        for coordinate, value in ((26, 5.1), (5, 10.0)):
+            altered = json.loads(json.dumps(source))
+            attempt = next(a for a in altered['attempts'] if a['name'] == 'stored_negative_c4')
+            attempt['endpoint'][coordinate] = value
+            with tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / 'source.json'
+                path.write_text(json.dumps(altered))
+                with self.assertRaises(ValueError):
+                    multi.prepare_continuation(self.model, path, 'stored_negative_c4', (1, 3, 4), 4, settings)
+
+    def test_checkpoint_contains_iteration_and_optional_optimality(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'continuation.progress.json'
+            result = SimpleNamespace(x=self.reference, fun=np.array([3., 4.]), nfev=7, nit=4)
+            multi.write_checkpoint(path, result, 1500)
+            checkpoint = json.loads(path.read_text())
+            self.assertEqual(checkpoint['parameter_values'], self.reference.tolist())
+            self.assertEqual(checkpoint['chi2'], 25.)
+            self.assertEqual((checkpoint['nfev'], checkpoint['cumulative_nfev']), (7, 1507))
+            self.assertIsNone(checkpoint['optimality'])
+            result.optimality = .125
+            multi.write_checkpoint(path, result, 1500)
+            self.assertEqual(json.loads(path.read_text())['optimality'], .125)
+            self.assertFalse(path.with_name(path.name + '.tmp').exists())
+
+    def test_run_attempt_passes_checkpoint_callback(self):
+        attempt = {'name': 'stored', 'start': self.reference.tolist(), 'accepted': False}
+        result = SimpleNamespace(x=self.reference, fun=np.ones(75), success=False, status=0,
+                                 message='limit', nfev=2, njev=1, optimality=3.,
+                                 grad=np.ones(32), active_mask=np.zeros(32, dtype=int))
+        observed = []
+        def callback(intermediate_result):
+            observed.append(intermediate_result.nfev)
+        with patch.object(multi, 'least_squares', return_value=result) as optimizer:
+            multi.run_attempt(self.model, attempt, self.lower, self.upper, np.ones(32), {}, callback)
+            optimizer.call_args.kwargs['callback'](SimpleNamespace(nfev=2))
+        self.assertEqual(observed, [2])
 
 
 if __name__ == '__main__':

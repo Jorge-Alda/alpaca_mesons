@@ -34,6 +34,10 @@ being combined with canonical photon or resonance amplitudes.
 - [babar-kkpi-global-vector-sector-fit-baseline.md](babar-kkpi-global-vector-sector-fit-baseline.md) — stored global preliminary-plus-conditional-$G_V$-plus-BaBar likelihood baseline, with six input blocks, shared nuisances, duplicate-input exclusions, and its current nonconverged fit snapshot.
 - [joint-vector-fit-multistart-preparation.md](joint-vector-fit-multistart-preparation.md) — deterministic permitted starts, fixed Jacobian scaling, and per-attempt records for the joint vector fit.
 - [joint-vector-fit-multistart-results.md](joint-vector-fit-multistart-results.md) — four retained unsuccessful endpoints, block diagnostics, and the refinement eligibility outcome.
+- [joint-vector-continuation-seed-selection.md](joint-vector-continuation-seed-selection.md) — objective ranking and scaled endpoint separations supporting selection of the unsuccessful continuation seed.
+- [joint-vector-fit-continuation.md](joint-vector-fit-continuation.md) — successful default-quadrature continuation, cumulative evaluations, optimizer status, and the remaining optimality qualification.
+- [joint-vector-fit-basin-probes.md](joint-vector-fit-basin-probes.md) — three successful deterministic nearby starts and certified fixed-candidate quadrature checks.
+- [joint-vector-fit-endpoint-comparison.md](joint-vector-fit-endpoint-comparison.md) — common-order ranking of all ten saved endpoints, four quadrature-qualified candidates, and pairwise scaled distances.
 - [kkpi-global-fit-running-propagator-reuse.md](kkpi-global-fit-running-propagator-reuse.md) — running-propagator calculation reuse, baseline-equivalence checks, and local Jacobian timing.
 - [kkpi-global-fit-width-pull-jacobian.md](kkpi-global-fit-width-pull-jacobian.md) — finite-difference treatment of width pulls that do not enter BaBar predictions.
 - [kkpi-global-fit-channel-jacobian.md](kkpi-global-fit-channel-jacobian.md) — channel-specific finite differences and normalization-pull evaluation in the global fit.

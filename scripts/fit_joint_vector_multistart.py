@@ -93,11 +93,12 @@ def source_hashes():
             for path in sorted(paths)}
 
 
-def prepare_ledger(model, orders, block_size, settings):
+def prepare_ledger(model, orders, block_size, settings, optimizer_coordinate_scales=None):
     reference = json.loads((ROOT / REFERENCE).read_text())['parameter_values']
     starts = named_starts(model, reference)
     lower, upper = joint_fit.parameter_bounds(model)
-    scales = optimizer_scales(model, starts['stored'])
+    scales = (optimizer_scales(model, starts['stored']) if optimizer_coordinate_scales is None
+              else np.asarray(optimizer_coordinate_scales, dtype=float))
     return {'parameter_names': list(joint_fit.PARAMETER_NAMES),
             'bounds': {'lower': json_bounds(lower), 'upper': json_bounds(upper)},
             'physical_branch': {'source': 'single_trace_negative',
@@ -146,13 +147,16 @@ def endpoint_diagnostics(model, values, lower, upper):
         return {'valid': False, 'error_type': type(error).__name__, 'message': str(error)}
 
 
-def run_attempt(model, attempt, lower, upper, scales, settings):
+def run_attempt(model, attempt, lower, upper, scales, settings, callback=None):
     """Minimize once and retain optimizer diagnostics, including failures."""
     start = validate_start(model, attempt['start'], lower, upper)
     start_time = time.perf_counter()
     try:
+        options = dict(settings)
+        if callback is not None:
+            options['callback'] = callback
         result = least_squares(model.residual, start, jac=model.jacobian,
-                               bounds=(lower, upper), x_scale=scales, **settings)
+                               bounds=(lower, upper), x_scale=scales, **options)
         attempt.update(state='finished', endpoint=result.x.tolist(),
                        residuals=result.fun.tolist(), chi2=float(result.fun @ result.fun),
                        success=bool(result.success), status=int(result.status), message=str(result.message),
@@ -163,6 +167,72 @@ def run_attempt(model, attempt, lower, upper, scales, settings):
     except (ValueError, FloatingPointError, np.linalg.LinAlgError) as error:
         attempt.update(state='error', success=False, error_type=type(error).__name__, message=str(error))
     attempt['elapsed_seconds'] = time.perf_counter() - start_time
+
+
+def prepare_continuation(model, source_path, start_name, orders, block_size, settings):
+    """Load an endpoint with its original fixed optimizer scale and provenance."""
+    source_path = Path(source_path)
+    source_bytes = source_path.read_bytes()
+    source = json.loads(source_bytes)
+    if source['parameter_names'] != list(joint_fit.PARAMETER_NAMES):
+        raise ValueError('source parameter coordinates differ from the current fit')
+    # The continuation driver is expected to change when resume support is
+    # introduced. The likelihood implementation and data must remain identical.
+    changed_driver = str(Path(__file__).resolve().relative_to(ROOT))
+    for recorded_hashes in (source['input_sha256'], source['source_sha256']):
+        for path, expected in recorded_hashes.items():
+            if path != changed_driver and hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
+                raise ValueError(f'source data or likelihood code changed: {path}')
+    matches = [item for item in source['attempts'] if item['name'] == start_name]
+    if len(matches) != 1:
+        raise ValueError('source ledger must contain exactly one named attempt')
+    prior = matches[0]
+    if prior.get('endpoint_diagnostics', {}).get('valid') is not True:
+        raise ValueError('source endpoint was not marked physically valid')
+    lower, upper = joint_fit.parameter_bounds(model)
+    if source['bounds'] != {'lower': json_bounds(lower), 'upper': json_bounds(upper)}:
+        raise ValueError('current parameter bounds differ from source ledger')
+    if source['physical_branch']['inverse_mass_branch_sign'] != float(model.branch_sign):
+        raise ValueError('current inverse-mass branch differs from source ledger')
+    values = validate_start(model, prior['endpoint'], lower, upper)
+    scales = np.asarray(source['optimizer_coordinate_scales'], dtype=float)
+    if scales.shape != (32,) or not np.all(np.isfinite(scales)) or np.any(scales <= 0):
+        raise ValueError('source optimizer scales must contain 32 positive finite values')
+    prior_nfev = prior.get('cumulative_nfev', prior.get('nfev'))
+    if type(prior_nfev) is not int or prior_nfev < 0:
+        raise ValueError('source attempt has no valid function evaluation count')
+    ledger = prepare_ledger(model, orders, block_size, settings, scales)
+    ledger['optimizer_coordinate_scales'] = source['optimizer_coordinate_scales']
+    ledger['scale_definition'] = source['scale_definition']
+    ledger['resume_source'] = {'path': str(source_path),
+                               'sha256': hashlib.sha256(source_bytes).hexdigest(),
+                               'attempt': start_name, 'source_nfev': prior_nfev,
+                               'source_success': prior['success'],
+                               'source_driver_sha256': source['input_sha256'].get(changed_driver),
+                               'current_driver_sha256': ledger['input_sha256'][changed_driver]}
+    ledger['attempts'] = [{'name': start_name, 'start': values.tolist(),
+                           'state': 'pending', 'accepted': False,
+                           'prior_nfev': prior_nfev}]
+    if ledger['attempts'][0]['start'] != prior['endpoint']:
+        raise ValueError('continuation start differs from source endpoint')
+    return ledger
+
+
+def write_checkpoint(path, intermediate_result, source_nfev):
+    """Save the current SciPy iteration without modifying the source ledger."""
+    residual = np.asarray(intermediate_result.fun, dtype=float)
+    values = np.asarray(intermediate_result.x, dtype=float)
+    nfev = int(intermediate_result.nfev)
+    available_optimality = getattr(intermediate_result, 'optimality', None)
+    checkpoint = {'parameter_values': values.tolist(), 'chi2': float(residual @ residual),
+                  'nfev': nfev, 'prior_nfev': source_nfev,
+                  'cumulative_nfev': source_nfev + nfev,
+                  'optimality': None if available_optimality is None else float(available_optimality),
+                  'iteration': int(intermediate_result.nit)}
+    path = Path(path)
+    temporary = path.with_name(path.name + '.tmp')
+    temporary.write_text(json.dumps(checkpoint, indent=2, allow_nan=False) + '\n')
+    temporary.replace(path)
 
 
 def refine_attempt(model, attempt, lower, upper):
@@ -188,6 +258,8 @@ def main():
     parser.add_argument('--output', required=True)
     parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--refine-from', help='Refine successful endpoints in this saved ledger')
+    parser.add_argument('--resume-from', help='Continue a named endpoint from this saved ledger')
+    parser.add_argument('--resume-start', help='Name of the saved endpoint to continue')
     parser.add_argument('--starts', nargs='+', help='Names of starts to run or refine')
     parser.add_argument('--max-nfev', type=int, default=1500)
     parser.add_argument('--ftol', type=float, default=1e-8)
@@ -198,6 +270,10 @@ def main():
     parser.add_argument('--angle-order', type=int, default=16)
     parser.add_argument('--bin-block-size', type=int, default=4)
     args = parser.parse_args()
+    if bool(args.resume_from) != bool(args.resume_start):
+        parser.error('--resume-from and --resume-start must be supplied together')
+    if args.resume_from and (args.refine_from or args.starts):
+        parser.error('--resume-from cannot be combined with --refine-from or --starts')
     if args.refine_from:
         if args.prepare_only:
             parser.error('--prepare-only cannot be combined with --refine-from')
@@ -230,7 +306,15 @@ def main():
     model = joint_fit.GlobalLikelihood(*orders, bin_block_size=args.bin_block_size)
     settings = {'method': 'trf', 'max_nfev': args.max_nfev, 'ftol': args.ftol,
                 'xtol': args.xtol, 'gtol': args.gtol}
-    ledger = prepare_ledger(model, orders, args.bin_block_size, settings)
+    if args.resume_from:
+        checkpoint_path = Path(args.output).with_suffix('.progress.json')
+        source_path = Path(args.resume_from).resolve()
+        if Path(args.output).resolve() == source_path or checkpoint_path.resolve() == source_path:
+            parser.error('output and checkpoint must not overwrite the source ledger')
+        ledger = prepare_continuation(model, args.resume_from, args.resume_start,
+                                      orders, args.bin_block_size, settings)
+    else:
+        ledger = prepare_ledger(model, orders, args.bin_block_size, settings)
     ledger['command'] = shlex.join([sys.executable, *sys.argv])
     ledger['working_directory'] = str(Path.cwd())
     selected = set(args.starts or [attempt['name'] for attempt in ledger['attempts']])
@@ -244,7 +328,13 @@ def main():
                 continue
             attempt['state'] = 'running'
             write_ledger(args.output, ledger)
-            run_attempt(model, attempt, lower, upper, np.array(ledger['optimizer_coordinate_scales']), settings)
+            callback = None
+            if args.resume_from:
+                def callback(intermediate_result):
+                    write_checkpoint(checkpoint_path, intermediate_result, attempt['prior_nfev'])
+            run_attempt(model, attempt, lower, upper, np.array(ledger['optimizer_coordinate_scales']), settings, callback)
+            if args.resume_from and 'nfev' in attempt:
+                attempt['cumulative_nfev'] = attempt['prior_nfev'] + attempt['nfev']
             write_ledger(args.output, ledger)
     print(args.output)
 
