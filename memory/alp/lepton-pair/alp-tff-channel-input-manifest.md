@@ -2,7 +2,7 @@
 title: Channel input manifest for the low-energy doubly virtual ALP TFF
 status: mixed
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-06
 bibtex_keys: [Alda:2026nrd, Messerli:2025rnv, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, Niecknig:2012sj, Hoferichter:2023bjm, Hoferichter:2025lcz, BABAR:2021cde, KLOE:2003kas, BaBar:2007ceh, Qin:2024ulb, ParticleDataGroup:2024cfk]
 provenance: assumption
 ---
@@ -19,6 +19,9 @@ source basis, natural units, metric $(+---)$, and $\epsilon^{0123}=+1$
 [@Alda:2026nrd; @Messerli:2025rnv]. Electromagnetic charge factors are
 stripped from one-current matrix elements where specified in the channel
 records.
+
+The distinct rho-dependent locations and their analytic roles are mapped in
+[the rho occurrence record](alp-rho-occurrence-map.md).
 
 An entry marked *formal* has a derivation or modeling prescription but
 lacks the physical numerical inputs needed for a spectral prediction.
