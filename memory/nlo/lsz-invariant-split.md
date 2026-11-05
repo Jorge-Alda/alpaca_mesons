@@ -48,8 +48,6 @@ $$
 then splits the LSZ meson components into a pole contribution and the term associated with the ALP–meson kinetic block:
 
 $$
-\mathbb M_a^{\rm NLO}\equiv M^2_{ij}-m_a^2K_{ij},
-\qquad
 w_i^{(a)}(s)
 =[(M^2-sK)^{-1}]_{ij}\mathcal C_j^{\rm pole}
 -(K_{\rm meson}^{-1})_{ij}K_{j\hat a}.
@@ -84,15 +82,22 @@ $$
 =\frac{f_\pi}{f_a}\operatorname{tr}\!\left(\delta_{47}\bm{\mathcal C}_{\rm NLO}\lambda_i^\dagger\right).
 $$
 
-This term corrects the source, not the meson-only pole operator: $O_{47}$ has no $\Phi^2$ quadratic term and therefore leaves $K_{ij}$ and $M^2_{ij}$ unchanged. Thus $\mathbb M_a$ remains the full linear map $X\mapsto(M^2-m_a^2K)[X]$ on the space of flavor matrices, and its inverse acts on the complete corrected source. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for the expansion of $\Delta_i^{(47)}$.
+This term corrects the source, not the meson-only pole matrix: $O_{47}$ has no $\Phi^2$ quadratic term and therefore leaves $K_{ij}$ and $M^2_{ij}$ unchanged. The symbols $K_{ij}$ and $M^2_{ij}$ denote component arrays in the meson basis; their combination $M^2_{ij}-m_a^2K_{ij}$ is a matrix on meson components. See the [CCWZ kinetic-alignment record](kinetic-block-alignment.md) for the expansion of $\Delta_i^{(47)}$.
 
-At the ALP pole the first term is the component representation of $(\mathbb M_a^{\rm NLO})^{-1}[\bm{\mathcal C}_{\rm NLO}]$. Here $\mathbb M_a$ is a linear operator on the space of flavor matrices, not a $3\times3$ array indexed by meson labels. At LO it reduces to Alda:2026nrd's Eq. (III.27),
+At the ALP pole the first term can be written with the linear operator $\mathbb M_a^{\rm NLO}$ on flavor matrices, whose component representation in the meson basis is the matrix $M^2_{ij}-m_a^2K_{ij}$. Thus the operator inverse acts on the flavor-matrix source, while the inverse component matrix acts on its projected components. At LO this operator reduces to Alda:2026nrd's Eq. (III.27):
 
 $$
-\mathbb M_a(\bm{\mathcal C})
-=B_0\{m_q,\bm{\mathcal C}\}
-+\frac{m_0^2}{3}\langle\bm{\mathcal C}\rangle\mathbf 1
--m_a^2\bm{\mathcal C}.
+\frac{f_\pi}{f_a}\left\langle\mathbb M_a^{\rm NLO}[X]\lambda_i^\dagger\right\rangle
+= (M^2_{ij}-m_a^2K_{ij})\frac{f_\pi}{f_a}\left\langle X\lambda_j^\dagger\right\rangle,
+$$
+
+for any flavor matrix $X$. This specifies the normalization of the operator through its meson-basis components.
+
+$$
+\mathbb M_a[X]
+=B_0\{m_q,X\}
++\frac{m_0^2}{3}\langle X\rangle\mathbf 1
+-m_a^2X.
 $$
 
 For the ALP-dependent field shift $P_i=P_i'-\rho_i a$, the mixed blocks become
@@ -174,9 +179,13 @@ $$
 \boxed{
 \langle0|P_i|a\rangle=w_i^{(a)}(m_a^2)
 =v_i-(K^{-1})_{ij}\Delta_j
-+[(\mathbb M_a^{\rm NLO})^{-1}]_{ij}\mathcal C_j^{\rm pole}.
++\frac{f_\pi}{f_a}\left\langle
+\bigl(\mathbb M_a^{\rm NLO}\bigr)^{-1}[\bm{\mathcal C}_{\rm NLO}]\,\lambda_i^\dagger
+\right\rangle.
 }
 $$
+
+Equivalently, the last term is $[(M^2-m_a^2K)^{-1}]_{ij}\mathcal C_j^{\rm pole}$ in meson components. The notation $\mathbb M_a^{\rm NLO}$ always denotes the flavor-matrix operator; $M^2_{ij}-m_a^2K_{ij}$ denotes its component matrix. The LO operator displayed above and its inverse use the same flavor-matrix convention.
 
 Here $v_i=(f_\pi/f_a)\langle c_q^A\lambda_i^\dagger\rangle$, and $\mathcal C_i^{\rm pole}$ includes the $O_{47}$ source term when that operator is retained. At LO this is Eq. (III.25) of Alda:2026nrd, with $K_{ij}=\delta_{ij}$ and diagonal $M^2_{ij}=m_i^2\delta_{ij}$. The displayed NLO expression retains the local operators above for general, noncommuting flavor matrices. It does not include loops or omitted higher-order operators.
 
