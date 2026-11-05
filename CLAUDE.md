@@ -1,5 +1,13 @@
 # Project Instructions for AI Agents
 
+@AGENTS.md
+
+## Claude Code Setup
+
+- Subagents: `.claude/agents/` (orchestrator, brainstormer, coder, drafter, bibliography-manager), adapted from `.codex/agents/`.
+- Skills: `.claude/skills/` (analytical-calculations, bibliography-management, document-drafting), adapted from `.codex/skills/`.
+- Claude Code does not expose a sampling temperature setting; the temperature hints from the Codex agent files were dropped.
+
 This file provides instructions and context for AI coding agents working on this project.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:1105d646 -->
