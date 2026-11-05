@@ -3,7 +3,7 @@
 
 Purpose
     Power counting for the OpenSpec change `fix-u3-nlo-resonance-counting`
-    (tasks 2.2, 3.1 and 4.1).
+    (tasks 2.2, 3.1, 4.1 and 6.1).
     --orders: tabulates the order in the combined expansion parameter delta
     of Kaiser:1998ds and Kaiser:2000gs for every operator of
     memory/nlo/lagrangian.md, for the resonance couplings and masses of
@@ -32,6 +32,22 @@ Purpose
     independent of both scales, and asserts that the failure of the
     multiplicative Z_A law for renormalized combinations with a pole
     (2 L_8 - 3 L_25, B) is (Z_A - 1) x pole = O(delta^3).
+    --truncation [SQRT_S ...] (task 6.1): truncation uncertainty of an
+    observable computed at the declared order delta^2, per unit |Delta|,
+    where Delta is the relative NLO shift of the observable (delta^1 plus
+    delta^2 terms), supplied by the downstream calculation. It prints the
+    three terms of delta_est(s) = max(1/N_c, s/Lambda_chi^2,
+    M_K^2/Lambda_chi^2) and the largest one, u_trunc/|Delta| = delta_est,
+    the uncertainty from the excluded resonance loops (class R-int of
+    --loops) u_Rloop/|Delta| = eps_R theta, and the quadrature total
+    u_tot/|Delta| = sqrt(delta_est^2 + eps_R^2 theta), for both settings of
+    inputs_from_data; and two flags, "in declared range" (sqrt(s) <= 1.0 GeV)
+    and "delta_est < 1". It prints the crossover Lambda_chi/sqrt(N_c) where
+    s/Lambda_chi^2 = 1/N_c, and asserts that delta_est is non-decreasing in
+    s, that the M_K term never dominates, that 0.7 < delta_est(1 GeV) < 0.8,
+    that delta_est < 1 iff sqrt(s) < Lambda_chi above the crossover, the
+    threshold rule for u_Rloop and that the total is not smaller than each
+    term. Default grid: sqrt(s) = 0.3, 0.5, 0.7, 0.9, 1.0, 1.2 GeV.
     Neither --orders nor --loops expands a propagator or evaluates a loop
     integral; they only classify orders. --scheme evaluates no loop either;
     it takes the Gamma_i as inputs.
@@ -90,13 +106,34 @@ Conventions
       current, mu dZ_A/dmu = gamma_A Z_A, Z_A = 1 + O(1/N_c).
     - In the --scheme counting lambda ~ 1/(16 pi^2) counts N_c^0 p^0; the
       1/N_c of a loop is carried by 1/F^2. Z_A - 1 counts N_c^-1 p^0.
+    - Truncation (--truncation): the omitted terms are O(delta^3), one
+      factor of delta beyond the delta^2 terms, so u_trunc = |Delta| delta_est.
+      N_c = 3, Lambda_chi = 4 pi f_pi, f_pi = F (project convention,
+      130.2 MeV / sqrt(2)). theta = 1 if the excluded resonance loops enter:
+      for inputs_from_data=True (F, B_0, tau, Lambda_1, Lambda_2, L_i^r(mu),
+      resonance masses and couplings fixed from data, short-distance
+      constraints imposed; the condition stated in --loops) only the
+      non-analytic part of R-int is missing, so theta = 1 only for sqrt(s)
+      >= m_rho + m_pi = 0.91483 GeV (lowest R pi threshold); for
+      inputs_from_data=False (large-N_c, saturation or LO short-distance
+      estimates) theta = 1 at all sqrt(s).
+      ASSUMPTION: eps_R = 0.30. Basis: the NLO-in-1/N_c shifts of the
+      central values of L_10^r and C_87^r are about 17% and 28%
+      (Pich:2008jm), and the second multiplets V', A' account for about
+      30-40% of the correction there. The two uncertainties are added in
+      quadrature (assumption: independent). Exact arithmetic in sympy
+      (Rationals and pi); comparisons at 50 digits.
+      Near a resonance pole (|M_R^2 - s| ~ M_R Gamma_R) the counting does not
+      apply; see the line-shape prescription record under Inputs.
 
 Units
     Natural units. The order tables use only powers of N_c and of the
     chiral dimension. Masses and thresholds in --loops are in GeV. In
     --scheme mu is in GeV (log mu means log(mu / 1 GeV); the reference
     scale drops out of every difference), and shifts of L_i^r are printed
-    in units of 10^-3.
+    in units of 10^-3. In --truncation sqrt(s), f_pi, M_K, Lambda_chi and
+    thresholds are in GeV; delta_est and all uncertainties are
+    dimensionless, per unit |Delta|.
 
 Inputs
     memory/nlo/lagrangian.md (L^(0), L^(1), L^(2) operators, Alda:2026nrd
@@ -127,11 +164,18 @@ Inputs
     Masses from ParticleDataGroup:2024cfk, in GeV:
     M_rho = 0.77526, M_omega = 0.78266, M_K*(892)^+- = 0.89167,
     m_pi^+- = 0.13957, m_K^+- = 0.493677, m_eta = 0.547862.
+    --truncation: f_pi = 0.0921 GeV (130.2 MeV / sqrt(2),
+    ParticleDataGroup:2024cfk), M_K = m_K^+- above, M_rho and m_pi^+- above
+    for the rho pi threshold; eps_R = 0.30 (assumption, from Pich:2008jm);
+    exclusion condition of R-int from --loops; Delta from the downstream
+    calculation (not an input of this script).
 
 Invocation
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --orders
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --loops
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --scheme
+    .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --truncation          # default grid
+    .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --truncation 0.5 1.0  # sqrt(s) in GeV
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py      # all checks
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --test
 """
@@ -1425,6 +1469,274 @@ class SchemeTests(unittest.TestCase):
         self.assertTrue(check_scheme())
 
 
+# --------------------------------------------------------------------------
+# Truncation uncertainty per unit |Delta| (--truncation, task 6.1)
+# --------------------------------------------------------------------------
+
+COLOUR_NUMBER_VALUE = 3
+# f_pi = F convention of the project: 130.2 MeV / sqrt(2) (ParticleDataGroup:2024cfk).
+PION_DECAY_CONSTANT_GEV = sp.Rational("0.0921")
+KAON_MASS_GEV = sp.Rational(str(MASSES_GEV["K"]))
+CHIRAL_SCALE_GEV = 4 * sp.pi * PION_DECAY_CONSTANT_GEV
+# Assumption: relative size of the excluded resonance loops (see docstring).
+RESONANCE_LOOP_FRACTION = sp.Rational(3, 10)
+LOWEST_RESONANCE_PION_THRESHOLD_GEV = (sp.Rational(str(MASSES_GEV["rho"]))
+                                       + sp.Rational(str(MASSES_GEV["pi"])))
+DECLARED_RANGE_LIMIT_GEV = sp.Rational(str(VALIDITY_LIMIT_GEV))
+DEFAULT_SQRT_S_GRID_GEV = ["0.3", "0.5", "0.7", "0.9", "1.0", "1.2"]
+INVERSE_COLOUR_TERM = "1/N_c"
+ENERGY_TERM = "s/Lambda_chi^2"
+KAON_MASS_TERM = "M_K^2/Lambda_chi^2"
+NUMERICAL_DIGITS = 50
+LINE_SHAPE_NOTE = (
+    "Near a resonance pole, where |M_R^2 - s| is of order M_R Gamma_R, the"
+    " narrow-width tree propagator fails and the counting is not applicable;"
+    " the line-shape prescription of"
+    " memory/rcht/foundations/vector-width-lineshape-prescriptions.md replaces"
+    " it as a resummation outside the strict counting. The windows are set by"
+    " the downstream calculation with the PDG widths.")
+ASSUMPTION_NOTE = (
+    "eps_R is an assumption (Pich:2008jm: 17% and 28% shifts of L_10^r and"
+    " C_87^r; V', A' about 30-40% of the correction). Delta must be supplied"
+    " by the downstream calculation.")
+
+
+def numerical_value(expression):
+    """High-precision float of an exact sympy expression (50 digits)."""
+    return sp.N(expression, NUMERICAL_DIGITS)
+
+
+def expansion_parameter_terms(sqrt_s):
+    """The three candidate sizes of delta at sqrt(s) (GeV), exact sympy values."""
+    return {
+        INVERSE_COLOUR_TERM: sp.Rational(1, COLOUR_NUMBER_VALUE),
+        ENERGY_TERM: sqrt_s ** 2 / CHIRAL_SCALE_GEV ** 2,
+        KAON_MASS_TERM: KAON_MASS_GEV ** 2 / CHIRAL_SCALE_GEV ** 2,
+    }
+
+
+def estimated_expansion_parameter(sqrt_s):
+    """delta_est(s) = max(1/N_c, s/Lambda_chi^2, M_K^2/Lambda_chi^2).
+
+    Returns (value, name of the largest term).
+    """
+    terms = expansion_parameter_terms(sqrt_s)
+    name = max(terms, key=lambda label: numerical_value(terms[label]))
+    return terms[name], name
+
+
+def crossover_sqrt_s():
+    """sqrt(s) where s/Lambda_chi^2 = 1/N_c, i.e. Lambda_chi/sqrt(N_c), in GeV."""
+    return CHIRAL_SCALE_GEV / sp.sqrt(COLOUR_NUMBER_VALUE)
+
+
+def resonance_loop_indicator(sqrt_s, inputs_from_data):
+    """theta = 1 if the excluded resonance loops enter the uncertainty, else 0.
+
+    With inputs fixed from data only the non-analytic part, which starts at
+    the rho pi threshold, is missing; otherwise the whole R-int class is.
+    """
+    if not inputs_from_data:
+        return 1
+    return 1 if sqrt_s >= LOWEST_RESONANCE_PION_THRESHOLD_GEV else 0
+
+
+def truncation_uncertainty(sqrt_s):
+    """u_trunc / |Delta| = delta_est(s)."""
+    return estimated_expansion_parameter(sqrt_s)[0]
+
+
+def resonance_loop_uncertainty(sqrt_s, inputs_from_data):
+    """u_Rloop / |Delta| = eps_R theta."""
+    return RESONANCE_LOOP_FRACTION * resonance_loop_indicator(sqrt_s, inputs_from_data)
+
+
+def total_uncertainty(sqrt_s, inputs_from_data):
+    """u_tot / |Delta| = sqrt(delta_est^2 + eps_R^2 theta) (quadrature)."""
+    return sp.sqrt(truncation_uncertainty(sqrt_s) ** 2
+                   + resonance_loop_uncertainty(sqrt_s, inputs_from_data) ** 2)
+
+
+def in_declared_range(sqrt_s):
+    """True if sqrt(s) <= 1.0 GeV, the declared validity range."""
+    return sqrt_s <= DECLARED_RANGE_LIMIT_GEV
+
+
+def expansion_parameter_below_one(sqrt_s):
+    """True if delta_est(s) < 1."""
+    return numerical_value(truncation_uncertainty(sqrt_s)) < 1
+
+
+def yes_no(flag):
+    """'yes' or 'no'."""
+    return "yes" if flag else "no"
+
+
+def format_number(expression, digits=6):
+    """Fixed-point text of an exact expression."""
+    return f"{float(numerical_value(expression)):.{digits}f}"
+
+
+def check_truncation(sqrt_s_values=None):
+    """Print delta_est and the uncertainties per unit |Delta|; assert the rules.
+
+    sqrt_s_values: list of exact sympy Rationals in GeV (default grid if None
+    or empty).
+    """
+    if not sqrt_s_values:
+        sqrt_s_values = [sp.Rational(value) for value in DEFAULT_SQRT_S_GRID_GEV]
+    crossover = crossover_sqrt_s()
+    kaon_term = expansion_parameter_terms(0)[KAON_MASS_TERM]
+
+    print("Truncation uncertainty at declared order delta^2 (omitted terms"
+          " O(delta^3), one more factor of delta)")
+    print("delta_est(s) = max(1/N_c, s/Lambda_chi^2, M_K^2/Lambda_chi^2);"
+          " all uncertainties per unit |Delta|")
+    print(f"N_c = {COLOUR_NUMBER_VALUE}, f_pi = {format_number(PION_DECAY_CONSTANT_GEV, 4)} GeV,"
+          f" M_K = {format_number(KAON_MASS_GEV)} GeV (ParticleDataGroup:2024cfk)")
+    print(f"Lambda_chi = 4 pi f_pi = {format_number(CHIRAL_SCALE_GEV)} GeV")
+    print(f"crossover s/Lambda_chi^2 = 1/N_c at sqrt(s) = Lambda_chi/sqrt(3)"
+          f" = {format_number(crossover)} GeV")
+    print(f"M_K^2/Lambda_chi^2 = {format_number(kaon_term)} < 1/N_c ="
+          f" {format_number(sp.Rational(1, COLOUR_NUMBER_VALUE))}: the M_K term never dominates")
+    print(f"eps_R = {format_number(RESONANCE_LOOP_FRACTION, 2)} (assumption);"
+          f" lowest R pi threshold m_rho + m_pi ="
+          f" {format_number(LOWEST_RESONANCE_PION_THRESHOLD_GEV, 5)} GeV")
+    print(f"declared validity range: sqrt(s) <= {format_number(DECLARED_RANGE_LIMIT_GEV, 1)} GeV")
+
+    for sqrt_s in sqrt_s_values:
+        terms = expansion_parameter_terms(sqrt_s)
+        value, dominant = estimated_expansion_parameter(sqrt_s)
+        print(f"\nsqrt(s) = {format_number(sqrt_s, 3)} GeV")
+        for label, term in terms.items():
+            print(f"  {label:<20}{format_number(term)}")
+        print(f"  delta_est           {format_number(value)}  (maximum: {dominant})")
+        print(f"  u_trunc/|Delta|     {format_number(truncation_uncertainty(sqrt_s))}")
+        for inputs_from_data in (True, False):
+            theta = resonance_loop_indicator(sqrt_s, inputs_from_data)
+            print(f"  inputs_from_data={str(inputs_from_data):<5}  theta = {theta},"
+                  f" u_Rloop/|Delta| = "
+                  f"{format_number(resonance_loop_uncertainty(sqrt_s, inputs_from_data))},"
+                  f" u_tot/|Delta| = {format_number(total_uncertainty(sqrt_s, inputs_from_data))}")
+        print(f"  in declared range: {yes_no(in_declared_range(sqrt_s))};"
+              f" delta_est < 1: {yes_no(expansion_parameter_below_one(sqrt_s))}")
+
+    # Assertions on the printed values and on a fine grid.
+    assert numerical_value(kaon_term) < sp.Rational(1, COLOUR_NUMBER_VALUE)
+    fine_grid = [sp.Rational(step, 1000) for step in range(50, 1501, 5)]
+    check_points = sorted(set(fine_grid) | set(sqrt_s_values)
+                          | {LOWEST_RESONANCE_PION_THRESHOLD_GEV})
+    previous = None
+    for sqrt_s in check_points:
+        value, dominant = estimated_expansion_parameter(sqrt_s)
+        assert dominant != KAON_MASS_TERM, sqrt_s
+        if sqrt_s < crossover:
+            assert dominant == INVERSE_COLOUR_TERM, sqrt_s
+        elif sqrt_s <= CHIRAL_SCALE_GEV:
+            assert dominant == ENERGY_TERM, sqrt_s
+        if previous is not None:
+            assert numerical_value(value - previous) >= 0, sqrt_s
+        previous = value
+        if sqrt_s > crossover:
+            assert expansion_parameter_below_one(sqrt_s) == (sqrt_s < CHIRAL_SCALE_GEV), sqrt_s
+        assert resonance_loop_indicator(sqrt_s, False) == 1
+        if sqrt_s < LOWEST_RESONANCE_PION_THRESHOLD_GEV:
+            assert resonance_loop_uncertainty(sqrt_s, True) == 0, sqrt_s
+        else:
+            assert resonance_loop_uncertainty(sqrt_s, True) > 0, sqrt_s
+        for inputs_from_data in (True, False):
+            total = numerical_value(total_uncertainty(sqrt_s, inputs_from_data))
+            assert total >= numerical_value(truncation_uncertainty(sqrt_s))
+            assert total >= numerical_value(resonance_loop_uncertainty(sqrt_s, inputs_from_data))
+    at_one_gev = numerical_value(truncation_uncertainty(sp.Integer(1)))
+    assert 0.7 < at_one_gev < 0.8, at_one_gev
+    assert LOWEST_RESONANCE_PION_THRESHOLD_GEV == sp.Rational("0.91483")
+    assert vector_pseudoscalar_thresholds()[0][0] == "rhopi"
+
+    print("\nNotes:")
+    print(f"- {LINE_SHAPE_NOTE}")
+    print(f"- {ASSUMPTION_NOTE}")
+    print("- u_Rloop applies for inputs_from_data=True only at sqrt(s) >= m_rho + m_pi"
+          " (non-analytic part of R-int); for inputs_from_data=False at all sqrt(s).")
+    print("\n--truncation: all assertions passed")
+    return True
+
+
+class TruncationTests(unittest.TestCase):
+    """Unit tests of delta_est and of the uncertainties per unit |Delta|."""
+
+    def test_constants(self):
+        self.assertAlmostEqual(float(CHIRAL_SCALE_GEV), 4 * math.pi * 0.0921, places=14)
+        self.assertAlmostEqual(float(crossover_sqrt_s()), 4 * math.pi * 0.0921 / math.sqrt(3),
+                               places=14)
+        self.assertAlmostEqual(float(crossover_sqrt_s()), 0.668204, places=6)
+        self.assertEqual(LOWEST_RESONANCE_PION_THRESHOLD_GEV, sp.Rational("0.91483"))
+        self.assertAlmostEqual(float(PION_DECAY_CONSTANT_GEV) * math.sqrt(2), 0.1302, places=3)
+
+    def test_crossover_is_exact(self):
+        terms = expansion_parameter_terms(crossover_sqrt_s())
+        self.assertEqual(sp.simplify(terms[ENERGY_TERM] - terms[INVERSE_COLOUR_TERM]), 0)
+
+    def test_kaon_term_never_dominates(self):
+        kaon_term = float(expansion_parameter_terms(0)[KAON_MASS_TERM])
+        self.assertAlmostEqual(kaon_term, 0.493677 ** 2 / (4 * math.pi * 0.0921) ** 2, places=12)
+        self.assertLess(kaon_term, 1 / 3)
+        self.assertGreater(kaon_term, 0.18)
+
+    def test_dominant_term(self):
+        self.assertEqual(estimated_expansion_parameter(sp.Rational(1, 2))[1], INVERSE_COLOUR_TERM)
+        self.assertEqual(estimated_expansion_parameter(sp.Rational(66, 100))[1],
+                         INVERSE_COLOUR_TERM)
+        self.assertEqual(estimated_expansion_parameter(sp.Rational(67, 100))[1], ENERGY_TERM)
+        self.assertEqual(estimated_expansion_parameter(sp.Integer(1))[1], ENERGY_TERM)
+
+    def test_values(self):
+        self.assertEqual(truncation_uncertainty(sp.Rational(3, 10)), sp.Rational(1, 3))
+        at_one_gev = float(truncation_uncertainty(sp.Integer(1)))
+        self.assertAlmostEqual(at_one_gev, 1 / (4 * math.pi * 0.0921) ** 2, places=12)
+        self.assertTrue(0.7 < at_one_gev < 0.8)
+
+    def test_monotonic(self):
+        grid = [sp.Rational(step, 100) for step in range(5, 151)]
+        values = [float(truncation_uncertainty(sqrt_s)) for sqrt_s in grid]
+        self.assertEqual(values, sorted(values))
+
+    def test_below_one_iff_below_chiral_scale(self):
+        self.assertTrue(expansion_parameter_below_one(sp.Rational(115, 100)))
+        self.assertFalse(expansion_parameter_below_one(sp.Rational(116, 100)))
+        self.assertFalse(expansion_parameter_below_one(CHIRAL_SCALE_GEV))
+
+    def test_resonance_loop_rule(self):
+        threshold = LOWEST_RESONANCE_PION_THRESHOLD_GEV
+        just_below = threshold - sp.Rational(1, 10 ** 6)
+        self.assertEqual(resonance_loop_uncertainty(just_below, True), 0)
+        self.assertEqual(resonance_loop_uncertainty(threshold, True), RESONANCE_LOOP_FRACTION)
+        self.assertEqual(resonance_loop_uncertainty(sp.Integer(1), True), sp.Rational(3, 10))
+        for sqrt_s in (sp.Rational(3, 10), just_below, threshold, sp.Integer(1)):
+            self.assertEqual(resonance_loop_uncertainty(sqrt_s, False), RESONANCE_LOOP_FRACTION)
+
+    def test_quadrature(self):
+        sqrt_s = sp.Integer(1)
+        total = total_uncertainty(sqrt_s, True)
+        expected = math.sqrt(float(truncation_uncertainty(sqrt_s)) ** 2 + 0.3 ** 2)
+        self.assertAlmostEqual(float(total), expected, places=14)
+        self.assertEqual(total_uncertainty(sp.Rational(1, 2), True), sp.Rational(1, 3))
+        for value in (sp.Rational(1, 2), sp.Integer(1)):
+            for inputs_from_data in (True, False):
+                total = float(total_uncertainty(value, inputs_from_data))
+                self.assertGreaterEqual(total, float(truncation_uncertainty(value)))
+                self.assertGreaterEqual(
+                    total, float(resonance_loop_uncertainty(value, inputs_from_data)))
+
+    def test_declared_range(self):
+        self.assertTrue(in_declared_range(sp.Integer(1)))
+        self.assertFalse(in_declared_range(sp.Rational(6, 5)))
+
+    def test_check_truncation_runs(self):
+        self.assertTrue(check_truncation([sp.Rational(1, 2), sp.Integer(1)]))
+        self.assertTrue(check_truncation())
+
+
 def main():
     """Parse the command line and run the requested checks."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -1435,6 +1747,10 @@ def main():
     parser.add_argument("--scheme", action="store_true",
                         help="subtraction scheme, Gamma_i, running of L_i^r and"
                              " mu_chi-independent combinations")
+    parser.add_argument("--truncation", nargs="*", metavar="SQRT_S", default=None,
+                        help="truncation and excluded resonance-loop uncertainty per"
+                             " unit |Delta| at the given sqrt(s) values in GeV"
+                             " (default grid: " + " ".join(DEFAULT_SQRT_S_GRID_GEV) + ")")
     parser.add_argument("--test", action="store_true", help="run the unit tests")
     arguments = parser.parse_args()
 
@@ -1443,9 +1759,11 @@ def main():
         return 0 if result.wasSuccessful() else 1
 
     selected = {"orders": arguments.orders, "loops": arguments.loops,
-                "scheme": arguments.scheme}
+                "scheme": arguments.scheme, "truncation": arguments.truncation is not None}
     run_all = not any(selected.values())
-    checks = {"orders": check_orders, "loops": check_loops, "scheme": check_scheme}
+    sqrt_s_values = [sp.Rational(value) for value in (arguments.truncation or [])]
+    checks = {"orders": check_orders, "loops": check_loops, "scheme": check_scheme,
+              "truncation": lambda: check_truncation(sqrt_s_values)}
     for index, (name, check) in enumerate(checks.items()):
         if run_all or selected[name]:
             if run_all and index > 0:

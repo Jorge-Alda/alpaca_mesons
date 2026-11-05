@@ -31,8 +31,8 @@
 
 ## 6. Validity range and truncation
 
-- [ ] 6.1 Through `coder`, add the truncation prescription $\delta_{\rm est}(s)=\max(1/N_c,s/\Lambda_\chi^2,M_K^2/\Lambda_\chi^2)$, with the excluded resonance-loop size added in quadrature. Verify that `--truncation 0.5 1.0` prints $\delta_{\rm est}$ at $\sqrt s=0.5$ and $1.0\,$GeV with all inputs stated in GeV
-- [ ] 6.2 Write `memory/nlo/counting/validity-range-and-truncation.md` covering the range up to about $1\,$GeV, the failure near resonance poles and above $1\,$GeV, and the inputs of the prescription with their sources. Verify that the numbers match 6.1
+- [x] 6.1 Through `coder`, add the truncation prescription $\delta_{\rm est}(s)=\max(1/N_c,s/\Lambda_\chi^2,M_K^2/\Lambda_\chi^2)$, with the excluded resonance-loop size added in quadrature. Verify that `--truncation 0.5 1.0` prints $\delta_{\rm est}$ at $\sqrt s=0.5$ and $1.0\,$GeV with all inputs stated in GeV
+- [x] 6.2 Write `memory/nlo/counting/validity-range-and-truncation.md` covering the range up to about $1\,$GeV, the failure near resonance poles and above $1\,$GeV, and the inputs of the prescription with their sources. Verify that the numbers match 6.1
 
 ## 7. Integration check
 
