@@ -48,13 +48,13 @@ Each child folder is a source-specific extract collection; see its files for the
 - [GomezDumm:2010ra](GomezDumm:2010ra/INDEX.md) — five-operator local $VPPP$ basis and the ideal-mixing on-shell $ω\to3\pi$ contact combination.
 - [Hanhart:2012wi](Hanhart:2012wi/INDEX.md) — source-specific literature extracts.
 - [Harada:2003jx](Harada:2003jx/INDEX.md) — source-specific literature extracts.
-- [Herrera-Siklody:1996tqr](Herrera-Siklody:1996tqr/INDEX.md) — source-specific literature extracts.
+- [Herrera-Siklody:1996tqr](Herrera-Siklody:1996tqr/INDEX.md) — $U(3)$ source basis, one-loop counterterms and notation dictionary to Kaiser:1998ds.
 - [Jamin:2000wn](Jamin:2000wn/INDEX.md) — source-specific literature extracts.
 - [Jamin:2001zq](Jamin:2001zq/INDEX.md) — source-specific literature extracts.
 - [Jamin:2006tj](Jamin:2006tj/INDEX.md) — source-specific literature extracts.
 - [KLOE:2003kas](KLOE:2003kas/INDEX.md) — source-specific literature extracts.
 - [Knecht:2001qf](Knecht:2001qf/INDEX.md) — pion TFF single-virtual falloff and symmetric OPE coefficient adapted to the canonical fixed-phase signed scalar.
-- [Kaiser:1998ds](Kaiser:1998ds/INDEX.md) — general singlet-source derivative terms and the field redefinition that removes the $V_4$ cross term.
+- [Kaiser:1998ds](Kaiser:1998ds/INDEX.md) — singlet-source derivative terms and the $V_4$ cross term, one-loop renormalization constants, and QCD-scale scaling laws.
 - [Kaiser:2000gs](Kaiser:2000gs/INDEX.md) — source-specific literature extracts.
 - [Kastner:2008ch](Kastner:2008ch/INDEX.md) — source-specific literature extracts.
 - [Kubis:2001bx](Kubis:2001bx/INDEX.md) — source-specific literature extracts.

@@ -3,7 +3,7 @@ title: One-loop effects and renormalized constants in the quadratic U(3) Lagrang
 status: mixed
 created: 2026-11-05
 updated: 2026-11-05
-bibtex_keys: [Herrera-Siklody:1996tqr, Kaiser:1998ds, Gasser:1983yg, Alda:2026nrd]
+bibtex_keys: [Herrera-Siklody:1996tqr, Kaiser:1998ds, Gasser:1983yg, Gasser:1984gg, Alda:2026nrd]
 provenance: literature
 ---
 
@@ -11,7 +11,7 @@ provenance: literature
 
 ## Scope and inputs
 
-The local NLO quadratic terms and conventions are those of [the NLO quadratic record](quadratic-lagrangian.md), built from [the retained NLO basis](lagrangian.md). The fields are the pseudoscalar nonet plus the ALP, and the source convention is the reduced $V_4=0$ basis. The loop statements below refer to the $U(3)$ nonet theory of [@Herrera-Siklody:1996tqr], with its stated dimensional-subtraction convention, and to the usual $SU(3)$ convention for the standard $L_i$ [@Gasser:1983yg]. They are not a new calculation of ALP-dependent loop graphs.
+The local NLO quadratic terms and conventions are those of [the NLO quadratic record](quadratic-lagrangian.md), built from [the retained NLO basis](lagrangian.md). The fields are the pseudoscalar nonet plus the ALP, and the source convention is the reduced $V_4=0$ basis. The loop statements below refer to the $U(3)$ nonet theory of [@Herrera-Siklody:1996tqr], with its stated dimensional-subtraction convention, and to the usual $SU(3)$ convention for the standard $L_i$, with the subtraction $\lambda(\mu)$ of [@Gasser:1983yg] and the $SU(3)$ coefficients $\Gamma_i$ of [@Gasser:1984gg]. They are not a new calculation of ALP-dependent loop graphs.
 
 ## What the loops add
 

@@ -20,9 +20,9 @@
 
 ## 4. Subtraction scheme and counterterm basis
 
-- [ ] 4.1 Through `coder`, add the $\lambda(\mu_\chi)$ scheme, the $U(3)$ $\Gamma_i$ table ($L_4$–$L_8$, $L_{18}$, $L_{25}$, $L_{47}$; $\Lambda_{1,2}$ without a pole) and the one-loop running. Include a check that $L_i^r(\mu_2)-L_i^r(\mu_1)=-\Gamma_i\log(\mu_2/\mu_1)/16\pi^2$ and the $Z_A$ labels for $\Lambda_1$, $\Lambda_2$, $2L_5+3L_{18}$ and $2L_8-3L_{25}$. Verify that `--scheme` runs and that every assertion passes for $\mu_\chi\in\{0.5,0.77,1.0\}\,$GeV
-- [ ] 4.2 Write `memory/nlo/counting/subtraction-scheme-and-scales.md`: the default $\mu_\chi=M_\rho$, the variation range, and the separation of the QCD scale. Translate between the conventions of Kaiser:1998ds and Herrera-Siklody:1996tqr. Verify that the coefficients agree with `memory/nlo/one-loop-effects-and-renormalized-lecs.md` and with the script
-- [ ] 4.3 Write `memory/nlo/counting/counterterm-basis.md`, a table with one row per constant: $\delta$ order, $\Gamma_i$, $Z_A$ behaviour, contributing resonance multiplets, and the truncation under which a zero $\Gamma_i$ holds. Include a marked row for further ALP-source operators. Verify that every row is reproduced by `--scheme --orders`
+- [x] 4.1 Through `coder`, add the $\lambda(\mu_\chi)$ scheme, the $U(3)$ $\Gamma_i$ table ($L_4$–$L_8$, $L_{18}$, $L_{25}$, $L_{47}$; $\Lambda_{1,2}$ without a pole) and the one-loop running. Include a check that $L_i^r(\mu_2)-L_i^r(\mu_1)=-\Gamma_i\log(\mu_2/\mu_1)/16\pi^2$ and the $Z_A$ labels for $\Lambda_1$, $\Lambda_2$, $2L_5+3L_{18}$ and $2L_8-3L_{25}$. Verify that `--scheme` runs and that every assertion passes for $\mu_\chi\in\{0.5,0.77,1.0\}\,$GeV
+- [x] 4.2 Write `memory/nlo/counting/subtraction-scheme-and-scales.md`: the default $\mu_\chi=M_\rho$, the variation range, and the separation of the QCD scale. Translate between the conventions of Kaiser:1998ds and Herrera-Siklody:1996tqr. Verify that the coefficients agree with `memory/nlo/one-loop-effects-and-renormalized-lecs.md` and with the script
+- [x] 4.3 Write `memory/nlo/counting/counterterm-basis.md`, a table with one row per constant: $\delta$ order, $\Gamma_i$, $Z_A$ behaviour, contributing resonance multiplets, and the truncation under which a zero $\Gamma_i$ holds. Include a marked row for further ALP-source operators. Verify that every row is reproduced by `--scheme --orders`
 
 ## 5. Resonance exchange and residual constants
 

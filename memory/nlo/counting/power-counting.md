@@ -3,7 +3,7 @@ title: Combined delta counting for the U(3) NLO Lagrangian and explicit resonanc
 status: mixed
 created: 2026-11-05
 updated: 2026-11-05
-bibtex_keys: [Kaiser:1998ds, Kaiser:2000gs, Ecker:1988te, Alda:2026nrd]
+bibtex_keys: [Kaiser:1998ds, Kaiser:2000gs, Herrera-Siklody:1996tqr, Ecker:1988te, Alda:2026nrd]
 provenance: analytical-derivation
 ---
 
@@ -61,9 +61,10 @@ The script checks this rule against the explicit prefactor of each term, using $
 | $L_4\langle\bm{u_\mu}\bm{u^\mu}\rangle\langle\bm{\chi_+}\rangle$, $L_6\langle\bm{\chi_+}\rangle^2$, $L_7\langle\bm{\chi_-}\rangle^2$, $L_{18}\langle\bm{u_\mu}\rangle\langle\bm{u^\mu}\bm{\chi_+}\rangle$ | 0 | $p^4$ | $\delta^2$ |
 | $-iL_{25}X_{TC}\langle\bm{\chi_+}\bm{\chi_-}\rangle$ | 0 | $p^4$ | $\delta^2$ |
 | single-trace $\mathcal O(N_cp^6)$ | 1 | $p^6$ | $\delta^2$ |
+| $L_{47}D_\mu\hat\theta\langle C^\mu\rangle\langle M\rangle$ (Herrera-Siklody:1996tqr) | $-1$ | $p^4$ | $\delta^3$ |
 | one-loop graph with LO vertices | 0 | $p^4$ | $\delta^2$ |
 
-This reproduces the split of [lagrangian.md](../lagrangian.md) into $\mathcal L^{(1)}$ and $\mathcal L^{(2)}$. From the topological term, $m_0^2=4N_f\tau/f_\pi^2=\mathcal O(\delta)$, so the $\eta'$ mass counts like a Goldstone mass. $L_7$ is $\mathcal O(N_c^0)$ in the $U(3)$ theory. Its $\mathcal O(N_c^2)$ size in $SU(3)$ ChPT comes from integrating out $\eta'$, which is a dynamical field here. The last row shows that one-loop Goldstone graphs and $\mathcal L^{(2)}$ are of the same order. This is why the loop divergences are absorbed by the $\delta^2$ constants (see the counterterm records of this folder).
+This reproduces the split of [lagrangian.md](../lagrangian.md) into $\mathcal L^{(1)}$ and $\mathcal L^{(2)}$. The source-derivative operator $O_{47}$ has two traces and one factor of $\hat\theta$, and $D_\mu\hat\theta$ counts as $p$, so it is $\delta^3$ and beyond the declared order. This agrees with rule (4.1) of Herrera-Siklody:1996tqr [@Herrera-Siklody:1996tqr]. From the topological term, $m_0^2=4N_f\tau/f_\pi^2=\mathcal O(\delta)$, so the $\eta'$ mass counts like a Goldstone mass. $L_7$ is $\mathcal O(N_c^0)$ in the $U(3)$ theory. Its $\mathcal O(N_c^2)$ size in $SU(3)$ ChPT comes from integrating out $\eta'$, which is a dynamical field here. The last row shows that one-loop Goldstone graphs and $\mathcal L^{(2)}$ are of the same order. This is why the loop divergences are absorbed by the $\delta^2$ constants (see the counterterm records of this folder).
 
 ## Step 4: resonance couplings and masses
 

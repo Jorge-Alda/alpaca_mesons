@@ -3,7 +3,7 @@
 
 Purpose
     Power counting for the OpenSpec change `fix-u3-nlo-resonance-counting`
-    (tasks 2.2 and 3.1).
+    (tasks 2.2, 3.1 and 4.1).
     --orders: tabulates the order in the combined expansion parameter delta
     of Kaiser:1998ds and Kaiser:2000gs for every operator of
     memory/nlo/lagrangian.md, for the resonance couplings and masses of
@@ -18,8 +18,23 @@ Purpose
     near pole"). It also prints the lowest vector + pseudoscalar
     thresholds, where loops with an internal resonance line become
     non-analytic.
-    Neither mode expands a propagator or evaluates a loop integral; they
-    only classify orders.
+    --scheme (task 4.1): states the chiral subtraction scheme
+    L_i = L_i^r(mu) + Gamma_i lambda(mu), tabulates the U(3) coefficients
+    Gamma_i of Kaiser:1998ds next to the SU(3) ones, implements the running
+    of L_i^r(mu) and checks that the bare L_i is mu-independent, lists the
+    combinations of L_i with zero Gamma (independent of the chiral scale
+    mu_chi). It gives the chiral renormalization of B,
+    B = B^r(1 + 4 tau lambda/F^4), and asserts that the pole term is of
+    order delta^2 (same as a one-loop G-LO graph); it asserts that the part
+    -v_31/2 of Gamma_8 dropped by Kaiser:1998ds is delta^3. It tabulates
+    separately the dependence on the QCD renormalization scale through
+    Z_A, checks that L_A = (2 L_5^r + 3 L_18^r)/sqrt(1 + Lambda_1) is
+    independent of both scales, and asserts that the failure of the
+    multiplicative Z_A law for renormalized combinations with a pole
+    (2 L_8 - 3 L_25, B) is (Z_A - 1) x pole = O(delta^3).
+    Neither --orders nor --loops expands a propagator or evaluates a loop
+    integral; they only classify orders. --scheme evaluates no loop either;
+    it takes the Gamma_i as inputs.
 
 Conventions
     - delta counting: p = O(sqrt(delta)), m_q = O(delta), 1/N_c = O(delta).
@@ -65,19 +80,50 @@ Conventions
       suppression is not part of delta, so no delta order is assigned to it.
     - Declared order: delta^2, first order in 1/f_a, Goldstone loops only
       (loops with internal resonance lines are a declared approximation).
+    - Scheme (--scheme): d-dimensional regularization with
+      lambda(mu) = mu^(d-4)/(16 pi^2) [1/(d-4) - (log 4 pi + Gamma'(1) + 1)/2]
+      (Gasser:1983yg convention, as used by Kaiser:1998ds and
+      Herrera-Siklody:1996tqr Eq. (3.20)), L_i = L_i^r(mu)
+      + Gamma_i lambda(mu); hence mu dL_i^r/dmu = -Gamma_i/(16 pi^2).
+      Kaiser:1998ds writes mu_chi for this chiral subtraction scale; it is
+      independent of the QCD renormalization scale mu of the singlet axial
+      current, mu dZ_A/dmu = gamma_A Z_A, Z_A = 1 + O(1/N_c).
+    - In the --scheme counting lambda ~ 1/(16 pi^2) counts N_c^0 p^0; the
+      1/N_c of a loop is carried by 1/F^2. Z_A - 1 counts N_c^-1 p^0.
 
 Units
     Natural units. The order tables use only powers of N_c and of the
-    chiral dimension. Masses and thresholds in --loops are in GeV.
+    chiral dimension. Masses and thresholds in --loops are in GeV. In
+    --scheme mu is in GeV (log mu means log(mu / 1 GeV); the reference
+    scale drops out of every difference), and shifts of L_i^r are printed
+    in units of 10^-3.
 
 Inputs
     memory/nlo/lagrangian.md (L^(0), L^(1), L^(2) operators, Alda:2026nrd
     conventions), Kaiser:1998ds, Kaiser:2000gs (delta counting),
     Ecker:1988te (resonance couplings and their N_c scaling),
-    Rosell:2004mn, Rosell:2005ai, Rosell:2006dt, Pich:2010sm (one-loop
-    resonance chiral theory: loops with internal resonances, their O(p^2)
-    divergences and their R pi and R R' cuts), memory/rcht/foundations/
-    vector-width-lineshape-prescriptions.md (line shape near the pole).
+    Rosell:2004mn, Rosell:2005ai, Rosell:2006dt, Pich:2008jm, Pich:2010sm
+    (one-loop resonance chiral theory: loops with internal resonances, their
+    O(p^2) divergences, their absorption into resonance parameters through
+    NLO short-distance constraints, and their R pi and R R' cuts),
+    memory/rcht/foundations/vector-width-lineshape-prescriptions.md (line
+    shape near the pole).
+    --scheme (line numbers refer to the source TeX files, see
+    memory/extracts/Kaiser:1998ds/u3-loop-renormalization-and-gamma-table.md,
+    memory/extracts/Kaiser:1998ds/qcd-scale-dependence-za.md and
+    memory/extracts/Herrera-Siklody:1996tqr/u3-one-loop-counterterms-and-gamma-table.md):
+    Gasser:1983yg (convention for lambda(mu)); Kaiser:1998ds adehep.tex
+    (lambda: lines 674-678; B renormalization: lines 679-686; no
+    renormalization of F, tau, Lambda_1, Lambda_2: lines 687-689; U(3)
+    Gamma_i: lines 692-696; Z_A laws: lines 583-594, 600, 621-634;
+    invariant L_A: lines 777-781); Herrera-Siklody:1996tqr un.tex
+    (lambda_infinity, Eq. (3.20); SU(3) Gamma_6, Gamma_8: lines 1507-1508;
+    B_8 at next order in 1/N_c: lines 2044-2050; Gamma_47 = 0 by large-N_c
+    truncation; --orders: O_47 at line 2516, theta^ = i theta at lines
+    674-676, C_mu, M at lines 1208-1210, N_c rule (4.1) at lines 1904-1907); Gasser:1984gg (SU(3) Gamma_i). Gamma_25 = 0 is quoted
+    by Kaiser:1998ds and not reproduced from Herrera-Siklody:1996tqr
+    Appendix D. v_31 = -Lambda_2/3 from
+    memory/extracts/Herrera-Siklody:1996tqr/u3-notation-dictionary-with-kaiser-1998ds.md.
     Masses from ParticleDataGroup:2024cfk, in GeV:
     M_rho = 0.77526, M_omega = 0.78266, M_K*(892)^+- = 0.89167,
     m_pi^+- = 0.13957, m_K^+- = 0.493677, m_eta = 0.547862.
@@ -85,14 +131,17 @@ Inputs
 Invocation
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --orders
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --loops
+    .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --scheme
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py      # all checks
     .venv/bin/python scripts/derive_nlo_u3_resonance_counting.py --test
 """
 
 import argparse
+import math
 import sys
 import unittest
 from dataclasses import dataclass
+from itertools import product
 
 import sympy as sp
 
@@ -176,6 +225,23 @@ def goldstone_lagrangian_rows():
     ]
 
 
+def source_derivative_rows():
+    """Source-derivative operator O_47 of Herrera-Siklody:1996tqr (un.tex line 2516).
+
+    O_47 = D_mu theta^ <C^mu><M>, theta^ = i theta, C^mu = U^dagger D^mu U,
+    M = U^dagger chi + chi^dagger U (un.tex lines 674-676, 1208-1210).
+    Chiral dimension: D_mu theta^ (p^1) + C^mu (p^1) + M (p^2) = p^4.
+    Flavour traces: <C^mu> and <M>, i.e. 2. One factor of theta^, which,
+    like X_TC, costs 1/N_c (theta enters QCD as theta/N_c, un.tex line 365).
+    Hence k = 2 - 2 - 1 = -1, which is also rule (4.1) of
+    Herrera-Siklody:1996tqr, G = N_c^(2 - #traces - #theta^) (un.tex lines
+    1904-1907), and the order is delta^(2 + 1) = delta^3.
+    """
+    return [
+        CountedTerm("L_47", "L_47 D_mu theta^ <C^mu><M>", -1, 4, 2, 1, 3),
+    ]
+
+
 def resonance_rows():
     """Resonance masses and couplings (Ecker:1988te), and OZI-violating parts."""
     sqrt_nc = HALF
@@ -256,7 +322,8 @@ def loop_rows():
 
 def all_rows():
     """Every row of the order table, in printing order."""
-    return (goldstone_lagrangian_rows() + resonance_rows() + exchange_rows()
+    return (goldstone_lagrangian_rows() + source_derivative_rows()
+            + resonance_rows() + exchange_rows()
             + pseudoscalar_mixing_rows() + loop_rows())
 
 
@@ -306,6 +373,15 @@ def check_orders():
     for name in ["L_4", "L_6", "L_7", "L_18", "L_25"]:
         assert delta_exponent(by_name[name]) == delta_exponent(by_name["1-loop Goldstone"])
 
+    # L_47: the N_c power from rule (4.1) of Herrera-Siklody:1996tqr
+    # (theta^ counted as a source) equals the one from the Alda:2026nrd form
+    # D_mu theta^ = i(<u_mu> - d_mu X_TC): <u_mu><u^mu><chi_+> has 3 traces
+    # and no X_TC, d_mu X_TC <u^mu><chi_+> has 2 traces and one X_TC.
+    l47_nc_power = by_name["L_47"].nc_power
+    assert l47_nc_power == nc_power_from_traces(2, 1) == -1
+    assert nc_power_from_traces(3, 0) == nc_power_from_traces(2, 1) == l47_nc_power
+    assert delta_exponent(by_name["L_47"]) == 3 > DECLARED_EXPONENT
+
     # m_0^2 = 4 N_f tau / F^2 with tau ~ N_c^0, F^2 ~ N_c and chiral dimension 0.
     m0_squared_exponent = 0 - (0 - 1)
     assert m0_squared_exponent == 1
@@ -321,6 +397,15 @@ def check_orders():
           " Lagrangian. The two canonical-field rows are offset by one power"
           " of delta (canonical LO mass term N_c^0 p^2 -> delta); only"
           " their ratio to LO, delta^1, is meaningful.")
+    print("- L_47 (O_47 = D_mu theta^ <C^mu><M>, Herrera-Siklody:1996tqr"
+          " un.tex line 2516): 2n = 1 + 1 + 2 = 4, 2 traces, one theta^."
+          " N_c power: module rule k = 2 - tr - X = -1; rule (4.1) of"
+          " Herrera-Siklody:1996tqr N_c^(2 - #tf - #theta^) = N_c^-1 (lines"
+          " 1904-1907); they agree. Herrera-Siklody:1996tqr does not quote"
+          " the order of L_47 explicitly (its list, lines 1986-2008, covers"
+          " only operators without derivatives of theta^). Order delta^3,"
+          " beyond the declared delta^2. D_mu theta^ counts p^1, unlike"
+          " X_TC (p^0).")
     print("- ALP at first order in 1/f_a: 1/f_a is not part of delta;"
           " c_G a/f_a in X_TC counts p^0, m_a^2 counts p^2.")
     print("\n--orders: all assertions passed")
@@ -354,6 +439,20 @@ class OrderTableTests(unittest.TestCase):
 
     def test_check_orders_runs(self):
         self.assertTrue(check_orders())
+
+    def test_l47_row(self):
+        (row,) = source_derivative_rows()
+        self.assertEqual(row.name, "L_47")
+        self.assertEqual((row.chiral_dimension, row.flavor_traces,
+                          row.topological_factors), (1 + 1 + 2, 2, 1))
+        self.assertEqual(row.nc_power, nc_power_from_traces(2, 1))
+        self.assertEqual(row.nc_power, -1)
+        # Alda:2026nrd form of D_mu theta^: <u_mu> term (3 traces, no X_TC).
+        self.assertEqual(nc_power_from_traces(3, 0), row.nc_power)
+        self.assertEqual(delta_exponent(row), 3)
+        self.assertEqual(delta_order(row.nc_power, row.chiral_dimension), delta ** 3)
+        self.assertGreater(delta_exponent(row), DECLARED_EXPONENT)
+        self.assertIn(row, all_rows())
 
 
 # --------------------------------------------------------------------------
@@ -562,13 +661,16 @@ def check_loops():
           " and the O(p^4) constants at delta^2. It is excluded by declared"
           " choice (Goldstone loops only).")
     print("- Assumption: below the lowest resonance + Goldstone threshold R-int is"
-          " analytic in s and m_q. Its effect then has the form of local terms"
-          " at O(p^2) and O(p^4), so it is absorbed only if F, B_0, tau"
-          " (m_0^2), Lambda_1, Lambda_2 and L_i^r(mu) are fixed from data"
-          " (physical or fitted values), not from large-N_c or"
-          " resonance-saturation estimates. Its non-analytic part starts at"
-          " the R pi threshold, and its size enters the truncation"
-          " uncertainty.")
+          " analytic in s and m_q, so its effect has the form of local terms"
+          " at O(p^2) and O(p^4). Sources absorb it into the Goldstone"
+          " constants (F^2, F^2 B_0, pion wave function: Rosell:2004mn,"
+          " Rosell:2005ai) and into the resonance parameters (F_V, F_A, M_V,"
+          " M_A via NLO Weinberg sum rules, c_m, d_m, G_V: Pich:2008jm,"
+          " Rosell:2006dt). The exclusion is consistent only if F, B_0, tau"
+          " (m_0^2), Lambda_1, Lambda_2, L_i^r(mu) and the resonance masses"
+          " and couplings are fixed from data, and if the short-distance"
+          " constraints hold at NLO. Its non-analytic part starts at the"
+          " R pi threshold, and its size enters the truncation uncertainty.")
     print("- Resonance-resonance cuts lie at (M_R+M_R')^2 >~ 2 GeV^2"
           " (Pich:2010sm), outside the validity range; only R pi (and R K,"
           " R eta) cuts can lie below 1 GeV. In the pseudoscalar channel"
@@ -678,6 +780,651 @@ class LoopClassificationTests(unittest.TestCase):
         self.assertTrue(check_loops())
 
 
+# --------------------------------------------------------------------------
+# Chiral subtraction scheme and running of L_i^r (--scheme, task 4.1)
+# --------------------------------------------------------------------------
+
+dimension = sp.Symbol("d")
+scale = sp.Symbol("mu", positive=True)
+LOOP_FACTOR = 16 * sp.pi ** 2
+# Scales in GeV as exact rationals; default mu = M_rho = 0.77 GeV.
+REFERENCE_SCALE_GEV = sp.Rational(77, 100)
+SCALES_GEV = [sp.Rational(1, 2), REFERENCE_SCALE_GEV, sp.Integer(1)]
+FLAVOUR_NUMBER = 3
+
+# Coefficients Gamma_i of the U(3) scheme, Kaiser:1998ds Eq. (scaling),
+# adehep.tex lines 692-696 (same values in Herrera-Siklody:1996tqr,
+# un.tex lines 1467-1491, for i = 4, ..., 8, 18).
+KAISER_1998DS_U3_GAMMA = {
+    "L_4": sp.Rational(1, 8),
+    "L_5": sp.Rational(3, 8),
+    "L_6": sp.Rational(1, 16),
+    "L_7": sp.Integer(0),
+    "L_8": sp.Rational(3, 16),
+    "L_18": sp.Rational(-1, 4),
+    "L_25": sp.Integer(0),
+}
+GAMMA_SOURCE = "Kaiser:1998ds, adehep.tex lines 692-696"
+# Remarks on individual U(3) Gamma_i.
+U3_GAMMA_FLAGS = {
+    "L_8": ("leading value; B_8 = n_l/16 - v_31/2 + O(N_c^-2)"
+            " (Herrera-Siklody:1996tqr, un.tex lines 2044-2050); -v_31/2 is"
+            " delta^3, beyond declared order"),
+    "L_25": "quoted by Kaiser:1998ds; not reproduced from Herrera-Siklody:1996tqr Appendix D",
+}
+NO_CHIRAL_LOOP_RENORMALIZATION = ("no chiral-loop renormalization at this order"
+                                  " (Kaiser:1998ds, adehep.tex lines 687-689)")
+# Further U(3) constants with zero Gamma, with the reason.
+U3_ZERO_GAMMA_FLAGS = {
+    "F": NO_CHIRAL_LOOP_RENORMALIZATION,
+    "tau": NO_CHIRAL_LOOP_RENORMALIZATION,
+    "Lambda_1": NO_CHIRAL_LOOP_RENORMALIZATION,
+    "Lambda_2": NO_CHIRAL_LOOP_RENORMALIZATION,
+    "L_47": ("zero by truncation; fails at next 1/N_c order"
+             " (B_47(0) = v_12 (v_31 - 3) = O(N_c^-2), Herrera-Siklody:1996tqr)"),
+}
+# SU(3) values for comparison: Gasser:1984gg; Gamma_6 and Gamma_8 also quoted
+# in Herrera-Siklody:1996tqr, un.tex lines 1507-1508.
+SU3_GAMMA = {
+    "L_4": sp.Rational(1, 8),
+    "L_5": sp.Rational(3, 8),
+    "L_6": sp.Rational(11, 144),
+    "L_7": sp.Integer(0),
+    "L_8": sp.Rational(5, 48),
+}
+CONSTANT_NAMES = list(KAISER_1998DS_U3_GAMMA)
+MAXIMAL_COEFFICIENT = 3
+
+# Dependence on the QCD renormalization scale mu of the singlet axial
+# current (Kaiser:1998ds, adehep.tex lines 621-630; B -> Z_M B at line 600).
+# mu dZ_A/dmu = gamma_A Z_A, Z_A = 1 + O(1/N_c) (lines 583-594).
+# Not part of the mu_chi running.
+QCD_SCALE_LAWS = [
+    ("tau", "Z_A^2 tau"),
+    ("1 + Lambda_1", "Z_A^2 (1 + Lambda_1)"),
+    ("1 + Lambda_2", "Z_A (1 + Lambda_2)"),
+    ("2 L_5 + 3 L_18", "Z_A (2 L_5 + 3 L_18)"),
+    ("2 L_8 - 3 L_25", "Z_A (2 L_8 - 3 L_25)"),
+    ("L_4, ..., L_8", "QCD-scale independent"),
+    ("F", "QCD-scale independent"),
+    ("B", "Z_M B (Z_M: quark-mass factor, line 600)"),
+]
+
+# Symbols for the QCD-scale and 1/N_c checks.
+colour_number = sp.Symbol("N_c", positive=True)
+z_a_coefficient = sp.Symbol("z_A")
+singlet_axial_factor = sp.Symbol("Z_A", positive=True)
+pole = sp.Symbol("lambda")
+tau_symbol, decay_constant = sp.symbols("tau F", positive=True)
+
+
+def chiral_scale_lambda(mu=scale, spacetime_dimension=dimension):
+    """lambda(mu) in the Gasser:1983yg convention, with Gamma'(1) = -EulerGamma.
+
+    Same expression as Kaiser:1998ds (adehep.tex lines 674-675) and
+    lambda_infinity of Herrera-Siklody:1996tqr Eq. (3.20).
+    """
+    return (mu ** (spacetime_dimension - 4) / LOOP_FACTOR
+            * (1 / (spacetime_dimension - 4)
+               - HALF * (sp.log(4 * sp.pi) + sp.polygamma(0, 1) + 1)))
+
+
+def lambda_scale_dependence():
+    """Expansion of mu^(d-4)/(d-4) about d = 4, up to O(d-4)."""
+    epsilon = sp.Symbol("epsilon")
+    expansion = sp.series(scale ** epsilon / epsilon, epsilon, 0, 1).removeO()
+    return expansion.subs(epsilon, dimension - 4)
+
+
+def running_constant(reference_value, gamma, mu, reference_mu=REFERENCE_SCALE_GEV):
+    """L_i^r(mu) = L_i^r(mu_1) - Gamma_i/(16 pi^2) log(mu/mu_1)."""
+    return reference_value - gamma / LOOP_FACTOR * sp.log(mu / reference_mu)
+
+
+def bare_finite_part(renormalized_value, gamma, mu):
+    """mu-dependent finite part of the bare L_i: L_i^r(mu) + Gamma_i log(mu)/(16 pi^2).
+
+    The pole 1/(d-4) and the constant of lambda(mu) are mu-independent and
+    are dropped.
+    """
+    return renormalized_value + gamma * sp.log(mu) / LOOP_FACTOR
+
+
+def gamma_combination(coefficients, gammas=KAISER_1998DS_U3_GAMMA):
+    """Sum_i c_i Gamma_i for a dict {constant name: integer coefficient}."""
+    return sum((coefficient * gammas[name] for name, coefficient in coefficients.items()),
+               sp.Integer(0))
+
+
+def null_space_basis(gammas=KAISER_1998DS_U3_GAMMA):
+    """Integer basis of {c : sum_i c_i Gamma_i = 0} (sympy nullspace).
+
+    Each vector is made primitive and its first nonzero entry positive.
+    """
+    row = sp.Matrix([[gammas[name] for name in CONSTANT_NAMES]])
+    basis = []
+    for vector in row.nullspace():
+        denominator = sp.ilcm(*[sp.fraction(entry)[1] for entry in vector])
+        integer_vector = vector * denominator
+        entries = [int(entry) for entry in integer_vector]
+        common = math.gcd(*entries)
+        sign = 1 if next(entry for entry in entries if entry) > 0 else -1
+        basis.append([sign * entry // common for entry in entries])
+    return basis
+
+
+def small_integer_null_combinations(gammas=KAISER_1998DS_U3_GAMMA,
+                                    maximal_coefficient=MAXIMAL_COEFFICIENT):
+    """All nonzero integer vectors c with |c_i| <= maximal_coefficient and c.Gamma = 0."""
+    common_denominator = sp.ilcm(*[sp.fraction(gammas[name])[1] for name in CONSTANT_NAMES])
+    integer_gammas = [int(gammas[name] * common_denominator) for name in CONSTANT_NAMES]
+    values = range(-maximal_coefficient, maximal_coefficient + 1)
+    return [vector for vector in product(values, repeat=len(CONSTANT_NAMES))
+            if any(vector) and sum(c * g for c, g in zip(vector, integer_gammas)) == 0]
+
+
+def format_combination(vector):
+    """Text form of sum_i c_i L_i."""
+    terms = []
+    for coefficient, name in zip(vector, CONSTANT_NAMES):
+        if coefficient == 0:
+            continue
+        sign = "-" if coefficient < 0 else "+"
+        magnitude = "" if abs(coefficient) == 1 else f"{abs(coefficient)} "
+        terms.append(f"{sign} {magnitude}{name}")
+    if not terms:
+        return "0"
+    text = " ".join(terms)
+    if text.startswith("+ "):
+        return text[2:]
+    return "-" + text[2:]
+
+
+def is_primitive_with_positive_lead(vector):
+    """True if the gcd of the entries is 1 and the first nonzero entry is positive."""
+    nonzero = [entry for entry in vector if entry]
+    return math.gcd(*nonzero) == 1 and nonzero[0] > 0
+
+
+def two_constant_combinations(combinations, gammas=KAISER_1998DS_U3_GAMMA):
+    """Primitive vectors (sign fixed) with exactly two entries, both with Gamma != 0."""
+    selected = []
+    for vector in combinations:
+        support = [name for entry, name in zip(vector, CONSTANT_NAMES) if entry]
+        if (len(support) == 2 and all(gammas[name] != 0 for name in support)
+                and is_primitive_with_positive_lead(vector)):
+            selected.append(vector)
+    return selected
+
+
+# --- Chiral renormalization of B (Kaiser:1998ds, adehep.tex lines 679-686) ---
+
+def b_correction_routes():
+    """Three countings of the relative correction 4 tau lambda / F^4 to B.
+
+    Returns a dict {route: CountedTerm}. lambda ~ 1/(16 pi^2) counts
+    N_c^0 p^0; the N_c suppression of the loop is carried by 1/F^2.
+    - "tau/F^4": tau ~ N_c^0 p^0 times 1/F^4 ~ N_c^-2.
+    - "m_0^2/(16 pi^2 F^2)": with tau = F^2 m_0^2/(4 N_f), 4 tau/F^4 =
+      m_0^2/(N_f F^2), i.e. the eta' tadpole: m_0^2 ~ N_c^-1 p^0 times
+      1/(16 pi^2 F^2) ~ N_c^-1.
+    - "Goldstone loop rule": the generic factor p^2/(16 pi^2 F^2),
+      (k, 2n) = (-1, 2), with the loop momentum set by the internal mass.
+    """
+    tau_term = CountedTerm("tau", "", 0, 0)
+    inverse_f4 = CountedTerm("1/F^4", "", -2, 0)
+    eta_prime_mass_squared = CountedTerm("m_0^2", "", -1, 0)
+    inverse_f2 = CountedTerm("1/(16 pi^2 F^2)", "", -1, 0)
+    return {
+        "tau/F^4": combine("4 tau lambda/F^4", "", [tau_term, inverse_f4]),
+        "m_0^2/(16 pi^2 F^2)": combine("eta' tadpole", "",
+                                       [eta_prime_mass_squared, inverse_f2]),
+        "Goldstone loop rule": loop_factors()["Goldstone loop"],
+    }
+
+
+def b_correction_term():
+    """Counting of F^2 B^r <chi> x 4 tau lambda/F^4 in the Lagrangian."""
+    return combine("B pole term", "F^2/4 <chi_+> x 4 tau lambda/F^4",
+                   [goldstone_lagrangian_rows()[1], b_correction_routes()["tau/F^4"]])
+
+
+def b_running_check():
+    """Return mu d(bare B)/dmu at first order in tau for the running B^r.
+
+    B^r(mu) = B^r(mu_1) exp(-tau/(4 pi^2 F^4) log(mu/mu_1)) (Kaiser:1998ds,
+    lines 683-686) and bare B = B^r(mu)(1 + 4 tau lambda(mu)/F^4); only the
+    log mu of lambda is kept. The result must vanish at O(tau).
+    """
+    reference_b = sp.Symbol("B^r(0.77)", positive=True)
+    running_b = reference_b * sp.exp(-tau_symbol / (4 * sp.pi ** 2 * decay_constant ** 4)
+                                     * sp.log(scale / REFERENCE_SCALE_GEV))
+    bare_b = running_b * (1 + 4 * tau_symbol / decay_constant ** 4 * sp.log(scale) / LOOP_FACTOR)
+    derivative = scale * sp.diff(bare_b, scale)
+    return sp.series(derivative, tau_symbol, 0, 2).removeO()
+
+
+def tau_in_terms_of_eta_prime_mass():
+    """Return 4 tau/F^4 - m_0^2/(N_f F^2) with tau = F^2 m_0^2/(4 N_f); must vanish."""
+    eta_prime_mass_squared = sp.Symbol("m_0^2", positive=True)
+    tau_value = decay_constant ** 2 * eta_prime_mass_squared / (4 * FLAVOUR_NUMBER)
+    return sp.simplify(4 * tau_value / decay_constant ** 4
+                       - eta_prime_mass_squared / (FLAVOUR_NUMBER * decay_constant ** 2))
+
+
+# --- Gamma_8 beyond leading order (Herrera-Siklody:1996tqr lines 2044-2050) ---
+
+def gamma_8_correction_term():
+    """Counting of the dropped -v_31/2 lambda term in the L_8 coefficient.
+
+    v_31 = -Lambda_2/3 ~ N_c^-1 relative to Gamma_8 ~ N_c^0, times the
+    one-loop pole term Gamma_8 lambda <chi_+^2 + chi_-^2> ~ N_c^0 p^4
+    (the G-LO order).
+    """
+    loop_pole_term = CountedTerm("Gamma_8 lambda", "N_c^0 p^4", 0, 4)
+    relative_v31 = CountedTerm("v_31/Gamma_8", "N_c^-1", -1, 0)
+    return combine("-v_31/2 lambda", "dropped part of B_8", [loop_pole_term, relative_v31])
+
+
+# --- QCD-scale dependence (Kaiser:1998ds lines 621-630, 777-781) ---
+
+def singlet_axial_invariant(l5, l18, lambda1):
+    """L_A = (2 L_5^r + 3 L_18^r)/sqrt(1 + Lambda_1) (Kaiser:1998ds lines 777-781)."""
+    return (2 * l5 + 3 * l18) / sp.sqrt(1 + lambda1)
+
+
+def singlet_axial_invariant_chiral_scale_derivative():
+    """mu_chi dL_A/dmu_chi with L_5^r, L_18^r running with their Gamma_i."""
+    lambda1 = sp.Symbol("Lambda_1", positive=True)
+    l5 = running_constant(sp.Symbol("L_5^r(0.77)"), KAISER_1998DS_U3_GAMMA["L_5"], scale)
+    l18 = running_constant(sp.Symbol("L_18^r(0.77)"), KAISER_1998DS_U3_GAMMA["L_18"], scale)
+    return sp.simplify(scale * sp.diff(singlet_axial_invariant(l5, l18, lambda1), scale))
+
+
+def singlet_axial_invariant_qcd_scale_change():
+    """L_A after the Z_A transformation minus L_A before; must vanish."""
+    numerator, one_plus_lambda1 = sp.symbols("N_A s_1", positive=True)
+    before = numerator / sp.sqrt(one_plus_lambda1)
+    after = (singlet_axial_factor * numerator
+             / sp.sqrt(singlet_axial_factor ** 2 * one_plus_lambda1))
+    return sp.simplify(after - before)
+
+
+def su3_l7_qcd_scale_change():
+    """Change of F^4 (1 + Lambda_2)^2/(288 tau) under the Z_A laws; must vanish.
+
+    Kaiser:1998ds checks the laws of tau and Lambda_2 against the scale
+    independence of L_7^SU(3) = -F^4 (1 + Lambda_2)^2/(288 tau) + L_7
+    (lines 631-634).
+    """
+    one_plus_lambda2 = sp.Symbol("s_2", positive=True)
+    before = decay_constant ** 4 * one_plus_lambda2 ** 2 / (288 * tau_symbol)
+    after = (decay_constant ** 4 * (singlet_axial_factor * one_plus_lambda2) ** 2
+             / (288 * singlet_axial_factor ** 2 * tau_symbol))
+    return sp.simplify(after - before)
+
+
+def renormalized_scale_mismatch(gamma):
+    """Mismatch of the Z_A law for a renormalized combination with pole gamma lambda.
+
+    The bare combination C = C^r + gamma lambda transforms as C -> Z_A C.
+    Then C^r -> Z_A C - gamma lambda = Z_A C^r + (Z_A - 1) gamma lambda.
+    Returns (Z_A - 1) gamma lambda with Z_A = 1 + z_A / N_c.
+    """
+    z_a = 1 + z_a_coefficient / colour_number
+    renormalized = sp.Symbol("C^r")
+    transformed = z_a * (renormalized + gamma * pole) - gamma * pole
+    return sp.expand(transformed - z_a * renormalized)
+
+
+def b_renormalized_scale_mismatch():
+    """Relative mismatch of B^r -> Z_M B^r, at first order in tau.
+
+    B = B^r (1 + 4 tau lambda/F^4) -> Z_M B and tau -> Z_A^2 tau give
+    B^r -> Z_M B^r (1 + 4 tau lambda/F^4)/(1 + 4 Z_A^2 tau lambda/F^4).
+    Returns the O(tau) part of the ratio minus one, with Z_A = 1 + z_A/N_c.
+    """
+    z_a = 1 + z_a_coefficient / colour_number
+    correction = 4 * tau_symbol * pole / decay_constant ** 4
+    ratio = (1 + correction) / (1 + z_a ** 2 * correction)
+    return sp.expand(sp.series(ratio - 1, tau_symbol, 0, 2).removeO())
+
+
+def scale_mismatch_term(pole_term):
+    """Counting of (Z_A - 1) x pole term, with Z_A - 1 ~ N_c^-1."""
+    z_a_minus_one = CountedTerm("Z_A - 1", "N_c^-1", -1, 0)
+    return combine("(Z_A - 1) x pole", "", [pole_term, z_a_minus_one])
+
+
+def check_scheme():
+    """Print scheme, Gamma table, running and scale-independent combinations; assert."""
+    print("Chiral subtraction scheme (Gasser:1983yg convention, as used by"
+          " Kaiser:1998ds and Herrera-Siklody:1996tqr Eq. (3.20)):")
+    print("  lambda(mu) = mu^(d-4)/(16 pi^2) [1/(d-4) - (log 4 pi + Gamma'(1) + 1)/2]")
+    print("  L_i = L_i^r(mu) + Gamma_i lambda(mu)")
+    print("  mu here is the chiral subtraction scale; Kaiser:1998ds writes mu_chi"
+          " to distinguish it from the QCD scale (adehep.tex lines 676-678)")
+    print(f"  sympy: lambda(mu) = {sp.sstr(chiral_scale_lambda())}")
+    expansion = lambda_scale_dependence()
+    assert sp.simplify(expansion - (1 / (dimension - 4) + sp.log(scale))) == 0
+    print(f"  mu^(d-4)/(d-4) = {sp.sstr(expansion)} + O(d-4)")
+
+    print(f"\nGamma_i: U(3), {GAMMA_SOURCE}, vs SU(3), Gasser:1984gg"
+          " (Gamma_6, Gamma_8 also Herrera-Siklody:1996tqr lines 1507-1508)")
+    print(f"  {'constant':<10}{'U(3)':>8}{'SU(3)':>9}")
+    for name in CONSTANT_NAMES:
+        su3_text = str(SU3_GAMMA[name]) if name in SU3_GAMMA else "-"
+        flag = f"   [{U3_GAMMA_FLAGS[name]}]" if name in U3_GAMMA_FLAGS else ""
+        print(f"  {name:<10}{str(KAISER_1998DS_U3_GAMMA[name]):>8}{su3_text:>9}{flag}")
+    for name, flag in U3_ZERO_GAMMA_FLAGS.items():
+        print(f"  {name:<10}{'0':>8}{'-':>9}   [{flag}]")
+    differing = [name for name in SU3_GAMMA if SU3_GAMMA[name] != KAISER_1998DS_U3_GAMMA[name]]
+    assert differing == ["L_6", "L_8"], differing
+    print(f"  U(3) and SU(3) differ for: {', '.join(differing)}")
+    gamma_8_correction = gamma_8_correction_term()
+    assert delta_exponent(gamma_8_correction) == 3 > DECLARED_EXPONENT
+    print("  Gamma_8: dropped -v_31/2 (v_31 = -Lambda_2/3 ~ 1/N_c) is delta^1 relative"
+          " to Gamma_8; times the one-loop pole term (delta^2) it is"
+          f" {sp.sstr(delta_order(gamma_8_correction.nc_power, gamma_8_correction.chiral_dimension))},"
+          " beyond the declared order")
+
+    print("\nChiral renormalization of B (Kaiser:1998ds, adehep.tex lines 679-686):")
+    print("  B = B^r(mu) (1 + 4 tau lambda(mu)/F^4),"
+          "  mu dB^r/dmu = -tau B^r/(4 pi^2 F^4)")
+    routes = b_correction_routes()
+    for route, term in routes.items():
+        print(f"  relative correction via {route:<22} (k, 2n) = ({term.nc_power}, "
+              f"{term.chiral_dimension}): "
+              f"{sp.sstr(delta_order(term.nc_power, term.chiral_dimension))}")
+    route_exponents = {delta_exponent(term) for term in routes.values()}
+    assert route_exponents == {2}, route_exponents
+    assert tau_in_terms_of_eta_prime_mass() == 0
+    correction_term = b_correction_term()
+    g_lo = next(item for item in loop_classes() if item.name == "G-LO")
+    assert delta_exponent(correction_term) == g_lo.exponent() == DECLARED_EXPONENT
+    assert sp.simplify(b_running_check()) == 0
+    print(f"  pole term F^2 B^r <chi_+> x 4 tau lambda/F^4: (k, 2n) ="
+          f" ({correction_term.nc_power}, {correction_term.chiral_dimension}),"
+          f" {sp.sstr(delta_order(correction_term.nc_power, correction_term.chiral_dimension))},"
+          " same order as G-LO: inside the declared order, so B^r depends on mu_chi")
+    print("  checked: 4 tau/F^4 = m_0^2/(N_f F^2) for tau = F^2 m_0^2/(4 N_f);"
+          " bare B is mu-independent at O(tau)")
+
+    print("\nRunning: L_i^r(mu_2) = L_i^r(mu_1) - Gamma_i/(16 pi^2) log(mu_2/mu_1),"
+          " i.e. mu dL_i^r/dmu = -Gamma_i/(16 pi^2)")
+    for name in CONSTANT_NAMES:
+        gamma = KAISER_1998DS_U3_GAMMA[name]
+        reference_value = sp.Symbol(f"{name}^r(0.77)")
+        running = running_constant(reference_value, gamma, scale)
+        assert sp.simplify(scale * sp.diff(running, scale) + gamma / LOOP_FACTOR) == 0, name
+        assert sp.simplify(scale * sp.diff(bare_finite_part(running, gamma, scale), scale)) == 0
+        reference_bare = bare_finite_part(reference_value, gamma, REFERENCE_SCALE_GEV)
+        for mu_value in SCALES_GEV:
+            difference = (bare_finite_part(running.subs(scale, mu_value), gamma, mu_value)
+                          - reference_bare)
+            assert sp.simplify(sp.expand_log(difference, force=True)) == 0, (name, mu_value)
+            assert abs(float(difference.subs(reference_value, 0))) < 1e-15, (name, mu_value)
+    print("  checked: d/dlog mu [L_i^r(mu) + Gamma_i log(mu)/(16 pi^2)] = 0 for every i;")
+    print("  bare combination equal at mu = 0.5, 0.77, 1.0 GeV for symbolic L_i^r(0.77)")
+
+    print("\nShifts L_i^r(mu) - L_i^r(0.77 GeV) in units of 10^-3:")
+    print(f"  {'constant':<10}" + "".join(f"{f'mu={float(mu_value):g}':>12}"
+                                         for mu_value in SCALES_GEV))
+    for name in CONSTANT_NAMES:
+        shifts = [1000 * float(running_constant(0, KAISER_1998DS_U3_GAMMA[name], mu_value))
+                  for mu_value in SCALES_GEV]
+        print(f"  {name:<10}" + "".join(f"{shift:>12.4f}" for shift in shifts))
+
+    print("\nCombinations sum_i c_i L_i with sum_i c_i Gamma_i = 0 (independent of mu_chi),")
+    print(f"  among {', '.join(CONSTANT_NAMES)}")
+    basis = null_space_basis()
+    assert len(basis) == len(CONSTANT_NAMES) - 1
+    print("  null-space basis (sympy nullspace, rescaled to integers):")
+    for vector in basis:
+        assert gamma_combination(dict(zip(CONSTANT_NAMES, vector))) == 0
+        print(f"    {format_combination(vector)}")
+    combinations = small_integer_null_combinations()
+    print(f"  integer combinations with |c_i| <= {MAXIMAL_COEFFICIENT}: {len(combinations)}"
+          " nonzero vectors")
+    zero_gamma_names = [name for name in CONSTANT_NAMES if KAISER_1998DS_U3_GAMMA[name] == 0]
+    print(f"  constants with Gamma = 0 (any multiple can be added): {', '.join(zero_gamma_names)}")
+    short = two_constant_combinations(combinations)
+    print("  combinations of two constants with Gamma != 0 (primitive, overall sign fixed):")
+    for vector in short:
+        print(f"    {format_combination(vector)}")
+    checks = [({"L_5": 2, "L_18": 3}, 0), ({"L_7": 1}, 0), ({"L_25": 1}, 0),
+              ({"L_8": 2, "L_25": -3}, sp.Rational(3, 8))]
+    for coefficients, expected in checks:
+        value = gamma_combination(coefficients)
+        assert value == expected, (coefficients, value)
+        text = format_combination([coefficients.get(name, 0) for name in CONSTANT_NAMES])
+        verdict = "mu_chi-independent" if value == 0 else "NOT mu_chi-independent"
+        print(f"  {text:<16} Gamma = {str(value):<5} {verdict}")
+
+    print("\nQCD-scale dependence (singlet axial current), Kaiser:1998ds,"
+          " adehep.tex lines 621-630; not part of the mu_chi running:")
+    print("  mu dZ_A/dmu = gamma_A Z_A, Z_A = 1 + O(1/N_c)")
+    for quantity, transformation in QCD_SCALE_LAWS:
+        print(f"  {quantity:<16}-> {transformation}")
+    assert dict(QCD_SCALE_LAWS)["tau"] == "Z_A^2 tau"
+    assert singlet_axial_invariant_chiral_scale_derivative() == 0
+    assert singlet_axial_invariant_qcd_scale_change() == 0
+    assert su3_l7_qcd_scale_change() == 0
+    print("  invariant L_A = (2 L_5^r + 3 L_18^r)/sqrt(1 + Lambda_1) (lines 777-781):")
+    print("    checked: mu_chi dL_A/dmu_chi = 0 (2 Gamma_5 + 3 Gamma_18 = 0, Lambda_1"
+          " has no pole) and L_A unchanged under the Z_A laws")
+    print("  checked: F^4 (1 + Lambda_2)^2/tau (L_7 of SU(3), lines 631-634)"
+          " unchanged under the Z_A laws")
+
+    print("\nZ_A law for renormalized combinations with a pole:")
+    combination_gamma = gamma_combination({"L_8": 2, "L_25": -3})
+    mismatch = renormalized_scale_mismatch(combination_gamma)
+    assert sp.simplify(mismatch - z_a_coefficient / colour_number * combination_gamma * pole) == 0
+    assert sp.limit(mismatch * colour_number, colour_number, sp.oo) != 0
+    assert sp.limit(mismatch, colour_number, sp.oo) == 0
+    pole_term = CountedTerm("Gamma lambda", "one-loop pole term, N_c^0 p^4", 0, 4)
+    mismatch_term = scale_mismatch_term(pole_term)
+    assert delta_exponent(pole_term) == DECLARED_EXPONENT
+    assert delta_exponent(mismatch_term) == 3 > DECLARED_EXPONENT
+    print(f"  2 L_8^r - 3 L_25^r -> Z_A (2 L_8^r - 3 L_25^r) + {sp.sstr(mismatch)}"
+          " with Z_A = 1 + z_A/N_c")
+    print("    mismatch (Z_A - 1)(3/8) lambda = O(1/N_c) x loop pole:"
+          f" {sp.sstr(delta_order(mismatch_term.nc_power, mismatch_term.chiral_dimension))}"
+          " relative to LO, beyond the declared order")
+    b_mismatch = b_renormalized_scale_mismatch()
+    assert sp.limit(b_mismatch, colour_number, sp.oo) == 0
+    assert sp.limit(b_mismatch * colour_number, colour_number, sp.oo) == sp.simplify(
+        -8 * z_a_coefficient * tau_symbol * pole / decay_constant ** 4)
+    b_mismatch_term = scale_mismatch_term(correction_term)
+    assert delta_exponent(b_mismatch_term) == 3 > DECLARED_EXPONENT
+    print(f"  B^r -> Z_M B^r [1 + ({sp.sstr(sp.factor(b_mismatch))}) + O(tau^2)]")
+    print(f"    same structure through tau -> Z_A^2 tau: O(1/N_c) x loop pole,"
+          f" {sp.sstr(delta_order(b_mismatch_term.nc_power, b_mismatch_term.chiral_dimension))},"
+          " beyond the declared order")
+
+    print("\nNotes:")
+    print("- mu_chi (chiral subtraction scale) and the QCD renormalization scale"
+          " are independent. A quantity can be mu_chi-independent but QCD-scale"
+          " dependent, e.g. 2 L_5 + 3 L_18 (Gamma = 0, transforms as Z_A); having"
+          " no pole (Gamma_25 = 0, Lambda_1, Lambda_2, tau) does not remove the"
+          " Z_A dependence.")
+    print("- The Z_A laws of Kaiser:1998ds hold for the bare couplings. A combination"
+          " with a nonzero pole (2 L_8 - 3 L_25, and B through tau) is then not"
+          " multiplicative after subtraction: the renormalized one picks up"
+          " (Z_A - 1) x pole. This is O(1/N_c) times a one-loop pole, i.e. delta^3,"
+          " the same order as the dropped -v_31/2 in Gamma_8 and the unknown"
+          " O(1/N_c) parts of Gamma_25; consistency at delta^3 would need the"
+          " Gamma_i at next order in 1/N_c. At the declared order delta^2 the"
+          " laws hold for the renormalized couplings.")
+    print("- Gamma_47 = 0 holds only under the large-N_c truncation of"
+          " Herrera-Siklody:1996tqr and fails at the next order in 1/N_c.")
+    print("\n--scheme: all assertions passed")
+    return True
+
+
+class SchemeTests(unittest.TestCase):
+    """Unit tests of the subtraction scheme, running and Gamma combinations."""
+
+    def test_lambda_pole_and_scale_dependence(self):
+        expansion = lambda_scale_dependence()
+        self.assertEqual(sp.simplify(expansion - 1 / (dimension - 4) - sp.log(scale)), 0)
+        residue = sp.limit(chiral_scale_lambda() * (dimension - 4), dimension, 4)
+        self.assertEqual(sp.simplify(residue - 1 / LOOP_FACTOR), 0)
+
+    def test_lambda_finite_part_constant(self):
+        epsilon = sp.Symbol("epsilon")
+        finite = sp.series(chiral_scale_lambda(1, 4 + epsilon), epsilon, 0, 1).removeO()
+        finite = finite.coeff(epsilon, 0)
+        expected = -(sp.log(4 * sp.pi) - sp.EulerGamma + 1) / (2 * LOOP_FACTOR)
+        self.assertEqual(sp.simplify(finite - expected), 0)
+
+    def test_u3_gamma_values(self):
+        self.assertEqual(KAISER_1998DS_U3_GAMMA, {
+            "L_4": sp.Rational(1, 8), "L_5": sp.Rational(3, 8), "L_6": sp.Rational(1, 16),
+            "L_7": 0, "L_8": sp.Rational(3, 16), "L_18": sp.Rational(-1, 4), "L_25": 0})
+        self.assertIn("Kaiser:1998ds", GAMMA_SOURCE)
+
+    def test_u3_su3_difference(self):
+        differing = {name for name in SU3_GAMMA
+                     if SU3_GAMMA[name] != KAISER_1998DS_U3_GAMMA[name]}
+        self.assertEqual(differing, {"L_6", "L_8"})
+
+    def test_herrera_siklody_su3_relations(self):
+        # Herrera-Siklody:1996tqr lines 1520-1525 and general-n_l forms.
+        self.assertEqual(3 * KAISER_1998DS_U3_GAMMA["L_6"] + KAISER_1998DS_U3_GAMMA["L_8"],
+                         sp.Rational(9, 8) * (3 * SU3_GAMMA["L_6"] + SU3_GAMMA["L_8"]))
+        flavours = sp.Integer(3)
+        self.assertEqual(SU3_GAMMA["L_6"], (2 + flavours ** 2) / (16 * flavours ** 2))
+        self.assertEqual(SU3_GAMMA["L_8"], (flavours ** 2 - 4) / (16 * flavours))
+
+    def test_flags(self):
+        self.assertIn("v_31", U3_GAMMA_FLAGS["L_8"])
+        self.assertIn("not reproduced", U3_GAMMA_FLAGS["L_25"])
+        for name in ["F", "tau", "Lambda_1", "Lambda_2"]:
+            self.assertEqual(U3_ZERO_GAMMA_FLAGS[name], NO_CHIRAL_LOOP_RENORMALIZATION)
+
+    def test_running_and_bare_independence(self):
+        reference_value = sp.Symbol("L_ref")
+        gamma = sp.Rational(3, 8)
+        running = running_constant(reference_value, gamma, scale)
+        self.assertEqual(running.subs(scale, REFERENCE_SCALE_GEV), reference_value)
+        self.assertEqual(sp.simplify(scale * sp.diff(running, scale)), -gamma / LOOP_FACTOR)
+        bare = bare_finite_part(running, gamma, scale)
+        self.assertEqual(sp.simplify(sp.diff(bare, scale)), 0)
+
+    def test_running_shift_value(self):
+        shift = float(running_constant(0, sp.Rational(3, 8), sp.Rational(1, 2)))
+        expected = -3 / 8 / (16 * math.pi ** 2) * math.log(0.5 / 0.77)
+        self.assertAlmostEqual(shift, expected, places=15)
+        self.assertGreater(shift, 0)
+
+    def test_running_composes(self):
+        gamma = sp.Rational(1, 8)
+        reference_value = sp.Symbol("L_ref")
+        at_one = running_constant(reference_value, gamma, 1)
+        back = running_constant(at_one, gamma, sp.Rational(1, 2), reference_mu=1)
+        direct = running_constant(reference_value, gamma, sp.Rational(1, 2))
+        self.assertEqual(sp.simplify(sp.expand_log(back - direct, force=True)), 0)
+
+    def test_named_combinations(self):
+        self.assertEqual(gamma_combination({"L_5": 2, "L_18": 3}), 0)
+        self.assertEqual(gamma_combination({"L_7": 1}), 0)
+        self.assertEqual(gamma_combination({"L_25": 1}), 0)
+        self.assertEqual(gamma_combination({"L_8": 2, "L_25": -3}), sp.Rational(3, 8))
+
+    def test_null_space_basis(self):
+        basis = null_space_basis()
+        self.assertEqual(len(basis), 6)
+        self.assertEqual(sp.Matrix(basis).rank(), 6)
+        for vector in basis:
+            self.assertEqual(gamma_combination(dict(zip(CONSTANT_NAMES, vector))), 0)
+
+    def test_small_integer_combinations(self):
+        combinations = small_integer_null_combinations()
+        index = {name: position for position, name in enumerate(CONSTANT_NAMES)}
+        target = [0] * len(CONSTANT_NAMES)
+        target[index["L_5"]], target[index["L_18"]] = 2, 3
+        self.assertIn(tuple(target), combinations)
+        excluded = [0] * len(CONSTANT_NAMES)
+        excluded[index["L_8"]], excluded[index["L_25"]] = 2, -3
+        self.assertNotIn(tuple(excluded), combinations)
+        # Orthogonality to the Gamma row is membership of the null space.
+        for vector in combinations:
+            self.assertEqual(gamma_combination(dict(zip(CONSTANT_NAMES, vector))), 0)
+        self.assertEqual(len(combinations), len(set(combinations)))
+        self.assertTrue(all(tuple(-entry for entry in vector) in combinations
+                            for vector in combinations[:50]))
+
+    def test_small_enumeration_toy(self):
+        toy = {name: sp.Integer(0) for name in CONSTANT_NAMES}
+        toy["L_4"], toy["L_5"] = sp.Integer(1), sp.Integer(-1)
+        # Gamma_4 = 1, Gamma_5 = -1, rest 0: c_4 = c_5 and five free entries.
+        combinations = small_integer_null_combinations(toy, maximal_coefficient=1)
+        self.assertEqual(len(combinations), 3 * 3 ** 5 - 1)
+
+    def test_two_constant_combinations(self):
+        texts = {format_combination(vector)
+                 for vector in two_constant_combinations(small_integer_null_combinations())}
+        self.assertEqual(texts, {"3 L_4 - L_5", "L_4 - 2 L_6", "3 L_4 - 2 L_8", "2 L_4 + L_18",
+                                 "L_5 - 2 L_8", "2 L_5 + 3 L_18", "3 L_6 - L_8"})
+
+    def test_format_combination(self):
+        self.assertEqual(format_combination([0, 2, 0, 0, 0, 3, 0]), "2 L_5 + 3 L_18")
+        self.assertEqual(format_combination([0, 0, 0, 0, 2, 0, -3]), "2 L_8 - 3 L_25")
+        self.assertEqual(format_combination([-1, 0, 0, 0, 0, 0, 0]), "-L_4")
+
+    def test_b_renormalization_order(self):
+        for route, term in b_correction_routes().items():
+            self.assertEqual(delta_exponent(term), 2, route)
+        self.assertEqual((b_correction_routes()["tau/F^4"].nc_power,
+                          b_correction_routes()["tau/F^4"].chiral_dimension), (-2, 0))
+        term = b_correction_term()
+        self.assertEqual((term.nc_power, term.chiral_dimension), (-1, 2))
+        self.assertEqual(delta_exponent(term), DECLARED_EXPONENT)
+        self.assertEqual(tau_in_terms_of_eta_prime_mass(), 0)
+
+    def test_b_running(self):
+        self.assertEqual(sp.simplify(b_running_check()), 0)
+
+    def test_gamma_8_correction_beyond_order(self):
+        term = gamma_8_correction_term()
+        self.assertEqual((term.nc_power, term.chiral_dimension), (-1, 4))
+        self.assertEqual(delta_exponent(term), 3)
+        self.assertGreater(delta_exponent(term), DECLARED_EXPONENT)
+
+    def test_qcd_scale_laws(self):
+        laws = dict(QCD_SCALE_LAWS)
+        self.assertEqual(laws["tau"], "Z_A^2 tau")
+        self.assertEqual(laws["1 + Lambda_1"], "Z_A^2 (1 + Lambda_1)")
+        self.assertEqual(laws["1 + Lambda_2"], "Z_A (1 + Lambda_2)")
+        self.assertEqual(laws["2 L_5 + 3 L_18"], "Z_A (2 L_5 + 3 L_18)")
+        self.assertEqual(laws["2 L_8 - 3 L_25"], "Z_A (2 L_8 - 3 L_25)")
+        self.assertEqual(laws["F"], "QCD-scale independent")
+        self.assertNotIn("none", laws.values())
+
+    def test_singlet_axial_invariant(self):
+        self.assertEqual(singlet_axial_invariant_chiral_scale_derivative(), 0)
+        self.assertEqual(singlet_axial_invariant_qcd_scale_change(), 0)
+        self.assertEqual(su3_l7_qcd_scale_change(), 0)
+
+    def test_renormalized_scale_mismatch(self):
+        mismatch = renormalized_scale_mismatch(sp.Rational(3, 8))
+        self.assertEqual(sp.simplify(
+            mismatch - sp.Rational(3, 8) * z_a_coefficient / colour_number * pole), 0)
+        self.assertEqual(renormalized_scale_mismatch(0), 0)
+        b_mismatch = b_renormalized_scale_mismatch()
+        self.assertEqual(sp.limit(b_mismatch, colour_number, sp.oo), 0)
+        self.assertEqual(sp.simplify(sp.limit(b_mismatch * colour_number, colour_number, sp.oo)
+                                     + 8 * z_a_coefficient * tau_symbol * pole
+                                     / decay_constant ** 4), 0)
+        pole_term = CountedTerm("pole", "", 0, 4)
+        self.assertEqual(delta_exponent(scale_mismatch_term(pole_term)), 3)
+        self.assertEqual(delta_exponent(scale_mismatch_term(b_correction_term())), 3)
+
+    def test_check_scheme_runs(self):
+        self.assertTrue(check_scheme())
+
+
 def main():
     """Parse the command line and run the requested checks."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -685,6 +1432,9 @@ def main():
                         help="print the delta order table and assert the orders")
     parser.add_argument("--loops", action="store_true",
                         help="classify loop topologies and print thresholds")
+    parser.add_argument("--scheme", action="store_true",
+                        help="subtraction scheme, Gamma_i, running of L_i^r and"
+                             " mu_chi-independent combinations")
     parser.add_argument("--test", action="store_true", help="run the unit tests")
     arguments = parser.parse_args()
 
@@ -692,9 +1442,10 @@ def main():
         result = unittest.main(argv=[sys.argv[0]], exit=False).result
         return 0 if result.wasSuccessful() else 1
 
-    selected = {"orders": arguments.orders, "loops": arguments.loops}
+    selected = {"orders": arguments.orders, "loops": arguments.loops,
+                "scheme": arguments.scheme}
     run_all = not any(selected.values())
-    checks = {"orders": check_orders, "loops": check_loops}
+    checks = {"orders": check_orders, "loops": check_loops, "scheme": check_scheme}
     for index, (name, check) in enumerate(checks.items()):
         if run_all or selected[name]:
             if run_all and index > 0:
