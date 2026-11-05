@@ -36,8 +36,8 @@
 
 ## 7. Integration check
 
-- [ ] 7.1 Run `.venv/bin/python scripts/derive_nlo_u3_resonance_counting.py` (all checks) and verify exit code 0. Check that every `memory/nlo/counting/*.md` record has valid front matter and status/provenance values, and that `memory/README.md` → `memory/nlo/INDEX.md` → `memory/nlo/counting/INDEX.md` links resolve
-- [ ] 7.2 Check each acceptance criterion of alp-gii.1 against the records (loop classes, counterterms, scale/scheme, singlet treatment, validity range). Then close the issue with `bd close alp-gii.1`, and verify with `bd ready` that alp-gii.2, alp-gii.3 and alp-gii.8 are no longer blocked by it
+- [x] 7.1 Run `.venv/bin/python scripts/derive_nlo_u3_resonance_counting.py` (all checks) and verify exit code 0. Check that every `memory/nlo/counting/*.md` record has valid front matter and status/provenance values, and that `memory/README.md` → `memory/nlo/INDEX.md` → `memory/nlo/counting/INDEX.md` links resolve
+- [x] 7.2 Check each acceptance criterion of alp-gii.1 against the records (loop classes, counterterms, scale/scheme, singlet treatment, validity range). Then close the issue with `bd close alp-gii.1`, and verify with `bd ready` that alp-gii.2, alp-gii.3 and alp-gii.8 are no longer blocked by it
 
 ## Workflow follow-up
 
