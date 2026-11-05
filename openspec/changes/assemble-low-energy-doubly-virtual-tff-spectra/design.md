@@ -2,45 +2,49 @@
 
 ## Context
 
-See `proposal.md` for motivation. The indexed records already provide formal source-resolved constructions for two-pion, three-pion, and kaon channels, a narrow-pole $ω/φ$ approximation, and a dressed mixed $ρ I$ VVP term. They do not yet provide all compatible complex production and current amplitudes, the relative three-pion phase, a numerical mixed-term/continuum match, or a complete higher-energy continuation. The current vector-sector likelihood is nonconverged and is not a calibrated input.
+See `proposal.md` for motivation. The indexed records select a source-specific two-pion dispersive contribution for the broad isovector $\rho$ and narrow $\omega/\phi$ poles for the pure isoscalar resonance terms. They also select a mixed $\rho I$ VVP term, but its overlap with the two-pion reconstruction is unresolved. The $a\gamma^*\to\pi\pi$ partial wave is an input to the two-pion unitarity cut; its retained tree expression has rho exchange in the dipion, crossed-channel, and photon-virtuality variables. The pion vector form factor carries its own rho dynamics. A generic finite-width self-energy derivation exists, but no rho-specific running-width or subtraction convention has been selected. Standalone three-pion and kaon cuts, their complex inputs, and a complete higher-energy continuation remain later extensions. The current vector-sector likelihood is nonconverged and is not a calibrated input.
 
 ## Goals / Non-Goals
 
 **Goals:**
 
-- Define one bookkeeping layer that combines channel responses with the independent no-mixing ALP sources while preserving source, channel, current, phase, and uncertainty provenance.
-- Resolve or explicitly gate each shared pole/continuum contribution, especially the dressed $ρ$ overlap and the common $φ$ strength in three-pion and kaon channels.
-- Make partial coverage machine-readable so an incomplete low-energy contribution cannot be mistaken for the full TFF needed by the lepton loop.
+- Define the analytic component content and rho line-shape conventions before acquiring or combining numerical inputs.
+- Decide whether the mixed $\rho I$ term is consistent in the first approximation, using an explicit overlap analysis with the two-pion discontinuity.
+- Assemble selected channel responses with the independent no-mixing ALP sources while preserving source, current, phase, uncertainty, and completeness status.
+- Add three-pion, kaon, and higher-energy components only after their required inputs and pole/continuum matching are defined.
 
 **Non-Goals:**
 
 - Claim a complete TFF at unbounded virtuality or a complete prediction for $a\to\ell^+\ell^-$.
 - Infer source-resolved ALP responses from $η$ or $η'$ amplitudes, or use the nonconverged vector fit as validated calibration.
-- Replace the selected two-pion treatment by a standalone stable-$ρ$ approximation.
+- Apply one energy-dependent width indiscriminately to rho propagators in different invariants or on top of rho dynamics already represented in $F_\pi^V$.
+- Treat the production amplitude entering a unitarity cut as an independent TFF term.
 
 ## Decisions
 
-1. **Keep channel terms explicit until overlap handling is applied.** Represent the low-energy contribution as separately identified source responses for the two-pion double-spectral term, three-pion and kaon cuts, narrow $ω/φ$ poles, and mixed dressed $ρ I$ terms. Combine only compatible responses; do not merge the poles and continua into an opaque sum before their shared strength is resolved. This follows the existing source decomposition and exposes overlap that a single effective pole fit would hide.
+1. **Use the two-pion spectrum for the broad isovector rho.** Do not also add a stable neutral-rho pole for the same source response. Keep rho exchange inside the $a\gamma^*\to\pi\pi$ production partial wave as part of the cut input; it is not an extra TFF contribution by itself.
 
-2. **Require an input manifest before numerical assembly.** For every channel record thresholds, kinematic variables, current and production conventions, complex phases, cut normalization, source basis, data or derivation provenance, and uncertainty representation. An unavailable item is a named blocker, not a default value. This is preferred to filling gaps with stable-pole residues or independent marginal errors that are not phase- or covariance-compatible.
+2. **Map each rho occurrence before choosing its width.** Distinguish the dipion invariant in the right-hand cut, crossed $t/u$ poles in the production partial wave, and the photon virtuality in $W_\gamma(y)$. Identify the rho dynamics already present in $F_\pi^V$ and its phase. Do not replace all occurrences with one Breit-Wigner denominator or duplicate pion rescattering.
 
-3. **Treat pole/continuum matching as channel-level replacement or subtraction.** For the isovector sector retain the two-pion dispersive contribution and match the mixed dressed $ρ I$ term so the common $ρ$ strength appears once. For the $ω/φ$ terms, retain narrow poles only where no included continuum already represents that strength; in the $φ$ region coordinate three-pion and kaon cuts through a shared response or a documented replacement. Do not select a numerical matching function until compatible complex inputs and subtraction conventions are available.
+3. **Derive the dressed rho response with explicit subtractions.** For a rho propagator represented by a self-energy, derive the channel-dependent $\Gamma_\rho(s)$ and use $\operatorname{Im}\Delta_\rho^{\mathrm{self}}(s+i0)=+\sqrt{s}\,\Gamma_\rho(s)$; determine the real part through a subtracted dispersion relation with stated mass and residue conditions. The existing formal identity does not fix the numerical width or subtraction constants.
 
-4. **Separate uncertainty sources.** Propagate correlated experimental/input variations together when supplied; keep cutoff, subtraction, pole/continuum matching, and omitted-channel variations labeled as model uncertainty. If no defensible bound exists for higher isoscalar strength, report the omission and limit the stated domain instead of inventing an error estimate.
+4. **Resolve the mixed-term overlap at the TFF level.** Compare the single and double discontinuities and subtraction terms generated from the two-pion production/current amplitudes with the mixed $F^{(\rho I)}$ term, including both photon orderings. Derive a replacement/subtraction prescription or establish that the selected terms are disjoint before numerical addition. Until this is done, the mixed term is conditional and excluded from a numerical first-pass sum.
 
-5. **Gate fit-driven numbers.** Structural derivations and input acquisition proceed independently. Resonance calibration and fit-driven error propagation wait for `alp-uzh.8` and its convergence/identifiability criteria; until then, outputs remain conditional and carry no fitted coefficient interval.
+5. **Make the first isoscalar approximation explicit.** Use the pure narrow $\omega/\phi$ poles as the baseline isoscalar resonance terms. The indexed memory currently retains the mixed $\rho I$ term; task 2.4 decides whether it can be included consistently or must be deferred. Standalone three-pion and kaon continua are later extensions and do not enter the baseline without compatible amplitudes and $\phi$-region matching.
+
+6. **Require an input manifest before numerical assembly.** For every included channel record thresholds, kinematic variables, current and production conventions, phases, cut normalization, source basis, data or derivation provenance, and uncertainty representation. An unavailable item is a named blocker, not a default value.
+
+7. **Separate uncertainty sources and gate fit-dependent numbers.** Propagate correlated input variations when supplied; label cutoff, subtraction, line-shape, pole/continuum, and omitted-channel changes as model variations. Keep resonance calibration and fit-driven uncertainty propagation conditional on a converged, identifiable `alp-uzh.8` result.
 
 ## Risks / Trade-offs
 
+- [A width inserted in several rho-dependent terms can count the same pion rescattering twice] → Map each invariant and the rho content of $F_\pi^V$ before selecting the dressed responses.
+- [The $F^{(\rho I)}$ overlap is not determined by the presence of a rho in the production wave alone] → Compare the TFF discontinuities and subtraction terms; keep the mixed term out of numerical sums until the audit is complete.
 - [Missing complex amplitudes or relative phases prevent numerical interference] → Keep affected channel terms symbolic or mark them blocked; do not replace phases with magnitudes.
-- [The $ρ$ or $φ$ overlap prescription changes the predicted spectrum] → Record the matching convention and its variation as a model uncertainty once the required amplitudes exist.
+- [The $\phi$ pole overlaps its three-pion and kaon cuts] → Add those continua only with a common response or documented replacement that represents the shared strength once.
 - [A low-energy spectrum may be mistaken for a full loop input] → Store and report the virtuality domain and missing higher-energy matching with each result.
 - [The vector fit remains unresolved] → Keep calibration tasks conditional and keep the fit out of the accepted input manifest.
 
 ## Migration Plan
 
 No existing numerical interface is replaced. Add the source-resolved assembly and its input manifest alongside existing derivation scripts, link new records from `memory/alp/lepton-pair/INDEX.md`, and preserve the current conditional and symbolic results. A rollback can remove the new assembly artifacts without changing existing derivations.
-
-## Open Questions
-
-No user decision is required before implementation. The input audit must determine which complex three-pion and charged/neutral kaon datasets, subtraction conditions, and higher-isoscalar bounds are supported. Anything that cannot be established from compatible inputs remains an explicit blocker or bounded omission, as required by the spec.

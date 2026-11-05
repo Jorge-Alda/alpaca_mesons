@@ -20,16 +20,34 @@ Each spectral contribution MUST identify its current and production amplitude co
 - **WHEN** a required complex amplitude, phase match, cut normalization, or uncertainty input is unavailable
 - **THEN** the channel is marked incomplete with the missing input named, and no numerical prediction is presented as complete
 
-### Requirement: Count shared resonance strength once
-The representation MUST specify how resonance strength shared between explicit poles and hadronic continua is matched or replaced, so the same strength is not included twice.
+### Requirement: Declare rho line shape and analytic placement
+Every rho-containing term MUST identify whether its rho dynamics enter through the pion vector form factor, a dressed propagator, or a stable-pole approximation, and state the relevant invariant and boundary prescription.
 
-#### Scenario: Dressed rho overlaps two-pion strength
-- **WHEN** the dressed mixed rho–isoscalar contribution and the two-pion continuum are assembled
-- **THEN** their shared rho strength is matched or allocated once, with the prescription and any unresolved matching input stated
+#### Scenario: Energy-dependent rho response
+- **WHEN** a rho propagator is dressed with an energy-dependent self-energy
+- **THEN** the width, open-channel thresholds, real-part subtraction conditions, and mass/residue convention are declared, and existing pion rescattering is not counted again
+
+### Requirement: Count shared resonance strength once
+The representation MUST distinguish production amplitudes used inside unitarity cuts from separate TFF pole or continuum terms, and MUST include shared resonance strength only once.
+
+#### Scenario: Two-pion production and mixed rho-isoscalar term
+- **WHEN** the $a\gamma^*\to\pi\pi$ production wave feeds a two-pion discontinuity and a mixed $F^{(\rho I)}$ term is considered
+- **THEN** their overlap is checked at the single and double discontinuities and subtraction terms before addition, and an unresolved overlap blocks numerical inclusion of the mixed term
+
+#### Scenario: Stable rho pole and two-pion spectrum
+- **WHEN** the two-pion dispersive component already represents rho strength
+- **THEN** a separate stable rho pole for that same strength is excluded or removed by a documented matching prescription
 
 #### Scenario: Omega or phi overlaps a multiparticle cut
 - **WHEN** a narrow omega or phi pole is combined with a continuum containing that resonance
 - **THEN** one representation replaces or is matched to the shared pole strength, including common three-pion and kaon strength in the phi region
+
+### Requirement: Declare approximation content
+Every low-energy TFF result MUST list its included, conditional, and omitted components so a staged approximation is not mistaken for a complete spectrum.
+
+#### Scenario: First approximation is evaluated
+- **WHEN** the two-pion spectrum and narrow omega/phi poles are assembled
+- **THEN** the result states whether the mixed rho-isoscalar term is included and identifies three-pion, kaon, higher-state, and short-distance contributions that remain outside the approximation
 
 ### Requirement: Record uncertainty provenance and omitted strength
 Every numerical channel result MUST distinguish input uncertainty from model variation and identify omitted higher isoscalar strength, with a bound when one is supported.
