@@ -3,8 +3,8 @@
 ## 1. Audit inputs and declare coverage
 
 - [x] 1.1 Create a channel input manifest covering the two-pion, three-pion, charged and neutral kaon, narrow omega/phi, and mixed rho-isoscalar terms; for each, record source basis, thresholds, conventions, phases, normalization, uncertainty provenance, and input status, then verify every entry links to an existing indexed derivation or names a missing input.
-- [ ] 1.2 Audit available complex production/current amplitudes, datasets, and correlated variations for the three-pion and kaon channels; verify that every unavailable item is recorded as a concrete blocker with the needed convention and uncertainty information.
-- [ ] 1.3 Declare the low-energy virtuality domain and survey higher-isoscalar strength; verify either a provenance-backed bound is included or the omission and its effect on coverage are stated without an unsupported uncertainty band.
+- [x] 1.2 Audit available complex production/current amplitudes, datasets, and correlated variations for the three-pion and kaon channels; verify that every unavailable item is recorded as a concrete blocker with the needed convention and uncertainty information.
+- [x] 1.3 Declare the low-energy virtuality domain and survey higher-isoscalar strength; verify either a provenance-backed bound is included or the omission and its effect on coverage are stated without an unsupported uncertainty band.
 
 ## 2. Complete channel inputs and matching prescriptions
 
