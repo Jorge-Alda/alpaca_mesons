@@ -67,6 +67,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [ParticleDataGroup:2024cfk](ParticleDataGroup:2024cfk/INDEX.md) — particle inputs and source-backed low-energy odd-action measurements with shared-width/summary-overlap caveats.
 - [Pelaez:2016tgi](Pelaez:2016tgi/INDEX.md) — source-specific literature extracts.
 - [Pelaez:2020gnd](Pelaez:2020gnd/INDEX.md) — source-specific literature extracts.
+- [Pich:2008jm](Pich:2008jm/INDEX.md) — $\Pi_{VV}-\Pi_{AA}$ at NLO in $1/N_C$: resonance-pion cuts, NLO Weinberg sum rules, $L_{10}^r$, $C_{87}^r$ and renormalization.
 - [Pich:2010sm](Pich:2010sm/INDEX.md) — source-specific literature extracts.
 - [Qin:2024ulb](Qin:2024ulb/INDEX.md) — inclusive electromagnetic $KK\pi$ RChT form factors, including local VPPP terms and fit assumptions.
 - [Roig:2013baa](Roig:2013baa/INDEX.md) — odd-sector coupling dictionaries and TFF compatibility adapted to the canonical tensor/coupling convention.

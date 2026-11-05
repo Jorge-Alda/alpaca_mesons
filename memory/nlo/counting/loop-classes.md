@@ -3,7 +3,7 @@ title: Included and excluded loop classes in the U(3) NLO theory with explicit r
 status: mixed
 created: 2026-11-05
 updated: 2026-11-05
-bibtex_keys: [Kaiser:1998ds, Herrera-Siklody:1996tqr, Rosell:2004mn, Rosell:2005ai, Rosell:2006dt, Pich:2010sm, ParticleDataGroup:2024cfk]
+bibtex_keys: [Kaiser:1998ds, Herrera-Siklody:1996tqr, Rosell:2004mn, Rosell:2005ai, Rosell:2006dt, Pich:2010sm, Pich:2008jm, ParticleDataGroup:2024cfk]
 provenance: analytical-derivation
 ---
 
@@ -60,7 +60,12 @@ The included classes are exactly G-LO and G-ALP. They have the order of $\mathca
 
 R-int starts at $\delta$, below the declared order. Its exclusion is therefore an approximation, not a statement of the counting. It is controlled as follows.
 
-- **Below the $R\pi$ thresholds (assumption).** R-int is analytic in $s$ and $m_q$, so its effect has the form of local terms at $\mathcal O(p^2)$ and $\mathcal O(p^4)$. These are absorbed only if $F$, $B_0$, $\tau$ (that is, $m_0^2$), $\Lambda_1$, $\Lambda_2$ and $L_i^r(\mu)$ are fixed from data, either as physical values or as fits. Estimates from large $N_c$ or from resonance saturation do not contain the resonance-loop part. This condition binds the matching in alp-gii.3 and the inputs in alp-gii.5. Here $L_i^r(\mu)$ is the constant that remains after explicit resonance exchange is removed (see the design decision on notation).
+- **Below the $R\pi$ thresholds (assumption).** R-int is analytic in $s$ and $m_q$, so its effect has the form of local terms at $\mathcal O(p^2)$ and $\mathcal O(p^4)$. The sources absorb these terms in two places:
+  - in the Goldstone constants: the pion wave function and $F^2$, $F^2B_0$ in Rosell:2004mn and Rosell:2005ai;
+  - in the resonance parameters: $F_V$, $F_A$, $M_V$, $M_A$ through the NLO Weinberg sum rules, $c_m$, $d_m$, $G_V$, and $L_{10}^r$, $C_{87}^r$. In Pich:2008jm, $F$ itself is an input without a loop shift ([extract](../../extracts/Pich:2008jm/nlo-weinberg-sum-rules-and-resonance-couplings.md)) [@Pich:2008jm; @Rosell:2006dt].
+
+  The exclusion is therefore consistent only if $F$, $B_0$, $\tau$ (that is, $m_0^2$), $\Lambda_1$, $\Lambda_2$, $L_i^r(\mu)$ **and the resonance masses and couplings** are fixed from data, either as physical values or as fits. Estimates from large $N_c$, resonance saturation or leading-order short-distance relations do not contain the resonance-loop part. This condition binds the matching in alp-gii.3 and the inputs in alp-gii.5.
+- **Short-distance condition.** The loop corrections are local and their polynomial divergences cancel only if the spectral functions vanish at high energy. This is imposed through the short-distance constraints, for example the Weinberg sum rules at NLO ([extract](../../extracts/Pich:2008jm/two-particle-cuts-vv-minus-aa-correlator.md)) [@Pich:2008jm]. Without them, absorption into constants fixed from data is not guaranteed by the sources. Here $L_i^r(\mu)$ is the constant that remains after explicit resonance exchange is removed (see the design decision on notation).
 - **Thresholds.** Resonance–resonance cuts lie at $(M_R+M_{R'})^2\gtrsim2\,$GeV$^2$, outside the validity range ([extract](../../extracts/Pich:2010sm/resonance-loop-cuts-and-divergence-structure.md)) [@Pich:2010sm]. Only resonance–Goldstone cuts can lie below $1\,$GeV. In the pseudoscalar channel the $V\pi$ and $S\pi$ intermediate states contribute ([extract](../../extracts/Rosell:2006dt/resonance-pion-cuts-scalar-pseudoscalar-correlator.md)) [@Rosell:2006dt]. The lowest vector–pseudoscalar thresholds are:
 
 | State | Threshold (GeV) |
@@ -72,7 +77,8 @@ R-int starts at $\delta$, below the declared order. Its exclusion is therefore a
 | $K^*K$ | 1.3853 |
 
 - **Consequence for the validity range.** Between about $0.91\,$GeV and $1\,$GeV, the non-analytic part of R-int is open in channels where a vector–pseudoscalar state is allowed. It is not included there, and it enters the truncation uncertainty. Selection rules for specific channels are not applied in this record.
-- **Size.** For the relative size of the excluded loops, the one-loop RChT analyses of the vector form factor provide the reference [@Rosell:2004mn; @Pich:2010sm]. The numerical estimate is set in the validity-range record of this folder.
+- **Size.** For the relative size of the excluded loops, the one-loop RChT analyses of the vector form factor and of $\Pi_{VV}-\Pi_{AA}$ provide the reference [@Rosell:2004mn; @Pich:2010sm; @Pich:2008jm]. In Pich:2008jm, at $\mu=770\,$MeV, $L_{10}^r$ goes from $-5.3\times10^{-3}$ (LO) to $(-4.4\pm0.9)\times10^{-3}$ (NLO in $1/N_c$), and $C_{87}^r$ from $4.3\times10^{-5}$ to $(3.1\pm1.1)\times10^{-5}$. The dominant error comes from the second resonance multiplets $V'$, $A'$ ([extract](../../extracts/Pich:2008jm/nlo-size-L10-C87-numerics.md)). The central values shift by about 17% ($L_{10}^r$) and 28% ($C_{87}^r$), consistent with a $1/N_c$ correction. The numerical estimate used here is set in the validity-range record of this folder.
+- **Flavor content.** In Pich:2008jm, $\eta_1$ enters neither at tree level nor at one loop in $\Pi_{VV}-\Pi_{AA}$, so $L_{10}^r$ and $C_{87}^r$ are the same in $U(3)$ and $SU(3)$ at NLO in $1/N_c$ ([extract](../../extracts/Pich:2008jm/u3-su3-matching-singlet.md)). This does not hold for the scalar and pseudoscalar correlators that feed the quadratic sector ([extract](../../extracts/Rosell:2006dt/resonance-pion-cuts-scalar-pseudoscalar-correlator.md)).
 
 ## Resonance widths
 
