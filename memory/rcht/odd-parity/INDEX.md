@@ -32,6 +32,7 @@ being combined with canonical photon or resonance amplitudes.
 - [babar-kkpi-rcht-coefficient-fit.md](babar-kkpi-rcht-coefficient-fit.md) — BaBar isovector $K^*K$ fits of $c_4$ and $c_1-c_2+c_5$, their profiles, rho-prime model sensitivity, and remaining coefficient nulls.
 - [babar-kkpi-unified-vector-coefficient-fit.md](babar-kkpi-unified-vector-coefficient-fit.md) — one joint BaBar inclusive likelihood for ten $c_i,d_i,g_i$ combinations with exact null, rate-rank and profile diagnostics.
 - [babar-kkpi-global-vector-sector-fit-baseline.md](babar-kkpi-global-vector-sector-fit-baseline.md) — stored global preliminary-plus-conditional-$G_V$-plus-BaBar likelihood baseline, with six input blocks, shared nuisances, duplicate-input exclusions, and its current nonconverged fit snapshot.
+- [joint-vector-fit-multistart-preparation.md](joint-vector-fit-multistart-preparation.md) — deterministic permitted starts, fixed Jacobian scaling, and per-attempt records for the joint vector fit.
 - [kkpi-global-fit-running-propagator-reuse.md](kkpi-global-fit-running-propagator-reuse.md) — running-propagator calculation reuse, baseline-equivalence checks, and local Jacobian timing.
 - [kkpi-global-fit-width-pull-jacobian.md](kkpi-global-fit-width-pull-jacobian.md) — finite-difference treatment of width pulls that do not enter BaBar predictions.
 - [kkpi-global-fit-channel-jacobian.md](kkpi-global-fit-channel-jacobian.md) — channel-specific finite differences and normalization-pull evaluation in the global fit.

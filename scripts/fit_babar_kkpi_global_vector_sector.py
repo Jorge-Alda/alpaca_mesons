@@ -40,6 +40,18 @@ NORMALIZATION_START=30
 RELATIVE_SYSTEMATICS={'kkpi0':.065,'kskpi':.051}
 
 
+def parameter_bounds(model):
+    """Return the existing bounds in the 32 optimizer coordinates."""
+    lower=np.full(32,-np.inf);upper=np.full(32,np.inf)
+    lower[:6]=[-100,-100,-20,-10,-15,-10];upper[:6]=[100,100,20,10,15,10]
+    lower[6]=.005;upper[6]=.2
+    for index,name in enumerate(FREE_TOTALS):
+        width=model.odd_data['total_widths'][name]
+        lower[7+index]=-.99*width['value_gev']/width['sigma_gev']
+    lower[26:30]=-5;upper[26:30]=5
+    return lower,upper
+
+
 def reference_propagator_pair(name,invariant,beta,reference):
     """Return the reference propagator with zero and requested excitations.
 
@@ -645,11 +657,7 @@ def main():
         initial[24:32]=[previous[name] for name in PARAMETER_NAMES[24:32]]
     elif args.initialization=='negative_c4':initial[16]*=-1
     elif args.initialization=='negative_odd':initial[12:24]*=-1
-    lower=np.full(32,-np.inf);upper=np.full(32,np.inf)
-    lower[:6]=[-100,-100,-20,-10,-15,-10];upper[:6]=[100,100,20,10,15,10]
-    lower[6]=.005;upper[6]=.2
-    for index,name in enumerate(FREE_TOTALS):lower[7+index]=-.99*model.odd_data['total_widths'][name]['value_gev']/model.odd_data['total_widths'][name]['sigma_gev']
-    lower[26:30]=-5;upper[26:30]=5
+    lower,upper=parameter_bounds(model)
     destination=ROOT/args.output
     destination.parent.mkdir(parents=True,exist_ok=True)
     def checkpoint(intermediate_result):

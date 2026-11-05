@@ -2,9 +2,9 @@
 
 ## 1. Define deterministic starts and scaling
 
-- [ ] 1.1 Extract and record the existing coordinate bounds, branch checks, and scale factors; define named deterministic starts inside the permitted domain and verify every start passes the likelihood's physical-domain checks.
-- [ ] 1.2 Add the multi-start attempt ledger and CLI/configuration for optimizer settings; verify serialization retains each start, scaling, bounds, quadrature, inputs, and complete termination fields, including unsuccessful attempts.
-- [ ] 1.3 Add focused tests for start validation, reproducibility, bound/branch preservation, and distinct endpoint retention; verify the tests pass without changing existing single-start outputs.
+- [x] 1.1 Extract and record the existing coordinate bounds, branch checks, and scale factors; define named deterministic starts inside the permitted domain and verify every start passes the likelihood's physical-domain checks.
+- [x] 1.2 Add the multi-start attempt ledger and CLI/configuration for optimizer settings; verify serialization retains each start, scaling, bounds, quadrature, inputs, and complete termination fields, including unsuccessful attempts.
+- [x] 1.3 Add focused tests for start validation, reproducibility, bound/branch preservation, and distinct endpoint retention; verify the tests pass without changing existing single-start outputs.
 
 ## 2. Run and qualify candidate minima
 
