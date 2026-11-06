@@ -2,7 +2,7 @@
 title: Plan and status audit for the low-energy isoscalar ALP TFF
 status: mixed
 created: 2026-10-25
-updated: 2026-10-27
+updated: 2026-11-06
 bibtex_keys: [Alda:2026nrd, Messerli:2025rnv, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, Ecker:1988te, Ecker:1989yg]
 provenance: assumption
 ---
@@ -32,17 +32,19 @@ The stable-pole terms for $\omega$ and $\phi$ approximate their spectral
 strength over the intended kinematic range. Their finite-width effects may
 still matter near their timelike peaks or when phase precision is required.
 
-The prescription must include the $\rho$ dynamics once only: where the
-dispersive two-pion amplitude contains the $\rho$, do not add the stable
-$\rho$ pole for the same contribution. Retain the source-dependent mixed
-$\rho I$ VVP contribution rather than omitting it; dress its $\rho$ leg with
-the $\pi\pi$ self-energy response and use the narrow-pole $\omega$ or $\phi$
-response on the other leg. The real self-energy part is fixed dispersively
-with stated subtractions; a constant physical width is not the selected
-prescription. Match this mixed term to the two-pion continuum so that the
-same $\rho$ strength is counted once. This matching remains open. The first deliverable
-establishes this construction and its assumptions; it does not quantify its
-error. Quantitative error estimates and a full dispersive treatment of all
+The prescription includes the $\rho$ dynamics once: the physical two-pion
+single- and double-cut reconstruction supplies its $\pi\pi$ cut, with no
+additional stable $\rho$ pole. Retain the source-dependent mixed $\rho I$
+VVP term in its cut-subtracted form
+$F^{(\rho I),\mathrm{dress}}-F^{(\rho I),\pi\pi,[N]}
+-F^{(\rho I),\mathrm{tail},[N]}$. Its $\rho$ leg uses the dispersive
+$\pi\pi$ self-energy and the other leg uses the narrow-pole $\omega$ or
+$\phi$ response. Assign the resulting isoscalar-pole/subtraction remainder
+once; omit the above-cutoff tail from the low-energy first approximation
+unless it is separately matched. The analytic allocation is recorded in
+[the overlap note](alp-tff-rho-isoscalar-overlap.md). Numerical evaluation
+still needs the physical current, production wave, cutoff, and subtraction
+inputs. Quantitative error estimates and a full dispersive treatment of all
 vectors are future extensions. This scope decision is recorded in
 [the mixed vector strategy note](alp-tff-mixed-vector-strategy.md) and the
 [mixed VVP record](alp-tff-mixed-rho-isoscalar-vvp.md).
@@ -67,7 +69,7 @@ not an assumption about the validity range of the retained tree expression.
 | Component | Status | Evidence and next gate |
 |---|---|---|
 | No-mixing ALP sources and scalar TFF convention | **Complete** for the stated LO source assembly and tensor convention. | The source/LSZ relations and contact bookkeeping are derived in the [LO source assembly](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md); the full retained tree TFF is in [the tree TFF record](alp-doubly-virtual-tff.md). |
-| Mixed vector treatment (first deliverable) | **Strategy selected; construction and matching remain to be completed.** | Use the dispersive two-pion treatment for the broad $\rho$ and narrow-pole $\omega,\phi$ terms. Specify mixed-leg terms and avoid counting $\rho$ strength in both pole and continuum pieces. Error quantification and full dispersive treatment of all vectors are future extensions. |
+| Mixed vector treatment (first deliverable) | **Analytic component selection and cut-replacement rule specified; numerical assembly remains blocked by inputs.** | Use the physical two-pion cut once, pure narrow-pole $\omega,\phi$ terms, and the mixed $\rho I$ remainder after subtracting its $\pi\pi$ cut projection and omitting or separately matching the high-energy tail. No stable-rho pole is added. |
 | Tree-level omega/phi responses | **Available** within the retained stable-pole, original-operator truncation. | These terms provide the narrow-pole part of the selected first-deliverable strategy. They approximate the isoscalar spectral strength and do not resolve finite-width effects near timelike peaks. |
 | Three-pion dispersive framework | **Partly complete** as a literature method and fit-input audit; no ALP spectral predictor exists. | The Khuri--Treiman equations and fitted current normalization are documented in [the 2023 amplitude digest](../../extracts/Hoferichter:2023bjm/three-pion-amplitude-and-normalization.md) and [the 2025 fit digest](../../extracts/Hoferichter:2025lcz/gamma-star-to-three-pion-fit.md). The framework has not been implemented for the ALP source. |
 | Source-specific $a\gamma^*\to3\pi$ amplitude | **The exact-isospin Born current, its spin-one overlap, and the local $VPPP$ source contribution are derived; the physical isoscalar amplitude remains incomplete.** | The [trace-based Born projection](alp-three-pion-isoscalar-born-projection.md) gives the charged $I=0$ component, and the [spin-one overlap](alp-three-pion-born-spin-one-projection.md) includes the analytic pion-denominator integral. The [contact derivation](alp-isoscalar-vector-three-pion-contact.md) derives the full local endpoint and contracts it with the unconstrained source-resolved ALP vertex, including the complementary tensor-projector term. Its independent $g_i$ remain unmatched. Rescattering and matched complex decay functions remain absent; the SM current partial wave does not determine the ALP transition amplitude. |

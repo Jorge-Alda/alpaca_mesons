@@ -2,35 +2,38 @@
 title: Mixed rho-isoscalar VVP term in the ALP TFF mixed vector strategy
 status: mixed
 created: 2026-10-28
-updated: 2026-10-28
+updated: 2026-11-06
 bibtex_keys: [Alda:2026nrd, Messerli:2025rnv, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx]
 provenance: assumption
 ---
 
 # Scope and conclusion
 
-In the first-deliverable mixed strategy, the low-energy isovector TFF is
-represented by the source-specific two-pion double-spectral contribution.
-The low-energy isoscalar contribution includes the pure narrow-pole
-$\omega,\phi$ VJP/VVP terms and, for general diagonal ALP sources, the
-mixed $\rho I$ VVP term, where $I=\omega,\phi$. The mixed term is generally
-nonzero and must not simply be dropped: doing so omits retained source
-contributions. It vanishes in the exact strong-isospin limit for the ALP
-source traces specified in the [neutral-rho pole record](alp-isovector-doubly-virtual-tff.md).
+The first approximation uses the physical source-resolved two-pion
+single- and double-cut reconstruction for the broad isovector $\rho$,
+the pure narrow-pole $\omega,\phi$ terms, and a retained mixed $\rho I$
+VVP remainder for general diagonal ALP sources. This mixed source
+contribution is generally nonzero; it vanishes in the exact strong-isospin
+limit for the source traces specified in the
+[neutral-rho pole record](alp-isovector-doubly-virtual-tff.md).
 
-In this selected approximation, there is no separate stable-pole
-$F^{(\rho)}$ contribution. The isovector low-energy piece is the two-pion
-double-spectral term. The modeled isoscalar resonance piece is the pure
-$\omega,\phi$ pole selection plus the mixed $\rho I$ VVP contribution,
-with the $\rho$ leg dressed as below. Do not subtract the mixed term from
-the pure $\omega,\phi$ selection, because it is not contained in that
-selection. The mixed term is part of the model and must be retained.
-
-The dressed mixed term and the two-pion double-spectral contribution can
-share $\rho$-mediated strength. Their quantitative matching must ensure
-that this strength is represented once. The needed source-specific matching
-is not yet available, so the displayed organization defines the intended
-approximation but not a completed numerical sum.
+The full dressed mixed term is not added on top of the physical two-pion
+cut. Retain it as
+$$
+\widetilde F^{(\rho I),[N]}(\Lambda)
+=F^{(\rho I),\mathrm{dress}}
+-F^{(\rho I),\pi\pi,[N]}(\Lambda)
+-F^{(\rho I),\mathrm{tail},[N]}(\Lambda),
+$$
+with both ordered photon placements. The low projection replaces each
+dressed rho response by its $N$-subtracted $\pi\pi$ spectral integral up to
+the same $\Lambda$ used for the two-pion reconstruction. The tail
+projection uses the integral above $\Lambda$. Omit that tail from the
+low-energy first approximation or retain it only as a separately matched
+higher-energy term. The physical two-pion cut remains once; the mixed
+remainder is an isoscalar-pole/subtraction contribution assigned once.
+There is no separate stable-rho pole. The pure $\omega,\phi$ selection is
+not part of the $\rho I$ subtraction.
 
 # Rho response in the mixed term
 
@@ -58,12 +61,12 @@ form factor and the ALP production amplitude [@Messerli:2025rnv].
 
 # Selected-model bookkeeping
 
-Using the notation of the draft, write the modeled isoscalar resonance
-piece as
+Write the selected first-approximation TFF as
 $$
-F_{a\gamma^*\gamma^*}^{I=0,\,\mathrm{res}}(s_1,s_2)
-=F_{a\gamma^*\gamma^*}^{(\omega,\phi)}(s_1,s_2)
-+F_{a\gamma^*\gamma^*}^{(\rho I),\,\mathrm{dress}}(s_1,s_2),
+F_{a\gamma^*\gamma^*}^{\mathrm{first}}(s_1,s_2)
+=F_{a\gamma^*\gamma^*}^{2\pi,\mathrm{cut-only},[N]}(s_1,s_2;\Lambda)
++F_{a\gamma^*\gamma^*}^{(\omega,\phi),\mathrm{pole}}(s_1,s_2)
++\widetilde F_{a\gamma^*\gamma^*}^{(\rho I),[N]}(s_1,s_2;\Lambda),
 $$
 where
 $$
@@ -73,7 +76,10 @@ W_\rho^{\mathrm{dress}}(s_1)W_I^{\mathrm{pole}}(s_2)P_{\rho I}(s_1,s_2)
 +W_I^{\mathrm{pole}}(s_1)W_\rho^{\mathrm{dress}}(s_2)P_{I\rho}(s_1,s_2)
 \right].
 $$
-Here $F^{(\omega,\phi)}$ is the pure $\omega,\phi$ term defined in the
-draft; it does not include the mixed term. This model contribution is only
-the resonance part of the state-defined isoscalar TFF; the $3\pi$,
-$K\bar K$, higher-state and subtraction contributions remain separate.
+The cut-only two-pion term contains the physical single- and double-cut
+reconstruction with the stated subtractions. The pure narrow-pole
+$\omega,\phi$ term is separate. The dressed mixed term in the second
+display is an intermediate expression; the contribution in the first
+display is its cut-subtracted remainder defined above. Standalone $3\pi$,
+$K\bar K$, higher-state and unmatched short-distance contributions remain
+outside this first approximation.

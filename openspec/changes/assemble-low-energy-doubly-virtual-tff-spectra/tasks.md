@@ -12,7 +12,7 @@
 - [x] 2.2 Derive a rho-specific energy-dependent $\pi\pi$ width and self-energy convention, including the P-wave threshold behavior, $\operatorname{Im}\Delta_\rho^{\mathrm{self}}=+\sqrt{s}\,\Gamma_\rho(s)$, real-part subtractions, and mass/residue conditions; verify threshold behavior, positivity, and the stable-pole limit with an executable derivation and a paired indexed memory record.
 - [x] 2.3 Derive the physical two-pion production amplitude’s isoscalar pole residue, phase, and subtraction terms, and the required continuation and compatible complex production/decay amplitudes.
 - [x] 2.4 Compare the single and double discontinuities and subtraction terms from the two-pion cut with the mixed $F^{(\rho I)}$ contribution, including both photon orderings; derive a matching/subtraction prescription or establish disjointness, then verify the result with a symbolic check and a linked memory record.
-- [ ] 2.5 Decide whether the mixed $F^{(\rho I)}$ term can be retained consistently in the first approximation or must be deferred; base the decision on tasks 2.1–2.3, update the channel manifest with the component list and rationale, and verify that no numerical first-pass sum includes unresolved shared rho strength.
+- [x] 2.5 Decide whether the mixed $F^{(\rho I)}$ term can be retained consistently in the first approximation or must be deferred; base the decision on tasks 2.1–2.3, update the channel manifest with the component list and rationale, and verify that no numerical first-pass sum includes unresolved shared rho strength.
 
 ## 3. Complete inputs for the selected coverage
 

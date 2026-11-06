@@ -23,6 +23,50 @@ records.
 The distinct rho-dependent locations and their analytic roles are mapped in
 [the rho occurrence record](alp-rho-occurrence-map.md).
 
+## Selected first-approximation component list
+
+Task 2.5 retains the mixed $\rho I$ VVP contribution, but only after
+subtracting its $\pi\pi$ cut projection as defined in the
+[rho-isoscalar overlap record](alp-tff-rho-isoscalar-overlap.md). The
+selected analytic content is
+$$
+F_{\mathrm{first}}=
+F_{a\gamma^*\gamma^*}^{2\pi,\mathrm{cut-only},[N]}(\Lambda)
++F_{a\gamma^*\gamma^*}^{(\omega,\phi),\mathrm{pole}}
++\widetilde F_{a\gamma^*\gamma^*}^{(\rho I),[N]}(\Lambda),
+$$
+where
+$$
+\widetilde F_{a\gamma^*\gamma^*}^{(\rho I),[N]}(\Lambda)
+=F_{a\gamma^*\gamma^*}^{(\rho I),\mathrm{dress}}
+-F_{a\gamma^*\gamma^*}^{(\rho I),\pi\pi,[N]}(\Lambda)
+-F_{a\gamma^*\gamma^*}^{(\rho I),\mathrm{tail},[N]}(\Lambda).
+$$
+$F^{(\rho I),\mathrm{tail},[N]}$ is the same ordered mixed projection with
+each rho response replaced by the $N$-subtracted rho spectral integral
+from $\Lambda^2$ to infinity. Task 2.1 locates the rho in the pion current,
+production wave, and photon response; task 2.2 fixes the conditional
+$\pi\pi$ self-energy cut; task 2.3 identifies the isoscalar pole in the
+production wave. Together these show that an unmodified mixed term would
+carry a rho cut already represented by the two-pion channel, while its
+narrow-$I$-pole remainder is distinct from the pure $\omega/\phi$ pole
+selection.
+$F^{2\pi,\mathrm{cut-only},[N]}$ contains the physical two-pion single and
+double dispersive contributions with the same cutoff and subtraction
+convention. The mixed cut projection includes both photon placements, its
+narrow-$I$-pole double support, and the regular single-rho-cut term. The
+tail term is the same mixed projection over $x>\Lambda^2$; omit it from the
+low-energy first approximation or treat it as a separately matched
+higher-energy contribution. With the full rho cut removed, the retained
+mixed remainder is an isoscalar-pole/subtraction contribution, assigned
+once. Do not add a separate stable rho pole.
+
+The approximation also contains the pure narrow $\omega/\phi$ poles.
+Standalone three-pion and charged/neutral kaon continua, higher isoscalar
+strength, and short-distance continuation remain outside this first
+approximation. The component list is an analytic model prescription, not a
+numerical TFF result.
+
 An entry marked *formal* has a derivation or modeling prescription but
 lacks the physical numerical inputs needed for a spectral prediction.
 Uncertainty provenance distinguishes known model variations from missing
@@ -39,7 +83,7 @@ applicable topic or extract indexes.
 | Charged kaon cut $K^+K^-$ | Independent no-mixing ALP sources; $s\geq4M_{K^+}^2$. | $\langle K^+K^-|J^\mu_{\rm em}|0\rangle=(p_1-p_2)^\mu F_{K^+}^V(s)$, with $F_{K^+}^V(0)=1$. The retained virtual-current production amplitude is a symbolic odd-resonance tree result; no direct complex $K^+K^-$ current grid is present in the repository inputs. | Conditional distinct-particle cut coefficient is $s(1-4M_{K^+}^2/s)^{3/2}/(96\pi)$ times the conjugate current form factor and the reduced production wave. No $1/2!$ factor. The physical relative phase is not specified. | The stored $\phi\to K^+K^-$ and $\phi\to K_LK_S$ branching fractions have a reported correlation of $-0.72$, but are on-shell decay fractions, not a complex continuum form factor or its covariance. No correlated production variations are selected. | **Formal; numerical cut incomplete.** Missing complex timelike $F_{K^+}^V$, completed production amplitude and phase, and correlated spectral variations. See [virtual-photon kaon amplitude](alp-virtual-photon-kaon-amplitude.md) and the [PDG vector-to-two-pseudoscalar input extract](../../extracts/ParticleDataGroup:2024cfk/vector-to-two-pseudoscalar-inputs.md). |
 | Neutral kaon cut $K^0\bar K^0$ | Independent no-mixing ALP sources; $s\geq4M_{K^0}^2$, kept distinct from the charged threshold. | $\langle K^0\bar K^0|J^\mu_{\rm em}|0\rangle=(p_1-p_2)^\mu F_{K^0}^V(s)$, with $F_{K^0}^V(0)=0$. The retained virtual-current production amplitude is symbolic and source-resolved; no direct complex neutral-kaon current grid is present in the repository inputs. | Same conditional distinct-particle $1/(96\pi)$ cut convention as the charged channel, with its own threshold and current form factor. No $1/2!$ factor. A three-flavor isoscalar-current half-sum requires consistent current and isospin conventions. | The stored $\phi\to K^+K^-$ and $\phi\to K_LK_S$ fractions constrain on-shell branching fractions, not the neutral-kaon current phase or continuum covariance. No correlated production variations are selected. | **Formal; numerical cut incomplete.** Missing complex timelike $F_{K^0}^V$, completed production amplitude and phase, and correlated spectral variations. See [virtual-photon kaon amplitude](alp-virtual-photon-kaon-amplitude.md) and the [PDG vector-to-two-pseudoscalar input extract](../../extracts/ParticleDataGroup:2024cfk/vector-to-two-pseudoscalar-inputs.md). |
 | Pure narrow $\omega$ and $\phi$ poles | Independent no-mixing ALP sources $U_a,Y_a$; stable poles at the selected vector masses in each photon virtuality. There is no multiparticle threshold in the stable-pole term itself. | Signed neutral-vector photon residues and the ordered VJP/VVP numerators use the unnormalized scalar TFF convention. The meson-pole WZW contribution already absorbed in $\widehat c_\gamma$ is not added again. | Stable-pole denominators define the adopted approximation; their delta-function spectral weights are alternative representations of the same pole and must not be added again. The tree residues are signed, but no physical finite-width phase is supplied. | No quantitative error for the narrow-pole approximation, spectral tails, or correlated residue variations is selected. Uncertainty is model-dependent, especially near timelike peaks. | **Conditional model input.** Retain only where the same strength is not represented by a continuum; replace or match in the $\omega/\phi$ cuts, particularly the shared $\phi\to3\pi$ and $K\bar K$ strength. See [tree TFF](alp-doubly-virtual-tff.md), [mixed-vector strategy](alp-tff-mixed-vector-strategy.md), and [finite-width pole replacement](alp-isoscalar-vector-self-energy.md). |
-| Mixed dressed $\rho I$ VVP, $I=\omega,\phi$ | Independent no-mixing ALP sources; the dressed $\rho$ response has the $\pi\pi$ support beginning at $s=4M_\pi^2$, while the other leg is the selected narrow $I$ pole. | Retain the ordered mixed VVP source numerator with $W_\rho^{\rm dress}(s)=R_\rho/[M_{0\rho}^2-s-\Delta_\rho^{\rm self}(s)]$ and $W_I^{\rm pole}$ on the other leg. This response-level term is not the full two-pion double-spectral TFF. | The self-energy sign is $\operatorname{Im}\Delta_\rho^{\rm self}(s+i0)=+\sqrt{s}\,\Gamma_{\rho\to\pi\pi}(s)$. A unit-projector $G_V$ width and fixed-tensor-mass and phenomenological alternatives are derived; three subtractions are needed for the unregulated unit-projector cut. | The off-shell continuation is not unique, the third subtraction remains free, and no numerical self-energy or source-specific match to the two-pion continuum is selected. | **Formal; numerical response and overlap unresolved.** The mixed term is generally nonzero for general sources, but first-pass inclusion awaits the overlap decision. See [rho-to-two-pion self-energy](alp-rho-pipi-self-energy.md), [mixed rho-isoscalar VVP](alp-tff-mixed-rho-isoscalar-vvp.md), [mixed-vector strategy](alp-tff-mixed-vector-strategy.md), and [isoscalar source decomposition](alp-isoscalar-tff-source-decomposition.md). |
+| Cut-subtracted mixed $\rho I$ VVP, $I=\omega,\phi$ | Independent no-mixing ALP sources; the dressed $\rho$ response has $\pi\pi$ support above $4M_\pi^2$, while the other leg is the selected narrow $I$ pole. | Retain $\widetilde F^{(\rho I),[N]}=F^{(\rho I),\mathrm{dress}}-F^{(\rho I),\pi\pi,[N]}-F^{(\rho I),\mathrm{tail},[N]}$, with both photon placements. The physical two-pion component supplies the $\rho$ cut once; the explicit mixed remainder contains its isoscalar-pole/subtraction part. | The dressed response uses $\operatorname{Im}\Delta_\rho^{\rm self}(s+i0)=+\sqrt{s}\Gamma_{\rho\to\pi\pi}(s)$; the $I$ leg remains a narrow pole. The cut projection includes double and regular single-rho support. | The subtraction count, rho off-shell continuation, cutoff, current/production phases, and subtraction functions are not numerically selected. | **Selected analytically; numerical inputs incomplete.** No numerical first-pass assembly exists in the repository. The spectral script is a formal two-pion double-density scaffold and does not add the mixed term. The finite-cutoff tail is omitted or separately matched, never silently included. See [rho-isoscalar overlap](alp-tff-rho-isoscalar-overlap.md), [mixed rho-isoscalar VVP](alp-tff-mixed-rho-isoscalar-vvp.md), and [mixed-vector strategy](alp-tff-mixed-vector-strategy.md). |
 
 ## Three-pion and kaon data audit
 

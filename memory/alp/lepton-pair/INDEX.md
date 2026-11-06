@@ -11,10 +11,10 @@ provenance: assumption
 
 - [alp-lepton-pair-calculation-plan.md](alp-lepton-pair-calculation-plan.md) — staged plan for the two-photon-loop decay $a\to\ell^+\ell^-$ using a doubly virtual ALP transition form factor.
 - [alp-doubly-virtual-tff.md](alp-doubly-virtual-tff.md) — initial tree-level source-resolved ALP TFF with VJP/VVP resonance terms and both virtualities.
-- [alp-tff-mixed-vector-strategy.md](alp-tff-mixed-vector-strategy.md) — first-deliverable choice to treat the broad $\rho$ dispersively and the narrower $\omega,\phi$ as poles, with matching rules and deferred error quantification.
-- [alp-tff-mixed-rho-isoscalar-vvp.md](alp-tff-mixed-rho-isoscalar-vvp.md) — retain the general-source mixed $\rho I$ VVP term with a dispersively self-energy-dressed $\rho$ response and narrow-pole $\omega/\phi$ leg; matching to the two-pion continuum remains open.
-- [alp-tff-rho-isoscalar-overlap.md](alp-tff-rho-isoscalar-overlap.md) — analytic comparison of the two-pion cuts and mixed $\rho I$ VVP contribution, with source-by-source matching conditions and unresolved inputs.
-- [alp-tff-channel-input-manifest.md](alp-tff-channel-input-manifest.md) — channel-by-channel sources, thresholds, conventions, phases, normalizations, uncertainty provenance, and missing-input status for low-energy TFF assembly.
+- [alp-tff-mixed-vector-strategy.md](alp-tff-mixed-vector-strategy.md) — first approximation with the physical two-pion cut, narrow-pole $\omega/\phi$, and a cut-subtracted mixed $\rho I$ remainder.
+- [alp-tff-mixed-rho-isoscalar-vvp.md](alp-tff-mixed-rho-isoscalar-vvp.md) — mixed $\rho I$ VVP term and its selected cut-replacement treatment, including the dressed rho response and narrow-pole isoscalar leg.
+- [alp-tff-rho-isoscalar-overlap.md](alp-tff-rho-isoscalar-overlap.md) — analytic overlap result and explicit subtraction prescription for the mixed rho cut, both photon orderings, and finite-cutoff tail.
+- [alp-tff-channel-input-manifest.md](alp-tff-channel-input-manifest.md) — channel inputs and the selected analytic first approximation, including the cut-subtracted mixed $\rho I$ component and numerical-input blockers.
 - [alp-rho-occurrence-map.md](alp-rho-occurrence-map.md) — rho locations in the pion current, production partial wave, photon response, and TFF terms, with their cut and phase roles and unresolved overlap.
 - [alp-rho-pipi-self-energy.md](alp-rho-pipi-self-energy.md) — symbolic $G_V$ rho-to-two-pion width, self-energy sign and subtractions, stable-pole limit, and alternative off-shell continuations.
 - [alp-rho-pipi-self-energy.md](alp-rho-pipi-self-energy.md) — SymPy derivation of the conditional rho-to-two-pion P-wave width, self-energy sign and subtractions, and distinct off-shell continuations.

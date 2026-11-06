@@ -2,7 +2,7 @@
 title: Mixed dispersive rho and narrow-pole omega/phi strategy for the ALP TFF
 status: mixed
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-06
 bibtex_keys: [Alda:2026nrd, Messerli:2025rnv]
 provenance: assumption
 ---
@@ -27,29 +27,45 @@ quantitative error estimate is part of this first deliverable.
 
 # Matching rule
 
-The selected low-energy isovector piece is the source-specific two-pion
-double-spectral contribution. The modeled isoscalar resonance piece
-contains the pure narrow-pole $\omega,\phi$ terms and the source-dependent
-mixed $\rho I$ VVP contribution, $I=\omega,\phi$. Retain the mixed term;
-dropping it omits a generally nonzero contribution. In that term use a
-propagator-level dressed $\rho$ response on the $\rho$ leg and the selected
-narrow-pole $\omega$ or $\phi$ response on the other leg. The dressed
-response has a $\pi\pi$ self-energy whose imaginary part is
-$\sqrt{s}\,\Gamma_{\rho\to\pi\pi}(s)$ and whose real part follows from a
-subtracted dispersion relation. It is neither a constant-width denominator
-nor the complete source-specific two-pion double-spectral TFF. Match the
-mixed term to the two-pion continuum so the same $\rho$ strength is counted
-once; that numerical matching remains open. See the
-[mixed VVP record](alp-tff-mixed-rho-isoscalar-vvp.md).
+The first approximation retains the mixed $\rho I$ VVP term in its
+cut-subtracted form. Let $F^{(\rho I),\mathrm{dress}}$ be the ordered mixed
+term with a propagator-level dressed $\rho$ response on the $\rho$ leg and
+the narrow-pole $\omega$ or $\phi$ response on the other leg. Define
+$F^{(\rho I),\pi\pi,[N]}(\Lambda)$ by replacing each dressed $\rho$ response
+with its $N$-subtracted $\pi\pi$ dispersive projection up to the same
+$\Lambda$ used in the two-pion construction. Define
+$F^{(\rho I),\mathrm{tail},[N]}(\Lambda)$ by the same replacement using the
+projection above $\Lambda$. The retained mixed remainder is
+$$
+\widetilde F^{(\rho I),[N]}(\Lambda)=
+F^{(\rho I),\mathrm{dress}}
+-F^{(\rho I),\pi\pi,[N]}(\Lambda)
+-F^{(\rho I),\mathrm{tail},[N]}(\Lambda).
+$$
+This removes the mixed term's full $\rho\to\pi\pi$ cut from its explicit
+addition. The physical two-pion single and double dispersive contributions
+remain and carry the $\pi\pi$ cut once. The remainder contains the
+narrow-isoscalar-pole and subtraction part; assign it once. In the
+low-energy first approximation omit the above-$\Lambda$ tail, or include
+it only as a separately matched higher-energy component. Do not add the
+unmodified $F^{(\rho I),\mathrm{dress}}$ on top of a two-pion construction
+that already carries its $\rho$ cut.
+
+The dressed response uses
+$W_\rho^{\mathrm{dress}}(s)=R_\rho/[M_{0\rho}^2-s-\Delta_\rho^{\mathrm{self}}(s)]$,
+with $\operatorname{Im}\Delta_\rho^{\mathrm{self}}(s+i0)
+=+\sqrt{s}\,\Gamma_{\rho\to\pi\pi}(s)$ and a subtracted real part. It is
+neither a constant-width denominator nor the complete source-specific
+two-pion TFF. The pure narrow-pole $\omega,\phi$ terms remain separate and
+are not subtracted by this $\rho I$ prescription. See the
+[symbolic cut-replacement derivation](alp-tff-rho-isoscalar-overlap.md)
+and [mixed VVP record](alp-tff-mixed-rho-isoscalar-vvp.md).
 
 The [two-pion spectral construction](alp-isovector-tff-spectral-construction.md)
-defines the isovector low-energy component. The formal
-[finite-width self-energy record](alp-isoscalar-vector-self-energy.md)
-shows how open channels generate an absorptive self-energy and spectral
-response, but does not yet supply a numerical common prescription. In the
-selected approximation, add the dressed mixed $\rho I$ term to the pure
-$\omega,\phi$ pole contribution; do not subtract it from the pure pole
-term, which does not contain it.
+defines the physical low-energy cut. Its present script is a symbolic
+scaffold, not a numerical first-pass assembly. The source-resolved pion
+current and production inputs, subtraction functions, and cutoff are not
+available for a numerical TFF.
 The didactic explanation of cuts, thresholds, widths, and the pole picture
 is recorded in [the TFF dispersive-treatment note](alp-tff-dispersive-treatment-explained.md).
 

@@ -255,6 +255,15 @@ cut. For finite $\Lambda$, the difference also contains the $x>\Lambda^2$
 rho-cut tail; retain it explicitly as a higher-energy term or omit it with
 the cutoff limitation stated. Additional rho cuts or isolated poles must
 also be kept separately.
+For clarity, the tail response used in this replacement is
+$$
+W_\rho^{\mathrm{tail},[N]}(s;\Lambda)=
+\frac{s^N}{2\pi i}\int_{\Lambda^2}^{\infty}
+\frac{dx\,\operatorname{Disc}W_\rho^{\mathrm{dress}}(x)}
+{x^N(x-s-i0)}.
+$$
+$F^{(\rho I),\mathrm{tail},[N]}$ is obtained by replacing both rho
+responses in the ordered mixed term with this tail response.
 
 The affine decomposition shows that the cut projection contains both the
 pole-supported double-spectral term and the regular single-rho-cut term in
