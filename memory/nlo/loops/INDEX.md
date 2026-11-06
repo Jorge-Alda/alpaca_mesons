@@ -12,3 +12,5 @@ provenance: assumption
 Renormalized one-loop meson and ALP–meson two-point functions of the $U(3)$ theory, calculated at the order and with the loop classes declared in [counting/](../counting/INDEX.md).
 
 - [Vertices and topologies](vertices-and-topologies.md) — cubic and quartic vertices of the leading Lagrangian per ALP source, and the loop topologies they allow in each two-point function
+- [Loop functions and subtraction](loop-functions-and-subtraction.md) — tadpole integral, derivative contractions and the subtraction used for the two-point functions
+- [Meson self-energy](meson-self-energy.md) — $\Sigma_{ij}(s)$ of the nonet, Gasser:1984gg checks, pole cancellation and the findings on $B$ and $\Gamma_i$

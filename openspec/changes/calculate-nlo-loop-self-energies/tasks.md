@@ -11,9 +11,9 @@
 
 ## 2. Meson self-energy and subtraction
 
-- [ ] 2.1 Through `coder`, create `scripts/derive_nlo_loop_self_energies.py` with the tadpole loop function, the $\overline{\rm MS}-1$ subtraction of alp-gii.1 and $\Sigma_{ij}(s)$ for the full nonet in the LO mass eigenbasis. Verify that `--meson` prints $\Sigma_{ij}$ in the $(3,8,0)$ basis and that its degenerate-mass limit equals the $SU(3)$ result of Gasser:1984gg (assertion)
-- [ ] 2.2 Write `memory/nlo/loops/loop-functions-and-subtraction.md` and `memory/nlo/loops/meson-self-energy.md`, giving each step with input links to the counting and quadratic-Lagrangian records. Verify that the expressions match the script output and that units (GeV) and the sign convention $Q=sK-M^2+\Sigma$ are stated
-- [ ] 2.3 Extend the script with the symbolic pole cancellation against $L_i^r(\mu)$ and $B^r(\mu)$ for $\Sigma_{ij}$. Verify that `--cancel` asserts finiteness and $\mu_\chi$ independence for $\mu_\chi\in\{0.5,0.77,1.0\}\,$GeV, and that any mismatch with the $\Gamma_i$ of alp-gii.1 is printed as a finding
+- [x] 2.1 Through `coder`, create `scripts/derive_nlo_loop_self_energies.py` with the tadpole loop function, the $\overline{\rm MS}-1$ subtraction of alp-gii.1 and $\Sigma_{ij}(s)$ for the full nonet in the LO mass eigenbasis. Verify that `--meson` prints $\Sigma_{ij}$ in the $(3,8,0)$ basis and that its degenerate-mass limit equals the $SU(3)$ result of Gasser:1984gg (assertion)
+- [x] 2.2 Write `memory/nlo/loops/loop-functions-and-subtraction.md` and `memory/nlo/loops/meson-self-energy.md`, giving each step with input links to the counting and quadratic-Lagrangian records. Verify that the expressions match the script output and that units (GeV) and the sign convention $Q=sK-M^2+\Sigma$ are stated
+- [x] 2.3 Extend the script with the symbolic pole cancellation against $L_i^r(\mu)$ and $B^r(\mu)$ for $\Sigma_{ij}$. Verify that `--cancel` asserts finiteness and $\mu_\chi$ independence for $\mu_\chi\in\{0.5,0.77,1.0\}\,$GeV, and that any mismatch with the $\Gamma_i$ of alp-gii.1 is printed as a finding
 
 ## 3. Mixed ALP–meson function
 
