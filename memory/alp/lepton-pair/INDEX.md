@@ -42,6 +42,7 @@ provenance: assumption
 - [alp-three-pion-discontinuity.md](alp-three-pion-discontinuity.md) — executed conditional three-pion unitarity measure, scalar projection, spin-one weight, subtracted dispersion, and pole-replacement normalization.
 - [alp-virtual-photon-kaon-amplitude.md](alp-virtual-photon-kaon-amplitude.md) — executed retained virtual-current charged/neutral kaon amplitudes, charged $c_4$, allowed vector exchanges and conditional kaon-cut normalization.
 - [alp-pion-vector-and-production-form-factors.md](alp-pion-vector-and-production-form-factors.md) — elastic dispersive $F_\pi^V$, the source-resolved production P wave, and its derived two-pion-cut normalization and angular weight.
+- [alp-pion-isoscalar-pole.md](alp-pion-isoscalar-pole.md) — continued isoscalar pole residue, crossed-channel phase relation, and symbolic subtracted Omnès representation for the two-pion production wave.
 - [alp-isovector-tff-fit-null-projection.md](alp-isovector-tff-fit-null-projection.md) — projection of the preliminary fit's four fixed-nuisance odd-coefficient null directions onto the neutral-$\rho$ pole contribution.
 - [alp-virtual-photon-pion-null-sensitivity.md](alp-virtual-photon-pion-null-sensitivity.md) — projection of the same fit null directions onto the virtual-photon charged-pion P wave.
 - [alp-lepton-pair-normalization.md](alp-lepton-pair-normalization.md) — executable spin, phase-space, width-ratio and universal two-real-photon-cut normalization for the ALP loop.

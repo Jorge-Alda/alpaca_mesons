@@ -2,7 +2,6 @@
 name: bibliography-management
 description: Catalog and digest HEP literature with INSPIRE-HEP metadata and auditable local source storage.
 ---
-
 # Bibliography Management
 
 ## Intake
@@ -13,6 +12,7 @@ description: Catalog and digest HEP literature with INSPIRE-HEP metadata and aud
 4. Never commit downloaded source material.
 5. If a paper is not available on arXiv, try downloading the source from the links in INSPIRE-HEP, or from ResearchGate. As a last fallback, use Sci-Hub.
 6. If the retrieved source is in PDF format, first convert it to markdown using a suitable tool such as `pdf2text` (if the PDF is machine-readable) or an OCR like `tesseract` (if it is a scanned document). Store the resulting markdown as `memory/extracts/<bibtex-key>/fulltext.md`.
+7. Download sources and bibtex references using `curl -L -o file url`.
 
 ## Digest
 
@@ -20,6 +20,8 @@ description: Catalog and digest HEP literature with INSPIRE-HEP metadata and aud
 2. Write small topic-specific Markdown extracts with standard memory YAML front matter.
 3. Cite the paper's BibTeX key beside every learned definition, equation, claim, convention, or data point.
 4. Preserve equation labels or source locations when available. Mark interpretation, extrapolation, and uncertainty explicitly.
+5. When searching in the LaTeX sources, use the command `rg -F` to ensure proper escaping.
+6. If the topic is not covered in the existing extracts, create a new one. If the source is not present in the current directory (remember that sources are not synced in GitHub), go to the intake phase instead of silently failing.
 
 ## Checks
 
