@@ -3,7 +3,7 @@ title: ALP lepton-pair memory index
 status: mixed
 created: 2026-10-23
 updated: 2026-11-06
-bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj]
+bibtex_keys: [Messerli:2025rnv, Alda:2026nrd, Bauer:2020jbp, Ecker:1988te, Ecker:1989yg, Ruiz-Femenia:2003jdx, GomezDumm:2010ra, GomezDumm:2013sib, Hoferichter:2023bjm, Hoferichter:2025lcz, Niecknig:2012sj, Watson:1952ji, Omnes:1958hv, Jamin:2000wn, ParticleDataGroup:2024cfk]
 provenance: assumption
 ---
 
@@ -15,6 +15,8 @@ provenance: assumption
 - [alp-tff-mixed-rho-isoscalar-vvp.md](alp-tff-mixed-rho-isoscalar-vvp.md) — retain the general-source mixed $\rho I$ VVP term with a dispersively self-energy-dressed $\rho$ response and narrow-pole $\omega/\phi$ leg; matching to the two-pion continuum remains open.
 - [alp-tff-channel-input-manifest.md](alp-tff-channel-input-manifest.md) — channel-by-channel sources, thresholds, conventions, phases, normalizations, uncertainty provenance, and missing-input status for low-energy TFF assembly.
 - [alp-rho-occurrence-map.md](alp-rho-occurrence-map.md) — rho locations in the pion current, production partial wave, photon response, and TFF terms, with their cut and phase roles and unresolved overlap.
+- [alp-rho-pipi-self-energy.md](alp-rho-pipi-self-energy.md) — symbolic $G_V$ rho-to-two-pion width, self-energy sign and subtractions, stable-pole limit, and alternative off-shell continuations.
+- [alp-rho-pipi-self-energy.md](alp-rho-pipi-self-energy.md) — SymPy derivation of the conditional rho-to-two-pion P-wave width, self-energy sign and subtractions, and distinct off-shell continuations.
 - [alp-tff-dispersive-treatment-explained.md](alp-tff-dispersive-treatment-explained.md) — didactic explanation of unitarity cuts, the two-pion and three-pion thresholds, how resonance poles relate to cuts, finite vector widths, and the mixed strategy's limits.
 - [alp-isovector-doubly-virtual-tff.md](alp-isovector-doubly-virtual-tff.md) — neutral-$\rho$ pole contribution, including possible mixed $\rho$–isoscalar VVP exchange, in no-mixing couplings.
 - [alp-isovector-tff-spectral-construction.md](alp-isovector-tff-spectral-construction.md) — low-energy two-pion double-spectral contribution and the source-resolved inputs still needed for a numerical density.
