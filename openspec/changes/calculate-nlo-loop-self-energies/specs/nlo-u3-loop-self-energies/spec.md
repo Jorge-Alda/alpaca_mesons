@@ -36,9 +36,9 @@ The records SHALL give $\Sigma_{i\hat a}(s)$ at first order in $1/f_a$ for the A
 - **WHEN** only $c_q^A$ is non-zero
 - **THEN** $\Sigma_{i\hat a}(s)$ is expressed through the same loop functions as $\Sigma_{ij}(s)$, and the records state whether it vanishes or is proportional to the kinetic-alignment combination of the existing records
 
-#### Scenario: CP-odd source
-- **WHEN** a CP-odd source or $\theta\neq0$ is switched on
-- **THEN** the cubic vertices it generates are listed and the corresponding bubbles are either given or marked as an excluded conditional extension
+#### Scenario: Flavour-violating vector or scalar source
+- **WHEN** a flavour-violating $c_q^V$ or $c_q^S$ is non-zero
+- **THEN** the cubic $a\Phi\Phi$ vertices it generates are listed, and the records state for each two-point function whether they open a topology at first order in $1/f_a$
 
 ### Requirement: Cancellation of divergences and scale dependence
 The poles and the $\mu_\chi$ dependence of each loop function SHALL cancel against the local NLO terms built from $L_i^r(\mu)$ and $B^r(\mu)$ with the $\Gamma_i$ of alp-gii.1. The cancellation SHALL be checked symbolically, entry by entry.
