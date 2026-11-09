@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "bibtex_key": "ParticleDataGroup:2024cfk",
+    "snapshot": "PDG 2024 particle listings (Phys. Rev. D 110, 030001)",
+    "units": "GeV",
+    "mass_interpretation": "Listing Breit-Wigner-type mass and width, not complex S-matrix pole values",
+    "uncertainty_note": "PDG summary values carry a single combined uncertainty; no statistical/systematic split is given, so those fields are null."
+  },
+  "states": {
+    "rho(1450)": {
+      "mass": {
+        "central_GeV": 1.465,
+        "uncertainty_minus_GeV": 0.025,
+        "uncertainty_plus_GeV": 0.025,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": "educated guess; error larger than error on average of published values"
+      },
+      "width": {
+        "central_GeV": 0.4,
+        "uncertainty_minus_GeV": 0.06,
+        "uncertainty_plus_GeV": 0.06,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": "educated guess; error larger than error on average of published values"
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-rho-1450.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-rho-1450.pdf",
+      "sha256": "c07e7b937fd4f7232ec9525e996382bed3f27cda05c2df5a1e254ca1ea31463f"
+    },
+    "rho(1700)": {
+      "mass": {
+        "central_GeV": 1.72,
+        "uncertainty_minus_GeV": 0.02,
+        "uncertainty_plus_GeV": 0.02,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "width": {
+        "central_GeV": 0.25,
+        "uncertainty_minus_GeV": 0.1,
+        "uncertainty_plus_GeV": 0.1,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-rho-1700.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-rho-1700.pdf",
+      "sha256": "d74bd8cb276781ad9c0dd1b9d0211f4610334e2abe01205582ba808f60f56499"
+    },
+    "K*(1410)": {
+      "mass": {
+        "central_GeV": 1.414,
+        "uncertainty_minus_GeV": 0.015,
+        "uncertainty_plus_GeV": 0.015,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": "scale factor 1.3"
+      },
+      "width": {
+        "central_GeV": 0.232,
+        "uncertainty_minus_GeV": 0.021,
+        "uncertainty_plus_GeV": 0.021,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": "scale factor 1.1"
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-1410.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-1410.pdf",
+      "sha256": "c6e9ca55a4e35843c5bb124ce847b33d4cf434888b3a3c90527a8054f33b10cd"
+    },
+    "K*(1680)": {
+      "mass": {
+        "central_GeV": 1.718,
+        "uncertainty_minus_GeV": 0.018,
+        "uncertainty_plus_GeV": 0.018,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": ""
+      },
+      "width": {
+        "central_GeV": 0.32,
+        "uncertainty_minus_GeV": 0.11,
+        "uncertainty_plus_GeV": 0.11,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": "scale factor 4.2"
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-K-star-1680.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-K-star-1680.pdf",
+      "sha256": "904c34e65e44ca18e2b02f1cba02a80ce28ae488f9683eb05bfb8059d1e87a5b"
+    },
+    "omega(1420)": {
+      "mass": {
+        "central_GeV": 1.41,
+        "uncertainty_minus_GeV": 0.06,
+        "uncertainty_plus_GeV": 0.06,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "width": {
+        "central_GeV": 0.29,
+        "uncertainty_minus_GeV": 0.19,
+        "uncertainty_plus_GeV": 0.19,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-1420.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-1420.pdf",
+      "sha256": "54800921eec805d629e52bfe9a0c0bb3a74f96ffd67af582862989a4bcbbdaf4"
+    },
+    "omega(1650)": {
+      "mass": {
+        "central_GeV": 1.67,
+        "uncertainty_minus_GeV": 0.03,
+        "uncertainty_plus_GeV": 0.03,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "width": {
+        "central_GeV": 0.315,
+        "uncertainty_minus_GeV": 0.035,
+        "uncertainty_plus_GeV": 0.035,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-omega-1650.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-omega-1650.pdf",
+      "sha256": "d861feb616f5bed26292331af6a76c168416abcd98dee3168726c881dfb2bb46"
+    },
+    "phi(1680)": {
+      "mass": {
+        "central_GeV": 1.68,
+        "uncertainty_minus_GeV": 0.02,
+        "uncertainty_plus_GeV": 0.02,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": ""
+      },
+      "width": {
+        "central_GeV": 0.15,
+        "uncertainty_minus_GeV": 0.05,
+        "uncertainty_plus_GeV": 0.05,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": "educated guess; error larger than error on average of published values"
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-1680.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-1680.pdf",
+      "sha256": "33b1b0a9ea053b30e38b1e107a25cab56f9ec3e5040bf71ad6b3d6fc8f088be2"
+    },
+    "phi(2170)": {
+      "mass": {
+        "central_GeV": 2.164,
+        "uncertainty_minus_GeV": 0.006,
+        "uncertainty_plus_GeV": 0.006,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": ""
+      },
+      "width": {
+        "central_GeV": 0.106,
+        "uncertainty_minus_GeV": 0.018,
+        "uncertainty_plus_GeV": 0.024,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": "asymmetric error +24/-18; scale factor 2.0"
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-phi-2170.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-phi-2170.pdf",
+      "sha256": "672afaa0ebb295af3ac03871c08df5c35bd6e4f815022616369c0dddaf14c08b"
+    },
+    "a2(1320)": {
+      "mass": {
+        "central_GeV": 1.3182,
+        "uncertainty_minus_GeV": 0.0006,
+        "uncertainty_plus_GeV": 0.0006,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR AVERAGE",
+        "note": "scale factor 1.2"
+      },
+      "width": {
+        "central_GeV": 0.107,
+        "uncertainty_minus_GeV": 0.005,
+        "uncertainty_plus_GeV": 0.005,
+        "statistical_uncertainty_GeV": null,
+        "systematic_uncertainty_GeV": null,
+        "pdg_value_type": "OUR ESTIMATE",
+        "note": "listing also prints 107.8 +- 1.2 OUR AVERAGE for the width"
+      },
+      "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-a2-1320.pdf",
+      "local_path": "memory/sources/ParticleDataGroup:2024cfk/rpp2024-list-a2-1320.pdf",
+      "sha256": "93a7f18ca427de3d874c4f894295a905b4969a6a1560030164ed73e3a5625ab8"
+    }
+  }
+}

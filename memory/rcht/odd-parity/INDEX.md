@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-11-04
+updated: 2026-11-07
 bibtex_keys: []
 provenance: assumption
 ---
@@ -38,6 +38,10 @@ being combined with canonical photon or resonance amplitudes.
 - [joint-vector-fit-continuation.md](joint-vector-fit-continuation.md) — successful default-quadrature continuation, cumulative evaluations, optimizer status, and the remaining optimality qualification.
 - [joint-vector-fit-basin-probes.md](joint-vector-fit-basin-probes.md) — three successful deterministic nearby starts and certified fixed-candidate quadrature checks.
 - [joint-vector-fit-endpoint-comparison.md](joint-vector-fit-endpoint-comparison.md) — common-order ranking of all ten saved endpoints, four quadrature-qualified candidates, and pairwise scaled distances.
+- [joint-vector-fit-adequacy-assessment-method.md](joint-vector-fit-adequacy-assessment-method.md) — goodness-of-fit procedure at accepted minima: degrees-of-freedom counting, per-block nominal $p$-values, labelled pulls and BaBar residual energy pattern.
+- [joint-vector-likelihood-variation-options.md](joint-vector-likelihood-variation-options.md) — switchable likelihood variations with exact baseline recovery, and the deferred double-trace source variation.
+- [joint-vector-block-exclusion-and-variation-refits.md](joint-vector-block-exclusion-and-variation-refits.md) — warm-started block-exclusion and sensitivity refits, high-order re-evaluation and acceptance gates.
+- [joint-vector-pole-shift-variations.md](joint-vector-pole-shift-variations.md) — $\pm1\sigma$ PDG 2024 mass and width shifts of the fixed excited vector poles and of the $a_2(1320)$, their implementation and linear $\Delta\chi^2$ screen.
 - [kkpi-global-fit-running-propagator-reuse.md](kkpi-global-fit-running-propagator-reuse.md) — running-propagator calculation reuse, baseline-equivalence checks, and local Jacobian timing.
 - [kkpi-global-fit-width-pull-jacobian.md](kkpi-global-fit-width-pull-jacobian.md) — finite-difference treatment of width pulls that do not enter BaBar predictions.
 - [kkpi-global-fit-channel-jacobian.md](kkpi-global-fit-channel-jacobian.md) — channel-specific finite differences and normalization-pull evaluation in the global fit.
@@ -133,3 +137,4 @@ being combined with canonical photon or resonance amplitudes.
 - [vppp-pipi-phase-input.md](vppp-pipi-phase-input.md) — corrected Madrid P-wave phase tables in pion units, mass assumptions and fixed KT-continuation caveat.
 
 - [vppp-physical-kt-convergence.md](vppp-physical-kt-convergence.md) — physical-input KT iteration, external phase-space quadrature, cutoff and Madrid-phase sensitivity checks.
+- [pdg2024-excited-vector-and-tensor-poles.md](pdg2024-excited-vector-and-tensor-poles.md) — PDG 2024 masses and widths (with value type) of $\rho(1450)$, $\rho(1700)$, $K^*(1410)$, $K^*(1680)$, $\omega(1420)$, $\omega(1650)$, $\phi(1680)$, $\phi(2170)$, $a_2(1320)$, compared with the values hard-coded in the BaBar KK$\pi$ fit scripts.

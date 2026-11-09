@@ -1,0 +1,5720 @@
+{
+  "endpoints": [
+    {
+      "id": "basin_probes/even_shared_widths",
+      "endpoint": [
+        0.31009854070649917,
+        -0.8146200113041114,
+        -0.036755155559440374,
+        0.16496233444697186,
+        0.0010486706222708156,
+        -0.014245148384567512,
+        0.05906781503388402,
+        -0.12902421391928376,
+        0.04943353845669817,
+        -0.5218605299396969,
+        2.82535741267633,
+        -3.307039351649389,
+        0.02257210078892381,
+        0.07009487166283061,
+        -0.06843444939236927,
+        0.011739319732008735,
+        -0.004934703838809312,
+        -0.3903175811822057,
+        0.024954696091565285,
+        0.021892312452531128,
+        0.3638248277693889,
+        0.12552276377877755,
+        0.2280384058793682,
+        0.04167741477140924,
+        0.048246462818562326,
+        -3.038134607804645,
+        -0.7197260298323607,
+        -0.2743562516748237,
+        -0.15997314102911023,
+        -0.01407674821638787,
+        -0.2478599868747823,
+        -0.05086903679494435
+      ],
+      "chi2": 225.72669915915517,
+      "comparison_ledger_chi2": 225.72669915915517,
+      "absolute_chi2_difference_to_comparison": 0.0,
+      "chi2_matches_comparison": true,
+      "residual_count": 75,
+      "free_coordinate_count": 32,
+      "degrees_of_freedom": 43,
+      "nominal_p_value": 1.2670481319000655e-26,
+      "chi2_per_degree_of_freedom": 5.2494581199803525,
+      "blocks": {
+        "odd": {
+          "chi2": 35.18142282217058,
+          "count": 12,
+          "nominal_p_value_row_count_dof": 0.00043814321227334186
+        },
+        "masses_and_leptonic": {
+          "chi2": 12.934888631531916,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 0.0737107984771301
+        },
+        "shared_widths": {
+          "chi2": 106.84179495227731,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 4.1468046591031216e-20
+        },
+        "phi_KK": {
+          "chi2": 17.878514018128385,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.00013113843866492737
+        },
+        "BaBar": {
+          "chi2": 52.826056503048974,
+          "count": 45,
+          "nominal_p_value_row_count_dof": 0.19743106389669515
+        },
+        "normalization_constraints": {
+          "chi2": 0.06402223199801266,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.9684958162208304
+        }
+      },
+      "standardized_residuals": [
+        {
+          "index": 0,
+          "pull": -0.9902227105205996,
+          "block": "odd",
+          "label": "omega_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 1,
+          "pull": 1.1037763549958681,
+          "block": "odd",
+          "label": "rho0_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 2,
+          "pull": -3.2657725908934165,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "index": 3,
+          "pull": -1.4478419109890488,
+          "block": "odd",
+          "label": "omega_eta_gamma branching_fraction"
+        },
+        {
+          "index": 4,
+          "pull": -0.7225627128712045,
+          "block": "odd",
+          "label": "etap_omega_gamma branching_fraction"
+        },
+        {
+          "index": 5,
+          "pull": 1.1654148165097513,
+          "block": "odd",
+          "label": "phi_eta_gamma branching_fraction"
+        },
+        {
+          "index": 6,
+          "pull": 2.460052858115598,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "index": 7,
+          "pull": -0.2764961909834404,
+          "block": "odd",
+          "label": "Kstarplus_Kplus_gamma branching_fraction"
+        },
+        {
+          "index": 8,
+          "pull": 0.9282266685884462,
+          "block": "odd",
+          "label": "rhoplus_piplus_gamma branching_fraction"
+        },
+        {
+          "index": 9,
+          "pull": -1.6695849842355488,
+          "block": "odd",
+          "label": "pi0_gamma_gamma partial_width"
+        },
+        {
+          "index": 10,
+          "pull": -1.5921957116551193,
+          "block": "odd",
+          "label": "eta_gamma_gamma partial_width"
+        },
+        {
+          "index": 11,
+          "pull": 2.4552470385370264,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "index": 12,
+          "pull": 0.827387855830109,
+          "block": "masses_and_leptonic",
+          "label": "mass rho charged"
+        },
+        {
+          "index": 13,
+          "pull": -3.197754606319393,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "index": 14,
+          "pull": 0.4023551928847077,
+          "block": "masses_and_leptonic",
+          "label": "mass omega"
+        },
+        {
+          "index": 15,
+          "pull": 0.09950326913810148,
+          "block": "masses_and_leptonic",
+          "label": "mass phi"
+        },
+        {
+          "index": 16,
+          "pull": 0.008595269099981971,
+          "block": "masses_and_leptonic",
+          "label": "electronic width rho"
+        },
+        {
+          "index": 17,
+          "pull": -1.1217950062529551,
+          "block": "masses_and_leptonic",
+          "label": "electronic width omega"
+        },
+        {
+          "index": 18,
+          "pull": 0.7709701218623474,
+          "block": "masses_and_leptonic",
+          "label": "electronic width phi"
+        },
+        {
+          "index": 19,
+          "pull": -4.3876423303187835,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "index": 20,
+          "pull": -8.269208342733814,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "index": 21,
+          "pull": -3.3070393516493892,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "index": 22,
+          "pull": -0.5218605299396953,
+          "block": "shared_widths",
+          "label": "total width omega"
+        },
+        {
+          "index": 23,
+          "pull": 2.825357412676348,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "index": 24,
+          "pull": -0.1290242139192696,
+          "block": "shared_widths",
+          "label": "total width rho0"
+        },
+        {
+          "index": 25,
+          "pull": 0.04943353845668352,
+          "block": "shared_widths",
+          "label": "total width rhoplus"
+        },
+        {
+          "index": 26,
+          "pull": 3.499050812419391,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "index": 27,
+          "pull": 2.373848653607804,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "index": 28,
+          "pull": -1.1961510603975856,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.36-1.38 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.208,
+          "error_nb": 0.12
+        },
+        {
+          "index": 29,
+          "pull": -0.022256553538646872,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.38-1.40 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.1,
+          "error_nb": 0.089
+        },
+        {
+          "index": 30,
+          "pull": 1.727822683731496,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.40-1.42 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.042,
+          "error_nb": 0.059
+        },
+        {
+          "index": 31,
+          "pull": -0.44720826268136604,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.42-1.44 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.241,
+          "error_nb": 0.092
+        },
+        {
+          "index": 32,
+          "pull": 0.7626492503309006,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.44-1.46 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.193,
+          "error_nb": 0.091
+        },
+        {
+          "index": 33,
+          "pull": -0.44183617907740413,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.46-1.48 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 0.37,
+          "error_nb": 0.093
+        },
+        {
+          "index": 34,
+          "pull": -2.381139531804857,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "index": 35,
+          "pull": 0.8923697958761311,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.50-1.52 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 0.385,
+          "error_nb": 0.092
+        },
+        {
+          "index": 36,
+          "pull": 0.5138256224794062,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.52-1.54 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 0.485,
+          "error_nb": 0.102
+        },
+        {
+          "index": 37,
+          "pull": -0.011291879770695132,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.54-1.56 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 0.61,
+          "error_nb": 0.113
+        },
+        {
+          "index": 38,
+          "pull": 1.1486416318231072,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.56-1.58 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 0.556,
+          "error_nb": 0.109
+        },
+        {
+          "index": 39,
+          "pull": -1.2146595781588072,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.58-1.60 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 0.911,
+          "error_nb": 0.13
+        },
+        {
+          "index": 40,
+          "pull": -1.615037272417396,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.60-1.62 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 1.03,
+          "error_nb": 0.132
+        },
+        {
+          "index": 41,
+          "pull": -0.23442855115817726,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.62-1.64 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 0.882,
+          "error_nb": 0.127
+        },
+        {
+          "index": 42,
+          "pull": 0.4762942368756127,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.64-1.66 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 0.767,
+          "error_nb": 0.116
+        },
+        {
+          "index": 43,
+          "pull": -0.5033432188354333,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.66-1.68 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 0.749,
+          "error_nb": 0.114
+        },
+        {
+          "index": 44,
+          "pull": 0.822805832564544,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.68-1.70 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 0.413,
+          "error_nb": 0.082
+        },
+        {
+          "index": 45,
+          "pull": -0.26811154828633466,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.70-1.72 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 0.296,
+          "error_nb": 0.071
+        },
+        {
+          "index": 46,
+          "pull": 1.305348859418633,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.72-1.74 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 0.093,
+          "error_nb": 0.046
+        },
+        {
+          "index": 47,
+          "pull": -0.08308745173326774,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.74-1.76 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 0.116,
+          "error_nb": 0.046
+        },
+        {
+          "index": 48,
+          "pull": 1.3280970545100894,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.76-1.78 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 0.073,
+          "error_nb": 0.038
+        },
+        {
+          "index": 49,
+          "pull": -0.9251227819011671,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.24-1.28 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.24,
+          "energy_high_gev": 1.28,
+          "energy_center_gev": 1.26,
+          "observed_nb": 0.037,
+          "error_nb": 0.034
+        },
+        {
+          "index": 50,
+          "pull": -0.9827199257532774,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.28-1.32 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.28,
+          "energy_high_gev": 1.32,
+          "energy_center_gev": 1.3,
+          "observed_nb": 0.042,
+          "error_nb": 0.024
+        },
+        {
+          "index": 51,
+          "pull": 3.08769609110395,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "index": 52,
+          "pull": 0.27717407471643996,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.36-1.38 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.107,
+          "error_nb": 0.054
+        },
+        {
+          "index": 53,
+          "pull": 1.1488190505003526,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.38-1.40 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.132,
+          "error_nb": 0.059
+        },
+        {
+          "index": 54,
+          "pull": -1.3997440213529866,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.40-1.42 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.47,
+          "error_nb": 0.111
+        },
+        {
+          "index": 55,
+          "pull": -0.5935027334543387,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.42-1.44 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.542,
+          "error_nb": 0.118
+        },
+        {
+          "index": 56,
+          "pull": -1.864670447626147,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "index": 57,
+          "pull": -1.8036050889367445,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        },
+        {
+          "index": 58,
+          "pull": 0.17515482131210558,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.48-1.50 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 1.231,
+          "error_nb": 0.18
+        },
+        {
+          "index": 59,
+          "pull": -0.21246375557868188,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.50-1.52 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 1.673,
+          "error_nb": 0.205
+        },
+        {
+          "index": 60,
+          "pull": 0.24629922040800734,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.52-1.54 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 1.964,
+          "error_nb": 0.22
+        },
+        {
+          "index": 61,
+          "pull": -0.659845477284692,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.54-1.56 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 2.564,
+          "error_nb": 0.249
+        },
+        {
+          "index": 62,
+          "pull": 1.2248125528347453,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.56-1.58 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 2.44,
+          "error_nb": 0.253
+        },
+        {
+          "index": 63,
+          "pull": -0.7587881460942829,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.58-1.60 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 3.269,
+          "error_nb": 0.282
+        },
+        {
+          "index": 64,
+          "pull": -0.30639167071344664,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.60-1.62 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 3.397,
+          "error_nb": 0.283
+        },
+        {
+          "index": 65,
+          "pull": 1.9521052954672509,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "index": 66,
+          "pull": -0.5791226052378164,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.64-1.66 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 3.807,
+          "error_nb": 0.302
+        },
+        {
+          "index": 67,
+          "pull": -0.45776846216240463,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.66-1.68 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 3.76,
+          "error_nb": 0.291
+        },
+        {
+          "index": 68,
+          "pull": -0.18517865840349082,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.68-1.70 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 3.498,
+          "error_nb": 0.284
+        },
+        {
+          "index": 69,
+          "pull": 0.17879277145159442,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.70-1.72 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 3.046,
+          "error_nb": 0.262
+        },
+        {
+          "index": 70,
+          "pull": -0.22835424409574598,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.72-1.74 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 2.686,
+          "error_nb": 0.247
+        },
+        {
+          "index": 71,
+          "pull": -0.8450508879471761,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.74-1.76 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 2.319,
+          "error_nb": 0.223
+        },
+        {
+          "index": 72,
+          "pull": 0.9038686617623725,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.76-1.78 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 1.5,
+          "error_nb": 0.181
+        },
+        {
+          "index": 73,
+          "pull": -0.2478599868747823,
+          "block": "normalization_constraints",
+          "label": "normalization pull kkpi0"
+        },
+        {
+          "index": 74,
+          "pull": -0.05086903679494435,
+          "block": "normalization_constraints",
+          "label": "normalization pull kskpi"
+        }
+      ],
+      "largest_pulls": [
+        {
+          "rank": 1,
+          "index": 20,
+          "pull": -8.269208342733814,
+          "chi2_contribution": 68.3798066155385,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "rank": 2,
+          "index": 19,
+          "pull": -4.3876423303187835,
+          "chi2_contribution": 19.251405218805246,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "rank": 3,
+          "index": 26,
+          "pull": 3.499050812419391,
+          "chi2_contribution": 12.2433565878928,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "rank": 4,
+          "index": 21,
+          "pull": -3.3070393516493892,
+          "chi2_contribution": 10.936509273357613,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "rank": 5,
+          "index": 2,
+          "pull": -3.2657725908934165,
+          "chi2_contribution": 10.665270615430698,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "rank": 6,
+          "index": 13,
+          "pull": -3.197754606319393,
+          "chi2_contribution": 10.225634522236897,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "rank": 7,
+          "index": 51,
+          "pull": 3.08769609110395,
+          "chi2_contribution": 9.533867151018612,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "rank": 8,
+          "index": 23,
+          "pull": 2.825357412676348,
+          "chi2_contribution": 7.982644509365188,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "rank": 9,
+          "index": 6,
+          "pull": 2.460052858115598,
+          "chi2_contribution": 6.051860064722722,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "rank": 10,
+          "index": 11,
+          "pull": 2.4552470385370264,
+          "chi2_contribution": 6.028238020244839,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "rank": 11,
+          "index": 34,
+          "pull": -2.381139531804857,
+          "chi2_contribution": 5.669825469923854,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "rank": 12,
+          "index": 27,
+          "pull": 2.373848653607804,
+          "chi2_contribution": 5.6351574302355845,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "rank": 13,
+          "index": 65,
+          "pull": 1.9521052954672509,
+          "chi2_contribution": 3.810715084591283,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "rank": 14,
+          "index": 56,
+          "pull": -1.864670447626147,
+          "chi2_contribution": 3.4769958782502957,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "rank": 15,
+          "index": 57,
+          "pull": -1.8036050889367445,
+          "chi2_contribution": 3.2529913168385223,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        }
+      ],
+      "babar_energy_pattern": {
+        "kkpi0": {
+          "energy_center_gev": [
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -1.1961510603975856,
+            -0.022256553538646872,
+            1.727822683731496,
+            -0.44720826268136604,
+            0.7626492503309006,
+            -0.44183617907740413,
+            -2.381139531804857,
+            0.8923697958761311,
+            0.5138256224794062,
+            -0.011291879770695132,
+            1.1486416318231072,
+            -1.2146595781588072,
+            -1.615037272417396,
+            -0.23442855115817726,
+            0.4762942368756127,
+            -0.5033432188354333,
+            0.822805832564544,
+            -0.26811154828633466,
+            1.305348859418633,
+            -0.08308745173326774,
+            1.3280970545100894
+          ],
+          "sign_sequence": "--+-+--++-+---+-+-+-+",
+          "chi2": 22.285648275786677,
+          "count": 21,
+          "runs": {
+            "positive": 9,
+            "negative": 12,
+            "runs": 16,
+            "expected_runs": 11.285714285714286,
+            "standard_deviation": 2.1852940772540506,
+            "standardized_runs": 2.157277486520024
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 7,
+              "chi2": 11.06331772818914,
+              "mean_pull": -0.28544566477678046,
+              "positive": 2,
+              "negative": 5
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 3.855243618627295,
+              "mean_pull": 0.2657771184498284,
+              "positive": 3,
+              "negative": 2
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 3.820522171026314,
+              "mean_pull": -0.21074179459416995,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 3.5465647579439254,
+              "mean_pull": 0.57056172847728,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        },
+        "kskpi": {
+          "energy_center_gev": [
+            1.26,
+            1.3,
+            1.34,
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -0.9251227819011671,
+            -0.9827199257532774,
+            3.08769609110395,
+            0.27717407471643996,
+            1.1488190505003526,
+            -1.3997440213529866,
+            -0.5935027334543387,
+            -1.864670447626147,
+            -1.8036050889367445,
+            0.17515482131210558,
+            -0.21246375557868188,
+            0.24629922040800734,
+            -0.659845477284692,
+            1.2248125528347453,
+            -0.7587881460942829,
+            -0.30639167071344664,
+            1.9521052954672509,
+            -0.5791226052378164,
+            -0.45776846216240463,
+            -0.18517865840349082,
+            0.17879277145159442,
+            -0.22835424409574598,
+            -0.8450508879471761,
+            0.9038686617623725
+          ],
+          "sign_sequence": "--+++----+-+-+--+---+--+",
+          "chi2": 30.540408227262294,
+          "count": 24,
+          "runs": {
+            "positive": 9,
+            "negative": 15,
+            "runs": 14,
+            "expected_runs": 12.25,
+            "standard_deviation": 2.2391040521873338,
+            "standardized_runs": 0.781562606833953
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 10,
+              "chi2": 21.824263670020034,
+              "mean_pull": -0.2880520961391813,
+              "positive": 4,
+              "negative": 6
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 2.6171254475360177,
+              "mean_pull": -0.03199712114298083,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 4.483817032849945,
+              "mean_pull": 0.08472877979001847,
+              "positive": 1,
+              "negative": 4
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 1.6152020768562942,
+              "mean_pull": 0.002314075292761203,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        }
+      },
+      "local_errors": {
+        "scaled_m_rho_GeV": 0.33873953191797035,
+        "scaled_m_Kstar_GeV": 0.24546471038254425,
+        "scaled_Delta_V_GeV2": 0.09005588804390678,
+        "scaled_kappa_V": 0.05621420098657815,
+        "scaled_F_V_GeV": 0.06782209651099091,
+        "scaled_z_V_GeV_inverse": 0.028193237630862802,
+        "G_V_GeV": 0.00014175995707735854,
+        "total_width_pull_rho0": 0.9983457265744593,
+        "total_width_pull_rhoplus": 0.9987444814298145,
+        "total_width_pull_omega": 0.9788491494071473,
+        "total_width_pull_phi": 0.9620290899897478,
+        "total_width_pull_etap": 0.4958509700542925,
+        "c1_minus_c2_plus_c5": 0.02345493384964635,
+        "c1_minus_c2_minus_c5_plus_2c6": 0.0015130288318766219,
+        "c1_plus_c2_minus_c5": 0.00825697034638817,
+        "c3": 0.0012104660344667204,
+        "c4": 0.0015254668573175343,
+        "d1": 0.046748581491114265,
+        "d2": 0.003965843425655778,
+        "d3": 0.004608527183745161,
+        "g1_plus_2g2_minus_g3": 0.5153444031173829,
+        "g2": 0.18849539579579014,
+        "g4": 0.1869755977990557,
+        "2g4_plus_g5": 0.1548946602755069,
+        "gT_times_CT_dimensionless": 0.20789398361729675,
+        "gT_times_DT_GeV": 3.285525066495974,
+        "beta_first_kkpi0": 0.7174765959196913,
+        "beta_first_kskpi": 0.3234893069812445,
+        "beta_second_kkpi0": 0.08594438237557826,
+        "beta_second_kskpi": 0.0720903205493364,
+        "normalization_pull_kkpi0": 0.9994282060791929,
+        "normalization_pull_kskpi": 0.9998605183736898
+      },
+      "local_error_vector": [
+        0.33873953191797035,
+        0.24546471038254425,
+        0.09005588804390678,
+        0.05621420098657815,
+        0.06782209651099091,
+        0.028193237630862802,
+        0.00014175995707735854,
+        0.9983457265744593,
+        0.9987444814298145,
+        0.9788491494071473,
+        0.9620290899897478,
+        0.4958509700542925,
+        0.02345493384964635,
+        0.0015130288318766219,
+        0.00825697034638817,
+        0.0012104660344667204,
+        0.0015254668573175343,
+        0.046748581491114265,
+        0.003965843425655778,
+        0.004608527183745161,
+        0.5153444031173829,
+        0.18849539579579014,
+        0.1869755977990557,
+        0.1548946602755069,
+        0.20789398361729675,
+        3.285525066495974,
+        0.7174765959196913,
+        0.3234893069812445,
+        0.08594438237557826,
+        0.0720903205493364,
+        0.9994282060791929,
+        0.9998605183736898
+      ],
+      "column_normalized_singular_values": [
+        2.326943228891578,
+        2.2382910033956636,
+        1.9844139771233755,
+        1.9286558636441715,
+        1.7875250503526277,
+        1.3267404837616652,
+        1.2357782029859843,
+        1.1351365501664632,
+        1.0000015400494966,
+        0.9808419239581903,
+        0.9253934431796844,
+        0.9007100650375902,
+        0.6908143406015759,
+        0.6624075373912118,
+        0.6249637055752292,
+        0.5752197919533838,
+        0.4575482869885257,
+        0.417997002042105,
+        0.376158064624744,
+        0.3442368325011155,
+        0.2965257516035557,
+        0.2659172606616476,
+        0.1977174637706096,
+        0.15928213797940804,
+        0.07803350257825262,
+        0.05124702840019603,
+        0.04220326200280394,
+        0.031080800038901117,
+        0.022998960145637116,
+        0.015520905651353339,
+        0.007198554238167879,
+        0.0018959547002078622
+      ],
+      "local_error_definition": "sqrt(diag((J^T J)^-1)) from the (4,128,128) Jacobian (analytic odd columns, forward differences otherwise); linearized, not profile intervals",
+      "elapsed_seconds": 168.816537208
+    },
+    {
+      "id": "basin_probes/babar",
+      "endpoint": [
+        0.30997952957552816,
+        -0.8144775660755665,
+        -0.03673360434084791,
+        0.16492596553378702,
+        0.0011061289043262118,
+        -0.014290948165896584,
+        0.05906782058260307,
+        -0.1282759597195048,
+        0.04929013768043031,
+        -0.5232407348494854,
+        2.8254408422920285,
+        -3.305948399517138,
+        0.022561479374582562,
+        0.0700867734125519,
+        -0.0683324273244555,
+        0.011722859056566007,
+        -0.00491083673426865,
+        -0.3897524769374522,
+        0.02497227367214106,
+        0.021881525242788313,
+        0.3549010219420231,
+        0.12275925657157258,
+        0.22634526769810304,
+        0.04383916486738991,
+        0.04806422563373081,
+        -3.0335079946142987,
+        -0.7253016671114856,
+        -0.27405707660739753,
+        -0.15777720948904816,
+        -0.014352155347503705,
+        -0.24655645846322072,
+        -0.05071304906292799
+      ],
+      "chi2": 225.72708295708088,
+      "comparison_ledger_chi2": 225.72708295708088,
+      "absolute_chi2_difference_to_comparison": 0.0,
+      "chi2_matches_comparison": true,
+      "residual_count": 75,
+      "free_coordinate_count": 32,
+      "degrees_of_freedom": 43,
+      "nominal_p_value": 1.2668487001297625e-26,
+      "chi2_per_degree_of_freedom": 5.249467045513509,
+      "blocks": {
+        "odd": {
+          "chi2": 35.14612058263116,
+          "count": 12,
+          "nominal_p_value_row_count_dof": 0.0004438606979553363
+        },
+        "masses_and_leptonic": {
+          "chi2": 12.932880878445058,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 0.07376072073195937
+        },
+        "shared_widths": {
+          "chi2": 106.83651429020689,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 4.157264034566369e-20
+        },
+        "phi_KK": {
+          "chi2": 17.881364918193484,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.00013095164054058997
+        },
+        "BaBar": {
+          "chi2": 52.866840387049024,
+          "count": 45,
+          "nominal_p_value_row_count_dof": 0.19636051827809922
+        },
+        "normalization_constraints": {
+          "chi2": 0.06336190055518483,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.9688156331340649
+        }
+      },
+      "standardized_residuals": [
+        {
+          "index": 0,
+          "pull": -0.9934306498022355,
+          "block": "odd",
+          "label": "omega_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 1,
+          "pull": 1.1021403974622208,
+          "block": "odd",
+          "label": "rho0_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 2,
+          "pull": -3.258557058123861,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "index": 3,
+          "pull": -1.4467802975947246,
+          "block": "odd",
+          "label": "omega_eta_gamma branching_fraction"
+        },
+        {
+          "index": 4,
+          "pull": -0.7224159899986674,
+          "block": "odd",
+          "label": "etap_omega_gamma branching_fraction"
+        },
+        {
+          "index": 5,
+          "pull": 1.1633380266800295,
+          "block": "odd",
+          "label": "phi_eta_gamma branching_fraction"
+        },
+        {
+          "index": 6,
+          "pull": 2.467793626622791,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "index": 7,
+          "pull": -0.28192761075000417,
+          "block": "odd",
+          "label": "Kstarplus_Kplus_gamma branching_fraction"
+        },
+        {
+          "index": 8,
+          "pull": 0.9257639326781396,
+          "block": "odd",
+          "label": "rhoplus_piplus_gamma branching_fraction"
+        },
+        {
+          "index": 9,
+          "pull": -1.6623283952088865,
+          "block": "odd",
+          "label": "pi0_gamma_gamma partial_width"
+        },
+        {
+          "index": 10,
+          "pull": -1.5942596364665624,
+          "block": "odd",
+          "label": "eta_gamma_gamma partial_width"
+        },
+        {
+          "index": 11,
+          "pull": 2.454866230801307,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "index": 12,
+          "pull": 0.8270378230920203,
+          "block": "masses_and_leptonic",
+          "label": "mass rho charged"
+        },
+        {
+          "index": 13,
+          "pull": -3.197206740055926,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "index": 14,
+          "pull": 0.4022747467204477,
+          "block": "masses_and_leptonic",
+          "label": "mass omega"
+        },
+        {
+          "index": 15,
+          "pull": 0.09949663780373097,
+          "block": "masses_and_leptonic",
+          "label": "mass phi"
+        },
+        {
+          "index": 16,
+          "pull": 0.009223658414823277,
+          "block": "masses_and_leptonic",
+          "label": "electronic width rho"
+        },
+        {
+          "index": 17,
+          "pull": -1.1217415150823862,
+          "block": "masses_and_leptonic",
+          "label": "electronic width omega"
+        },
+        {
+          "index": 18,
+          "pull": 0.7724278112834237,
+          "block": "masses_and_leptonic",
+          "label": "electronic width phi"
+        },
+        {
+          "index": 19,
+          "pull": -4.387654231499422,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "index": 20,
+          "pull": -8.269215727947227,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "index": 21,
+          "pull": -3.3059483995171375,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "index": 22,
+          "pull": -0.523240734849486,
+          "block": "shared_widths",
+          "label": "total width omega"
+        },
+        {
+          "index": 23,
+          "pull": 2.8254408422920614,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "index": 24,
+          "pull": -0.12827595971948852,
+          "block": "shared_widths",
+          "label": "total width rho0"
+        },
+        {
+          "index": 25,
+          "pull": 0.04929013768043,
+          "block": "shared_widths",
+          "label": "total width rhoplus"
+        },
+        {
+          "index": 26,
+          "pull": 3.4992130967662405,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "index": 27,
+          "pull": 2.3742098941780827,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "index": 28,
+          "pull": -1.1983483902007492,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.36-1.38 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.208,
+          "error_nb": 0.12
+        },
+        {
+          "index": 29,
+          "pull": -0.0254429953309304,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.38-1.40 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.1,
+          "error_nb": 0.089
+        },
+        {
+          "index": 30,
+          "pull": 1.7230160211002323,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.40-1.42 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.042,
+          "error_nb": 0.059
+        },
+        {
+          "index": 31,
+          "pull": -0.4493846996162736,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.42-1.44 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.241,
+          "error_nb": 0.092
+        },
+        {
+          "index": 32,
+          "pull": 0.7625661400418682,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.44-1.46 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.193,
+          "error_nb": 0.091
+        },
+        {
+          "index": 33,
+          "pull": -0.43885398561533556,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.46-1.48 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 0.37,
+          "error_nb": 0.093
+        },
+        {
+          "index": 34,
+          "pull": -2.3761254703849977,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "index": 35,
+          "pull": 0.9025824236472655,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.50-1.52 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 0.385,
+          "error_nb": 0.092
+        },
+        {
+          "index": 36,
+          "pull": 0.5255757823162819,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.52-1.54 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 0.485,
+          "error_nb": 0.102
+        },
+        {
+          "index": 37,
+          "pull": 0.00041323764551437096,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.54-1.56 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 0.61,
+          "error_nb": 0.113
+        },
+        {
+          "index": 38,
+          "pull": 1.1600591072476143,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.56-1.58 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 0.556,
+          "error_nb": 0.109
+        },
+        {
+          "index": 39,
+          "pull": -1.2077186357502347,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.58-1.60 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 0.911,
+          "error_nb": 0.13
+        },
+        {
+          "index": 40,
+          "pull": -1.6130076008968335,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.60-1.62 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 1.03,
+          "error_nb": 0.132
+        },
+        {
+          "index": 41,
+          "pull": -0.2390105016213194,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.62-1.64 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 0.882,
+          "error_nb": 0.127
+        },
+        {
+          "index": 42,
+          "pull": 0.46462749927004865,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.64-1.66 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 0.767,
+          "error_nb": 0.116
+        },
+        {
+          "index": 43,
+          "pull": -0.5169856071820279,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.66-1.68 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 0.749,
+          "error_nb": 0.114
+        },
+        {
+          "index": 44,
+          "pull": 0.8111079017633306,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.68-1.70 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 0.413,
+          "error_nb": 0.082
+        },
+        {
+          "index": 45,
+          "pull": -0.2690945102626313,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.70-1.72 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 0.296,
+          "error_nb": 0.071
+        },
+        {
+          "index": 46,
+          "pull": 1.3133622016709778,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.72-1.74 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 0.093,
+          "error_nb": 0.046
+        },
+        {
+          "index": 47,
+          "pull": -0.08110582041639766,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.74-1.76 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 0.116,
+          "error_nb": 0.046
+        },
+        {
+          "index": 48,
+          "pull": 1.3084613680312742,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.76-1.78 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 0.073,
+          "error_nb": 0.038
+        },
+        {
+          "index": 49,
+          "pull": -0.922829491854826,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.24-1.28 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.24,
+          "energy_high_gev": 1.28,
+          "energy_center_gev": 1.26,
+          "observed_nb": 0.037,
+          "error_nb": 0.034
+        },
+        {
+          "index": 50,
+          "pull": -0.9744030656442254,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.28-1.32 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.28,
+          "energy_high_gev": 1.32,
+          "energy_center_gev": 1.3,
+          "observed_nb": 0.042,
+          "error_nb": 0.024
+        },
+        {
+          "index": 51,
+          "pull": 3.1211730703890312,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "index": 52,
+          "pull": 0.29233672900271496,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.36-1.38 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.107,
+          "error_nb": 0.054
+        },
+        {
+          "index": 53,
+          "pull": 1.1679526855001021,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.38-1.40 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.132,
+          "error_nb": 0.059
+        },
+        {
+          "index": 54,
+          "pull": -1.3868251647513021,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.40-1.42 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.47,
+          "error_nb": 0.111
+        },
+        {
+          "index": 55,
+          "pull": -0.5793420920999633,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.42-1.44 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.542,
+          "error_nb": 0.118
+        },
+        {
+          "index": 56,
+          "pull": -1.8539497684280197,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "index": 57,
+          "pull": -1.7943217168997874,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        },
+        {
+          "index": 58,
+          "pull": 0.18322799254180985,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.48-1.50 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 1.231,
+          "error_nb": 0.18
+        },
+        {
+          "index": 59,
+          "pull": -0.20796404851378925,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.50-1.52 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 1.673,
+          "error_nb": 0.205
+        },
+        {
+          "index": 60,
+          "pull": 0.24714288522664168,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.52-1.54 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 1.964,
+          "error_nb": 0.22
+        },
+        {
+          "index": 61,
+          "pull": -0.6625243956460963,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.54-1.56 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 2.564,
+          "error_nb": 0.249
+        },
+        {
+          "index": 62,
+          "pull": 1.2186964771790496,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.56-1.58 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 2.44,
+          "error_nb": 0.253
+        },
+        {
+          "index": 63,
+          "pull": -0.7674115627563824,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.58-1.60 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 3.269,
+          "error_nb": 0.282
+        },
+        {
+          "index": 64,
+          "pull": -0.31837006775993953,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.60-1.62 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 3.397,
+          "error_nb": 0.283
+        },
+        {
+          "index": 65,
+          "pull": 1.9353791079563376,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "index": 66,
+          "pull": -0.5970160594791121,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.64-1.66 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 3.807,
+          "error_nb": 0.302
+        },
+        {
+          "index": 67,
+          "pull": -0.4753318545471053,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.66-1.68 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 3.76,
+          "error_nb": 0.291
+        },
+        {
+          "index": 68,
+          "pull": -0.19437815625774515,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.68-1.70 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 3.498,
+          "error_nb": 0.284
+        },
+        {
+          "index": 69,
+          "pull": 0.1832810545943307,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.70-1.72 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 3.046,
+          "error_nb": 0.262
+        },
+        {
+          "index": 70,
+          "pull": -0.21267171560582726,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.72-1.74 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 2.686,
+          "error_nb": 0.247
+        },
+        {
+          "index": 71,
+          "pull": -0.8265407248434492,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.74-1.76 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 2.319,
+          "error_nb": 0.223
+        },
+        {
+          "index": 72,
+          "pull": 0.9165188693822105,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.76-1.78 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 1.5,
+          "error_nb": 0.181
+        },
+        {
+          "index": 73,
+          "pull": -0.24655645846322072,
+          "block": "normalization_constraints",
+          "label": "normalization pull kkpi0"
+        },
+        {
+          "index": 74,
+          "pull": -0.05071304906292799,
+          "block": "normalization_constraints",
+          "label": "normalization pull kskpi"
+        }
+      ],
+      "largest_pulls": [
+        {
+          "rank": 1,
+          "index": 20,
+          "pull": -8.269215727947227,
+          "chi2_contribution": 68.37992875532979,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "rank": 2,
+          "index": 19,
+          "pull": -4.387654231499422,
+          "chi2_contribution": 19.25150965519478,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "rank": 3,
+          "index": 26,
+          "pull": 3.4992130967662405,
+          "chi2_contribution": 12.244492296580383,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "rank": 4,
+          "index": 21,
+          "pull": -3.3059483995171375,
+          "chi2_contribution": 10.929294820269924,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "rank": 5,
+          "index": 2,
+          "pull": -3.258557058123861,
+          "chi2_contribution": 10.618194101048832,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "rank": 6,
+          "index": 13,
+          "pull": -3.197206740055926,
+          "chi2_contribution": 10.22213093865904,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "rank": 7,
+          "index": 51,
+          "pull": 3.1211730703890312,
+          "chi2_contribution": 9.741721335321692,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "rank": 8,
+          "index": 23,
+          "pull": 2.8254408422920614,
+          "chi2_contribution": 7.9831159532920735,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "rank": 9,
+          "index": 6,
+          "pull": 2.467793626622791,
+          "chi2_contribution": 6.090005383600067,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "rank": 10,
+          "index": 11,
+          "pull": 2.454866230801307,
+          "chi2_contribution": 6.026368211128616,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "rank": 11,
+          "index": 34,
+          "pull": -2.3761254703849977,
+          "chi2_contribution": 5.645972251012326,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "rank": 12,
+          "index": 27,
+          "pull": 2.3742098941780827,
+          "chi2_contribution": 5.636872621613103,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "rank": 13,
+          "index": 65,
+          "pull": 1.9353791079563376,
+          "chi2_contribution": 3.745692291513869,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "rank": 14,
+          "index": 56,
+          "pull": -1.8539497684280197,
+          "chi2_contribution": 3.437129743854308,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "rank": 15,
+          "index": 57,
+          "pull": -1.7943217168997874,
+          "chi2_contribution": 3.2195904237382007,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        }
+      ],
+      "babar_energy_pattern": {
+        "kkpi0": {
+          "energy_center_gev": [
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -1.1983483902007492,
+            -0.0254429953309304,
+            1.7230160211002323,
+            -0.4493846996162736,
+            0.7625661400418682,
+            -0.43885398561533556,
+            -2.3761254703849977,
+            0.9025824236472655,
+            0.5255757823162819,
+            0.00041323764551437096,
+            1.1600591072476143,
+            -1.2077186357502347,
+            -1.6130076008968335,
+            -0.2390105016213194,
+            0.46462749927004865,
+            -0.5169856071820279,
+            0.8111079017633306,
+            -0.2690945102626313,
+            1.3133622016709778,
+            -0.08110582041639766,
+            1.3084613680312742
+          ],
+          "sign_sequence": "--+-+--++++---+-+-+-+",
+          "chi2": 22.23864559163047,
+          "count": 21,
+          "runs": {
+            "positive": 10,
+            "negative": 11,
+            "runs": 14,
+            "expected_runs": 11.476190476190476,
+            "standard_deviation": 2.227940488626588,
+            "standardized_runs": 1.1327993439202337
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 7,
+              "chi2": 11.027489217166568,
+              "mean_pull": -0.28608191142945516,
+              "positive": 2,
+              "negative": 5
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 3.8952065406462357,
+              "mean_pull": 0.2761823830212883,
+              "positive": 4,
+              "negative": 1
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 3.7999683998504548,
+              "mean_pull": -0.21865366173336032,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 3.515981433967214,
+              "mean_pull": 0.5679058097558058,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        },
+        "kskpi": {
+          "energy_center_gev": [
+            1.26,
+            1.3,
+            1.34,
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -0.922829491854826,
+            -0.9744030656442254,
+            3.1211730703890312,
+            0.29233672900271496,
+            1.1679526855001021,
+            -1.3868251647513021,
+            -0.5793420920999633,
+            -1.8539497684280197,
+            -1.7943217168997874,
+            0.18322799254180985,
+            -0.20796404851378925,
+            0.24714288522664168,
+            -0.6625243956460963,
+            1.2186964771790496,
+            -0.7674115627563824,
+            -0.31837006775993953,
+            1.9353791079563376,
+            -0.5970160594791121,
+            -0.4753318545471053,
+            -0.19437815625774515,
+            0.1832810545943307,
+            -0.21267171560582726,
+            -0.8265407248434492,
+            0.9165188693822105
+          ],
+          "sign_sequence": "--+++----+-+-+--+---+--+",
+          "chi2": 30.62819479541856,
+          "count": 24,
+          "runs": {
+            "positive": 9,
+            "negative": 15,
+            "runs": 14,
+            "expected_runs": 12.25,
+            "standard_deviation": 2.2391040521873338,
+            "standardized_runs": 0.781562606833953
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 10,
+              "chi2": 21.941585141496148,
+              "mean_pull": -0.27469808222444664,
+              "positive": 4,
+              "negative": 6
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 2.6174088361594388,
+              "mean_pull": -0.034412128902115355,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 4.4672032064126554,
+              "mean_pull": 0.07005659398248713,
+              "positive": 1,
+              "negative": 4
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 1.6019976113503156,
+              "mean_pull": 0.015146870881816182,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        }
+      },
+      "local_errors": {
+        "scaled_m_rho_GeV": 0.33874526501835117,
+        "scaled_m_Kstar_GeV": 0.24547020927906876,
+        "scaled_Delta_V_GeV2": 0.09005691992449949,
+        "scaled_kappa_V": 0.05621623255290339,
+        "scaled_F_V_GeV": 0.06782196337847231,
+        "scaled_z_V_GeV_inverse": 0.028195155223336123,
+        "G_V_GeV": 0.0001417613410741014,
+        "total_width_pull_rho0": 0.9983499794106019,
+        "total_width_pull_rhoplus": 0.998745156575513,
+        "total_width_pull_omega": 0.9788361090447613,
+        "total_width_pull_phi": 0.9620301690067922,
+        "total_width_pull_etap": 0.49672646873391507,
+        "c1_minus_c2_plus_c5": 0.02302488819272546,
+        "c1_minus_c2_minus_c5_plus_2c6": 0.0015246644991660544,
+        "c1_plus_c2_minus_c5": 0.008289824107209933,
+        "c3": 0.001216236961844908,
+        "c4": 0.001528549611958096,
+        "d1": 0.047002321370661834,
+        "d2": 0.003973391065872102,
+        "d3": 0.0046415442661164145,
+        "g1_plus_2g2_minus_g3": 0.5128935462346962,
+        "g2": 0.1864676889039828,
+        "g4": 0.19920660028019385,
+        "2g4_plus_g5": 0.14880071731037364,
+        "gT_times_CT_dimensionless": 0.21796470088205103,
+        "gT_times_DT_GeV": 3.234410864864377,
+        "beta_first_kkpi0": 0.7568605627237499,
+        "beta_first_kskpi": 0.3291463768564738,
+        "beta_second_kkpi0": 0.0887528264151736,
+        "beta_second_kskpi": 0.07832437779731766,
+        "normalization_pull_kkpi0": 0.9994360752078317,
+        "normalization_pull_kskpi": 0.9998373657434324
+      },
+      "local_error_vector": [
+        0.33874526501835117,
+        0.24547020927906876,
+        0.09005691992449949,
+        0.05621623255290339,
+        0.06782196337847231,
+        0.028195155223336123,
+        0.0001417613410741014,
+        0.9983499794106019,
+        0.998745156575513,
+        0.9788361090447613,
+        0.9620301690067922,
+        0.49672646873391507,
+        0.02302488819272546,
+        0.0015246644991660544,
+        0.008289824107209933,
+        0.001216236961844908,
+        0.001528549611958096,
+        0.047002321370661834,
+        0.003973391065872102,
+        0.0046415442661164145,
+        0.5128935462346962,
+        0.1864676889039828,
+        0.19920660028019385,
+        0.14880071731037364,
+        0.21796470088205103,
+        3.234410864864377,
+        0.7568605627237499,
+        0.3291463768564738,
+        0.0887528264151736,
+        0.07832437779731766,
+        0.9994360752078317,
+        0.9998373657434324
+      ],
+      "column_normalized_singular_values": [
+        2.3249182661116956,
+        2.2409391607611124,
+        1.9844850476383398,
+        1.9292549421918361,
+        1.7844874696545185,
+        1.3272431279325805,
+        1.2358574774692197,
+        1.1366683410115188,
+        1.000001563812171,
+        0.981433502395007,
+        0.926411209898462,
+        0.90030011069942,
+        0.6906495747094763,
+        0.6623524260012756,
+        0.6248873012610263,
+        0.5754015980713074,
+        0.45846289322069184,
+        0.4186369140936542,
+        0.374007269351834,
+        0.3432580538283123,
+        0.2953003541089742,
+        0.26591853685805605,
+        0.19783304100604593,
+        0.16091321149364723,
+        0.07707520456068974,
+        0.05062236698225098,
+        0.0422026954372467,
+        0.030999775037917312,
+        0.02299796945013721,
+        0.01470447673214522,
+        0.006980259559902498,
+        0.001863281777083339
+      ],
+      "local_error_definition": "sqrt(diag((J^T J)^-1)) from the (4,128,128) Jacobian (analytic odd columns, forward differences otherwise); linearized, not profile intervals",
+      "elapsed_seconds": 169.28491086100007
+    },
+    {
+      "id": "continuation_4128128/stored_negative_c4",
+      "endpoint": [
+        0.30994553784813816,
+        -0.8144834532733459,
+        -0.03672480930713028,
+        0.1649227648965076,
+        0.0011235654561921494,
+        -0.014262296567794305,
+        0.059067843845284754,
+        -0.12769793340215108,
+        0.04924354908051771,
+        -0.5236749431045674,
+        2.825493978666713,
+        -3.306214714079452,
+        0.02254596908319306,
+        0.07008517105251258,
+        -0.06829990419653977,
+        0.01171731654490417,
+        -0.004902187556900901,
+        -0.3895807973534015,
+        0.024983155091887893,
+        0.02187342239271547,
+        0.35404881607837857,
+        0.12249534070511442,
+        0.22622771577139994,
+        0.04401490907811249,
+        0.048189838173276205,
+        -3.0364489800062646,
+        -0.7256260061209466,
+        -0.27348505443761956,
+        -0.15749623163381213,
+        -0.014482483830943275,
+        -0.24633010586607926,
+        -0.05007714803741749
+      ],
+      "chi2": 225.72719113390542,
+      "comparison_ledger_chi2": 225.72719113390542,
+      "absolute_chi2_difference_to_comparison": 0.0,
+      "chi2_matches_comparison": true,
+      "residual_count": 75,
+      "free_coordinate_count": 32,
+      "degrees_of_freedom": 43,
+      "nominal_p_value": 1.2667924941870603e-26,
+      "chi2_per_degree_of_freedom": 5.249469561253615,
+      "blocks": {
+        "odd": {
+          "chi2": 35.13964621525815,
+          "count": 12,
+          "nominal_p_value_row_count_dof": 0.00044491713349129134
+        },
+        "masses_and_leptonic": {
+          "chi2": 12.930488881362136,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 0.07382023725489507
+        },
+        "shared_widths": {
+          "chi2": 106.83750202480022,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 4.155305632691735e-20
+        },
+        "phi_KK": {
+          "chi2": 17.88250430620394,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.00013087705942222422
+        },
+        "BaBar": {
+          "chi2": 52.87386346446943,
+          "count": 45,
+          "nominal_p_value_row_count_dof": 0.19617657837623412
+        },
+        "normalization_constraints": {
+          "chi2": 0.06318624181155524,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.9689007273393581
+        }
+      },
+      "standardized_residuals": [
+        {
+          "index": 0,
+          "pull": -0.9944414335594334,
+          "block": "odd",
+          "label": "omega_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 1,
+          "pull": 1.1015661485107082,
+          "block": "odd",
+          "label": "rho0_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 2,
+          "pull": -3.2564415810096485,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "index": 3,
+          "pull": -1.4465068879153355,
+          "block": "odd",
+          "label": "omega_eta_gamma branching_fraction"
+        },
+        {
+          "index": 4,
+          "pull": -0.722454238016139,
+          "block": "odd",
+          "label": "etap_omega_gamma branching_fraction"
+        },
+        {
+          "index": 5,
+          "pull": 1.1626690836806117,
+          "block": "odd",
+          "label": "phi_eta_gamma branching_fraction"
+        },
+        {
+          "index": 6,
+          "pull": 2.471265591343858,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "index": 7,
+          "pull": -0.2837811045831828,
+          "block": "odd",
+          "label": "Kstarplus_Kplus_gamma branching_fraction"
+        },
+        {
+          "index": 8,
+          "pull": 0.9249605710904109,
+          "block": "odd",
+          "label": "rhoplus_piplus_gamma branching_fraction"
+        },
+        {
+          "index": 9,
+          "pull": -1.6595801494772886,
+          "block": "odd",
+          "label": "pi0_gamma_gamma partial_width"
+        },
+        {
+          "index": 10,
+          "pull": -1.5948129415402132,
+          "block": "odd",
+          "label": "eta_gamma_gamma partial_width"
+        },
+        {
+          "index": 11,
+          "pull": 2.454766590136568,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "index": 12,
+          "pull": 0.8269378474231004,
+          "block": "masses_and_leptonic",
+          "label": "mass rho charged"
+        },
+        {
+          "index": 13,
+          "pull": -3.1972293831245424,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "index": 14,
+          "pull": 0.4022834837605989,
+          "block": "masses_and_leptonic",
+          "label": "mass omega"
+        },
+        {
+          "index": 15,
+          "pull": 0.09949965849853637,
+          "block": "masses_and_leptonic",
+          "label": "mass phi"
+        },
+        {
+          "index": 16,
+          "pull": 0.009647755874814633,
+          "block": "masses_and_leptonic",
+          "label": "electronic width rho"
+        },
+        {
+          "index": 17,
+          "pull": -1.1214564779126626,
+          "block": "masses_and_leptonic",
+          "label": "electronic width omega"
+        },
+        {
+          "index": 18,
+          "pull": 0.7712956989072732,
+          "block": "masses_and_leptonic",
+          "label": "electronic width phi"
+        },
+        {
+          "index": 19,
+          "pull": -4.387581982467581,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "index": 20,
+          "pull": -8.269170894200458,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "index": 21,
+          "pull": -3.306214714079452,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "index": 22,
+          "pull": -0.523674943104561,
+          "block": "shared_widths",
+          "label": "total width omega"
+        },
+        {
+          "index": 23,
+          "pull": 2.8254939786667017,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "index": 24,
+          "pull": -0.12769793340215718,
+          "block": "shared_widths",
+          "label": "total width rho0"
+        },
+        {
+          "index": 25,
+          "pull": 0.049243549080507654,
+          "block": "shared_widths",
+          "label": "total width rhoplus"
+        },
+        {
+          "index": 26,
+          "pull": 3.499277950180679,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "index": 27,
+          "pull": 2.374354256125914,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "index": 28,
+          "pull": -1.1984806938136796,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.36-1.38 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.208,
+          "error_nb": 0.12
+        },
+        {
+          "index": 29,
+          "pull": -0.02572912914670247,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.38-1.40 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.1,
+          "error_nb": 0.089
+        },
+        {
+          "index": 30,
+          "pull": 1.7223553800758844,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.40-1.42 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.042,
+          "error_nb": 0.059
+        },
+        {
+          "index": 31,
+          "pull": -0.44987456034491347,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.42-1.44 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.241,
+          "error_nb": 0.092
+        },
+        {
+          "index": 32,
+          "pull": 0.7621533291057236,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.44-1.46 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.193,
+          "error_nb": 0.091
+        },
+        {
+          "index": 33,
+          "pull": -0.43903889094227605,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.46-1.48 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 0.37,
+          "error_nb": 0.093
+        },
+        {
+          "index": 34,
+          "pull": -2.3760324030363917,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "index": 35,
+          "pull": 0.9030346805277006,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.50-1.52 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 0.385,
+          "error_nb": 0.092
+        },
+        {
+          "index": 36,
+          "pull": 0.5262276171110007,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.52-1.54 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 0.485,
+          "error_nb": 0.102
+        },
+        {
+          "index": 37,
+          "pull": 0.0011107829109178436,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.54-1.56 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 0.61,
+          "error_nb": 0.113
+        },
+        {
+          "index": 38,
+          "pull": 1.1607162341587607,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.56-1.58 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 0.556,
+          "error_nb": 0.109
+        },
+        {
+          "index": 39,
+          "pull": -1.2074191496099151,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.58-1.60 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 0.911,
+          "error_nb": 0.13
+        },
+        {
+          "index": 40,
+          "pull": -1.6131687818298768,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.60-1.62 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 1.03,
+          "error_nb": 0.132
+        },
+        {
+          "index": 41,
+          "pull": -0.23979590791565755,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.62-1.64 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 0.882,
+          "error_nb": 0.127
+        },
+        {
+          "index": 42,
+          "pull": 0.46320361053278153,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.64-1.66 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 0.767,
+          "error_nb": 0.116
+        },
+        {
+          "index": 43,
+          "pull": -0.5184610283938285,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.66-1.68 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 0.749,
+          "error_nb": 0.114
+        },
+        {
+          "index": 44,
+          "pull": 0.810012225584166,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.68-1.70 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 0.413,
+          "error_nb": 0.082
+        },
+        {
+          "index": 45,
+          "pull": -0.2688956309736433,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.70-1.72 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 0.296,
+          "error_nb": 0.071
+        },
+        {
+          "index": 46,
+          "pull": 1.3148424116156814,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.72-1.74 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 0.093,
+          "error_nb": 0.046
+        },
+        {
+          "index": 47,
+          "pull": -0.08006213643693966,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.74-1.76 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 0.116,
+          "error_nb": 0.046
+        },
+        {
+          "index": 48,
+          "pull": 1.3077128435950067,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.76-1.78 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 0.073,
+          "error_nb": 0.038
+        },
+        {
+          "index": 49,
+          "pull": -0.9224207208093247,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.24-1.28 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.24,
+          "energy_high_gev": 1.28,
+          "energy_center_gev": 1.26,
+          "observed_nb": 0.037,
+          "error_nb": 0.034
+        },
+        {
+          "index": 50,
+          "pull": -0.9727605929831166,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.28-1.32 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.28,
+          "energy_high_gev": 1.32,
+          "energy_center_gev": 1.3,
+          "observed_nb": 0.042,
+          "error_nb": 0.024
+        },
+        {
+          "index": 51,
+          "pull": 3.1280909105844685,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "index": 52,
+          "pull": 0.2954874366880768,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.36-1.38 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.107,
+          "error_nb": 0.054
+        },
+        {
+          "index": 53,
+          "pull": 1.171903562432003,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.38-1.40 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.132,
+          "error_nb": 0.059
+        },
+        {
+          "index": 54,
+          "pull": -1.3842522999788223,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.40-1.42 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.47,
+          "error_nb": 0.111
+        },
+        {
+          "index": 55,
+          "pull": -0.5767902381030249,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.42-1.44 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.542,
+          "error_nb": 0.118
+        },
+        {
+          "index": 56,
+          "pull": -1.8523885501297785,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "index": 57,
+          "pull": -1.7935164749990031,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        },
+        {
+          "index": 58,
+          "pull": 0.18303406034978612,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.48-1.50 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 1.231,
+          "error_nb": 0.18
+        },
+        {
+          "index": 59,
+          "pull": -0.20933682587805194,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.50-1.52 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 1.673,
+          "error_nb": 0.205
+        },
+        {
+          "index": 60,
+          "pull": 0.24467052987242408,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.52-1.54 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 1.964,
+          "error_nb": 0.22
+        },
+        {
+          "index": 61,
+          "pull": -0.6655294739581111,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.54-1.56 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 2.564,
+          "error_nb": 0.249
+        },
+        {
+          "index": 62,
+          "pull": 1.2154999051569277,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.56-1.58 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 2.44,
+          "error_nb": 0.253
+        },
+        {
+          "index": 63,
+          "pull": -0.7697413353001615,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.58-1.60 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 3.269,
+          "error_nb": 0.282
+        },
+        {
+          "index": 64,
+          "pull": -0.3193374335123841,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.60-1.62 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 3.397,
+          "error_nb": 0.283
+        },
+        {
+          "index": 65,
+          "pull": 1.9364766512783649,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "index": 66,
+          "pull": -0.5938413671366879,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.64-1.66 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 3.807,
+          "error_nb": 0.302
+        },
+        {
+          "index": 67,
+          "pull": -0.46969243471427397,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.66-1.68 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 3.76,
+          "error_nb": 0.291
+        },
+        {
+          "index": 68,
+          "pull": -0.18663190702072116,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.68-1.70 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 3.498,
+          "error_nb": 0.284
+        },
+        {
+          "index": 69,
+          "pull": 0.19196322339245322,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.70-1.72 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 3.046,
+          "error_nb": 0.262
+        },
+        {
+          "index": 70,
+          "pull": -0.20655507116630842,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.72-1.74 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 2.686,
+          "error_nb": 0.247
+        },
+        {
+          "index": 71,
+          "pull": -0.8265830324774314,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.74-1.76 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 2.319,
+          "error_nb": 0.223
+        },
+        {
+          "index": 72,
+          "pull": 0.9065810488234155,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.76-1.78 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 1.5,
+          "error_nb": 0.181
+        },
+        {
+          "index": 73,
+          "pull": -0.24633010586607926,
+          "block": "normalization_constraints",
+          "label": "normalization pull kkpi0"
+        },
+        {
+          "index": 74,
+          "pull": -0.05007714803741749,
+          "block": "normalization_constraints",
+          "label": "normalization pull kskpi"
+        }
+      ],
+      "largest_pulls": [
+        {
+          "rank": 1,
+          "index": 20,
+          "pull": -8.269170894200458,
+          "chi2_contribution": 68.37918727749201,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "rank": 2,
+          "index": 19,
+          "pull": -4.387581982467581,
+          "chi2_contribution": 19.25087565287415,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "rank": 3,
+          "index": 26,
+          "pull": 3.499277950180679,
+          "chi2_contribution": 12.244946172620697,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "rank": 4,
+          "index": 21,
+          "pull": -3.306214714079452,
+          "chi2_contribution": 10.931055735595473,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "rank": 5,
+          "index": 2,
+          "pull": -3.2564415810096485,
+          "chi2_contribution": 10.60441177052862,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "rank": 6,
+          "index": 13,
+          "pull": -3.1972293831245424,
+          "chi2_contribution": 10.222275728314942,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "rank": 7,
+          "index": 51,
+          "pull": 3.1280909105844685,
+          "chi2_contribution": 9.784952744881169,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "rank": 8,
+          "index": 23,
+          "pull": 2.8254939786667017,
+          "chi2_contribution": 7.983416223481788,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "rank": 9,
+          "index": 6,
+          "pull": 2.471265591343858,
+          "chi2_contribution": 6.107153622960109,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "rank": 10,
+          "index": 11,
+          "pull": 2.454766590136568,
+          "chi2_contribution": 6.025879012050712,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "rank": 11,
+          "index": 34,
+          "pull": -2.3760324030363917,
+          "chi2_contribution": 5.645529980278891,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "rank": 12,
+          "index": 27,
+          "pull": 2.374354256125914,
+          "chi2_contribution": 5.6375581335832425,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "rank": 13,
+          "index": 65,
+          "pull": 1.9364766512783649,
+          "chi2_contribution": 3.74994182094627,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "rank": 14,
+          "index": 56,
+          "pull": -1.8523885501297785,
+          "chi2_contribution": 3.431343340651903,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "rank": 15,
+          "index": 57,
+          "pull": -1.7935164749990031,
+          "chi2_contribution": 3.21670134609285,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        }
+      ],
+      "babar_energy_pattern": {
+        "kkpi0": {
+          "energy_center_gev": [
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -1.1984806938136796,
+            -0.02572912914670247,
+            1.7223553800758844,
+            -0.44987456034491347,
+            0.7621533291057236,
+            -0.43903889094227605,
+            -2.3760324030363917,
+            0.9030346805277006,
+            0.5262276171110007,
+            0.0011107829109178436,
+            1.1607162341587607,
+            -1.2074191496099151,
+            -1.6131687818298768,
+            -0.23979590791565755,
+            0.46320361053278153,
+            -0.5184610283938285,
+            0.810012225584166,
+            -0.2688956309736433,
+            1.3148424116156814,
+            -0.08006213643693966,
+            1.3077128435950067
+          ],
+          "sign_sequence": "--+-+--++++---+-+-+-+",
+          "chi2": 22.23952059335491,
+          "count": 21,
+          "runs": {
+            "positive": 10,
+            "negative": 11,
+            "runs": 14,
+            "expected_runs": 11.476190476190476,
+            "standard_deviation": 2.227940488626588,
+            "standardized_runs": 1.1327993439202337
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 7,
+              "chi2": 11.025075961958292,
+              "mean_pull": -0.2863781383003365,
+              "positive": 2,
+              "negative": 5
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 3.897511552169189,
+              "mean_pull": 0.2767340330196929,
+              "positive": 4,
+              "negative": 1
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 3.799294824493188,
+              "mean_pull": -0.21964197640448307,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 3.5176382547342406,
+              "mean_pull": 0.5683993719500263,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        },
+        "kskpi": {
+          "energy_center_gev": [
+            1.26,
+            1.3,
+            1.34,
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -0.9224207208093247,
+            -0.9727605929831166,
+            3.1280909105844685,
+            0.2954874366880768,
+            1.171903562432003,
+            -1.3842522999788223,
+            -0.5767902381030249,
+            -1.8523885501297785,
+            -1.7935164749990031,
+            0.18303406034978612,
+            -0.20933682587805194,
+            0.24467052987242408,
+            -0.6655294739581111,
+            1.2154999051569277,
+            -0.7697413353001615,
+            -0.3193374335123841,
+            1.9364766512783649,
+            -0.5938413671366879,
+            -0.46969243471427397,
+            -0.18663190702072116,
+            0.19196322339245322,
+            -0.20655507116630842,
+            -0.8265830324774314,
+            0.9065810488234155
+          ],
+          "sign_sequence": "--+++----+-+-+--+---+--+",
+          "chi2": 30.63434287111453,
+          "count": 24,
+          "runs": {
+            "positive": 9,
+            "negative": 15,
+            "runs": 14,
+            "expected_runs": 12.25,
+            "standard_deviation": 2.2391040521873338,
+            "standardized_runs": 0.781562606833953
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 10,
+              "chi2": 21.973134249962225,
+              "mean_pull": -0.2723612906948735,
+              "positive": 4,
+              "negative": 6
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 2.6165567982698867,
+              "mean_pull": -0.03688744002139457,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 4.4600082386573305,
+              "mean_pull": 0.07339470177885951,
+              "positive": 1,
+              "negative": 4
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 1.58464358422509,
+              "mean_pull": 0.01635154214303222,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        }
+      },
+      "local_errors": {
+        "scaled_m_rho_GeV": 0.3387442162948289,
+        "scaled_m_Kstar_GeV": 0.2454748419770617,
+        "scaled_Delta_V_GeV2": 0.09005658770197031,
+        "scaled_kappa_V": 0.05621697925835824,
+        "scaled_F_V_GeV": 0.06782189801930089,
+        "scaled_z_V_GeV_inverse": 0.028196447330594065,
+        "G_V_GeV": 0.00014176275492768889,
+        "total_width_pull_rho0": 0.9983500202651877,
+        "total_width_pull_rhoplus": 0.9987453591108573,
+        "total_width_pull_omega": 0.9788436032961704,
+        "total_width_pull_phi": 0.9620310389389698,
+        "total_width_pull_etap": 0.49724940643694837,
+        "c1_minus_c2_plus_c5": 0.022887134121966746,
+        "c1_minus_c2_minus_c5_plus_2c6": 0.0015304456584120582,
+        "c1_plus_c2_minus_c5": 0.008299496644875622,
+        "c3": 0.0012179407982767009,
+        "c4": 0.0015291573845254234,
+        "d1": 0.04708660437318108,
+        "d2": 0.003981021702351353,
+        "d3": 0.004666306630982341,
+        "g1_plus_2g2_minus_g3": 0.5135515009382841,
+        "g2": 0.18639567769527834,
+        "g4": 0.20119675383086705,
+        "2g4_plus_g5": 0.14759618542721137,
+        "gT_times_CT_dimensionless": 0.2153783358112425,
+        "gT_times_DT_GeV": 3.229260745808938,
+        "beta_first_kkpi0": 0.7620381742464676,
+        "beta_first_kskpi": 0.32090285806444035,
+        "beta_second_kkpi0": 0.08901885732753505,
+        "beta_second_kskpi": 0.07719876643040798,
+        "normalization_pull_kkpi0": 0.9994428592186348,
+        "normalization_pull_kskpi": 0.9998395800585524
+      },
+      "local_error_vector": [
+        0.3387442162948289,
+        0.2454748419770617,
+        0.09005658770197031,
+        0.05621697925835824,
+        0.06782189801930089,
+        0.028196447330594065,
+        0.00014176275492768889,
+        0.9983500202651877,
+        0.9987453591108573,
+        0.9788436032961704,
+        0.9620310389389698,
+        0.49724940643694837,
+        0.022887134121966746,
+        0.0015304456584120582,
+        0.008299496644875622,
+        0.0012179407982767009,
+        0.0015291573845254234,
+        0.04708660437318108,
+        0.003981021702351353,
+        0.004666306630982341,
+        0.5135515009382841,
+        0.18639567769527834,
+        0.20119675383086705,
+        0.14759618542721137,
+        0.2153783358112425,
+        3.229260745808938,
+        0.7620381742464676,
+        0.32090285806444035,
+        0.08901885732753505,
+        0.07719876643040798,
+        0.9994428592186348,
+        0.9998395800585524
+      ],
+      "column_normalized_singular_values": [
+        2.324615668744977,
+        2.241383845958893,
+        1.9844894448167385,
+        1.9292846859545079,
+        1.784125741141745,
+        1.327407126401688,
+        1.2358788701340457,
+        1.136988297390254,
+        1.000001565819542,
+        0.9815208454983345,
+        0.926470930956061,
+        0.899972301399517,
+        0.6904430402759062,
+        0.6622832611948735,
+        0.6246876058852159,
+        0.5754161343215237,
+        0.4585908045647659,
+        0.418782519937291,
+        0.3737749280894589,
+        0.3431305196929508,
+        0.29502627937721293,
+        0.2659188509568285,
+        0.19797818391420344,
+        0.1621507108888853,
+        0.07717351148490693,
+        0.050544439522661126,
+        0.0422027197339896,
+        0.030987743925947307,
+        0.0229977871057337,
+        0.014387397234353472,
+        0.007226912219861061,
+        0.0018583150727789397
+      ],
+      "local_error_definition": "sqrt(diag((J^T J)^-1)) from the (4,128,128) Jacobian (analytic odd columns, forward differences otherwise); linearized, not profile intervals",
+      "elapsed_seconds": 164.35391102500012
+    },
+    {
+      "id": "basin_probes/odd",
+      "endpoint": [
+        0.3099611044159203,
+        -0.8144607286577302,
+        -0.0367298928541922,
+        0.16492111931864134,
+        0.001109939556250494,
+        -0.014284487015134592,
+        0.059067821674326525,
+        -0.12822680619412233,
+        0.04926867762338906,
+        -0.5235365081610814,
+        2.8254797214683602,
+        -3.305903463092707,
+        0.022558237340257643,
+        0.0700858352417588,
+        -0.06831942170498181,
+        0.01172103856421822,
+        -0.004908671936129176,
+        -0.3896816939089209,
+        0.02497270776832981,
+        0.021879010301745168,
+        0.35477835522783063,
+        0.12272144515788841,
+        0.22634050201512695,
+        0.04386005516220036,
+        0.048042358236541315,
+        -3.0329461932057185,
+        -0.7253323366623158,
+        -0.2741056132024615,
+        -0.1577309491948744,
+        -0.014349194682512582,
+        -0.24660865920648428,
+        -0.05061704847866638
+      ],
+      "chi2": 225.72720219590212,
+      "comparison_ledger_chi2": 225.72720219590212,
+      "absolute_chi2_difference_to_comparison": 0.0,
+      "chi2_matches_comparison": true,
+      "residual_count": 75,
+      "free_coordinate_count": 32,
+      "degrees_of_freedom": 43,
+      "nominal_p_value": 1.2667867467935206e-26,
+      "chi2_per_degree_of_freedom": 5.249469818509351,
+      "blocks": {
+        "odd": {
+          "chi2": 35.144731202193874,
+          "count": 12,
+          "nominal_p_value_row_count_dof": 0.0004440871998043526
+        },
+        "masses_and_leptonic": {
+          "chi2": 12.931803374529913,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 0.07378752526321934
+        },
+        "shared_widths": {
+          "chi2": 106.83673320217186,
+          "count": 7,
+          "nominal_p_value_row_count_dof": 4.156829913746467e-20
+        },
+        "phi_KK": {
+          "chi2": 17.881586120784146,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.00013093715792043332
+        },
+        "BaBar": {
+          "chi2": 52.868970379830024,
+          "count": 45,
+          "nominal_p_value_row_count_dof": 0.19630471935774216
+        },
+        "normalization_constraints": {
+          "chi2": 0.06337791639231156,
+          "count": 2,
+          "nominal_p_value_row_count_dof": 0.9688078749684352
+        }
+      },
+      "standardized_residuals": [
+        {
+          "index": 0,
+          "pull": -0.994110036243584,
+          "block": "odd",
+          "label": "omega_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 1,
+          "pull": 1.10188980986268,
+          "block": "odd",
+          "label": "rho0_pi0_gamma branching_fraction"
+        },
+        {
+          "index": 2,
+          "pull": -3.2578019465281027,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "index": 3,
+          "pull": -1.4466728898744479,
+          "block": "odd",
+          "label": "omega_eta_gamma branching_fraction"
+        },
+        {
+          "index": 4,
+          "pull": -0.7224099544128416,
+          "block": "odd",
+          "label": "etap_omega_gamma branching_fraction"
+        },
+        {
+          "index": 5,
+          "pull": 1.163478925580064,
+          "block": "odd",
+          "label": "phi_eta_gamma branching_fraction"
+        },
+        {
+          "index": 6,
+          "pull": 2.468289329011817,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "index": 7,
+          "pull": -0.28211266449804795,
+          "block": "odd",
+          "label": "Kstarplus_Kplus_gamma branching_fraction"
+        },
+        {
+          "index": 8,
+          "pull": 0.9253951741348444,
+          "block": "odd",
+          "label": "rhoplus_piplus_gamma branching_fraction"
+        },
+        {
+          "index": 9,
+          "pull": -1.6616657539903315,
+          "block": "odd",
+          "label": "pi0_gamma_gamma partial_width"
+        },
+        {
+          "index": 10,
+          "pull": -1.5949163867548448,
+          "block": "odd",
+          "label": "eta_gamma_gamma partial_width"
+        },
+        {
+          "index": 11,
+          "pull": 2.455062647903617,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "index": 12,
+          "pull": 0.8269836314460784,
+          "block": "masses_and_leptonic",
+          "label": "mass rho charged"
+        },
+        {
+          "index": 13,
+          "pull": -3.1971419807567205,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "index": 14,
+          "pull": 0.4022681839385059,
+          "block": "masses_and_leptonic",
+          "label": "mass omega"
+        },
+        {
+          "index": 15,
+          "pull": 0.09949308962808878,
+          "block": "masses_and_leptonic",
+          "label": "mass phi"
+        },
+        {
+          "index": 16,
+          "pull": 0.009319102332197116,
+          "block": "masses_and_leptonic",
+          "label": "electronic width rho"
+        },
+        {
+          "index": 17,
+          "pull": -1.1216661692823109,
+          "block": "masses_and_leptonic",
+          "label": "electronic width omega"
+        },
+        {
+          "index": 18,
+          "pull": 0.7721685017271204,
+          "block": "masses_and_leptonic",
+          "label": "electronic width phi"
+        },
+        {
+          "index": 19,
+          "pull": -4.3876543069338165,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "index": 20,
+          "pull": -8.269215774757638,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "index": 21,
+          "pull": -3.3059034630927076,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "index": 22,
+          "pull": -0.5235365081610845,
+          "block": "shared_widths",
+          "label": "total width omega"
+        },
+        {
+          "index": 23,
+          "pull": 2.825479721468382,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "index": 24,
+          "pull": -0.12822680619410665,
+          "block": "shared_widths",
+          "label": "total width rho0"
+        },
+        {
+          "index": 25,
+          "pull": 0.04926867762339998,
+          "block": "shared_widths",
+          "label": "total width rhoplus"
+        },
+        {
+          "index": 26,
+          "pull": 3.4992256877337535,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "index": 27,
+          "pull": 2.374237921331471,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "index": 28,
+          "pull": -1.1983009538196108,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.36-1.38 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.208,
+          "error_nb": 0.12
+        },
+        {
+          "index": 29,
+          "pull": -0.025386811289223904,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.38-1.40 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.1,
+          "error_nb": 0.089
+        },
+        {
+          "index": 30,
+          "pull": 1.7230570577728774,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.40-1.42 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.042,
+          "error_nb": 0.059
+        },
+        {
+          "index": 31,
+          "pull": -0.4493795307506138,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.42-1.44 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.241,
+          "error_nb": 0.092
+        },
+        {
+          "index": 32,
+          "pull": 0.7625740209099411,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.44-1.46 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.193,
+          "error_nb": 0.091
+        },
+        {
+          "index": 33,
+          "pull": -0.4388200621061934,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.46-1.48 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 0.37,
+          "error_nb": 0.093
+        },
+        {
+          "index": 34,
+          "pull": -2.376068525815897,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "index": 35,
+          "pull": 0.9027013341378476,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.50-1.52 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 0.385,
+          "error_nb": 0.092
+        },
+        {
+          "index": 36,
+          "pull": 0.5257125862488987,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.52-1.54 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 0.485,
+          "error_nb": 0.102
+        },
+        {
+          "index": 37,
+          "pull": 0.0005450960425188503,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.54-1.56 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 0.61,
+          "error_nb": 0.113
+        },
+        {
+          "index": 38,
+          "pull": 1.1601766618743963,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.56-1.58 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 0.556,
+          "error_nb": 0.109
+        },
+        {
+          "index": 39,
+          "pull": -1.2076650744601292,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.58-1.60 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 0.911,
+          "error_nb": 0.13
+        },
+        {
+          "index": 40,
+          "pull": -1.613028259144849,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.60-1.62 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 1.03,
+          "error_nb": 0.132
+        },
+        {
+          "index": 41,
+          "pull": -0.23912544975784222,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.62-1.64 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 0.882,
+          "error_nb": 0.127
+        },
+        {
+          "index": 42,
+          "pull": 0.46442290749046183,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.64-1.66 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 0.767,
+          "error_nb": 0.116
+        },
+        {
+          "index": 43,
+          "pull": -0.517185857501558,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.66-1.68 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 0.749,
+          "error_nb": 0.114
+        },
+        {
+          "index": 44,
+          "pull": 0.8109886962219015,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.68-1.70 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 0.413,
+          "error_nb": 0.082
+        },
+        {
+          "index": 45,
+          "pull": -0.269009208718598,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.70-1.72 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 0.296,
+          "error_nb": 0.071
+        },
+        {
+          "index": 46,
+          "pull": 1.313643253717788,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.72-1.74 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 0.093,
+          "error_nb": 0.046
+        },
+        {
+          "index": 47,
+          "pull": -0.08094077683367927,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.74-1.76 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 0.116,
+          "error_nb": 0.046
+        },
+        {
+          "index": 48,
+          "pull": 1.3082853565827461,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.76-1.78 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 0.073,
+          "error_nb": 0.038
+        },
+        {
+          "index": 49,
+          "pull": -0.9227676055745233,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.24-1.28 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.24,
+          "energy_high_gev": 1.28,
+          "energy_center_gev": 1.26,
+          "observed_nb": 0.037,
+          "error_nb": 0.034
+        },
+        {
+          "index": 50,
+          "pull": -0.9742498488846516,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.28-1.32 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.28,
+          "energy_high_gev": 1.32,
+          "energy_center_gev": 1.3,
+          "observed_nb": 0.042,
+          "error_nb": 0.024
+        },
+        {
+          "index": 51,
+          "pull": 3.121556520726944,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "index": 52,
+          "pull": 0.2924659810749286,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.36-1.38 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.36,
+          "energy_high_gev": 1.38,
+          "energy_center_gev": 1.37,
+          "observed_nb": 0.107,
+          "error_nb": 0.054
+        },
+        {
+          "index": 53,
+          "pull": 1.1680939921723932,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.38-1.40 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.38,
+          "energy_high_gev": 1.4,
+          "energy_center_gev": 1.39,
+          "observed_nb": 0.132,
+          "error_nb": 0.059
+        },
+        {
+          "index": 54,
+          "pull": -1.3867398407070233,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.40-1.42 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.4,
+          "energy_high_gev": 1.42,
+          "energy_center_gev": 1.41,
+          "observed_nb": 0.47,
+          "error_nb": 0.111
+        },
+        {
+          "index": 55,
+          "pull": -0.5792590096815377,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.42-1.44 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.42,
+          "energy_high_gev": 1.44,
+          "energy_center_gev": 1.43,
+          "observed_nb": 0.542,
+          "error_nb": 0.118
+        },
+        {
+          "index": 56,
+          "pull": -1.853894758285126,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "index": 57,
+          "pull": -1.7942800778500978,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        },
+        {
+          "index": 58,
+          "pull": 0.18326166862496157,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.48-1.50 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 1.231,
+          "error_nb": 0.18
+        },
+        {
+          "index": 59,
+          "pull": -0.20794115799681467,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.50-1.52 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.5,
+          "energy_high_gev": 1.52,
+          "energy_center_gev": 1.51,
+          "observed_nb": 1.673,
+          "error_nb": 0.205
+        },
+        {
+          "index": 60,
+          "pull": 0.2471608353752072,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.52-1.54 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.52,
+          "energy_high_gev": 1.54,
+          "energy_center_gev": 1.53,
+          "observed_nb": 1.964,
+          "error_nb": 0.22
+        },
+        {
+          "index": 61,
+          "pull": -0.6625129590931084,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.54-1.56 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.54,
+          "energy_high_gev": 1.56,
+          "energy_center_gev": 1.55,
+          "observed_nb": 2.564,
+          "error_nb": 0.249
+        },
+        {
+          "index": 62,
+          "pull": 1.2186921548729355,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.56-1.58 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.56,
+          "energy_high_gev": 1.58,
+          "energy_center_gev": 1.57,
+          "observed_nb": 2.44,
+          "error_nb": 0.253
+        },
+        {
+          "index": 63,
+          "pull": -0.7674508782577776,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.58-1.60 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.58,
+          "energy_high_gev": 1.6,
+          "energy_center_gev": 1.59,
+          "observed_nb": 3.269,
+          "error_nb": 0.282
+        },
+        {
+          "index": 64,
+          "pull": -0.31847373529048373,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.60-1.62 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.6,
+          "energy_high_gev": 1.62,
+          "energy_center_gev": 1.61,
+          "observed_nb": 3.397,
+          "error_nb": 0.283
+        },
+        {
+          "index": 65,
+          "pull": 1.9351755843902114,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "index": 66,
+          "pull": -0.5972782597894294,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.64-1.66 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.64,
+          "energy_high_gev": 1.66,
+          "energy_center_gev": 1.65,
+          "observed_nb": 3.807,
+          "error_nb": 0.302
+        },
+        {
+          "index": 67,
+          "pull": -0.47563763209383847,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.66-1.68 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.66,
+          "energy_high_gev": 1.68,
+          "energy_center_gev": 1.67,
+          "observed_nb": 3.76,
+          "error_nb": 0.291
+        },
+        {
+          "index": 68,
+          "pull": -0.19462374263360036,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.68-1.70 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.68,
+          "energy_high_gev": 1.7,
+          "energy_center_gev": 1.69,
+          "observed_nb": 3.498,
+          "error_nb": 0.284
+        },
+        {
+          "index": 69,
+          "pull": 0.18320099519480526,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.70-1.72 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.7,
+          "energy_high_gev": 1.72,
+          "energy_center_gev": 1.71,
+          "observed_nb": 3.046,
+          "error_nb": 0.262
+        },
+        {
+          "index": 70,
+          "pull": -0.21251681892830235,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.72-1.74 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.72,
+          "energy_high_gev": 1.74,
+          "energy_center_gev": 1.73,
+          "observed_nb": 2.686,
+          "error_nb": 0.247
+        },
+        {
+          "index": 71,
+          "pull": -0.8261924708450589,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.74-1.76 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.74,
+          "energy_high_gev": 1.76,
+          "energy_center_gev": 1.75,
+          "observed_nb": 2.319,
+          "error_nb": 0.223
+        },
+        {
+          "index": 72,
+          "pull": 0.9168963559986472,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.76-1.78 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.76,
+          "energy_high_gev": 1.78,
+          "energy_center_gev": 1.77,
+          "observed_nb": 1.5,
+          "error_nb": 0.181
+        },
+        {
+          "index": 73,
+          "pull": -0.24660865920648428,
+          "block": "normalization_constraints",
+          "label": "normalization pull kkpi0"
+        },
+        {
+          "index": 74,
+          "pull": -0.05061704847866638,
+          "block": "normalization_constraints",
+          "label": "normalization pull kskpi"
+        }
+      ],
+      "largest_pulls": [
+        {
+          "rank": 1,
+          "index": 20,
+          "pull": -8.269215774757638,
+          "chi2_contribution": 68.37992952950057,
+          "block": "shared_widths",
+          "label": "total width Kstarplus"
+        },
+        {
+          "rank": 2,
+          "index": 19,
+          "pull": -4.3876543069338165,
+          "chi2_contribution": 19.25151031715487,
+          "block": "shared_widths",
+          "label": "total width Kstar0"
+        },
+        {
+          "rank": 3,
+          "index": 26,
+          "pull": 3.4992256877337535,
+          "chi2_contribution": 12.244580413695761,
+          "block": "phi_KK",
+          "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+        },
+        {
+          "rank": 4,
+          "index": 21,
+          "pull": -3.3059034630927076,
+          "chi2_contribution": 10.928997707288357,
+          "block": "shared_widths",
+          "label": "total width etap"
+        },
+        {
+          "rank": 5,
+          "index": 2,
+          "pull": -3.2578019465281027,
+          "chi2_contribution": 10.613273522802295,
+          "block": "odd",
+          "label": "rho0_eta_gamma branching_fraction"
+        },
+        {
+          "rank": 6,
+          "index": 13,
+          "pull": -3.1971419807567205,
+          "chi2_contribution": 10.221716845117006,
+          "block": "masses_and_leptonic",
+          "label": "mass Kstar charged"
+        },
+        {
+          "rank": 7,
+          "index": 51,
+          "pull": 3.121556520726944,
+          "chi2_contribution": 9.744115112092903,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.32-1.36 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.32,
+          "energy_high_gev": 1.36,
+          "energy_center_gev": 1.34,
+          "observed_nb": 0.014,
+          "error_nb": 0.014
+        },
+        {
+          "rank": 8,
+          "index": 23,
+          "pull": 2.825479721468382,
+          "chi2_contribution": 7.983335656429046,
+          "block": "shared_widths",
+          "label": "total width phi"
+        },
+        {
+          "rank": 9,
+          "index": 6,
+          "pull": 2.468289329011817,
+          "chi2_contribution": 6.0924522117136055,
+          "block": "odd",
+          "label": "Kstar0_K0_gamma branching_fraction"
+        },
+        {
+          "rank": 10,
+          "index": 11,
+          "pull": 2.455062647903617,
+          "chi2_contribution": 6.027332605131519,
+          "block": "odd",
+          "label": "etap_gamma_gamma partial_width"
+        },
+        {
+          "rank": 11,
+          "index": 34,
+          "pull": -2.376068525815897,
+          "chi2_contribution": 5.6457016393729305,
+          "block": "BaBar",
+          "label": "BaBar kkpi0 1.48-1.50 GeV",
+          "channel": "kkpi0",
+          "energy_low_gev": 1.48,
+          "energy_high_gev": 1.5,
+          "energy_center_gev": 1.49,
+          "observed_nb": 0.688,
+          "error_nb": 0.122
+        },
+        {
+          "rank": 12,
+          "index": 27,
+          "pull": 2.374237921331471,
+          "chi2_contribution": 5.6370057070883846,
+          "block": "phi_KK",
+          "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+        },
+        {
+          "rank": 13,
+          "index": 65,
+          "pull": 1.9351755843902114,
+          "chi2_contribution": 3.7449045424199965,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.62-1.64 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.62,
+          "energy_high_gev": 1.64,
+          "energy_center_gev": 1.63,
+          "observed_nb": 2.987,
+          "error_nb": 0.268
+        },
+        {
+          "rank": 14,
+          "index": 56,
+          "pull": -1.853894758285126,
+          "chi2_contribution": 3.4369257747970656,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.44-1.46 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.44,
+          "energy_high_gev": 1.46,
+          "energy_center_gev": 1.45,
+          "observed_nb": 0.99,
+          "error_nb": 0.167
+        },
+        {
+          "rank": 15,
+          "index": 57,
+          "pull": -1.7942800778500978,
+          "chi2_contribution": 3.219440997769753,
+          "block": "BaBar",
+          "label": "BaBar kskpi 1.46-1.48 GeV",
+          "channel": "kskpi",
+          "energy_low_gev": 1.46,
+          "energy_high_gev": 1.48,
+          "energy_center_gev": 1.47,
+          "observed_nb": 1.279,
+          "error_nb": 0.187
+        }
+      ],
+      "babar_energy_pattern": {
+        "kkpi0": {
+          "energy_center_gev": [
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -1.1983009538196108,
+            -0.025386811289223904,
+            1.7230570577728774,
+            -0.4493795307506138,
+            0.7625740209099411,
+            -0.4388200621061934,
+            -2.376068525815897,
+            0.9027013341378476,
+            0.5257125862488987,
+            0.0005450960425188503,
+            1.1601766618743963,
+            -1.2076650744601292,
+            -1.613028259144849,
+            -0.23912544975784222,
+            0.46442290749046183,
+            -0.517185857501558,
+            0.8109886962219015,
+            -0.269009208718598,
+            1.313643253717788,
+            -0.08094077683367927,
+            1.3082853565827461
+          ],
+          "sign_sequence": "--+-+--++++---+-+-+-+",
+          "chi2": 22.239029809850738,
+          "count": 21,
+          "runs": {
+            "positive": 10,
+            "negative": 11,
+            "runs": 14,
+            "expected_runs": 11.476190476190476,
+            "standard_deviation": 2.227940488626588,
+            "standardized_runs": 1.1327993439202337
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 7,
+              "chi2": 11.02722107675756,
+              "mean_pull": -0.2860464007283886,
+              "positive": 2,
+              "negative": 5
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 3.895708537953258,
+              "mean_pull": 0.27629412076870646,
+              "positive": 4,
+              "negative": 1
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 3.7999136591229683,
+              "mean_pull": -0.21878559253837718,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 3.5161865360169458,
+              "mean_pull": 0.5679946561870642,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        },
+        "kskpi": {
+          "energy_center_gev": [
+            1.26,
+            1.3,
+            1.34,
+            1.37,
+            1.39,
+            1.41,
+            1.43,
+            1.45,
+            1.47,
+            1.49,
+            1.51,
+            1.53,
+            1.55,
+            1.57,
+            1.59,
+            1.61,
+            1.63,
+            1.65,
+            1.67,
+            1.69,
+            1.71,
+            1.73,
+            1.75,
+            1.77
+          ],
+          "pulls": [
+            -0.9227676055745233,
+            -0.9742498488846516,
+            3.121556520726944,
+            0.2924659810749286,
+            1.1680939921723932,
+            -1.3867398407070233,
+            -0.5792590096815377,
+            -1.853894758285126,
+            -1.7942800778500978,
+            0.18326166862496157,
+            -0.20794115799681467,
+            0.2471608353752072,
+            -0.6625129590931084,
+            1.2186921548729355,
+            -0.7674508782577776,
+            -0.31847373529048373,
+            1.9351755843902114,
+            -0.5972782597894294,
+            -0.47563763209383847,
+            -0.19462374263360036,
+            0.18320099519480526,
+            -0.21251681892830235,
+            -0.8261924708450589,
+            0.9168963559986472
+          ],
+          "sign_sequence": "--+++----+-+-+--+---+--+",
+          "chi2": 30.629940569979308,
+          "count": 24,
+          "runs": {
+            "positive": 9,
+            "negative": 15,
+            "runs": 14,
+            "expected_runs": 12.25,
+            "standard_deviation": 2.2391040521873338,
+            "standardized_runs": 0.781562606833953
+          },
+          "energy_ranges": [
+            {
+              "energy_low_gev": 0.0,
+              "energy_high_gev": 1.5,
+              "count": 10,
+              "chi2": 21.943297856533167,
+              "mean_pull": -0.27458129783837326,
+              "positive": 4,
+              "negative": 6
+            },
+            {
+              "energy_low_gev": 1.5,
+              "energy_high_gev": 1.6,
+              "count": 5,
+              "chi2": 2.6174428435862063,
+              "mean_pull": -0.03441040101991159,
+              "positive": 2,
+              "negative": 3
+            },
+            {
+              "energy_low_gev": 1.6,
+              "energy_high_gev": 1.7,
+              "count": 5,
+              "chi2": 4.467180940367502,
+              "mean_pull": 0.06983244291657194,
+              "positive": 1,
+              "negative": 4
+            },
+            {
+              "energy_low_gev": 1.7,
+              "energy_high_gev": 1.78,
+              "count": 4,
+              "chi2": 1.6020189294924332,
+              "mean_pull": 0.015347015355022808,
+              "positive": 2,
+              "negative": 2
+            }
+          ]
+        }
+      },
+      "local_errors": {
+        "scaled_m_rho_GeV": 0.33874531586825796,
+        "scaled_m_Kstar_GeV": 0.24547127572414418,
+        "scaled_Delta_V_GeV2": 0.09005675951563097,
+        "scaled_kappa_V": 0.05621646183304769,
+        "scaled_F_V_GeV": 0.06782193398668178,
+        "scaled_z_V_GeV_inverse": 0.028195478588221797,
+        "G_V_GeV": 0.00014176134013070655,
+        "total_width_pull_rho0": 0.9983500467539965,
+        "total_width_pull_rhoplus": 0.9987475628230744,
+        "total_width_pull_omega": 0.9788367809293436,
+        "total_width_pull_phi": 0.9620296677469504,
+        "total_width_pull_etap": 0.4967440624365677,
+        "c1_minus_c2_plus_c5": 0.023010848450363053,
+        "c1_minus_c2_minus_c5_plus_2c6": 0.0015250466982937292,
+        "c1_plus_c2_minus_c5": 0.008290622710799396,
+        "c3": 0.0012163741765045264,
+        "c4": 0.0015286026700810456,
+        "d1": 0.04700888442960381,
+        "d2": 0.003973762139923188,
+        "d3": 0.004642911840288851,
+        "g1_plus_2g2_minus_g3": 0.5127928173183935,
+        "g2": 0.18641949695747778,
+        "g4": 0.1993895275268906,
+        "2g4_plus_g5": 0.1487082040931481,
+        "gT_times_CT_dimensionless": 0.2185596625445242,
+        "gT_times_DT_GeV": 3.232723911524115,
+        "beta_first_kkpi0": 0.7568454829858756,
+        "beta_first_kskpi": 0.3297897856359891,
+        "beta_second_kkpi0": 0.0887740453239139,
+        "beta_second_kskpi": 0.07860300948667766,
+        "normalization_pull_kkpi0": 0.9994361850846073,
+        "normalization_pull_kskpi": 0.9998367699307701
+      },
+      "local_error_vector": [
+        0.33874531586825796,
+        0.24547127572414418,
+        0.09005675951563097,
+        0.05621646183304769,
+        0.06782193398668178,
+        0.028195478588221797,
+        0.00014176134013070655,
+        0.9983500467539965,
+        0.9987475628230744,
+        0.9788367809293436,
+        0.9620296677469504,
+        0.4967440624365677,
+        0.023010848450363053,
+        0.0015250466982937292,
+        0.008290622710799396,
+        0.0012163741765045264,
+        0.0015286026700810456,
+        0.04700888442960381,
+        0.003973762139923188,
+        0.004642911840288851,
+        0.5127928173183935,
+        0.18641949695747778,
+        0.1993895275268906,
+        0.1487082040931481,
+        0.2185596625445242,
+        3.232723911524115,
+        0.7568454829858756,
+        0.3297897856359891,
+        0.0887740453239139,
+        0.07860300948667766,
+        0.9994361850846073,
+        0.9998367699307701
+      ],
+      "column_normalized_singular_values": [
+        2.3249934737644815,
+        2.240835513494839,
+        1.9844844549353349,
+        1.9292556102816858,
+        1.7844165110851962,
+        1.3272770673775405,
+        1.2358614866486635,
+        1.1367162526059893,
+        1.0000015644353015,
+        0.9814478822973517,
+        0.9264254755876373,
+        0.9003189198365105,
+        0.6906756672475257,
+        0.6623562597025422,
+        0.6249067261733364,
+        0.57543355512547,
+        0.4584929149309476,
+        0.41867082018490387,
+        0.3739827475656464,
+        0.34323879316520306,
+        0.2952799065941469,
+        0.2659179429672316,
+        0.1978299230565662,
+        0.16078707632243067,
+        0.07706603208752613,
+        0.050619914423674806,
+        0.042202575762242,
+        0.030999014234721668,
+        0.022997963706562506,
+        0.014707047249264199,
+        0.006958913542494551,
+        0.0018626975757332408
+      ],
+      "local_error_definition": "sqrt(diag((J^T J)^-1)) from the (4,128,128) Jacobian (analytic odd columns, forward differences otherwise); linearized, not profile intervals",
+      "elapsed_seconds": 155.998499198
+    }
+  ],
+  "row_labels": [
+    {
+      "block": "odd",
+      "label": "omega_pi0_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "rho0_pi0_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "rho0_eta_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "omega_eta_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "etap_omega_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "phi_eta_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "Kstar0_K0_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "Kstarplus_Kplus_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "rhoplus_piplus_gamma branching_fraction"
+    },
+    {
+      "block": "odd",
+      "label": "pi0_gamma_gamma partial_width"
+    },
+    {
+      "block": "odd",
+      "label": "eta_gamma_gamma partial_width"
+    },
+    {
+      "block": "odd",
+      "label": "etap_gamma_gamma partial_width"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "mass rho charged"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "mass Kstar charged"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "mass omega"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "mass phi"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "electronic width rho"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "electronic width omega"
+    },
+    {
+      "block": "masses_and_leptonic",
+      "label": "electronic width phi"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width Kstar0"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width Kstarplus"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width etap"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width omega"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width phi"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width rho0"
+    },
+    {
+      "block": "shared_widths",
+      "label": "total width rhoplus"
+    },
+    {
+      "block": "phi_KK",
+      "label": "phi K+K- branching fraction (Cholesky-whitened component 1)"
+    },
+    {
+      "block": "phi_KK",
+      "label": "phi KLKS branching fraction given K+K- (Cholesky-whitened component 2)"
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.36-1.38 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.36,
+      "energy_high_gev": 1.38,
+      "energy_center_gev": 1.37,
+      "observed_nb": 0.208,
+      "error_nb": 0.12
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.38-1.40 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.38,
+      "energy_high_gev": 1.4,
+      "energy_center_gev": 1.39,
+      "observed_nb": 0.1,
+      "error_nb": 0.089
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.40-1.42 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.4,
+      "energy_high_gev": 1.42,
+      "energy_center_gev": 1.41,
+      "observed_nb": 0.042,
+      "error_nb": 0.059
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.42-1.44 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.42,
+      "energy_high_gev": 1.44,
+      "energy_center_gev": 1.43,
+      "observed_nb": 0.241,
+      "error_nb": 0.092
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.44-1.46 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.44,
+      "energy_high_gev": 1.46,
+      "energy_center_gev": 1.45,
+      "observed_nb": 0.193,
+      "error_nb": 0.091
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.46-1.48 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.46,
+      "energy_high_gev": 1.48,
+      "energy_center_gev": 1.47,
+      "observed_nb": 0.37,
+      "error_nb": 0.093
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.48-1.50 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.48,
+      "energy_high_gev": 1.5,
+      "energy_center_gev": 1.49,
+      "observed_nb": 0.688,
+      "error_nb": 0.122
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.50-1.52 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.5,
+      "energy_high_gev": 1.52,
+      "energy_center_gev": 1.51,
+      "observed_nb": 0.385,
+      "error_nb": 0.092
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.52-1.54 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.52,
+      "energy_high_gev": 1.54,
+      "energy_center_gev": 1.53,
+      "observed_nb": 0.485,
+      "error_nb": 0.102
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.54-1.56 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.54,
+      "energy_high_gev": 1.56,
+      "energy_center_gev": 1.55,
+      "observed_nb": 0.61,
+      "error_nb": 0.113
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.56-1.58 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.56,
+      "energy_high_gev": 1.58,
+      "energy_center_gev": 1.57,
+      "observed_nb": 0.556,
+      "error_nb": 0.109
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.58-1.60 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.58,
+      "energy_high_gev": 1.6,
+      "energy_center_gev": 1.59,
+      "observed_nb": 0.911,
+      "error_nb": 0.13
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.60-1.62 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.6,
+      "energy_high_gev": 1.62,
+      "energy_center_gev": 1.61,
+      "observed_nb": 1.03,
+      "error_nb": 0.132
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.62-1.64 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.62,
+      "energy_high_gev": 1.64,
+      "energy_center_gev": 1.63,
+      "observed_nb": 0.882,
+      "error_nb": 0.127
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.64-1.66 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.64,
+      "energy_high_gev": 1.66,
+      "energy_center_gev": 1.65,
+      "observed_nb": 0.767,
+      "error_nb": 0.116
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.66-1.68 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.66,
+      "energy_high_gev": 1.68,
+      "energy_center_gev": 1.67,
+      "observed_nb": 0.749,
+      "error_nb": 0.114
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.68-1.70 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.68,
+      "energy_high_gev": 1.7,
+      "energy_center_gev": 1.69,
+      "observed_nb": 0.413,
+      "error_nb": 0.082
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.70-1.72 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.7,
+      "energy_high_gev": 1.72,
+      "energy_center_gev": 1.71,
+      "observed_nb": 0.296,
+      "error_nb": 0.071
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.72-1.74 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.72,
+      "energy_high_gev": 1.74,
+      "energy_center_gev": 1.73,
+      "observed_nb": 0.093,
+      "error_nb": 0.046
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.74-1.76 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.74,
+      "energy_high_gev": 1.76,
+      "energy_center_gev": 1.75,
+      "observed_nb": 0.116,
+      "error_nb": 0.046
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kkpi0 1.76-1.78 GeV",
+      "channel": "kkpi0",
+      "energy_low_gev": 1.76,
+      "energy_high_gev": 1.78,
+      "energy_center_gev": 1.77,
+      "observed_nb": 0.073,
+      "error_nb": 0.038
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.24-1.28 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.24,
+      "energy_high_gev": 1.28,
+      "energy_center_gev": 1.26,
+      "observed_nb": 0.037,
+      "error_nb": 0.034
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.28-1.32 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.28,
+      "energy_high_gev": 1.32,
+      "energy_center_gev": 1.3,
+      "observed_nb": 0.042,
+      "error_nb": 0.024
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.32-1.36 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.32,
+      "energy_high_gev": 1.36,
+      "energy_center_gev": 1.34,
+      "observed_nb": 0.014,
+      "error_nb": 0.014
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.36-1.38 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.36,
+      "energy_high_gev": 1.38,
+      "energy_center_gev": 1.37,
+      "observed_nb": 0.107,
+      "error_nb": 0.054
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.38-1.40 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.38,
+      "energy_high_gev": 1.4,
+      "energy_center_gev": 1.39,
+      "observed_nb": 0.132,
+      "error_nb": 0.059
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.40-1.42 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.4,
+      "energy_high_gev": 1.42,
+      "energy_center_gev": 1.41,
+      "observed_nb": 0.47,
+      "error_nb": 0.111
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.42-1.44 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.42,
+      "energy_high_gev": 1.44,
+      "energy_center_gev": 1.43,
+      "observed_nb": 0.542,
+      "error_nb": 0.118
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.44-1.46 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.44,
+      "energy_high_gev": 1.46,
+      "energy_center_gev": 1.45,
+      "observed_nb": 0.99,
+      "error_nb": 0.167
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.46-1.48 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.46,
+      "energy_high_gev": 1.48,
+      "energy_center_gev": 1.47,
+      "observed_nb": 1.279,
+      "error_nb": 0.187
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.48-1.50 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.48,
+      "energy_high_gev": 1.5,
+      "energy_center_gev": 1.49,
+      "observed_nb": 1.231,
+      "error_nb": 0.18
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.50-1.52 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.5,
+      "energy_high_gev": 1.52,
+      "energy_center_gev": 1.51,
+      "observed_nb": 1.673,
+      "error_nb": 0.205
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.52-1.54 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.52,
+      "energy_high_gev": 1.54,
+      "energy_center_gev": 1.53,
+      "observed_nb": 1.964,
+      "error_nb": 0.22
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.54-1.56 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.54,
+      "energy_high_gev": 1.56,
+      "energy_center_gev": 1.55,
+      "observed_nb": 2.564,
+      "error_nb": 0.249
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.56-1.58 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.56,
+      "energy_high_gev": 1.58,
+      "energy_center_gev": 1.57,
+      "observed_nb": 2.44,
+      "error_nb": 0.253
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.58-1.60 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.58,
+      "energy_high_gev": 1.6,
+      "energy_center_gev": 1.59,
+      "observed_nb": 3.269,
+      "error_nb": 0.282
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.60-1.62 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.6,
+      "energy_high_gev": 1.62,
+      "energy_center_gev": 1.61,
+      "observed_nb": 3.397,
+      "error_nb": 0.283
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.62-1.64 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.62,
+      "energy_high_gev": 1.64,
+      "energy_center_gev": 1.63,
+      "observed_nb": 2.987,
+      "error_nb": 0.268
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.64-1.66 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.64,
+      "energy_high_gev": 1.66,
+      "energy_center_gev": 1.65,
+      "observed_nb": 3.807,
+      "error_nb": 0.302
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.66-1.68 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.66,
+      "energy_high_gev": 1.68,
+      "energy_center_gev": 1.67,
+      "observed_nb": 3.76,
+      "error_nb": 0.291
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.68-1.70 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.68,
+      "energy_high_gev": 1.7,
+      "energy_center_gev": 1.69,
+      "observed_nb": 3.498,
+      "error_nb": 0.284
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.70-1.72 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.7,
+      "energy_high_gev": 1.72,
+      "energy_center_gev": 1.71,
+      "observed_nb": 3.046,
+      "error_nb": 0.262
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.72-1.74 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.72,
+      "energy_high_gev": 1.74,
+      "energy_center_gev": 1.73,
+      "observed_nb": 2.686,
+      "error_nb": 0.247
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.74-1.76 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.74,
+      "energy_high_gev": 1.76,
+      "energy_center_gev": 1.75,
+      "observed_nb": 2.319,
+      "error_nb": 0.223
+    },
+    {
+      "block": "BaBar",
+      "label": "BaBar kskpi 1.76-1.78 GeV",
+      "channel": "kskpi",
+      "energy_low_gev": 1.76,
+      "energy_high_gev": 1.78,
+      "energy_center_gev": 1.77,
+      "observed_nb": 1.5,
+      "error_nb": 0.181
+    },
+    {
+      "block": "normalization_constraints",
+      "label": "normalization pull kkpi0"
+    },
+    {
+      "block": "normalization_constraints",
+      "label": "normalization pull kskpi"
+    }
+  ],
+  "scope": "Goodness of fit at accepted, quadrature-qualified minima of the baseline joint likelihood.",
+  "quadrature": {
+    "energy": 4,
+    "pair_per_segment": 128,
+    "angle_per_segment": 128,
+    "bin_block_size": 4
+  },
+  "degrees_of_freedom_counting": {
+    "total": "75 residuals (73 observed summaries + 2 normalization constraints) minus 32 free coordinates = 43",
+    "per_block": "nominal p-value uses the block row count as dof (assumption; parameters not subtracted)",
+    "correction": "no correction for bounded or nonlinear parameters"
+  },
+  "energy_ranges_gev": [
+    [
+      0.0,
+      1.5
+    ],
+    [
+      1.5,
+      1.6
+    ],
+    [
+      1.6,
+      1.7
+    ],
+    [
+      1.7,
+      1.78
+    ]
+  ],
+  "chi2_match_tolerance": 1e-08,
+  "all_chi2_match_comparison": true,
+  "best_endpoint": "basin_probes/even_shared_widths",
+  "parameter_names": [
+    "scaled_m_rho_GeV",
+    "scaled_m_Kstar_GeV",
+    "scaled_Delta_V_GeV2",
+    "scaled_kappa_V",
+    "scaled_F_V_GeV",
+    "scaled_z_V_GeV_inverse",
+    "G_V_GeV",
+    "total_width_pull_rho0",
+    "total_width_pull_rhoplus",
+    "total_width_pull_omega",
+    "total_width_pull_phi",
+    "total_width_pull_etap",
+    "c1_minus_c2_plus_c5",
+    "c1_minus_c2_minus_c5_plus_2c6",
+    "c1_plus_c2_minus_c5",
+    "c3",
+    "c4",
+    "d1",
+    "d2",
+    "d3",
+    "g1_plus_2g2_minus_g3",
+    "g2",
+    "g4",
+    "2g4_plus_g5",
+    "gT_times_CT_dimensionless",
+    "gT_times_DT_GeV",
+    "beta_first_kkpi0",
+    "beta_first_kskpi",
+    "beta_second_kkpi0",
+    "beta_second_kskpi",
+    "normalization_pull_kkpi0",
+    "normalization_pull_kskpi"
+  ],
+  "input_sha256": {
+    "data/vector_sector/joint_vector_endpoint_comparison.json": "9fedf56997561f3e729e50d1e31e9fa55926a06b9f9b21ddf9d62f8088df1945",
+    "data/vector_sector/babar_kkpi_global_vector_sector_fit.json": "b6f2034d7e180e931ca67ec63f6fcf5b814c07cd53c0fcb0ca9613315b0f8a00",
+    "data/vector_sector/odd_preliminary_fit.json": "cbf3f0a4f326ebf81d4b537d849f6d97ce098523d402959e456901ee45c49c37",
+    "data/vector_sector/stage3_results.json": "e528e5128902b17c4d19ccdf4d000c221cde864c7b7e87b6d0ca46ba58b37a2b",
+    "data/vector_sector/pdg2024.json": "78995a6a6d28f9e2b4fec90ebb895bcf9b0b9c26da1d66a937249ef6c5b2af8a",
+    "data/vector_sector/alda_2026nrd_arxiv_v1.json": "61d1675545bb0c941f46a612f7d155b32d68849864334321b77a0a4fcb0888d9",
+    "data/vector_sector/gv_measurements.json": "b3efa02d9a9d0f07aa8d0f0b8633a428aef85c8bd41a13f1ecb44d2748d17bf8",
+    "data/odd_parity/odd_low_energy_measurements.json": "c141d00160132dffbbc1b04f3c29943ceef5d69bf0088a4c96d0684b500d6293",
+    "data/vector_sector/babar_2007_kkpi0_inclusive_below_1p78.csv": "39435b20ce6adad3c0b69cb4a74017c26bc56c788a8fcfa0bff0e5b697a87a07",
+    "data/vector_sector/babar_2007_kskpi_inclusive_below_1p78.csv": "d48837107b828f5c698199ca7ab277dba37249bf5958c8ecd05e29d86539f2f3"
+  },
+  "source_sha256": {
+    "scripts/assess_joint_vector_fit_adequacy.py": "c7e3259d4b3f2422892e2447c6d28a9be3efd58db27e9163407995edd6d151d2",
+    "scripts/calibrate_odd_low_energy.py": "4d30d413321e4899c9cac1f68ebb6a0ab1e5c4377629e4af350808962f05e2a9",
+    "scripts/derive_odd_bounded_hilbert_series.py": "52272e013ab7a42a10208a6813591c267d47110b4db998667c5f90ccc37f3a1e",
+    "scripts/derive_odd_low_energy_jacobians.py": "6ae6ed40e82959feb019349d6907a1fe697167c927f4bbe3aa799770a8a89537",
+    "scripts/derive_vector_mass_extension.py": "284fa5b3faf649d32893a085f31b750abde6f4f1d3bc5fd6f676275b42c66565",
+    "scripts/diagnose_vector_stage4.py": "44ab760c4cfb9d9480a240815561fcb16c4a14c33f8d94f6009b978ada3ce1c1",
+    "scripts/enumerate_odd_breaking_vertices.py": "eedd0086333cceec808fa2a77ef44373d3a1f4a804d5f89aecc048ae099fb053",
+    "scripts/fit_babar_kkpi_g_coefficients.py": "5531d3de07d6127dbf80607e71446562c43586f782eea8b6fbd5cf1da27a58f1",
+    "scripts/fit_babar_kkpi_global_vector_sector.py": "db0389a0902e33032f331d231990e126ae929d6280e12f2d2228727cdb459de0",
+    "scripts/fit_joint_vector_multistart.py": "56859d16bc19ab45c1cd3d94040f458ad27bd0638bfd891c7a907938887ecbc4",
+    "scripts/fit_vector_gv.py": "b54999bf036acb992bddedaadb1d02de039d61be27014ea9cbf3734ab4ef28b0",
+    "scripts/implementation/__init__.py": "22db1ee588e89619ed80c86cc4922a2d6eba2529c306624ab94026fedb774e45",
+    "scripts/implementation/alda_neutral_inputs.py": "4261f50b71704cd89698f79eb4d625272ff8ceeec5f878691291d75a88659147",
+    "scripts/implementation/correlated_fit.py": "2431b54e40cd8d7ae145f3180ba3ef23b9fa9286d2ece1bf10ad7139f78623f7",
+    "scripts/implementation/kkpi_vector_current.py": "e19990147bc36a3bf0dee08f213167ab0ffc368d72b02f059533a2d487aeaabf",
+    "scripts/implementation/kpi_phases.py": "30b819c26e85530f48d18316a894606d43399f4580b9028072fad78332df7828",
+    "scripts/implementation/kpi_s_wave_decay.py": "aeda4071ba06e6da6ca19232293df58d84e5f3f2d7a7aa2f2ff1cd77935fa571",
+    "scripts/implementation/odd_bounded_amplitudes.py": "28f27a6ec66edb0b660ae9ecd753a20b4870fccae6dda96dbb75a213dc00bdc0",
+    "scripts/implementation/odd_parity_data.py": "874988e5b0b2cdb6557f7c1a01c859ba4b0f1e41b2c34d865e878cd9e169f604",
+    "scripts/implementation/odd_parity_rcht.py": "567cba20a66cec32539bde9400d2de262f2fcab4a3aa320b4251668f21fd4322",
+    "scripts/implementation/omnes.py": "0956e627b3b6d5251ad5111350f85c27b7d54884cd33a9a52500962ea18e9325",
+    "scripts/implementation/radiative_odd_parity.py": "e05544b2003446cfdba7ea8fe5d70da641f00b7e1d11e58ae82f08eec7c8f35c",
+    "scripts/implementation/radiative_sm.py": "9123e6c6fffcbafc5e67b3f5cd540319748e10f4577bc1d6efb8e1df68192acb",
+    "scripts/implementation/three_meson_width.py": "76ef2bfe3573ea9771a156c16ef8f8fa653306c7566df5cecd8742b21e54fc94",
+    "scripts/implementation/vector_meson_exchange.py": "563d9aa0654ac5914d8f89c6995e579195e7ea9949da421b19b3db5f6cef4a67",
+    "scripts/implementation/vector_sector.py": "27e13e68d13355319fe90c90f79468a07cc6dc454b2f00b3a45125f7a4ad0df8",
+    "scripts/implementation/vector_sector_amplitudes.py": "3e14288566d8ec9a8557e566ebd8f03860db8262145602bd09dc780cc4955b92",
+    "scripts/reduce_odd_covariant_higher.py": "7052ca6c33b8134d4b634ed1aef112d3de603fe14c73066fe2a7de9b4767797e",
+    "scripts/reduce_odd_goldstone_eom.py": "6582b6a9fd0d72857a465b2ee177799476dadf089f7712ab34cb2db7db45aba6"
+  },
+  "script_sha256": "c7e3259d4b3f2422892e2447c6d28a9be3efd58db27e9163407995edd6d151d2",
+  "command": "/home/coruscant/Documents/alpaca_mesons/.venv/bin/python scripts/assess_joint_vector_fit_adequacy.py --output data/vector_sector/joint_vector_fit_adequacy.json"
+}
