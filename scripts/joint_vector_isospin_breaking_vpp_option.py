@@ -38,7 +38,10 @@ Option:
       multiplies only the K*(892) pole by the mode factor; 'whole_propagator'
       multiplies the whole propagator. This choice is open in
       joint-vector-kstar-kpi-saturation-freedom.md ("Open choice: excited K*
-      terms"); the default is an assumption, not a result.
+      terms"); the default is an assumption, not a result. It does not act
+      on the s-channel terms.
+  vpp_s_channel_factors (default True; only with the option on): applies the
+      s-channel rho, omega, phi -> K Kbar factors described below.
 
 Where the factors enter (implemented):
   * K*+ and K*0 total-width rows: each K pi mode of
@@ -64,15 +67,29 @@ Where the factors enter (implemented):
     same matrix whose LO trace the baseline rows use (choice stated here: the
     scan script uses the fixed provisional mixing angle instead). The phi
     total width is a free pull in the baseline and is not changed.
+  * BaBar s-channel terms (option vpp_s_channel_factors, default True; only
+    with the option on), derived in
+    scripts/derive_isospin_breaking_vpp_s_channel_factors.py. Every
+    appearance of rs and lls in the `direct` and `exchange` terms carries one
+    s-channel vector -> K Kbar vertex:
+      K+K-pi0, rs: rho0 -> K+K-, factor 1 + 2 X_u r1 + X_s r2;
+      K+K-pi0, lls = ll - sqrt2 ls: omega, phi -> K+K-, each physical pole
+        multiplied by its own factor T(r)/T(0) with the fitted generators
+        sector.generators[1], [2] (equivalently f_L ll - sqrt2 f_S ls with
+        f_L = 1 + 2 X_u r1 + X_s r2 + 2(X_u - X_s) r3 and
+        f_S = 1 + 2 X_s r1 + X_u r2 + (X_s - X_u) r3);
+      K_S K pi, rs (s = m^2(K_S K), charged rho): rho+ -> K+ K0bar,
+        factor 1 + (X_u + X_d) r1 + X_s r2 (equal for the C conjugate).
+    Ground states only: the rho(770) pole of rs and the omega(782), phi(1020)
+    poles of lls are multiplied; the beta-weighted excited rho, omega terms are
+    unchanged (the r_i are coefficients of operators of the ground-state
+    nonet). rs is scaled in the running propagator call at the s invariant
+    (rs + (f-1) ground); the omega/phi correction is added to the excited
+    omega term of the light-light propagator at the K+K-pi0 s invariant, which
+    enters only lls. vpp_s_channel_factors=False keeps the s-channel terms at
+    the baseline (K*-only model of the earlier version).
 
 NOT implemented (left at the baseline):
-  * BaBar s-channel terms with rs, lls (rho, omega, phi -> K Kbar vertices,
-    including the charged rho -> K Kbar vertex of K_S K pi). The baseline
-    writes these vertices in the light/strange basis of the rotated neutral
-    propagator, and r1, r2, r3 act differently on its light and strange parts
-    and, through r3, on the trace of V. The records give the factors only
-    for the physical rho0, omega -> K Kbar modes at ideal mixing and not for
-    the charged rho, so this substitution is not unambiguous and is not made.
   * Running-width shapes: unchanged (on-shell widths only are rescaled).
   * K* masses, rho/omega/eta' widths (free pulls), mass and leptonic rows.
 
@@ -107,6 +124,10 @@ KSTAR_MODES = {
 PHI_MODES = ('phi_K+_K-', 'phi_K0_K0bar')
 SCAN_POINT_GEV_MINUS2 = (-.350, 1.855, .729)
 RUNNING_PROPAGATOR = joint_fit.running_propagator
+REFERENCE_PROPAGATOR_PAIR = joint_fit.reference_propagator_pair
+# s-channel rho -> K Kbar mode of each BaBar channel (s is the kaon-pair invariant).
+S_CHANNEL_RHO_MODES = {'kkpi0': 'rho0_K+_K-', 'kskpi': 'rho+_K+_K0bar'}
+S_CHANNEL_NEUTRAL_MODES = ('omega_K+_K-', 'phi_K+_K-')
 
 
 def matrix_unit(row, column):
@@ -163,6 +184,34 @@ def vertex_factors(coefficients, spurion_diagonal, pion_zero_diagonal, phi_gener
             for name, matrices in mode_matrices(pion_zero_diagonal, phi_generator).items()}
 
 
+def s_channel_mode_matrices(omega_generator, phi_generator):
+    """(V, P1, P2) of the s-channel vector -> K Kbar vertices of the BaBar amplitude.
+
+    rho0 -> K+K- (K+K-pi0), rho+ -> K+ K0bar (K_S K pi, charged pair; the
+    C conjugate has the same factor), omega, phi -> K+K- with the given 3x3
+    flavor matrices (K+K-pi0).
+    """
+    unit = matrix_unit
+    return {'rho0_K+_K-': (np.diag([1., -1., 0.])/np.sqrt(2), unit(0, 2), unit(2, 0)),
+            'rho+_K+_K0bar': (unit(1, 0), unit(0, 2), unit(2, 1)),
+            'omega_K+_K-': (omega_generator, unit(0, 2), unit(2, 0)),
+            'phi_K+_K-': (phi_generator, unit(0, 2), unit(2, 0))}
+
+
+def s_channel_factors(coefficients, spurion_diagonal, omega_generator, phi_generator):
+    """T(r)/T(0) of the s-channel modes (dimensionless, signed).
+
+    coefficients: (r1, r2, r3) in GeV^-2; spurion_diagonal: X in GeV^2.
+    Closed forms: scripts/derive_isospin_breaking_vpp_s_channel_factors.py.
+    """
+    spurion = np.diag(np.asarray(spurion_diagonal, dtype=float))
+    coefficients = np.asarray(coefficients, dtype=float)
+    zero = np.zeros(3)
+    return {name: float(np.real(effective_trace(*matrices, spurion, coefficients)
+                                / effective_trace(*matrices, spurion, zero)))
+            for name, matrices in s_channel_mode_matrices(omega_generator, phi_generator).items()}
+
+
 class IsospinBreakingVppLikelihood(options_module.VariedLikelihood):
     """VariedLikelihood with the switchable isospin-breaking VPP vertex.
 
@@ -174,14 +223,17 @@ class IsospinBreakingVppLikelihood(options_module.VariedLikelihood):
 
     def __init__(self, energy_order=2, pair_order=16, angle_order=16, bin_block_size=None,
                  isospin_breaking_vpp=False, vpp_kstar_excitation_scaling='ground_only',
-                 **variation_options):
+                 vpp_s_channel_factors=True, **variation_options):
         super().__init__(energy_order, pair_order, angle_order, bin_block_size, **variation_options)
         if vpp_kstar_excitation_scaling not in EXCITATION_SCALINGS:
             raise ValueError(f'unknown K* excitation scaling {vpp_kstar_excitation_scaling!r}')
         if vpp_kstar_excitation_scaling != 'ground_only' and not isospin_breaking_vpp:
             raise ValueError('the K* excitation scaling requires isospin_breaking_vpp=True')
+        if not vpp_s_channel_factors and not isospin_breaking_vpp:
+            raise ValueError('vpp_s_channel_factors=False requires isospin_breaking_vpp=True')
         self.isospin_breaking_vpp = bool(isospin_breaking_vpp)
         self.excitation_scaling = vpp_kstar_excitation_scaling
+        self.s_channel = bool(vpp_s_channel_factors)
         self.added_coordinate_names = ADDED_COORDINATE_NAMES if self.isospin_breaking_vpp else ()
         self.spurion_diagonal = [4*value for value in self.alda['B0mq_gev2']]
         self.pion_zero_diagonal = self.alda['published_lambda_diagonals']['pi0']
@@ -262,14 +314,39 @@ class IsospinBreakingVppLikelihood(options_module.VariedLikelihood):
         return (np.r_[residual[:26], phi_residual], odd_jacobian,
                 dict(details, phi_branching_predictions=predictions))
 
+    def s_channel_light_correction(self, invariant, state, factors):
+        """Change of lls in K+K-pi0 from the omega, phi -> K+K- factors (ground poles only).
+
+        sum_n R_Ln (R_Ln - sqrt2 R_Sn) (f_n - 1) D_n(s), with R the baseline
+        rotation tr(generator_n basis), D_n the baseline fixed-width pole
+        propagators, n = omega, phi. Added to ll(s), it turns the baseline
+        lls = ll - sqrt2 ls into sum_n R_Ln (R_Ln - sqrt2 R_Sn) f_n D_n plus the
+        unchanged excited omega terms.
+        """
+        _, sector, _, _, totals = state
+        light = np.diag([1., 1., 0.])/np.sqrt(2)
+        strange = np.diag([0., 0., 1.])
+        correction = 0.
+        for index, (mode, width) in enumerate(zip(S_CHANNEL_NEUTRAL_MODES, (totals['omega'], totals['phi']))):
+            generator = sector.generators[1+index]
+            light_component = np.trace(generator@light).real
+            strange_component = np.trace(generator@strange).real
+            mass = sector.masses[1+index]
+            pole = 1/(mass**2-invariant-1j*mass*width)
+            correction = correction+(light_component*(light_component-np.sqrt(2)*strange_component)
+                                     * (factors[mode]-1)*pole)
+        return correction
+
     def _babar_blocks_full(self, values, state, derivatives=False, channels=CHANNELS):
-        """BaBar K*-channel terms with the K* -> K pi mode factor of each vertex.
+        """BaBar K*-channel and s-channel terms with the mode factor of each VPP vertex.
 
         The baseline propagator cache is keyed on the first 12 and the four
         pole-residue coordinates only, so it is cleared whenever r changes.
         The mode is read off the invariant: the integrated t of each channel
         is identified by identity with self.phase[channel]['t']; the next K*
-        call of the same channel is its u (baseline order kt, then ku).
+        call of the same channel is its u (baseline order kt, then ku). The
+        s-channel rho call and the omega excited-term call are identified by
+        identity with self.phase[channel]['s'].
         """
         if not self.isospin_breaking_vpp:
             return super()._babar_blocks_full(values, state, derivatives, channels)
@@ -281,12 +358,30 @@ class IsospinBreakingVppLikelihood(options_module.VariedLikelihood):
         if coefficients is None:
             return super()._babar_blocks_full(values, state, derivatives, channels)
         factors = self.factors(coefficients)
+        if self.s_channel:
+            generators = [np.real(np.asarray(g)) for g in state[1].generators[1:3]]
+            factors.update(s_channel_factors(coefficients, self.spurion_diagonal, *generators))
         u_modes = {'kkpi0': 'kstar_charged_K+_pi0', 'kskpi': 'kstar_charged_K0_pi+'}
         t_modes = {'kkpi0': 'kstar_charged_K+_pi0', 'kskpi': 'kstar_neutral_K+_pi-'}
         current_channel = []
 
+        def s_channel_of(invariant):
+            return next((c for c in CHANNELS if invariant is self.phase[c]['s']), None)
+
+        def light_scaled(name, invariant, beta, reference):
+            ground, with_excitations = REFERENCE_PROPAGATOR_PAIR(name, invariant, beta, reference)
+            if name == 'omega' and s_channel_of(invariant) == 'kkpi0':
+                with_excitations = with_excitations+self.s_channel_light_correction(invariant, state, factors)
+            return ground, with_excitations
+
         def mode_scaled(name, invariant, beta, mass, shared_width, reference):
             full = RUNNING_PROPAGATOR(name, invariant, beta, mass, shared_width, reference)
+            if name == 'rho':
+                channel = s_channel_of(invariant) if self.s_channel else None
+                if channel is None:
+                    return full
+                ground = RUNNING_PROPAGATOR(name, invariant, (0., 0.), mass, shared_width, reference)
+                return full+(factors[S_CHANNEL_RHO_MODES[channel]]-1)*ground
             if name != 'kstar':
                 return full
             channel = next((c for c in CHANNELS if invariant is self.phase[c]['t']), None)
@@ -304,10 +399,13 @@ class IsospinBreakingVppLikelihood(options_module.VariedLikelihood):
             return full+(factor-1)*ground
 
         joint_fit.running_propagator = mode_scaled
+        if self.s_channel:
+            joint_fit.reference_propagator_pair = light_scaled
         try:
             return super()._babar_blocks_full(values, state, derivatives, channels)
         finally:
             joint_fit.running_propagator = RUNNING_PROPAGATOR
+            joint_fit.reference_propagator_pair = REFERENCE_PROPAGATOR_PAIR
 
     def residual(self, values):
         """Inherited residual after a check of the coordinate count."""
