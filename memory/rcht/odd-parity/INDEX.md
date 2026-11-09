@@ -41,6 +41,11 @@ being combined with canonical photon or resonance amplitudes.
 - [joint-vector-fit-adequacy-assessment-method.md](joint-vector-fit-adequacy-assessment-method.md) — goodness-of-fit procedure at accepted minima: degrees-of-freedom counting, per-block nominal $p$-values, labelled pulls and BaBar residual energy pattern.
 - [joint-vector-likelihood-variation-options.md](joint-vector-likelihood-variation-options.md) — switchable likelihood variations with exact baseline recovery, and the deferred double-trace source variation.
 - [joint-vector-block-exclusion-and-variation-refits.md](joint-vector-block-exclusion-and-variation-refits.md) — warm-started block-exclusion and sensitivity refits, high-order re-evaluation and acceptance gates.
+- [joint-vector-fit-goodness-of-fit.md](joint-vector-fit-goodness-of-fit.md) — per-block $\chi^2$ and nominal $p$-values, ranked pulls and the BaBar residual energy pattern at the four accepted minima.
+- [joint-vector-fit-block-exclusion-results.md](joint-vector-fit-block-exclusion-results.md) — refits with one data block removed, showing which blocks are in mutual tension.
+- [joint-vector-fit-sensitivity-variation-results.md](joint-vector-fit-sensitivity-variation-results.md) — $\chi^2$, dof, $p$, worst block and parameter shifts for the 47 predefined variations.
+- [joint-vector-fit-adequacy-verdict.md](joint-vector-fit-adequacy-verdict.md) — the joint vector fit is inadequate without the double-trace source term; responsible rows and non-interpretable parameter estimates.
+- [joint-vector-fit-inadequacy-candidate-causes.md](joint-vector-fit-inadequacy-candidate-causes.md) — conjectured causes of the inadequacy, ranked, with the diagnostic that separates each.
 - [joint-vector-pole-shift-variations.md](joint-vector-pole-shift-variations.md) — $\pm1\sigma$ PDG 2024 mass and width shifts of the fixed excited vector poles and of the $a_2(1320)$, their implementation and linear $\Delta\chi^2$ screen.
 - [kkpi-global-fit-running-propagator-reuse.md](kkpi-global-fit-running-propagator-reuse.md) — running-propagator calculation reuse, baseline-equivalence checks, and local Jacobian timing.
 - [kkpi-global-fit-width-pull-jacobian.md](kkpi-global-fit-width-pull-jacobian.md) — finite-difference treatment of width pulls that do not enter BaBar predictions.

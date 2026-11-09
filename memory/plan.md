@@ -16,7 +16,7 @@
 ### 2.2 Odd-parity sector
 
 - Complete Lagrangian: IN PROGRESS
-- Fit to the parameters: IN PROGRESS; use the [focused preliminary fit](rcht/odd-parity/odd-preliminary-fit.md) with one fixed mass/data setup and separate source hypotheses, then address material input sensitivities before further optimization.
+- Fit to the parameters: IN PROGRESS; use the [focused preliminary fit](rcht/odd-parity/odd-preliminary-fit.md) with one fixed mass/data setup and separate source hypotheses, then address material input sensitivities before further optimization. Status 2026-11-09: the joint vector-sector fit is [inadequate](rcht/odd-parity/joint-vector-fit-adequacy-verdict.md) ($\chi^2=225.7$ for 43 dof). The shared $K^*$ widths, $\phi\to K\bar K$ and the odd block are in tension, and its parameter estimates are not interpretable. Next step (alp-uzh.10): run the cheap diagnostics in [candidate causes](rcht/odd-parity/joint-vector-fit-inadequacy-candidate-causes.md), starting with the $K^*$ width treatment, then extend the model. The identifiability study (alp-uzh.7) waits for this.
 - Calculation of $a \to 2V$, $a \to \gamma V$, $a \to VPP$, $a\to \gamma PP$ and mixing contribution to $a\to 2\gamma$: MISSING
 
 ## 3. Decays into 4 particles
