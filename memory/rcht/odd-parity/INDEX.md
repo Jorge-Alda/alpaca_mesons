@@ -43,6 +43,7 @@ being combined with canonical photon or resonance amplitudes.
 - [joint-vector-block-exclusion-and-variation-refits.md](joint-vector-block-exclusion-and-variation-refits.md) — warm-started block-exclusion and sensitivity refits, high-order re-evaluation and acceptance gates.
 - [joint-vector-fit-goodness-of-fit.md](joint-vector-fit-goodness-of-fit.md) — per-block $\chi^2$ and nominal $p$-values, ranked pulls and the BaBar residual energy pattern at the four accepted minima.
 - [joint-vector-fit-block-exclusion-results.md](joint-vector-fit-block-exclusion-results.md) — refits with one data block removed, showing which blocks are in mutual tension.
+- [joint-vector-eta-prime-and-mass-exclusion-diagnostics.md](joint-vector-eta-prime-and-mass-exclusion-diagnostics.md) — eta-prime radiative and mass-block exclusion refits with row changes and optimizer status.
 - [joint-vector-fit-sensitivity-variation-results.md](joint-vector-fit-sensitivity-variation-results.md) — $\chi^2$, dof, $p$, worst block and parameter shifts for the 47 predefined variations.
 - [joint-vector-fit-adequacy-verdict.md](joint-vector-fit-adequacy-verdict.md) — the joint vector fit is inadequate without the double-trace source term; responsible rows and non-interpretable parameter estimates.
 - [joint-vector-kstar-width-diagnostic.md](joint-vector-kstar-width-diagnostic.md) — on-shell $K^*$ width comparison and common-width Gaussian minimum.
