@@ -5,7 +5,7 @@
 - [x] 1.1 (coder) Add a script that recomputes the on-shell $\Gamma_{K^*}$ at `basin_probes/even_shared_widths`, compares it with the tree-level RChT width at physical masses, and computes the irreducible $\chi^2$ of the two $K^*$ width rows for a common width; verify with a unittest on the irreducible-$\chi^2$ formula.
 - [x] 1.2 (coder) Add a script that rotates the whitened $\phi\to K\bar K$ residuals to $K^+K^-$ and $K^0\bar K^0$; verify that the rotation reproduces the block $\chi^2$.
 - [x] 1.3 (coder) Run refits without the $\eta'$ radiative rows and without the mass block, reporting which rows move and the odd-block and width-block $p$-values; verify optimizer status is recorded.
-- [ ] 1.4 Record the results in an indexed memory file, state which candidate causes they favour, and update `memory/rcht/odd-parity/INDEX.md`; verify links.
+- [x] 1.4 Record the results in an indexed memory file, state which candidate causes they favour, and update `memory/rcht/odd-parity/INDEX.md`; verify links.
 
 ## 2. Extension 1: separate $K^*$ charged and neutral masses and widths
 
