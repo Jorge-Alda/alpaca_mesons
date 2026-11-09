@@ -47,6 +47,8 @@ being combined with canonical photon or resonance amplitudes.
 - [joint-vector-fit-sensitivity-variation-results.md](joint-vector-fit-sensitivity-variation-results.md) — $\chi^2$, dof, $p$, worst block and parameter shifts for the 47 predefined variations.
 - [joint-vector-fit-adequacy-verdict.md](joint-vector-fit-adequacy-verdict.md) — the joint vector fit is inadequate without the double-trace source term; responsible rows and non-interpretable parameter estimates.
 - [joint-vector-kstar-width-diagnostic.md](joint-vector-kstar-width-diagnostic.md) — on-shell $K^*$ width comparison and common-width Gaussian minimum.
+- [joint-vector-kstar-kpi-saturation-freedom.md](joint-vector-kstar-kpi-saturation-freedom.md) — per-charge $K^*$ $K\pi$ saturation factors scaling width by $\kappa_q$ and vertex by $\sqrt{\kappa_q}$, term-by-term BaBar substitution and labelled assumptions.
+- [joint-vector-isospin-breaking-vpp-operators.md](joint-vector-isospin-breaking-vpp-operators.md) — $O(p^4)$ quark-mass and $O(e^2p^2)$ isospin-breaking $VPP$ operators, their charge-channel couplings, the coefficient for the $4.6\%$ $K^*$ split and its $SU(3)$, $\phi$ and $\rho$ side effects.
 - [joint-vector-phi-kaon-residual-diagnostic.md](joint-vector-phi-kaon-residual-diagnostic.md) — correlated $\phi\to K\bar K$ residuals in a symmetric channel convention.
 - [joint-vector-diagnostic-synthesis.md](joint-vector-diagnostic-synthesis.md) — combined $K^*$ width, $\phi\to K\bar K$, $\eta'$ and mass-block diagnostic results with candidate assessment.
 - [joint-vector-fit-inadequacy-candidate-causes.md](joint-vector-fit-inadequacy-candidate-causes.md) — conjectured causes of the inadequacy, ranked, with the diagnostic that separates each.

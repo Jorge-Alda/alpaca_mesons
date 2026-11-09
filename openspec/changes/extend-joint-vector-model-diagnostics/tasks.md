@@ -9,7 +9,7 @@
 
 ## 2. Extension 1: separate $K^*$ charged and neutral masses and widths
 
-- [ ] 2.1 (coder) Add options for separate $K^{*+}$ and $K^{*0}$ masses and widths and for the revised $K\pi$ treatment, defaulting to baseline; verify bitwise-equal residuals at defaults.
+- [x] 2.1 (coder) Add options for separate $K^{*+}$ and $K^{*0}$ masses and widths and for the revised $K\pi$ treatment, defaulting to baseline; verify bitwise-equal residuals at defaults.
 - [ ] 2.2 Refit from the accepted endpoints, re-evaluate at $(4,128,128)$, apply the adequacy criterion; store the ledger entry.
 
 ## 3. Extension 2: SU(3)-breaking VPP coupling
