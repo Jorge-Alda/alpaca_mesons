@@ -41,11 +41,11 @@ The records SHALL give $\Sigma_{i\hat a}(s)$ at first order in $1/f_a$ for the A
 - **THEN** the cubic $a\Phi\Phi$ vertices it generates are listed, and the records state for each two-point function whether they open a topology at first order in $1/f_a$
 
 ### Requirement: Cancellation of divergences and scale dependence
-The poles and the $\mu_\chi$ dependence of each loop function SHALL cancel against the local NLO terms built from $L_i^r(\mu)$ and $B^r(\mu)$ with the $\Gamma_i$ of alp-gii.1. The cancellation SHALL be checked symbolically, entry by entry.
+The poles and the $\mu_\chi$ dependence of each loop function SHALL be cancelled using the local NLO terms built from $L_i^r(\mu)$ and $B^r(\mu)$ with the $\Gamma_i$ of alp-gii.1 and the divergent meson field redefinition used for the meson self-energy. The redefinition SHALL also be applied to the leading mixed ALP–meson block. The cancellation SHALL be checked symbolically, entry by entry, in the transformed fields.
 
 #### Scenario: Scale independence of the renormalized inverse propagator
 - **WHEN** $\mu_\chi$ is changed from $0.77\,$GeV to $0.5$ and $1.0\,$GeV with the $L_i^r$ shifted by their one-loop running
-- **THEN** every entry of the renormalized $Q(s)$ is unchanged at one-loop order
+- **THEN** every entry of the renormalized $Q(s)$ in the transformed fields is unchanged at one-loop order, with the field dependence of the off-shell matrix distinguished from the scale independence of physical quantities
 
 #### Scenario: Coefficient mismatch
 - **WHEN** a pole coefficient of the loop disagrees with the $\Gamma_i$ table of alp-gii.1

@@ -17,8 +17,8 @@
 
 ## 3. Mixed ALP–meson function
 
-- [x] 3.1 Extend the script with $\Sigma_{i\hat a}(s)$ at first order in $1/f_a$ for each ALP source, with non-commuting flavour matrices. Verify that `--mixed` prints the result per source and asserts the cancellation of poles with the ALP-dependent local terms of [quadratic-lagrangian.md](../../../memory/nlo/quadratic-lagrangian.md)
-- [ ] 3.2 Write `memory/nlo/loops/mixed-alp-meson-self-energy.md` and `memory/nlo/loops/counterterm-cancellation.md`. Verify that the $\Gamma_i$ used agree with [counterterm-basis.md](../../../memory/nlo/counting/counterterm-basis.md), and record any discrepancy (for example $\Gamma_6$, $\Gamma_{25}$) with its origin
+- [x] 3.1 Extend the script with $\Sigma_{i\hat a}(s)$ at first order in $1/f_a$ for each ALP source, with non-commuting flavour matrices. Verify that `--mixed` prints the result per source and asserts the cancellation of poles with the ALP-dependent local terms of [quadratic-lagrangian.md](../../../memory/nlo/quadratic-lagrangian.md) and the divergent meson field redefinition applied to the leading mixed block
+- [x] 3.2 Write `memory/nlo/loops/mixed-alp-meson-self-energy.md` and `memory/nlo/loops/counterterm-cancellation.md`. Verify that the $\Gamma_i$ used agree with [counterterm-basis.md](../../../memory/nlo/counting/counterterm-basis.md), and record any discrepancy (for example $\Gamma_6$, $\Gamma_{25}$) with its origin
 - [ ] 3.3 Write `memory/nlo/loops/thresholds-and-analytic-structure.md` stating, per function, the thresholds or the absence of a cut, with the conditional CP-odd extension marked. Verify that each statement follows from the topology list of 1.5 and that thresholds are given in GeV$^2$
 
 ## 4. Derivatives, residues and prescription
