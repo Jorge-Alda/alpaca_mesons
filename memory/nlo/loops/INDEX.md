@@ -15,6 +15,7 @@ Renormalized one-loop meson and ALP–meson two-point functions of the $U(3)$ th
 - [Loop functions and subtraction](loop-functions-and-subtraction.md) — tadpole integral, derivative contractions and the subtraction used for the two-point functions
 - [Meson self-energy](meson-self-energy.md) — $\Sigma_{ij}(s)$ of the nonet, Gasser:1984gg checks, pole cancellation and the findings on $B$ and $\Gamma_i$
 - [Mixed ALP–meson self-energy](mixed-alp-meson-self-energy.md) — finite nonet tadpole expression and source-by-source contributions
+- [Thresholds and analytic structure](thresholds-and-analytic-structure.md) — cuts and thresholds of the retained two-point functions and a conditional CP-odd extension
 - [Counterterm cancellation](counterterm-cancellation.md) — pole cancellation with local terms and the divergent meson field redefinition, and limits of the scale checks
 - [Mixed tadpole pole check](mixed-tadpole-pole-check.md) — mixed source tadpoles and the nonzero pole left by the stated local terms
 - [Mixed pole under a field redefinition](mixed-pole-field-redefinition.md) — source dependence of the diagnostic pole and the change of the mixed inverse propagator under a meson shift
