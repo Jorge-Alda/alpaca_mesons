@@ -30,4 +30,4 @@
 ## 5. Integration check
 
 - [x] 5.1 Run `.venv/bin/python scripts/derive_nlo_loop_vertices.py` and `.venv/bin/python scripts/derive_nlo_loop_self_energies.py` (all checks) and verify exit code 0. Check front matter and status/provenance values of every `memory/nlo/loops/*.md`, and that `memory/README.md` → `memory/nlo/INDEX.md` → `memory/nlo/loops/INDEX.md` links resolve
-- [ ] 5.2 Check the acceptance criteria of alp-gii.2 (renormalized self-energies and mixed functions, counterterm cancellation, thresholds, pole residues, NLO/resummation prescription) against the records. Then close with `bd close alp-gii.2` and verify with `bd ready` that alp-gii.4, alp-gii.5 and alp-gii.8 are no longer blocked by it
+- [x] 5.2 Check the acceptance criteria of alp-gii.2 (renormalized self-energies and mixed functions, counterterm cancellation, thresholds, pole residues, NLO/resummation prescription) against the records. Then close with `bd close alp-gii.2` and verify with `bd ready` that alp-gii.4, alp-gii.5 and alp-gii.8 are no longer blocked by it

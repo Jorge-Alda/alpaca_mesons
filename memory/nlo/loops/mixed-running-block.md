@@ -22,4 +22,4 @@ Use the leading mixed block and field transformation in [mixed ultraviolet field
 
 ## Verification and scope
 
-Run `.venv/bin/python scripts/derive_mixed_running_block.py`. The unit test checks the cancellation symbolically in all nine entries for arbitrary source components and quark masses. It uses the existing mixed tadpole contraction, whose finite coefficients have not all been independently checked against the vertex expansion; the scale cancellation alone does not establish that independent comparison. The result is conditional on the linked operator basis and subtraction.
+Run `.venv/bin/python scripts/derive_mixed_running_block.py`. The unit test checks the cancellation symbolically in all nine entries for arbitrary source components and quark masses. It uses the existing mixed tadpole contraction; its finite coefficients are independently compared with the vertex expansion in [finite mixed contraction verification](finite-mixed-contraction-verification.md). The result is conditional on the linked operator basis and subtraction.
