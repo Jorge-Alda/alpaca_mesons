@@ -5,9 +5,16 @@ Jacobian once at each start, checks the source-hash gate, prints a summary):
   .venv/bin/python scripts/fit_joint_vector_isospin_breaking_vpp.py --dry-run
 Fit (writes the ledger with bounds and starts before any optimizer call):
   .venv/bin/python scripts/fit_joint_vector_isospin_breaking_vpp.py --output data/vector_sector/joint_vector_isospin_breaking_vpp_fit.json
+Restart from the lowest-(4,128,128)-chi2 run of entry 'scan_point' of an existing
+ledger (single start, r free, same bounds; dry run shown, drop --dry-run to fit):
+  .venv/bin/python scripts/fit_joint_vector_isospin_breaking_vpp.py --dry-run --restart-from data/vector_sector/joint_vector_isospin_breaking_vpp_fit.json
+Option --max-nfev N (default 5000) sets the optimizer evaluation limit and is
+recorded in the ledger.
 
-Model: IsospinBreakingVppLikelihood of joint_vector_isospin_breaking_vpp_option.py
-with isospin_breaking_vpp=True and the default switches
+Model: IsospinBreakingVppLikelihood of joint_vector_isospin_breaking_vpp_option.py,
+evaluated through IsospinBreakingVppLikelihoodWithReuse
+(joint_vector_isospin_breaking_vpp_reuse.py; bitwise-equal residual and Jacobian,
+fewer repeated calculations), with isospin_breaking_vpp=True and the default switches
 vpp_kstar_excitation_scaling='ground_only', vpp_s_channel_factors=True. It has
 35 coordinates: the 32 baseline coordinates and r1, r2, r3 in GeV^-2 with
 bounds [-5, 5] GeV^-2. 75 residual rows; 75 - 35 = 40 nominal degrees of freedom.
@@ -60,6 +67,17 @@ Choices (stated, not results):
     (extended_parameter_names). FitLikelihood fixes its own names so the
     replacement does not change the likelihood.
 
+Restart (--restart-from PATH): the 35-coordinate endpoint of the run with the
+lowest (4,128,128) chi2 of entry 'scan_point' in the ledger PATH (accepted or
+not) is the single start, with r free and the bounds above. The source ledger
+path, its SHA-256 and the run index are stored in the start definition. The
+driver refuses to start if that endpoint is outside the bounds or gives a
+nonfinite or penalty residual at the fit order. No basin switch and no
+zero_control run (choice: a restart continues one run; the basin-switch rule
+belongs to the original multistart). Optimizer scales: same definition as above,
+recomputed at the zero_control start. Default output in restart mode:
+RESTART_OUTPUT (never the source ledger).
+
 Units: GeV, nb; r in GeV^-2; residuals, chi2 and scaled distances dimensionless.
 Conventions of Alda:2026nrd.
 """
@@ -84,10 +102,13 @@ import compare_joint_vector_endpoints as comparison_module  # noqa: E402
 import fit_babar_kkpi_global_vector_sector as joint_fit  # noqa: E402
 import fit_joint_vector_multistart as multi  # noqa: E402
 import joint_vector_isospin_breaking_vpp_option as vpp_option  # noqa: E402
+import joint_vector_isospin_breaking_vpp_reuse as vpp_reuse  # noqa: E402
 import refit_joint_vector_sensitivity as sensitivity  # noqa: E402
 
 ROOT = joint_fit.ROOT
 OUTPUT = 'data/vector_sector/joint_vector_isospin_breaking_vpp_fit.json'
+RESTART_OUTPUT = 'data/vector_sector/joint_vector_isospin_breaking_vpp_restart_fit.json'
+RESTART_ENTRY = 'scan_point'
 REFERENCE_LEDGER = 'data/vector_sector/joint_vector_sensitivity_variations.json'
 BEST = sensitivity.BEST
 FIT_ORDERS = sensitivity.FIT_ORDERS
@@ -115,11 +136,15 @@ STARTS = (
 )
 
 
-class FitLikelihood(vpp_option.IsospinBreakingVppLikelihood):
-    """IsospinBreakingVppLikelihood whose coordinate names do not read joint_fit.PARAMETER_NAMES.
+class FitLikelihood(vpp_reuse.IsospinBreakingVppLikelihoodWithReuse):
+    """Option likelihood whose coordinate names do not read joint_fit.PARAMETER_NAMES.
 
     Needed because extended_parameter_names temporarily replaces that module
-    name by the 35 names during the quadrature audit.
+    name by the 35 names during the quadrature audit. The parent class reuses
+    repeated calculations of IsospinBreakingVppLikelihood with bitwise-equal
+    residuals and Jacobians (joint_vector_isospin_breaking_vpp_reuse.py and its
+    tests); the original scan_point/zero_control fit ledger was produced with
+    IsospinBreakingVppLikelihood itself.
     """
 
     @property
@@ -139,14 +164,39 @@ def extended_parameter_names(names):
         joint_fit.PARAMETER_NAMES = original
 
 
+def positive_integer(text):
+    """argparse type: an integer >= 1."""
+    value = int(text)
+    if value < 1:
+        raise argparse.ArgumentTypeError('must be a positive integer')
+    return value
+
+
 def parse_arguments(argv=None):
-    """Command-line options: --output, --dry-run, --workers."""
+    """Command-line options: --output, --dry-run, --workers, --restart-from, --max-nfev.
+
+    The default output is OUTPUT, or RESTART_OUTPUT with --restart-from.
+    """
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--output', default=OUTPUT)
+    parser.add_argument('--output', default=None)
     parser.add_argument('--dry-run', action='store_true',
                         help='check model, starts and source hashes; no optimizer; print only')
     parser.add_argument('--workers', type=int, default=2)
-    return parser.parse_args(argv)
+    parser.add_argument('--restart-from', default=None, metavar='PATH',
+                        help=f"ledger whose lowest high-order chi2 run of entry '{RESTART_ENTRY}' is the single start")
+    parser.add_argument('--max-nfev', type=positive_integer, default=OPTIMIZER_SETTINGS['max_nfev'],
+                        help='optimizer max_nfev (default %(default)s)')
+    args = parser.parse_args(argv)
+    if args.output is None:
+        args.output = RESTART_OUTPUT if args.restart_from else OUTPUT
+    if args.restart_from and (ROOT/args.output).resolve() == (ROOT/args.restart_from).resolve():
+        parser.error('--output must differ from the --restart-from ledger')
+    return args
+
+
+def optimizer_settings(max_nfev):
+    """OPTIMIZER_SETTINGS with max_nfev replaced."""
+    return dict(OPTIMIZER_SETTINGS, max_nfev=int(max_nfev))
 
 
 def make_models(orders_list):
@@ -211,6 +261,59 @@ def start_points(model, context):
                                               for index, value in fixed.items()},
                            free_coordinate_count=COORDINATE_COUNT-len(fixed)))
     return result
+
+
+def restart_run(ledger, entry_name=RESTART_ENTRY):
+    """(index, run) with the lowest valid (4,128,128) chi2 of an entry, accepted or not."""
+    entry = next((item for item in ledger['entries'] if item['name'] == entry_name), None)
+    if entry is None:
+        raise ValueError(f'no entry {entry_name!r} in the restart ledger')
+    candidates = [(index, run) for index, run in enumerate(entry['runs'])
+                  if run.get('state') == 'finished' and run.get('high_order', {}).get('valid')
+                  and 'endpoint' in run]
+    if not candidates:
+        raise ValueError(f'no finished run with a valid high-order chi2 in entry {entry_name!r}')
+    return min(candidates, key=lambda item: item[1]['high_order']['chi2'])
+
+
+def restart_definition(model, ledger_path, entry_name=RESTART_ENTRY):
+    """Single restart start from a ledger; refuses endpoints outside bounds or with bad residuals.
+
+    Returns (definition, start endpoint record) in the form used by run_from:
+    the record holds the 32 baseline coordinates of the endpoint, the
+    definition its r (free), so start_from rebuilds the 35-coordinate endpoint.
+    """
+    path = ROOT/ledger_path
+    ledger = json.loads(path.read_bytes())
+    if ledger.get('parameter_names') != list(model.parameter_names):
+        raise ValueError('restart ledger has different coordinate names')
+    index, run = restart_run(ledger, entry_name)
+    endpoint = np.asarray(run['endpoint'], dtype=float)
+    validate_point(model, endpoint, *model.parameter_bounds())
+    residual = model.residual(endpoint)
+    if not np.all(np.isfinite(residual)) or np.all(residual == 1e8+np.linalg.norm(endpoint)):
+        raise ValueError('nonfinite or penalty residual at the restart endpoint')
+    identifier = f'restart:{ledger_path}#{entry_name}.run{index}'
+    definition = dict(
+        name=f'{entry_name}_restart', coefficients_gev_minus2=tuple(endpoint[BASELINE_COUNT:].tolist()),
+        coefficients_fixed=False,
+        definition=(f"restart from run {index} of entry '{entry_name}' of {ledger_path} (lowest (4,128,128) "
+                    'chi2, accepted or not): its 35-coordinate endpoint, r free, same bounds; single start, '
+                    'no basin switch.'),
+        restart_source=dict(ledger=str(ledger_path), ledger_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                            entry=entry_name, run_index=index, run_start_endpoint=run.get('start_endpoint'),
+                            run_high_order_chi2=run['high_order']['chi2'],
+                            run_fit_order_chi2=run.get('fit_order_chi2'), run_accepted=run.get('accepted'),
+                            run_message=run.get('message'), run_cumulative_nfev=run.get('cumulative_nfev')))
+    return definition, dict(id=identifier, endpoint=endpoint[:BASELINE_COUNT].tolist())
+
+
+def restart_start_record(model, definition, start_endpoint):
+    """Ledger start item of a restart definition (same keys as start_points)."""
+    values, fixed = start_from(model, start_endpoint['endpoint'], definition)
+    return dict(definition, start_endpoint=start_endpoint['id'], start=values.tolist(),
+                fixed_coordinates={model.parameter_names[index]: value for index, value in fixed.items()},
+                free_coordinate_count=COORDINATE_COUNT-len(fixed))
 
 
 def optimizer_scales(context, control_jacobian):
@@ -415,7 +518,20 @@ def run_start(definition, context, scales, models=None, settings=OPTIMIZER_SETTI
     return record
 
 
-def prepare_ledger(model, context, scales, starts, gate):
+def run_restart(definition, start_endpoint, context, scales, models=None, settings=OPTIMIZER_SETTINGS,
+                checkpoint_prefix=None):
+    """Single refit from a restart start (no basin switch), with all gates of run_from."""
+    started = time.perf_counter()
+    models = models or make_models((FIT_ORDERS, HIGH_ORDERS, REFINEMENT_ORDERS))
+    checkpoint = checkpoint_prefix and f'{checkpoint_prefix}.0.progress.json'
+    runs = [run_from(models, definition, start_endpoint, context, scales, settings, checkpoint)]
+    record = sensitivity.variation_record(definition, runs, time.perf_counter()-started)
+    selected = runs[record['selected_run']] if 'selected_run' in record else {}
+    record['adequacy'] = adequacy_verdict(selected.get('high_order', {}))
+    return record
+
+
+def prepare_ledger(model, context, scales, starts, gate, settings=OPTIMIZER_SETTINGS):
     """Ledger written before any optimizer call: model, bounds, starts, scales and gates."""
     lower, upper = model.parameter_bounds()
     quadrature = dict(zip(('energy', 'pair_per_segment', 'angle_per_segment'), FIT_ORDERS), bin_block_size=BLOCK_SIZE)
@@ -431,7 +547,7 @@ def prepare_ledger(model, context, scales, starts, gate):
         evaluation_quadrature=dict(zip(quadrature, HIGH_ORDERS), bin_block_size=BLOCK_SIZE),
         refinement_quadrature=dict(zip(quadrature, REFINEMENT_ORDERS), bin_block_size=BLOCK_SIZE,
                                    certification_orders=multi.CERTIFICATION_ORDERS),
-        optimizer_settings=OPTIMIZER_SETTINGS, optimizer_coordinate_scales=list(map(float, scales)),
+        optimizer_settings=dict(settings), optimizer_coordinate_scales=list(map(float, scales)),
         added_coordinate_scale_definition='reciprocal Jacobian column norms of r1, r2, r3 at the zero_control '
                                           'start, fit order (assumption); first 32 from the endpoint comparison',
         degrees_of_freedom_counting='retained residual rows minus free coordinates; '
@@ -472,14 +588,42 @@ def evaluate_start(model, values, fixed_count):
         residual_finite=True, jacobian_finite=True)
 
 
-def dry_run(orders=FIT_ORDERS):
-    """Everything up to the optimizer; returns the summary (nothing is written)."""
+def restart_dry_run(model, context, restart_from, summary):
+    """Restart part of the dry run: one residual and Jacobian at the restart point."""
+    definition, start_endpoint = restart_definition(model, restart_from)
+    start = restart_start_record(model, definition, start_endpoint)
+    _, jacobian, evaluation = evaluate_start(model, start['start'], 0)
+    control = start_from(model, context['accepted'][0]['endpoint'], STARTS[1])[0]
+    scales = optimizer_scales(context, model.jacobian(control))
+    source = json.loads((ROOT/restart_from).read_bytes())
+    summary.update(
+        restart_source=definition['restart_source'], restart_start_endpoint=start['start_endpoint'],
+        restart_coefficients_gev_minus2=list(definition['coefficients_gev_minus2']),
+        restart_evaluation=evaluation,
+        added_optimizer_scales=dict(zip(vpp_option.ADDED_COORDINATE_NAMES, scales[BASELINE_COUNT:].tolist())),
+        optimizer_scales_equal_source_ledger=bool(np.array_equal(
+            scales, np.asarray(source['optimizer_coordinate_scales'], dtype=float))),
+        baseline_chi2_high_order=context['baseline_chi2'])
+    return summary
+
+
+def dry_run(orders=FIT_ORDERS, restart_from=None, max_nfev=OPTIMIZER_SETTINGS['max_nfev']):
+    """Everything up to the optimizer; returns the summary (nothing is written).
+
+    With restart_from, only the restart start is built and evaluated (residual
+    and Jacobian once at the restart point, chi2 per block).
+    """
     started = time.perf_counter()
     context = sensitivity.accepted_context()
     model = FitLikelihood(*orders, bin_block_size=BLOCK_SIZE, **MODEL_OPTIONS)
     baseline = joint_fit.GlobalLikelihood(*orders, bin_block_size=BLOCK_SIZE)
     summary = dict(dry_run=True, optimizer_called=False, orders=list(orders), bin_block_size=BLOCK_SIZE,
+                   optimizer_settings=optimizer_settings(max_nfev),
                    model=check_model(model), source_hash_gate=source_hash_gate(baseline))
+    if restart_from:
+        restart_dry_run(model, context, restart_from, summary)
+        summary['seconds'] = time.perf_counter()-started
+        return summary
     starts = start_points(model, context)
     best = np.asarray(context['accepted'][0]['endpoint'])
     evaluations, jacobians, residuals = {}, {}, {}
@@ -508,18 +652,49 @@ def dry_run(orders=FIT_ORDERS):
 
 def run_named(arguments):
     """Worker entry: run one start and save its part."""
-    name, part_path, scales = arguments
+    name, part_path, scales, settings = arguments
     definition = next(item for item in STARTS if item['name'] == name)
-    result = run_start(definition, sensitivity.accepted_context(), np.asarray(scales),
+    result = run_start(definition, sensitivity.accepted_context(), np.asarray(scales), settings=settings,
                        checkpoint_prefix=part_path.removesuffix('.json'))
     multi.write_ledger(part_path, result)
     return name
 
 
+def main_restart(args, settings):
+    """Restart fit: ledger with the single restart start, then one refit (in this process)."""
+    started = time.perf_counter()
+    context = sensitivity.accepted_context()
+    low = make_models((FIT_ORDERS,))[0]
+    check_model(low)
+    gate = source_hash_gate(joint_fit.GlobalLikelihood(*FIT_ORDERS, bin_block_size=BLOCK_SIZE))
+    definition, start_endpoint = restart_definition(low, args.restart_from)
+    start = restart_start_record(low, definition, start_endpoint)
+    control = start_from(low, context['accepted'][0]['endpoint'], STARTS[1])[0]
+    scales = optimizer_scales(context, low.jacobian(control))
+    ledger = prepare_ledger(low, context, scales, [start], gate, settings)
+    ledger.update(command=shlex.join([sys.executable, *sys.argv]), restart_source=definition['restart_source'])
+    multi.write_ledger(ROOT/args.output, ledger)
+    parts = ROOT/(args.output+'.parts')
+    parts.mkdir(parents=True, exist_ok=True)
+    part = parts/f'{definition["name"]}.json'
+    if not part.exists():
+        result = run_restart(definition, start_endpoint, context, scales, settings=settings,
+                             checkpoint_prefix=str(part).removesuffix('.json'))
+        multi.write_ledger(part, result)
+    ledger['entries'] = [json.loads(part.read_text())]
+    ledger.update(state='finished', driver_elapsed_seconds=time.perf_counter()-started)
+    multi.write_ledger(ROOT/args.output, ledger)
+    print(args.output)
+
+
 def main(argv=None):
     args = parse_arguments(argv)
+    settings = optimizer_settings(args.max_nfev)
     if args.dry_run:
-        print(json.dumps(dry_run(), indent=1))
+        print(json.dumps(dry_run(restart_from=args.restart_from, max_nfev=args.max_nfev), indent=1))
+        return
+    if args.restart_from:
+        main_restart(args, settings)
         return
     started = time.perf_counter()
     context = sensitivity.accepted_context()
@@ -529,12 +704,12 @@ def main(argv=None):
     starts = start_points(low, context)
     control = next(item for item in starts if item['name'] == 'zero_control')
     scales = optimizer_scales(context, low.jacobian(np.asarray(control['start'])))
-    ledger = prepare_ledger(low, context, scales, starts, gate)
+    ledger = prepare_ledger(low, context, scales, starts, gate, settings)
     ledger['command'] = shlex.join([sys.executable, *sys.argv])
     multi.write_ledger(ROOT/args.output, ledger)
     parts = ROOT/(args.output+'.parts')
     parts.mkdir(parents=True, exist_ok=True)
-    pending = [(item['name'], str(parts/f'{item["name"]}.json'), scales.tolist()) for item in STARTS
+    pending = [(item['name'], str(parts/f'{item["name"]}.json'), scales.tolist(), settings) for item in STARTS
                if not (parts/f'{item["name"]}.json').exists()]
     with ProcessPoolExecutor(max_workers=args.workers) as executor:
         for name in executor.map(run_named, pending):

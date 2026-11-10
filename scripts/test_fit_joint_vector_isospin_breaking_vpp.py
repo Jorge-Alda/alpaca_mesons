@@ -28,6 +28,7 @@ class ArgumentTests(unittest.TestCase):
         self.assertFalse(args.dry_run)
         self.assertEqual(args.output, 'data/vector_sector/joint_vector_isospin_breaking_vpp_fit.json')
         self.assertEqual(args.workers, 2)
+        self.assertEqual(args.max_nfev, 5000)
 
     def test_dry_run_and_options(self):
         args = driver.parse_arguments(['--dry-run', '--workers', '3', '--output', 'x.json'])
@@ -188,6 +189,159 @@ class DryRunTests(unittest.TestCase):
         dry.assert_called_once()
         writer.assert_not_called()
         optimizer.assert_not_called()
+
+
+SOURCE_LEDGER = 'data/vector_sector/joint_vector_isospin_breaking_vpp_fit.json'
+
+
+def synthetic_ledger(names, runs):
+    """Minimal ledger in the driver schema with one 'scan_point' entry."""
+    return dict(parameter_names=list(names), optimizer_coordinate_scales=[1.]*35,
+                entries=[dict(name='scan_point', runs=runs), dict(name='zero_control', runs=[])])
+
+
+class RestartArgumentTests(unittest.TestCase):
+    def test_defaults_unchanged(self):
+        args = driver.parse_arguments([])
+        self.assertIsNone(args.restart_from)
+        self.assertEqual(args.max_nfev, 5000)
+        self.assertEqual(driver.optimizer_settings(args.max_nfev), driver.OPTIMIZER_SETTINGS)
+
+    def test_restart_and_max_nfev(self):
+        args = driver.parse_arguments(['--restart-from', SOURCE_LEDGER, '--max-nfev', '1200', '--dry-run'])
+        self.assertEqual(args.restart_from, SOURCE_LEDGER)
+        self.assertEqual(args.output, driver.RESTART_OUTPUT)
+        self.assertEqual(driver.optimizer_settings(args.max_nfev),
+                         dict(driver.OPTIMIZER_SETTINGS, max_nfev=1200))
+        self.assertEqual(driver.OPTIMIZER_SETTINGS['max_nfev'], 5000)
+
+    def test_invalid_values_rejected(self):
+        with mock.patch('sys.stderr'):
+            for argv in (['--max-nfev', '0'], ['--max-nfev', 'x'],
+                         ['--restart-from', SOURCE_LEDGER, '--output', SOURCE_LEDGER]):
+                with self.assertRaises(SystemExit):
+                    driver.parse_arguments(argv)
+
+
+class RestartStartTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.model = driver.FitLikelihood(*CHEAP_ORDERS, bin_block_size=4, **driver.MODEL_OPTIONS)
+        cls.source = json.loads((driver.ROOT/SOURCE_LEDGER).read_text())
+        cls.runs = cls.source['entries'][0]['runs']
+
+    def write(self, directory, ledger):
+        path = Path(directory)/'ledger.json'  # absolute: ROOT/path is path itself
+        path.write_text(json.dumps(ledger))
+        return str(path)
+
+    def test_lowest_high_order_run_selected(self):
+        runs = [dict(state='finished', endpoint=[0.], accepted=False, high_order=dict(valid=True, chi2=c))
+                for c in (3., 1., 2.)]
+        runs.append(dict(state='error'))
+        runs.append(dict(state='finished', endpoint=[0.], high_order=dict(valid=False)))
+        index, run = driver.restart_run(synthetic_ledger(self.model.parameter_names, runs))
+        self.assertEqual((index, run['high_order']['chi2']), (1, 1.))
+        with self.assertRaises(ValueError):
+            driver.restart_run(synthetic_ledger(self.model.parameter_names, runs[3:]))
+
+    def test_source_ledger_selects_run_2(self):
+        index, run = driver.restart_run(self.source)
+        self.assertEqual(index, 2)
+        self.assertAlmostEqual(run['high_order']['chi2'], 98.1187588862, places=6)
+
+    def test_restart_start_construction(self):
+        definition, start_endpoint = driver.restart_definition(self.model, SOURCE_LEDGER)
+        endpoint = self.runs[2]['endpoint']
+        start = driver.restart_start_record(self.model, definition, start_endpoint)
+        self.assertEqual(start['start'], endpoint)
+        self.assertEqual(start['fixed_coordinates'], {})
+        self.assertEqual(start['free_coordinate_count'], 35)
+        self.assertFalse(definition['coefficients_fixed'])
+        self.assertEqual(definition['restart_source']['ledger'], SOURCE_LEDGER)
+        self.assertEqual(definition['restart_source']['run_index'], 2)
+        self.assertEqual(definition['restart_source']['entry'], 'scan_point')
+        self.assertEqual(len(definition['restart_source']['ledger_sha256']), 64)
+        self.assertIn('run2', start['start_endpoint'])
+        json.dumps(start, allow_nan=False)
+
+    def test_out_of_bounds_endpoint_refused(self):
+        lower, upper = self.model.parameter_bounds()
+        for index, value in ((33, 5.5), (6, upper[6]+.01), (0, lower[0]-1.)):
+            runs = json.loads(json.dumps(self.runs))
+            runs[2]['endpoint'][index] = value
+            with tempfile.TemporaryDirectory() as directory:
+                path = self.write(directory, synthetic_ledger(self.model.parameter_names, runs))
+                with self.assertRaisesRegex(ValueError, 'outside parameter bounds'):
+                    driver.restart_definition(self.model, path)
+
+    def test_nonfinite_or_penalty_residual_refused(self):
+        endpoint = np.asarray(self.runs[2]['endpoint'])
+        for residual in (np.full(75, np.nan), np.full(75, 1e8+np.linalg.norm(endpoint))):
+            with mock.patch.object(self.model, 'residual', return_value=residual):
+                with self.assertRaisesRegex(ValueError, 'residual at the restart endpoint'):
+                    driver.restart_definition(self.model, SOURCE_LEDGER)
+
+    def test_wrong_coordinate_names_refused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.write(directory, synthetic_ledger(self.model.parameter_names[:32], self.runs))
+            with self.assertRaisesRegex(ValueError, 'coordinate names'):
+                driver.restart_definition(self.model, path)
+
+    def test_restart_dry_run_never_calls_optimizer(self):
+        with mock.patch.object(driver, 'least_squares') as optimizer, \
+                mock.patch.object(sensitivity, 'least_squares') as sensitivity_optimizer, \
+                mock.patch.object(multi, 'least_squares') as multi_optimizer, \
+                mock.patch.object(driver, 'run_start') as run_start, \
+                mock.patch.object(driver, 'run_restart') as run_restart, \
+                mock.patch.object(driver, 'ProcessPoolExecutor') as executor:
+            summary = driver.dry_run(CHEAP_ORDERS, restart_from=SOURCE_LEDGER, max_nfev=1234)
+        for patched in (optimizer, sensitivity_optimizer, multi_optimizer, run_start, run_restart, executor):
+            patched.assert_not_called()
+        self.assertEqual(summary['optimizer_settings']['max_nfev'], 1234)
+        self.assertEqual(summary['restart_source']['run_index'], 2)
+        evaluation = summary['restart_evaluation']
+        self.assertEqual((evaluation['rows'], evaluation['columns'], evaluation['degrees_of_freedom']),
+                         (75, 35, 40))
+        self.assertAlmostEqual(sum(block['chi2'] for block in evaluation['blocks'].values()), evaluation['chi2'])
+        self.assertNotIn('starts', summary)
+
+    def test_main_restart_dry_run_writes_nothing(self):
+        with mock.patch.object(driver, 'dry_run', return_value=dict(dry_run=True)) as dry, \
+                mock.patch.object(multi, 'write_ledger') as writer, \
+                mock.patch.object(driver, 'least_squares') as optimizer, \
+                mock.patch.object(driver, 'main_restart') as restart, \
+                mock.patch('builtins.print'):
+            driver.main(['--dry-run', '--restart-from', SOURCE_LEDGER, '--max-nfev', '7'])
+        dry.assert_called_once_with(restart_from=SOURCE_LEDGER, max_nfev=7)
+        for patched in (writer, optimizer, restart):
+            patched.assert_not_called()
+
+    def test_main_restart_records_settings(self):
+        written = {}
+        real_write = multi.write_ledger
+
+        def write(path, ledger):
+            written[str(path)] = json.loads(json.dumps(ledger))
+            real_write(path, ledger)
+        fake_record = dict(name='scan_point_restart', runs=[])
+        with tempfile.TemporaryDirectory() as directory, \
+                mock.patch.object(driver, 'make_models', return_value=[self.model]), \
+                mock.patch.object(driver, 'run_restart', return_value=fake_record) as restart, \
+                mock.patch.object(multi, 'write_ledger', side_effect=write), \
+                mock.patch.object(driver, 'least_squares') as optimizer, \
+                mock.patch('builtins.print'):
+            output = str(Path(directory)/'restart.json')
+            driver.main(['--restart-from', SOURCE_LEDGER, '--max-nfev', '1500', '--output', output])
+        optimizer.assert_not_called()
+        restart.assert_called_once()
+        self.assertEqual(restart.call_args.kwargs['settings']['max_nfev'], 1500)
+        ledger = written[output]
+        self.assertEqual(ledger['optimizer_settings'], dict(driver.OPTIMIZER_SETTINGS, max_nfev=1500))
+        self.assertEqual(len(ledger['starts']), 1)
+        self.assertEqual(ledger['starts'][0]['start'], self.runs[2]['endpoint'])
+        self.assertEqual(ledger['restart_source']['run_index'], 2)
+        self.assertEqual(ledger['entries'], [fake_record])
 
 
 class GateTests(unittest.TestCase):

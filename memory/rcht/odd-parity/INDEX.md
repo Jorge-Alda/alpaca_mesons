@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-11-09
+updated: 2026-11-10
 bibtex_keys: []
 provenance: assumption
 ---
@@ -52,6 +52,9 @@ being combined with canonical photon or resonance amplitudes.
 - [joint-vector-isospin-breaking-vpp-likelihood-option.md](joint-vector-isospin-breaking-vpp-likelihood-option.md) — switchable $r_1,r_2,r_3$ coordinates of the joint likelihood: per-mode vertex factors in the $K^*$ width, $K^*\to K\gamma$, $\phi\to K\bar K$, BaBar $K^*$ and $s$-channel $\rho,\omega,\phi\to K\bar K$ terms.
 - [joint-vector-isospin-breaking-vpp-s-channel-factors.md](joint-vector-isospin-breaking-vpp-s-channel-factors.md) — SymPy factors of the $s$-channel $\rho^0,\rho^\pm,\omega,\phi\to K\bar K$ vertices of the BaBar amplitude, light/strange equivalence at the fitted $\omega$–$\phi$ angle, and the ground-state-only substitution.
 - [joint-vector-isospin-breaking-vpp-fit-plan.md](joint-vector-isospin-breaking-vpp-fit-plan.md) — prepared (not run) joint fit with $r_1,r_2,r_3$ free: starts, bounds, quadrature and acceptance gates, adequacy criterion, 40 dof, and dry-run starting $\chi^2$ per block.
+- [joint-vector-isospin-breaking-vpp-restart-option.md](joint-vector-isospin-breaking-vpp-restart-option.md) — `--restart-from` (lowest high-order $\chi^2$ run of `scan_point` as single start) and `--max-nfev` driver options, refusal rules, and the restart-point dry-run $\chi^2$ per block.
+- [joint-vector-isospin-breaking-vpp-evaluation-cost.md](joint-vector-isospin-breaking-vpp-evaluation-cost.md) — residual and Jacobian timing and call counts of the option against the baseline, sources of the extra cost, and wall-time estimate of the restart run.
+- [joint-vector-isospin-breaking-vpp-calculation-reuse.md](joint-vector-isospin-breaking-vpp-calculation-reuse.md) — bitwise-identical reuse of the zero-excitation propagator, the reference residual and the vertex factors in the option likelihood, used by the fit driver.
 - [joint-vector-phi-kaon-residual-diagnostic.md](joint-vector-phi-kaon-residual-diagnostic.md) — correlated $\phi\to K\bar K$ residuals in a symmetric channel convention.
 - [joint-vector-diagnostic-synthesis.md](joint-vector-diagnostic-synthesis.md) — combined $K^*$ width, $\phi\to K\bar K$, $\eta'$ and mass-block diagnostic results with candidate assessment.
 - [joint-vector-fit-inadequacy-candidate-causes.md](joint-vector-fit-inadequacy-candidate-causes.md) — conjectured causes of the inadequacy, ranked, with the diagnostic that separates each.
