@@ -2,12 +2,14 @@
 title: One-loop corrections to mixed two-point functions and ALP-meson LSZ mixing
 status: derived
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-10
 bibtex_keys: [Alda:2026nrd, Kaiser:1998ds, Herrera-Siklody:1996tqr]
 provenance: analytical-derivation
 ---
 
 # One-loop corrections to mixed two-point functions and ALP-meson LSZ mixing
+
+See the explicit [derivatives and pole residues](loops/derivatives-and-pole-residues.md) and the [perturbative and resummed prescription](loops/perturbative-and-resummed-prescription.md).
 
 ## Assumptions and inputs
 

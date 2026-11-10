@@ -24,8 +24,8 @@
 ## 4. Derivatives, residues and prescription
 
 - [x] 4.1 Extend the script with $\partial_s\Sigma_{ij}$, $\partial_s\Sigma_{i\hat a}$, the first-order $\delta w^{(a)}$ and pole shift and the resummation criterion of Decision 8. Verify that `--poles` reproduces the tree-level LSZ solution when $\Sigma\to0$ and that the perturbative and resummed results agree to $\mathcal O(\Sigma^2)$ in a test point
-- [ ] 4.2 Write `memory/nlo/loops/derivatives-and-pole-residues.md` and `memory/nlo/loops/perturbative-and-resummed-prescription.md`. Verify the consistency with [loop-corrections-to-alp-meson-lsz-mixing.md](../../../memory/nlo/loop-corrections-to-alp-meson-lsz-mixing.md) and the $\delta_{\rm est}$ of [validity-range-and-truncation.md](../../../memory/nlo/counting/validity-range-and-truncation.md)
-- [ ] 4.3 Add a one-line cross-link from `memory/nlo/loop-corrections-to-alp-meson-lsz-mixing.md` to the new records and update `updated`; leave the content unchanged. Verify the link
+- [x] 4.2 Write `memory/nlo/loops/derivatives-and-pole-residues.md` and `memory/nlo/loops/perturbative-and-resummed-prescription.md`. Verify the consistency with [loop-corrections-to-alp-meson-lsz-mixing.md](../../../memory/nlo/loop-corrections-to-alp-meson-lsz-mixing.md) and the $\delta_{\rm est}$ of [validity-range-and-truncation.md](../../../memory/nlo/counting/validity-range-and-truncation.md)
+- [x] 4.3 Add a one-line cross-link from `memory/nlo/loop-corrections-to-alp-meson-lsz-mixing.md` to the new records and update `updated`; leave the content unchanged. Verify the link
 
 ## 5. Integration check
 

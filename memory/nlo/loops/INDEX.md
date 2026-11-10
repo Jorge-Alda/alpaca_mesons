@@ -17,6 +17,8 @@ Renormalized one-loop meson and ALP–meson two-point functions of the $U(3)$ th
 - [Mixed ALP–meson self-energy](mixed-alp-meson-self-energy.md) — finite nonet tadpole expression and source-by-source contributions
 - [Thresholds and analytic structure](thresholds-and-analytic-structure.md) — cuts and thresholds of the retained two-point functions and a conditional CP-odd extension
 - [One-loop pole script derivation](pole-script-derivation.md) — derivatives, pole corrections and the resummation comparison implemented for task 4.1
+- [Derivatives and pole residues](derivatives-and-pole-residues.md) — explicit tadpole derivatives and their contributions to meson and ALP pole quantities
+- [Perturbative and resummed prescription](perturbative-and-resummed-prescription.md) — truncation-based comparison and its limitations near poles and thresholds
 - [Counterterm cancellation](counterterm-cancellation.md) — pole cancellation with local terms and the divergent meson field redefinition, and limits of the scale checks
 - [Mixed tadpole pole check](mixed-tadpole-pole-check.md) — mixed source tadpoles and the nonzero pole left by the stated local terms
 - [Mixed pole under a field redefinition](mixed-pole-field-redefinition.md) — source dependence of the diagnostic pole and the change of the mixed inverse propagator under a meson shift
