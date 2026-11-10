@@ -220,6 +220,59 @@ def mixed_local_pole_coefficients():
     return axial, pseudoscalar
 
 
+def absent_mixed_vertices():
+    """Derive absent one-loop vertices with noncommuting flavour matrices."""
+    from derive_nlo_loop_vertices import symbolic_vertices, split_by_source
+    vertices = symbolic_vertices()
+    quartic_sources = split_by_source(vertices[(3, 1)])
+    return vertices[(3, 0)], {name: quartic_sources[name]
+                               for name in ("c_q^V", "c_q^S", "c_G")}
+
+
+def check_mixed_local_against_quadratic_derivation():
+    """Compare the UV coefficients with independently derived NLO operators.
+
+    All nine entries of each source matrix are independent. The B pole is
+    tested separately as the variation of the leading pseudoscalar mixing.
+    """
+    from derive_nlo_quadratic_chipt import derive
+    derivation = derive()
+    symbols = derivation["symbols"]
+    source_axial = sp.Matrix(3, 3, lambda i, j: sp.Symbol(f"axial_{i}{j}"))
+    source_pseudoscalar = sp.Matrix(3, 3, lambda i, j: sp.Symbol(f"pseudoscalar_{i}{j}"))
+    gamma = gamma_table("nonet")
+    operators = derivation["results"]
+    axial, pseudoscalar = mixed_local_pole_coefficients()
+    for index, label in enumerate(NONET_LABELS):
+        matrices = {"Phi": GENERATORS[label], "partial_mu_Phi": GENERATORS[label],
+                    "chi_0": chi_zero(), "c_q^A": source_axial,
+                    "c_q^P": source_pseudoscalar, "c_q^S": sp.zeros(3),
+                    "c_q^V": sp.zeros(3)}
+        total = sp.Integer(0)
+        for name, result in operators.items():
+            if name not in gamma or gamma[name] == 0:
+                continue
+            expression = result["aPhi"]
+            replacements = {matrix: matrices[str(matrix)] for matrix in expression.atoms(sp.MatrixSymbol)}
+            expression = expression.xreplace(replacements).doit()
+            total += gamma[name] * expression
+        total = sp.expand(total.subs({symbols["f_pi"]: F_PI, symbols["f_a"]: F_A}))
+        computed_axial = total.coeff(symbols["derivative_a"])
+        computed_pseudoscalar = total.coeff(symbols["a"])
+        leading_pseudoscalar = F_PI / (2 * F_A) * (
+            source_pseudoscalar * (GENERATORS[label] * chi_zero()
+                                  + chi_zero() * GENERATORS[label])).trace()
+        b_pole = B_POLE_FROM_RECORD * SINGLET_MASS**2 / F_PI**2
+        expected_axial = (source_axial * axial[index]).trace()
+        expected_pseudoscalar = (source_pseudoscalar * pseudoscalar[index]).trace()
+        if sp.expand(computed_axial - expected_axial) != 0:
+            return False
+        if sp.expand(computed_pseudoscalar + b_pole * leading_pseudoscalar
+                     - expected_pseudoscalar) != 0:
+            return False
+    return True
+
+
 # ------------------------------------------------------------ tadpoles
 def tadpole_symbol_matrix(labels):
     """Symmetric matrix of <phi_c phi_d> symbols in the generator basis.
@@ -959,8 +1012,14 @@ def run_mixed():
                   f"{sp.latex(sp.Trace(sources[name] * induced))}")
             residuals.append(transformed[source_key][2][index])
     assert meson_transformation().row(0).is_zero_matrix
-    print("\nThe singlet row of the field renormalization vanishes; the c_G mixed pole remains zero.")
-    print("Sources c_q^V and c_q^S: zero at this order for these quadratic terms.")
+    cubic, absent_sources = absent_mixed_vertices()
+    assert cubic == 0, "a meson cubic vertex permits a mixed bubble"
+    for name, vertex in absent_sources.items():
+        print(f"Source {name}: a Phi^3 vertex = {sp.latex(vertex)}; finite mixed self-energy = 0.")
+        assert vertex == 0, f"nonzero mixed tadpole vertex for {name}"
+    assert check_mixed_local_against_quadratic_derivation(), "local mixed poles disagree with independently derived quadratic operators"
+    print("Independent quadratic-operator derivation reproduces all mixed local poles.")
+    print("The singlet row of the field renormalization vanishes; the c_G mixed pole remains zero.")
     assert all(matrix.is_zero_matrix for matrix in residuals), (
         "mixed poles remain after local terms and meson field renormalization")
     print("All calculated mixed UV poles cancel after meson field renormalization.")
@@ -1029,6 +1088,14 @@ def run_cancel():
 # ------------------------------------------------------------ tests
 class LoopSelfEnergyTests(unittest.TestCase):
     """Checks of the vertex, the contraction, the local terms and the limits."""
+
+    def test_absent_mixed_vertices(self):
+        cubic, sources = absent_mixed_vertices()
+        self.assertEqual(cubic, 0)
+        self.assertTrue(all(vertex == 0 for vertex in sources.values()))
+
+    def test_mixed_local_poles_against_quadratic_derivation(self):
+        self.assertTrue(check_mixed_local_against_quadratic_derivation())
 
     def test_mixed_contraction_against_vertex_script(self):
         """Check two source vertices against the independent expansion."""
