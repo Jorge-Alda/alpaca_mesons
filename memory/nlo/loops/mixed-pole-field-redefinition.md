@@ -37,7 +37,7 @@ $$
 
 For several coupled mesons, this follows from multiplication of the full symmetric inverse propagator by the triangular change-of-fields matrix and its transpose; the script performs the one-meson case explicitly. At first order in ALP–meson mixing, the second term in $d_{\mathrm{new}}$ is of second order in that mixing. For an invertible meson block, $w^{(a)}_{i,\mathrm{new}}=w^{(a)}_{i,\mathrm{old}}-\delta\Phi_i/a$. Direct ALP vertices also change when the old fields are replaced, so the mixing contribution alone is basis dependent; physical amplitudes require both terms. Pole positions are invariant under an invertible field transformation.
 
-An $s$-dependent residual cannot be declared removed solely because a local shift changes $b$: $A_{ij}^{(0)}=s\delta_{ij}-(M_0^2)_{ij}$ also generates a mass-dependent term. Its cancellation requires checking all transformed terms and field renormalizations. A divergent shift also needs a consistent treatment of renormalized fields. No such cancellation is claimed here.
+An $s$-dependent residual cannot be declared removed solely because a local shift changes $b$: $A_{ij}^{(0)}=s\delta_{ij}-(M_0^2)_{ij}$ also generates a mass-dependent term. Applying the meson field renormalization to the full leading mixed block cancels the calculated residual without an additional ALP-dependent shift, as shown in [mixed ultraviolet field renormalization](mixed-uv-field-renormalization.md). This statement is limited to the quadratic terms and implemented loop and local inputs.
 
 ## Verification
 

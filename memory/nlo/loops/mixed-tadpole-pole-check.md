@@ -23,7 +23,7 @@ $$
 -\lambda(\mu)\,s\,\frac{2B_0(5m_u+5m_d+2m_s)}{3f_af_\pi}.
 $$
 
-It does not vanish for generic quark masses. The off-shell meson sector likewise required a divergent field redefinition, as documented in [meson self-energy](meson-self-energy.md). Its mixed-block counterpart has not yet been derived; cancellation cannot be asserted from the local terms alone.
+It does not vanish for generic quark masses. The off-shell meson sector likewise required a divergent field redefinition, as documented in [meson self-energy](meson-self-energy.md). Applying this same redefinition to the leading mixed terms cancels this residual and all calculated $c_q^A$ and $c_q^P$ mixed poles; see [mixed ultraviolet field renormalization](mixed-uv-field-renormalization.md).
 
 ## Verification
 
@@ -34,4 +34,4 @@ PYTHONPATH=scripts .venv/bin/python -m unittest derive_nlo_loop_self_energies.Lo
 .venv/bin/python scripts/derive_nlo_loop_self_energies.py --mixed
 ```
 
-The first command passes. The second deliberately exits with a failed assertion because the local terms alone do not cancel every mixed pole. The mixed calculation is incomplete until the field redefinition and any resulting source terms are derived and tested.
+Both commands pass. The second checks cancellation after the meson field redefinition; local terms alone do not cancel every mixed pole. Completeness of the underlying local operators and the finite mixed function remain separate checks.

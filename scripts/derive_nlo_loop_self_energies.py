@@ -936,6 +936,7 @@ def print_report(label, report):
 
 def run_mixed():
     """Print the mixed tadpoles and check the local pole entry by entry."""
+    from derive_mixed_uv_field_renormalization import mixed_poles_and_transformation, meson_transformation
     sources = {name: sp.MatrixSymbol(name, 3, 3) for name in ("c_q^A", "c_q^P")}
     tadpoles = tadpole_symbol_matrix(NONET_LABELS)
     finite_axial, finite_pseudoscalar = mixed_tadpole_coefficients(tadpoles)
@@ -943,19 +944,26 @@ def run_mixed():
     local_axial, local_pseudoscalar = mixed_local_pole_coefficients()
     print("Q(s) = s K - M^2 + Sigma(s); first order in 1/f_a; units GeV.")
     print("<phi_c phi_d> = 2 lambda (M^2)_cd + finite tadpole matrix.")
+    transformed = mixed_poles_and_transformation()
     residuals = []
     for name, finite, pole, local in (("c_q^A", finite_axial, pole_axial, local_axial),
                                       ("c_q^P", finite_pseudoscalar, pole_pseudoscalar, local_pseudoscalar)):
-        print(f"\nSource {name}; multiply by s for c_q^A:")
+        print(f"\nSource {name}; loop and local axial coefficients are multiplied by s:")
         for index, label in enumerate(NONET_LABELS):
             for description, coefficient in (("loop", finite[index]), ("pole", pole[index]),
                                              ("local pole", local[index])):
                 print(f"  {sp.latex(MESON_FIELDS[label])} {description}: {sp.latex(sp.Trace(sources[name] * coefficient))}")
-            residuals.append((pole[index] + local[index]).applyfunc(sp.simplify))
-    print("\nSources c_q^V, c_q^S, c_G: zero at first order in 1/f_a.")
+            source_key = "axial" if name == "c_q^A" else "pseudoscalar"
+            induced = transformed[source_key][1][index]
+            print(f"  {sp.latex(MESON_FIELDS[label])} field renormalization: "
+                  f"{sp.latex(sp.Trace(sources[name] * induced))}")
+            residuals.append(transformed[source_key][2][index])
+    assert meson_transformation().row(0).is_zero_matrix
+    print("\nThe singlet row of the field renormalization vanishes; the c_G mixed pole remains zero.")
+    print("Sources c_q^V and c_q^S: zero at this order for these quadratic terms.")
     assert all(matrix.is_zero_matrix for matrix in residuals), (
-        "mixed poles do not cancel against the specified local terms; "
-        "an off-shell field-redefinition analysis is required")
+        "mixed poles remain after local terms and meson field renormalization")
+    print("All calculated mixed UV poles cancel after meson field renormalization.")
 
 
 def print_scale_dependence(label, coefficients, assert_independent):
