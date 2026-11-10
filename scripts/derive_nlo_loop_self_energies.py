@@ -7,6 +7,7 @@ Run:
     .venv/bin/python scripts/derive_nlo_loop_self_energies.py           # all checks
     .venv/bin/python scripts/derive_nlo_loop_self_energies.py --meson   # task 2.1
     .venv/bin/python scripts/derive_nlo_loop_self_energies.py --cancel  # task 2.3
+    .venv/bin/python scripts/derive_nlo_loop_self_energies.py --poles   # task 4.1
     .venv/bin/python scripts/derive_nlo_loop_self_energies.py --test    # unit tests only
 
 Conventions (Alda:2026nrd; memory/nlo/loops/vertices-and-topologies.md):
@@ -1025,6 +1026,113 @@ def run_mixed():
     print("All calculated mixed UV poles cancel after meson field renormalization.")
 
 
+def perturbative_overlap(leading_meson, leading_mixed, loop_meson, loop_mixed):
+    """LO overlap and its first-order loop correction at fixed s."""
+    leading_overlap = -leading_meson.inv() * leading_mixed
+    correction = -leading_meson.inv() * (loop_mixed + loop_meson * leading_overlap)
+    return leading_overlap.applyfunc(sp.simplify), correction.applyfunc(sp.simplify)
+
+
+def resummation_required(leading_inverse, loop_self_energy, estimate):
+    """Decision 8, element by element, in the supplied field basis.
+
+    Both matrices have the same units. A zero leading entry passes only if
+    the loop entry also vanishes. This diagnostic is basis dependent.
+    """
+    return any(abs(loop_self_energy[row, column]) > estimate * abs(leading_inverse[row, column])
+               for row in range(leading_inverse.rows) for column in range(leading_inverse.cols))
+
+
+def truncation_estimate(momentum_squared, f_pi=mpmath.mpf('0.0921'),
+                        kaon_mass=mpmath.mpf('0.493677'), number_colours=3):
+    """The dimensionless estimate of validity-range-and-truncation.md, GeV units."""
+    chiral_scale_squared = (4 * mpmath.pi * f_pi)**2
+    return max(mpmath.mpf(1) / number_colours, momentum_squared / chiral_scale_squared,
+               kaon_mass**2 / chiral_scale_squared)
+
+
+def pole_test_point():
+    """Derive and compare a two-meson example, away from all degeneracies.
+
+    An auxiliary expansion parameter multiplies both loop blocks. The example
+    is illustrative; rational entries are in GeV units and are not a fit.
+    """
+    loop_order = sp.Symbol('epsilon', real=True)
+    s = MANDELSTAM_S
+    leading_meson = sp.diag(s - sp.Rational(1, 4), s - sp.Rational(9, 16))
+    leading_mixed = sp.Matrix([s / 20 - sp.Rational(1, 100),
+                               s / 30 - sp.Rational(1, 200)])
+    loop_meson = sp.Matrix([[sp.Rational(1, 100) + s / 40, sp.Rational(1, 500)],
+                            [sp.Rational(1, 500), -sp.Rational(1, 200) + s / 50]])
+    loop_mixed = sp.Matrix([s / 300, -sp.Rational(1, 1000) + s / 400])
+    leading_overlap, correction = perturbative_overlap(
+        leading_meson, leading_mixed, loop_meson, loop_mixed)
+    resummed_overlap = -(leading_meson + loop_order * loop_meson).inv() * (
+        leading_mixed + loop_order * loop_mixed)
+    first_order_resummed = resummed_overlap.diff(loop_order).subs(loop_order, 0)
+    pole_at_leading_mass = sp.Rational(1, 4)
+    determinant = (leading_meson + loop_order * loop_meson).det()
+    # Implicit differentiation of det Q(s_pole)=0 at epsilon=0.
+    pole_shift = -sp.diff(determinant, loop_order).subs(
+        {loop_order: 0, s: pole_at_leading_mass}) / sp.diff(determinant, s).subs(
+            {loop_order: 0, s: pole_at_leading_mass})
+    return locals()
+
+
+def resummed_poles(determinant, momentum_squared, loop_order, loop_value):
+    """Roots of the tadpole-only determinant for a specified loop strength."""
+    polynomial = sp.Poly(determinant.subs(loop_order, loop_value), momentum_squared)
+    return sorted(sp.nroots(polynomial, n=30, maxsteps=100), key=lambda root: float(sp.re(root)))
+
+
+def run_poles():
+    """Print explicit derivatives, LSZ expansion, pole shift and Decision 8."""
+    from derive_loop_corrected_alp_lsz import derive
+
+    print('Q(s) = s K - M^2 + Sigma(s); masses in GeV, s and Sigma in GeV^2.')
+    print('Nondegenerate meson poles; first order in loops and in ALP mixing.')
+    data = self_energy('nonet')
+    meson = data['sigma_zero'] + MANDELSTAM_S * data['sigma_one']
+    derivative = meson.diff(MANDELSTAM_S)
+    print('d Sigma_ij / ds, nonet generator basis:')
+    for row, label in enumerate(NONET_LABELS):
+        for column in range(row, len(NONET_LABELS)):
+            if derivative[row, column] != 0:
+                print_entry(entry_name(NONET_LABELS, row, column), derivative[row, column])
+    axial, _ = mixed_tadpole_coefficients(data['tadpole'])
+    source = sp.MatrixSymbol('c_q^A', 3, 3)
+    print('d Sigma_i,a / ds: axial source; pseudoscalar, vector, scalar and gluonic derivatives vanish:')
+    for index, label in enumerate(NONET_LABELS):
+        print(f'  {sp.latex(MESON_FIELDS[label])}: {sp.latex(sp.Trace(source * axial[index]))}')
+    result = derive()
+    print('Leading overlap: ' + sp.latex(result['leading_overlap']))
+    print('First-order overlap at fixed s: ' + sp.latex(result['correction_overlap']))
+    print('Contribution from an independent pole shift: ' + sp.latex(result['pole_shift_overlap']))
+    print('For a normalized nondegenerate LO meson eigenvector v and mass m,')
+    print('delta s = -v^T Sigma(m^2) v; the inverse residue is 1 + v^T Sigma\'(m^2) v.')
+    print('The ALP loop self-energy is excluded and the mixing-induced ALP pole shift is O(1/f_a^2).')
+    print('Decision 8: resum if any |Sigma_ij| > delta_est(s)|Q^(0)_ij|;')
+    print('zero entries and the field basis matter. Resummation is outside strict order.')
+    example = pole_test_point()
+    assert (example['resummed_overlap'].subs(example['loop_order'], 0)
+            - example['leading_overlap']).applyfunc(sp.simplify).is_zero_matrix
+    assert (example['first_order_resummed'] - example['correction']).applyfunc(sp.simplify).is_zero_matrix
+    assert sp.simplify(example['pole_shift'] + example['loop_meson'][0, 0].subs(
+        MANDELSTAM_S, example['pole_at_leading_mass'])) == 0
+    print('Test point: exact overlap agrees with its first-order expansion up to O(Sigma^2).')
+    print('Test point meson pole shift [GeV^2]: ' + sp.latex(example['pole_shift']))
+    exact_poles = resummed_poles(example['determinant'], MANDELSTAM_S, example['loop_order'], 1)
+    print('Test point resummed meson poles [GeV^2]: ' + str(exact_poles))
+    print('Test point first-order lower pole [GeV^2]: '
+          + str(sp.N(example['pole_at_leading_mass'] + example['pole_shift'], 12)))
+    test_s = sp.Rational(9, 25)
+    estimate = truncation_estimate(mpmath.mpf('0.36'))
+    print('Test point delta_est(s=0.36 GeV^2): ' + str(estimate))
+    print('Test point resummation required by Decision 8: ' + str(resummation_required(
+        example['leading_meson'].subs(MANDELSTAM_S, test_s),
+        example['loop_meson'].subs(MANDELSTAM_S, test_s), estimate)))
+
+
 def print_scale_dependence(label, coefficients, assert_independent):
     tolerance = mpmath.mpf(10)**-30
     for scale, (constant, slope, remainder, pole_shift) in scale_dependence(coefficients).items():
@@ -1088,6 +1196,33 @@ def run_cancel():
 # ------------------------------------------------------------ tests
 class LoopSelfEnergyTests(unittest.TestCase):
     """Checks of the vertex, the contraction, the local terms and the limits."""
+
+    def test_pole_expansion_and_tree_limit(self):
+        example = pole_test_point()
+        self.assertTrue((example['resummed_overlap'].subs(example['loop_order'], 0)
+                         - example['leading_overlap']).applyfunc(sp.simplify).is_zero_matrix)
+        self.assertTrue((example['first_order_resummed'] - example['correction'])
+                        .applyfunc(sp.simplify).is_zero_matrix)
+        self.assertEqual(sp.simplify(example['pole_shift'] + example['loop_meson'][0, 0]
+                                     .subs(MANDELSTAM_S, example['pole_at_leading_mass'])), 0)
+        determinant_at_shifted_pole = example['determinant'].subs(
+            MANDELSTAM_S, example['pole_at_leading_mass'] + example['loop_order'] * example['pole_shift'])
+        self.assertEqual(sp.diff(determinant_at_shifted_pole, example['loop_order'])
+                         .subs(example['loop_order'], 0), 0)
+        errors = []
+        for loop_value in (sp.Rational(1, 10), sp.Rational(1, 20)):
+            exact = resummed_poles(example['determinant'], MANDELSTAM_S,
+                                    example['loop_order'], loop_value)[0]
+            first_order = example['pole_at_leading_mass'] + loop_value * example['pole_shift']
+            errors.append(abs(float(exact - first_order)))
+        self.assertLess(errors[1], errors[0] * 0.26)
+
+    def test_resummation_criterion_zero_entries_and_boundary(self):
+        leading = sp.diag(2, 3)
+        self.assertFalse(resummation_required(leading, sp.diag(1, 0), sp.Rational(1, 2)))
+        self.assertTrue(resummation_required(leading, sp.Matrix([[0, 1], [0, 0]]), sp.Rational(1, 2)))
+        self.assertTrue(resummation_required(leading, sp.diag(2, 0), sp.Rational(1, 2)))
+        self.assertAlmostEqual(float(truncation_estimate(mpmath.mpf('0.25'))), 1/3)
 
     def test_absent_mixed_vertices(self):
         cubic, sources = absent_mixed_vertices()
@@ -1279,11 +1414,12 @@ def main():
     parser.add_argument("--meson", action="store_true", help="task 2.1: Sigma_ij of the nonet")
     parser.add_argument("--cancel", action="store_true", help="task 2.3: pole cancellation")
     parser.add_argument("--mixed", action="store_true", help="mixed tadpoles and local-pole check")
+    parser.add_argument("--poles", action="store_true", help="derivatives and first-order pole corrections")
     parser.add_argument("--test", action="store_true", help="run the unit tests only")
     arguments = parser.parse_args()
     if arguments.test:
         sys.exit(0 if run_tests() else 1)
-    no_option = not (arguments.meson or arguments.cancel or arguments.mixed)
+    no_option = not (arguments.meson or arguments.cancel or arguments.mixed or arguments.poles)
     if arguments.meson or no_option:
         run_meson()
     if arguments.cancel or no_option:
@@ -1291,6 +1427,8 @@ def main():
         run_cancel()
     if arguments.mixed:
         run_mixed()
+    if arguments.poles or no_option:
+        run_poles()
     if no_option and not run_tests():
         sys.exit(1)
 
