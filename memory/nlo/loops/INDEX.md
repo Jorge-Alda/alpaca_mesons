@@ -2,7 +2,7 @@
 title: One-loop two-point functions of the U(3) NLO theory
 status: mixed
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-10
 bibtex_keys: [Kaiser:1998ds, Herrera-Siklody:1996tqr, Gasser:1983yg, Gasser:1984gg, Alda:2026nrd]
 provenance: assumption
 ---
@@ -14,3 +14,5 @@ Renormalized one-loop meson and ALP–meson two-point functions of the $U(3)$ th
 - [Vertices and topologies](vertices-and-topologies.md) — cubic and quartic vertices of the leading Lagrangian per ALP source, and the loop topologies they allow in each two-point function
 - [Loop functions and subtraction](loop-functions-and-subtraction.md) — tadpole integral, derivative contractions and the subtraction used for the two-point functions
 - [Meson self-energy](meson-self-energy.md) — $\Sigma_{ij}(s)$ of the nonet, Gasser:1984gg checks, pole cancellation and the findings on $B$ and $\Gamma_i$
+- [Mixed tadpole pole check](mixed-tadpole-pole-check.md) — mixed source tadpoles and the nonzero pole left by the stated local terms
+- [Mixed pole under a field redefinition](mixed-pole-field-redefinition.md) — source dependence of the diagnostic pole and the change of the mixed inverse propagator under a meson shift

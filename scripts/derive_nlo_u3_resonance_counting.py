@@ -1049,11 +1049,12 @@ def b_running_check():
 
 
 def tau_in_terms_of_eta_prime_mass():
-    """Return 4 tau/F^4 - m_0^2/(N_f F^2) with tau = F^2 m_0^2/(4 N_f); must vanish."""
+    """Match -tau X^2/2 to -f_pi^2 m_0^2 X^2/(4 N_f)."""
     eta_prime_mass_squared = sp.Symbol("m_0^2", positive=True)
-    tau_value = decay_constant ** 2 * eta_prime_mass_squared / (4 * FLAVOUR_NUMBER)
+    tau_value = sp.solve(-tau_symbol / 2 + decay_constant ** 2 * eta_prime_mass_squared
+                         / (4 * FLAVOUR_NUMBER), tau_symbol)[0]
     return sp.simplify(4 * tau_value / decay_constant ** 4
-                       - eta_prime_mass_squared / (FLAVOUR_NUMBER * decay_constant ** 2))
+                       - 2 * eta_prime_mass_squared / (FLAVOUR_NUMBER * decay_constant ** 2))
 
 
 # --- Gamma_8 beyond leading order (Herrera-Siklody:1996tqr lines 2044-2050) ---
@@ -1191,7 +1192,7 @@ def check_scheme():
           f" ({correction_term.nc_power}, {correction_term.chiral_dimension}),"
           f" {sp.sstr(delta_order(correction_term.nc_power, correction_term.chiral_dimension))},"
           " same order as G-LO: inside the declared order, so B^r depends on mu_chi")
-    print("  checked: 4 tau/F^4 = m_0^2/(N_f F^2) for tau = F^2 m_0^2/(4 N_f);"
+    print("  checked: 4 tau/f_pi^4 = 2 m_0^2/(N_f f_pi^2) for tau = f_pi^2 m_0^2/(2 N_f);"
           " bare B is mu-independent at O(tau)")
 
     print("\nRunning: L_i^r(mu_2) = L_i^r(mu_1) - Gamma_i/(16 pi^2) log(mu_2/mu_1),"

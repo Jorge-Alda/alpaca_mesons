@@ -97,9 +97,12 @@ CHARGED_TADPOLE_LATEX = {"<pi+pi->": r"\langle\pi^+\pi^-\rangle",
 MASS_UP, MASS_DOWN, MASS_STRANGE = sp.symbols("m_u m_d m_s", positive=True)
 B_ZERO, F_PI, SINGLET_MASS = sp.symbols("B_0 f_pi m_0", positive=True)
 MANDELSTAM_S = sp.Symbol("s", real=True)
+F_A = sp.Symbol("f_a", positive=True)
 QUARK_MASSES = (MASS_UP, MASS_DOWN, MASS_STRANGE)
-MESON_FIELDS = sp.symbols("P_0:9", real=True)
-MESON_FIELD_DERIVATIVES = sp.symbols("dP_0:9", real=True)
+MESON_FIELDS = tuple(sp.Symbol(name, real=True) for name in
+                     ("eta_0", "P_1", "P_2", "pi_3", "P_4", "P_5", "P_6", "P_7", "eta_8"))
+MESON_FIELD_DERIVATIVES = tuple(sp.Symbol(name, real=True) for name in
+                                ("deta_0", "dP_1", "dP_2", "dpi_3", "dP_4", "dP_5", "dP_6", "dP_7", "deta_8"))
 
 # Local NLO constants of memory/nlo/quadratic-lagrangian.md.
 LOCAL_CONSTANTS = ("L_4", "L_5", "L_6", "L_7", "L_8", "L_18", "L_25",
@@ -107,10 +110,10 @@ LOCAL_CONSTANTS = ("L_4", "L_5", "L_6", "L_7", "L_8", "L_18", "L_25",
 
 # Test point (GeV). Illustrative inputs, not a fit: quark masses near the
 # MS-bar values at 2 GeV, B_0 such that B_0 (m_u + m_d) ~ (0.135 GeV)^2,
-# f_pi = F = 0.0924 GeV, m_0^2 = 0.7 GeV^2 so that the LO eta' is near 1 GeV.
+# f_pi = 0.093 GeV, m_0^2 = 0.7 GeV^2 so that the LO eta' is near 1 GeV.
 TEST_POINT = {MASS_UP: sp.Rational(216, 100000), MASS_DOWN: sp.Rational(467, 100000),
               MASS_STRANGE: sp.Rational(934, 10000), B_ZERO: sp.Rational(267, 100),
-              F_PI: sp.Rational(924, 10000), SINGLET_MASS: sp.sqrt(sp.Rational(7, 10))}
+              F_PI: sp.Rational(93, 1000), SINGLET_MASS: sp.sqrt(sp.Rational(7, 10))}
 REFERENCE_SCALE = sp.Rational(77, 100)
 SCALES = (sp.Rational(1, 2), REFERENCE_SCALE, sp.Integer(1))
 # Illustrative L_i^r(0.77 GeV) used only in the mu-independence check.
@@ -122,12 +125,8 @@ ILLUSTRATIVE_CONSTANTS = {"L_4": sp.Rational(-3, 10000), "L_5": sp.Rational(12, 
 mpmath.mp.dps = 40
 
 # k_B of B = B^r(1 + 4 tau lambda/F^4) = B^r(1 + k_B m_0^2 lambda/F^2) (Kaiser:1998ds).
-# Record memory/nlo/counting/subtraction-scheme-and-scales.md (and
-# tau_in_terms_of_eta_prime_mass of derive_nlo_u3_resonance_counting.py) uses
-# tau = F^2 m_0^2/(4 N_f), so 4 tau/F^4 = m_0^2/(3 F^2): k_B = 1/3.
-# memory/extracts/Kaiser:1998ds/qcd-scale-dependence-za.md quotes
-# M_eta'^2 = 6 tau/F^2 at tree level, i.e. tau = F^2 m_0^2/6 and k_B = 2/3.
-B_POLE_FROM_RECORD = sp.Rational(1, 3)
+# Matching the topological terms gives tau = f_pi^2 m_0^2/(2 N_f).
+B_POLE_FROM_RECORD = sp.Rational(2, 3)
 B_POLE_FROM_KAISER_ETA_PRIME_MASS = sp.Rational(2, 3)
 
 
@@ -168,6 +167,57 @@ def quartic_vertex(field, derivative_field, chi, f_pi=F_PI):
     return ((-(field * field * derivative_field * derivative_field).trace() / 24
              + (field * derivative_field * field * derivative_field).trace() / 24
              + (field**4 * chi).trace() / 48) / f_pi**2)
+
+
+def mixed_tadpole_coefficients(tadpole):
+    """Matrices multiplying c_q^A and c_q^P inside a flavour trace.
+
+    Contract the three placements of the external meson in the a Phi^3
+    vertices. Mixed contractions of a field and its derivative vanish.
+    The returned pair has one 3x3 matrix per external generator; the
+    source matrices themselves remain arbitrary and noncommuting.
+    """
+    chi = chi_zero()
+    axial, pseudoscalar = [], []
+    for label in NONET_LABELS:
+        external = GENERATORS[label]
+        axial_entry, pseudoscalar_entry = sp.zeros(3), sp.zeros(3)
+        for row, first in enumerate(NONET_LABELS):
+            for column, second in enumerate(NONET_LABELS):
+                weight = tadpole[row, column]
+                if weight == 0:
+                    continue
+                left, right = GENERATORS[first], GENERATORS[second]
+                axial_entry += weight * (left * right * external + external * left * right
+                                         - 2 * right * external * left) / (6 * F_PI * F_A)
+                words = external * left * right + left * external * right + left * right * external
+                pseudoscalar_entry -= weight * (chi * words + words * chi) / (12 * F_PI * F_A)
+        axial.append(axial_entry.applyfunc(sp.expand))
+        pseudoscalar.append(pseudoscalar_entry.applyfunc(sp.expand))
+    return axial, pseudoscalar
+
+
+def mixed_local_pole_coefficients():
+    """Coefficient matrices of the local pole from the quadratic record."""
+    chi = chi_zero()
+    gamma = gamma_table("nonet")
+    identity = sp.eye(3)
+    axial, pseudoscalar = [], []
+    for label in NONET_LABELS:
+        external = GENERATORS[label]
+        axial_entry = (-4 * gamma["L_5"] * (chi * external + external * chi)
+                       - 8 * gamma["L_4"] * external * chi.trace()
+                       - 4 * gamma["L_18"] * (chi * external.trace()
+                                               + identity * (chi * external).trace())) / (F_PI * F_A)
+        pseudoscalar_entry = (4 * gamma["L_8"] * (chi**2 * external + external * chi**2
+                                                    + 2 * chi * external * chi)
+                              + 8 * gamma["L_6"] * (external * chi + chi * external) * chi.trace()
+                              + 16 * gamma["L_7"] * chi * (external * chi).trace()
+                              + B_POLE_FROM_RECORD * SINGLET_MASS**2
+                              * (chi * external + external * chi) / 2) / (F_PI * F_A)
+        axial.append(axial_entry.applyfunc(sp.expand))
+        pseudoscalar.append(pseudoscalar_entry.applyfunc(sp.expand))
+    return axial, pseudoscalar
 
 
 # ------------------------------------------------------------ tadpoles
@@ -884,6 +934,30 @@ def print_report(label, report):
             f"{name[6:]} = {value}" for name, value in report["table_field_redefinition"].items()))
 
 
+def run_mixed():
+    """Print the mixed tadpoles and check the local pole entry by entry."""
+    sources = {name: sp.MatrixSymbol(name, 3, 3) for name in ("c_q^A", "c_q^P")}
+    tadpoles = tadpole_symbol_matrix(NONET_LABELS)
+    finite_axial, finite_pseudoscalar = mixed_tadpole_coefficients(tadpoles)
+    pole_axial, pole_pseudoscalar = mixed_tadpole_coefficients(2 * leading_mass_matrix(NONET_LABELS))
+    local_axial, local_pseudoscalar = mixed_local_pole_coefficients()
+    print("Q(s) = s K - M^2 + Sigma(s); first order in 1/f_a; units GeV.")
+    print("<phi_c phi_d> = 2 lambda (M^2)_cd + finite tadpole matrix.")
+    residuals = []
+    for name, finite, pole, local in (("c_q^A", finite_axial, pole_axial, local_axial),
+                                      ("c_q^P", finite_pseudoscalar, pole_pseudoscalar, local_pseudoscalar)):
+        print(f"\nSource {name}; multiply by s for c_q^A:")
+        for index, label in enumerate(NONET_LABELS):
+            for description, coefficient in (("loop", finite[index]), ("pole", pole[index]),
+                                             ("local pole", local[index])):
+                print(f"  {sp.latex(MESON_FIELDS[label])} {description}: {sp.latex(sp.Trace(sources[name] * coefficient))}")
+            residuals.append((pole[index] + local[index]).applyfunc(sp.simplify))
+    print("\nSources c_q^V, c_q^S, c_G: zero at first order in 1/f_a.")
+    assert all(matrix.is_zero_matrix for matrix in residuals), (
+        "mixed poles do not cancel against the specified local terms; "
+        "an off-shell field-redefinition analysis is required")
+
+
 def print_scale_dependence(label, coefficients, assert_independent):
     tolerance = mpmath.mpf(10)**-30
     for scale, (constant, slope, remainder, pole_shift) in scale_dependence(coefficients).items():
@@ -941,14 +1015,43 @@ def run_cancel():
               " every entry of K and M^2 is finite (asserted).")
     print("\nmu independence (Delta = value at mu minus value at 0.77 GeV):")
     print_scale_dependence("table, k_B = 2/3", table, assert_independent=nonet["table_consistent"])
-    record = gamma_table("nonet", B_POLE_FROM_RECORD) | nonet["table_field_redefinition"]
-    print_scale_dependence("table, k_B = 1/3 (record)", record, assert_independent=False)
     return nonet
 
 
 # ------------------------------------------------------------ tests
 class LoopSelfEnergyTests(unittest.TestCase):
     """Checks of the vertex, the contraction, the local terms and the limits."""
+
+    def test_mixed_contraction_against_vertex_script(self):
+        """Check two source vertices against the independent expansion."""
+        from derive_nlo_loop_vertices import (coefficient_of_orders, leading_lagrangian,
+                                             F_PI as vertex_f_pi, F_A as vertex_f_a,
+                                             ALP_FIELD, ALP_DERIVATIVE)
+        external, fluctuation = sp.symbols("external fluctuation", real=True)
+        tadpole = sp.zeros(9)
+        tadpole[1, 1] = 1
+        axial, pseudoscalar = mixed_tadpole_coefficients(tadpole)
+        for source_name, expected in (("c_q^A", axial[3]), ("c_q^P", pseudoscalar[3])):
+            fields = {"Phi": external * GENERATORS[3] + fluctuation * GENERATORS[1],
+                      "partial_mu_Phi": external * GENERATORS[3], "chi_0": chi_zero()}
+            fields |= {name: sp.zeros(3) for name in ("c_q^A", "c_q^V", "c_q^S", "c_q^P")}
+            fields[source_name] = GENERATORS[3]
+            lagrangian = leading_lagrangian(fields, lambda matrix: sp.Matrix(matrix).trace())
+            vertex = coefficient_of_orders(lagrangian, 3, 1)
+            coefficient = sp.expand(vertex).coeff(external, 1).coeff(fluctuation, 2)
+            marker = ALP_DERIVATIVE if source_name == "c_q^A" else ALP_FIELD
+            coefficient = coefficient.coeff(marker).subs({vertex_f_pi: F_PI, vertex_f_a: F_A})
+            self.assertEqual(sp.simplify(coefficient - (GENERATORS[3] * expected).trace()), 0)
+
+    def test_topological_normalization(self):
+        """Match the X_TC squared coefficients of Alda:2026nrd and Kaiser:1998ds."""
+        tau = sp.Symbol("tau", real=True)
+        alda_coefficient = -F_PI**2 * SINGLET_MASS**2 / (4 * 3)
+        kaiser_coefficient = -tau / 2
+        matched_tau = sp.solve(alda_coefficient - kaiser_coefficient, tau)[0]
+        pole_coefficient = sp.simplify(4 * matched_tau / F_PI**4)
+        self.assertEqual(pole_coefficient,
+                         B_POLE_FROM_KAISER_ETA_PRIME_MASS * SINGLET_MASS**2 / F_PI**2)
 
     @staticmethod
     def random_matrix(generator, hermitian=False):
@@ -1100,16 +1203,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--meson", action="store_true", help="task 2.1: Sigma_ij of the nonet")
     parser.add_argument("--cancel", action="store_true", help="task 2.3: pole cancellation")
+    parser.add_argument("--mixed", action="store_true", help="mixed tadpoles and local-pole check")
     parser.add_argument("--test", action="store_true", help="run the unit tests only")
     arguments = parser.parse_args()
     if arguments.test:
         sys.exit(0 if run_tests() else 1)
-    no_option = not (arguments.meson or arguments.cancel)
+    no_option = not (arguments.meson or arguments.cancel or arguments.mixed)
     if arguments.meson or no_option:
         run_meson()
     if arguments.cancel or no_option:
         print()
         run_cancel()
+    if arguments.mixed:
+        run_mixed()
     if no_option and not run_tests():
         sys.exit(1)
 

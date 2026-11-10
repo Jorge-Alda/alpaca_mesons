@@ -2,7 +2,7 @@
 title: Subtraction scheme, chiral scale and QCD scale of the U(3) NLO theory
 status: mixed
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-10
 bibtex_keys: [Gasser:1983yg, Gasser:1984gg, Kaiser:1998ds, Herrera-Siklody:1996tqr]
 provenance: analytical-derivation
 ---
@@ -57,8 +57,8 @@ The default is $\mu=M_\rho=0.77\,$GeV, the usual scale at which resonance-satura
 ## Step 3: what is renormalized by chiral loops
 
 - The local constants $L_4$–$L_8$, $L_{18}$ and $L_{25}$, with the coefficients in [counterterm-basis.md](counterterm-basis.md).
-- $B$: $B=B^r(\mu)\{1+4\tau\lambda(\mu)/F^4\}$, so $\mu\,dB^r/d\mu=-\tau B^r/(4\pi^2F^4)$ (Kaiser:1998ds). Since $4\tau/F^4=m_0^2/(N_fF^2)$, this is the $\eta'$ tadpole. Its relative size is $m_0^2/(16\pi^2F^2)$, which is $\delta^2$, the order of G-LO. So $B^r$ depends on $\mu$ at the declared order. The script asserts the order by three equivalent countings.
-- $F$, $\tau$, $\Lambda_1$ and $\Lambda_2$ have no chiral-loop renormalization at this order (Kaiser:1998ds).
+- $B$: $B=B^r(\mu)\{1+4\tau\lambda(\mu)/f_\pi^4\}$, so $\mu\,dB^r/d\mu=-\tau B^r/(4\pi^2f_\pi^4)$ (Kaiser:1998ds). Since $4\tau/f_\pi^4=2m_0^2/(N_ff_\pi^2)$, this is the $\eta'$ tadpole. Its relative size is $m_0^2/(16\pi^2f_\pi^2)$, which is $\delta^2$, the order of G-LO. So $B^r$ depends on $\mu$ at the declared order. The script asserts the order by three equivalent countings.
+- $f_\pi$, $\tau$, $\Lambda_1$ and $\Lambda_2$ have no chiral-loop renormalization at this order (Kaiser:1998ds).
 
 ## Step 4: combinations independent of the chiral scale
 
@@ -81,10 +81,10 @@ Independently of $\mu$, the singlet axial current has an anomalous dimension, $\
 | $1+\Lambda_2$ | $Z_A(1+\Lambda_2)$ |
 | $2L_5+3L_{18}$ | $Z_A(2L_5+3L_{18})$ |
 | $2L_8-3L_{25}$ | $Z_A(2L_8-3L_{25})$ |
-| $L_4,\dots,L_8$, $F$ | invariant |
+| $L_4,\dots,L_8$, $f_\pi$ | invariant |
 | $B$ | $Z_MB$ (quark-mass factor) |
 
-Hence $L_{18}$ and $L_{25}$ carry the QCD-scale dependence of these combinations. Two combinations are invariant under both scales: $L_A=(2L_5^r+3L_{18}^r)/\sqrt{1+\Lambda_1}$ and $F^4(1+\Lambda_2)^2/\tau$ (Kaiser:1998ds). The script checks both.
+Hence $L_{18}$ and $L_{25}$ carry the QCD-scale dependence of these combinations. Two combinations are invariant under both scales: $L_A=(2L_5^r+3L_{18}^r)/\sqrt{1+\Lambda_1}$ and $f_\pi^4(1+\Lambda_2)^2/\tau$ (Kaiser:1998ds). The script checks both.
 
 **Consistency with the chiral subtraction.** The $Z_A$ laws are stated for the bare couplings. For a combination with a chiral pole ($2L_8-3L_{25}$, and $B$ through $\tau$), the renormalized combination therefore picks up an extra $(Z_A-1)\times$(pole term). This is $\mathcal O(1/N_c)$ times a one-loop pole, that is, $\delta^3$, beyond the declared order. At $\mathcal O(\delta^2)$ the laws hold for the renormalized couplings. The script asserts this. A consistent treatment at $\delta^3$ would also need the next $1/N_c$ terms of $\Gamma_8$ and $\Gamma_{25}$ (see [counterterm-basis.md](counterterm-basis.md)).
 
