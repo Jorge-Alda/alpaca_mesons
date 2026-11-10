@@ -23,3 +23,4 @@ Renormalized one-loop meson and ALP–meson two-point functions of the $U(3)$ th
 - [Mixed tadpole pole check](mixed-tadpole-pole-check.md) — mixed source tadpoles and the nonzero pole left by the stated local terms
 - [Mixed pole under a field redefinition](mixed-pole-field-redefinition.md) — source dependence of the diagnostic pole and the change of the mixed inverse propagator under a meson shift
 - [Mixed ultraviolet field renormalization](mixed-uv-field-renormalization.md) — induced mixed terms and ultraviolet cancellation under the meson field redefinition
+- [Mixed running block](mixed-running-block.md) — local mixed terms, running of $B$ and the finite field transformation for chiral-scale comparison
