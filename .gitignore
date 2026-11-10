@@ -1,5 +1,5 @@
 # Locally cached literature and generated Python artifacts
-memory/sources/
+memory/sources
 __pycache__/
 *.py[cod]
 
