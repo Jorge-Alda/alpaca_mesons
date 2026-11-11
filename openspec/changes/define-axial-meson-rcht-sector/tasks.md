@@ -2,10 +2,10 @@
 
 ## 1. Literature, conventions and process inventory
 
-- [ ] 1.1 Delegate to `bibliography-manager`: add INSPIRE BibTeX entries and `memory/extracts/<key>/` digests for the axial-RChT references (Ecker:1988te, Jamin:2000wn, Roig:2013baa, GomezDumm:2010ra and any others it finds); verify each key exists in `bibliography.bib` and has an extract INDEX entry
-- [ ] 1.2 Create `memory/rcht/axial-even-parity/` with `INDEX.md`, link it from `memory/rcht/INDEX.md`; verify the indexes follow the AGENTS.md navigation contract
-- [ ] 1.3 Write the axial inventory record (axial external states and axial exchange for every existing ALP process, with exclusions and reasons); verify every process in `memory/alp/INDEX.md` is classified
-- [ ] 1.4 Write the field/flavor/phase convention record (tensor $A_{\mu\nu}$, nonet matrix, ideal basis, Levi-Civita/metric), including the dictionary to Alda:2026nrd; verify the matrix and normalization are reproduced by a script test (`coder`)
+- [x] 1.1 Delegate to `bibliography-manager`: add INSPIRE BibTeX entries and `memory/extracts/<key>/` digests for the axial-RChT references (Ecker:1988te, Jamin:2000wn, Roig:2013baa, GomezDumm:2010ra and any others it finds); verify each key exists in `bibliography.bib` and has an extract INDEX entry
+- [x] 1.2 Create `memory/rcht/axial-even-parity/` with `INDEX.md`, link it from `memory/rcht/INDEX.md`; verify the indexes follow the AGENTS.md navigation contract
+- [x] 1.3 Write the axial inventory record (axial external states and axial exchange for every existing ALP process, with exclusions and reasons); verify every process in `memory/alp/INDEX.md` is classified
+- [x] 1.4 Write the field/flavor/phase convention record (tensor $A_{\mu\nu}$, nonet matrix, ideal basis, Levi-Civita/metric), including the dictionary to Alda:2026nrd; verify the matrix and normalization are reproduced by a script test (`coder`)
 
 ## 2. Quadratic sector
 

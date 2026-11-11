@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-29
+updated: 2026-11-10
 bibtex_keys: []
 provenance: literature
 ---
@@ -84,3 +84,9 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Pelaez:2019eqa](Pelaez:2019eqa/INDEX.md) — full Madrid isovector P-wave parameterization with 2024 corrected coefficients for KT phase inputs.
 - [Colangelo:2018mtw](Colangelo:2018mtw/INDEX.md) — updated Roy-equation P-wave phase input fitted to $e^+e^-\to\pi^+\pi^-$ data and its uncertainty/continuation treatment.
 - [DiLuzio:2026poh](DiLuzio:2026poh/INDEX.md) — CP-odd axion–meson mass matrix from a dynamical Peccei–Quinn field and its quark-mass spurion.
+
+- [Cirigliano:2004ue](Cirigliano:2004ue/INDEX.md) — $\langle VAP\rangle$ Green function: axial-vector antisymmetric-tensor couplings $\lambda',\lambda'',\lambda_0$, $PA$ and $PV$ couplings, and $a_1\to\pi\gamma$.
+- [GomezDumm:2003ku](GomezDumm:2003ku/INDEX.md) — first $VAP$ operator basis with an axial-vector octet in $\tau\to3\pi\nu_\tau$.
+- [Dumm:2009va](Dumm:2009va/INDEX.md) — $a_1(1260)$ dressed propagator and off-shell width in RChT, with the $\langle VAP\rangle$ coupling constraints.
+- [Pich:2008jm](Pich:2008jm/INDEX.md) — axial couplings $F_A$, $M_A$ at LO and NLO in $1/N_C$, $L_{10}$, $C_{87}$.
+- [Kampf:2011ty](Kampf:2011ty/INDEX.md) — odd-intrinsic-parity RChT basis with axial-vector resonances and the antisymmetric-tensor versus Proca discussion.
