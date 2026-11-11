@@ -13,8 +13,15 @@ The solver SHALL build $D(s)=sK-M^2$ in the basis $\Phi=(P_i,a)$ from the LO blo
 - **WHEN** $N_f=3$, $c_q^{A,P}$, $c_G$, $f_a$, $m_0^2$, $m_{a,0}^2$ and $\chi_0$ are given
 - **THEN** the solver returns $K$ and $M^2$ equal to the closed forms of `finite-alp-meson-mixing.md`, with $K_{aa}=1+K_{ia}K_{ia}$ and $M^2_{aa}$ including the $c_G^2$ term
 
+### Requirement: Neutral basis
+The solver SHALL use the neutral basis $(P_3,P_8,P_0,P_6,P_7,a)$ for charge-conserving sources, SHALL verify that the charged fields decouple exactly, and SHALL report the minimal block size (6x6 generically; 5x5 if $\operatorname{Im}(c^A_{ds}c^{P*}_{ds})=0$; 4x4 for flavour-diagonal sources) and the exact pole at $m_{K^0}^2$ with zero ALP component.
+
+#### Scenario: Charge-violating source
+- **WHEN** $c_q^{A,P}$ or $\chi_0$ has a u-d or u-s entry
+- **THEN** the solver rejects the neutral reduction instead of silently dropping charged mixing
+
 ### Requirement: Physical poles, compositions and residues
-The solver SHALL return all zeros of $\det D(s)$, the eigenvectors normalized by $\Phi^{\mathsf T}K\Phi=1$, the composition of each pole in $(P_i,a)$ and the residue matrix of $D^{-1}(s)$ at each pole.
+The solver SHALL return all zeros of $\det D(s)$, the eigenvectors normalized by $v^{(n)\mathsf T}Kv^{(n)}=1$, the composition of each pole in $(P_i,a)$ and the residue matrix of $D^{-1}(s)$ at each pole.
 
 #### Scenario: Residues and completeness
 - **WHEN** all poles are simple
@@ -36,7 +43,7 @@ The spectrum and residues SHALL be invariant under constant invertible $T$ ($D'=
 
 #### Scenario: Random $T$
 - **WHEN** a random rational invertible $T$ is applied to $(K,M^2)$
-- **THEN** $m_n^2$ are unchanged and eigenvectors and residues map by $\Phi=T\Phi'$ and $R'=T^{-1}RT^{-\mathsf T}$
+- **THEN** $m_n^2$ are unchanged and eigenvectors map by $v=Tv'$ (up to sign, simple poles) and residues as $R'=T^{-1}RT^{-\mathsf T}$
 
 ### Requirement: Stability and domain diagnostics
 The solver SHALL report: whether $K$ is positive definite (smallest eigenvalue, $\det K$); whether $M^2$ is positive semidefinite and every $m_n^2$ is real and nonnegative; near-degenerate pairs with the minimal gap and the mixing angle there; and the failure region of the exact formulas (singular $m^2K-M^2_{PP}$ block).

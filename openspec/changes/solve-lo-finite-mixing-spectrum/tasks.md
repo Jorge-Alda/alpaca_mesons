@@ -4,10 +4,10 @@ Scripts are written by the `coder` agent; each memory record has the front matte
 
 ## 1. LO solver
 
-- [ ] 1.1 Write a script that builds $K$ and $M^2$ for $(P_i,a)$, $N_f=3$, from the closed forms of `finite-alp-meson-mixing.md`, and verifies them against the expansion of the LO Lagrangian in `derive_alp_lo_finite_mixing.py`.
-- [ ] 1.2 Implement the general-$(K,M^2)$ solver (Cholesky reduction): poles, $K$-orthonormal eigenvectors, compositions, residues of $D^{-1}$; verify completeness $\sum_nv^{(n)}v^{(n)\mathsf T}=K^{-1}$ and $D^{-1}(s)$ against a direct inverse, with exact rational data and with random symmetric $(K,M^2)$.
-- [ ] 1.3 Verify agreement with the single-pole eigenvector $w^{(a)}_i(m_a^2)$ and the LSZ factor of `finite-alp-meson-mixing.md` and with `derive_alp_finite_mixing.py`.
-- [ ] 1.4 Verify invariance under a random rational invertible $T$ (poles, eigenvector and residue maps), reusing `derive_alp_inverse_propagator_congruence.py`.
+- [x] 1.1 Write a script that builds $K$ and $M^2$ for $(P_i,a)$, $N_f=3$, from the closed forms of `finite-alp-meson-mixing.md`, and verifies them against the expansion of the LO Lagrangian in `derive_alp_lo_finite_mixing.py`.
+- [x] 1.2 Implement the general-$(K,M^2)$ solver (Cholesky reduction): poles, $K$-orthonormal eigenvectors, compositions, residues of $D^{-1}$; verify completeness $\sum_nv^{(n)}v^{(n)\mathsf T}=K^{-1}$ and $D^{-1}(s)$ against a direct inverse, with exact rational data and with random symmetric $(K,M^2)$.
+- [x] 1.3 Verify agreement with the single-pole eigenvector $w^{(a)}_i(m_a^2)$ and the LSZ factor of `finite-alp-meson-mixing.md` and with `derive_alp_finite_mixing.py`.
+- [x] 1.4 Verify invariance under a random rational invertible $T$ (poles, eigenvector and residue maps), reusing `derive_alp_inverse_propagator_congruence.py`.
 
 ## 2. Limits and diagnostics
 

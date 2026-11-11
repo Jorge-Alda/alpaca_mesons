@@ -133,7 +133,7 @@ class FiniteMixingTests(unittest.TestCase):
         for eigenvalue in result["two_state_eigenvalues"]:
             self.assertEqual(sp.simplify(result["characteristic"].subs(result["s"], eigenvalue)), 0)
         equal_diagonals = result["two_state_mass"].subs(result["alp_mass"], result["pion_mass"])
-        self.assertEqual(sp.factor(equal_diagonals.det()), result["pion_mass"]**2 - result["mass_mixing_scalar"]**2)
+        self.assertEqual(sp.expand(equal_diagonals.det()), sp.expand(result["pion_mass"]**2 - result["mass_mixing_scalar"]**2))
 
 
 def main():
