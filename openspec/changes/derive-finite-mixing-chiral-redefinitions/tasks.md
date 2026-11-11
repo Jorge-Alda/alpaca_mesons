@@ -4,9 +4,9 @@ Scripts are written by the `coder` agent; each memory record follows the front-m
 
 ## 1. Hadronic transformation of sources and anomaly
 
-- [ ] 1.1 Derive the transformed $r_\mu,\ell_\mu,\chi$ and the $\widehat U$ representation for general $g_{R,L}(x)$ with a script (extending `derive_alp_invariant_coefficient_functions.py` or a new one); verify that $\partial_\mu\widehat U=W_R^\dagger(D_\mu U)W_L$ and the composition law of two redefinitions hold symbolically through order 3, with noncommuting $U(2)$ matrices.
-- [ ] 1.2 Derive the anomalous shift of $\Theta(x)$ and of the meson-level topological source for a general singlet $\theta(x)$; verify the Jacobian shift and $X_{TC}$ invariance in a script, including the $4\pi/\alpha_s$ conversion to Alda:2026nrd's normalization.
-- [ ] 1.3 Write the memory record for 1.1–1.2 (derived, linked to the partonic record and `alp-qcd-topological-cp.md`); verify the invocation example in the record runs as written.
+- [x] 1.1 Derive the transformed $r_\mu,\ell_\mu,\chi$ and the $\widehat U$ representation for general $g_{R,L}(x)$ with a script (extending `derive_alp_invariant_coefficient_functions.py` or a new one); verify that $\partial_\mu\widehat U=W_R^\dagger(D_\mu U)W_L$ and the composition law of two redefinitions hold symbolically through order 3, with noncommuting $U(2)$ matrices.
+- [x] 1.2 Derive the anomalous shift of $\Theta(x)$ and of the meson-level topological source for a general singlet $\theta(x)$; verify the Jacobian shift and $X_{TC}$ invariance in a script, including the $4\pi/\alpha_s$ conversion to Alda:2026nrd's normalization.
+- [x] 1.3 Write the memory record for 1.1–1.2 (derived, linked to the partonic record and `alp-qcd-topological-cp.md`); verify the invocation example in the record runs as written.
 
 ## 2. Nonlinear coordinate map and transformed vertices
 
