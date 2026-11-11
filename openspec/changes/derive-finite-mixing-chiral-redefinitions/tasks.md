@@ -24,8 +24,8 @@ Scripts are written by the `coder` agent; each memory record follows the front-m
 
 ## 4. Integration
 
-- [ ] 4.1 Run all new scripts together with the existing finite-mixing and invariant-coefficient scripts and verify they pass; update every affected `INDEX.md` and run the repository's index and link checks.
-- [ ] 4.2 Check each acceptance criterion of alp-sjp.1 against the records and scripts, add a note to the Beads issue with the evidence, and state remaining limits for alp-sjp.2, .3, .5 and .6.
+- [x] 4.1 Run all new scripts together with the existing finite-mixing and invariant-coefficient scripts and verify they pass; update every affected `INDEX.md` and run the repository's index and link checks.
+- [x] 4.2 Check each acceptance criterion of alp-sjp.1 against the records and scripts, add a note to the Beads issue with the evidence, and state remaining limits for alp-sjp.2, .3, .5 and .6.
 
 ## Workflow follow-up
 
