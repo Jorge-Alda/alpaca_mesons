@@ -53,6 +53,7 @@ one-ALP benchmark are those in the [Appendix A extract](../../extracts/Alda:2026
 invariants are defined in the [partonic source record](alp-general-chiral-redefinition-invariants.md).
 The calculation is implemented in
 [`derive_alp_ccwz_arbitrary_order.py`](../../../scripts/derive_alp_ccwz_arbitrary_order.py).
+The [finite-redefinition record](alp-ccwz-finite-redefinitions.md) relates these same building blocks between chiral coordinates and links the corresponding vertex comparisons.
 
 ## Derivation from the defining products
 

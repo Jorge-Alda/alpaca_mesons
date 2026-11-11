@@ -69,6 +69,14 @@ It is generically nonzero off shell, while the coherent pole-vector contribution
 
 ## Verification
 
+The [arbitrary-order expansion](alp-ccwz-arbitrary-order-expansion.md) gives the meson and ALP expansion of the same CCWZ building blocks, while the identities above relate those blocks before and after a finite redefinition. The [charged $U(3)$ calculation](alp-charged-u3-vector-redefinition.md) gives the charge-conserving on-shell $aPP$ comparison with an exact incoming pole vector. The [three-pion calculation](../three-pseudoscalar/alp-three-pion-vector-redefinition.md) compares an on-shell $aPPP$ amplitude including its induced contact and exchange diagrams at one exact-rational point. These channel-specific examples do not constitute a general proof for arbitrary source matrices.
+
+For the first-order limit, the [dressed-mass derivation](alp-dressed-mass-first-order-invariants.md) expands the same source transformations in $x=a/f_a$. With $c_q^{VS}=c_q^V-c_q^S$ and $c_q^{AP}=c_q^A-c_q^P$, its executable calculation gives
+$$
+\widehat M_1=-i[c_q^{VS},m_q]-i\{c_q^{AP},m_q\}.
+$$
+This relation is the first-order source check in the conventions of `Alda:2026nrd` [@Alda:2026nrd]. The commutator does not determine components of $c_q^{VS}$ that commute with $m_q$; the linked derivation states their remaining physical content. The formula is not a replacement for the finite-mixing amplitudes above.
+
 [`derive_alp_ccwz_redefinitions.py`](../../../scripts/derive_alp_ccwz_redefinitions.py) applies the product rule using abstract noncommuting matrices and derives both mass-block identities. It also checks the two traces with symbolic $2\times2$ matrices and an arbitrary invertible compensator, and expands the symmetric axial map through one ALP and two meson coordinates. The abstract product-rule result is not restricted to two flavors; the concrete trace check illustrates cyclicity for $U(2)$. The test exercises the calculation and its assertions.
 
 [`derive_alp_two_meson_vector_redefinition.py`](../../../scripts/derive_alp_two_meson_vector_redefinition.py) derives the $U(2)$ vector map from explicit Pauli matrices, substitutes it in the quadratic Lagrangian, and compares the off-shell contact term with a nonzero on-shell vector-source vertex. The existing channel-specific first-order calculation is linked in the flavour-violating record.
@@ -78,4 +86,6 @@ It is generically nonzero off shell, while the coherent pole-vector contribution
 .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_ccwz_redefinitions.py
 .venv/bin/python scripts/derive_alp_two_meson_vector_redefinition.py
 .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_two_meson_vector_redefinition.py
+.venv/bin/python scripts/derive_alp_dressed_mass_first_order.py
+.venv/bin/python -m unittest discover -s scripts -p test_derive_alp_dressed_mass_first_order.py
 ```
