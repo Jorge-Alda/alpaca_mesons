@@ -11,6 +11,10 @@ provenance: assumption
 
 - [chi-minus-meson-source-convention.md](chi-minus-meson-source-convention.md) — Appendix A derivation of the outgoing-meson $i\chi_-$ source sign.
 - [finite-alp-meson-mixing.md](finite-alp-meson-mixing.md) — Exact quadratic mixing, pole eigenvectors and coherent one-ALP amplitudes without expanding in $f_\pi/f_a$.
+- [alp-inverse-propagator-congruence.md](alp-inverse-propagator-congruence.md) — Inverse propagator $D(s)=sK-M^2$ under $\Phi=T\Phi'$: invariance of poles, residues and one-ALP amplitudes.
+- [alp-single-pole-alignment.md](alp-single-pole-alignment.md) — Shift that decouples the ALP from the mesons at one selected pole, its regularity condition and exceptional poles.
+- [alp-multi-pole-alignment.md](alp-multi-pole-alignment.md) — Conditions for aligning several poles with shift-type and general field changes, and simultaneous diagonalization of $(K,M^2)$.
+- [alp-pole-alignment-chiral-generator.md](alp-pole-alignment-chiral-generator.md) — Pole-alignment shift as the linear part of a constant-generator chiral redefinition, with the generator-to-$w_i^{(a)}$ relation.
 - [higher-order-alp-quark-bilinears.md](higher-order-alp-quark-bilinears.md) — Higher-order derivatives of the leading mass and kinetic-current sources under finite chiral transformations.
 - [alp-shift-symmetric-quark-eft-operators.md](alp-shift-symmetric-quark-eft-operators.md) — Partonic quark-bilinear generators at fixed ALP insertion number and canonical dimension.
 - [alp-general-chiral-redefinition-invariants.md](alp-general-chiral-redefinition-invariants.md) — QCD, quark masses, and at-most-one-ALP-derivative interactions under arbitrary-order $g_L,g_R$ transformations.

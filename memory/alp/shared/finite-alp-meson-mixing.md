@@ -2,7 +2,7 @@
 title: Finite ALP-meson mixing and one-ALP amplitudes
 status: derived
 created: 2026-11-02
-updated: 2026-11-03
+updated: 2026-11-11
 bibtex_keys: [Alda:2026nrd, DiLuzio:2026poh]
 provenance: analytical-derivation
 ---
@@ -19,7 +19,7 @@ $$
 
 Use a CP-conserving stationary vacuum, a complete normalized Hermitian $U(N_f)$ generator basis with $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$, and Hermitian $c_q^A,c_q^P$. The quark spurion is linear in $a$ in the chosen source coordinates; no independent $a^2$ quark-spurion term is added. Thus the LO kinetic and anomaly squares are kept exactly, while $c_q^S,c_q^V$ do not contribute to the quadratic blocks. This is an exact diagonalization of the quadratic theory at LO, not a resummation of higher chiral orders. The cited paper [@DiLuzio:2026poh] remains a distinct example with a dynamical PQ scalar inside the quark-mass spurion.
 
-Use the CCWZ building blocks and spurion transformations in the [Appendix-A source record](../../extracts/Alda:2026nrd/appendix-a-expansion.md), the topological term and singlet convention in the [LO topological source record](../../extracts/Alda:2026nrd/lo-topological-action.md), and the retained LO/NLO operators in the [NLO Lagrangian](../../../nlo/lagrangian.md). The full local NLO quadratic expansion is in [the quadratic Lagrangian record](../../../nlo/quadratic-lagrangian.md). Loops and operators beyond that retained basis are not included here.
+Use the CCWZ building blocks and spurion transformations in the [Appendix-A source record](../../extracts/Alda:2026nrd/appendix-a-expansion.md), the topological term and singlet convention in the [LO topological source record](../../extracts/Alda:2026nrd/lo-topological-action.md), and the retained LO/NLO operators in the [NLO Lagrangian](../../nlo/lagrangian.md). The full local NLO quadratic expansion is in [the quadratic Lagrangian record](../../nlo/quadratic-lagrangian.md). Loops and operators beyond that retained basis are not included here.
 
 ## Chiral covariance
 
@@ -211,7 +211,7 @@ $$
 
 In CCWZ terms, construct $\mathcal L'_{\rm LO}=\mathcal L_{\rm LO}[u_\mu',\chi_+',X_{TC}']$ with the transformed sources, then differentiate with respect to the external $a$ and expand in the meson coordinates needed for $X$. The chain rule differentiates the complete building blocks, including their nonlinear dependence on $\phi$; this generates the contact terms. Thus $\mathcal V_{\hat a}+w_i^{(a)}\mathcal V_i$ is the tangent-space one-leg contribution, while the full CCWZ prescription supplies the rest for multi-meson channels.
 
-The quadratic pole alignment and normalization are exact. In the transformed interaction, all meson contributions are now part of the direct physical-ALP vertex; this includes the explicit linear contribution $\mathcal V_{\hat a}+w_i^{(a)}\mathcal V_i$ and, for multi-meson channels, the nonlinear contact terms fixed by the exponential map. Substituting the invertible chiral field redefinition into the full covariant LO Lagrangian leaves the generating functional unchanged (with the external sources and anomalous singlet source transformed as stated), so its on-shell S-matrix is unchanged. This is the finite-mixing counterpart of Alda:2026nrd's no-mixing organization. It does not permit retaining the original direct ALP vertices while discarding meson vertices. At first order, the transformed source reduces to the local prescription organized in [the LSZ invariant-split record](../../../nlo/lsz-invariant-split.md); at finite mixing it depends on the full pole vector and the complete transformed interactions.
+The quadratic pole alignment and normalization are exact. In the transformed interaction, all meson contributions are now part of the direct physical-ALP vertex; this includes the explicit linear contribution $\mathcal V_{\hat a}+w_i^{(a)}\mathcal V_i$ and, for multi-meson channels, the nonlinear contact terms fixed by the exponential map. Substituting the invertible chiral field redefinition into the full covariant LO Lagrangian leaves the generating functional unchanged (with the external sources and anomalous singlet source transformed as stated), so its on-shell S-matrix is unchanged. This is the finite-mixing counterpart of Alda:2026nrd's no-mixing organization. It does not permit retaining the original direct ALP vertices while discarding meson vertices. At first order, the transformed source reduces to the local prescription organized in [the LSZ invariant-split record](../../nlo/lsz-invariant-split.md); at finite mixing it depends on the full pole vector and the complete transformed interactions.
 
 ## What changes relative to the small-mixing regime
 
@@ -223,5 +223,7 @@ The quadratic pole alignment and normalization are exact. In the transformed int
 The illustrative paper [@DiLuzio:2026poh] shows this distinction concretely: the phase of a dynamical PQ scalar is part of $M_q$; its CP-odd Hessian mixes with $\pi^0,\eta,\eta'$ and changes the neutral-pion mass. That leading mass shift follows from the model-specific spurion and potential. It is not a universal consequence of merely setting $f_a\sim f_\pi$ in the generic external-source Lagrangian.
 
 ## Verification status
+
+The congruence $D'(s)=T^{\mathsf T}D(s)T$ and the invariance of poles, residues and amplitudes are in the [congruence record](alp-inverse-propagator-congruence.md). The pole-aligned shift, its regularity condition and the exceptional poles are in the [single-pole record](alp-single-pole-alignment.md); the alignment of several poles in the [several-pole record](alp-multi-pole-alignment.md); and the identification of $L_a$ with $g_R$ for constant generators $G_R=-G_L=-(f_a/2f_\pi)w_i\lambda_i$ in the [chiral-generator record](alp-pole-alignment-chiral-generator.md).
 
 The LO Hessian blocks and the canonical coordinate change are derived symbolically by [`scripts/derive_alp_lo_finite_mixing.py`](../../../scripts/derive_alp_lo_finite_mixing.py). The general pole and LSZ identities remain in [`scripts/derive_alp_finite_mixing.py`](../../../scripts/derive_alp_finite_mixing.py). No numerical spectrum or channel-specific width is supplied; those require numerical source matrices, quark masses, and $m_{a,0}$.

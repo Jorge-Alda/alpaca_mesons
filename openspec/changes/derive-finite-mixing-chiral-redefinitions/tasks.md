@@ -16,11 +16,11 @@ Scripts are written by the `coder` agent; each memory record follows the front-m
 
 ## 3. Combined inverse propagator and pole alignment
 
-- [ ] 3.1 Derive $D'(s)=T^{\mathsf T}D(s)T$ and the invariance of poles, null vectors, residues and the LSZ amplitude for generic $T$; verify with exact rational data for $N_f=3$ in a script.
-- [ ] 3.2 Derive the single-pole aligned coordinates, their regularity condition and the exceptional-pole alternative; verify the identity $m_k^2K'_{i\hat a}-M^{2\prime}_{i\hat a}=0$ and agreement with `derive_alp_finite_mixing.py`.
-- [ ] 3.3 Derive the multi-pole alignment conditions for shift-type maps and for general $T$; verify with a two-pole counterexample and the pencil diagonalization in a script.
-- [ ] 3.4 Show with a script that the linear alignment shift of the finite-mixing record is the constant-generator case of $g_{R,L}(x)$, with the generator-to-$w_i^{(a)}$ relation stated.
-- [ ] 3.5 Write the memory record for 3.1–3.4, stating the cases in which alignment fails; cross-link `finite-alp-meson-mixing.md`.
+- [x] 3.1 Derive $D'(s)=T^{\mathsf T}D(s)T$ and the invariance of poles, null vectors, residues and the LSZ amplitude for generic $T$; verify with exact rational data for $N_f=3$ in a script.
+- [x] 3.2 Derive the single-pole aligned coordinates, their regularity condition and the exceptional-pole alternative; verify the identity $m_k^2K'_{i\hat a}-M^{2\prime}_{i\hat a}=0$ and agreement with `derive_alp_finite_mixing.py`.
+- [x] 3.3 Derive the multi-pole alignment conditions for shift-type maps and for general $T$; verify with a two-pole counterexample and the pencil diagonalization in a script.
+- [x] 3.4 Show with a script that the linear alignment shift of the finite-mixing record is the constant-generator case of $g_{R,L}(x)$, with the generator-to-$w_i^{(a)}$ relation stated.
+- [x] 3.5 Write the memory record for 3.1–3.4, stating the cases in which alignment fails; cross-link `finite-alp-meson-mixing.md`.
 
 ## 4. Integration
 
