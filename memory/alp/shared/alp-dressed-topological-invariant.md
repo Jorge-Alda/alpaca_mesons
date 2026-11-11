@@ -48,6 +48,8 @@ C=B_0\widehat P_1-\frac{m_0^2}{N_f}\widehat\Theta_1\,\mathbf1 ,
 $$
 i.e. it is built only from the first Taylor coefficients of the two dressed sources, $\widehat M$ and $\widehat\Theta$.
 
+The photon analogue, $\widehat\Theta_\gamma$ with $\widehat\Theta_{\gamma,1}=c_{\gamma A}$, is in the [dressed photon record](../photon/alp-dressed-photon-invariant.md).
+
 ## Reproducible calculation
 
 [`derive_alp_dressed_topological_invariant.py`](../../../scripts/derive_alp_dressed_topological_invariant.py) checks (exact rational $3\times3$ matrices, series through $O(x^4)$): the determinant of $W_\eta$; invariance of $\widehat\Theta$ under finite redefinitions with a nonlinear singlet part and with traceless generators; the Taylor form; the vacuum-angle relations; the $\operatorname{tr}\log$ identity; and the tadpole identity. These are series checks, not all-orders proofs. The identity $\widehat\Theta_1=c_{GA}$ holds by definition of $c_{GA}$ and is a consistency check, not an independent test. A unit-test file accompanies it. It imports helpers from `derive_alp_dressed_mass_first_order.py`.
