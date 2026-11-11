@@ -15,7 +15,7 @@
 ## 3. Extension 2: SU(3)-breaking VPP coupling
 
 - [ ] 3.1 Propose and get approval for the notation of the $K^*K\pi$ to $\rho\pi\pi$ ratio; derive its effect on $\Gamma_{K^*}$, $\Gamma_\phi$ and $\phi\to K\bar K$ with a SymPy script and a memory record.
-- [ ] 3.2 (coder) Implement the option (default baseline), refit, apply the criterion, store the ledger entry. If the criterion is met, skip to section 7.
+- [x] 3.2 (coder) Implement the option (default baseline), refit, apply the criterion, store the ledger entry. If the criterion is met, skip to section 7.
 
 ## 4. Extension 3: double-trace source term
 
