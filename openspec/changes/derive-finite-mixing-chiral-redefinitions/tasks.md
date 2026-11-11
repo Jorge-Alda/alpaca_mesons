@@ -10,7 +10,7 @@ Scripts are written by the `coder` agent; each memory record follows the front-m
 
 ## 2. Nonlinear coordinate map and transformed vertices
 
-- [ ] 2.1 Derive the all-orders meson map $U'=g_RUg_L^\dagger$, the compensator $h$ and the transformed $u_\mu,\Gamma_\mu,\chi_\pm$ with a script; verify invariance of $\langle u_\mu u^\mu\rangle$, $\langle\chi_+\rangle$ symbolically.
+- [x] 2.1 Derive the all-orders meson map $U'=g_RUg_L^\dagger$, the compensator $h$ and the transformed $u_\mu,\Gamma_\mu,\chi_\pm$ with a script; verify invariance of $\langle u_\mu u^\mu\rangle$, $\langle\chi_+\rangle$ symbolically.
 - [ ] 2.2 Expand the transformed Lagrangian to the meson order needed for $aPP$ and $aPPP$ vertices; verify with a script that the original and transformed amputated vertices differ by exactly the pole-vector and contact terms, and that dropping the contact terms fails the check.
 - [ ] 2.3 Write the memory record for 2.1–2.2 and cross-link `alp-ccwz-arbitrary-order-expansion.md`; verify the script reproduces the stated first-order limit $c_q^{VS},c_q^{AP}$.
 

@@ -18,6 +18,7 @@ provenance: assumption
 - [alp-dressed-mass-first-order-invariants.md](alp-dressed-mass-first-order-invariants.md) — $O(1/f_a)$ expansion of the dressed mass function $\widehat M$ and its match to $c_q^{VS}$, $c_q^{AP}$ of Alda:2026nrd, including what $\widehat M_1$ cannot see.
 - [alp-dressed-topological-invariant.md](alp-dressed-topological-invariant.md) — Dressed gluonic coefficient $\widehat\Theta$, recovery of $c_{GA}$, vacuum-angle slope and Alda:2026nrd's tadpole source $C$.
 - [alp-ccwz-arbitrary-order-expansion.md](alp-ccwz-arbitrary-order-expansion.md) — Arbitrary ALP-order and meson-number expansion of the leading CCWZ building blocks.
+- [alp-ccwz-finite-redefinitions.md](alp-ccwz-finite-redefinitions.md) — Finite chiral transformation of the meson field, compensator and leading CCWZ building blocks.
 - [alp-qcd-topological-cp.md](alp-qcd-topological-cp.md) — Anomalous shifts and CP selection rules for multi-ALP QCD gluonic terms.
 - [optimized-decay-integrand-guidelines.md](optimized-decay-integrand-guidelines.md) — reusable derivation, implementation and verification guidance for decay integrands.
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — integration methods, trade-offs and current numerical evidence across decay channels.
