@@ -11,10 +11,10 @@ Scripts are written by the `coder` agent; each memory record has the front matte
 
 ## 2. Limits and diagnostics
 
-- [ ] 2.1 Verify the weak-mixing limit symbolically against the first-order results of Alda:2026nrd; report the scaling of the residual with $f_\pi/f_a$.
-- [ ] 2.2 Implement stability diagnostics ($K>0$, $M^2\ge0$, real nonnegative poles) and show analytically ($\det K=1$) and numerically that $K>0$ at LO; test the unstable-vacuum branch.
-- [ ] 2.3 Implement near-degeneracy detection, the two-level formula check against `finite-alp-meson-mixing.md`, and the degenerate-subspace output.
-- [ ] 2.4 Implement pole tracking along a scan in $m_{a,0}^2$ and in $f_\pi/f_a$; check avoided crossings and label stability.
+- [x] 2.1 Verify the weak-mixing limit symbolically against the first-order results of Alda:2026nrd; report the scaling of the residual with $f_\pi/f_a$.
+- [x] 2.2 Implement stability diagnostics ($K>0$, $M^2\ge0$, real nonnegative poles) and show analytically ($\det K=1$) and numerically that $K>0$ at LO; test the unstable-vacuum branch.
+- [x] 2.3 Implement near-degeneracy detection, the two-level formula check against `finite-alp-meson-mixing.md`, and the degenerate-subspace output.
+- [x] 2.4 Implement pole tracking along a scan in $m_{a,0}^2$ and in $f_\pi/f_a$; check avoided crossings and label stability.
 
 ## 3. Records and integration
 
