@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Inputs and assumptions
 
-- $D(s)=sK-M^2$ on $\Phi=(P_i,a)$, its congruence $D'=T^{\mathsf T}DT$ and the pole vector $\Phi^{(k)}$: [congruence record](alp-inverse-propagator-congruence.md).
+- $D(s)=sK-M^2$ on $\Phi=(P_i,a)$, its congruence $D'=T^{\mathsf T}DT$ and the pole vector $v^{(k)}$: [congruence record](alp-inverse-propagator-congruence.md).
 - The pole equation and $w_i^{(a)}(s)=[(M^2-sK)^{-1}]_{ij}(sK_{j\hat a}-M^2_{j\hat a})$: [finite-mixing record](finite-alp-meson-mixing.md), notation of `Alda:2026nrd` [@Alda:2026nrd]. Here $w_i^{(k)}$ is the same object for a selected pole $s=m_k^2$.
 - $K$ positive definite, $K,M^2$ real symmetric. No expansion in the mixing or in $f_\pi/f_a$.
 
@@ -48,9 +48,9 @@ Near such points $w^{(k)}$ is still exact but can be large; no small-mixing expa
 Use the generalized eigenproblem directly: compute the null space of $m_k^2K-M^2$.
 
 1. **Pole without ALP component.** The null space is spanned by $(u,0)$. The meson rows of the pole equation can be solved for $w$ (with free components), but the ALP row then fails, so $(w,1)$ is not a pole vector. No shift aligns this pole with $a'$; the state does not contain the ALP coordinate at $s=m_k^2$. A general $T$ with a column proportional to $(u,0)$ aligns it with a meson coordinate.
-2. **Degenerate pole.** The null space has dimension at least two and contains a vector with nonzero ALP component. Any such vector, rescaled to $(w,1)$, aligns the pole; $w$ is fixed only up to vectors $u$ with $(u,0)$ in the null space. The residue of $D^{-1}$ is $\sum_r\Phi^{(k,r)}\Phi^{(k,r)\mathsf T}$ over a $K$-orthonormal basis of the null space. It does not depend on the choice of basis, so the sum of squared amplitudes over the degenerate states does not either.
+2. **Degenerate pole.** The null space has dimension at least two and contains a vector with nonzero ALP component. Any such vector, rescaled to $(w,1)$, aligns the pole; $w$ is fixed only up to vectors $u$ with $(u,0)$ in the null space. The residue of $D^{-1}$ is $\sum_rv^{(k,r)}v^{(k,r)\mathsf T}$ over a $K$-orthonormal basis of the null space. It does not depend on the choice of basis, so the sum of squared amplitudes over the degenerate states does not either.
 
-If $K$ is not positive definite, a pole vector with $\Phi^{(k)\mathsf T}K\Phi^{(k)}=0$ can occur and the pole of $D^{-1}$ is not simple; this lies outside the physical case and is discussed in the [several-pole record](alp-multi-pole-alignment.md).
+If $K$ is not positive definite, a pole vector with $v^{(k)\mathsf T}Kv^{(k)}=0$ can occur and the pole of $D^{-1}$ is not simple; this lies outside the physical case and is discussed in the [several-pole record](alp-multi-pole-alignment.md).
 
 ## Verification
 

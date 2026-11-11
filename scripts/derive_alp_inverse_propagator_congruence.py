@@ -8,8 +8,9 @@ Conventions (Alda:2026nrd, memory/alp/shared/finite-alp-meson-mixing.md):
 fields Phi_I = (P_1, P_2, P_3, a) for N_f = 3 neutral mesons and the ALP,
 L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi, inverse propagator
 D(s) = s K - M^2. The field change is Phi = T Phi' with constant invertible T.
-A pole vector at s_k is a null vector v of D(s_k); in Alda:2026nrd's
-normalization v = (w^{(k)}, 1). The amputated vertex linear in the external
+A pole vector at s_k is a null vector v^(k) of D(s_k) (components v^(k)_I);
+when its ALP component is nonzero, Alda:2026nrd's normalization gives
+v^(k) = (w^{(k)}, 1). The amputated vertex linear in the external
 leg is V_I Phi_I, so V' = T^T V.
 
 Units: K is dimensionless, M^2 and s are squared masses in an arbitrary common
@@ -17,7 +18,9 @@ unit; the rational test values have no physical meaning.
 
 Assumptions: K symmetric positive definite, M^2 symmetric, simple real poles.
 The test data keep the leading-order kinetic form K_ij = delta_ij,
-K_ia = -v_i, K_aa = 1 + v.v and use an arbitrary symmetric M^2 with rational
+K_ia = -(f_pi/f_a) tr(c_q^A lambda_i), K_aa = 1 + sum_i [(f_pi/f_a) tr(c_q^A lambda_i)]^2
+(rational values chosen directly for the axial overlap (f_pi/f_a) tr(c_q^A lambda_i);
+not the pole vector v^(k)) and use an arbitrary symmetric M^2 with rational
 poles, built from a rational orthogonal matrix (Cayley transform).
 All arithmetic is exact (sympy rationals).
 """
@@ -87,12 +90,12 @@ def propagator_residue(inverse, pole):
 
 
 def pole_normalization(vector, kinetic):
-    """v^T K v; for v = (w, 1) this is K_aa + 2 K_ia w_i + K_ij w_i w_j."""
+    """v^(k)T K v^(k); for v^(k) = (w, 1) this is K_aa + 2 K_ia w_i + K_ij w_i w_j."""
     return (vector.T * kinetic * vector)[0]
 
 
 def one_leg_amplitude(vertex, vector, kinetic):
-    """LSZ amplitude V.v / sqrt(v^T K v) of the finite-mixing record."""
+    """LSZ amplitude V.v^(k) / sqrt(v^(k)T K v^(k)) of the finite-mixing record."""
     return (vertex.T * vector)[0] / sp.sqrt(pole_normalization(vector, kinetic))
 
 
@@ -130,8 +133,8 @@ def derive(seed=20261111):
         per_pole.append({
             "pole": pole,
             "null vector before": inverse.subs(SQUARED_MASS, pole) * vector == sp.zeros(4, 1),
-            "null vector after (T^-1 v)": inverse_new.subs(SQUARED_MASS, pole) * vector_new == sp.zeros(4, 1),
-            "residue is v v^T / v^T K v": residue == vector * vector.T / pole_normalization(vector, kinetic),
+            "null vector after (T^-1 v^(k))": inverse_new.subs(SQUARED_MASS, pole) * vector_new == sp.zeros(4, 1),
+            "residue is v^(k) v^(k)T / v^(k)T K v^(k)": residue == vector * vector.T / pole_normalization(vector, kinetic),
             "residue maps as T^-1 R T^-T": residue_new == conversion.inv() * residue * conversion.inv().T,
             "pole normalization invariant": pole_normalization(vector_new, kinetic_new) == pole_normalization(vector, kinetic),
             "V^T R V invariant": sp.simplify((vertex_new.T * residue_new * vertex_new)[0] - (vertex.T * residue * vertex)[0]) == 0,

@@ -5,7 +5,7 @@ Run:   .venv/bin/python scripts/derive_alp_single_pole_alignment.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_single_pole_alignment.py
 
 Conventions as in derive_alp_inverse_propagator_congruence.py and Alda:2026nrd:
-Phi = (P_i, a), D(s) = s K - M^2, pole vector (w^{(k)}, 1). The shift
+Phi = (P_i, a), D(s) = s K - M^2, pole vector v^(k) = (w^{(k)}, 1). The shift
 P_i = P_i' + w_i^{(k)}(m_k^2) a', a = a' is the field change Phi = T Phi' with
 T = [[1, w], [0, 1]]. Squared masses are in an arbitrary common unit.
 

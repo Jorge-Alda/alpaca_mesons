@@ -18,8 +18,8 @@ with u = -dPhi/f_pi + 2 (dx) C_A at linear order, chi(x) = chi_0 + i x {c_P, chi
 and X_TC = -<Phi>/f_pi - 2 Theta(x), Theta = c_G x.
 
 Generator choice: G_R = -G_L = -(f_a/(2 f_pi)) w_i lambda_i, constant.
-Then g_R = exp[-i a w_i lambda_i/(2 f_pi)] is the element called L_a in the
-finite-mixing record, and g_L = L_a^dagger = R_a.
+Then g_R = exp[-i a w_i lambda_i/(2 f_pi)] is the element tilde g_R (called L_a in
+the finite-mixing record), and g_L = tilde g_R^dagger = tilde g_L (called R_a there).
 
 Checks (exact, symbolic in all nine w_i; rational source data):
 1. Hessian of the original Lagrangian reproduces K and M^2 of the
@@ -130,7 +130,7 @@ def record_blocks(data):
             -f_pi / (2 * f_a) * (gi * (data["c_P"] * chi_0 + chi_0 * data["c_P"])).trace()
             + f_pi * data["m_0_sq"] * data["c_G"] / (FLAVOR_COUNT * f_a) * gi.trace()
         )
-    kinetic[9, 9] = 1 + sum(v * v for v in axial_overlap)
+    kinetic[9, 9] = 1 + sum(overlap * overlap for overlap in axial_overlap)
     mass_squared[9, 9] = data["m_a0_sq"] + 2 * f_pi**2 * data["m_0_sq"] * data["c_G"]**2 / (FLAVOR_COUNT * f_a**2)
     return kinetic.applyfunc(sp.expand), mass_squared.applyfunc(sp.expand)
 
@@ -152,12 +152,12 @@ def derive():
     checks["original K equals finite-mixing record"] = (kinetic - record_kinetic).applyfunc(sp.simplify) == sp.zeros(10)
     checks["original M^2 equals finite-mixing record"] = (mass_squared - record_mass).applyfunc(sp.simplify) == sp.zeros(10)
 
-    # 2. g_R is L_a of the finite-mixing record; linear part of U' = g_R U g_L^dagger.
+    # 2. g_R is tilde g_R (L_a of the finite-mixing record); linear part of U' = g_R U g_L^dagger.
     exponent_from_record = -sp.I * alp / (2 * f_pi) * sum((w * g for w, g in zip(meson_shift, generators)), sp.zeros(3))
-    checks["i x G_R = -i a w.lambda/(2 f_pi) (g_R = L_a)"] = (
+    checks["i x G_R = -i a w.lambda/(2 f_pi) (g_R = tilde g_R)"] = (
         (sp.I * (alp / f_a) * right_generator - exponent_from_record).applyfunc(sp.expand) == sp.zeros(3)
     )
-    checks["G_L = -G_R (g_L = L_a^dagger = R_a)"] = left_generator == -right_generator
+    checks["G_L = -G_R (g_L = tilde g_R^dagger = tilde g_L)"] = left_generator == -right_generator
     order_parameter = sp.Symbol("epsilon")
     mesons = sp.Matrix(sp.symbols("P_0:9", real=True))
     meson_matrix = sum((p * g for p, g in zip(mesons, generators)), sp.zeros(3))

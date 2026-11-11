@@ -70,7 +70,7 @@ def shift_type_two_pole_counterexample(first=0, second=3):
         "rank with right-hand side": augmented.rank(),
         "no common shift": augmented.rank() > coefficients.rank(),
         "D(s_1) - D(s_2) = (s_1 - s_2) K": difference == sp.zeros(4),
-        "v^T K v > 0 forbids a common pole vector": bool(pole_normalization(vector, kinetic) > 0),
+        "(w, 1)^T K (w, 1) > 0 forbids a common pole vector": bool(pole_normalization(vector, kinetic) > 0),
         "shift aligning first pole misaligns second": (
             shift_matrix(first_overlap).T * inverse_propagator(kinetic, mass_squared).subs(SQUARED_MASS, poles[second]) * shift_matrix(first_overlap)
         )[0:3, 3] != sp.zeros(3, 1),
@@ -85,10 +85,10 @@ def shift_cannot_diagonalize():
     mass_removing_shift = -mass_squared[0:3, 0:3].inv() * mass_squared[0:3, 3]
     meson_mass_block = mass_squared[0:3, 0:3]
     return {
-        "shift removing K_ia (canonical shift w = v)": kinetic_removing_shift,
+        "shift removing K_ia (canonical shift w_i = (f_pi/f_a) tr(c_q^A lambda_i))": kinetic_removing_shift,
         "shift removing M^2_ia": mass_removing_shift,
         "the two shifts differ": kinetic_removing_shift != mass_removing_shift,
-        "canonical shift equals axial overlap v": kinetic_removing_shift == data["axial_overlap"],
+        "canonical shift equals axial overlap (f_pi/f_a) tr(c_q^A lambda_i)": kinetic_removing_shift == data["axial_overlap"],
         "M^2_PP is not diagonal": meson_mass_block != sp.diag(*[meson_mass_block[i, i] for i in range(3)]),
     }
 
@@ -109,7 +109,7 @@ def general_conversion_checks():
     generic = generic_invertible_matrix(seed=99)
     partial = sp.Matrix.hstack(generic[:, 0], generic[:, 1], vectors[0], vectors[3])
     partial_inverse = sp.expand(partial.T * inverse * partial)
-    # K-orthogonal completion: project the generic columns away from v_0, v_3.
+    # K-orthogonal completion: project the generic columns away from v^(0), v^(3).
     completion = []
     for column in (generic[:, 0], generic[:, 1]):
         projected = column
@@ -145,7 +145,7 @@ def indefinite_kinetic_counterexample():
     return {
         "det D": sp.factor(inverse.det()),
         "pole vector": list(null_vector),
-        "v^T K v": pole_normalization(null_vector, kinetic),
+        "v^(k)T K v^(k)": pole_normalization(null_vector, kinetic),
         "coefficient of 1/s^2 in D^{-1}": double_pole,
         "double pole present, so no T makes D'(s) diagonal": double_pole != sp.zeros(2),
     }

@@ -35,7 +35,7 @@ class MultiPoleAlignmentTest(unittest.TestCase):
 
     def test_indefinite_kinetic_matrix_has_double_pole(self):
         result = indefinite_kinetic_counterexample()
-        self.assertEqual(result["v^T K v"], 0)
+        self.assertEqual(result["v^(k)T K v^(k)"], 0)
         self.assertEqual(result["coefficient of 1/s^2 in D^{-1}"], sp.Matrix([[0, 0], [0, 1]]))
 
     def test_floating_point_pencil(self):

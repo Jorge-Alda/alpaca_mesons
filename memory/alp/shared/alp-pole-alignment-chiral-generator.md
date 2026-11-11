@@ -14,7 +14,7 @@ provenance: analytical-derivation
 - $x=a/f_a$, $g_\eta=e^{ixG_\eta}$ for constant generators, $C_A=(C_R-C_L)/2$: [partonic record](alp-general-chiral-redefinition-invariants.md).
 - $U'=g_RUg_L^\dagger$, $\chi'=g_R\chi g_L^\dagger$, $r'_\mu=g_Rr_\mu g_R^\dagger+ig_R\partial_\mu g_R^\dagger$ (same for $\ell_\mu$), $\Theta'=\Theta-\frac1{2i}\log(\det g_R/\det g_L)$: [source-transformation record](alp-chiral-source-transformations.md).
 - $U=\exp(i\Phi/f_\pi)$, $\Phi=P_i\lambda_i$ with the nine $U(3)$ generators, $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$, $\lambda_0=\sqrt{2/3}\,\mathbf 1$: [CCWZ expansion](alp-ccwz-arbitrary-order-expansion.md) and `Alda:2026nrd` [@Alda:2026nrd].
-- Group element of the pole alignment, $L_a=\exp[-ia\,w_i^{(a)}\lambda_i/(2f_\pi)]$, $R_a=L_a^\dagger$, and the LO blocks of $K,M^2$: [finite-mixing record](finite-alp-meson-mixing.md).
+- Group elements of the pole alignment, $\tilde g_R=\exp[-ia\,w_i^{(a)}\lambda_i/(2f_\pi)]$, $\tilde g_L=\tilde g_R^\dagger$, and the LO blocks of $K,M^2$: [finite-mixing record](finite-alp-meson-mixing.md). Notation (approved by the user): $\tilde g_R$ and $\tilde g_L$ are the elements written $L_a$ and $R_a$ in the finite-mixing record, $L_a\to\tilde g_R$, $R_a=L_a^\dagger\to\tilde g_L$. The element $L_a$ acts as $g_R$ in $U'=g_RUg_L^\dagger$, which is why it is renamed $\tilde g_R$.
 - LO Lagrangian as in `scripts/derive_alp_lo_finite_mixing.py`: $u_\mu=-\partial_\mu\Phi/f_\pi+2(\partial_\mu x)C_A$ at linear order, $\chi(x)=\chi_0+ix\{c_q^P,\chi_0\}$, $X_{TC}=-\langle\Phi\rangle/f_\pi-2\Theta$ with $\Theta=c_Gx$. This sign of the $c_q^P$ term is the one that reproduces $M^2_{i\hat a}$ of the finite-mixing record; it is a consistency check within the project conventions, not an independent check of `Alda:2026nrd`.
 - Tree level, LO; vacuum $\Phi=0$, $g_{R,L}(0)=\mathbf 1$.
 
@@ -24,7 +24,7 @@ provenance: analytical-derivation
 $$
 G_R=-G_L=-\frac{f_a}{2f_\pi}\,w_i\lambda_i .
 $$
-Then $g_R=e^{ixG_R}=L_a$ and $g_L=L_a^\dagger=R_a$. Note the labels: the element called $L_a$ in the finite-mixing record acts on right-handed quarks in the convention $U'=g_RUg_L^\dagger$. With the opposite assignment the shift below would change sign.
+Then $g_R=e^{ixG_R}=\tilde g_R$ and $g_L=\tilde g_R^\dagger=\tilde g_L$. In the convention $U'=g_RUg_L^\dagger$ the element $\tilde g_R$ (called $L_a$ in the finite-mixing record) acts on right-handed quarks. With the opposite assignment the shift below would change sign.
 
 2. The linear part of $U'=g_RUg_L^\dagger$ is
 $$
@@ -50,7 +50,7 @@ The nonlinear terms of the same map (first term of order $aP_iP_j$ for the axial
 
 ## Verification
 
-[`derive_alp_pole_alignment_chiral_generator.py`](../../../scripts/derive_alp_pole_alignment_chiral_generator.py) works with all nine $U(3)$ coordinates plus $a$, keeping the nine $w_i$ symbolic and using exact rational source data (Hermitian $c_q^A,c_q^P$ with complex flavour-changing entries, diagonal $\chi_0$, values not physical). It checks: the original Hessian reproduces the $K$ and $M^2$ blocks of the finite-mixing record; $ixG_R$ equals the exponent of $L_a$; the linear map $P_i'=P_i-w_ia$; the transformed Hessian equals the congruence with the shift; the transformed $\chi'$ has an $x^2$ term; $c_q^{P\prime}=c_q^P+G_R$, $c_q^A-c_q^P$ unchanged and the $c_G$ shift; and, for arbitrary noncommuting $G_{R,1},G_{L,1}$, the shift form of the linear map. All checks pass (about 15 s).
+[`derive_alp_pole_alignment_chiral_generator.py`](../../../scripts/derive_alp_pole_alignment_chiral_generator.py) works with all nine $U(3)$ coordinates plus $a$, keeping the nine $w_i$ symbolic and using exact rational source data (Hermitian $c_q^A,c_q^P$ with complex flavour-changing entries, diagonal $\chi_0$, values not physical). It checks: the original Hessian reproduces the $K$ and $M^2$ blocks of the finite-mixing record; $ixG_R$ equals the exponent of $\tilde g_R$; the linear map $P_i'=P_i-w_ia$; the transformed Hessian equals the congruence with the shift; the transformed $\chi'$ has an $x^2$ term; $c_q^{P\prime}=c_q^P+G_R$, $c_q^A-c_q^P$ unchanged and the $c_G$ shift; and, for arbitrary noncommuting $G_{R,1},G_{L,1}$, the shift form of the linear map. All checks pass (about 15 s).
 
 ```sh
 .venv/bin/python scripts/derive_alp_pole_alignment_chiral_generator.py
