@@ -41,6 +41,14 @@ The derivation SHALL state necessary and sufficient conditions for a single tran
 ### Requirement: Transformed vertices for multi-meson channels
 The derivation SHALL give the transformed amputated vertices including nonlinear terms, and SHALL show that the physical amplitude for a multi-meson channel is independent of the coordinates.
 
-#### Scenario: One ALP and two mesons
-- **WHEN** the amplitude is computed in original coordinates with a coherent sum over mixed components and in pole-aligned coordinates with the complete transformed vertex
-- **THEN** both agree; dropping the contact terms of the nonlinear map breaks the agreement, and the script reports the difference
+#### Scenario: Off-shell one-ALP two-meson vertex
+- **WHEN** the amputated vertex is computed off shell in original and transformed coordinates
+- **THEN** the pole-vector and nonlinear-map contact terms reproduce the transformed vertex, and the script reports the discrepancy obtained by dropping the contact terms
+
+#### Scenario: Physical one-ALP two-meson amplitude
+- **WHEN** a charge-conserving flavour-changing $U(3)$ amplitude is computed on shell in original coordinates with a coherent sum over mixed components and in pole-aligned coordinates
+- **THEN** both amplitudes agree, including a nonzero contribution from off-diagonal $c_q^{VS}$ where applicable; the check does not require dropping nonlinear-map contacts to change the on-shell three-point amplitude
+
+#### Scenario: Physical one-ALP three-meson amplitude
+- **WHEN** a physical on-shell $aPPP$ amplitude is computed in the original and transformed coordinates
+- **THEN** the comparison includes the nonlinear-map terms and all exchange diagrams needed at the chosen order, and tests their role in the on-shell amplitude

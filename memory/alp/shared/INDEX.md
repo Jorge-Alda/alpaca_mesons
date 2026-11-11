@@ -19,6 +19,7 @@ provenance: assumption
 - [alp-dressed-topological-invariant.md](alp-dressed-topological-invariant.md) — Dressed gluonic coefficient $\widehat\Theta$, recovery of $c_{GA}$, vacuum-angle slope and Alda:2026nrd's tadpole source $C$.
 - [alp-ccwz-arbitrary-order-expansion.md](alp-ccwz-arbitrary-order-expansion.md) — Arbitrary ALP-order and meson-number expansion of the leading CCWZ building blocks.
 - [alp-ccwz-finite-redefinitions.md](alp-ccwz-finite-redefinitions.md) — Finite chiral transformation of the meson field, compensator and leading CCWZ building blocks.
+- [alp-charged-u3-vector-redefinition.md](alp-charged-u3-vector-redefinition.md) — Charge-conserving flavour-changing charged-meson vertex under a vector redefinition, with an exact incoming pole overlap.
 - [alp-qcd-topological-cp.md](alp-qcd-topological-cp.md) — Anomalous shifts and CP selection rules for multi-ALP QCD gluonic terms.
 - [optimized-decay-integrand-guidelines.md](optimized-decay-integrand-guidelines.md) — reusable derivation, implementation and verification guidance for decay integrands.
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — integration methods, trade-offs and current numerical evidence across decay channels.

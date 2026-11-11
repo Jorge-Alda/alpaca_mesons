@@ -61,6 +61,12 @@ $$
 $$
 It is generally nonzero off shell and vanishes when both meson legs are on shell. An independent vector-source interaction remains nonzero on shell when its coefficient and $m_1^2-m_2^2$ are nonzero. This example uses a local two-mode quadratic Lagrangian; it is not a claim that arbitrary unequal masses for the displayed $U(2)$ generators follow from the LO QCD mass operator. At finite mixing, all external states must be projected onto the physical pole vectors before applying the same argument.
 
+To include a mixed incoming pole in this formal example, let $D(s)=sK-M^2$ be the inverse propagator in the two-dimensional ALP and neutral-meson subspace, as in the [finite-mixing record](finite-alp-meson-mixing.md). Take a pole vector $(1,w_n^{(a)})$ and write the old neutral coordinate as $P_n=P'_n+w_n^{(a)} a'$. Its transformed off-diagonal inverse propagator is $D_{na}(s)+w_n^{(a)}D_{nn}(s)$; it vanishes at the selected pole when $(1,w_n^{(a)})$ is a null vector. The linear part of the off-shell amputated three-point vertex is then $\mathcal V_{a12}^{(3)}+w_n^{(a)}\mathcal V_{n12}^{(3)}$. Composing this shift with the same formal vector rotation gives the additional nonlinear-map term proportional to
+$$
+-(p_1^2-m_1^2)+(p_2^2-m_2^2).
+$$
+It is generically nonzero off shell, while the coherent pole-vector contribution can remain nonzero on shell. This extends the formal algebraic check to a mixed incoming pole; it does not establish a physical charge-conserving $U(3)$ comparison or an $aPPP$ calculation.
+
 ## Verification
 
 [`derive_alp_ccwz_redefinitions.py`](../../../scripts/derive_alp_ccwz_redefinitions.py) applies the product rule using abstract noncommuting matrices and derives both mass-block identities. It also checks the two traces with symbolic $2\times2$ matrices and an arbitrary invertible compensator, and expands the symmetric axial map through one ALP and two meson coordinates. The abstract product-rule result is not restricted to two flavors; the concrete trace check illustrates cyclicity for $U(2)$. The test exercises the calculation and its assertions.

@@ -30,9 +30,13 @@ The derivation SHALL give the shift of $\Theta(x)$ and of the Wess-Zumino and $X
 ### Requirement: Nonlinear coordinate map is complete
 The derivation SHALL give the meson coordinate map induced by $g_{R,L}(x)$ to all orders in the meson fields, not only its tangent-space part, together with the transformed $u_\mu$, $\Gamma_\mu$, $\chi_\pm$.
 
-#### Scenario: Two-meson contact term
-- **WHEN** the amputated vertex with one ALP and two mesons is computed in original and transformed coordinates
-- **THEN** the sum of the pole-vector piece and the contact piece from the nonlinear map reproduces the original vertex, verified symbolically for $U(2)$ or $U(3)$
+#### Scenario: Off-shell two-meson contact term
+- **WHEN** the off-shell amputated vertex with one ALP and two mesons is computed in original and transformed coordinates
+- **THEN** the transformed vertex is reproduced by the pole-vector and nonlinear-map contact terms, and omitting the contact terms fails the off-shell comparison; a noncommuting $U(2)$ calculation may be used as a formal algebraic check
+
+#### Scenario: Physical flavour-changing two-meson amplitude
+- **WHEN** a physical on-shell $aPP$ amplitude from an off-diagonal $c_q^{VS}$ is checked
+- **THEN** the calculation uses a charge-conserving $U(3)$ channel and compares the amplitude in the original and transformed coordinates; a formal $U(2)$ example is not presented as such a physical channel
 
 ### Requirement: Reproduction of known limits
 The general results SHALL reduce to the first-order $c_q^{VS}=c_q^V-c_q^S$ and $c_q^{AP}=c_q^A-c_q^P$ combinations of Alda:2026nrd and to the linear pole-alignment shift of the finite-mixing record.

@@ -66,6 +66,42 @@ def derive():
     return variation, contact, contact_with_conservation, physical_on_shell
 
 
+def derive_mixed_pole_relation():
+    """Check the linear pole shift and the nonlinear off-shell contact."""
+    invariant_mass_squared, first_squared, second_squared = sp.symbols(
+        "s p_1_sq p_2_sq", real=True
+    )
+    first_mass_squared, second_mass_squared = sp.symbols("m_1_sq m_2_sq", real=True)
+    kinetic_alp, kinetic_meson, kinetic_mixing = sp.symbols("K_aa K_nn K_an", real=True)
+    mass_alp, mass_meson, mass_mixing = sp.symbols("M_aa M_nn M_an", real=True)
+    pole_meson_component, rotation = sp.symbols("w_n v", real=True)
+    alp_vertex, meson_vertex = sp.symbols("V_a12 V_n12", real=True)
+
+    inverse_propagator = sp.Matrix([
+        [invariant_mass_squared * kinetic_alp - mass_alp,
+         invariant_mass_squared * kinetic_mixing - mass_mixing],
+        [invariant_mass_squared * kinetic_mixing - mass_mixing,
+         invariant_mass_squared * kinetic_meson - mass_meson],
+    ])
+    change_of_fields = sp.Matrix([[1, 0], [pole_meson_component, 1]])
+    transformed_inverse_propagator = change_of_fields.T * inverse_propagator * change_of_fields
+    off_diagonal = sp.expand(transformed_inverse_propagator[1, 0])
+    assert sp.simplify(off_diagonal - (inverse_propagator[1, 0]
+                       + pole_meson_component * inverse_propagator[1, 1])) == 0
+
+    first_inverse = first_squared - first_mass_squared
+    second_inverse = second_squared - second_mass_squared
+    pole_vector_piece = alp_vertex + pole_meson_component * meson_vertex
+    contact = rotation * (second_inverse - first_inverse)
+    original_contact = derive()[2]
+    assert sp.simplify(contact - rotation * original_contact) == 0
+    transformed_vertex = pole_vector_piece + contact
+    assert sp.simplify((transformed_vertex - pole_vector_piece) - contact) == 0
+    assert sp.simplify(contact.subs({first_squared: first_mass_squared,
+                                     second_squared: second_mass_squared})) == 0
+    return off_diagonal, pole_vector_piece, contact, transformed_vertex
+
+
 def main():
     print("Natural units; x=a/f_a; tree level; first order in x; Hermitian U(2) generators.")
     variation, contact, contact_vertex, physical_on_shell = derive()
@@ -73,6 +109,11 @@ def main():
     show("Contact terms from the quadratic Lagrangian", contact)
     show("Contact vertex with momentum conservation", contact_vertex)
     show("On-shell vector-source vertex", physical_on_shell)
+    off_diagonal, pole_piece, contact, transformed_vertex = derive_mixed_pole_relation()
+    show("Transformed inverse-propagator mixing", off_diagonal)
+    show("Coherent pole-vector contribution", pole_piece)
+    show("Formal off-shell vector-rotation contact", contact)
+    show("Transformed three-point vertex", transformed_vertex)
 
 
 if __name__ == "__main__":
