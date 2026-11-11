@@ -2,7 +2,7 @@
 title: General chiral field redefinitions and invariant partonic ALP couplings
 status: derived
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-11
 bibtex_keys: [Alda:2026nrd, Bonnefoy:2022rik]
 provenance: analytical-derivation
 ---
@@ -185,7 +185,7 @@ combinations in this truncation. At first order, applying
 Alda:2026nrd's source
 normalization reduces these dressed combinations to the familiar
 $c_q^{VS}=c_q^V-c_q^S$ and $c_q^{AP}=c_q^A-c_q^P$
-[@Alda:2026nrd]. At higher orders they are not obtained by taking the same
+[@Alda:2026nrd]; the derivation, including the kernel of the commutator map, is in the [first-order record](alp-dressed-mass-first-order-invariants.md). At higher orders they are not obtained by taking the same
 pairwise differences of coefficients at that order: each dressed Taylor
 coefficient contains products and commutators of lower-order current and
 spurion coefficients. For example, $\widehat M_2$ contains $C_{R,1}$ and
