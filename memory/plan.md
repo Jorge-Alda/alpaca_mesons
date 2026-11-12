@@ -5,6 +5,12 @@
 - $a\to 3P$ from flavour-conserving interactions: DONE
 - $a\to 2P$ from flavour-violating interactions: DONE
 
+## 1b. Field-redefinition invariants of the ALP sources
+
+- First-order dressed invariants $\widehat S_1$, $\widehat P_1$, $\widehat\Theta_1$, $\widehat\Theta_{\gamma,1}$: DONE
+- Second-order dressed invariants $\widehat S_2$, $\widehat P_2$, $\widehat\Theta_2$, $\widehat\Theta_{\gamma,2}$ (derivative Taylor convention, compact commutator forms): memory DONE, latex draft MISSING
+- Next step: use $\widehat S_2$, $\widehat P_2$ in the LO meson vertices at order $a^2/f_a^2$.
+
 ## 2. Interactions with Vector mesons
 
 ### 2.1 Even-parity sector
