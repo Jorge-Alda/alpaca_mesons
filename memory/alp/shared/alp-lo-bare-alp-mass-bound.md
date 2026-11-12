@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Assumptions and inputs
 
-- LO blocks $K$, $M^2$ of the [finite-mixing record](finite-alp-meson-mixing.md) [@Alda:2026nrd], with $\epsilon=f_\pi/f_a$ (notation pending approval, see the [weak-mixing record](alp-lo-weak-mixing-expansion.md)).
+- LO blocks $K$, $M^2$ of the [finite-mixing record](finite-alp-meson-mixing.md) [@Alda:2026nrd], with $\epsilon=f_\pi/f_a$.
 - The dressed mass function $\widehat M(x)$, $x=a/f_a$, and the invariants $c_q^{AP}=c_q^A-c_q^P$, $c_q^{VS}=c_q^V-c_q^S$, $c_{GA}$ of the [dressed-mass record](alp-dressed-mass-first-order-invariants.md) and the [dressed topological record](alp-dressed-topological-invariant.md). Here $\widehat M_n\equiv d^n\widehat M/dx^n|_{x=0}$.
 - $m_{a,0}^2$ multiplies a term that contains no quark field, so chiral redefinitions of the quarks do not change it.
 - The quark masses are positive and $m_0^2\ge0$, so $M^2_{PP}>0$. Flavour-diagonal sources $\chi_0=\mathrm{diag}(\chi_u,\chi_d,\chi_s)$; a d-s entry is covered by the same formula (symbolic), and charge-violating sources only at random exact rational points.

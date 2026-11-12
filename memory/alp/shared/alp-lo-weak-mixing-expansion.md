@@ -12,11 +12,11 @@ provenance: analytical-derivation
 ## Assumptions and inputs
 
 - Exact LO blocks of the [finite-mixing record](finite-alp-meson-mixing.md), solved by the [LO pole solver](alp-lo-pole-solver.md). Conventions of Alda:2026nrd [@Alda:2026nrd].
-- Expansion parameter $\epsilon=f_\pi/f_a$ (new symbol, proposed, pending approval), varied at fixed $f_\pi$, $c_q^{A,P}$, $c_G$, $\chi_0=2B_0m_q$, $m_0^2$, $m_{a,0}^2$. Then $K_{ia}$ and $M^2_{ia}$ are proportional to $\epsilon$, $K_{aa}-1$ and $M^2_{aa}-m_{a,0}^2$ to $\epsilon^2$, and $K_{ij}=\delta_{ij}$ and $M^2_{ij}$ do not depend on $\epsilon$.
+- Expansion parameter $\epsilon=f_\pi/f_a$ (approved), varied at fixed $f_\pi$, $c_q^{A,P}$, $c_G$, $\chi_0=2B_0m_q$, $m_0^2$, $m_{a,0}^2$. Then $K_{ia}$ and $M^2_{ia}$ are proportional to $\epsilon$, $K_{aa}-1$ and $M^2_{aa}-m_{a,0}^2$ to $\epsilon^2$, and $K_{ij}=\delta_{ij}$ and $M^2_{ij}$ do not depend on $\epsilon$.
 - A constant orthogonal rotation of the mesons (an allowed field change, see the [congruence record](alp-inverse-propagator-congruence.md)) makes $M^2_{PP}=\operatorname{diag}(m_{j}^2)$ and keeps this structure. Below, the index $j$ labels this meson mass basis and $m_{j,0}^2$ is the $\epsilon=0$ mass.
 - Assumption: the meson masses $m_{j,0}^2$ are distinct from $m_{a,0}^2$ (no degeneracy with the ALP). Degenerate meson poles that are not mixed with each other, such as the $K^0$ doublet, are handled as a group: the ALP couples to one combination only.
 - Mixed inverse-propagator entry: $D_{ja}(s)=sK_{ja}-M^2_{ja}=O(\epsilon)$.
-- New notation (proposed, pending approval): $D^{\rm eff}_{aa}(s)=sK_{aa}-M^2_{aa}-\sum_jD_{ja}(s)^2/(s-m_{j,0}^2)$, the ALP entry of the inverse propagator after the mesons are eliminated (Schur complement), and $\delta D^{\rm eff}_{aa}(s)\equiv D^{\rm eff}_{aa}(s)-(s-m_{a,0}^2)$, its deviation from the bare ALP inverse propagator. $\delta D^{\rm eff}_{aa}(s)=s(K_{aa}-1)-2m_0^2c_G^2/N_f-\sum_jD_{ja}(s)^2/(s-m_{j,0}^2)$ is $O(\epsilon^2)$; here $M^2_{aa}-m_{a,0}^2=2m_0^2c_G^2/N_f$ (this $c_G$ term is already $O(\epsilon^2)$ since it carries $f_\pi^2/f_a^2$).
+- Notation (approved): $D^{\rm eff}_{aa}(s)=sK_{aa}-M^2_{aa}-\sum_jD_{ja}(s)^2/(s-m_{j,0}^2)$, the ALP entry of the inverse propagator after the mesons are eliminated (Schur complement), and $\delta D^{\rm eff}_{aa}(s)\equiv D^{\rm eff}_{aa}(s)-(s-m_{a,0}^2)$, its deviation from the bare ALP inverse propagator. $\delta D^{\rm eff}_{aa}(s)=s(K_{aa}-1)-2m_0^2c_G^2/N_f-\sum_jD_{ja}(s)^2/(s-m_{j,0}^2)$ is $O(\epsilon^2)$; here $M^2_{aa}-m_{a,0}^2=2m_0^2c_G^2/N_f$ (this $c_G$ term is already $O(\epsilon^2)$ since it carries $f_\pi^2/f_a^2$).
 
 ## Results
 

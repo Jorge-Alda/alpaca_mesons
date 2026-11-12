@@ -15,7 +15,7 @@ provenance: analytical-derivation
 - Sources $c_q^A$, $c_q^P$, $\chi_0$ Hermitian and commuting with $Q$. Their $d$-$s$ entries are written $(c)_{ds}=\operatorname{Re}+i\operatorname{Im}$.
 - A flavour rotation $V$ that commutes with $Q$ acts on the $d$-$s$ plane as $X\to VXV^\dagger$ on $c_q^A$, $c_q^P$, $\chi_0$. It is vector-like and does not change the anomaly term.
 - Assumption: $m_d\neq m_s$.
-- New notation (proposed, pending approval): $m_{K^0,0}^2\equiv\tfrac12\big[(\chi_0)_{dd}+(\chi_0)_{ss}\big]$, the diagonal entry of the $(P_6,P_7)$ block of $M^2$. It is the mass squared of the neutral kaon before mixing with the ALP, and equals $B_0(m_d+m_s)$ only if $\chi_0=2B_0m_q$ is not modified by the ALP couplings. It is not the physical kaon mass at finite mixing: the $K^0$ combination that couples to $a$ is shifted, and so can $\chi_0$ be when the ALP has flavour-violating couplings (see alp-sjp.6). Only the combination of $(P_6,P_7)$ that decouples from $a$ keeps a pole exactly at $m_{K^0,0}^2$.
+- Notation (approved): $m_{K^0,0}^2\equiv\tfrac12\big[(\chi_0)_{dd}+(\chi_0)_{ss}\big]=B_0(m_d+m_s)$, the diagonal entry of the $(P_6,P_7)$ block of $M^2$, where $\chi_0=2B_0m_q$ is the quark mass input. It is the neutral-kaon mass squared before mixing with the ALP, not the physical mass: the combination of $(P_6,P_7)$ that couples to $a$ is shifted by the mixing, and only the combination that decouples from $a$ has a pole exactly at $m_{K^0,0}^2$.
 
 ## Results
 

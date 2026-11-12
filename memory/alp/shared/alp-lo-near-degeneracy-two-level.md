@@ -13,7 +13,7 @@ provenance: analytical-derivation
 
 - LO blocks and the two-level formula of the [finite-mixing record](finite-alp-meson-mixing.md) [@Alda:2026nrd], with canonical blocks defined there; poles and vectors from the [pole solver](alp-lo-pole-solver.md).
 - Assumption: the working tolerance for "near-degenerate" is a stated, adjustable relative tolerance (default $10^{-2}$ of the largest $|m_n^2|$), not a physical criterion.
-- New notation (proposed, pending approval): $\theta=\arctan\big(|v^{\rm lower}_a|/|v^{\rm upper}_a|\big)\in[0,\pi/2]$, with $v^{\rm lower}$, $v^{\rm upper}$ the pole vectors of the lower and upper of two ALP-carrying poles; $\theta=0$ means that the lower state has no ALP component, $\pi/4$ is maximal mixing.
+- Notation (approved): $\theta=\arctan\big(|v^{\rm lower}_a|/|v^{\rm upper}_a|\big)\in[0,\pi/2]$, with $v^{\rm lower}$, $v^{\rm upper}$ the pole vectors of the lower and upper of two ALP-carrying poles; $\theta=0$ means that the lower state has no ALP component, $\pi/4$ is maximal mixing.
 
 ## Method
 
