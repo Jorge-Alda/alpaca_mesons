@@ -11,7 +11,7 @@ Scripts are written by the `coder` agent. Each memory record has the front matte
 
 ## 2. Channels
 
-- [ ] 2.1 One and two pseudoscalars ($a\to P$ mixing, generic $a\to P_iP_j$ including flavour-changing and $K^0$-related rules): generic amplitudes with daughter projections; reproduce `alp-charged-u3-vector-redefinition.md`; weak-mixing and Bose checks; record in `memory/alp/two-pseudoscalar/`.
+- [x] 2.1 One and two pseudoscalars ($a\to P$ mixing, generic $a\to P_iP_j$ including flavour-changing and $K^0$-related rules): generic amplitudes with daughter projections; reproduce `alp-charged-u3-vector-redefinition.md`; weak-mixing and Bose checks; record in `memory/alp/two-pseudoscalar/`.
 - [ ] 2.2 Three pseudoscalars: derive the generic $a\to P_iP_jP_k$ amplitude (indices open, outgoing ALP admixture included, symmetry factors for identical daughters), then check by substitution that it reproduces `alp-finite-mixing-three-pion-amplitudes.md` for $3\pi^0$ and $\pi^0\pi^+\pi^-$; no channel-by-channel derivations; record in `memory/alp/three-pseudoscalar/`.
 - [ ] 2.3 Photon channels at LO: $a\to\gamma\gamma$ summed over meson components of the pole, and $a\to\gamma PP$ from the WZW sector with mixing; Ward identity check with the photon momentum; reproduce the first-order coefficient of Alda:2026nrd in the weak-mixing limit; record in `memory/alp/photon/` and `memory/alp/photon-two-pseudoscalar/`.
 - [ ] 2.4 Baryon-antibaryon: amplitude structure from the LO CCWZ vertex with the physical-pole projection, threshold test in terms of the physical parent mass, reproduction of the existing baryon couplings; record in `memory/alp/baryon/`.
