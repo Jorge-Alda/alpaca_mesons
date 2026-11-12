@@ -33,6 +33,7 @@ provenance: assumption
 - [alp-dressed-topological-invariant.md](alp-dressed-topological-invariant.md) — Dressed gluonic coefficient $\widehat\Theta$, recovery of $c_{GA}$, vacuum-angle slope and Alda:2026nrd's tadpole source $C$.
 - [alp-lo-joint-vertex-expansion.md](alp-lo-joint-vertex-expansion.md) — Joint LO meson and ALP vertices for general source functions and the resulting quadratic mass correction.
 - [alp-lo-pole-projected-tree-amplitudes.md](alp-lo-pole-projected-tree-amplitudes.md) — Analytical pole-projected contact and exchange amplitudes, Schur inverse and field-change checks.
+- [alp-lo-pole-aligned-tree-vertices.md](alp-lo-pole-aligned-tree-vertices.md) — Exact symmetric axial pole alignment, nonlinear contact terms and comparison of tree amplitudes.
 - [alp-ccwz-arbitrary-order-expansion.md](alp-ccwz-arbitrary-order-expansion.md) — Arbitrary ALP-order and meson-number expansion of the leading CCWZ building blocks.
 - [alp-ccwz-finite-redefinitions.md](alp-ccwz-finite-redefinitions.md) — Finite chiral transformation of the meson field, compensator and leading CCWZ building blocks.
 - [alp-charged-u3-vector-redefinition.md](alp-charged-u3-vector-redefinition.md) — Charge-conserving flavour-changing charged-meson vertex under a vector redefinition, with an exact incoming pole overlap.
