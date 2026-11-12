@@ -89,30 +89,7 @@ Consequences: if $\operatorname{tr}(\lambda_n\mathcal C)\neq0$, $m_{n,0}^2$ is n
 
 ## Step 8. Explicit form for diagonal $\chi_0$
 
-Let $\chi_0=\operatorname{diag}(x_u,x_d,x_s)$, so the entries of $\mathcal C$ are $(\mathcal C)_{qq}=-x_q(c_q^{AP})_{qq}-\tfrac{m_0^2}{N_f}c_{GA}$ and $(\mathcal C)_{ds}=-m_{K^0,0}^2(c_q^{AP})_{ds}$. $\mathbb M_0$ maps diagonal matrices to diagonal matrices and acts on the $d$-$s$ entries as multiplication by $m_{K^0,0}^2$, so the $\pi^0,\eta,\eta'$ and the $K^0$ doublet do not mix. The unmixed $\pi^0$, $\eta$, $\eta'$ masses are the roots of
-$$
-\prod_{n=\pi^0,\eta,\eta'}(s-m_{n,0}^2)=\prod_q(s-x_q)-\frac{m_0^2}{N_f}\sum_q\prod_{r\neq q}(s-x_r),
-$$
-and $\det(s\mathbb 1-M^2_{PP})=(s-m_{K^0,0}^2)^2\prod_n(s-m_{n,0}^2)$. Solving $\mathbb M_s(Y)=\mathcal C$ for $Y=\mathbb M_s^{-1}(\mathcal C)$ in flavour space (diagonal part: Sherman-Morrison for the rank-one $m_0^2$ term; $d$-$s$ entries: division by $m_{K^0,0}^2-s$) gives
-$$
--2\operatorname{tr}\Big(\mathcal C\,\mathbb M_s^{-1}(\mathcal C)\Big)=\frac{2\,\mathcal N(s)}{\prod_n(s-m_{n,0}^2)}+\frac{4m_{K^0,0}^4|(c_q^{AP})_{ds}|^2}{s-m_{K^0,0}^2},
-$$
-$$
-\mathcal N(s)=\sum_q(\mathcal C)_{qq}^2\prod_{r\neq q}(s-x_r)-\frac{m_0^2}{N_f}\sum_{q<r}\big[x_q(c_q^{AP})_{qq}-x_r(c_q^{AP})_{rr}\big]^2(s-x_{p}),
-$$
-where $p$ is the flavour different from $q$ and $r$, and the products and sums over $n$ run over $\pi^0,\eta,\eta'$. Here $\mathcal N(s)$ is only a name for this quadratic numerator inside this record (it has no separate physical meaning); the script function is `mixing_numerator_polynomial`. $c_{GA}$ enters only through $(\mathcal C)_{qq}$.
-
-The secular polynomial, of degree 6 with leading coefficient $\det K=1$, is
-$$
-\boxed{\,\det D(s)=(s-m_{K^0,0}^2)\Big\{(s-m_{K^0,0}^2)\Big[(s-M^2_{\hat a\hat a,\rm can})\prod_n(s-m_{n,0}^2)-2\epsilon^2\mathcal N(s)\Big]-4\epsilon^2m_{K^0,0}^4|(c_q^{AP})_{ds}|^2\prod_n(s-m_{n,0}^2)\Big\}\,}
-$$
-It contains the exact $K^0$ pole as an overall factor, depends on the $d$-$s$ sources only through $|(c_q^{AP})_{ds}|^2$, and at $\epsilon=0$ reduces to $(s-m_{K^0,0}^2)^2(s-m_{a,0}^2)\prod_n(s-m_{n,0}^2)$.
-
-Per meson: comparing residues with Step 3, for $n=\pi^0,\eta,\eta'$
-$$
-\big[\operatorname{tr}(\lambda_n\mathcal C)\big]^2=\frac{2\mathcal N(m_{n,0}^2)}{\prod_{n'\neq n}(m_{n,0}^2-m_{n',0}^2)},
-$$
-and for the $K^0$ doublet the sum of $[\operatorname{tr}(\lambda_n\mathcal C)]^2$ over the two generators is $4m_{K^0,0}^4|(c_q^{AP})_{ds}|^2$. Inserted in Step 5 these give the explicit meson pole equations.
+For $\chi_0=\operatorname{diag}(x_u,x_d,x_s)$ the flavour-diagonal mesons and the $K^0$ doublet do not mix directly, and every quantity above has a closed form in $x_q$, $m_0^2$, $c_q^{AP}$ and $c_{GA}$. The unmixed $\pi^0$, $\eta$, $\eta'$ masses are the roots of a cubic. The secular sum is $-2\operatorname{tr}(\mathcal C\,\mathbb M_s^{-1}(\mathcal C))=2\mathcal N(s)/\prod_{n=\pi^0,\eta,\eta'}(s-m_{n,0}^2)+4m_{K^0,0}^4|(c_q^{AP})_{ds}|^2/(s-m_{K^0,0}^2)$, with a quadratic numerator $\mathcal N(s)$. The residues are $\operatorname{tr}(\lambda_n\mathcal C)^2=2\mathcal N(m_{n,0}^2)/\prod_{n'\neq n}(m_{n,0}^2-m_{n',0}^2)$ for $n=\pi^0,\eta,\eta'$. The secular polynomial $\det D(s)$ has degree 6 and contains $s-m_{K^0,0}^2$ as a factor. These forms, the definition of $\mathcal N(s)$ and the explicit per-meson equations are in the [diagonal-$\chi_0$ record](alp-lo-diagonal-chi0-meson-poles.md). The $K^0$ doublet, its exact pole and its CP-conserving, aligned-phase and CP-violating cases are in the [$K^0$ doublet record](alp-lo-k0-doublet-exact-pole.md).
 
 ## Verification
 
@@ -126,7 +103,7 @@ and for the $K^0$ doublet the sum of $[\operatorname{tr}(\lambda_n\mathcal C)]^2
 - Step 6: $\det(s\mathbb 1-M^2_{\rm can})=\det(sK-M^2)=\det(s\mathbb 1-M^2_{PP})\,D^{\rm eff}_{aa}(s)$ (exact rationals, symbolic $s$). The arrow form and the approximations are checked in [`derive_alp_lo_arrow_matrix_poles.py`](../../../scripts/derive_alp_lo_arrow_matrix_poles.py).
 - Step 8 symbolically against $\det(s\mathbb 1-M^2_{\rm can})$ ($x_q$, $m_0^2$, $c_q^{AP}$, $c_{GA}$, $\epsilon$, $M^2_{\hat a\hat a,\rm can}$ symbolic), and exactly against $\det(sK-M^2)$ of `closed_form_blocks` with rational sources ($m_{a,0}^2=3/5$ GeV$^2$, $B_0=27/10$ GeV, $\operatorname{tr}S_2=1/20$ GeV) at $\epsilon=1/2$ and $\epsilon=2$. The second value gives one negative root ($M^2$ not positive); it tests the algebra only.
 - Roots: exact real-root isolation (six real roots, $m_{K^0,0}^2$ of multiplicity one for complex $d$-$s$ sources and two for flavour-diagonal sources) against [`solve_alp_meson_spectrum.py`](../../../scripts/solve_alp_meson_spectrum.py): largest difference $2.2\times10^{-16}$ GeV$^2$ ($\epsilon=1/2$) and $1.8\times10^{-14}$ GeV$^2$ ($\epsilon=2$); $|D^{\rm eff}_{aa}|<2.5\times10^{-34}$ at all roots other than $m_{K^0,0}^2$.
-- Per-meson closed forms of Step 8 against $[\operatorname{tr}(\lambda_n\mathcal C)]^2$ with 50-digit $\lambda_n$ (difference below $10^{-40}$).
+- Per-meson closed forms of Step 8 against $\operatorname{tr}(\lambda_n\mathcal C)^2$ with 50-digit $\lambda_n$ (difference below $10^{-40}$). Further checks of Step 8 are in [`derive_alp_diagonal_chi0_meson_poles.py`](../../../scripts/derive_alp_diagonal_chi0_meson_poles.py) and [`derive_alp_k0_doublet_exact_pole.py`](../../../scripts/derive_alp_k0_doublet_exact_pole.py).
 
 Units: $f_\pi,f_a,B_0,\operatorname{tr}S_2$ in GeV; $\chi_0,m_0^2,m_{a,0}^2,M^2,s$ in GeV$^2$; couplings and $\epsilon$ dimensionless. Rational inputs are test values, not fits.
 

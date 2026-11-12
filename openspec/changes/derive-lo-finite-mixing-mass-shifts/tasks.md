@@ -12,8 +12,8 @@ Scripts are written by the `coder` agent. Each memory record has the front matte
 - [x] 2.2 Script and record: exact pole equations of the neutral mesons and the ALP (Schur form, canonical frame in invariants, poles as eigenvalues of the canonical mass matrix), with the invariance under constant axial redefinitions.
 - [x] 2.3 Script and record: exact interlacing bounds and the arrow-matrix spectrum.
 - [x] 2.4 Script and record: isolated meson pole in closed form with its exact error bound, and isolated ALP pole in closed form with its fixed-point iteration (both labelled as approximations under the far-apart assumption).
-- [ ] 2.5 Script and record: explicit exact pole equations for $\pi^0$, $\eta$, $\eta'$ at diagonal $\chi_0$ (the secular polynomial and the per-meson residues), general $m_q$ kept as in 2.2. No isospin-limit rotation.
-- [ ] 2.6 Script and record: $K^0$ doublet, exact pole and its CP-conserving and CP-violating reductions; consistency with the exact pole of 1.1.
+- [x] 2.5 Script and record: explicit exact pole equations for $\pi^0$, $\eta$, $\eta'$ at diagonal $\chi_0$ (the secular polynomial and the per-meson residues), general $m_q$ kept as in 2.2. No isospin-limit rotation.
+- [x] 2.6 Script and record: $K^0$ doublet, exact pole and its CP-conserving and CP-violating reductions; consistency with the exact pole of 1.1.
 
 ## 3. Checks
 

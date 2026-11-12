@@ -18,6 +18,8 @@ provenance: assumption
 - [alp-lo-finite-mixing-operator-inverse.md](alp-lo-finite-mixing-operator-inverse.md) — Analytic LO overlap $w^{(a)}_i(s)$ from $\mathbb M_{a,0}^{-1}$, secular equation $F(s)=0$ and normalization $N=F'$.
 - [alp-lo-pole-solver.md](alp-lo-pole-solver.md) — Poles, $K$-orthonormal pole vectors and residues of $D(s)=sK-M^2$ by Cholesky reduction, and the link to the $(w,1)$ normalization.
 - [alp-lo-exact-pole-equations.md](alp-lo-exact-pole-equations.md) — Exact meson and ALP pole equations for finite $f_\pi/f_a$: Schur complement, canonical frame in invariants, ALP equation with $\mathbb M_s^{-1}$, explicit degree-6 secular polynomial for diagonal $\chi_0$.
+- [alp-lo-diagonal-chi0-meson-poles.md](alp-lo-diagonal-chi0-meson-poles.md) — Explicit exact pole equations of $\pi^0$, $\eta$, $\eta'$ for diagonal $\chi_0$: unmixed masses, secular polynomial, residues and per-meson equations.
+- [alp-lo-k0-doublet-exact-pole.md](alp-lo-k0-doublet-exact-pole.md) — $K^0$ doublet for diagonal $\chi_0$: exact pole at $m_{K^0,0}^2$, coupled combination, and CP-conserving, aligned-phase and CP-violating sources.
 - [alp-lo-arrow-matrix-spectrum.md](alp-lo-arrow-matrix-spectrum.md) — Poles as eigenvalues of the canonical mass matrix in arrow form, and their interlacing with the unmixed meson masses.
 - [alp-lo-isolated-meson-pole.md](alp-lo-isolated-meson-pole.md) — Two-level closed form for a meson pole far from the other unmixed meson masses, with an exact error bound, for any $f_\pi/f_a$.
 - [alp-lo-isolated-alp-pole.md](alp-lo-isolated-alp-pole.md) — Closed form and fixed-point iteration for the ALP pole far from the unmixed meson masses, with convergence conditions and error bounds.
