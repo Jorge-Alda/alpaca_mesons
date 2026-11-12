@@ -92,7 +92,7 @@ w_i^{(a)}(s)&=[(M^2-sK)^{-1}]_{ij}(sK_{j\hat a}-M^2_{j\hat a}).
 \end{aligned}
 $$
 
-When the inverse exists, this gives the meson overlap exactly; at exceptional points use the full generalized eigenproblem. The pole normalization is
+When the inverse exists, this gives the meson overlap exactly (explicit form in the [operator-inverse record](alp-lo-finite-mixing-operator-inverse.md)); at exceptional points use the full generalized eigenproblem. The pole normalization is
 
 $$
 K_{\hat a\hat a}+2K_{i\hat a}w_i^{(a)}(s)+K_{ij}w_i^{(a)}(s)w_j^{(a)}(s).

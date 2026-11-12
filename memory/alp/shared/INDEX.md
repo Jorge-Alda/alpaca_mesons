@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-11
+updated: 2026-11-12
 bibtex_keys: []
 provenance: assumption
 ---
@@ -14,6 +14,7 @@ provenance: assumption
 - [alp-inverse-propagator-congruence.md](alp-inverse-propagator-congruence.md) — Inverse propagator $D(s)=sK-M^2$ under $\Phi=T\Phi'$: invariance of poles, residues and one-ALP amplitudes.
 - [alp-lo-charged-meson-decoupling.md](alp-lo-charged-meson-decoupling.md) — Exact decoupling of the charged mesons from the neutral mesons and the ALP at LO for sources commuting with the quark charge.
 - [alp-lo-neutral-block-reduction.md](alp-lo-neutral-block-reduction.md) — Minimal neutral block ($6\times6$, $5\times5$, $4\times4$), CP condition on the $d$-$s$ entries and the exact $K^0$ pole with no ALP component.
+- [alp-lo-finite-mixing-operator-inverse.md](alp-lo-finite-mixing-operator-inverse.md) — Analytic LO overlap $w^{(a)}_i(s)$ from $\mathbb M_{a,0}^{-1}$, secular equation $F(s)=0$ and normalization $N=F'$.
 - [alp-lo-pole-solver.md](alp-lo-pole-solver.md) — Poles, $K$-orthonormal pole vectors and residues of $D(s)=sK-M^2$ by Cholesky reduction, and the link to the $(w,1)$ normalization.
 - [alp-lo-weak-mixing-expansion.md](alp-lo-weak-mixing-expansion.md) — Expansion of the exact LO poles and pole vectors in $f_\pi/f_a$: first order of Alda:2026nrd, derived higher orders and residual exponents.
 - [alp-lo-stability-conditions.md](alp-lo-stability-conditions.md) — Positivity of $K$ ($\det K=1$) and of $M^2$ at LO, and the lower bound on the bare ALP mass.
