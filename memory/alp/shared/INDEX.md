@@ -13,6 +13,7 @@ provenance: assumption
 - [finite-alp-meson-mixing.md](finite-alp-meson-mixing.md) — Exact quadratic mixing, pole eigenvectors and coherent one-ALP amplitudes without expanding in $f_\pi/f_a$.
 - [alp-inverse-propagator-congruence.md](alp-inverse-propagator-congruence.md) — Inverse propagator $D(s)=sK-M^2$ under $\Phi=T\Phi'$: invariance of poles, residues and one-ALP amplitudes.
 - [alp-lo-charged-meson-decoupling.md](alp-lo-charged-meson-decoupling.md) — Exact decoupling of the charged mesons from the neutral mesons and the ALP at LO for sources commuting with the quark charge.
+- [alp-lo-mass-sum-rules.md](alp-lo-mass-sum-rules.md) — Exact LO relations: charged-meson zero shift, exact $K^0$ pole, trace and product rules for the finite-mixing poles.
 - [alp-lo-neutral-block-reduction.md](alp-lo-neutral-block-reduction.md) — Minimal neutral block ($6\times6$, $5\times5$, $4\times4$), CP condition on the $d$-$s$ entries and the exact $K^0$ pole with no ALP component.
 - [alp-lo-finite-mixing-operator-inverse.md](alp-lo-finite-mixing-operator-inverse.md) — Analytic LO overlap $w^{(a)}_i(s)$ from $\mathbb M_{a,0}^{-1}$, secular equation $F(s)=0$ and normalization $N=F'$.
 - [alp-lo-pole-solver.md](alp-lo-pole-solver.md) — Poles, $K$-orthonormal pole vectors and residues of $D(s)=sK-M^2$ by Cholesky reduction, and the link to the $(w,1)$ normalization.

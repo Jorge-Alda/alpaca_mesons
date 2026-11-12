@@ -4,7 +4,7 @@ Scripts are written by the `coder` agent. Each memory record has the front matte
 
 ## 1. Exact relations
 
-- [ ] 1.1 Script and record: charged-meson zero shift (link the decoupling record, add the $m_q$-dependent unmixed masses), exact $K^0$ pole, trace sum rule with explicit $K^{-1}$ and in the sources, product rule $\det M^2$. Verify symbolically in the 6x6 neutral block and with exact rationals against `solve_alp_meson_spectrum.py`. Record in `memory/alp/shared/`.
+- [x] 1.1 Script and record: charged-meson zero shift (link the decoupling record, add the $m_q$-dependent unmixed masses), exact $K^0$ pole, trace sum rule with explicit $K^{-1}$ and in the sources, product rule $\det M^2$. Verify symbolically in the 6x6 neutral block and with exact rationals against `solve_alp_meson_spectrum.py`. Record in `memory/alp/shared/`.
 
 ## 2. Meson shifts
 
