@@ -2,7 +2,7 @@
 title: ALP memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-10-28
+updated: 2026-11-11
 bibtex_keys: []
 provenance: assumption
 ---
@@ -17,6 +17,6 @@ ALP-specific records, organized by the final state or calculation method.
 - [Vector plus two pseudoscalars](vector-two-pseudoscalar/INDEX.md) — strong amplitudes, widths, selection rules and numerical methods for $a\to VPP$.
 - [Four pseudoscalars](four-pseudoscalar/INDEX.md) — process overview, source-specific $a\to4P$ vector amplitudes and flavor selection rules.
 - [Baryons](baryon/INDEX.md) — finite-mixing one-ALP couplings to the baryon octet at low energy.
-- [Shared decay notes](shared/INDEX.md) — conventions and numerical guidance used across ALP decay processes.
+- [Shared decay notes](shared/INDEX.md) — conventions, finite-mixing spectrum and numerical guidance used across ALP decay processes.
 - [Photon](photon/INDEX.md) — WZW/mixing invariant in Bauer's photon coefficient convention, canonical Levi-Civita dual/action matching, real-photon vector-conversion contribution, resonance null audit and amplitude completion plan.
 - [Lepton pairs](lepton-pair/INDEX.md) — source-resolved doubly virtual TFF, local VPPP pion production and its isovector cut, isovector and isoscalar construction/status and input-requirement records, fit-null projections, and the staged $a\to\ell^+\ell^-$ plan.

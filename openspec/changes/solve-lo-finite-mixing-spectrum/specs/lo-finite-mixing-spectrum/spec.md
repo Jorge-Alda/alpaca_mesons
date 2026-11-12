@@ -14,7 +14,7 @@ The solver SHALL build $D(s)=sK-M^2$ in the basis $\Phi=(P_i,a)$ from the LO blo
 - **THEN** the solver returns $K$ and $M^2$ equal to the closed forms of `finite-alp-meson-mixing.md`, with $K_{aa}=1+K_{ia}K_{ia}$ and $M^2_{aa}$ including the $c_G^2$ term
 
 ### Requirement: Neutral basis
-The solver SHALL use the neutral basis $(P_3,P_8,P_0,P_6,P_7,a)$ for charge-conserving sources, SHALL verify that the charged fields decouple exactly, and SHALL report the minimal block size (6x6 generically; 5x5 if $\operatorname{Im}(c^A_{ds}c^{P*}_{ds})=0$; 4x4 for flavour-diagonal sources) and the exact pole at $m_{K^0}^2$ with zero ALP component.
+The solver SHALL use the neutral basis $(P_3,P_8,P_0,P_6,P_7,a)$ for charge-conserving sources, SHALL verify that the charged fields decouple exactly, and SHALL report the minimal block size (6x6 generically; 5x5 if $\operatorname{Im}(c^A_{ds}c^{P*}_{ds})=0$; 4x4 for flavour-diagonal sources) and the exact pole at $m_{K^0,0}^2$ with zero ALP component.
 
 #### Scenario: Charge-violating source
 - **WHEN** $c_q^{A,P}$ or $\chi_0$ has a u-d or u-s entry

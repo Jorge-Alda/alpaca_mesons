@@ -28,7 +28,12 @@ every real K_ia (checked symbolically for N = 5 and for symbolic sources).
 Stability therefore reduces at LO to M^2 >= 0. With M^2_PP > 0 this is the
 Schur condition M^2_aa - M^2_aP (M^2_PP)^{-1} M^2_Pa >= 0, i.e.
   m_a0^2 >= M^2_aP (M^2_PP)^{-1} M^2_Pa - 2 f_pi^2 m_0^2 c_G^2/(N_f f_a^2)
-(lower bound on the bare ALP mass; computed exactly for the illustrative inputs).
+(lower bound on the bare ALP mass). This script evaluates it only for the
+illustrative inputs of derive_alp_lo_neutral_blocks.illustrative_lo_inputs
+(f_a = 0.2 GeV, i.e. f_pi/f_a = 0.46, and arbitrary c_q^P, c_G, chi_0, m_0^2,
+printed with the result); the numbers are not a general bound. The general
+closed form, m_a0^2 >= (f_pi/f_a)^2 B(c_q^P, c_G, chi_q, m_0^2) with B
+independent of f_a, is derived in scripts/derive_alp_lo_stability_bound.py.
 
 Degeneracy (task 2.3). Sorted poles are chained into groups when neighbouring
 poles differ by at most `relative_tolerance` times max(|m_n^2|) (a stated,
@@ -540,6 +545,15 @@ def lo_blocks_float(inputs):
 # --------------------------------------------------------------------- run
 
 
+def describe_inputs(inputs):
+    """One-line description of LO inputs (diagonal of chi_0, sources, f_pi, f_a, m_0^2, m_a0^2, c_G)."""
+    return (f"c_q^A = {inputs['axial_source'].tolist()}, c_q^P = {inputs['pseudoscalar_source'].tolist()}, "
+            f"chi_0 = diag{tuple(inputs['quark_spurion'].diagonal())}, c_G = {inputs['gluon_coupling']}, "
+            f"f_pi = {inputs['pion_decay_constant']}, f_a = {inputs['alp_decay_constant']}, "
+            f"f_pi/f_a = {inputs['pion_decay_constant'] / inputs['alp_decay_constant']}, "
+            f"m_0^2 = {inputs['anomaly_mass_squared']}, m_a0^2 = {inputs['bare_alp_mass_squared']}")
+
+
 def derive():
     """Run the stability and degeneracy checks; returns named groups of results."""
     groups = {"2.2 LO kinetic matrix": lo_kinetic_matrix_checks()["checks"]}
@@ -552,7 +566,8 @@ def derive():
             "illustrative point is stable": diagnostics.stable,
             "det K = 1 (floating point)": abs(diagnostics.kinetic_determinant - 1) < 1e-12,
             "M^2_PP positive definite (exact)": bound["meson_block_positive_definite"],
-            "m_a0^2 bound (exact)": bound["bound"],
+            "illustrative inputs (GeV units; not fits)": describe_inputs(inputs),
+            "m_a0^2 bound for these illustrative inputs only (exact)": bound["bound"],
         }
         for label, offset in (("just above", sp.Rational(1, 10**6)), ("just below", -sp.Rational(1, 10**6))):
             shifted = dict(inputs, bare_alp_mass_squared=bound["bound"] + offset)

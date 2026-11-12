@@ -18,6 +18,6 @@ Scripts are written by the `coder` agent; each memory record has the front matte
 
 ## 3. Records and integration
 
-- [ ] 3.1 Write the memory record(s) (derived/numerical, with inputs linked and the scripts' minimal invocations verified), including the explicit statement of the LO truncation limits and of what is deferred (NLO, loops, resonances, complex poles).
-- [ ] 3.2 Update every affected `INDEX.md`; run all new and related scripts together; check links.
-- [ ] 3.3 Check each alp-sjp.2 acceptance criterion against the evidence for the LO part; add a note to the Beads issue; create a follow-up bead for the NLO, loop and resonance extension and link it to alp-sjp.2.
+- [x] 3.1 Write the memory record(s) (derived/numerical, with inputs linked and the scripts' minimal invocations verified), including the explicit statement of the LO truncation limits and of what is deferred (NLO, loops, resonances, complex poles).
+- [x] 3.2 Update every affected `INDEX.md`; run all new and related scripts together; check links.
+- [x] 3.3 Check each alp-sjp.2 acceptance criterion against the evidence for the LO part; add a note to the Beads issue; create a follow-up bead for the NLO, loop and resonance extension and link it to alp-sjp.2.
