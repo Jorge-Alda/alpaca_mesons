@@ -17,7 +17,10 @@ provenance: assumption
 - [alp-lo-neutral-block-reduction.md](alp-lo-neutral-block-reduction.md) — Minimal neutral block ($6\times6$, $5\times5$, $4\times4$), CP condition on the $d$-$s$ entries and the exact $K^0$ pole with no ALP component.
 - [alp-lo-finite-mixing-operator-inverse.md](alp-lo-finite-mixing-operator-inverse.md) — Analytic LO overlap $w^{(a)}_i(s)$ from $\mathbb M_{a,0}^{-1}$, secular equation $F(s)=0$ and normalization $N=F'$.
 - [alp-lo-pole-solver.md](alp-lo-pole-solver.md) — Poles, $K$-orthonormal pole vectors and residues of $D(s)=sK-M^2$ by Cholesky reduction, and the link to the $(w,1)$ normalization.
-- [alp-lo-exact-pole-equations.md](alp-lo-exact-pole-equations.md) — Exact meson and ALP pole equations to all orders in $f_\pi/f_a$: Schur complement, canonical frame in invariants, explicit degree-6 secular polynomial for diagonal $\chi_0$.
+- [alp-lo-exact-pole-equations.md](alp-lo-exact-pole-equations.md) — Exact meson and ALP pole equations for finite $f_\pi/f_a$: Schur complement, canonical frame in invariants, ALP equation with $\mathbb M_s^{-1}$, explicit degree-6 secular polynomial for diagonal $\chi_0$.
+- [alp-lo-arrow-matrix-spectrum.md](alp-lo-arrow-matrix-spectrum.md) — Poles as eigenvalues of the canonical mass matrix in arrow form, and their interlacing with the unmixed meson masses.
+- [alp-lo-isolated-meson-pole.md](alp-lo-isolated-meson-pole.md) — Two-level closed form for a meson pole far from the other unmixed meson masses, with an exact error bound, for any $f_\pi/f_a$.
+- [alp-lo-isolated-alp-pole.md](alp-lo-isolated-alp-pole.md) — Closed form and fixed-point iteration for the ALP pole far from the unmixed meson masses, with convergence conditions and error bounds.
 - [alp-lo-meson-mass-shift-second-order.md](alp-lo-meson-mass-shift-second-order.md) — $O(f_\pi^2/f_a^2)$ shift of a neutral-meson pole in terms of $c_q^{AP}$, $c_{GA}$, with its invariance under constant axial redefinitions.
 - [alp-lo-weak-mixing-expansion.md](alp-lo-weak-mixing-expansion.md) — Expansion of the exact LO poles and pole vectors in $f_\pi/f_a$: first order of Alda:2026nrd, derived higher orders and residual exponents.
 - [alp-lo-stability-conditions.md](alp-lo-stability-conditions.md) — Positivity of $K$ ($\det K=1$) and of $M^2$ at LO, and the lower bound on the bare ALP mass.

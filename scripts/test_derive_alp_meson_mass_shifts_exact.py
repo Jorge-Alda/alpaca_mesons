@@ -15,7 +15,7 @@ from derive_alp_meson_mass_shifts_exact import (
     explicit_secular_polynomial,
     flavour_diagonal_meson_polynomial,
     rational_checks,
-    resolvent,
+    inverse_meson_operator,
 )
 from derive_alp_meson_mass_shifts_second_order import rational_test_sources
 
@@ -59,14 +59,14 @@ class ExactPoleEquationTest(unittest.TestCase):
             SQUARED_MOMENTUM).all_coeffs()[1]
         self.assertEqual(sp.simplify(roots_sum - canonical.trace()), 0)
 
-    def test_resolvent_without_anomaly_term(self):
-        # m_0^2 = 0, chi_0 = diag(x_q): (s - M_0)^{-1} acts entrywise as 1/(s - (x_q + x_r)/2)
+    def test_inverse_meson_operator_without_anomaly_term(self):
+        # m_0^2 = 0, chi_0 = diag(x_q): M_s^{-1} acts entrywise as 1/((x_q + x_r)/2 - s)
         s = SQUARED_MOMENTUM
         quark_spurion = sp.diag(1, 2, 4)
         argument = sp.Matrix([[5, 0, 0], [0, 7, 2 - sp.I], [0, 2 + sp.I, 11]])
         expected = sp.Matrix(3, 3, lambda row, column: argument[row, column]
-                             / (s - (quark_spurion[row, row] + quark_spurion[column, column]) / 2))
-        self.assertEqual((resolvent(argument, quark_spurion, 0) - expected).applyfunc(sp.simplify), sp.zeros(3))
+                             / ((quark_spurion[row, row] + quark_spurion[column, column]) / 2 - s))
+        self.assertEqual((inverse_meson_operator(argument, quark_spurion, 0) - expected).applyfunc(sp.simplify), sp.zeros(3))
 
 
 if __name__ == "__main__":

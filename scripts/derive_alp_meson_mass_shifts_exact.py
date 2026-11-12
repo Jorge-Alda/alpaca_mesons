@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact (all orders in epsilon = f_pi/f_a) LO pole equations of the neutral mesons and the ALP.
+"""Exact LO pole equations (no expansion in epsilon = f_pi/f_a) of the neutral mesons and the ALP.
 
 Run:   .venv/bin/python scripts/derive_alp_meson_mass_shifts_exact.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_meson_mass_shifts_exact.py
@@ -12,38 +12,40 @@ epsilon = f_pi/f_a, M^2_aa = m_a0^2 + epsilon^2 (2 m_0^2 c_G^2/N_f - B_0 tr S_2)
 Flavour-space objects of the second-order script: 𝕄_s(X) = {chi_0, X}/2 + (m_0^2/N_f) tr(X) 1 - s X,
 𝒞 = -{chi_0, c_q^AP}/2 - (m_0^2/N_f) c_GA 1, Sigma(s) with D_ia(s) = epsilon tr(lambda_i Sigma(s)),
 lambda_n: neutral, 𝕄_0(lambda_n) = m_n0^2 lambda_n, tr(lambda_n lambda_m) = 2 delta_nm.
-(s - 𝕄_0)^{-1}(X) is the neutral Y with (s - 𝕄_0)(Y) = X (solved as a matrix equation).
+𝕄_s^{-1}(X) is the neutral Y with 𝕄_s(Y) = X (solved as a matrix equation); (s - 𝕄_0)^{-1} = -𝕄_s^{-1}.
 B_0 tr hat S_2 = B_0 tr S_2 + 2 tr(c_q^A {c_q^P, chi_0}) - 2 tr(c_q^A c_q^A chi_0)  (sum-rule record, (4.1)).
-In the code, c denotes the column (tr(lambda_i 𝒞)) and Pi_n the projector on an eigenvector of M^2_PP.
+In the code, invariant_vector is the column (tr(lambda_i 𝒞)) over the neutral Gell-Mann generators.
 
 Derived and checked here:
  0. K_ia = -epsilon tr(lambda_i c_q^A), K_aa = 1 + 2 epsilon^2 tr(c_q^A c_q^A), and
     sum_i tr(lambda_i X)^2 = 2 tr(X X) for neutral X (symbolic).
  1. Schur factorization det D(s) = det(s - M^2_PP) D^eff_aa(s),
     D^eff_aa(s) = s K_aa - M^2_aa - D_aP (s - M^2_PP)^{-1} D_Pa (generic symbolic block and exact LO
-    blocks with symbolic s); D_aP (s - M^2_PP)^{-1} D_Pa = 2 epsilon^2 tr(Sigma(s) (s - 𝕄_0)^{-1}(Sigma(s)))
+    blocks with symbolic s); D_aP (s - M^2_PP)^{-1} D_Pa = -2 epsilon^2 tr(Sigma(s) 𝕄_s^{-1}(Sigma(s)))
     (exact rationals, symbolic s).
  2. Canonical frame: with P_i = P_i' + epsilon tr(lambda_i c_q^A) a (det T = 1),
     T^T D(s) T = s 1 - M_can^2 with
         M_can,PP = M^2_PP,  (M_can)_ia = -epsilon tr(lambda_i 𝒞),
         M_can,aa = m_a0^2 + epsilon^2 [ (2 m_0^2/N_f) c_GA^2 - B_0 tr hat S_2 ]
     (symbolic Q-commuting sources, chi_0 with a d-s entry). Every entry is an invariant.
- 3. Hence D^eff_aa(s) = s - M_can,aa - 2 epsilon^2 tr(𝒞 (s - 𝕄_0)^{-1}(𝒞)), equal to the bare Schur form;
-    c^T (s - M^2_PP)^{-1} c = 2 tr(𝒞 (s - 𝕄_0)^{-1}(𝒞)) (exact, symbolic s)
+ 3. Hence D^eff_aa(s) = s - M_can,aa + 2 epsilon^2 tr(𝒞 𝕄_s^{-1}(𝒞)), equal to the bare Schur form (exact);
+    (s - 𝕄_0)^{-1}(𝒞) = -𝕄_s^{-1}(𝒞) (exact, sign of the rewrite);
+    sum_ij tr(lambda_i 𝒞) [(s - M^2_PP)^{-1}]_ij tr(lambda_j 𝒞) = -2 tr(𝒞 𝕄_s^{-1}(𝒞)) (exact, symbolic s)
                            = sum_n tr(lambda_n 𝒞)^2/(s - m_n0^2) (50 digits), and
-    (s - 𝕄_0)^{-1}(𝒞) = sum_n lambda_n tr(lambda_n 𝒞)/(2 (s - m_n0^2)) (50 digits).
+    𝕄_s^{-1}(𝒞) = sum_n lambda_n tr(lambda_n 𝒞)/(2 (m_n0^2 - s)) (50 digits).
  4. Invariance: under c_q^{A,P} -> + kappa, c_G -> c_G - tr kappa, S_2 -> S_2' (from M' = g_R M g_L^dagger)
     the canonical blocks are unchanged (symbolic), and det(s K - M^2) is unchanged (exact rationals).
  5. Meson pole n (non-degenerate eigenvalue m_n0^2):
-        (s - m_n0^2) [ s - M_can,aa - 2 epsilon^2 tr(𝒞 (s - 𝕄_0)^{-1}(𝒞 - tr(lambda_n 𝒞) lambda_n/2)) ]
+        (s - m_n0^2) [ s - M_can,aa + 2 epsilon^2 tr(𝒞 𝕄_s^{-1}(𝒞 - tr(lambda_n 𝒞) lambda_n/2)) ]
             = epsilon^2 tr(lambda_n 𝒞)^2,
-    the subtracted resolvent equal to sum_{m != n} tr(lambda_m 𝒞)^2/(s - m_m0^2) (50 digits), and equal
+    the subtracted term equal to sum_{m != n} tr(lambda_m 𝒞)^2/(s - m_m0^2) (50 digits), and equal
     to the bare form (s - m_n0^2) [s K_aa - M^2_aa - sum_{m != n} D_ma^2/(s - m_m0^2)] = D_na(s)^2
     (generic symbolic mass-basis model).
- 6. Series of 5: s = m_n0^2 + epsilon^2 tr(lambda_n 𝒞)^2/(m_n0^2 - m_a0^2) + O(epsilon^4).
+ 6. Poles as eigenvalues: det(s - M_can^2) = det(s K - M^2) = det(s - M^2_PP) D^eff_aa(s) (exact rationals);
+    arrow form and interlacing in scripts/derive_alp_lo_arrow_matrix_poles.py.
  7. Value at an unmixed mass: det D(m_n0^2) = -epsilon^2 tr(lambda_n 𝒞)^2 prod_{m != n}(m_n0^2 - m_m0^2).
  8. Diagonal chi_0 = diag(x_u, x_d, x_s), mu = m_0^2/N_f, 𝒞_qq = -x_q (c_q^AP)_qq - mu c_GA:
-        2 tr(𝒞 (s - 𝕄_0)^{-1}(𝒞)) = 2 N(s)/P_eta(s) + 4 m_K0,0^4 |(c_q^AP)_ds|^2 / (s - m_K0,0^2),
+        -2 tr(𝒞 𝕄_s^{-1}(𝒞)) = 2 N(s)/P_eta(s) + 4 m_K0,0^4 |(c_q^AP)_ds|^2 / (s - m_K0,0^2),
         P_eta(s) = prod_q (s - x_q) - mu sum_q prod_{r != q} (s - x_r),
         N(s) = sum_q 𝒞_qq^2 prod_{r != q}(s - x_r) - mu sum_{q<r} (x_q c_qq - x_r c_rr)^2 (s - x_third),
     and the secular polynomial (degree 6, leading coefficient det K = 1)
@@ -54,8 +56,7 @@ Derived and checked here:
     multiplicity 1 if (c_q^AP)_ds != 0 and 2 if it vanishes) compared with solve_spectrum_numerical;
     D^eff_aa vanishes at all other roots.
 10. Residues for diagonal chi_0: tr(lambda_n 𝒞)^2 = 2 N(m_n0^2)/P_eta'(m_n0^2) for n = pi^0, eta, eta' and
-    the sum of tr(lambda_n 𝒞)^2 over the K^0 doublet = 4 m_K0,0^4 |(c_q^AP)_ds|^2 (50 digits), so
-    m_n^2 - m_n0^2 = 2 epsilon^2 N(m_n0^2) / [P_eta'(m_n0^2) (m_n0^2 - m_a0^2)] + O(epsilon^4).
+    the sum of tr(lambda_n 𝒞)^2 over the K^0 doublet = 4 m_K0,0^4 |(c_q^AP)_ds|^2 (50 digits).
 
 Units: f_pi, f_a, B_0, tr S_2 in GeV; chi_0, m_0^2, m_a0^2, M^2, s in GeV^2; couplings dimensionless.
 Rational inputs are test values, not fits.
@@ -139,7 +140,7 @@ def canonical_alp_mass_squared(bare_alp_mass_squared, epsilon, anomaly_mass_squa
 
 
 def canonical_mass_matrix(meson_mass_squared, invariant_vector, epsilon, alp_mass_squared_canonical):
-    """M_can^2 = [[M^2_PP, -epsilon c], [-epsilon c^T, M_can,aa]], c the column (tr(lambda_i 𝒞))."""
+    """M_can^2 = [[M^2_PP, column -epsilon tr(lambda_i 𝒞)], [row -epsilon tr(lambda_i 𝒞), M_can,aa]]."""
     size = meson_mass_squared.shape[0] + 1
     matrix = sp.zeros(size)
     matrix[:size - 1, :size - 1] = meson_mass_squared
@@ -216,7 +217,7 @@ def explicit_secular_polynomial(quark_spurion_diagonal, difference_source, anoma
 
 def explicit_meson_sum(quark_spurion_diagonal, difference_source, anomaly_mass_squared, gluon_axial_combination,
                        squared_momentum=SQUARED_MOMENTUM):
-    """2 tr(𝒞 (s - 𝕄_0)^{-1}(𝒞)) = 2 N(s)/P_eta(s) + 4 m_K0,0^4 |c^AP_ds|^2/(s - m_K0,0^2) for diagonal chi_0."""
+    """-2 tr(𝒞 𝕄_s^{-1}(𝒞)) = 2 N(s)/P_eta(s) + 4 m_K0,0^4 |c^AP_ds|^2/(s - m_K0,0^2) for diagonal chi_0."""
     kaon_mass_squared = (quark_spurion_diagonal[1] + quark_spurion_diagonal[2]) / 2
     difference_diagonal = [difference_source[index, index] for index in range(3)]
     return (2 * mixing_numerator_polynomial(quark_spurion_diagonal, difference_diagonal, anomaly_mass_squared,
@@ -230,7 +231,7 @@ def explicit_meson_sum(quark_spurion_diagonal, difference_source, anomaly_mass_s
 
 
 def generic_schur_checks():
-    """Item 1 (generic symmetric 4-meson block) and items 5-7 (generic mass-basis model, 3 mesons)."""
+    """Item 1 (generic symmetric 4-meson block) and items 3, 5, 7 (generic mass-basis model, 3 mesons)."""
     s = SQUARED_MOMENTUM
     # item 1, generic symmetric block
     size = 4
@@ -253,7 +254,7 @@ def generic_schur_checks():
                              * (alp_entry - (mixed.T * (s * sp.eye(size) - meson_block).adjugate() * mixed)[0]
                                 / (s * sp.eye(size) - meson_block).det(method="berkowitz")))
 
-    # items 5-7, generic mass basis
+    # items 3, 5, 7, generic mass basis
     epsilon, alp_canonical_shift, bare_alp_mass_squared = sp.symbols("epsilon delta_aa m_a0sq", real=True)
     count = 3
     unmixed = sp.symbols(f"m0sq_0:{count}", real=True)
@@ -273,11 +274,6 @@ def generic_schur_checks():
         invariant[k]**2 / (s - unmixed[k]) for k in range(count) if k != selected))
         - epsilon**2 * invariant[selected]**2)
 
-    # item 6: series of the canonical meson equation
-    second, fourth = sp.symbols("sigma2 sigma4")
-    trial = unmixed[selected] + epsilon**2 * second + epsilon**4 * fourth
-    series = sp.series(canonical_equation.subs(s, trial), epsilon, 0, 6).removeO()
-    second_solution = sp.solve(sp.expand(series).coeff(epsilon, 2), second)
     determinant = sp.prod([s - value for value in unmixed]) * effective_canonical
 
     return {
@@ -287,9 +283,6 @@ def generic_schur_checks():
         "5. bare and canonical meson-pole equations agree (mass basis)": _is_zero(sp.together(bare_equation - canonical_equation)),
         "5'. both equal (s - m_n0^2) D^eff_aa(s)": _is_zero(
             sp.together(canonical_equation - (s - unmixed[selected]) * effective_canonical)),
-        "6. no epsilon^0 term; epsilon^2 coefficient tr(lambda_n 𝒞)^2/(m_n0^2 - m_a0^2)": (
-            _simplify(series.coeff(epsilon, 0)) == 0 and len(second_solution) == 1
-            and _is_zero(second_solution[0] - invariant[selected]**2 / (unmixed[selected] - bare_alp_mass_squared))),
         "7. det D(m_n0^2) = -epsilon^2 tr(lambda_n 𝒞)^2 prod_{m != n}(m_n0^2 - m_m0^2)": _is_zero(
             sp.cancel(determinant).subs(s, unmixed[selected])
             + epsilon**2 * invariant[selected]**2 * sp.prod([unmixed[selected] - unmixed[k]
@@ -374,7 +367,7 @@ def explicit_form_symbolic_checks():
     kaon_mass_squared = (quark_spurion_diagonal[1] + quark_spurion_diagonal[2]) / 2
     meson_polynomial = flavour_diagonal_meson_polynomial(quark_spurion_diagonal, anomaly_mass_squared)
     return {
-        "8. 2 tr(𝒞 (s - 𝕄_0)^-1(𝒞)) [= c^T (s - M^2_PP)^-1 c] = 2 N/P_eta + 4 m_K0^4 |c^AP_ds|^2/(s - m_K0^2)": _is_zero(
+        "8. -2 tr(𝒞 𝕄_s^-1(𝒞)) = 2 N/P_eta + 4 m_K0^4 |c^AP_ds|^2/(s - m_K0^2)": _is_zero(
             sp.together(meson_sum - explicit_sum)),
         "8'. det(s - M^2_PP) = (s - m_K0,0^2)^2 P_eta(s)": _is_zero(
             meson_inverse_propagator.det(method="berkowitz") - (s - kaon_mass_squared)**2 * meson_polynomial),
@@ -438,17 +431,16 @@ def kinetic_trace_checks():
     }
 
 
-def resolvent(argument, quark_spurion, anomaly_mass_squared, squared_momentum=SQUARED_MOMENTUM):
-    """(s - 𝕄_0)^{-1}(X): the neutral Y with s Y - 𝕄_0(Y) = X, solved as a matrix equation."""
+def inverse_meson_operator(argument, quark_spurion, anomaly_mass_squared, squared_momentum=SQUARED_MOMENTUM):
+    """𝕄_s^{-1}(X): the neutral Y with 𝕄_s(Y) = X, solved as a matrix equation (s not an eigenvalue of 𝕄_0)."""
     return solve_neutral_matrix_equation(
-        lambda unknown: -meson_mass_operator(unknown, quark_spurion, anomaly_mass_squared, squared_momentum),
-        argument)
+        lambda unknown: meson_mass_operator(unknown, quark_spurion, anomaly_mass_squared, squared_momentum), argument)
 
 
 def trace_form_checks(base_sources=None, test_points=(sp.Rational(1, 3), sp.Rational(3, 5)),
                       digits=HIGH_PRECISION_DIGITS):
-    """Items 1, 3, 5 in trace form: resolvent of 𝕄_0 on the neutral space against the generator-basis matrix
-    (exact, symbolic s) and against the spectral sum over lambda_n (50 digits at the test points)."""
+    """Items 1, 3, 5 in trace form: 𝕄_s^{-1} on the neutral space against the generator-basis matrix
+    (exact, symbolic s) and against the sum over lambda_n (50 digits at the test points)."""
     s = SQUARED_MOMENTUM
     sources = rational_test_sources(TEST_EPSILON, base_sources)
     epsilon = TEST_EPSILON
@@ -458,54 +450,59 @@ def trace_form_checks(base_sources=None, test_points=(sp.Rational(1, 3), sp.Rati
     meson_inverse = (s * sp.eye(MESON_COUNT) - meson_mass_squared)
     tadpole = tadpole_source_from_sources(**_block_inputs(sources))
     invariant_vector = invariant_mixing_vector(**_block_inputs(sources))
-    tadpole_resolvent = resolvent(tadpole, quark_spurion, anomaly_mass_squared)
+    tadpole_inverse = inverse_meson_operator(tadpole, quark_spurion, anomaly_mass_squared)
+    # (s - 𝕄_0)^{-1}(𝒞) solved separately, to fix the sign of the rewrite with 𝕄_s^{-1}
+    shifted_inverse = solve_neutral_matrix_equation(
+        lambda unknown: s * unknown - meson_mass_operator(unknown, quark_spurion, anomaly_mass_squared), tadpole)
     mixing_source = mixing_source_matrix(s, **_block_inputs(sources))
     mixing_vector = neutral_components(mixing_source)
-    trace_form = 2 * sp.trace(tadpole * tadpole_resolvent)
+    trace_form = -2 * sp.trace(tadpole * tadpole_inverse)
     generator_form = (invariant_vector.T * meson_inverse.LUsolve(invariant_vector))[0]
-    bare_trace_form = 2 * epsilon**2 * sp.trace(mixing_source * resolvent(mixing_source, quark_spurion,
-                                                                         anomaly_mass_squared))
+    bare_trace_form = -2 * epsilon**2 * sp.trace(mixing_source * inverse_meson_operator(
+        mixing_source, quark_spurion, anomaly_mass_squared))
     bare_generator_form = epsilon**2 * (mixing_vector.T * meson_inverse.LUsolve(mixing_vector))[0]
 
     eigenbasis = mass_eigenstate_generators(sources, digits)
     tadpole_high = to_high_precision(tadpole, digits)
-    spectral_difference, resolvent_difference, projected_difference = (mpmath.mpf(0),) * 3
+    spectral_difference, inverse_difference, projected_difference = (mpmath.mpf(0),) * 3
     for point in test_points:
         point_high = mpmath.mpf(str(sp.N(point, digits + 10)))
-        resolvent_high = to_high_precision(tadpole_resolvent.subs(s, point), digits)
+        inverse_high = to_high_precision(tadpole_inverse.subs(s, point), digits)
         traces = [high_precision_trace(generator * tadpole_high) for _, generator in eigenbasis]
         terms = [trace**2 / (point_high - value) for trace, (value, _) in zip(traces, eigenbasis)]
         spectral = mpmath.fsum(terms)
         spectral_difference = max(spectral_difference,
-                                  abs(2 * high_precision_trace(tadpole_high * resolvent_high) - spectral))
+                                  abs(-2 * high_precision_trace(tadpole_high * inverse_high) - spectral))
         spectral_matrix = mpmath.matrix(3, 3)
         for trace, (value, generator) in zip(traces, eigenbasis):
-            spectral_matrix += generator * (trace / (2 * (point_high - value)))
-        resolvent_difference = max(resolvent_difference, max(
-            abs(resolvent_high[row, column] - spectral_matrix[row, column]) for row in range(3) for column in range(3)))
-        # subtracted resolvent: 2 tr(𝒞 (s - 𝕄_0)^{-1}(𝒞 - tr(lambda_n 𝒞) lambda_n/2)) = sum_{m != n}
-        meson_inverse_high = mpmath.matrix((point * sp.eye(MESON_COUNT) - meson_mass_squared).evalf(digits + 10))
+            spectral_matrix += generator * (trace / (2 * (value - point_high)))
+        inverse_difference = max(inverse_difference, max(
+            abs(inverse_high[row, column] - spectral_matrix[row, column]) for row in range(3) for column in range(3)))
+        # -2 tr(𝒞 𝕄_s^{-1}(𝒞 - tr(lambda_n 𝒞) lambda_n/2)) = sum_{m != n} tr(lambda_m 𝒞)^2/(s - m_m0^2)
+        meson_operator_high = mpmath.matrix((meson_mass_squared - point * sp.eye(MESON_COUNT)).evalf(digits + 10))
         generators_high = [to_high_precision(sp.Matrix(generator), digits) for generator in NEUTRAL_GENERATORS]
         for index, (trace, (_, generator)) in enumerate(zip(traces, eigenbasis)):
             subtracted = tadpole_high - generator * (trace / 2)
             subtracted_components = mpmath.matrix([high_precision_trace(basis * subtracted).real
                                                    for basis in generators_high])
-            solved = mpmath.lu_solve(meson_inverse_high, subtracted_components)
-            subtracted_resolvent = mpmath.matrix(3, 3)
+            solved = mpmath.lu_solve(meson_operator_high, subtracted_components)
+            subtracted_inverse = mpmath.matrix(3, 3)
             for component, basis in zip(solved, generators_high):
-                subtracted_resolvent += basis * (component / 2)
-            projected = 2 * high_precision_trace(tadpole_high * subtracted_resolvent)
+                subtracted_inverse += basis * (component / 2)
+            projected = -2 * high_precision_trace(tadpole_high * subtracted_inverse)
             projected_difference = max(projected_difference, abs(
                 projected - mpmath.fsum(term for other, term in enumerate(terms) if other != index)))
     return {
-        "1. D_aP (s - M^2_PP)^-1 D_Pa = 2 epsilon^2 tr(Sigma(s) (s - 𝕄_0)^-1(Sigma(s))) (exact)": _is_zero(
+        "5'. (s - 𝕄_0)^-1(𝒞) = -𝕄_s^-1(𝒞), so 2 tr(𝒞 (s - 𝕄_0)^-1(𝒞)) = -2 tr(𝒞 𝕄_s^-1(𝒞)) (exact)": _is_zero(
+            (shifted_inverse + tadpole_inverse).applyfunc(sp.cancel)),
+        "1. D_aP (s - M^2_PP)^-1 D_Pa = -2 epsilon^2 tr(Sigma(s) 𝕄_s^-1(Sigma(s))) (exact)": _is_zero(
             sp.cancel(bare_trace_form - bare_generator_form)),
-        "3. c^T (s - M^2_PP)^-1 c = 2 tr(𝒞 (s - 𝕄_0)^-1(𝒞)) (exact)": _is_zero(sp.cancel(trace_form - generator_form)),
-        "3. 2 tr(𝒞 (s - 𝕄_0)^-1(𝒞)) = sum_n tr(lambda_n 𝒞)^2/(s - m_n0^2) (50 digits)":
+        "3. sum_ij tr(lambda_i 𝒞) [(s - M^2_PP)^-1]_ij tr(lambda_j 𝒞) = -2 tr(𝒞 𝕄_s^-1(𝒞)) (exact)": _is_zero(sp.cancel(trace_form - generator_form)),
+        "3. -2 tr(𝒞 𝕄_s^-1(𝒞)) = sum_n tr(lambda_n 𝒞)^2/(s - m_n0^2) (50 digits)":
             spectral_difference < HIGH_PRECISION_TOLERANCE,
-        "3. (s - 𝕄_0)^-1(𝒞) = sum_n lambda_n tr(lambda_n 𝒞)/(2 (s - m_n0^2)) (50 digits)":
-            resolvent_difference < HIGH_PRECISION_TOLERANCE,
-        "5. 2 tr(𝒞 (s - 𝕄_0)^-1(𝒞 - tr(lambda_n 𝒞) lambda_n/2)) = sum_{m != n} (50 digits)":
+        "3. 𝕄_s^-1(𝒞) = sum_n lambda_n tr(lambda_n 𝒞)/(2 (m_n0^2 - s)) (50 digits)":
+            inverse_difference < HIGH_PRECISION_TOLERANCE,
+        "5. -2 tr(𝒞 𝕄_s^-1(𝒞 - tr(lambda_n 𝒞) lambda_n/2)) = sum_{m != n} (50 digits)":
             projected_difference < HIGH_PRECISION_TOLERANCE,
     }
 
@@ -525,6 +522,10 @@ def rational_checks(epsilon=TEST_EPSILON, condensate=TEST_CONDENSATE,
     effective_canonical = (s - canonical[ALP, ALP] - epsilon**2 * (
         invariant_vector.T * (s * sp.eye(MESON_COUNT) - meson_mass_squared).LUsolve(invariant_vector))[0])
     quark_spurion = sources["quark_spurion"]
+    tadpole = tadpole_source_from_sources(**_block_inputs(sources))
+    effective_operator_form = (s - canonical[ALP, ALP] + 2 * epsilon**2 * sp.trace(
+        tadpole * inverse_meson_operator(tadpole, quark_spurion, sources["anomaly_mass_squared"])))
+    canonical_polynomial = sp.expand((s * sp.eye(MESON_COUNT + 1) - canonical).det(method="berkowitz"))
     quark_spurion_diagonal = [quark_spurion[index, index] for index in range(3)]
     explicit_polynomial = sp.Poly(explicit_secular_polynomial(
         quark_spurion_diagonal, sources["axial_source"] - sources["pseudoscalar_source"],
@@ -573,6 +574,11 @@ def rational_checks(epsilon=TEST_EPSILON, condensate=TEST_CONDENSATE,
                 sp.together(bare_polynomial.as_expr() - meson_determinant * effective_bare)),
             "3. bare Schur complement = canonical Schur complement": _is_zero(
                 sp.together(effective_bare - effective_canonical)),
+            "3. D^eff_aa = s - M_can,aa + 2 epsilon^2 tr(𝒞 𝕄_s^-1(𝒞)) (exact)": _is_zero(
+                sp.cancel(effective_bare - effective_operator_form)),
+            "6. det(s - M_can^2) = det(s K - M^2) = det(s - M^2_PP) D^eff_aa(s) (exact)": (
+                _is_zero(canonical_polynomial - bare_polynomial.as_expr())
+                and _is_zero(sp.together(canonical_polynomial - meson_determinant * effective_canonical))),
             "4. det(s K - M^2) unchanged under rational kappa": bare_polynomial == shifted_polynomial,
             "8. explicit secular polynomial = det(s K - M^2) (exact)": explicit_polynomial == bare_polynomial,
             "9. six real roots": len(exact_roots) == 6,
@@ -608,10 +614,10 @@ def derive():
 
 def main():
     result = derive()
-    print("Exact pole equations (canonical frame, all orders in epsilon):")
-    print("  ALP:   s - M_can,aa - 2 epsilon^2 tr(𝒞 (s - 𝕄_0)^-1(𝒞)) = 0,"
+    print("Exact pole equations (canonical frame, no expansion in epsilon):")
+    print("  ALP:   s - M_can,aa + 2 epsilon^2 tr(𝒞 𝕄_s^-1(𝒞)) = 0,"
           "  M_can,aa = m_a0^2 + epsilon^2 [(2 m_0^2/N_f) c_GA^2 - B_0 tr hatS_2]")
-    print("         2 tr(𝒞 (s - 𝕄_0)^-1(𝒞)) = sum_n tr(lambda_n 𝒞)^2/(s - m_n0^2)")
+    print("         -2 tr(𝒞 𝕄_s^-1(𝒞)) = sum_n tr(lambda_n 𝒞)^2/(s - m_n0^2)")
     print("  meson: (s - m_n0^2)[s - M_can,aa - epsilon^2 sum_{m != n} tr(lambda_m 𝒞)^2/(s - m_m0^2)]"
           " = epsilon^2 tr(lambda_n 𝒞)^2")
     for section, content in result.items():

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Defines the analytical LO mass shifts that finite ALP-meson mixing induces on the pseudoscalar mesons and on the ALP, the exact relations they satisfy, and the invariance and limiting checks they must pass.
+Defines the exact LO pole equations that finite ALP-meson mixing gives for the pseudoscalar mesons and the ALP, the exact relations they satisfy, the closed approximations for isolated poles with their error control, and the invariance and limiting checks they must pass. No expansion in $f_\pi/f_a$ is part of the requirements.
 
 ## ADDED Requirements
 
@@ -17,34 +17,45 @@ The record SHALL give statements valid at all orders in $f_\pi/f_a$: the charged
 - **WHEN** the solver spectrum is computed for exact rational sources
 - **THEN** the sum and product of its poles equal the analytic expressions exactly
 
-### Requirement: Explicit neutral-meson shifts
-The record SHALL give closed analytical expressions for the shifts of the $\pi^0$, $\eta$, $\eta'$ and $K^0$ squared masses at $O(\epsilon^2)$ and $O(\epsilon^4)$, $\epsilon=f_\pi/f_a$, in terms of the unmixed masses, $m_{a,0}^2$ and the invariant combinations $c_q^{AP}$ and $c_{GA}$ rather than the individual $c_q^A$, $c_q^P$, $c_G$. The expressions SHALL state the isospin-limit form (explicit $\eta$-$\eta'$ rotation) and the general-$m_q$ form through the eigenvectors of $M^2_{PP}$.
+### Requirement: Exact neutral-meson and ALP poles
+The record SHALL give the exact pole equations of the neutral mesons and the ALP at finite mixing, written in the canonical frame through the invariant combinations $c_q^{AP}$, $c_{GA}$, $\chi_0$, $m_0^2$, $m_{a,0}^2$ and $\operatorname{tr}\widehat S_2$, and SHALL state that the poles are the eigenvalues of the canonical mass matrix. The record SHALL give the explicit secular polynomial and the per-meson residues for diagonal $\chi_0$, including $\pi^0$, $\eta$, $\eta'$ and the $K^0$ doublet.
 
 #### Scenario: Dependence only on invariants
 - **WHEN** a constant chiral redefinition is applied to the sources
-- **THEN** every shift is unchanged, and it depends on the sources only through the stated invariants
+- **THEN** every pole is unchanged, and the spectrum depends on the sources only through the stated invariants
 
-#### Scenario: Weak-mixing agreement
-- **WHEN** the exact LO poles are expanded in $\epsilon$
-- **THEN** the closed forms reproduce the $\epsilon^2$ and $\epsilon^4$ coefficients of the weak-mixing record
+#### Scenario: Explicit polynomial against the solver
+- **WHEN** the secular polynomial is evaluated for exact rational sources
+- **THEN** its roots equal the solver's poles to the working precision
 
-### Requirement: ALP mass shift
-The record SHALL give $m_a^2-m_{a,0}^2$ analytically at $O(\epsilon^2)$ and $O(\epsilon^4)$, separated into the kinetic-normalization, anomaly and meson-exchange contributions, together with the exact implicit equation for $m_a^2$ in the frame aligned with the ALP pole.
+### Requirement: Interlacing bounds
+The record SHALL state that the poles of the canonical mass matrix interlace with the unmixed meson masses, and SHALL state the bound under which each interval holds one pole.
 
-#### Scenario: No mesons
-- **WHEN** all couplings that mix the ALP with mesons vanish
-- **THEN** only the anomaly contribution to $m_a^2$ remains, and it vanishes for $c_G=0$
+#### Scenario: Interlacing
+- **WHEN** the unmixed meson masses and the canonical mass matrix are known
+- **THEN** each unmixed mass lies between two consecutive poles, and the poles lie in the intervals stated by the record
 
-#### Scenario: Aligned frame
-- **WHEN** the single-pole aligned coordinates are used
-- **THEN** the ALP pole is the zero of one scalar function, and its expansion agrees with the unaligned result
+### Requirement: Closed approximations for isolated poles
+The record SHALL give a closed form for an isolated meson pole, with an exact error bound, and a closed form and a convergent iteration for an isolated ALP pole. Both SHALL be labelled as approximations under the far-apart assumption, and SHALL state the condition under which they hold.
 
-### Requirement: Limits and validity domain
-Every shift SHALL reduce to zero as $f_a\to\infty$ and to the unmixed chiral masses at $\epsilon=0$. The record SHALL state the level-repulsion sign rule, the condition $|m_{j,0}^2-m_{a,0}^2|\gg|D_{ja}|$ under which the expansion holds, and SHALL give the exact two-level formula for the near-degenerate case.
+#### Scenario: Isolated meson
+- **WHEN** the meson is far from the other unmixed masses in the sense stated by the record
+- **THEN** the two-level closed form approximates the pole and the error bound holds
+
+#### Scenario: Isolated ALP
+- **WHEN** the ALP entry is far from the meson masses and the convergence condition holds
+- **THEN** the fixed-point iteration converges to the ALP pole
 
 #### Scenario: Near degeneracy
-- **WHEN** $m_{a,0}^2$ approaches an unmixed meson mass
-- **THEN** the perturbative expressions are declared invalid and the two-level formula applies
+- **WHEN** two unmixed masses are closer than the stated bound allows
+- **THEN** the closed approximations are declared invalid and the exact eigenvalues of the canonical mass matrix apply
+
+### Requirement: Limits and validity domain
+Every pole SHALL reduce to the unmixed chiral mass in the limit $f_a\to\infty$. The record SHALL state the level-repulsion sign rule and the regimes: in the small-mixing regime no shift at order $f_\pi/f_a$ is kept, and in the large-mixing regime the finite shifts are the exact poles or their closed approximations.
+
+#### Scenario: Decoupled ALP
+- **WHEN** all couplings $\operatorname{tr}(\lambda_n\mathcal C)$ vanish
+- **THEN** the ALP pole is the canonical corner entry and the meson poles are the unmixed masses
 
 ### Requirement: Scope boundaries
 The record SHALL state that decay constants, residues, mixing angles, other meson multiplets, NLO and loop effects and uncertainties are not covered, and SHALL NOT use phenomenological numerical inputs.
