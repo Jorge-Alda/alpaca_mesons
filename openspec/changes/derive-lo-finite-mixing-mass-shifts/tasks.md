@@ -8,7 +8,7 @@ Scripts are written by the `coder` agent. Each memory record has the front matte
 
 ## 2. Meson shifts
 
-- [ ] 2.1 Script and record: $O(\epsilon^2)$ shift of a generic meson pole $j$ from the Schur complement, written with $D_{ja}(m_{j,0}^2)$, then in the invariants $c_q^{AP}$, $c_{GA}$, $\chi_0$, $m_0^2$, $m_{a,0}^2$. Proof of invariance under a symbolic constant chiral redefinition.
+- [x] 2.1 Script and record: $O(\epsilon^2)$ shift of a generic meson pole $j$ from the Schur complement, written with $D_{ja}(m_{j,0}^2)$, then in the invariants $c_q^{AP}$, $c_{GA}$, $\chi_0$, $m_0^2$, $m_{a,0}^2$. Proof of invariance under a symbolic constant chiral redefinition.
 - [ ] 2.2 Script and record: explicit isospin-limit forms for $\pi^0$, $\eta$, $\eta'$ (closed $\eta$-$\eta'$ rotation) and general-$m_q$ form through $O$; check the $m_u\to m_d$ limit.
 - [ ] 2.3 Script and record: $K^0$ doublet shift via $|D_{6a}|^2+|D_{7a}|^2$, CP-conserving and aligned-phase reductions, CP-violating case; consistency with the exact pole of 1.1.
 - [ ] 2.4 Script and record: $O(\epsilon^4)$ meson shifts by one more iteration; verify the coefficient against the weak-mixing expansion and by residual exponents on exact rational sources.
