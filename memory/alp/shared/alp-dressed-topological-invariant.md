@@ -2,7 +2,7 @@
 title: Dressed topological coefficient and recovery of $c_{GA}$
 status: derived
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -48,7 +48,7 @@ C=B_0\widehat P_1-\frac{m_0^2}{N_f}\widehat\Theta_1\,\mathbf1 ,
 $$
 i.e. it is built only from the first Taylor coefficients of the two dressed sources, $\widehat M$ and $\widehat\Theta$.
 
-The photon analogue, $\widehat\Theta_\gamma$ with $\widehat\Theta_{\gamma,1}=c_{\gamma A}$, is in the [dressed photon record](../photon/alp-dressed-photon-invariant.md).
+The photon analogue, $\widehat\Theta_\gamma$ with $\widehat\Theta_{\gamma,1}=c_{\gamma A}$, is in the [dressed photon record](../photon/alp-dressed-photon-invariant.md). The second-order coefficient $\widehat\Theta_2=\Theta_2+\operatorname{tr}C_{A,1}$ is in the [second-order record](alp-dressed-topological-second-order.md).
 
 ## Reproducible calculation
 

@@ -31,6 +31,8 @@ provenance: assumption
 - [alp-chiral-source-transformations.md](alp-chiral-source-transformations.md) — Meson source transformations, transport representation and singlet topological shift under finite chiral redefinitions.
 - [alp-dressed-mass-first-order-invariants.md](alp-dressed-mass-first-order-invariants.md) — $O(1/f_a)$ expansion of the dressed mass function $\widehat M$ and its match to $c_q^{VS}$, $c_q^{AP}$ of Alda:2026nrd, including what $\widehat M_1$ cannot see.
 - [alp-dressed-topological-invariant.md](alp-dressed-topological-invariant.md) — Dressed gluonic coefficient $\widehat\Theta$, recovery of $c_{GA}$, vacuum-angle slope and Alda:2026nrd's tadpole source $C$.
+- [alp-dressed-mass-second-order-invariants.md](alp-dressed-mass-second-order-invariants.md) — Second-order dressed sources $\widehat S_2$, $\widehat P_2$ as nested commutators of $S_n$, $P_n$, $C_{R,n}$, $C_{L,n}$, and their real-mass and Alda:2026nrd specializations.
+- [alp-dressed-topological-second-order.md](alp-dressed-topological-second-order.md) — Second-order dressed gluonic coefficient $\widehat\Theta_2=\Theta_2+\operatorname{tr}C_{A,1}$.
 - [alp-lo-joint-vertex-expansion.md](alp-lo-joint-vertex-expansion.md) — Joint LO meson and ALP vertices for general source functions and the resulting quadratic mass correction.
 - [alp-lo-pole-projected-tree-amplitudes.md](alp-lo-pole-projected-tree-amplitudes.md) — Analytical pole-projected contact and exchange amplitudes, Schur inverse and field-change checks.
 - [alp-lo-pole-aligned-tree-vertices.md](alp-lo-pole-aligned-tree-vertices.md) — Exact symmetric axial pole alignment, nonlinear contact terms and comparison of tree amplitudes.

@@ -2,7 +2,7 @@
 title: First-order expansion of the dressed mass function and comparison with the Alda:2026nrd invariants
 status: derived
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -51,7 +51,7 @@ In the CCWZ spurion, $\chi(x)=2B_0\widehat M(x)$, so the $O(1/f_a)$ source has $
 1. **Invariance.** Under $c_q^{V,S}\to c_q^{V,S}+\delta$ and $c_q^{A,P}\to c_q^{A,P}+\kappa$, i.e. $g_{R,L}=e^{ix(\delta\pm\kappa)}$, the combinations $c_q^{VS}$ and $c_q^{AP}$ do not change, so $\widehat M_1$ does not change. This reproduces the transformation laws and invariants of Alda:2026nrd [@Alda:2026nrd], and the first-order laws $S_1'$, $P_1'$ of the general record.
 2. **Alda:2026nrd's prescription.** The choice $\delta=-c_q^S$, $\kappa=-c_q^A-\mathbb M_a^{-1}(C)$ gives $\widehat c_q^S=0$, $\widehat c_q^V=c_q^{VS}$, $\widehat c_q^P-\widehat c_q^A=-c_q^{AP}$. Dressing this representative gives the same $\widehat M_1$, independent of $\mathbb M_a^{-1}(C)$. The dressed representative has instead $\widehat C_V=\widehat C_A=0$ and $\widehat S_1,\widehat P_1$ as above; the two representatives are related by the constant redefinition $\delta=-c_q^V$, $\kappa=-c_q^A$.
 3. **Information content.** The anticommutator with a positive-definite $m_q$ is invertible (for $m_q=\mathrm{diag}(m_u,m_d,m_s)$ its determinant on $3\times3$ matrices is $8m_um_dm_s(m_u+m_d)^2(m_u+m_s)^2(m_d+m_s)^2$), so $\widehat P_1$ determines $c_q^{AP}$ completely. The commutator with $m_q$ is not invertible: its kernel is the set of matrices commuting with $m_q$ (dimension 3 for nondegenerate $m_q$, 5 for $m_u=m_d\neq m_s$). The part of $c_q^{VS}$ commuting with $m_q$ does not enter $\widehat M_1$; for example, a diagonal $c_q^{VS}$ with diagonal $m_q$ gives $\widehat S_1=0$. That part is still an invariant, and it appears in the vector-current coupling, e.g. $[c_q^{VS},\mathcal B]$ in Alda:2026nrd's baryon couplings. So $\widehat M_1$ carries all of $c_q^{AP}$ but only the off-commutant part of $c_q^{VS}$. The same limitation holds for $c_q^S$ itself, since $S_1=i[c_q^S,m_q]$ only defines $c_q^S$ up to this kernel.
-4. **Higher orders.** This reduction is first order only. At order $x^n$, $\widehat M_n$ contains products and commutators of lower-order coefficients, as stated in the general record, and is not a pairwise difference.
+4. **Higher orders.** This reduction is first order only. At order $x^n$, $\widehat M_n$ contains products and commutators of lower-order coefficients, as stated in the general record, and is not a pairwise difference. The explicit second-order coefficients $\widehat S_2$, $\widehat P_2$ are in the [second-order record](alp-dressed-mass-second-order-invariants.md).
 
 ## Reproducible calculation
 

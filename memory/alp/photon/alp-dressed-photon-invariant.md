@@ -2,7 +2,7 @@
 title: Dressed photon coefficient and its expansion in $1/f_a$
 status: derived
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 bibtex_keys: [Alda:2026nrd, Bauer:2020jbp, Bai:2025fvl]
 provenance: analytical-derivation
 ---
@@ -51,7 +51,7 @@ $$
 =c_\gamma+\tfrac83c^A_{uu}+\tfrac23\left(c^A_{dd}+c^A_{ss}\right)\quad(N_c=3).
 $$
 
-Only the diagonal entries of $c_q^A$ enter, since $Q^2$ is diagonal. The next coefficient is $\widehat\Theta_{\gamma,2}=\Theta_{\gamma,2}+2N_c\operatorname{tr}(Q^2C_{A,1})$, where $C_{A,1}=ic_q^{A,2}$-type terms are the order-$x$ axial coefficient of the general record.
+Only the diagonal entries of $c_q^A$ enter, since $Q^2$ is diagonal. The next coefficient is $\widehat\Theta_{\gamma,2}=\Theta_{\gamma,2}+2N_c\operatorname{tr}(Q^2C_{A,1})$, where $C_{A,1}=ic_q^{A,2}$-type terms are the order-$x$ axial coefficient of the general record; see the [second-order record](alp-dressed-photon-second-order.md).
 
 ## Relations to the other dressed sources
 
