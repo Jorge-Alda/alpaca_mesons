@@ -22,3 +22,4 @@ provenance: assumption
 - [odd-parity-three-pseudoscalar-audit.md](odd-parity-three-pseudoscalar-audit.md) — odd-sector tree zero and conditional loop plan.
 - [three-pseudoscalar-gauss-legendre-quadrature.md](three-pseudoscalar-gauss-legendre-quadrature.md) — production Gauss–Legendre width method and comparison.
 - [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md) — scalar amplitude and width optimization with validation.
+- [alp-finite-mixing-three-pseudoscalar-calculator.md](alp-finite-mixing-three-pseudoscalar-calculator.md) — Finite-mixing LO amplitude and Dalitz width interface, source requirements, efficiency choices and limits.
