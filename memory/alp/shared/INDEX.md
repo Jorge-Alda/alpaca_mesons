@@ -52,3 +52,4 @@ provenance: assumption
 - [alp-qcd-topological-cp.md](alp-qcd-topological-cp.md) — Anomalous shifts and CP selection rules for multi-ALP QCD gluonic terms.
 - [optimized-decay-integrand-guidelines.md](optimized-decay-integrand-guidelines.md) — reusable derivation, implementation and verification guidance for decay integrands.
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — integration methods, trade-offs and current numerical evidence across decay channels.
+- [alp-lo-invariant-mass-calculator.md](alp-lo-invariant-mass-calculator.md) — Executable finite-mixing LO spectrum from derivative lists of invariant dressed sources.
