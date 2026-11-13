@@ -179,3 +179,5 @@ The exact quadratic blocks depend on the sources through $C_{A,0}$, $S_0=m_q$, $
 .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_lo_mass_sum_rules.py
 .venv/bin/python scripts/derive_alp_lo_mass_sum_rules.py
 ```
+
+The independent exact-rational comparison in [`scripts/check_alp_arrow_mass_sum_rules.py`](../../../scripts/check_alp_arrow_mass_sum_rules.py) checks both identities against the eigenvalues of the canonical arrow matrix and against `solve_alp_meson_spectrum.py`. The illustrative input uses an SU(3)-symmetric spurion, rational GeV$^2$ mass entries and nonzero singlet-ALP mixing (including nonzero $S_2$); this restriction permits closed-form exact roots and is not a physical specialization of the sum rules. All four trace and product comparisons agree exactly. Run it with `.venv/bin/python scripts/check_alp_arrow_mass_sum_rules.py` and `.venv/bin/python -m unittest discover -s scripts -p test_check_alp_arrow_mass_sum_rules.py`.

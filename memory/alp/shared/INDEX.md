@@ -23,6 +23,7 @@ provenance: assumption
 - [alp-lo-arrow-matrix-spectrum.md](alp-lo-arrow-matrix-spectrum.md) — Poles as eigenvalues of the canonical mass matrix in arrow form, and their interlacing with the unmixed meson masses.
 - [alp-lo-isolated-meson-pole.md](alp-lo-isolated-meson-pole.md) — Two-level closed form for a meson pole far from the other unmixed meson masses, with an exact error bound, for any $f_\pi/f_a$.
 - [alp-lo-isolated-alp-pole.md](alp-lo-isolated-alp-pole.md) — Closed form and fixed-point iteration for the ALP pole far from the unmixed meson masses, with convergence conditions and error bounds.
+- [alp-lo-finite-mixing-limits.md](alp-lo-finite-mixing-limits.md) — Validity conditions and limits of isolated LO poles, level repulsion, decoupling and weak-mixing behavior.
 - [alp-lo-meson-mass-shift-second-order.md](alp-lo-meson-mass-shift-second-order.md) — $O(f_\pi^2/f_a^2)$ shift of a neutral-meson pole in terms of $c_q^{AP}$, $c_{GA}$, with its invariance under constant axial redefinitions.
 - [alp-lo-weak-mixing-expansion.md](alp-lo-weak-mixing-expansion.md) — Expansion of the exact LO poles and pole vectors in $f_\pi/f_a$: first order of Alda:2026nrd, derived higher orders and residual exponents.
 - [alp-lo-stability-conditions.md](alp-lo-stability-conditions.md) — Positivity of $K$ ($\det K=1$) and of $M^2$ at LO, and the lower bound on the bare ALP mass.

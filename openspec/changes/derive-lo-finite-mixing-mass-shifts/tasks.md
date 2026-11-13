@@ -17,10 +17,10 @@ Scripts are written by the `coder` agent. Each memory record has the front matte
 
 ## 3. Checks
 
-- [ ] 3.1 Script: the exact trace and product sum rules of 1.1 checked against the arrow-matrix eigenvalues and against `solve_alp_meson_spectrum.py` with exact rationals.
+- [x] 3.1 Script: the exact trace and product sum rules of 1.1 checked against the arrow-matrix eigenvalues and against `solve_alp_meson_spectrum.py` with exact rationals.
 
 ## 4. Limits and closing
 
-- [ ] 4.1 Record: validity domain of the isolated approximations (the spacing condition), level-repulsion sign rule, exact two-level formula for near degeneracy (link the existing record), the $f_a\to\infty$ limit returning the unmixed masses, and the regime statement: small mixing keeps no shift at order $f_\pi/f_a$, large mixing uses the exact poles.
-- [ ] 4.2 Update every affected `INDEX.md`; run all new scripts and tests together; check links and front matter.
-- [ ] 4.3 Add a note to alp-sjp.6 listing what is done (LO analytical pole equations and their approximations) and what remains (decay constants, residues, mixing observables, other multiplets, NLO/loops, uncertainties); keep it open. Report changed files and a proposed commit message.
+- [x] 4.1 Record: validity domain of the isolated approximations (the spacing condition), level-repulsion sign rule, exact two-level formula for near degeneracy (link the existing record), the $f_a\to\infty$ limit returning the unmixed masses, and the regime statement: small mixing keeps no shift at order $f_\pi/f_a$, large mixing uses the exact poles.
+- [x] 4.2 Update every affected `INDEX.md`; run all new scripts and tests together; check links and front matter.
+- [x] 4.3 Add a note to alp-sjp.6 listing what is done (LO analytical pole equations and their approximations) and what remains (decay constants, residues, mixing observables, other multiplets, NLO/loops, uncertainties); keep it open. Report changed files and a proposed commit message.
