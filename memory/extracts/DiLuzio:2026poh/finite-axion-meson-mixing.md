@@ -2,7 +2,7 @@
 title: Finite axion–meson mixing in a dynamical PQ model
 status: literature
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-13
 bibtex_keys: [DiLuzio:2026poh]
 provenance: literature
 ---
@@ -11,10 +11,10 @@ provenance: literature
 
 ## Chiral-covariant setup
 
-The paper treats a dynamical complex Peccei–Quinn (PQ) field $arphi$ whose phase enters the quark-mass matrix,
+The paper treats a dynamical complex Peccei–Quinn (PQ) field $\varphi$ whose phase enters the quark-mass matrix,
 
 $$
-M_q(arphi)=\operatorname{diag}\!\left[m_u(\sqrt{2}\varphi)^{n_u},\ m_d(\sqrt{2}\varphi)^{n_d},\ m_s(\sqrt{2}\varphi)^{n_s}\right].
+M_q(\varphi)=\operatorname{diag}\!\left[m_u(\sqrt{2}\varphi)^{n_u},\ m_d(\sqrt{2}\varphi)^{n_d},\ m_s(\sqrt{2}\varphi)^{n_s}\right].
 $$
 
 This is a spurion under $U(3)_L\otimes U(3)_R$, $M_q\to LM_qR^\dagger$, while the Goldstone matrix transforms as $U\to LUR^\dagger$. Thus the leading mass term $\operatorname{tr}(M_q U^\dagger)+\mathrm{h.c.}$ remains chiral covariant with the axion phase kept inside the spurion [@DiLuzio:2026poh, Eqs. (6)–(7)]. The anomaly term is kept as a function of the singlet phase and $\theta$ [@DiLuzio:2026poh, Eq. (6)].
