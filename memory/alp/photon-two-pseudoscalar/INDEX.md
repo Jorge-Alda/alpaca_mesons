@@ -2,7 +2,7 @@
 title: ALP photon and two-pseudoscalar memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-10-22
+updated: 2026-11-14
 bibtex_keys: []
 provenance: assumption
 ---
@@ -17,3 +17,4 @@ provenance: assumption
 - [photon-pp-gauss-legendre-profile.md](photon-pp-gauss-legendre-profile.md) — production Gauss–Legendre channel profiles.
 - [photon-pp-gauss-legendre-quadrature.md](photon-pp-gauss-legendre-quadrature.md) — production quadrature and adaptive-reference comparison.
 - [photon-pp-scalar-optimization.md](photon-pp-scalar-optimization.md) — completed scalar evaluation optimization and validation.
+- [alp-lo-finite-mixing-wzw-pp-amplitude.md](alp-lo-finite-mixing-wzw-pp-amplitude.md) — pole-projected LO WZW amplitude for $a\to\gamma PP$ at finite mixing, with pole-projected daughters.
