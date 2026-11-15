@@ -57,3 +57,4 @@ provenance: assumption
 - [alp-loop-function-b4.md](alp-loop-function-b4.md) — definition, symmetry, reductions to the literature functions $B_3$ and $B_1$, closed forms, limits, and imaginary part of the two-virtual-photon triangle loop function $B_4$.
 - [alp-high-energy-tff-assembly.md](alp-high-energy-tff-assembly.md) — decomposition of the ALP two-photon form factor into the light-quark part and the charm and bottom contributions, with the pieces supplied for each virtuality regime and their status.
 - [alp-heavy-gluon-threshold-matching.md](alp-heavy-gluon-threshold-matching.md) — leading heavy-flavor matching of the gluonic source and its domain of validity.
+- [alp-symmetric-high-energy-tff.md](alp-symmetric-high-energy-tff.md) — nearly symmetric ALP form factor at LO chiral order, with direct triangles and threshold limitations.

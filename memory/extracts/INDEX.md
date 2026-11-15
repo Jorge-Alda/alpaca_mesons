@@ -104,3 +104,5 @@ ALP-photon loop functions for fermion loops with one real and one virtual photon
 
 - [Bauer:2021mvw](Bauer:2021mvw/INDEX.md) — $B_1$, $B_3$ loop functions, effective ALP-photon coupling and off-shell ALP-photon vertex with one real photon.
 - [Alda:2024cxn](Alda:2024cxn/INDEX.md) — $B_3$, $A_3$ with one virtual photon, derivative and pseudoscalar bases, and sign comparison with Bauer:2021mvw.
+- [Bass:2002mv](Bass:2002mv/INDEX.md) — heavy singlet axial-current matching onto light currents at $O(\alpha_s^2)$ and its neutral-current application.
+- [Grozin:2012ic](Grozin:2012ic/INDEX.md) — simultaneous bottom-charm decoupling and axial-current matching orders.

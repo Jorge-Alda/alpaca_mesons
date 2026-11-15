@@ -45,3 +45,23 @@ $$
 This is generally nonzero at the same power in $1/|q^2|$ as the local axial-current term. It is a hard remainder in the stated cutoff calculation, not an $\overline{\rm MS}$ matching coefficient: both the finite constant and the separation depend on the prescription. Adding a complete free triangle and its own perturbative axial-current matrix element would count the latter twice; conversely, adding only the axial-current term omits this remainder. The comparison is limited to $m_a^2\ll m_h^2$ and does not by itself supply the corresponding light-flavor coefficient or the matching of the ChPT current to the renormalized QCD current.
 
 For the symmetric local expansion in massless QCD, Ludtke:2020moa gives the axial current as the only dimension-three operator through $O(\alpha_s)$, with Wilson coefficient $1-\alpha_s/\pi$; see the [extract](../../extracts/Ludtke:2020moa/ope-nlo-wilson-coefficient.md). This statement does not calculate the mass-dependent source remainder above, nor does it determine a finite singlet-current threshold matching constant. At strictly leading order in $\alpha_s$, tree-level current matching is continuous; corrections and the renormalized identification of the low-energy matrix element remain to be specified. Thus the printed conditional sum is not promoted to a complete source-linear result.
+
+The script also derives the same remainder without expanding in $m_a^2/m_h^2$, for $0\le m_a^2<4m_h^2$. In the triangle Feynman parameters put $z$ on the line between the two photon vertices and $x$ on the remaining edge. The denominator is
+$$
+m_h^2-x(1-x)(1-z)^2m_a^2+z(1-z)|q^2|.
+$$
+Split the $z$ integral at $\delta$ with $m_h^2/|q^2|\ll\delta\ll1$. The small-$z$ integral supplies $\log[|q^2|\delta/(m_h^2-x(1-x)m_a^2)]/|q^2|$; the complementary integral supplies $-\log\delta/|q^2|$. Their sum reproduces the full leading logarithm. Subtracting the cutoff axial-current matrix element, whose integrand is $[\log(\Lambda^2/(m_h^2-x(1-x)m_a^2))-1]/|q^2|$, gives the same $[\log(|q^2|/\Lambda^2)+1]/|q^2|$ for every $x$. Thus the displayed remainder holds for finite $m_a$ below threshold at leading $1/|q^2|$, within the same cutoff prescription. The result does not determine how a nonperturbative light-quark matrix element should be matched in $\overline{\rm MS}$.
+
+## One-loop $\overline{\rm MS}$ subtraction
+
+For the free-quark comparison, use dimensional regularization in $d=4-2\epsilon$ and subtract the $\overline{\rm MS}$ pole of the scalar two-point integral. With $D=m_h^2-x(1-x)m_a^2>0$, the dimensionless factor after extracting $i/(16\pi^2)$ is
+$$
+e^{\gamma_E\epsilon}\Gamma(\epsilon)\left(\frac{\mu^2}{D}\right)^\epsilon
+=\frac1\epsilon+\log\frac{\mu^2}{D}+O(\epsilon).
+$$
+The script obtains this expansion and subtracts the finite two-point contribution from the triangle's leading hard logarithm. In the one-loop current prescription that subtracts this pole without an additional finite source-current counterterm, the resulting hard remainder is
+$$
+-\frac{N_cQ_h^2m_h^2(c_{hh}^A-c_{hh}^P)}{\pi^2|q^2|f_a}
+\log\frac{|q^2|}{\mu^2}.
+$$
+This reproduces the cutoff result under $\Lambda^2=e\mu^2$ at this order. The comparison uses anticommuting $\gamma_5$ in the two-point graph, where two $\gamma_5$ matrices occur, and the triangle normalization already fixed by the Pauli--Villars calculation in the [triangle record](alp-heavy-quark-triangle.md). It is a perturbative one-loop matching calculation, not a nonperturbative determination of the $\overline{\rm MS}$ current or of finite source-current contact terms. Changing the finite source-current prescription shifts the current term and the hard remainder oppositely. The singlet finite renormalization and QCD corrections are beyond this free-quark calculation. As with the cutoff result, this expression is obtained at leading $1/|q^2|$ for $m_a^2<4m_h^2$ and is not by itself a charm-threshold hadronic calculation.

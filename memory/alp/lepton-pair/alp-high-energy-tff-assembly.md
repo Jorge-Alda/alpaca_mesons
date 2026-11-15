@@ -35,8 +35,7 @@ diagram and appears only in $F_h$. The derivative-free axial matrix element of $
 
 **Where additivity is not complete.**
 1. The heavy flavors with a pseudoscalar coupling change the effective ALP–gluon coupling seen by the three-flavor theory. The three-flavor sources $\bm{\mathcal C}$ and $c_{GA}$ of the
-   [axial-current record](alp-axial-current-matrix-element.md) must then be evaluated with that effective gluonic coupling, not with the gluonic coupling of the full theory. The relation between the two
-   is not derived in these records.
+   [axial-current record](alp-axial-current-matrix-element.md) must then be evaluated with that effective gluonic coupling, not with the gluonic coupling of the full theory. The leading soft-momentum relation is derived in the [heavy-gluon threshold record](alp-heavy-gluon-threshold-matching.md); it does not apply near the charm threshold.
 2. Corrections of relative order $\alpha_s$ to $F_h$ and mixed diagrams with gluons connecting the heavy-quark loop to the light sector are not included.
 3. For $m_a>2m_c$ the free-charm triangle has a $c\bar c$ cut and no resonances; the treatment of charm in the charmonium region is an open decision.
 
@@ -47,15 +46,15 @@ diagram and appears only in $F_h$. The derivative-free axial matrix element of $
 | Low virtualities | $F^{(u,d,s)}$, hadronic | tree, isovector, mixed-vector and channel-input records of [INDEX.md](INDEX.md) | under construction; the vector-fit calibration is not converged |
 | Low virtualities | $F_h$ | triangle record | derived: $F_h\to\frac{2N_cQ_h^2}{4\pi^2f_a}c_{hh}^P$ plus corrections suppressed by $1/m_h^2$, with the first correction $-\frac{2N_cQ_h^2}{4\pi^2f_a}(c_{hh}^A-c_{hh}^P)\frac{m_a^2+q_1^2+q_2^2}{12m_h^2}$ |
 | High virtualities | operator contribution of $u,d,s$ with its matrix element, singlet evolution, and $\alpha_s$ coefficient | [axial-current record](alp-axial-current-matrix-element.md), [singlet evolution record](alp-singlet-axial-current-evolution.md) | derived for nearly symmetric virtualities, at the order and with the named inputs stated there |
-| High virtualities | term independent of $q^2$ from the derivative couplings of $u,d,s$ | massless limit of the triangle (per massless quark, $\frac{2N_cQ_q^2}{4\pi^2f_a}c_{qq}^A$), anchored to the repository's $C_{a\gamma\gamma}$ | the per-quark limit is derived; its assembly with $c_\gamma$ and the operator contribution, and the Bose and Ward checks, are task 3.1 and are not done |
+| High virtualities | term independent of $q^2$ from the derivative couplings of $u,d,s$ | massless limit of the triangle (per massless quark, $\frac{2N_cQ_q^2}{4\pi^2f_a}c_{qq}^A$), anchored to the repository's $C_{a\gamma\gamma}$ | the per-quark limit is derived; assembled at LO chiral order with $c_\gamma$, the operator contribution, and Bose and Ward checks in the [nearly symmetric record](alp-symmetric-high-energy-tff.md); the stated threshold and scheme inputs remain |
 | High virtualities | $F_h$ | triangle record | derived: $F_h\to\frac{2N_cQ_h^2}{4\pi^2f_a}c_{hh}^A$ with corrections of relative order $\frac{m_h^2}{|q^2|}\ln\frac{|q^2|}{m_h^2}$ (equal virtualities) or $\frac{m_h^2}{|q^2|}\ln^2\frac{|q^2|}{m_h^2}$ (one real photon) |
 | One virtuality large, the other fixed | $F^{(u,d,s)}$ | light-cone expansion | not derived (task 3.2) |
 | Between the hadronic and hard regimes | join of $F^{(u,d,s)}$ | matching (tasks 4.1 to 4.3) | not done |
 
-No expression for the total $F_{a\gamma^*\gamma^*}$ in the hard region is written here, because the part of $F^{(u,d,s)}$ listed as task 3.1 is not yet assembled.
+The [nearly symmetric record](alp-symmetric-high-energy-tff.md) assembles this limit at the stated orders, with explicit source matching assumptions and named inputs near the charm threshold.
 
 # Invariance
 
 Under an ALP-dependent axial rotation, $c_q^A\to c_q^A+\kappa$ shifts the explicit couplings $c_\gamma$ and $c_{hh}^A,c_{hh}^P$ together; the combinations $c_{hh}^A-c_{hh}^P$ and
 $c_\gamma+2N_c\langle Q^2c_q^A\rangle+2N_c\sum_hQ_h^2c_{hh}^A$ are unchanged. For the heavy flavors this is verified in the script of the triangle record; for the light flavors it is the
-statement of the [LSZ record](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md). The total form factor must be invariant, which is the check to be applied when 3.1 is assembled.
+statement of the [LSZ record](../../rcht/odd-parity/odd-alp-source-lsz-assembly.md). The explicit light and heavy shifts are checked in the script paired with the nearly symmetric record.
