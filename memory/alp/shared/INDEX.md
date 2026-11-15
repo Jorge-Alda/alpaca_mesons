@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-13
+updated: 2026-11-14
 bibtex_keys: []
 provenance: assumption
 ---
@@ -54,3 +54,4 @@ provenance: assumption
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — integration methods, trade-offs and current numerical evidence across decay channels.
 - [alp-lo-invariant-mass-calculator.md](alp-lo-invariant-mass-calculator.md) — Executable finite-mixing LO spectrum from derivative lists of invariant dressed sources.
 - [alp-murayama-phase-mass-sources.md](alp-murayama-phase-mass-sources.md) — Taylor coefficients of the scalar and pseudoscalar quark-mass sources when the ALP enters as a Peccei-Quinn phase of the quark masses, with first-order matching to $c_q^P$.
+- [alp-external-meson-leg-sign-convention.md](alp-external-meson-leg-sign-convention.md) — sign of external neutral-meson legs per branch, the finite leg formula, and the value used at $t_j=0$ instead of the 0/0 limit.
