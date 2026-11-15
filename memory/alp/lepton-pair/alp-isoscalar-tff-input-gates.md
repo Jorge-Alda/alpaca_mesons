@@ -27,6 +27,10 @@ The retained tree expression is a low-energy approximation. Expanding its stable
 
 # Acceptance and next step
 
-Stage 5 remains open. A subsequent [executable hard-current derivation](alp-hard-current-ope.md) now fixes the leading local parity-odd Wilson coefficient and nearly symmetric Euclidean scalar projection, while retaining explicit ALP axial-current matrix elements. The next step is their renormalized source-to-current matching, the other hard limits and low-energy pole/continuum separation. Only after these inputs exist should a matching scale be selected and varied, or effective-pole parameters fitted. Check the resulting source-specific asymptotics in the relevant virtuality limits while preserving the independently fixed low-energy normalization and discontinuities within the declared uncertainty.
+## Status on 2026-11-15
+
+The [symmetric hard limit](alp-symmetric-high-energy-tff.md) and [light-cone limits](alp-light-cone-high-energy-tff.md) now have source-resolved expressions at the stated leading orders. The singly virtual shape remains an assumption. The [finite-mass propagator correction](alp-finite-mass-hard-tff.md) does not determine the complete higher-twist contribution. The [spectral matching construction](alp-spectral-high-energy-matching.md) and [parametric variation](alp-matching-scale-variation.md) are conditional; physical spectral overlap and fit-calibrated matching remain unresolved. The analytical results do not validate the nonconverged vector fit. Higher-order singlet and charm effects remain tracked by `alp-6os.2.2`.
+
+The higher-isoscalar and physical matching gates remain open. The next step is to assemble the source-resolved low-energy spectral inputs and establish their overlap subtraction before numerical matching or effective-pole calibration.
 
 The feasible independent work in the meantime is the formal source/current bookkeeping, three-pion unitarity normalization, and virtual-current kaon amplitude derivation in stages 1, 3, and 4. Their symbolic parts do not require invented numerical three-pion or kaon grids. Completion of those parts does not close the missing short-distance inputs.

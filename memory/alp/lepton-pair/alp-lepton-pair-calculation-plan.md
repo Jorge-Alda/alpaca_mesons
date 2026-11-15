@@ -124,6 +124,10 @@ controlled dispersive prediction.
 
 ## Ordered calculation
 
+## Progress recorded on 2026-11-15
+
+The [symmetric](alp-symmetric-high-energy-tff.md) and [light-cone](alp-light-cone-high-energy-tff.md) limits and a [conditional spectral matching prescription](alp-spectral-high-energy-matching.md) are derived at the orders stated in those records. The [finite-mass propagator correction](alp-finite-mass-hard-tff.md) does not supply the complete higher-twist contribution. The matching-scale variation is [parametric](alp-matching-scale-variation.md). The singly virtual distribution-amplitude shape, physical spectral overlap, and fit-calibrated matching remain open; `alp-6os.2.2` tracks higher-order singlet and charm effects. Next complete the low-energy spectral assembly and overlap subtraction under `alp-6os.1`, then develop the TFF library and lepton loop without treating the present nonconverged vector fit as accepted.
+
 ## Progress recorded on 2026-10-24
 
 The tree-level, source-resolved neutral-vector TFF in the no-mixing basis is

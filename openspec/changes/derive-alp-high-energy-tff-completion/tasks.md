@@ -26,5 +26,5 @@
 
 ## 5. Records and closure
 
-- [ ] 5.1 Write the paired memory records for tasks 2–4 under `memory/alp/lepton-pair/` with required front matter, and update the containing, parent, and `memory/README.md` indexes; verify links resolve.
-- [ ] 5.2 Update the status in `alp-isoscalar-tff-input-gates.md` and `alp-lepton-pair-calculation-plan.md`; list unresolved inputs (singly virtual shape, fit-dependent matching) as blockers on `alp-6os.1`; verify all scripts run and `--test` passes.
+- [x] 5.1 Write the paired memory records for tasks 2–4 under `memory/alp/lepton-pair/` with required front matter, and update the containing, parent, and `memory/README.md` indexes; verify links resolve.
+- [x] 5.2 Update the status in `alp-isoscalar-tff-input-gates.md` and `alp-lepton-pair-calculation-plan.md`; list unresolved inputs (singly virtual shape, fit-dependent matching) as blockers on `alp-6os.1`; verify all scripts run and `--test` passes.
