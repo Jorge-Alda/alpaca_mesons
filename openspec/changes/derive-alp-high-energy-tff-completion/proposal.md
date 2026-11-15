@@ -10,7 +10,7 @@ The doubly virtual ALP transition form factor (TFF) needed for $a\to\ell^+\ell^-
 - Derive the short-distance behavior in three regimes: both virtualities large with fixed ratio, one virtuality large with the other fixed (light-cone expansion), and the nearly symmetric limit already obtained; state which regime each result covers.
 - Derive finite-$m_a$ corrections of relative order $m_a^2/Q^2$ and the heavy-quark threshold treatment ($c$, $b$) for the supported ALP mass range $2m_e<m_a<2m_\tau$.
 - Derive the ALP-specific asymptotic coefficient without importing the $\eta$ or $\eta'$ value, and record what it depends on (source matrices, decay-constant-like matrix elements, anomaly/singlet treatment).
-- Derive a matching prescription joining the asymptotic form to the low-energy representation (poles plus cuts) at a declared matching scale, with no double counting of strength already in the low-energy form, and compare alternative completions (effective-pole and interpolating forms) to quantify model dependence.
+- Derive a subtracted spectral matching prescription joining the ALP asymptotic form to the low-energy representation at a declared matching scale, with explicit treatment of overlap and added high-energy strength; compare analytic effective-pole completions to quantify model dependence.
 - Provide executable SymPy derivations under `scripts/` and paired indexed memory records. Numerical matching to the vector-fit-calibrated low-energy form is out of scope here and remains conditional on `alp-6os.1`.
 
 ## Capabilities

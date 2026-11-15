@@ -82,6 +82,11 @@ the weights and amplitudes for each source basis element:
   expansion. Join this tail to the low-energy representation at a declared
   matching scale, vary that scale, and retain finite-$m_a$ corrections in the
   loop kernel when needed. Do not import the $\eta$ or $\eta'$ coefficient.
+  Following Messerli:2025rnv, use a subtracted high-energy spectral contribution
+  with the ALP coefficient. The next step is to test its normalization,
+  fixed-ratio behavior and separation from the low-energy benchmark. Physical
+  spectral overlap remains conditional until its input or subtraction is known;
+  a sharp Euclidean join is a diagnostic without a physical-cut prescription.
 - **Additional open channels:** include further hadronic cuts when their
   source amplitudes are available and their thresholds are open. This is
   needed for the full imaginary part and may invalidate a lower bound based

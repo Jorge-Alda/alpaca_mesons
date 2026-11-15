@@ -21,8 +21,8 @@
 ## 4. Matching to the low-energy form
 
 - [x] 4.1 Define the low-energy benchmark forms for matching tests (tree-level poles from `alp-doubly-virtual-tff.md` and a symbolic dispersive form) independent of the vector fit; verify each is labelled conditional and linked to its record.
-- [ ] 4.2 Derive the matching prescriptions (sharp join, interpolation, effective pole) preserving $F(0,0)$ and discontinuities and avoiding double counting; verify with a script that tests normalization, continuity, and absence of double-counted strength.
-- [ ] 4.3 Quantify the matching-scale variation and the spread among alternative completions on the benchmark forms; verify the variations are reported separately from hadronic and scheme uncertainty.
+- [x] 4.2 Derive a subtracted asymptotic spectral contribution with an ALP-specific coefficient and effective-pole completion following Messerli:2025rnv; test normalization, photon exchange, spacelike continuity, fixed-ratio limits and disjoint-support overlap on explicit benchmarks. Identify added high-energy discontinuities and state the conditions or subtraction needed to preserve assigned low-energy discontinuities and count strength once. Treat sharp joins and interpolations as Euclidean diagnostics unless their analytic continuation is established; do not claim physical overlap is resolved without its input.
+- [ ] 4.3 Quantify the matching-scale variation and spread among analytic completions on the benchmark forms; identify any Euclidean diagnostics separately and report variations separately from hadronic and scheme uncertainty.
 
 ## 5. Records and closure
 

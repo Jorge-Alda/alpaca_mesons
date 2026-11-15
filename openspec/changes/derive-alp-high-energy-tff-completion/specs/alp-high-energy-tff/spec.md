@@ -35,7 +35,15 @@ The derivation MUST give the leading corrections in $m_a^2/Q^2$ or state that th
 - **THEN** the finite-$m_a$ terms are included or their omission is quantified
 
 ### Requirement: Match to the low-energy form without double counting
-A matching prescription MUST join the asymptotic form to the low-energy representation at a declared scale, preserve the low-energy normalization and discontinuities, and count spectral strength once.
+A matching prescription MUST join the asymptotic form to the low-energy representation at a declared scale, preserve the low-energy normalization and assigned low-energy discontinuities, identify added high-energy discontinuities, and count spectral strength once.
+
+#### Scenario: Physical overlap is unknown
+- **WHEN** the overlap between low- and high-energy strength is not established
+- **THEN** state the required subtraction or conditional separation without claiming the overlap is resolved
+
+#### Scenario: Euclidean diagnostic is used
+- **WHEN** a sharp join or interpolation has no established analytic continuation
+- **THEN** do not present it as an analytic form factor or a test of physical discontinuities
 
 #### Scenario: Matching-scale variation
 - **WHEN** the matching scale is varied over the declared range
