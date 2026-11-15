@@ -49,3 +49,4 @@ provenance: assumption
 - [alp-lepton-pair-normalization.md](alp-lepton-pair-normalization.md) — executable spin, phase-space, width-ratio and universal two-real-photon-cut normalization for the ALP loop.
 - [alp-unnormalized-lepton-loop.md](alp-unnormalized-lepton-loop.md) — executed source-linear unnormalized loop, coherent local-term width, two-real-photon discontinuity and pointlike ultraviolet subtraction.
 - [alp-tff-real-photon-normalization.md](alp-tff-real-photon-normalization.md) — initial zero-virtuality normalization constraint, conditional effective-pole residue, and distinction from the dilepton cut bound.
+- [alp-high-energy-tff-conventions.md](alp-high-energy-tff-conventions.md) — shared metric, epsilon, tensor, source, and momentum-label conventions for the high-energy TFF completion.

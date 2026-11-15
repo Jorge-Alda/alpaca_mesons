@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-10-29
+updated: 2026-11-15
 bibtex_keys: []
 provenance: literature
 ---
@@ -84,3 +84,18 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Pelaez:2019eqa](Pelaez:2019eqa/INDEX.md) — full Madrid isovector P-wave parameterization with 2024 corrected coefficients for KT phase inputs.
 - [Colangelo:2018mtw](Colangelo:2018mtw/INDEX.md) — updated Roy-equation P-wave phase input fitted to $e^+e^-\to\pi^+\pi^-$ data and its uncertainty/continuation treatment.
 - [DiLuzio:2026poh](DiLuzio:2026poh/INDEX.md) — CP-odd axion–meson mass matrix from a dynamical Peccei–Quinn field and its quark-mass spurion.
+
+QCD short-distance behavior of pseudoscalar transition form factors (task 1.1 of the high-energy ALP TFF change):
+
+- [Melnikov:2003xd](Melnikov:2003xd/INDEX.md) — leading OPE of two electromagnetic currents into the axial current, flavor weights, VVA coefficients $w_L=2w_T=-2/q^2$.
+- [Ludtke:2020moa](Ludtke:2020moa/INDEX.md) — NLO coefficient $1-\alpha_s/\pi$ of that OPE, scale choice, pole matching to the OPE constraint.
+- [Vainshtein:2002nv](Vainshtein:2002nv/INDEX.md) — non-renormalization of the VVA triangle with a soft photon.
+- [Jegerlehner:2005fs](Jegerlehner:2005fs/INDEX.md) — two-loop VVA and the finite constant $Z_5$ of the singlet axial current.
+- [Hoferichter:2020lap](Hoferichter:2020lap/INDEX.md) — leading-twist light-cone pseudoscalar TFF with $\epsilon^{0123}=+1$ conventions and the map to the project hard-current formula.
+- [Agaev:2014wna](Agaev:2014wna/INDEX.md) — $\eta,\eta'$ TFF at NLO (quark) and LO (gluon, charm), singlet evolution and finite renormalization.
+- [Larin:1993tq](Larin:1993tq/INDEX.md) — $\overline{\rm MS}$ renormalization, finite constant $Z_5$ and three-loop anomalous dimension of the singlet axial current.
+- [Feldmann:1998vh](Feldmann:1998vh/INDEX.md) — quark-flavor-basis mixing scheme for $\eta$-$\eta'$ decay constants.
+- [Chetyrkin:1997un](Chetyrkin:1997un/INDEX.md) — decoupling constant of $\alpha_s$ through three loops.
+- [Chetyrkin:1997sg](Chetyrkin:1997sg/INDEX.md) — flavor-threshold matching of $\alpha_s$ and four-loop running.
+- [Chetyrkin:2000yt](Chetyrkin:2000yt/INDEX.md) — RunDec running and decoupling routines.
+- [Larin:1994va](Larin:1994va/INDEX.md) — heavy-quark non-decoupling from the singlet axial part and $\alpha_s$ decoupling.
