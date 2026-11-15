@@ -2,7 +2,7 @@
 title: ParticleDataGroup:2024cfk literature extract index
 status: literature
 created: 2026-10-01
-updated: 2026-10-14
+updated: 2026-11-15
 bibtex_keys: [ParticleDataGroup:2024cfk]
 provenance: literature
 ---
@@ -20,3 +20,4 @@ Source-specific literature extracts for BibTeX key `ParticleDataGroup:2024cfk`.
 - [vector-sector-calibration-inputs.md](vector-sector-calibration-inputs.md) — checksum-pinned 2024 masses and direct electronic widths for stage-3 vector calibration.
 - [vector-to-two-pseudoscalar-inputs.md](vector-to-two-pseudoscalar-inputs.md) — $K^*$ partial widths, correlated $\phi\to K\bar K$ fractions, and the isospin-violating $\phi,\omega\to\pi^+\pi^-$ summaries.
 - [odd-parity-low-energy-measurements.md](odd-parity-low-energy-measurements.md) — source pages, values, shared-width policy, fit-overlap caveats, and deferred eta-prime/rho channel for the bounded odd-action snapshot.
+- [quark-and-tau-masses.md](quark-and-tau-masses.md) — PDG 2024 $m_c(m_c)$, $m_b(m_b)$, $m_s$(2 GeV), $m_t$, $m_\tau$, $m_e$ and $\alpha_s(M_Z)$ with listing locations.
