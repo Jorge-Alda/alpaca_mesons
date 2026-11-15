@@ -12,3 +12,4 @@ provenance: literature
 Source-specific literature extracts for BibTeX key `Messerli:2025rnv`.
 
 - [dilepton-loop-formalism.md](dilepton-loop-formalism.md) — reduced two-photon loop amplitude, unnormalized TFF convention, width ratio, and universal two-real-photon cut.
+- [dispersive-tff-asymptotic-matching.md](dispersive-tff-asymptotic-matching.md) — low-energy spectral components, effective poles, and subtracted high-energy asymptotic contribution with mass corrections.

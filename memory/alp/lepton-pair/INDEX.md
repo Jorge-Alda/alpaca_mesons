@@ -62,3 +62,5 @@ provenance: assumption
 - [alp-finite-mass-hard-tff.md](alp-finite-mass-hard-tff.md) — finite-mass propagator expansion, continuation and higher-twist limitations for the hard TFF.
 - [pion-light-cone-tff-crosscheck.md](pion-light-cone-tff-crosscheck.md) — pion-source cross-check of the symmetric and singly virtual light-cone limits.
 - [alp-low-energy-matching-benchmarks.md](alp-low-energy-matching-benchmarks.md) — conditional source-resolved tree and symbolic dispersive forms for matching tests.
+- [alp-matching-analyticity-audit.md](alp-matching-analyticity-audit.md) — sharp Euclidean matching and an analytic example with additional pole strength.
+- [alp-spectral-high-energy-matching.md](alp-spectral-high-energy-matching.md) — conditional ALP spectral continuum and effective-pole normalization constraints.
