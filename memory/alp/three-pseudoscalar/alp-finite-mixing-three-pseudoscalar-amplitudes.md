@@ -2,7 +2,7 @@
 title: Pole projection for three pseudoscalars
 status: derived
 created: 2026-11-12
-updated: 2026-11-13
+updated: 2026-11-15
 bibtex_keys: [Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -19,9 +19,9 @@ N(s)=1+2\,\frac{f_\pi^2}{f_a^2}\,\big\langle\mathbb M_{s}^{-1}(\mathcal C)^2\big
 $$
 the same object as in the [operator-inverse record](../shared/alp-lo-finite-mixing-operator-inverse.md), which writes the prefactor as $2(f_\pi/f_a)^2$. Alda's first-order coefficients at the parent pole are $\widehat c_q^A=-\mathbb M_{m_a^2}^{-1}(\mathcal C)$ and $\widehat c_q^P=-c_q^{AP}-\mathbb M_{m_a^2}^{-1}(\mathcal C)$, as in the [generic-generator expansion](alp-three-meson-generic-generators.md).
 
-- **Starting coordinates.** The derivative-source-free CCWZ coordinates of the [finite-mixing three-pion record](alp-finite-mixing-three-pion-amplitudes.md), with $K=\mathbf 1$, the quadratic matrices of its section 2 and the vertices $\mathcal V^{(3)}$ and $\mathcal V^{(4)}=\mathcal V^{(4)}_{\rm kin}+\mathcal V^{(4)}_{\chi_+}$ of its section 3, written for arbitrary field directions (a meson matrix $\lambda_Iv_I$ and an ALP component) and for the CCWZ blocks $\chi_\pm=u^\dagger\chi u^\dagger\pm u\chi^\dagger u$, $\chi=2B_0M$, of the [arbitrary-order CCWZ record](../shared/alp-ccwz-arbitrary-order-expansion.md). With $M=S+iP$, at zero meson field $\chi_+=4B_0S$ and $\chi_-=4iB_0P$, so in any coordinates
+- **Starting coordinates.** Begin with generic unprimed source functions $C_V(x)$, $C_A(x)$, $M(x)=S(x)+iP(x)$, and $\Theta(x)$, with Taylor derivatives denoted by subscripts. Transport them to derivative-source-free coordinates using $\partial_xW_R=i(C_V+C_A)W_R$, $\partial_xW_L=i(C_V-C_A)W_L$, $W_{R,L}(0)=\mathbf1$. The invariant sources are $\widehat M=W_R^\dagger M W_L$ and $\widehat\Theta=\Theta+\int_0^x\operatorname{tr}C_A(x')\,dx'$, with the singlet normalization of the [dressed topological record](../shared/alp-dressed-topological-invariant.md); in particular $\widehat\Theta_n=\Theta_n+\operatorname{tr}C_{A,n-1}$. Thus derivative-source-free describes the transported coordinates and does not require the original unprimed $C_{V,n}$ or $C_{A,n}$ to vanish. Use the quadratic matrices and the vertices of sections 2 and 3 of the [finite-mixing three-pion record](alp-finite-mixing-three-pion-amplitudes.md), with $\chi=2B_0\widehat M$, and include the topological-potential vertices from $\widehat\Theta$ given in step 3. With $\widehat M=\widehat S+i\widehat P$, at zero meson field $\chi_+=4B_0\widehat S$ and $\chi_-=4iB_0\widehat P$:
 $$
-\partial_a^n\chi_+|_0=\frac{4B_0}{f_a^n}S_n,\qquad \partial_a^n\chi_-|_0=\frac{4iB_0}{f_a^n}P_n,
+\partial_a^n\chi_+|_0=\frac{4B_0}{f_a^n}\widehat S_n,\qquad \partial_a^n\chi_-|_0=\frac{4iB_0}{f_a^n}\widehat P_n,
 $$
 with the Taylor coefficients $S_n$, $P_n$ (derivatives with respect to $x=a/f_a$) of the [general-source record](../shared/alp-general-chiral-redefinition-invariants.md). In the derivative-source-free coordinates the currents vanish and the mass source is the dressed one, $M=\widehat M$, so there $S_n=\widehat S_n$ and $P_n=\widehat P_n$. In the Alda:2026nrd parametrization ($S_0=m_q$, $P_0=0$, $S_1=i[c_q^S,m_q]$, $P_1=\{c_q^P,m_q\}$, $C_{V,0}=c_q^V$, $C_{A,0}=c_q^A$) the [first-order record](../shared/alp-dressed-mass-first-order-invariants.md) gives
 $$
@@ -53,10 +53,10 @@ e^{i\Phi/f_\pi}=e^{ia'\mathbb M_{m_a^2}^{-1}(\mathcal C)/f_a}\,e^{i\Phi'/f_\pi}\
 $$
 This is the constant-generator axial rotation $G_R=-G_L=-\mathbb M_{m_a^2}^{-1}(\mathcal C)$ of the [chiral-generator record](../shared/alp-pole-alignment-chiral-generator.md); its linear part is the shift $P_I=P_I'+w_Ia'$ of the [single-pole record](../shared/alp-single-pole-alignment.md). From that record: the meson–ALP entry of $m_a^2K'-M^{2\prime}$ vanishes, so the parent pole is purely along $a'$, with normalization $K'_{\hat a\hat a}=N(m_a^2)$; the mixing is removed only at $s=m_a^2$, and $K'_{I\hat a}=w_I$ and $M^{2\prime}_{I\hat a}$ remain nonzero.
 
-The [source-transformation record](../shared/alp-chiral-source-transformations.md) and the exact Taylor laws of the [general-source record](../shared/alp-general-chiral-redefinition-invariants.md), applied with $g_R=e^{ix\widehat c_q^A}$, $g_L=g_R^\dagger$ (that is, $\delta=0$ and $\kappa=\widehat c_q^A$ in the general record) to the derivative-source-free sources, give the sources in the new coordinates (primed, as in the general record):
+The generic unprimed currents have already been absorbed into $\widehat M$ and $\widehat\Theta$ by transport. The [source-transformation record](../shared/alp-chiral-source-transformations.md) and the exact Taylor laws of the [general-source record](../shared/alp-general-chiral-redefinition-invariants.md), applied with $g_R=e^{ix\widehat c_q^A}$, $g_L=g_R^\dagger$ (that is, $\delta=0$ and $\kappa=\widehat c_q^A$ in the general record) to these derivative-source-free sources, give the sources in the pole-aligned coordinates (primed, as in the general record):
 $$
 C_{V,n}'=0,\qquad C_{A,0}'=\widehat c_q^A=-\mathbb M_{m_a^2}^{-1}(\mathcal C),\qquad C_{A,n}'=0\ (n\ge1),\qquad
-c_{GA}\to c_{GA}+\langle \mathbb M_{m_a^2}^{-1}(\mathcal C)\rangle,
+\Theta_1'=\widehat\Theta_1-\langle\widehat c_q^A\rangle=c_{GA}+\langle\mathbb M_{m_a^2}^{-1}(\mathcal C)\rangle,
 $$
 $$
 M_n'=\sum_{r+s+t=n}\frac{n!}{r!s!t!}\,(i\widehat c_q^A)^r\,\widehat M_t\,(i\widehat c_q^A)^s ,
@@ -90,7 +90,7 @@ The invariant inputs are $\mathcal C$, $c_q^{VS}$ and the dressed coefficients $
 
 ## Step 3: vertices in the pole-aligned coordinates
 
-The pole-aligned Lagrangian is the LO CCWZ Lagrangian with the sources of step 1. Each leg enters through its column $(\lambda_x,\xi_x)$ of step 2. The vertices below are the LO vertices evaluated on these columns. The one-ALP kinetic vertex is the one of the [generic-generator expansion](alp-three-meson-generic-generators.md) with $c_q^A\to\widehat c_q^A$. The two-ALP kinetic term is not written in the existing notes; it is checked against the joint CCWZ expansion. The mass-source terms are those of section 3 of the [three-pion record](alp-finite-mixing-three-pion-amplitudes.md) with $\partial_a^n\chi_+|_0=4B_0S_n'/f_a^n$ and $\partial_a^n\chi_-|_0=4iB_0P_n'/f_a^n$.
+The pole-aligned Lagrangian is the LO CCWZ Lagrangian with the sources of step 1. Each leg enters through its column $(\lambda_x,\xi_x)$ of step 2. The vertices below are the LO vertices evaluated on these columns. The one-ALP kinetic vertex is the one of the [generic-generator expansion](alp-three-meson-generic-generators.md) with $c_q^A\to\widehat c_q^A$. The two-ALP kinetic term is not written in the existing notes; it is checked against the joint CCWZ expansion. The mass-source terms are those of section 3 of the [three-pion record](alp-finite-mixing-three-pion-amplitudes.md) with $\partial_a^n\chi_+|_0=4B_0S_n'/f_a^n$ and $\partial_a^n\chi_-|_0=4iB_0P_n'/f_a^n$. The generic unprimed currents enter through $\widehat M_n$ and $\widehat\Theta_n$, not as residual derivative currents: the derivative-source-free transport precedes the pole alignment. In particular $\widehat\Theta_n=\Theta_n+\operatorname{tr}C_{A,n-1}$ and the pole alignment changes only its linear coefficient, $\Theta_1' = \widehat\Theta_1-\langle\widehat c_q^A\rangle$, while $\Theta_n'=\widehat\Theta_n$ for $n\ge2$.
 
 ### Quartic vertex
 
@@ -101,7 +101,9 @@ $$
 &+\xi_a\Big[\frac{1}{f_a^2}\sum_{r}\xi_r\,p\cdot p_r\,\big\langle[\widehat c_q^A,\lambda_s][\widehat c_q^A,\lambda_t]\big\rangle
 -\frac{B_0}{2f_a^2}\sum_{r}\xi_r\big\langle S_2'\{\lambda_s,\lambda_t\}\big\rangle
 +\frac{B_0f_\pi}{f_a^3}\sum_{r}\xi_s\xi_t\big\langle P_3'\,\lambda_r\big\rangle\Big]\\
-&+\frac{B_0f_\pi^2}{f_a^4}\,\xi_a\xi_i\xi_j\xi_k\big\langle S_4'\big\rangle .
+&+\frac{B_0f_\pi^2}{f_a^4}\,\xi_a\xi_i\xi_j\xi_k\big\langle S_4'\big\rangle
+ -\frac{f_\pi m_0^2\Theta_3'}{N_ff_a^3}\sum_{r\in\{i,j,k\}}\operatorname{tr}(\lambda_r)\prod_{s\in\{i,j,k\},\,s\ne r}\xi_s
+ -\frac{f_\pi^2m_0^2}{N_ff_a^4}\bigl(8\Theta_1'\Theta_3'+6(\Theta_2')^2\bigr)\xi_a\xi_i\xi_j\xi_k .
 \end{aligned}}
 $$
 In the sums, $r$ runs over $\{i,j,k\}$ and $\{s,t\}$ are the two daughters other than $r$. A daughter without ALP component has $\xi=0$, so the terms that need its ALP component drop out and no separate case is needed. The $P_3'$ term needs both other daughters to carry an ALP component.
@@ -112,7 +114,9 @@ For any three legs $x,y,z$, each taken from $\{a,i,j,k\}$ or the internal fields
 $$
 \boxed{\begin{aligned}
 \mathcal V^{(3)}_{xyz}={}&\frac{B_0}{f_a}\Big[\frac{i}{2}\Big\langle[c_q^{VS},m_q]\big(\xi_x\{\lambda_y,\lambda_z\}+\xi_y\{\lambda_z,\lambda_x\}+\xi_z\{\lambda_x,\lambda_y\}\big)\Big\rangle\\
-&\qquad+\frac{f_\pi}{f_a}\big\langle P_2'\big(\xi_x\xi_y\lambda_z+\xi_x\xi_z\lambda_y+\xi_y\xi_z\lambda_x\big)\big\rangle+\frac{f_\pi^2}{f_a^2}\,\xi_x\xi_y\xi_z\,\langle S_3'\rangle\Big].
+&\qquad+\frac{f_\pi}{f_a}\big\langle P_2'\big(\xi_x\xi_y\lambda_z+\xi_x\xi_z\lambda_y+\xi_y\xi_z\lambda_x\big)\big\rangle+\frac{f_\pi^2}{f_a^2}\,\xi_x\xi_y\xi_z\,\langle S_3'\rangle\Big]
+ -\frac{f_\pi m_0^2\Theta_2'}{N_ff_a^2}\sum_{r\in\{x,y,z\}}\operatorname{tr}(\lambda_r)\prod_{s\in\{x,y,z\},\,s\ne r}\xi_s
+ -\frac{6f_\pi^2m_0^2\Theta_1'\Theta_2'}{N_ff_a^3}\xi_x\xi_y\xi_z.
 \end{aligned}}
 $$
 The internal fields follow the table of step 2: a meson $\ell$ has $\lambda_\ell$ and $\xi_\ell=0$; the ALP has $\lambda=0$ and $\xi=1$. The vertex is symmetric in its three legs.
@@ -197,6 +201,8 @@ In route 1 the same order is $\mathcal V^{(4)}$ on the derivative-source-free co
 
 [`scripts/derive_alp_finite_mixing_three_pseudoscalars.py`](../../../scripts/derive_alp_finite_mixing_three_pseudoscalars.py) imports $\mathcal V^{(3)}$, $\mathcal V^{(4)}$, the source derivatives and the matrix inverse from [`scripts/derive_alp_finite_three_pion.py`](../../../scripts/derive_alp_finite_three_pion.py), the joint CCWZ expansion from [`scripts/derive_alp_lo_joint_vertices.py`](../../../scripts/derive_alp_lo_joint_vertices.py) and the pole solver from [`scripts/solve_alp_meson_spectrum.py`](../../../scripts/solve_alp_meson_spectrum.py). It checks the quantities used here: the congruence and the vanishing meson–ALP entry at the parent pole; the aligned source derivatives; the aligned contact and cubic vertices against the joint CCWZ expansion; the exact three-pion substitutions; the route comparison at LO poles of one source choice; the multiplicities; and the weak limits.
 
+The nonlinear singlet-potential additions in step 3 are derived by [`scripts/derive_alp_three_pseudoscalar_topological_vertices.py`](../../../scripts/derive_alp_three_pseudoscalar_topological_vertices.py) and compared with the joint CCWZ vertices by [`scripts/test_derive_alp_three_pseudoscalar_topological_vertices.py`](../../../scripts/test_derive_alp_three_pseudoscalar_topological_vertices.py). Generic unprimed $C_{V,n}$ and $C_{A,n}$ enter the amplitude through the transport recursion for $\widehat M_n$ and $\widehat\Theta_n$; the zero primed higher derivative currents are specific to the intermediate derivative-source-free representation followed by pole alignment.
+
 Limits:
 
 - Tree level, LO. No loops, widths, resonance exchange or NLO terms. External poles are stable simple poles of the LO spectrum.
@@ -209,4 +215,6 @@ Limits:
 .venv/bin/python scripts/derive_alp_finite_mixing_three_pseudoscalars.py
 .venv/bin/python scripts/derive_alp_finite_mixing_three_pseudoscalars.py --test
 .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_finite_mixing_three_pseudoscalars.py
+.venv/bin/python scripts/derive_alp_three_pseudoscalar_topological_vertices.py
+.venv/bin/python -m unittest scripts.test_derive_alp_three_pseudoscalar_topological_vertices
 ```
