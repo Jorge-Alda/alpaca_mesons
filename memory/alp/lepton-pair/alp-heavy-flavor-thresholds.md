@@ -58,17 +58,12 @@ $$
 \begin{cases}1-\dfrac{m_h^2}{|q^2|}+\dfrac{m_h^4}{|q^2|^2}-\dots,&|q^2|\gg m_h^2,\\[2mm]
 \dfrac{|q^2|}{m_h^2}-\dfrac{|q^2|^2}{m_h^4}+\dots,&|q^2|\ll m_h^2.\end{cases}
 $$
-The limit $|q^2|\ll m_h^2$ is only the free-quark expression: there the heavy quark is not a light field of the
-low-energy theory, and the local expansion in terms of $\bar h\gamma_\sigma\gamma_5h$ is not a controlled description.
-
-**Heavy-flavor axial matrix element is a named input.** The contribution of $h=c,b$ to the operator term is
-$$
-F_{a\gamma^*\gamma^*}\supset\frac{2i\,Q_h^2}{(q^2-m_h^2)\,m_a^2}\,p_\sigma\langle0|\bar h\gamma^\sigma\gamma_5h|a(p)\rangle ,
-$$
-and $\langle0|\bar h\gamma^\sigma\gamma_5h|a(p)\rangle$ is not supplied by the three-flavor chiral theory of the
-[matrix-element record](alp-axial-current-matrix-element.md), where only $u,d,s$ appear. No source read gives it. The
-ALP couplings to heavy quarks, and the term independent of $q^2$ that a derivative coupling to a heavy quark produces in the hard
-loop, belong to task 3.1.
+**Scope of this coefficient.** The factor above is the coefficient of one operator, the derivative-free axial current of the heavy flavor, in the local expansion of the current
+product. It is not the contribution of $h=c,b$ to the form factor: a comparison with the one-loop heavy-quark triangle shows that other operators of the same order
+$m_h^2/|q^2|$ contribute for $h=c,b$ (see the [triangle record](alp-heavy-quark-triangle.md)). The contribution of the flavor $h=c,b$ to $F_{a\gamma^*\gamma^*}$ is
+$F_h$ of the [triangle record](alp-heavy-quark-triangle.md), written with the loop function $B_4$ of the [function record](alp-loop-function-b4.md); it is one term of the
+decomposition of $F_{a\gamma^*\gamma^*}$ into the light-quark part and the heavy-flavor parts given in the [assembly record](alp-high-energy-tff-assembly.md). The sharp switch of the number of
+active flavors at $\mu_c$ and $\mu_b$ used below applies to the running coupling and the light-quark evolution; the heavy flavors enter the form factor through $F_h$, which varies smoothly with $m_h^2/|q^2|$.
 
 # Strong-coupling matching at the thresholds
 
@@ -125,7 +120,7 @@ nominal and has not been derived; where the top threshold and electroweak correc
 
 # Remaining named inputs
 
-1. The heavy-quark matrix elements $\langle0|\bar h\gamma^\sigma\gamma_5h|a(p)\rangle$ for $h=c,b$, and the ALP couplings to $c$ and $b$.
+1. The ALP couplings $c_{cc}^A$, $c_{cc}^P$, $c_{bb}^A$, $c_{bb}^P$ (inputs of the [heavy-quark triangle record](alp-heavy-quark-triangle.md)), and the treatment of charm for $m_a>2m_c$ (charmonium region).
 2. The matching coefficient of the singlet axial current at the thresholds.
 3. The identification of the free-quark mass $m_h$ in the hard propagator with $m_h(m_h)$ at the order beyond leading.
 4. The upper limit of the supported virtuality domain (top threshold and electroweak effects).

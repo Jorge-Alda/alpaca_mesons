@@ -99,3 +99,8 @@ QCD short-distance behavior of pseudoscalar transition form factors (task 1.1 of
 - [Chetyrkin:1997sg](Chetyrkin:1997sg/INDEX.md) — flavor-threshold matching of $\alpha_s$ and four-loop running.
 - [Chetyrkin:2000yt](Chetyrkin:2000yt/INDEX.md) — RunDec running and decoupling routines.
 - [Larin:1994va](Larin:1994va/INDEX.md) — heavy-quark non-decoupling from the singlet axial part and $\alpha_s$ decoupling.
+
+ALP-photon loop functions for fermion loops with one real and one virtual photon:
+
+- [Bauer:2021mvw](Bauer:2021mvw/INDEX.md) — $B_1$, $B_3$ loop functions, effective ALP-photon coupling and off-shell ALP-photon vertex with one real photon.
+- [Alda:2024cxn](Alda:2024cxn/INDEX.md) — $B_3$, $A_3$ with one virtual photon, derivative and pseudoscalar bases, and sign comparison with Bauer:2021mvw.
