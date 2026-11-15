@@ -3,6 +3,7 @@
 import sys
 import unittest
 import sympy as sp
+from derive_alp_heavy_quark_triangle import derive_axial_current_matrix_element
 
 cG, cP, cA, lightP, lightA, kappa = sp.symbols('c_G c_hP c_hA c_lightP c_lightA kappa')
 cgamma, Nc, charge, fa, fpi, qsq = sp.symbols('c_gamma N_c Q_h f_a f_pi q_squared', nonzero=True)
@@ -30,6 +31,11 @@ class Checks(unittest.TestCase):
     def test_limits(self):
         self.assertEqual(sp.simplify(heavy.subs(b4,0)-2*Nc*charge**2*cP/(4*sp.pi**2*fa)),0)
         self.assertEqual(sp.simplify(heavy.subs(b4,1)-2*Nc*charge**2*cA/(4*sp.pi**2*fa)),0)
+    def test_perturbative_overlap(self):
+        result = derive_axial_current_matrix_element()
+        self.assertEqual(result["remainder_check"], 0)
+        self.assertNotEqual(result["remainder_expected"], 0)
+
     def test_tensor(self):
         p=sp.symbols('p0:4'); k=sp.symbols('k0:4'); metric=[1,-1,-1,-1]
         tensor=sp.Matrix(4,4,lambda mu,nu: sum(sp.LeviCivita(mu,nu,r,s)*metric[r]*k[r]*metric[s]*p[s] for r in range(4) for s in range(4)))
@@ -41,5 +47,7 @@ class Checks(unittest.TestCase):
 if __name__=='__main__':
     if '--test' in sys.argv: unittest.main(argv=[sys.argv[0]])
     else:
+        result = derive_axial_current_matrix_element()
+        print('Direct triangle minus local axial-current term (cutoff scheme):\n' + sp.latex(result['remainder_expected']) + '\n')
         for label, value in [('full c_GP', full_cGP),('effective c_G',effective_cG),('effective c_GA',effective_cGA),('heavy triangle',heavy),('conditional sum; overlap not established',form_factor)]:
             print(label+':\n'+sp.latex(value)+'\n')

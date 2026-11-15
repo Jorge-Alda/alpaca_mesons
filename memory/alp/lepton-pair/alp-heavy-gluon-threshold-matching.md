@@ -34,3 +34,14 @@ The [script](../../../scripts/derive_alp_symmetric_tff.py) solves the matching e
 ```
 
 The script also prints a conditional sum of the contact term, heavy triangle, and light axial-current term from the [hard-current OPE](alp-hard-current-ope.md). This sum is not established as the complete coefficient: the overlap between the explicit hard light-quark contribution and the renormalized axial matrix element must be fixed, and the [singlet-current record](alp-singlet-axial-current-evolution.md) leaves the gluonic Wilson coefficient and threshold matching open. The [heavy-flavor record](alp-heavy-flavor-thresholds.md) states the threshold-continuity assumption. No numerical uncertainty is assigned to these omissions.
+
+# Perturbative overlap and the symmetric local OPE
+
+The [triangle calculation](alp-heavy-quark-triangle.md) also provides a direct test of how the hard triangle and the local axial-current term overlap. In its Euclidean momentum-cutoff convention, retaining the leading $1/|q^2|$ term and the first term in $m_a^2/m_h^2$, the script subtracts the axial-current term from the full triangle's mass-dependent term and obtains
+$$
+-\frac{N_c Q_h^2m_h^2(c_{hh}^A-c_{hh}^P)}{\pi^2|q^2|f_a}
+\left[\log\frac{|q^2|}{\Lambda^2}+1\right].
+$$
+This is generally nonzero at the same power in $1/|q^2|$ as the local axial-current term. It is a hard remainder in the stated cutoff calculation, not an $\overline{\rm MS}$ matching coefficient: both the finite constant and the separation depend on the prescription. Adding a complete free triangle and its own perturbative axial-current matrix element would count the latter twice; conversely, adding only the axial-current term omits this remainder. The comparison is limited to $m_a^2\ll m_h^2$ and does not by itself supply the corresponding light-flavor coefficient or the matching of the ChPT current to the renormalized QCD current.
+
+For the symmetric local expansion in massless QCD, Ludtke:2020moa gives the axial current as the only dimension-three operator through $O(\alpha_s)$, with Wilson coefficient $1-\alpha_s/\pi$; see the [extract](../../extracts/Ludtke:2020moa/ope-nlo-wilson-coefficient.md). This statement does not calculate the mass-dependent source remainder above, nor does it determine a finite singlet-current threshold matching constant. At strictly leading order in $\alpha_s$, tree-level current matching is continuous; corrections and the renormalized identification of the low-energy matrix element remain to be specified. Thus the printed conditional sum is not promoted to a complete source-linear result.
