@@ -58,3 +58,4 @@ provenance: assumption
 - [alp-high-energy-tff-assembly.md](alp-high-energy-tff-assembly.md) — decomposition of the ALP two-photon form factor into the light-quark part and the charm and bottom contributions, with the pieces supplied for each virtuality regime and their status.
 - [alp-heavy-gluon-threshold-matching.md](alp-heavy-gluon-threshold-matching.md) — leading heavy-flavor matching of the gluonic source and its domain of validity.
 - [alp-symmetric-high-energy-tff.md](alp-symmetric-high-energy-tff.md) — nearly symmetric ALP form factor at LO chiral order, with direct triangles and threshold limitations.
+- [alp-light-cone-high-energy-tff.md](alp-light-cone-high-energy-tff.md) — leading-twist fixed-ratio and singly virtual ALP form factor with a distribution-amplitude assumption.

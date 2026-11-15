@@ -14,7 +14,7 @@
 ## 3. Asymptotic TFF in each regime
 
 - [x] 3.1 Complete the nearly symmetric limit: assemble the source-linear coefficient from tasks 2.1–2.3 and the existing local OPE; verify against `scripts/derive_alp_hard_current_ope.py --test` and Bose/Ward constraints.
-- [ ] 3.2 Derive the fixed-ratio doubly virtual limit and the singly virtual limit by the light-cone expansion, with the leading-twist structure and the declared distribution-amplitude assumption; verify that it reduces to task 3.1 at equal virtualities and that the assumption enters as a named parameter.
+- [x] 3.2 Derive the fixed-ratio doubly virtual limit and the singly virtual limit by the light-cone expansion, with the leading-twist structure and the declared distribution-amplitude assumption; verify that it reduces to task 3.1 at equal virtualities and that the assumption enters as a named parameter.
 - [ ] 3.3 Derive the leading $m_a^2/Q^2$ corrections and the timelike/Euclidean continuation statement for the hard kernel; verify the $m_a\to0$ and large-$Q^2$ limits by script and state the supported virtuality domain per regime.
 - [ ] 3.4 Cross-check the method (not the coefficient) against the known $\pi^0$ asymptotic structure by running the same derivation with pion sources; verify agreement and that the ALP result is not built from it.
 
