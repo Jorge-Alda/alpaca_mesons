@@ -64,3 +64,4 @@ provenance: assumption
 - [alp-low-energy-matching-benchmarks.md](alp-low-energy-matching-benchmarks.md) — conditional source-resolved tree and symbolic dispersive forms for matching tests.
 - [alp-matching-analyticity-audit.md](alp-matching-analyticity-audit.md) — sharp Euclidean matching and an analytic example with additional pole strength.
 - [alp-spectral-high-energy-matching.md](alp-spectral-high-energy-matching.md) — conditional ALP spectral continuum and effective-pole normalization constraints.
+- [alp-matching-scale-variation.md](alp-matching-scale-variation.md) — symbolic continuum scale dependence and conditional one- versus two-pole comparison.

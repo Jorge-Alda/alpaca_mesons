@@ -46,8 +46,8 @@ A matching prescription MUST join the asymptotic form to the low-energy represen
 - **THEN** do not present it as an analytic form factor or a test of physical discontinuities
 
 #### Scenario: Matching-scale variation
-- **WHEN** the matching scale is varied over the declared range
-- **THEN** the resulting TFF variation is reported separately from hadronic-input and scheme variations, and alternative completions are compared
+- **WHEN** the matching scale is varied between declared symbolic endpoints
+- **THEN** the resulting parametric TFF variation and differences among analytic completions are reported separately from hadronic-input and scheme variations
 
 ### Requirement: Keep fit-dependent matching conditional
 Matching to a numerically calibrated low-energy form MUST NOT use coefficients from the nonconverged vector fit.
