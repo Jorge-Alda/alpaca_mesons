@@ -59,3 +59,4 @@ provenance: assumption
 - [alp-heavy-gluon-threshold-matching.md](alp-heavy-gluon-threshold-matching.md) — leading heavy-flavor matching of the gluonic source and its domain of validity.
 - [alp-symmetric-high-energy-tff.md](alp-symmetric-high-energy-tff.md) — nearly symmetric ALP form factor at LO chiral order, with direct triangles and threshold limitations.
 - [alp-light-cone-high-energy-tff.md](alp-light-cone-high-energy-tff.md) — leading-twist fixed-ratio and singly virtual ALP form factor with a distribution-amplitude assumption.
+- [alp-finite-mass-hard-tff.md](alp-finite-mass-hard-tff.md) — finite-mass propagator expansion, continuation and higher-twist limitations for the hard TFF.
