@@ -50,3 +50,4 @@ provenance: assumption
 - [alp-unnormalized-lepton-loop.md](alp-unnormalized-lepton-loop.md) — executed source-linear unnormalized loop, coherent local-term width, two-real-photon discontinuity and pointlike ultraviolet subtraction.
 - [alp-tff-real-photon-normalization.md](alp-tff-real-photon-normalization.md) — initial zero-virtuality normalization constraint, conditional effective-pole residue, and distinction from the dilepton cut bound.
 - [alp-high-energy-tff-conventions.md](alp-high-energy-tff-conventions.md) — shared metric, epsilon, tensor, source, and momentum-label conventions for the high-energy TFF completion.
+- [alp-axial-current-matrix-element.md](alp-axial-current-matrix-element.md) — executed LO ChPT vacuum-to-ALP quark axial-current matrix elements in the no-mixing source matrix, flavor split, and the resulting operator-matrix-element contribution to the hard TFF (the direct anomaly/photon constant is not included).

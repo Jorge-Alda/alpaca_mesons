@@ -7,7 +7,7 @@
 
 ## 2. Source-resolved matrix elements and scheme
 
-- [ ] 2.1 Derive $\langle0|\bar q_f\gamma_\sigma\gamma_5q_f|a(p)\rangle$ for $f=u,d,s$ at LO ChPT in terms of $U_a,Y_a$ and the contact coefficient, split into isovector, octet, and singlet parts; verify with a SymPy script (reproducing the $4/9,1/9,1/9$ charge weights) and a paired memory record, and that no meson decay constant is used as an ALP input.
+- [x] 2.1 Derive $\langle0|\bar q_f\gamma_\sigma\gamma_5q_f|a(p)\rangle$ for $f=u,d,s$ at LO ChPT in terms of $U_a,Y_a$ and the contact coefficient, split into isovector, octet, and singlet parts; verify with a SymPy script (reproducing the $4/9,1/9,1/9$ charge weights) and a paired memory record, and that no meson decay constant is used as an ALP input.
 - [ ] 2.2 Derive the role of the singlet current, anomaly, and gluonic operator, and the scheme/scale and renormalization-group evolution of the matrix elements at the order fixed in the literature; verify with a script checking the RG solution against its differential equation and a record stating scheme, scale, and remaining named inputs.
 - [ ] 2.3 Derive the heavy-flavor ($c,b$) threshold matching and the below-threshold heavy-quark contribution; verify the continuity of the coefficient across thresholds symbolically and give the active-flavor table for $2m_e<m_a<2m_\tau$.
 
