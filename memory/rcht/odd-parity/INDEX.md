@@ -2,7 +2,7 @@
 title: Odd-parity RChT memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-11-10
+updated: 2026-11-17
 bibtex_keys: []
 provenance: assumption
 ---
@@ -60,6 +60,7 @@ being combined with canonical photon or resonance amplitudes.
 - [joint-vector-phi-kaon-residual-diagnostic.md](joint-vector-phi-kaon-residual-diagnostic.md) — correlated $\phi\to K\bar K$ residuals in a symmetric channel convention.
 - [joint-vector-diagnostic-synthesis.md](joint-vector-diagnostic-synthesis.md) — combined $K^*$ width, $\phi\to K\bar K$, $\eta'$ and mass-block diagnostic results with candidate assessment.
 - [joint-vector-fit-inadequacy-candidate-causes.md](joint-vector-fit-inadequacy-candidate-causes.md) — conjectured causes of the inadequacy, ranked, with the diagnostic that separates each.
+- [joint-vector-double-trace-source-mass-and-kkpi.md](joint-vector-double-trace-source-mass-and-kkpi.md) — the double-trace photon source $y_V$ gives no vector mass term at order $e^0$ and enters the $KK\pi$ current only through the $\omega,\phi$ photon residues.
 - [joint-vector-pole-shift-variations.md](joint-vector-pole-shift-variations.md) — $\pm1\sigma$ PDG 2024 mass and width shifts of the fixed excited vector poles and of the $a_2(1320)$, their implementation and linear $\Delta\chi^2$ screen.
 - [kkpi-global-fit-running-propagator-reuse.md](kkpi-global-fit-running-propagator-reuse.md) — running-propagator calculation reuse, baseline-equivalence checks, and local Jacobian timing.
 - [kkpi-global-fit-width-pull-jacobian.md](kkpi-global-fit-width-pull-jacobian.md) — finite-difference treatment of width pulls that do not enter BaBar predictions.

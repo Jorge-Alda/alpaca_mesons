@@ -2,7 +2,7 @@
 title: Candidate causes of the joint vector-fit inadequacy and diagnostics to separate them
 status: conjectured
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-17
 bibtex_keys: [Alda:2026nrd]
 provenance: conjecture
 ---
@@ -23,6 +23,7 @@ This record lists conjectures that follow the [adequacy verdict](joint-vector-fi
    - **Diagnostic:** free one $K^*K\pi$ to $\rho\pi\pi$ coupling ratio, and check whether the shared-width and $\phi\to K\bar K$ blocks improve together.
 3. **The deferred double-trace source term $y\,\mathrm{tr}(\chi_+Q)\mathbb{1}$.**
    - This term would move the $\omega,\phi$ masses independently of $\rho,K^*$, provided the source enters the vector mass spectrum. That is to be confirmed.
+   - Update 2026-11-17: the [derivation](joint-vector-double-trace-source-mass-and-kkpi.md) shows that it does not enter the mass spectrum at order $e^0$; it enters only the $\omega,\phi$ photon residues, including in the $KK\pi$ current.
    - **Diagnostic:** in the refit without the mass block, see which mass rows move.
 4. **Isospin breaking in the even sector beyond $K^*$.** This covers $\rho$–$\omega$ mixing and the difference between $K^+K^-$ and $K^0\bar K^0$ in $\phi$ decays.
    - **Diagnostic:** rotate the whitened $\phi\to K\bar K$ residuals back to the two channels. A residual mainly in their ratio favours this candidate; a residual mainly in their sum favours candidate 2.

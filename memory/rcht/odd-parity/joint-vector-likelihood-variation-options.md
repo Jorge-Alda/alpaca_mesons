@@ -2,7 +2,7 @@
 title: Switchable variations of the joint vector-sector likelihood
 status: mixed
 created: 2026-11-06
-updated: 2026-11-07
+updated: 2026-11-17
 bibtex_keys: [Alda:2026nrd, ParticleDataGroup:2024cfk, BaBar:2007ceh, Qin:2024ulb]
 provenance: assumption
 ---
@@ -35,7 +35,7 @@ The source hypotheses and their domains follow [the stage-3 calibration](../foun
 
 ## Not implemented
 
-- Single-plus-double-trace source: deferred by user decision on 2026-11-07. The double-trace source term $y\,\mathrm{tr}(\chi_+Q)\mathbb{1}$ has not been derived for the inclusive $KK\pi$ current, and the likelihood has no $y$ coordinate. It is a candidate model extension for the follow-up bead.
+- Single-plus-double-trace source: deferred by user decision on 2026-11-07. The double-trace source term $y\,\mathrm{tr}(\chi_+Q)\mathbb{1}$ has not been derived for the inclusive $KK\pi$ current, and the likelihood has no $y$ coordinate. It is a candidate model extension for the follow-up bead. Its contribution is now derived in [the double-trace source record](joint-vector-double-trace-source-mass-and-kkpi.md) (no mass term; $\omega,\phi$ photon residues only); the likelihood option is not yet implemented.
 
 The excited-pole and tensor-pole variations, listed here as missing on 2026-11-06, are implemented since 2026-11-07 ([pole shifts](joint-vector-pole-shift-variations.md)).
 
