@@ -12,6 +12,7 @@ provenance: literature
 Source-specific literature extracts for BibTeX key `ParticleDataGroup:2024cfk`.
 
 - [light-neutral-meson-quantum-numbers.md](light-neutral-meson-quantum-numbers.md) — modular extract from ParticleDataGroup:2024cfk.
+- [eta-prime-mass-2025-update.md](eta-prime-mass-2025-update.md) — 2025 update value for the fitted $\eta'(958)$ mass.
 - [light-vector-pole-parameters.md](light-vector-pole-parameters.md) — modular extract from ParticleDataGroup:2024cfk.
 - [neutral-kaon-mixing.md](neutral-kaon-mixing.md) — modular extract from ParticleDataGroup:2024cfk.
 - [eta-prime-radiative-modes.md](eta-prime-radiative-modes.md) — $\eta'(958)$ $\rho^0\gamma$ and $\omega\gamma$ branching fractions, the $C$-violation table, and the resonant/non-resonant split.

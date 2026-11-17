@@ -9,6 +9,7 @@ provenance: assumption
 
 # Shared ALP decay records
 
+- [only-up-finite-mixing-inputs.md](only-up-finite-mixing-inputs.md) — Only-up angular-mode inputs and finite-mixing decay adapters.
 - [chi-minus-meson-source-convention.md](chi-minus-meson-source-convention.md) — Appendix A derivation of the outgoing-meson $i\chi_-$ source sign.
 - [finite-alp-meson-mixing.md](finite-alp-meson-mixing.md) — Exact quadratic mixing, pole eigenvectors and coherent one-ALP amplitudes without expanding in $f_\pi/f_a$.
 - [alp-inverse-propagator-congruence.md](alp-inverse-propagator-congruence.md) — Inverse propagator $D(s)=sK-M^2$ under $\Phi=T\Phi'$: invariance of poles, residues and one-ALP amplitudes.

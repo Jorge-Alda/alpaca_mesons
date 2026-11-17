@@ -77,6 +77,6 @@ Both ran on 2026-11-14 and passed.
 ## Validity and open points
 
 - Redefinitions that do not commute with $Q$ turn the photon coupling into an $x$-dependent chiral charge. The records do not treat this case, so the invariance statement is limited to the Q-commuting class.
-- The sign of the $\gamma\gamma$ WZW contribution is not tied to $\mathrm{orientation}=-1$ in any record. This is not checked here, and the $\gamma\gamma$ coefficient above is taken from the photon invariant record.
+- The common WZW orientation $-1$ is fixed by the signed neutral-pion matching in the [WZW record](../../rcht/odd-parity/wzw-gamma3pi-contribution.md); the finite-mixing implementation and common orientation are checked in the [only-up adapter checks](../../../scripts/implementation/test_only_up_decays.py).
 - The leg construction used in the $\gamma PP$ record is singular for a neutral pole with zero ALP component, such as the exact $K^0$ pole; see [the $\gamma PP$ record](../photon-two-pseudoscalar/alp-lo-finite-mixing-wzw-pp-amplitude.md).
 - The LO model is uncontrolled where the ALP admixture is $O(1)$ or near-degenerate ([truncation record](../shared/alp-lo-truncation-limits.md)). Vector-meson conversion ([vector-mixing record](alp-photon-vector-mixing.md)) and resonance terms are not included.

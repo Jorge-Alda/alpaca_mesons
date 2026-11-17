@@ -85,5 +85,5 @@ Both ran on 2026-11-14 and passed. The [existing WZW script](../../../scripts/de
 
 - **Zero-ALP neutral poles.** For a neutral pole with zero ALP component (the exact $K^0$ pole), $\mathbb M_{m^2}^{-1}$ is singular and the leg formula above does not apply. Its leg is that pole's own unit generator in the $K^0$ eigenspace. This case is not implemented.
 - **Real neutral external fields.** For real neutral external states the six-term trace is purely imaginary, which is a phase convention of the external state, not a physical effect.
-- **Orientation of the photon coupling.** The sign of the $\gamma\gamma$ coefficient is not tied to $\mathrm{orientation}=-1$ in any record; it is not checked here.
+- **Orientation of the photon coupling.** The same WZW orientation $-1$ is fixed by signed neutral-pion matching in the [WZW record](../../rcht/odd-parity/wzw-gamma3pi-contribution.md) and checked for this coefficient in the [only-up adapter checks](../../../scripts/implementation/test_only_up_decays.py).
 - **Scope.** LO only. Resonance parts of the [existing $a\to\gamma PP$ record](alp-photon-pp-amplitude.md) must be added coherently and are not included.
