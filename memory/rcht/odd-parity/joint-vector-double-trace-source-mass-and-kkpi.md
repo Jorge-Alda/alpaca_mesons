@@ -30,7 +30,7 @@ $$
 
 This is the definition in the [photon–vector diagonalization record](../foundations/rcht-photon-vector-diagonalization.md) and the [leptonic-width record](../foundations/vector-leptonic-width.md). The same term is implemented as `y` in `source_residues` of [`scripts/implementation/vector_sector.py`](../../../scripts/implementation/vector_sector.py), and as the `double_trace` hypothesis of `action_sector` in [`scripts/derive_odd_low_energy_jacobians.py`](../../../scripts/derive_odd_low_energy_jacobians.py). It has two flavor traces: the vector field appears only through its trace $\langle V\rangle$, and the source appears only through $\langle\chi_+Q\rangle$.
 
-**Assumption (identification of the operator):** the proposal's $y$ is taken to be this $y_V$. A different double trace, $\frac{\kappa_V}{4}\langle V_{\mu\nu}\rangle\langle V^{\mu\nu}\chi_+\rangle$, does change the $\omega,\phi$ masses ([mass extension](../foundations/vector-mass-extension.md)). That term is already a coordinate of the joint fit, together with $\Delta_V$, so the four ground-state masses are already described by four mass parameters. The user should confirm this identification.
+**Assumption (identification of the operator):** the proposal's $y$ is taken to be this $y_V$. A different double trace, $\frac{\kappa_V}{4}\langle V_{\mu\nu}\rangle\langle V^{\mu\nu}\chi_+\rangle$, does change the $\omega,\phi$ masses ([mass extension](../foundations/vector-mass-extension.md)). That term is already a coordinate of the joint fit, together with $\Delta_V$, so the four ground-state masses are already described by four mass parameters. The user confirmed this identification: $y$ is $y_V$.
 
 ## Assumptions
 
@@ -90,5 +90,5 @@ The script asserts each step above and prints "All assertions passed." The test 
 
 ## Open points
 
-- Task 4.2 must add a $y_V$ coordinate to the joint likelihood and separate the isovector and isoscalar light factors in the BaBar current. The descriptive name of the coordinate needs user approval (design decision "Notation").
+- Task 4.2 must add a $y_V$ coordinate to the joint likelihood and separate the isovector and isoscalar light factors in the BaBar current. The user approved the notation $y_V$ as the same coefficient as the proposal's $y$, with the descriptive name "double-trace singlet-source structure" (the coordinate is the coefficient of the double-trace singlet source $\langle\chi_+Q\rangle\mathbf 1$).
 - The $O(e^2)$ electromagnetic mass shifts remain omitted for all source terms.

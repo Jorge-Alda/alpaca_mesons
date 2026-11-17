@@ -20,7 +20,7 @@
 ## 4. Extension 3: double-trace source term
 
 - [x] 4.1 Derive whether $y\,\mathrm{tr}(\chi_+Q)\mathbb{1}$ enters the vector mass spectrum and the $KK\pi$ current (SymPy script, memory record); record "not applicable" if it does not.
-- [ ] 4.2 (coder) If applicable, implement the $y$ coordinate (notation approved first), refit, apply the criterion, store the entry.
+- [x] 4.2 (coder) If applicable, implement the $y$ coordinate (notation approved first), refit, apply the criterion, store the entry.
 
 ## 5. Extension 4: isospin breaking in the even sector
 
