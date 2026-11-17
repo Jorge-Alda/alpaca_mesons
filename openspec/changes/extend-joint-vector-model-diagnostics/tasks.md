@@ -24,7 +24,7 @@
 
 ## 5. Extension 4: isospin breaking in the even sector
 
-- [ ] 5.1 Derive $\rho$–$\omega$ mixing and the $\phi\to K^+K^-$ versus $K^0\bar K^0$ difference with a SymPy script and a memory record, using the channel diagnostic of 1.2 to choose the minimal parameterization.
+- [x] 5.1 Derive $\rho$–$\omega$ mixing and the $\phi\to K^+K^-$ versus $K^0\bar K^0$ difference with a SymPy script and a memory record, using the channel diagnostic of 1.2 to choose the minimal parameterization.
 - [ ] 5.2 (coder) Implement, refit, apply the criterion, store the entry.
 
 ## 6. Extension 5: $\eta'$ and odd-block tension
