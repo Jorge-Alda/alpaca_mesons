@@ -43,7 +43,7 @@ T^P_{ijk}(Y_i,Y_j,Y_k)=\Big\langle\sum_{\sigma\in S_3}Y_{\sigma(i)}Y_{\sigma(j)}
 $$
 where the sum over $\sigma\in S_3$ runs over the six orderings of the three arguments. These are the tensors $T^A$ and $T^P$ of the [generic-generator record](alp-three-meson-generic-generators.md), with $c_q^A\to\widehat c_q^A$ and $\{c_q^P,m_q\}\to\widehat P$, and with generators $Y=\lambda$ as arguments. The arguments may be any matrices, in particular the meson columns of step 2. The tensors are multilinear, so a factor multiplying a column can be pulled out.
 
-- Nothing is expanded in $f_\pi/f_a$. Daughters are not assumed distinct, and the ALP component of every neutral daughter is kept. The parent pole is simple, has a nonzero ALP component and an invertible meson block at its pole, as required by the [single-pole record](../shared/alp-single-pole-alignment.md).
+- Nothing is expanded in $f_\pi/f_a$. Daughters are not assumed distinct, and the neutral daughter pole columns retain their $\xi_r$ entries in the pole-aligned coordinates. These entries are coordinates of the pole vectors, not basis-independent properties of the states. The selected parent pole is simple, has nonzero overlap with the ALP interpolating field in the starting coordinates, and has an invertible meson block at its pole, as required by the [single-pole record](../shared/alp-single-pole-alignment.md).
 
 ## Step 1: pole-aligned coordinates
 
@@ -74,13 +74,13 @@ With the first-order values inserted, $S_2'=\widehat S_2-2\{\mathbb M_{m_a^2}^{-
 
 ## Step 2: external columns
 
-Each leg $x$ carries a meson column $\lambda_x$, a matrix in flavour space, and an ALP component $\xi_x$. The table gives both in the pole-aligned coordinates of step 1.
+Each leg $x$ carries a meson column $\lambda_x$, a matrix in flavour space, and a scalar coordinate $\xi_x$ along the ALP field. The table gives these pole-vector coordinates in the pole-aligned basis of step 1. In particular, whether a column has $\xi_x=0$ is basis dependent; only the complete pole-projected amplitude is invariant under nonsingular field redefinitions.
 
-| leg | meson column $\lambda_x$ | ALP component $\xi_x$ |
+| leg | meson column $\lambda_x$ | ALP-field coordinate $\xi_x$ |
 |---|---|---|
 | parent $a$ | $0$ | $\dfrac{1}{\sqrt{N(m_a^2)}}$ |
-| daughter $r\in\{i,j,k\}$ with ALP component | $\dfrac{2\,(f_\pi/f_a)\,(m_a^2-m_r^2)}{\sqrt{N(m_r^2)}}\,\mathbb M_{m_r^2}^{-1}(\widehat c_q^A)$ | $\dfrac{1}{\sqrt{N(m_r^2)}}$ |
-| daughter $r$ without ALP component (charged, or neutral pole with no ALP component) | its LO meson matrix $\lambda_r$ | $0$ |
+| neutral daughter pole with nonzero $\xi_r$ in this basis | $\dfrac{2\,(f_\pi/f_a)\,(m_a^2-m_r^2)}{\sqrt{N(m_r^2)}}\,\mathbb M_{m_r^2}^{-1}(\widehat c_q^A)$ | $\dfrac{1}{\sqrt{N(m_r^2)}}$ |
+| daughter pole with $\xi_r=0$ in this basis (including charged poles) | its LO meson matrix $\lambda_r$ | $0$ |
 | internal meson field $\ell$ | its generator $\lambda_\ell$ | $0$ |
 | internal ALP field | $0$ | $1$ |
 
@@ -97,7 +97,7 @@ The pole-aligned Lagrangian is the LO CCWZ Lagrangian with the sources of step 1
 For the parent $a$ and the three daughters $i,j,k$:
 $$
 \boxed{\begin{aligned}
-\mathcal V^{(4)}_{aijk}={}&\xi_a\Big[\frac{1}{6f_\pi f_a}\Big(T^A_{jk;i}\,p\cdot p_i+T^A_{ik;j}\,p\cdot p_j+T^A_{ij;k}\,p\cdot p_k\Big)-\frac{B_0}{6f_\pi f_a}\,T^P_{ijk}\Big]\\
+\mathcal V^{(4)}_{aijk}={}&\xi_a\Big[\frac{1}{6f_\pi f_a}\Big(T^A_{jk;i}(\lambda_j,\lambda_k,\lambda_i)\,p\cdot p_i+T^A_{ik;j}(\lambda_i,\lambda_k,\lambda_j)\,p\cdot p_j+T^A_{ij;k}(\lambda_i,\lambda_j,\lambda_k)\,p\cdot p_k\Big)-\frac{B_0}{6f_\pi f_a}\,T^P_{ijk}(\lambda_i,\lambda_j,\lambda_k)\Big]\\
 &+\xi_a\Big[\frac{1}{f_a^2}\sum_{r}\xi_r\,p\cdot p_r\,\big\langle[\widehat c_q^A,\lambda_s][\widehat c_q^A,\lambda_t]\big\rangle
 -\frac{B_0}{2f_a^2}\sum_{r}\xi_r\big\langle S_2'\{\lambda_s,\lambda_t\}\big\rangle
 +\frac{B_0f_\pi}{f_a^3}\sum_{r}\xi_s\xi_t\big\langle P_3'\,\lambda_r\big\rangle\Big]\\
@@ -106,7 +106,7 @@ $$
  -\frac{f_\pi^2m_0^2}{N_ff_a^4}\bigl(8\Theta_1'\Theta_3'+6(\Theta_2')^2\bigr)\xi_a\xi_i\xi_j\xi_k .
 \end{aligned}}
 $$
-In the sums, $r$ runs over $\{i,j,k\}$ and $\{s,t\}$ are the two daughters other than $r$. A daughter without ALP component has $\xi=0$, so the terms that need its ALP component drop out and no separate case is needed. The $P_3'$ term needs both other daughters to carry an ALP component.
+In the sums, $r$ runs over $\{i,j,k\}$ and $\{s,t\}$ are the two daughters other than $r$. A daughter pole with $\xi=0$ in this basis makes the terms requiring that coordinate vanish, so no separate case is needed. The $P_3'$ term is nonzero only when both other daughter columns have nonzero $\xi$ in this basis.
 
 ### Cubic vertex
 

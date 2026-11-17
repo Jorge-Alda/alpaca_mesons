@@ -2,7 +2,7 @@
 title: Research memory index
 status: mixed
 created: 2026-09-22
-updated: 2026-11-13
+updated: 2026-11-16
 bibtex_keys: []
 provenance: assumption
 ---
@@ -15,7 +15,7 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 
 - [Plan](plan.md) - Long-term project planning.
 - [ALP](alp/INDEX.md) — ALP derivations and decay calculations organized by pseudoscalar, photon, and vector final states, with related shared conventions and audits.
-- [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
+- [Kaon states](kaon/INDEX.md) — neutral-kaon projections, mixing with ALPs and related selection rules.
 - [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
 - [RChT](rcht/INDEX.md) — foundations, odd-sector conventions and operators, normalized kernels, literature prescription matching and flat inputs, external KT amplitude grid adapter, corrected Madrid pion-scattering phase tables, physical-input KT numerical checks and focused original-operator preliminary fit, conditional calibration/profiles, finite ALP target/null audits and matching/completion plans.
 - [NLO ChiPT](nlo/INDEX.md) — Extension of the ChiPT Lagrangian to Next to leading order terms, diagonalisation of the resulting quadratic terms and matching to Resonance ChiPT assuming resonance saturation.
