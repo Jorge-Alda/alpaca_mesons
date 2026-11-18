@@ -3,6 +3,25 @@
 import sympy as sp
 
 
+def cartesian_vacuum():
+    """Derive the vacuum condition and radial mass in natural units."""
+    B_0, m_u, f_pi, f_phi, lam = sp.symbols('B_0 m_u f_pi f_varphi lambda', positive=True)
+    mass_phi_squared = sp.symbols('m_varphi_squared', real=True)
+    radial, angular = sp.symbols('s p', real=True)
+    potential = (mass_phi_squared*((f_phi+radial)**2+angular**2)/2
+                 +lam*((f_phi+radial)**2+angular**2)**2/4
+                 -B_0*m_u*f_pi**2*(1+radial/f_phi))
+    vacuum_equation = sp.diff(potential, radial).subs({radial: 0, angular: 0})
+    vacuum_mass = sp.solve(vacuum_equation, mass_phi_squared)[0]
+    radial_mass = sp.simplify(sp.diff(potential, radial, 2).subs(
+        {radial: 0, angular: 0, mass_phi_squared: vacuum_mass}))
+    angular_mass = sp.simplify(sp.diff(potential, angular, 2).subs(
+        {radial: 0, angular: 0, mass_phi_squared: vacuum_mass}))
+    radial_angular_vertex = sp.simplify(sp.diff(potential, radial, angular, angular).subs(
+        {radial: 0, angular: 0, mass_phi_squared: vacuum_mass}))
+    return potential, vacuum_equation, vacuum_mass, radial_mass, angular_mass, radial_angular_vertex
+
+
 def calculate():
     B_0, m_u, f_pi, f_phi, lam = sp.symbols('B_0 m_u f_pi f_varphi lambda', positive=True)
     sigma, a, pi0, eta8, eta0, pip, pim, kp, km = sp.symbols('sigma a pi_0 eta_8 eta_0 pi_plus pi_minus K_plus K_minus', real=True)
@@ -44,7 +63,14 @@ def show(label, value):
 if __name__ == '__main__':
     parameters, cubic, neutral, charged, kaon = calculate()
     polar, cartesian, difference = polar_check()
+    potential, vacuum_equation, vacuum_mass, radial_mass, angular_mass, radial_angular_vertex = cartesian_vacuum()
     print('Natural units; LO chiral theory, tree level, only-up charges; on-shell pole equations for the comparison.')
+    show('Cartesian scalar potential including the vacuum quark source', potential)
+    show('Radial vacuum equation', vacuum_equation)
+    show('Vacuum value of m_varphi squared', vacuum_mass)
+    show('Radial mass squared', radial_mass)
+    show('Angular diagonal mass squared', angular_mass)
+    show('Radial angular angular potential derivative', radial_angular_vertex)
     show('Coefficient of sigma in the Cartesian Lagrangian', cubic)
     show('Neutral vertex matrix in (pi_0, eta_8, eta_0, a)', neutral)
     show('Charged pion vertex', charged)

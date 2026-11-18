@@ -1,10 +1,42 @@
 """Tests for the pole operator and radial on-shell vertex."""
 import unittest
 import sympy as sp
-from scripts.derive_murayama_sigma_operator_amplitude import derive, derive_dimensionful_coefficients
+from scripts.derive_murayama_sigma_operator_amplitude import derive, derive_dimensionful_coefficients, derive_cubic_source_expansion, derive_no_mixing_basis
 
 
 class OperatorAmplitudeTests(unittest.TestCase):
+    def test_no_mixing_basis(self):
+        shift, pole_squared, _, kinetic, mass = derive_no_mixing_basis()
+        norm = 1 + (shift.T*shift)[0]
+        self.assertEqual(kinetic[:2, 2], sp.zeros(2, 1))
+        self.assertEqual(mass[:2, 2], sp.zeros(2, 1))
+        self.assertEqual(sp.simplify(kinetic[2, 2]-norm), 0)
+        self.assertEqual(sp.simplify(mass[2, 2]-pole_squared*norm), 0)
+        self.assertEqual(sp.simplify(kinetic[:2, :2]-(sp.eye(2)-shift*shift.T/norm)), sp.zeros(2))
+
+    def test_canonical_no_mixing_basis(self):
+        shift, pole_squared, transformed, kinetic, mass = derive_no_mixing_basis()
+        # The square root is kept exact and the meson mass entries remain symbolic.
+        shift_values = {shift[0]: sp.Rational(3, 4), shift[1]: 1}
+        shift = shift.subs(shift_values)
+        norm = 1 + (shift.T*shift)[0]
+        canonical = sp.eye(3)
+        canonical[:2, :2] = sp.eye(2) + shift*shift.T/(sp.sqrt(norm)+1)
+        canonical[2, 2] = 1/sp.sqrt(norm)
+        rotation = transformed.subs(shift_values)*canonical
+        self.assertEqual(sp.simplify(rotation.T*rotation), sp.eye(3))
+        self.assertEqual(sp.simplify((canonical.T*mass.subs(shift_values)*canonical)[:2, 2]), sp.zeros(2, 1))
+        self.assertEqual(sp.simplify((canonical.T*mass.subs(shift_values)*canonical)[2, 2]-pole_squared), 0)
+
+    def test_cubic_source_expansion(self):
+        (actual, B0, fpi, angular, meson_matrix, scalar10,
+         pseudoscalar11, scalar12) = derive_cubic_source_expansion()
+        expected = (B0*fpi**2*sp.trace(scalar10)
+                    - B0*sp.trace(scalar10*meson_matrix**2)/2
+                    - B0*fpi*angular*sp.trace(pseudoscalar11*meson_matrix)
+                    + B0*fpi**2*angular**2*sp.trace(scalar12))
+        self.assertEqual(sp.simplify(actual-expected), 0)
+
     def test_dimensionful_source_coefficients(self):
         _, coefficients = derive_dimensionful_coefficients()
         symbols = {str(symbol): symbol for matrix in coefficients.values() for symbol in matrix.free_symbols}
