@@ -2,7 +2,7 @@
 title: ALP memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-11-11
+updated: 2026-11-18
 bibtex_keys: []
 provenance: assumption
 ---
@@ -12,7 +12,7 @@ provenance: assumption
 ALP-specific records, organized by the final state or calculation method.
 
 - [Two-pseudoscalar](two-pseudoscalar/INDEX.md) — LO ALP sources and flavour-changing two-pseudoscalar amplitudes.
-- [Three-pseudoscalar](three-pseudoscalar/INDEX.md) — chiral amplitudes, vector exchange, flavour rules and numerical widths for $a\to3P$.
+- [Three-pseudoscalar](three-pseudoscalar/INDEX.md) — chiral amplitudes, vector and radial-mode exchange, flavour rules and numerical widths for $a\to3P$.
 - [Photon plus two pseudoscalars](photon-two-pseudoscalar/INDEX.md) — odd vector-exchange amplitudes, widths, selection rules and numerical methods for $a\to\gamma PP$.
 - [Vector plus two pseudoscalars](vector-two-pseudoscalar/INDEX.md) — strong amplitudes, widths, selection rules and numerical methods for $a\to VPP$.
 - [Four pseudoscalars](four-pseudoscalar/INDEX.md) — process overview, source-specific $a\to4P$ vector amplitudes and flavor selection rules.

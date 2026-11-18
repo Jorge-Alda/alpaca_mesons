@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-14
+updated: 2026-11-18
 bibtex_keys: []
 provenance: assumption
 ---
@@ -59,4 +59,5 @@ provenance: assumption
 - [alp-murayama-radial-phase-mass-coefficients.md](alp-murayama-radial-phase-mass-coefficients.md) — Matrix Taylor coefficients of the quark-mass spurion with both dimensionful radial and phase fields.
 - [alp-external-meson-leg-sign-convention.md](alp-external-meson-leg-sign-convention.md) — sign of external neutral-meson legs per branch, the finite leg formula, and the value used at $t_j=0$ instead of the 0/0 limit.
 
-- [murayama-sigma-two-pseudoscalar-decays.md](murayama-sigma-two-pseudoscalar-decays.md) — Radial decays into pseudoscalar pairs using dimensionful dressed-source coefficients and exact neutral mixing.
+- [murayama-sigma-two-pseudoscalar-decays.md](murayama-sigma-two-pseudoscalar-decays.md) — Radial decays into pseudoscalar pairs in the only-up model, with dimension-one source coefficients and exact neutral mixing.
+- [radial-decay-polar-cartesian-general-sources.md](radial-decay-polar-cartesian-general-sources.md) — On-shell equality of polar and Cartesian $\sigma\to P_iP_j$ vertices for general Hermitian sources, in trace form.

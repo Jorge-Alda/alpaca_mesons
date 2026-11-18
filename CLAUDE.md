@@ -62,6 +62,7 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 **Critical rules:**
 - Explicit user or orchestrator instructions override this Beads block.
 - Do not commit or push without clear authority from the active profile or the current user request.
+- A commit might have contributions from several agents, including different models and providers. Do not include an attribution line to the commit message, as it could misrepresent the contribution as only corresponding to the last agent.
 - If a required sync or push is blocked, stop and report the exact command and error.
 <!-- END BEADS INTEGRATION -->
 

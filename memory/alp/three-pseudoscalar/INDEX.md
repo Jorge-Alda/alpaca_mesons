@@ -2,7 +2,7 @@
 title: ALP three-pseudoscalar memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-13
+updated: 2026-11-18
 bibtex_keys: []
 provenance: assumption
 ---
@@ -23,3 +23,4 @@ provenance: assumption
 - [three-pseudoscalar-gauss-legendre-quadrature.md](three-pseudoscalar-gauss-legendre-quadrature.md) — production Gauss–Legendre width method and comparison.
 - [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md) — scalar amplitude and width optimization with validation.
 - [alp-finite-mixing-three-pseudoscalar-calculator.md](alp-finite-mixing-three-pseudoscalar-calculator.md) — Finite-mixing LO amplitude and Dalitz width interface, source requirements, efficiency choices and limits.
+- [alp-three-pseudoscalar-radial-exchange.md](alp-three-pseudoscalar-radial-exchange.md) — exact-LO $a\to P_iP_jP_k$ with radial-mode ($\sigma$) exchange in the model of DiLuzio:2026poh for general sources, polar coordinates, invariant trace form and direct polar/Cartesian checks.

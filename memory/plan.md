@@ -11,6 +11,12 @@
 - Second-order dressed invariants $\widehat S_2$, $\widehat P_2$, $\widehat\Theta_2$, $\widehat\Theta_{\gamma,2}$ (derivative Taylor convention, compact commutator forms): memory DONE, latex draft MISSING
 - Next step: use $\widehat S_2$, $\widehat P_2$ in the LO meson vertices at order $a^2/f_a^2$.
 
+## 1c. Radial mode in the model of DiLuzio:2026poh
+
+- $\sigma\to P_iP_j$, polar and Cartesian, general sources: memory DONE
+- $a\to P_iP_jP_k$ with $\sigma$ exchange, general sources, polar coordinates ([record](alp/three-pseudoscalar/alp-three-pseudoscalar-radial-exchange.md)): memory DONE, latex draft MISSING
+- Next step: add $\sigma$ exchange (inputs $\lambda$ or $m_\sigma$, $\widehat S_{10}$, $\widehat P_{11}$, $\widehat S_{12}$) to `scripts/implementation/only_up_decays.py`, which currently omits it; then explain or disprove the numerical vanishing of the only-up amplitude without $\sigma$ for three distinct neutral daughters.
+
 ## 2. Interactions with Vector mesons
 
 ### 2.1 Even-parity sector

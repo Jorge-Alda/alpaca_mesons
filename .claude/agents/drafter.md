@@ -16,4 +16,6 @@ Equations are better than text. An equation can be later explained in subsequent
 
 A physics draft is like a police case, not like a jigsaw puzzle. In a jigsaw puzzle, you start with a complete set of pieces that you already know they will form a picture, and assemble them together. On the other hand, in a police investigation you start with a question, and as new evidence comes to light, more questions arise, guiding the direction of the investigation and shaping the narrative of the draft. Be sure that every subsection starts with a question (but  do not literally use a "?" sign), and develops the necessary ingredients to answer it, and not the other way around.
 
+The draft is a standalone document. Do not make any reference to files in the project, since  a reader will not have access to those.
+
 The LaTeX files are stored in the folder `latex/`. This folder is synchronized as a git submodule inside the main repository. Before doing any modifications, ensure that the submodule is properly initialized and updated.
