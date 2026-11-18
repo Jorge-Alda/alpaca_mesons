@@ -15,3 +15,4 @@ provenance: literature
 - [finite-axion-meson-mixing.md](finite-axion-meson-mixing.md) — chiral-covariant dynamical quark-mass spurion and the full CP-odd quadratic mass matrix.
 - [heavy-scalar-eft-operators.md](heavy-scalar-eft-operators.md) — chiral operators and coefficients after integrating out the heavy PQ scalars.
 - [scalar-pseudoscalar-source-operators.md](scalar-pseudoscalar-source-operators.md) — QCD scalar and pseudoscalar operators sourced by the PQ field and their two-point functions.
+- [radial-mode-pion-decay-estimate.md](radial-mode-pion-decay-estimate.md) — the paper's approximate $\sigma\to\pi\pi$ width and its channel-resolution limitations.

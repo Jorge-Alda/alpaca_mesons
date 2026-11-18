@@ -45,6 +45,7 @@ provenance: assumption
 - [alp-dressed-topological-second-order.md](alp-dressed-topological-second-order.md) — Second-order dressed gluonic coefficient $\widehat\Theta_2=\Theta_2+\operatorname{tr}C_{A,1}$.
 - [alp-lo-joint-vertex-expansion.md](alp-lo-joint-vertex-expansion.md) — Joint LO meson and ALP vertices for general source functions and the resulting quadratic mass correction.
 - [alp-lo-pole-projected-tree-amplitudes.md](alp-lo-pole-projected-tree-amplitudes.md) — Analytical pole-projected contact and exchange amplitudes, Schur inverse and field-change checks.
+- [alp-polar-cartesian-amplitude-equivalence.md](alp-polar-cartesian-amplitude-equivalence.md) — Finite-mixing four-point cancellation and general on-shell equivalence in polar and Cartesian field coordinates.
 - [alp-lo-pole-aligned-tree-vertices.md](alp-lo-pole-aligned-tree-vertices.md) — Exact symmetric axial pole alignment, nonlinear contact terms and comparison of tree amplitudes.
 - [alp-lo-finite-mixing-amplitude-construction.md](alp-lo-finite-mixing-amplitude-construction.md) — Inputs, the pole-projected and pole-aligned constructions, their checks and limits.
 - [alp-ccwz-arbitrary-order-expansion.md](alp-ccwz-arbitrary-order-expansion.md) — Arbitrary ALP-order and meson-number expansion of the leading CCWZ building blocks.
@@ -55,4 +56,7 @@ provenance: assumption
 - [phase-space-integration-efficiency.md](phase-space-integration-efficiency.md) — integration methods, trade-offs and current numerical evidence across decay channels.
 - [alp-lo-invariant-mass-calculator.md](alp-lo-invariant-mass-calculator.md) — Executable finite-mixing LO spectrum from derivative lists of invariant dressed sources.
 - [alp-murayama-phase-mass-sources.md](alp-murayama-phase-mass-sources.md) — Taylor coefficients of the scalar and pseudoscalar quark-mass sources when the ALP enters as a Peccei-Quinn phase of the quark masses, with first-order matching to $c_q^P$.
+- [alp-murayama-radial-phase-mass-coefficients.md](alp-murayama-radial-phase-mass-coefficients.md) — Matrix Taylor coefficients of the quark-mass spurion with both dimensionful radial and phase fields.
 - [alp-external-meson-leg-sign-convention.md](alp-external-meson-leg-sign-convention.md) — sign of external neutral-meson legs per branch, the finite leg formula, and the value used at $t_j=0$ instead of the 0/0 limit.
+
+- [murayama-sigma-two-pseudoscalar-decays.md](murayama-sigma-two-pseudoscalar-decays.md) — Radial decays into pseudoscalar pairs using dimensionful dressed-source coefficients and exact neutral mixing.
