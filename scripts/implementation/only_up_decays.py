@@ -8,6 +8,8 @@ See only_up_inputs.py for the quark masses and source derivatives.
 Exception: three_pseudoscalar and three_pseudoscalar_width include the
 radial-mode (sigma) exchange when radial_mass_squared is given; by default
 they omit it, as before.
+baryon_pair_width and baryon_pair_widths give a -> B_1 bar(B_2) with the
+LO octet baryon Lagrangian and pointlike couplings (Alda:2026nrd Sec. V).
 
 """
 import math
@@ -312,3 +314,172 @@ def sigma_two_pseudoscalar_width(kappa_u, quartic_coupling, mesons):
     phase_space = math.sqrt((sigma_squared-(first_mass+second_mass)**2)
                             *(sigma_squared-(first_mass-second_mass)**2))
     return float(abs(coupling)**2*phase_space/(16*math.pi*sigma_mass**3*(1+(mesons[0] == mesons[1]))))
+
+
+# --------------------------------------------------------------------------
+# a_phys -> B_1 bar(B_2) with octet baryons
+# --------------------------------------------------------------------------
+# LO octet baryon Lagrangian of Alda:2026nrd Sec. V with pointlike couplings
+# (baryon form factors set to one). Central values of Alda:2026nrd, Eqs.
+# baryon_LECs and stilde_value; tilde S_B has a naive uncertainty 0.031 and a
+# conservative uncertainty 0.062. Derivation and checks:
+# scripts/derive_murayama_baryon_decays.py and
+# memory/alp/baryon/murayama-only-up-baryon-pair-widths.md.
+D_BARYON = 0.815
+F_BARYON = 0.434
+S_BARYON = -0.417
+TOPOLOGICAL_SINGLET_BARYON = 0.025
+TOPOLOGICAL_SINGLET_BARYON_NAIVE_UNCERTAINTY = 0.031
+TOPOLOGICAL_SINGLET_BARYON_CONSERVATIVE_UNCERTAINTY = 0.062
+
+# PDG 2024 baryon masses in GeV (ParticleDataGroup:2024cfk), isospin split.
+BARYON_MASSES = {
+    'p': 0.93827208816, 'n': 0.93956542052, 'Lambda': 1.115683,
+    'Sigma+': 1.18937, 'Sigma0': 1.192642, 'Sigma-': 1.197449,
+    'Xi0': 1.31486, 'Xi-': 1.32171,
+}
+BARYON_CHARGES = {'p': 1, 'n': 0, 'Lambda': 0, 'Sigma+': 1, 'Sigma0': 0,
+                  'Sigma-': -1, 'Xi0': 0, 'Xi-': -1}
+BARYON_STRANGENESS = {'p': 0, 'n': 0, 'Lambda': -1, 'Sigma+': -1, 'Sigma0': -1,
+                      'Sigma-': -1, 'Xi0': -2, 'Xi-': -2}
+
+
+def octet_generators():
+    """Return the matrices lambda_B with B = sum_B lambda_B B (Alda:2026nrd Sec. V).
+
+    Normalization <lambda_B^dag lambda_B'> = delta_BB'.
+    """
+    def unit(row, column):
+        matrix = np.zeros((3, 3))
+        matrix[row, column] = 1.
+        return matrix
+    return {
+        'p': unit(0, 2), 'n': unit(1, 2), 'Sigma+': unit(0, 1), 'Sigma-': unit(1, 0),
+        'Xi-': unit(2, 0), 'Xi0': unit(2, 1),
+        'Sigma0': np.diag([1., -1., 0.])/math.sqrt(2),
+        'Lambda': np.diag([1., 1., -2.])/math.sqrt(6),
+    }
+
+
+def neutral_flavour_conserving_channels():
+    """Return the pairs (B_1, B_2) of a -> B_1 bar(B_2) with equal charge and strangeness."""
+    names = list(BARYON_MASSES)
+    return [(first, second) for first in names for second in names
+            if BARYON_CHARGES[first] == BARYON_CHARGES[second]
+            and BARYON_STRANGENESS[first] == BARYON_STRANGENESS[second]]
+
+
+def inverse_mass_operator(source, mass_squared, B_0, quark_masses, singlet_mass_squared):
+    """Return M_s^{-1}(source) on 3x3 matrices, in GeV^-2 times the source units.
+
+    M_s(X) = B_0 {m_q, X} + (m_1^2/3) <X> 1 - s X, with s = mass_squared in
+    GeV^2, quark_masses the diagonal of m_q in GeV and singlet_mass_squared = m_1^2.
+    """
+    identity = np.eye(3)
+    operator = np.zeros((9, 9), dtype=complex)
+    for index in range(9):
+        basis = np.zeros(9)
+        basis[index] = 1.
+        matrix = basis.reshape(3, 3)
+        image = (B_0*(np.diag(quark_masses) @ matrix + matrix @ np.diag(quark_masses))
+                 + singlet_mass_squared/3*np.trace(matrix)*identity - mass_squared*matrix)
+        operator[:, index] = image.reshape(9)
+    solution = np.linalg.solve(operator, np.asarray(source, dtype=complex).reshape(9))
+    return solution.reshape(3, 3)
+
+
+def section_five_couplings(first, second, axial_source, vector_source, gluon_axial_coefficient,
+                           topological_singlet=TOPOLOGICAL_SINGLET_BARYON):
+    """Return (c^V, c^A) of Alda:2026nrd Eq. baryoncouplings for B_1 = first, B_2 = second.
+
+    axial_source = M_a^{-1}(C), vector_source = c_q^{VS}; both 3x3 and dimensionless.
+    """
+    generators = octet_generators()
+    first_adjoint, second_matrix = generators[first].conj().T, generators[second]
+    vector = -np.trace(vector_source @ (first_adjoint @ second_matrix - second_matrix @ first_adjoint))
+    overlap = np.trace(first_adjoint @ second_matrix)
+    axial = (-(D_BARYON + F_BARYON)*np.trace(first_adjoint @ axial_source @ second_matrix)
+             - (D_BARYON - F_BARYON)*np.trace(first_adjoint @ second_matrix @ axial_source)
+             - ((S_BARYON + topological_singlet)*np.trace(axial_source)
+                + topological_singlet*gluon_axial_coefficient)*overlap)
+    return complex(vector), complex(axial)
+
+
+def alp_baryon_sources(inputs):
+    """Return (m_a, M_a^{-1}(C), N(m_a^2)) for the baryon vertex of the only-up model.
+
+    m_a is the physical ALP pole mass in GeV. In this model c_q^{AP} =
+    diag(1/2, 0, 0), c_GA = 0 and c_q^{VS} = 0, so C = B_0 hat P_01, and the
+    vertex is that of the basis without ALP-meson mixing divided by sqrt(N).
+    """
+    alp_mass = float(np.real(spectrum(inputs)['a']))
+    B_0, f_pi, f_a = inputs['B_0'], inputs['f_pi'], inputs['f_a']
+    axial_source = inverse_mass_operator(B_0*inputs['hat_P'][1], alp_mass**2, B_0,
+                                         np.diag(inputs['hat_S'][0]), inputs['m_0_squared'])
+    normalization = 1 + 2*f_pi**2/f_a**2*float(np.real(np.trace(axial_source @ axial_source)))
+    return alp_mass, axial_source, normalization
+
+
+def baryon_pair_couplings(inputs, baryons, topological_singlet=TOPOLOGICAL_SINGLET_BARYON):
+    """Return (c^V, c^A) for the canonically normalized a_phys and baryons = (B_1, B_2).
+
+    The vertex is (d_mu a_phys/f_a) bar B_1 gamma^mu (c^V + c^A gamma_5) B_2.
+    """
+    _, axial_source, normalization = alp_baryon_sources(inputs)
+    vector, axial = section_five_couplings(*baryons, axial_source, np.zeros((3, 3)), 0.,
+                                           topological_singlet)
+    root = math.sqrt(normalization)
+    return vector/root, axial/root
+
+
+def kallen(x, y, z):
+    """Return the Kallen function lambda(x, y, z)."""
+    return x*x + y*y + z*z - 2*(x*y + y*z + z*x)
+
+
+def spin_summed_squared_amplitude(vector, axial, first_mass, second_mass, alp_mass, f_a):
+    """Return sum_spins |M|^2 for M = (1/f_a) bar u_1 qslash (c^V + c^A gamma_5) v_2 (dimensionless)."""
+    return 2/f_a**2*(abs(axial)**2*(first_mass + second_mass)**2*(alp_mass**2 - (first_mass - second_mass)**2)
+                     + abs(vector)**2*(first_mass - second_mass)**2
+                     *(alp_mass**2 - (first_mass + second_mass)**2))
+
+
+def baryon_pair_width_from_couplings(vector, axial, first_mass, second_mass, alp_mass, f_a):
+    """Return Gamma(a -> B_1 bar(B_2)) in GeV for given (c^V, c^A); zero at and below threshold."""
+    if alp_mass <= first_mass + second_mass:
+        return 0.
+    momentum = math.sqrt(kallen(alp_mass**2, first_mass**2, second_mass**2))/(2*alp_mass)
+    return momentum/(8*math.pi*alp_mass**2)*spin_summed_squared_amplitude(
+        vector, axial, first_mass, second_mass, alp_mass, f_a)
+
+
+def baryon_pair_width(inputs, baryons, topological_singlet=TOPOLOGICAL_SINGLET_BARYON):
+    """Return the LO pointlike width Gamma(a -> B_1 bar(B_2)) in GeV.
+
+    baryons = (B_1, B_2) with octet labels 'p', 'n', 'Lambda', 'Sigma+',
+    'Sigma0', 'Sigma-', 'Xi0', 'Xi-'; the second entry is the antibaryon,
+    e.g. ('p', 'p') for p pbar and ('Lambda', 'Sigma0') for Lambda Sigma0bar.
+    The width is zero below threshold.
+    """
+    first, second = baryons
+    widths = baryon_pair_widths(inputs, topological_singlet, channels=[(first, second)])
+    return widths[(first, second)]
+
+
+def baryon_pair_widths(inputs, topological_singlet=TOPOLOGICAL_SINGLET_BARYON, channels=None):
+    """Return {(B_1, B_2): Gamma(a -> B_1 bar(B_2)) in GeV}.
+
+    By default all neutral flavour-conserving channels
+    (neutral_flavour_conserving_channels); the ALP sources are computed once.
+    """
+    if channels is None:
+        channels = neutral_flavour_conserving_channels()
+    alp_mass, axial_source, normalization = alp_baryon_sources(inputs)
+    root = math.sqrt(normalization)
+    widths = {}
+    for first, second in channels:
+        vector, axial = section_five_couplings(first, second, axial_source, np.zeros((3, 3)), 0.,
+                                               topological_singlet)
+        widths[(first, second)] = baryon_pair_width_from_couplings(
+            vector/root, axial/root, BARYON_MASSES[first], BARYON_MASSES[second], alp_mass, inputs['f_a'])
+    return widths

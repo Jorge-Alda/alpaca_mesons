@@ -13,7 +13,11 @@ from .only_up_inputs import (B_ZERO, DOWN_MASS, M1_SQUARED, PION_DECAY_CONSTANT,
                              PION_MASS, STRANGE_MASS, UP_MASS, only_up_inputs)
 from .only_up_decays import (photon_two_pseudoscalar, photon_two_pseudoscalar_width, spectrum,
                              three_pseudoscalar, three_pseudoscalar_width,
-                             two_photon_coefficient, two_photon_width)
+                             two_photon_coefficient, two_photon_width,
+                             BARYON_MASSES, TOPOLOGICAL_SINGLET_BARYON,
+                             TOPOLOGICAL_SINGLET_BARYON_NAIVE_UNCERTAINTY, baryon_pair_couplings,
+                             baryon_pair_width, baryon_pair_width_from_couplings, baryon_pair_widths,
+                             neutral_flavour_conserving_channels)
 from .alp_photon_pp_wzw_finite_mixing import alternating_trace, external_legs, wzw_coefficient
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -183,6 +187,54 @@ class RadialExchangeTests(unittest.TestCase):
     def test_radial_pole_in_dalitz_region_raises(self):
         with self.assertRaises(ValueError):
             three_pseudoscalar_width(self.inputs, ('pi0', 'pi+', 'pi-'), .1)
+
+
+class BaryonPairWidthTests(unittest.TestCase):
+    """a -> B_1 bar(B_2); reference widths in GeV from scripts/derive_murayama_baryon_decays.py
+    before its numerical part was moved here (memory/alp/baryon/murayama-only-up-baryon-pair-widths.md)."""
+
+    REFERENCE = {
+        .9: {('p', 'p'): 0.01739913355664702, ('n', 'n'): 0.0028891438799978136},
+        1.: {('p', 'p'): 0.02024736579170888, ('n', 'n'): 0.0035501019230788477,
+             ('Lambda', 'Lambda'): 0.00016339717041817878,
+             ('Lambda', 'Sigma0'): 0.0024840637080593437,
+             ('Sigma0', 'Lambda'): 0.0024840637080593446},
+    }
+
+    def test_widths_against_derivation_values(self):
+        for kappa, reference in self.REFERENCE.items():
+            inputs = only_up_inputs(kappa)
+            widths = baryon_pair_widths(inputs)
+            self.assertEqual(set(widths), set(neutral_flavour_conserving_channels()))
+            for pair, width in widths.items():
+                with self.subTest(kappa=kappa, pair=pair):
+                    expected = reference.get(pair, 0.)
+                    self.assertAlmostEqual(width, expected, delta=1e-12*expected)
+                    self.assertEqual(baryon_pair_width(inputs, pair), width)
+
+    def test_below_threshold_is_zero(self):
+        inputs = only_up_inputs(.3)
+        alp_mass = spectrum(inputs)['a']
+        self.assertLess(alp_mass, 2*BARYON_MASSES['p'])
+        self.assertTrue(all(width == 0. for width in baryon_pair_widths(inputs).values()))
+        self.assertEqual(baryon_pair_width_from_couplings(.1, .1, 1., 1., 2., .003), 0.)
+
+    def test_input_dictionary_and_singlet_argument(self):
+        inputs = only_up_inputs(1.)
+        # kappa_u enters only through inputs['f_a']: overriding f_a reproduces kappa_u = 0.9.
+        modified = dict(inputs, f_a=math.sqrt(2)*UP_MASS/.9)
+        for pair, expected in self.REFERENCE[.9].items():
+            self.assertAlmostEqual(baryon_pair_width(modified, pair), expected, delta=1e-12*expected)
+        central = baryon_pair_width(inputs, ('Lambda', 'Lambda'))
+        shifted = baryon_pair_width(inputs, ('Lambda', 'Lambda'), TOPOLOGICAL_SINGLET_BARYON
+                                    - TOPOLOGICAL_SINGLET_BARYON_NAIVE_UNCERTAINTY)
+        self.assertNotAlmostEqual(central/shifted, 1., places=2)
+        # The Lambda Sigma0bar coupling has no singlet part.
+        self.assertEqual(baryon_pair_width(inputs, ('Lambda', 'Sigma0'), .3),
+                         baryon_pair_width(inputs, ('Lambda', 'Sigma0')))
+        vector, axial = baryon_pair_couplings(inputs, ('p', 'p'))
+        self.assertEqual(vector, 0)
+        self.assertAlmostEqual(axial.real, -1.00e-3, delta=1e-5)
 
 
 if __name__ == '__main__':

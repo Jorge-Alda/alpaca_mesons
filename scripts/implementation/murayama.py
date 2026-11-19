@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedLocator, LogFormatterMathtext
 import numpy as np
 if __package__:
-    from .only_up_decays import spectrum, two_photon_width, three_pseudoscalar_width, photon_two_pseudoscalar_width, sigma_two_pseudoscalar_width
+    from .only_up_decays import spectrum, two_photon_width, three_pseudoscalar_width, photon_two_pseudoscalar_width, sigma_two_pseudoscalar_width, baryon_pair_width
     from .only_up_inputs import only_up_inputs
 else:
-    from only_up_decays import spectrum, two_photon_width, three_pseudoscalar_width, photon_two_pseudoscalar_width, sigma_two_pseudoscalar_width
+    from only_up_decays import spectrum, two_photon_width, three_pseudoscalar_width, photon_two_pseudoscalar_width, sigma_two_pseudoscalar_width, baryon_pair_width
     from only_up_inputs import only_up_inputs
 
 
@@ -32,9 +32,9 @@ eta = ['eta']
 etap = ['eta_prime']
 
 mesons = mesons_tex.keys()
+kappa_u = np.logspace(-3, 0.2, 500)
 
 def masses(quartic_coupling=1e-3):
-    kappa_u = np.logspace(-3, 0, 500)
     m_pi0 = []
     m_eta = []
     m_etap = []
@@ -58,7 +58,7 @@ def masses(quartic_coupling=1e-3):
     plt.loglog(kappa_u, m_etap, label=r'$\eta^\prime$')
     plt.loglog(kappa_u, m_sigma, label=fr'$\sigma, \lambda = {quartic_coupling:.2e}$')
     plt.legend()
-    plt.xlim(1e-3, 1)
+    plt.xlim(np.min(kappa_u), np.max(kappa_u))
     plt.ylim(1e-3, 10)
     plt.xlabel(r'$\kappa_u$')
     plt.ylabel(r'$m$ [GeV]')
@@ -86,7 +86,6 @@ def alp_mass_axis(axis, kappa_u, alp_masses):
     return mass_axis
 
 def gammagamma(m_alp):
-    kappa_u = np.logspace(-3, 0, 500)
     Gamma = []
     for k in kappa_u:
         inputs = only_up_inputs(k)
@@ -97,14 +96,13 @@ def gammagamma(m_alp):
     plt.loglog(kappa_u, Gamma, label=r'$a\to \gamma \gamma$ [WZW only]')
     plt.xlabel(r'$\kappa_u$')
     plt.ylabel(r'$\Gamma$ [GeV]')
-    plt.xlim(1e-3, 1)
+    plt.xlim(np.min(kappa_u), np.max(kappa_u))
     alp_mass_axis(plt.gca(), kappa_u, m_alp)
     plt.legend()
     plt.tight_layout(pad=0.1)
-    plt.savefig('plots/murayama_photons.pdf')
+    plt.savefig('plots/murayama_photons.pdf', bbox_inches='tight')
 
 def three_mesons(m_alp, quartic_coupling=1e-3):
-    kappa_u = np.logspace(-3, 0, 500)
 
     groups = {
         r'3\pi': (3, 0, 0, 0),
@@ -158,14 +156,13 @@ def three_mesons(m_alp, quartic_coupling=1e-3):
 
     plt.xlabel(r'$\kappa_u$')
     plt.ylabel(r'$\Gamma(a\to 3P)$ [GeV]')
-    plt.xlim(1e-3, 1)
+    plt.xlim(np.min(kappa_u), np.max(kappa_u))
     plt.legend(ncols=3, fontsize=6, borderpad=0.2, labelspacing=0.1, handlelength=1.4)
     alp_mass_axis(plt.gca(), kappa_u, m_alp)
     plt.tight_layout(pad=0.1)
-    plt.savefig('plots/murayama_3P.pdf')
+    plt.savefig('plots/murayama_3P.pdf', bbox_inches='tight')
 
 def gammaPP(m_alp):
-    kappa_u = np.logspace(-3, 0, 500)
     Gammagammapipi = []
     GammagammaKK = []
     for k in kappa_u:
@@ -180,14 +177,13 @@ def gammaPP(m_alp):
     plt.title(r'WZW only')
     plt.xlabel(r'$\kappa_u$')
     plt.ylabel(r'$\Gamma(a\to\gamma PP)$ [GeV]')
-    plt.xlim(1e-3, 1)
+    plt.xlim(np.min(kappa_u), np.max(kappa_u))
     plt.legend(fontsize=8)
     alp_mass_axis(plt.gca(), kappa_u, m_alp)
     plt.tight_layout(pad=0.1)
-    plt.savefig('plots/murayama_gammaPP.pdf')
+    plt.savefig('plots/murayama_gammaPP.pdf', bbox_inches='tight')
 
 def sigma_PP(m_sigma, quartic_coupling=1e-3):
-    kappa_u = np.logspace(-3, 0, 500)
     dw_channels = {}
     for i, meson1 in enumerate(mesons):
         for j, meson2 in enumerate(mesons):
@@ -209,7 +205,7 @@ def sigma_PP(m_sigma, quartic_coupling=1e-3):
     # Find each crossing of round mass values without inverting the full curve.
     mass_axis = plt.gca().twiny()
     mass_axis.set_xscale('log')
-    mass_axis.set_xlim(1e-3, 1)
+    plt.xlim(np.min(kappa_u), np.max(kappa_u))
     masses = np.asarray(m_sigma)
     exponents = range(int(np.floor(np.log10(np.min(masses)))),
                       int(np.ceil(np.log10(np.max(masses)))) + 1)
@@ -231,7 +227,34 @@ def sigma_PP(m_sigma, quartic_coupling=1e-3):
     mass_axis.set_xticklabels([f'{mass:g}' for position, mass in selected])
     mass_axis.set_xlabel(r'$m_\sigma$ [GeV]')
     plt.tight_layout(pad=0.1)
-    plt.savefig('plots/murayama_sigma2P.pdf')
+    plt.savefig('plots/murayama_sigma2P.pdf', bbox_inches='tight')
+
+def baryons(m_alp):
+    baryons_latex = {
+        'p': 'p', 'n': 'n', 'Lambda': r'\Lambda',
+        'Sigma+': r'\Sigma^+', 'Sigma0': r'\Sigma^0', 'Sigma-': r'\Sigma^-',
+        'Xi0': r'\Xi^0', 'Xi-': r'\Xi^-',
+    }
+    channels = {'p': r'N \overline N', 'n': r'N \overline N', 'Lambda': r'\Lambda \overline \Lambda', 'Sigma+': r'\Sigma \overline\Sigma', 'Sigma-': r'\Sigma \overline\Sigma',  'Sigma0': r'\Sigma \overline\Sigma', 'Xi-': r'\Xi\overline\Xi', 'Xi0': r'\Xi\overline\Xi'}
+    channels_dws = {c: np.zeros_like(kappa_u) for c in set(channels.values())}
+    for b in baryons_latex.keys():
+        dw = []
+        for k in kappa_u:
+            inputs = only_up_inputs(k)
+            dw.append(baryon_pair_width(inputs, [b, b]))
+        channels_dws[channels[b]] += np.array(dw)
+    plt.figure()
+    for channel_tex, channel_dw in channels_dws.items():
+        plt.loglog(kappa_u, channel_dw, label='$'+channel_tex+'$')
+    plt.legend()
+    plt.title(r'LO-B$\chi$PT only')
+    plt.xlabel(r'$\kappa_u$')
+    plt.ylabel(r'$\Gamma(a\to B\overline{B}$ [GeV]')
+    plt.xlim(np.min(kappa_u), np.max(kappa_u))
+    alp_mass_axis(plt.gca(), kappa_u, m_alp)
+    plt.tight_layout(pad=0.15)
+    plt.savefig('plots/murayama_2B.pdf', bbox_inches='tight')
+
 
 if __name__ == '__main__':
     m_alp, m_sigma = masses()
@@ -239,3 +262,4 @@ if __name__ == '__main__':
     three_mesons(m_alp)
     gammaPP(m_alp)
     sigma_PP(m_sigma)
+    baryons(m_alp)
