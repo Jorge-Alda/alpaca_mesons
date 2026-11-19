@@ -2,7 +2,7 @@
 title: Research memory index
 status: mixed
 created: 2026-09-22
-updated: 2026-11-16
+updated: 2026-11-18
 bibtex_keys: []
 provenance: assumption
 ---

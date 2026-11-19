@@ -119,5 +119,71 @@ class OnlyUpTests(unittest.TestCase):
         self.assertEqual(three_pseudoscalar_width(data, ('pi0', 'pi+', 'pi-')), 0.)
 
 
+class RadialExchangeTests(unittest.TestCase):
+    """sigma exchange in a -> 3P against the direct polar tree amplitude of
+    scripts/derive_murayama_only_up_three_pseudoscalar_amplitude.py (same Lagrangian, same legs)."""
+
+    KAPPA = .3
+    RADIAL_MASS_SQUARED = 2.5  # GeV^2
+
+    @classmethod
+    def setUpClass(cls):
+        from derive_murayama_only_up_three_pseudoscalar_amplitude import charge_model_parameters, spectrum
+        cls.inputs = only_up_inputs(cls.KAPPA)
+        f_a = cls.inputs['f_a']
+        quartic = (cls.RADIAL_MASS_SQUARED - B_ZERO*UP_MASS*PION_DECAY_CONSTANT**2/f_a**2)/(2*f_a**2)
+        cls.parameters = charge_model_parameters((1, 0, 0), (UP_MASS, DOWN_MASS, STRANGE_MASS), f_a, quartic,
+                                                 B_ZERO, PION_DECAY_CONSTANT, M1_SQUARED)
+        cls.data = spectrum(cls.parameters)
+
+    def test_radial_mass(self):
+        from derive_alp_three_pseudoscalar_radial_exchange import radial_mass_squared_trace_form
+        self.assertAlmostEqual(radial_mass_squared_trace_form(self.parameters), self.RADIAL_MASS_SQUARED, places=12)
+
+    def test_amplitude_against_direct_polar_tree(self):
+        from derive_murayama_only_up_three_pseudoscalar_amplitude import direct_pieces, flavour_direction
+        for mesons in (('pi0', 'pi+', 'pi-'), ('pi0', 'eta', 'eta_prime'), ('eta', 'pi0', 'pi0'),
+                       ('pi0', 'K+', 'K-'), ('pi0', 'K0_1', 'K0_1')):
+            total = three_pseudoscalar(self.inputs, mesons, self.RADIAL_MASS_SQUARED)
+            amplitude = total.without_radial
+            masses_squared = [amplitude.masses['a']**2] + [amplitude.masses[name]**2 for name in mesons]
+            for mass_squared in masses_squared:  # same pole masses as the eleven-field polar Hessian
+                self.assertLess(np.min(np.abs(self.data['masses_squared'] - mass_squared)), 1e-12*mass_squared)
+            directions = [flavour_direction(matrix, alp) for matrix, alp in amplitude.external]
+            s12, s23 = .31, .27
+            s13 = sum(masses_squared) - s12 - s23
+            direct = direct_pieces(self.parameters, self.data, directions, masses_squared, s12, s13)
+            with self.subTest(mesons=mesons):
+                scale = abs(direct['total'])
+                self.assertLess(abs(total(s12, s23) - direct['total']), 1e-9*scale)
+                self.assertLess(abs(total.radial(s12, s23) - direct['radial_exchange']), 1e-9*scale)
+                self.assertLess(abs(three_pseudoscalar(self.inputs, mesons)(s12, s23) - amplitude(s12, s23)), 1e-15*scale)
+
+    def test_width_defaults_and_limits(self):
+        mesons = ('pi0', 'pi+', 'pi-')
+        default = three_pseudoscalar_width(self.inputs, mesons)
+        heavy = three_pseudoscalar_width(self.inputs, mesons, 1e8)
+        self.assertAlmostEqual(heavy/default, 1., places=6)
+        with_radial = three_pseudoscalar_width(self.inputs, mesons, self.RADIAL_MASS_SQUARED, epsrel=1e-8)
+        self.assertGreater(abs(with_radial/default - 1), 1e-4)
+        # Independent integration of the same coherent amplitude.
+        from scipy.integrate import dblquad
+        total = three_pseudoscalar(self.inputs, mesons, self.RADIAL_MASS_SQUARED)
+        masses = spectrum(self.inputs)
+        parent, (first, second, third) = masses['a'], [masses[name] for name in mesons]
+        def limits(s, index):
+            kallen = lambda x, y, z: (x - y - z)**2 - 4*y*z
+            root = math.sqrt(max(0., kallen(s, first**2, second**2)*kallen(parent**2, s, third**2)))
+            midpoint = second**2 + third**2 + (s + second**2 - first**2)*(parent**2 - s - third**2)/(2*s)
+            return midpoint + (2*index - 1)*root/(2*s)
+        integral = dblquad(lambda t, s: abs(total(s, t))**2, (first + second)**2, (parent - third)**2,
+                           lambda s: limits(s, 0), lambda s: limits(s, 1), epsabs=0, epsrel=1e-9)[0]
+        self.assertAlmostEqual(with_radial/(integral/(256*math.pi**3*parent**3)), 1., places=6)
+
+    def test_radial_pole_in_dalitz_region_raises(self):
+        with self.assertRaises(ValueError):
+            three_pseudoscalar_width(self.inputs, ('pi0', 'pi+', 'pi-'), .1)
+
+
 if __name__ == '__main__':
     unittest.main()

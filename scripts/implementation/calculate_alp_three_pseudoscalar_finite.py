@@ -146,7 +146,11 @@ def prepare_amplitude(f_a, m_a0, hat_S, hat_P, hat_Theta, mesons, *, f_pi, B_0, 
         second = np.array([cubic(leg,external[left],external[right]) for leg in internal])
         residues = (first@rotation)*(rotation.T@second)
         exchanges.append((spectator, np.array([sum(residues[group]) for group in groups])))
-    return ThreePseudoscalarAmplitude(masses, tuple(mesons), contact, kinetic, grouped_poles, exchanges)
+    amplitude = ThreePseudoscalarAmplitude(masses, tuple(mesons), contact, kinetic, grouped_poles, exchanges)
+    # (meson matrix, ALP coordinate) of the parent and the daughters in the original fields; the
+    # radial-mode exchange of only_up_decays uses the same pole vectors and signs.
+    amplitude.external = external
+    return amplitude
 
 
 class ThreePseudoscalarAmplitude:

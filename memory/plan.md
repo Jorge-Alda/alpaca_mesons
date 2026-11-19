@@ -14,8 +14,12 @@
 ## 1c. Radial mode in the model of DiLuzio:2026poh
 
 - $\sigma\to P_iP_j$, polar and Cartesian, general sources: memory DONE
-- $a\to P_iP_jP_k$ with $\sigma$ exchange, general sources, polar coordinates ([record](alp/three-pseudoscalar/alp-three-pseudoscalar-radial-exchange.md)): memory DONE, latex draft MISSING
-- Next step: add $\sigma$ exchange (inputs $\lambda$ or $m_\sigma$, $\widehat S_{10}$, $\widehat P_{11}$, $\widehat S_{12}$) to `scripts/implementation/only_up_decays.py`, which currently omits it; then explain or disprove the numerical vanishing of the only-up amplitude without $\sigma$ for three distinct neutral daughters.
+- $a\to P_iP_jP_k$ with $\sigma$ exchange, general sources, polar coordinates ([record](alp/three-pseudoscalar/alp-three-pseudoscalar-radial-exchange.md)): memory DONE, latex draft DONE (`sec:murayama-three-general` and following subsections of `latex/murayama_matching.tex`)
+- Quartic vertex in the basis without ALP–meson mixing ([record](alp/three-pseudoscalar/murayama-unmixed-basis-quartic-vertex.md)), parity rule removing cubic vertices ([record](alp/three-pseudoscalar/murayama-cubic-vertex-parity-rule.md)), only-up assembly with $\sigma$ exchange ([record](alp/three-pseudoscalar/murayama-only-up-three-pseudoscalar-amplitude.md)), contact cancellation for three distinct neutral daughters ([record](alp/three-pseudoscalar/murayama-distinct-neutral-contact-cancellation.md)): memory DONE, latex DONE, draft equations tested against the direct calculation.
+- $\sigma$ exchange in `scripts/implementation/only_up_decays.py` (explicit `radial_mass_squared` argument): DONE.
+- Vertex and $\sigma$-coupling formulas (draft and the `murayama-*` records) rewritten in invariant form: traces of the original $\widehat S_{rs}$, $\widehat P_{rs}$ with $\mathbb M^{-1}_{m^2}(\widehat P_{01})$, $N(m^2)$ and pole masses; no $w$ vectors, shifted source coefficients or auxiliary node symbols. DONE, tested equation by equation.
+- Pending decision (user): $w_k^{(r)}$ still appears in the draft's pole-direction, chiral-shift and eq:murayama-T definitions, and $\Omega_r=\sum_kw_k^{(r)}\lambda_k$ in [radial-decay-polar-cartesian-general-sources.md](alp/shared/radial-decay-polar-cartesian-general-sources.md) and its script.
+- Next step: numerical widths of the only-up model with $\sigma$ exchange as a function of $m_\sigma$ (plots in `plots/murayama_3P.pdf` still omit it); treat the $\sigma$ width when $m_\sigma<m_a-m_r$ (currently raises `ValueError`).
 
 ## 2. Interactions with Vector mesons
 

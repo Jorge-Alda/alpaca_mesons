@@ -15,3 +15,5 @@ Neutral-kaon state projections and vector-width selection-rule diagnostics.
 - [neutral-alp-pv-selection-rule-width.md](neutral-alp-pv-selection-rule-width.md) — neutral $a\to PV$ selection rules and widths.
 - [pi0-kl-ks-vector-width-slowdown-diagnostic.md](pi0-kl-ks-vector-width-slowdown-diagnostic.md) — diagnostic of the $\pi^0K_LK_S$ vector-width slowdown.
 - [kaon-alp-constant-width-poles.md](kaon-alp-constant-width-poles.md) — physical neutral-kaon and ALP complex poles, mixing limits and CP interpretation.
+
+- [only-up-three-pseudoscalar-physical-kaons.md](only-up-three-pseudoscalar-physical-kaons.md) — physical neutral-kaon projection in the only-up three-pseudoscalar amplitude.

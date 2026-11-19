@@ -12,6 +12,7 @@ provenance: literature
 - [model-lagrangian-and-field-normalization.md](model-lagrangian-and-field-normalization.md) — field content, PQ charges, symmetry breaking, leading chiral Lagrangian and dimensionless meson-field normalization.
 - [angular-mode-parametrization.md](angular-mode-parametrization.md) — polar decomposition of $\varphi$, normalization of the phase and radial modes, vacuum conditions and PQ shifts.
 - [angular-mode-couplings.md](angular-mode-couplings.md) — exact dependence of quark masses and the CP-odd potential on the phase and radial modes, and the mixing matrix.
+- [pq-anomaly-coefficients.md](pq-anomaly-coefficients.md) — color and electromagnetic PQ anomalies, domain-wall number and their relation to the mass phases.
 - [finite-axion-meson-mixing.md](finite-axion-meson-mixing.md) — chiral-covariant dynamical quark-mass spurion and the full CP-odd quadratic mass matrix.
 - [heavy-scalar-eft-operators.md](heavy-scalar-eft-operators.md) — chiral operators and coefficients after integrating out the heavy PQ scalars.
 - [scalar-pseudoscalar-source-operators.md](scalar-pseudoscalar-source-operators.md) — QCD scalar and pseudoscalar operators sourced by the PQ field and their two-point functions.

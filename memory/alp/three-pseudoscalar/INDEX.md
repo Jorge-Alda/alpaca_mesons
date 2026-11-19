@@ -2,7 +2,7 @@
 title: ALP three-pseudoscalar memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-18
+updated: 2026-11-19
 bibtex_keys: []
 provenance: assumption
 ---
@@ -24,3 +24,7 @@ provenance: assumption
 - [three-pseudoscalar-scalar-optimization.md](three-pseudoscalar-scalar-optimization.md) — scalar amplitude and width optimization with validation.
 - [alp-finite-mixing-three-pseudoscalar-calculator.md](alp-finite-mixing-three-pseudoscalar-calculator.md) — Finite-mixing LO amplitude and Dalitz width interface, source requirements, efficiency choices and limits.
 - [alp-three-pseudoscalar-radial-exchange.md](alp-three-pseudoscalar-radial-exchange.md) — exact-LO $a\to P_iP_jP_k$ with radial-mode ($\sigma$) exchange in the model of DiLuzio:2026poh for general sources, polar coordinates, invariant trace form and direct polar/Cartesian checks.
+- [murayama-cubic-vertex-parity-rule.md](murayama-cubic-vertex-parity-rule.md) — intrinsic-parity condition $\widehat M(-a,\sigma)=\widehat M(a,\sigma)^\dagger$ under which all cubic vertices of pseudoscalars and the ALP vanish in the model of DiLuzio:2026poh, in every basis.
+- [murayama-unmixed-basis-quartic-vertex.md](murayama-unmixed-basis-quartic-vertex.md) — quartic vertex in invariant form (original fields, source coefficients, $\mathbb M^{-1}_{m_x^2}(\widehat P_{01})$ and $N(m_x^2)$), explicit forms for diagonal PQ-charge sources, and the on-shell check against the basis without ALP–meson mixing.
+- [murayama-distinct-neutral-contact-cancellation.md](murayama-distinct-neutral-contact-cancellation.md) — proof that the amplitude without $\sigma$ vanishes for four distinct neutral poles when one quark is PQ charged (neutral equations of motion, secular product and a three-term identity in the cosine-direction masses).
+- [murayama-only-up-three-pseudoscalar-amplitude.md](murayama-only-up-three-pseudoscalar-amplitude.md) — only-up $a\to P_iP_jP_k$ amplitude with $\sigma$ exchange, closed-form off-shell couplings, surviving channels and the implementation.

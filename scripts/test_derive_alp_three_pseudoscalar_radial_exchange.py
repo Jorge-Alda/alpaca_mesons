@@ -221,11 +221,18 @@ class OnlyUpTest(unittest.TestCase):
                               + column_x[1] * column_y[1] * (q_squared - masses_squared[x] - masses_squared[y])) / fa
                 self.assertLess(abs(general - factorized), 1e-12 * max(abs(general), 1e-12))
 
-    def test_only_up_implementation_has_no_radial_exchange(self):
-        """only_up_decays.three_pseudoscalar_width receives no radial inputs (lambda, m_sigma, S_10)."""
-        source = (Path(__file__).resolve().parent / 'implementation' / 'only_up_decays.py').read_text()
-        self.assertIn('radial scalar', source)
-        self.assertNotIn('lambda', source.split('def three_pseudoscalar_width')[1])
+    def test_only_up_implementation_radial_exchange_is_explicit(self):
+        """only_up_decays includes sigma exchange only through the explicit radial_mass_squared input
+        (default None: radial mode omitted).  Its amplitude is tested in
+        scripts/implementation/test_only_up_decays.py (RadialExchangeTests)."""
+        import inspect
+        import sys
+        implementation = str(Path(__file__).resolve().parent / 'implementation')
+        if implementation not in sys.path:
+            sys.path.insert(0, implementation)
+        import only_up_decays
+        for function in (only_up_decays.three_pseudoscalar, only_up_decays.three_pseudoscalar_width):
+            self.assertIsNone(inspect.signature(function).parameters['radial_mass_squared'].default)
 
 
 class WeakMixingTest(unittest.TestCase):

@@ -2,7 +2,7 @@
 title: Radial-mode decays to two pseudoscalars in the only-up model
 status: derived
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-19
 bibtex_keys: [DiLuzio:2026poh, Alda:2026nrd]
 provenance: analytical-derivation
 ---
@@ -83,50 +83,44 @@ For an invertible $\mathbb M_s$, the first equation gives $\Phi=(2B_0f_\pi/f_a)\
 $$
 s+\frac{2B_0f_\pi^2}{f_a^2}\left[\langle\widehat S_{02}\rangle+B_0\left\langle\widehat P_{01}\,\mathbb M_s^{-1}(\widehat P_{01})\right\rangle\right]=0.
 $$
-At a regular simple pole $s=m_i^2$, this is the linear meson shift of the ALP-dependent chiral rotation in the linked pole-alignment record. The shift eliminates the mixed inverse propagator at the selected pole, not at all momenta. For its normalization use the pole-shift coefficients $w_k^{(i)}$:
+At a regular simple pole $s=m_i^2$, this is the linear meson shift of the ALP-dependent chiral rotation in the linked pole-alignment record. The shift eliminates the mixed inverse propagator at the selected pole, not at all momenta. The pole direction with angular component one has meson matrix $\tfrac{2B_0f_\pi}{f_a}\mathbb M_{m_i^2}^{-1}(\widehat P_{01})$. With the kinetic term $\tfrac14\langle\partial_\mu\Phi\partial^\mu\Phi\rangle+\tfrac12(\partial a)^2$ its squared norm is
 $$
-\sum_k w_k^{(i)}\lambda_k=\frac{2B_0f_\pi}{f_a}\mathbb M_{m_i^2}^{-1}(\widehat P_{01}),\qquad
-\frac12\left\langle\left(\sum_k w_k^{(i)}\lambda_k\right)^2\right\rangle=\sum_k\left(w_k^{(i)}\right)^2.
-$$
-Thus the squared norm of the pole direction with angular component one is
-$$
-N(m_i^2)=1+\sum_k\left(w_k^{(i)}\right)^2=1+\frac{2B_0^2f_\pi^2}{f_a^2}\left\langle\mathbb M_{m_i^2}^{-1}(\widehat P_{01})^2\right\rangle.
+N(m_i^2)=1+\frac12\left\langle\left(\frac{2B_0f_\pi}{f_a}\mathbb M_{m_i^2}^{-1}(\widehat P_{01})\right)^2\right\rangle=1+\frac{2B_0^2f_\pi^2}{f_a^2}\left\langle\mathbb M_{m_i^2}^{-1}(\widehat P_{01})^2\right\rangle.
 $$
 
 ### Basis with no ALP–meson mixing
 
-Select the physical ALP-like pole $s=m_a^2$ and its shift coefficients $w_i^{(a)}$ above. Their squared norm is $N(m_a^2)=1+\sum_i(w_i^{(a)})^2$. The ALP-dependent chiral transformation is
+Select the physical ALP-like pole $s=m_a^2$. The ALP-dependent chiral transformation is
 $$
-e^{i\Phi/f_\pi}=e^{ia'\sum_iw_i^{(a)}\lambda_i/(2f_\pi)}e^{i\Phi'/f_\pi}e^{ia'\sum_iw_i^{(a)}\lambda_i/(2f_\pi)},\qquad a=a',
+e^{i\Phi/f_\pi}=e^{ia'B_0\mathbb M_{m_a^2}^{-1}(\widehat P_{01})/f_a}e^{i\Phi'/f_\pi}e^{ia'B_0\mathbb M_{m_a^2}^{-1}(\widehat P_{01})/f_a},\qquad a=a',
 $$
-whose linear part is $P_i=P_i'+w_i^{(a)}a'$. At the order needed for $\sigma PP$, this linear part suffices: the next term in the symmetric chiral map is cubic in the pseudoscalar fields.
+whose linear part is $\Phi=\Phi'+a'\tfrac{2B_0f_\pi}{f_a}\mathbb M_{m_a^2}^{-1}(\widehat P_{01})$. At the order needed for $\sigma PP$, this linear part suffices: the next term in the symmetric chiral map is cubic in the pseudoscalar fields.
 
 The pole shift alone leaves a mixed kinetic term. Complete the change of variables by
 $$
-a'=a''-\frac{\sum_iw_i^{(a)}P_i'}{N(m_a^2)}.
+a'=a''-\frac{B_0f_\pi}{f_a}\,\frac{\big\langle\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\Phi'\big\rangle}{N(m_a^2)}.
 $$
-Using the pole equation, the quadratic Lagrangian in $(P_i',a'')$ is
+Using the pole equation, the quadratic Lagrangian in $(\Phi',a'')$ is
 $$
 \begin{aligned}
-\mathcal L_2={}&\frac12\sum_{ij}\left(\delta_{ij}-\frac{w_i^{(a)}w_j^{(a)}}{N(m_a^2)}\right)\partial_\mu P_i'\partial^\mu P_j'
--\frac12\sum_{ij}P_i'P_j'\left[\frac{\langle\lambda_i\mathbb M_0(\lambda_j)\rangle}{2}-\frac{m_a^2w_i^{(a)}w_j^{(a)}}{N(m_a^2)}\right]\\
-&+\frac{N(m_a^2)}2\left[(\partial a'')^2-m_a^2(a'')^2\right].
+\mathcal L_2={}&\frac14\langle\partial_\mu\Phi'\partial^\mu\Phi'\rangle-\frac{B_0^2f_\pi^2}{2f_a^2N(m_a^2)}\big\langle\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\partial_\mu\Phi'\big\rangle\big\langle\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\partial^\mu\Phi'\big\rangle\\
+&-\frac14\big\langle\Phi'\,\mathbb M_0(\Phi')\big\rangle+\frac{m_a^2B_0^2f_\pi^2}{2f_a^2N(m_a^2)}\big\langle\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\Phi'\big\rangle^2
++\frac{N(m_a^2)}2\left[(\partial a'')^2-m_a^2(a'')^2\right].
 \end{aligned}
 $$
 There is no mixed ALP–meson kinetic or mass term at any momentum. Define $a_{\rm phys}=\sqrt{N(m_a^2)}\,a''$; canonically normalize the positive meson kinetic matrix and diagonalize its remaining symmetric mass matrix with a meson-only rotation. This does not reintroduce ALP mixing. The completion is a general linear field change, in addition to the chiral shift; a single shift does not achieve the displayed decoupling at every momentum. In a degenerate eigenspace choose an orthonormal basis.
 
 The full transformation before the final meson-only mass rotation is
 $$
-\begin{pmatrix}P_i\\a\end{pmatrix}
-=\begin{pmatrix}
-\displaystyle\delta_{ij}-\frac{w_i^{(a)}w_j^{(a)}}{\sqrt{N(m_a^2)}[\sqrt{N(m_a^2)}+1]}&\displaystyle\frac{w_i^{(a)}}{\sqrt{N(m_a^2)}}\\[2mm]
-\displaystyle-\frac{w_j^{(a)}}{\sqrt{N(m_a^2)}}&\displaystyle\frac1{\sqrt{N(m_a^2)}}
-\end{pmatrix}
-\begin{pmatrix}P_j''\\a_{\rm phys}\end{pmatrix}.
+\begin{aligned}
+\Phi={}&\Phi''-\frac{2B_0f_\pi}{f_a}\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\;\frac{B_0f_\pi}{f_a}\,\frac{\big\langle\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\Phi''\big\rangle}{\sqrt{N(m_a^2)}\,[\sqrt{N(m_a^2)}+1]}
++\frac{2B_0f_\pi}{f_a}\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\frac{a_{\rm phys}}{\sqrt{N(m_a^2)}},\\
+a={}&-\frac{B_0f_\pi}{f_a}\,\frac{\big\langle\mathbb M_{m_a^2}^{-1}(\widehat P_{01})\,\Phi''\big\rangle}{\sqrt{N(m_a^2)}}+\frac{a_{\rm phys}}{\sqrt{N(m_a^2)}}.
+\end{aligned}
 $$
-The fields $P_j''$ have canonical kinetic terms. The matrix is orthogonal and its final column is the normalized ALP-like pole direction. After the meson-only rotation every column of the complete orthogonal transformation is a normalized pole direction $(w_k^{(r)},1)/\sqrt{N(m_r^2)}$. Each physical field's sign is arbitrary; below its angular component is chosen positive. Keeping the two physical fields of a vertex,
+The fields in $\Phi''$ have canonical kinetic terms. On the components $P_k$ of $\Phi=\sum_kP_k\lambda_k$ the transformation is orthogonal, and its $a_{\rm phys}$ column is the normalized ALP-like pole direction. After the meson-only rotation every column of the complete orthogonal transformation is a normalized pole direction $r$: meson matrix $\tfrac{2B_0f_\pi}{f_a}\mathbb M_{m_r^2}^{-1}(\widehat P_{01})/\sqrt{N(m_r^2)}$ and ALP component $1/\sqrt{N(m_r^2)}$. Each physical field's sign is arbitrary; below its angular component is chosen positive. Keeping the two physical fields of a vertex,
 $$
-\Phi=\sum_{r=i,j}\frac{P_r}{\sqrt{N(m_r^2)}}\sum_k w_k^{(r)}\lambda_k,
+\Phi=\sum_{r=i,j}\frac{P_r}{\sqrt{N(m_r^2)}}\,\frac{2B_0f_\pi}{f_a}\mathbb M_{m_r^2}^{-1}(\widehat P_{01}),
 \qquad
 a=\sum_{r=i,j}\frac{P_r}{\sqrt{N(m_r^2)}}.
 $$
@@ -152,26 +146,16 @@ $$
 =\frac{m_\sigma^2-m_i^2-m_j^2}{f_a},\qquad
 (p_i+p_j)^2=m_\sigma^2.
 $$
-Inserting the physical fields,
+Inserting the physical fields, in terms of the sources, the pole masses and $N(m_r^2)$ only,
 $$
 \begin{aligned}
-g_{ij}={}&\frac1{f_a}\Big\{\frac{B_0}{2}\Big\langle\widehat S_{10}\Big\{\sum_kw_k^{(i)}\lambda_k,\sum_lw_l^{(j)}\lambda_l\Big\}\Big\rangle
--\frac{B_0f_\pi}{f_a}\Big\langle\widehat P_{11}\Big(\sum_kw_k^{(i)}\lambda_k+\sum_kw_k^{(j)}\lambda_k\Big)\Big\rangle\\
-&-\frac{2B_0f_\pi^2}{f_a^2}\langle\widehat S_{12}\rangle+m_\sigma^2-m_i^2-m_j^2\Big\}\frac{1}{\sqrt{N(m_i^2)\,N(m_j^2)}}.
+f_a\sqrt{N(m_i^2)\,N(m_j^2)}\;g_{ij}={}&\frac{2B_0^3f_\pi^2}{f_a^2}\left\langle\widehat S_{10}\left\{\mathbb M_{m_i^2}^{-1}(\widehat P_{01}),\mathbb M_{m_j^2}^{-1}(\widehat P_{01})\right\}\right\rangle
+-\frac{2B_0^2f_\pi^2}{f_a^2}\left\langle\widehat P_{11}\left(\mathbb M_{m_i^2}^{-1}(\widehat P_{01})+\mathbb M_{m_j^2}^{-1}(\widehat P_{01})\right)\right\rangle\\
+&-\frac{2B_0f_\pi^2}{f_a^2}\langle\widehat S_{12}\rangle+m_\sigma^2-m_i^2-m_j^2,
+\qquad N(m_r^2)=1+\frac{2B_0^2f_\pi^2}{f_a^2}\left\langle\mathbb M_{m_r^2}^{-1}(\widehat P_{01})^2\right\rangle.
 \end{aligned}
 $$
-These include all $\sigma a_{\rm phys}a_{\rm phys}$, $\sigma a_{\rm phys}P_i$ and $\sigma P_iP_j$ vertices, with their derivative contribution. The coefficients after the field change depend on the pole selected for the shift, while the on-shell $g_{ij}$ do not. In terms of the sources alone,
-$$
-\begin{aligned}
-g_{ij}={}&\frac1{f_a}\Big\{
-\frac{2B_0f_\pi^2}{f_a^2}\Big[B_0^2\left\langle\widehat S_{10}\left\{\mathbb M_{m_i^2}^{-1}(\widehat P_{01}),\mathbb M_{m_j^2}^{-1}(\widehat P_{01})\right\}\right\rangle
--B_0\left\langle\widehat P_{11}\left(\mathbb M_{m_i^2}^{-1}(\widehat P_{01})+\mathbb M_{m_j^2}^{-1}(\widehat P_{01})\right)\right\rangle\\
-&-\langle\widehat S_{12}\rangle\Big]
-+m_\sigma^2-m_i^2-m_j^2\Big\}
-\prod_{r=i,j}\left\{1+\frac{2B_0^2f_\pi^2}{f_a^2}\left\langle\mathbb M_{m_r^2}^{-1}(\widehat P_{01})^2\right\rangle\right\}^{-1/2}.
-\end{aligned}
-$$
-The three terms in square brackets are generated by $\widehat S_{10}$, $\widehat P_{11}$ and $\widehat S_{12}$; the last is the on-shell contribution of $\sigma(\partial a)^2/f_a$. The formula includes the axion-like neutral state among the daughters. It holds for general sources under the assumptions listed in the [general-source record](radial-decay-polar-cartesian-general-sources.md); the first-order angular invariants alone do not fix the scalar couplings.
+These include all $\sigma a_{\rm phys}a_{\rm phys}$, $\sigma a_{\rm phys}P_i$ and $\sigma P_iP_j$ vertices, with their derivative contribution. The coefficients after the field change depend on the pole selected for the shift, while the on-shell $g_{ij}$ do not. The first three terms are generated by $\widehat S_{10}$, $\widehat P_{11}$ and $\widehat S_{12}$; the last is the on-shell contribution of $\sigma(\partial a)^2/f_a$. With $m_\sigma^2\to q^2$ this is the off-shell coupling $g_{xy}(q^2)$ of the [radial-exchange record](../three-pseudoscalar/alp-three-pseudoscalar-radial-exchange.md). An earlier version of this record wrote the same coupling with the pole meson matrices expanded on the generators $\lambda_k$; the two forms agree numerically (Verification). The formula includes the axion-like neutral state among the daughters. It holds for general sources under the assumptions listed in the [general-source record](radial-decay-polar-cartesian-general-sources.md); the first-order angular invariants alone do not fix the scalar couplings.
 
 ## Cartesian derivation
 
@@ -254,9 +238,20 @@ For redefinitions depending on $\sigma$, radial connections and all induced deri
 
 [The general-source script](../../../scripts/derive_radial_decay_polar_cartesian_general.py) uses the convention of this record. It checks the only-up coefficients above, $\widehat P_{11}-\widehat P_{01}=0$, and the vanishing of the extra Cartesian trace terms. It also compares directly expanded polar and Cartesian Lagrangians with both trace formulas. See its record for residuals.
 
+The forms written above with invariant quantities only are checked in [the three-pseudoscalar script](../../../scripts/derive_murayama_only_up_three_pseudoscalar_amplitude.py) (`radial_coupling_invariant_form`, `no_mixing_field_change_invariant_form`) by `DraftRadialCouplingTest` of [its unit tests](../../../scripts/test_derive_murayama_only_up_three_pseudoscalar_amplitude.py). For random non-commuting sources (seed 2026) and for the only-up model, all pairs of poles with an ALP component and $q^2=0$, $0.41$, $2.5$ GeV$^2$ in place of $m_\sigma^2$:
+
+| check | residual |
+|---|---|
+| invariant $g_{ij}$ vs the earlier form with the pole meson matrices expanded on the generators $\lambda_k$ | $<10^{-12}$ relative |
+| invariant $g_{ij}$ vs the trace form on the Hessian pole vectors | $<10^{-8}$ relative (precision of $\mathbb M^{-1}_{m^2}$ near meson-like poles) |
+| only-up: invariant $g_{ij}$ vs the closed form $\big[q^2-m_i^2-m_j^2+m_i^2m_j^2f_a^2/(B_0m_uf_\pi^2)\big]/\big(f_a\sqrt{N(m_i^2)N(m_j^2)}\big)$ | $<10^{-8}$ relative |
+| field change above vs its earlier component form; orthogonality; kinetic matrix after the change | $<10^{-12}$ |
+| mass matrix after the change: $a_{\rm phys}$–meson entries; $a_{\rm phys}$ entry minus $m_a^2$ | $<10^{-10}$ relative |
+
 The older scripts use the earlier dimensionful-field coefficients and the opposite sign of both linear $\widehat P$ terms; their $g_{ij}$ agree after the conversion stated in the inputs. [The operator derivation](../../../scripts/derive_murayama_sigma_operator_amplitude.py) calculates the pole directions, normalization and polar vertex. [The Cartesian derivation](../../../scripts/derive_murayama_sigma_pp.py) checks the polar and Cartesian vertices of the model on shell. Further independent representations and checks are in `scripts/derive_murayama_sigma_explicit_mixing.py`, `scripts/derive_murayama_sigma_normal_basis.py`, `scripts/derive_murayama_sigma_invariant_couplings.py`, `scripts/derive_murayama_sigma_matrix_invariants.py` and `scripts/derive_murayama_sigma_source_coefficients.py`, each with its own unit test. Their determinant and adjugate forms are alternative algebraic representations of the residues, not additional physical assumptions.
 
 ```sh
 .venv/bin/python -m unittest scripts.test_derive_radial_decay_polar_cartesian_general
 .venv/bin/python -m unittest scripts.test_derive_murayama_sigma_operator_amplitude scripts.test_derive_murayama_sigma_pp
+.venv/bin/python -m unittest scripts.test_derive_murayama_only_up_three_pseudoscalar_amplitude.DraftRadialCouplingTest
 ```

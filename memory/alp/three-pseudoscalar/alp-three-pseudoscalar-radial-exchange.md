@@ -2,7 +2,7 @@
 title: Radial-mode exchange in the ALP decay to three pseudoscalars
 status: mixed
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-19
 bibtex_keys: [Alda:2026nrd, DiLuzio:2026poh]
 provenance: analytical-derivation
 ---
@@ -175,9 +175,9 @@ f_ag_{xy}(q^2)=B_0m_u\Big[(\lambda_x)_{11}+\frac{f_\pi}{f_a}\xi_x\Big]\Big[(\lam
 $$
 and $g_{\pi^+\pi^-}=g_{K^+K^-}=B_0m_u/f_a$ for charged pairs (no ALP component).
 
-Numerical observation (only-up model, not proven in general): for the parent and three distinct neutral mixed daughters ($\pi^0$, $\eta$, $\eta'$-like), the LO amplitude without $\sigma$ vanishes to $10^{-16}$ in both the direct calculation and the existing formula. A toy potential $\sum_qm_q(1-\cos\theta_q)+\tfrac A2\langle\Phi\rangle^2$ with the same structure (only $\theta_u$ contains $a$) also gives zero, while random linear forms do not. The radial exchange is then the whole tree amplitude for such final states.
+Numerical observation (only-up model): for the parent and three distinct neutral mixed daughters ($\pi^0$, $\eta$, $\eta'$-like), the LO amplitude without $\sigma$ vanishes to $10^{-16}$ in both the direct calculation and the existing formula. A toy potential $\sum_qm_q(1-\cos\theta_q)+\tfrac A2\langle\Phi\rangle^2$ with the same structure (only $\theta_u$ contains $a$) also gives zero, while random linear forms do not. The radial exchange is then the whole tree amplitude for such final states. **Update (2026-11-19):** this is now derived. The cubic vertices vanish by intrinsic parity ([parity record](murayama-cubic-vertex-parity-rule.md)). The remaining contact is a third divided difference of a linear function ([cancellation record](murayama-distinct-neutral-contact-cancellation.md)). The assembled only-up amplitude, channel by channel, is in [the only-up amplitude record](murayama-only-up-three-pseudoscalar-amplitude.md); the quartic vertex in the draft's basis without ALP–meson mixing is in [the quartic-vertex record](murayama-unmixed-basis-quartic-vertex.md).
 
-`scripts/implementation/only_up_decays.py` (`three_pseudoscalar_width`, through `calculate_alp_three_pseudoscalar_finite.decay_width`) does **not** include $\sigma$ exchange. Its docstring states that the radial scalar is omitted, and it receives no $\lambda$, $m_\sigma$ or $\widehat S_{10}$ input.
+Until 2026-11-18, `scripts/implementation/only_up_decays.py` (`three_pseudoscalar_width`, through `calculate_alp_three_pseudoscalar_finite.decay_width`) did **not** include $\sigma$ exchange: its docstring stated that the radial scalar is omitted, and it received no $\lambda$, $m_\sigma$ or $\widehat S_{10}$ input. Since 2026-11-19 `three_pseudoscalar` and `three_pseudoscalar_width` take an explicit `radial_mass_squared` ($m_\sigma^2$); the default `None` keeps the former result without $\sigma$. See [the only-up amplitude record](murayama-only-up-three-pseudoscalar-amplitude.md).
 
 ## Limits
 

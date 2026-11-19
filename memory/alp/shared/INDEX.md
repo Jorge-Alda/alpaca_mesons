@@ -61,3 +61,7 @@ provenance: assumption
 
 - [murayama-sigma-two-pseudoscalar-decays.md](murayama-sigma-two-pseudoscalar-decays.md) — Radial decays into pseudoscalar pairs in the only-up model, with dimension-one source coefficients and exact neutral mixing.
 - [radial-decay-polar-cartesian-general-sources.md](radial-decay-polar-cartesian-general-sources.md) — On-shell equality of polar and Cartesian $\sigma\to P_iP_j$ vertices for general Hermitian sources, in trace form.
+
+- [murayama-sigma-width-implementation.md](murayama-sigma-width-implementation.md) — Numerical two-pseudoscalar radial widths in the only-up model.
+
+- [murayama-alp-plot-mass-axis.md](murayama-alp-plot-mass-axis.md) — Mass tick placement in only-up ALP decay plots.
