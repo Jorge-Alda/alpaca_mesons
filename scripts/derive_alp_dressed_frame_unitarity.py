@@ -16,7 +16,11 @@ Conventions (Alda:2026nrd; memory/alp/shared/alp-general-chiral-redefinition-inv
     omitted, all momenta incoming), as in derive_alp_lo_joint_vertices.py;
   * partial waves: (a_J)_{fi} = N_i N_f / (32 pi) int_{-1}^{1} d cos(theta)
     P_J(cos theta) T_{fi}, with N = 1/sqrt(2) for two identical particles and 1
-    otherwise; elastic unitarity for s >> masses gives |Re a_J| <= 1/2.
+    otherwise; elastic unitarity for s >> masses gives |Re a_J| <= 1/2;
+  * H5: total ALP potential V_tot(a) = V_QCD(a) + V_ext(a), V_QCD = -L_LO at
+    P = 0 in the dressed frame, V_ext an external function of a only (it contains
+    the bare mass term m_{a,0}^2 a^2/2); a = 0 is assumed to be the minimum,
+    V_tot'(0) = 0. Feynman rule i V with V = -d^n V_tot/da^n for pure-ALP vertices.
 
 H2 numerics: the source Taylor arrays and all basis-field vertices are exact
 (rational, sqrt(2/3), sqrt(3)); s and t are exact rationals. The pole masses
@@ -506,6 +510,87 @@ def contact_unitarity_bounds(dressed_mass, meson_generator, B_0, f_pi):
 
 
 # --------------------------------------------------------------------------
+# H5: external ALP potential V_ext(a), not induced by QCD
+# --------------------------------------------------------------------------
+
+
+def qcd_alp_potential(dressed_mass, theta_derivatives, B_0, f_pi, f_a, anomaly_mass_squared, alp,
+                      flavours=3):
+    """QCD-induced ALP potential V_QCD(a) = -L_LO at P = 0, Taylor polynomial through a^4.
+
+    V_QCD = -f_pi^2 B_0 Re tr hat M(a/f_a) + (f_pi^2 m_0^2 / N_f) hat Theta(a/f_a)^2,
+    from (f_pi^2/4) <chi_+> = f_pi^2 B_0 Re <hat M U^dag> and
+    -(f_pi^2 m_0^2/(4 N_f)) X_TC^2 with X_TC = -2 hat Theta at P = 0.
+    dressed_mass[n] = hat M_n (not chi), theta_derivatives[n] = hat Theta_n.
+    """
+    order = len(dressed_mass) - 1
+    x = alp / f_a
+    mass = sum((sp.re(sp.expand(dressed_mass[n].trace())) * x**n / sp.factorial(n) for n in range(order + 1)))
+    theta = sum((theta_derivatives[n] * x**n / sp.factorial(n) for n in range(min(len(theta_derivatives), order + 1))))
+    potential = -f_pi**2 * B_0 * mass + f_pi**2 * anomaly_mass_squared * theta**2 / flavours
+    return sp.expand(sp.series(sp.expand(potential), alp, 0, order + 1).removeO())
+
+
+def potential_derivative_at_zero(potential, alp, n):
+    """d^n V / da^n at a = 0."""
+    return sp.expand(sp.diff(potential, alp, n).subs(alp, 0))
+
+
+def alp_elastic_amplitude(quartic, cubic, alp_mass_squared, s, t):
+    """Tree aa -> aa amplitude from V_tot: contact plus s, t, u ALP exchange.
+
+    quartic = V_tot''''(0), cubic = V_tot'''(0). Feynman rule i V for a vertex
+    V = d^n L / da^n = -d^n V_tot / da^n, propagator i/(q^2 - m_a^2), iM = sum of
+    diagrams: M = -V'''' - V'''^2 [1/(s-m_a^2) + 1/(t-m_a^2) + 1/(u-m_a^2)],
+    u = 4 m_a^2 - s - t. Mass mixing with mesons neglected.
+    """
+    u = 4 * alp_mass_squared - s - t
+    return -quartic - cubic**2 * sum(1 / (channel - alp_mass_squared) for channel in (s, t, u))
+
+
+def alp_elastic_s_wave(quartic, cubic, alp_mass_squared, s):
+    """Closed-form S wave of aa -> aa, N_i = N_f = 1/sqrt 2, for s > 4 m_a^2.
+
+    a_0 = [-V'''' - V'''^2/(s - m_a^2) + 2 V'''^2 ln((s - 3 m_a^2)/m_a^2)/(s - 4 m_a^2)] / (32 pi),
+    using int_{-1}^{1} dcos / (t - m_a^2) = -2 ln((s - 3 m_a^2)/m_a^2)/(s - 4 m_a^2) for
+    t = -(s - 4 m_a^2)(1 - cos)/2 (the u channel gives the same integral).
+    """
+    m2 = alp_mass_squared
+    return (-quartic - cubic**2 / (s - m2) + 2 * cubic**2 * sp.log((s - 3 * m2) / m2) / (s - 4 * m2)) / (32 * sp.pi)
+
+
+def quartic_unitarity_interval(qcd_quartic_coefficient, external_quartic, bound=sp.Rational(1, 2)):
+    """Allowed interval of r = f_pi/f_a > 0 from |Re a_0(aa->aa)| <= bound at s >> m_a^2.
+
+    With mass mixing neglected and V_tot'''(0) = 0 (or s large enough that the
+    exchange terms are negligible), a_0 = (k r^4 - V_ext'''')/(32 pi), where the
+    QCD contact vertex is V^QCD_aaaa = k r^4, k = B_0 Re tr hat M_4 / f_pi^2 (linear
+    hat Theta). Returns (lower, upper) with upper possibly sp.oo, or None if no r > 0 works.
+    """
+    width = 32 * sp.pi * bound
+    k, v = qcd_quartic_coefficient, external_quartic
+    if k == 0:
+        return (sp.Integer(0), sp.oo) if abs(v) <= width else None
+    ends = sorted([(v - width) / k, (v + width) / k], key=lambda e: float(e))
+    low, high = max(ends[0], 0, key=lambda e: float(e)), ends[1]
+    if float(high) < 0:
+        return None
+    return (low**sp.Rational(1, 4), high**sp.Rational(1, 4))
+
+
+def phase_model_quartic_check():
+    """d^4/da^4 of -lambda |phi|^4 at fixed sigma, phi = (v + sigma) exp(i a / v)/sqrt(2).
+
+    Returns (the potential term, its fourth a-derivative); the latter is zero.
+    """
+    alp, sigma = sp.symbols('a sigma', real=True)
+    v, coupling = sp.symbols('v lambda', positive=True)
+    field = (v + sigma) * sp.exp(sp.I * alp / v) / sp.sqrt(2)
+    term = -coupling * sp.simplify(sp.expand(field * sp.conjugate(field)))**2
+    return sp.factor(term), sp.simplify(sp.diff(term, alp, 4))
+
+
+# --------------------------------------------------------------------------
 
 
 def main():
@@ -543,6 +628,23 @@ def main():
     numbers[B_0] = sp.Rational(134977, 1000000)**2 / (numbers[mu] + numbers[md])
     for name in bounds:
         print(f'    {name}: f_pi/f_a <= {sp.N(bounds[name].subs(numbers), 4)}')
+
+    print('\nH5: external potential V_ext(a); V_tot = V_QCD + V_ext; a_0(aa->aa) at s >> m_a^2 = -V_tot\'\'\'\'(0)/(32 pi)')
+    alp = sp.Symbol('a', real=True)
+    theta = sp.symbols('Theta0:5', real=True)
+    hat_general = [sp.diag(*sp.symbols(f'M{n}_u M{n}_d M{n}_s')) for n in range(5)]
+    m0 = sp.Symbol('m_0', positive=True)
+    v_qcd = qcd_alp_potential(hat_general, theta, B_0, f_pi, f_a, m0**2, alp)
+    print('  -V_QCD\'\'\'\'(0) =', sp.factor(-potential_derivative_at_zero(v_qcd, alp, 4)))
+    s_sym, m2_sym, quartic_sym, cubic_sym = sp.symbols('s m_a2 V4 V3', real=True)
+    print('  a_0 with exchange =', alp_elastic_s_wave(quartic_sym, cubic_sym, m2_sym, s_sym))
+    print('  phase model: -lambda|phi|^4 =', *phase_model_quartic_check())
+    k_value = (16 * B_0 * sum(m * c**4 for m, c in zip(masses, axial)) / f_pi**2).subs(numbers)
+    print('  c_u = 1, c_q^P = 0, inputs as above: allowed f_pi/f_a from |V_aaaa^QCD - V_ext\'\'\'\'| <= 16 pi')
+    for external in (0, 8 * sp.pi, -8 * sp.pi, -16 * sp.pi, 100):
+        interval = quartic_unitarity_interval(k_value, external)
+        text = 'none' if interval is None else f'[{sp.N(interval[0], 4)}, {sp.N(interval[1], 4)}]'
+        print(f'    V_ext\'\'\'\' = {external}: {text}')
 
     print('\nGeneral dressed-frame S waves (mass mixing neglected), P_i P_i identical pair:')
     print('  a_0(aa->aa) = f_pi^2 B_0 Re tr(hatM_4) / (32 pi f_a^4)')

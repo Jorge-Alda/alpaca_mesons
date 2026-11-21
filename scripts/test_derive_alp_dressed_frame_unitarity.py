@@ -11,7 +11,8 @@ import numpy as np
 import sympy as sp
 
 from derive_alp_dressed_frame_unitarity import (
-    DIGITS, alp_like_and_pion_like, cayley_orthogonal, compare_frames, constant_vertex_closed_form,
+    DIGITS, alp_elastic_amplitude, alp_elastic_s_wave, alp_like_and_pion_like, cayley_orthogonal,
+    phase_model_quartic_check, potential_derivative_at_zero, qcd_alp_potential, quartic_unitarity_interval, compare_frames, constant_vertex_closed_form,
     contact_unitarity_bounds, diagonal_linear_spurion_dressed_mass, dressed_mass_derivatives,
     dressed_sources, dressed_theta_derivatives, frame_theory, illustrative_inputs,
     kinetic_four_meson_vertex, linear_spurion_sources, on_shell_gram, pad_with_alp, pair_matrix,
@@ -357,6 +358,106 @@ class H4ContactTerms(unittest.TestCase):
         self.assertNotEqual(same_difference[0], same_difference[1])
         self.assertEqual(diagonal_linear_spurion_dressed_mass(masses, (1, 0, 0), (0, 0, 0), 1),
                          diagonal_linear_spurion_dressed_mass(masses, (2, 1, 1), (1, 1, 1), 1))
+
+
+class H5ExternalPotential(unittest.TestCase):
+    """V_tot = V_QCD + V_ext: contact term, exchange, bounds and a-independent terms."""
+
+    def setUp(self):
+        data = illustrative_inputs(True)
+        self.data = data
+        self.dressed = dressed_sources(*linear_spurion_sources(data['quark_mass'], data['axial'], data['pseudoscalar'],
+                                                               data['gluon'], data['B_0']))
+        self.hat_mass = [value / (2 * data['B_0']) for value in self.dressed[0]]
+        self.theta = [0, sp.Rational(2, 3), sp.Rational(1, 2), -sp.Rational(3, 2), sp.Rational(5, 4)]
+        self.f_pi, self.f_a = data['f_pi'], sp.Rational(1, 7)
+        self.alp = sp.Symbol('a', real=True)
+
+    def test_qcd_potential_reproduces_vertices_and_mass(self):
+        """-d^n V_QCD/da^n = n-ALP vertex of the LO Lagrangian; M^2_aa = V_QCD'' + V_ext'' with V_ext = m_{a,0}^2 a^2/2."""
+        m0, bare = self.data['anomaly_mass_squared'], sp.Rational(3, 2)
+        potential = qcd_alp_potential(self.hat_mass, self.theta, self.data['B_0'], self.f_pi, self.f_a, m0, self.alp)
+        zero = sp.zeros(3)
+        chi = self.dressed[0]
+        for n in (3, 4):
+            q = sp.symbols(f'q0:{n}', real=True)
+            reference = vertex([zero] * n, [1] * n, q, chi, self.dressed[1], self.dressed[2], self.theta,
+                               self.f_pi, self.f_a, m0, bare)
+            self.assertEqual(sp.nsimplify(sp.expand(reference + potential_derivative_at_zero(potential, self.alp, n))), 0)
+        basis = [GENERATORS[i] for i in (3, 8, 0)]
+        _, mass = quadratic_blocks(basis, chi[:3], self.dressed[1][:3], self.dressed[2][:3], self.theta[:3],
+                                   self.f_pi, self.f_a, m0, bare)
+        external = bare * self.alp**2 / 2
+        self.assertEqual(sp.nsimplify(mass[3, 3] - potential_derivative_at_zero(potential + external, self.alp, 2)), 0)
+        # linear dressed Theta: no topological quartic; the old contact vertex is recovered
+        linear = qcd_alp_potential(self.hat_mass, [0, self.theta[1], 0, 0, 0], self.data['B_0'], self.f_pi,
+                                   self.f_a, m0, self.alp)
+        old = constant_vertex_closed_form(self.hat_mass, [], 4, self.data['B_0'], self.f_pi, self.f_a)
+        self.assertEqual(sp.nsimplify(-potential_derivative_at_zero(linear, self.alp, 4) - old), 0)
+
+    def test_amplitude_sign_and_s_wave_normalization(self):
+        """Project-machinery amplitude (i V Feynman rule, exact propagator) equals the closed form; a_0 -> -V''''/(32 pi)."""
+        quartic, cubic, mass_squared = sp.Rational(7, 3), sp.Rational(5, 2), sp.Rational(1, 2)
+        spectrum = PoleSpectrum(field_labels=('a',), kinetic=sp.eye(1), mass_squared=sp.Matrix([[mass_squared]]),
+                                pole_squared_masses=[mass_squared], pole_vectors=sp.eye(1), residues=[], exact=True)
+
+        def function(directions, momenta, gram):
+            coefficient = {3: -cubic, 4: -quartic}[len(directions)]
+            return coefficient * sp.prod([d[0] for d in directions])
+        for s, t in ((sp.Integer(5), -sp.Rational(3, 2)), (sp.Integer(40), -sp.Integer(11))):
+            gram = on_shell_gram([mass_squared] * 4, s, t)
+            amplitude = projected_amplitude(spectrum, [0, 0, 0, 0], gram, function)
+            self.assertEqual(sp.simplify(amplitude - alp_elastic_amplitude(quartic, cubic, mass_squared, s, t)), 0)
+        # S wave: N_i N_f/(32 pi) int dcos M with N = 1/sqrt 2, compared with the closed form
+        s_value = sp.Integer(9)
+        cosine = sp.Symbol('c', real=True)
+        t = -(s_value - 4 * mass_squared) * (1 - cosine) / 2
+        integral = sp.Integral(alp_elastic_amplitude(quartic, cubic, mass_squared, s_value, t), (cosine, -1, 1))
+        numeric = sp.N(integral, 30) / (2 * 32 * sp.pi)
+        closed = alp_elastic_s_wave(quartic, cubic, mass_squared, s_value)
+        self.assertLess(abs(sp.N(numeric - closed, 30)), 1e-25)
+        s = sp.Symbol('s', positive=True)
+        self.assertEqual(sp.limit(alp_elastic_s_wave(quartic, cubic, mass_squared, s), s, sp.oo), -quartic / (32 * sp.pi))
+        # contact only: |Re a_0| <= 1/2  <=>  |V_tot''''| <= 16 pi
+        self.assertEqual(alp_elastic_s_wave(16 * sp.pi, 0, mass_squared, s), -sp.Rational(1, 2))
+
+    def test_quartic_bound_interval(self):
+        B_0, f_pi = sp.symbols('B_0 f_pi', positive=True)
+        masses = (sp.Rational(216, 100000), sp.Rational(470, 100000), sp.Rational(935, 10000))
+        numbers = {f_pi: sp.Rational(9207, 100000)}
+        numbers[B_0] = sp.Rational(134977, 1000000)**2 / (masses[0] + masses[1])
+        hat = [diagonal_linear_spurion_dressed_mass(masses, (1, 0, 0), (0, 0, 0), n) for n in range(5)]
+        k = sp.simplify(constant_vertex_closed_form(hat, [], 4, B_0, f_pi, f_pi))  # r = 1 gives k
+        self.assertEqual(sp.simplify(k - 16 * B_0 * masses[0] / f_pi**2), 0)
+        k_value = k.subs(numbers)
+        low, high = quartic_unitarity_interval(k_value, 0)
+        self.assertEqual(low, 0)
+        self.assertAlmostEqual(float(high), 1.468, places=3)
+        for external in (8 * sp.pi, -8 * sp.pi, sp.Integer(100)):
+            low, high = quartic_unitarity_interval(k_value, external)
+            self.assertAlmostEqual(float(high**4), float((external + 16 * sp.pi) / k_value), places=10)
+            expected_low = max(float((external - 16 * sp.pi) / k_value), 0)
+            self.assertAlmostEqual(float(low**4), expected_low, places=10)
+            for r in (low, high):
+                wave = (k_value * r**4 - external) / (32 * sp.pi)
+                self.assertLessEqual(abs(float(wave)), 0.5 + 1e-12)
+        self.assertGreater(float(quartic_unitarity_interval(k_value, 100)[0]), 1)  # cancellation window
+        self.assertIsNone(quartic_unitarity_interval(k_value, -17 * sp.pi))
+        self.assertIsNone(quartic_unitarity_interval(-k_value, 17 * sp.pi))
+        low, high = quartic_unitarity_interval(-k_value, -8 * sp.pi)
+        self.assertAlmostEqual(float(high**4), float(24 * sp.pi / k_value), places=10)
+
+    def test_a_independent_terms_give_no_contact(self):
+        term, fourth = phase_model_quartic_check()
+        sigma, v, coupling = sp.Symbol('sigma', real=True), sp.Symbol('v', positive=True), sp.Symbol('lambda', positive=True)
+        self.assertEqual(sp.expand(term + coupling * (v + sigma)**4 / 4), 0)
+        self.assertEqual(fourth, 0)
+        # any function of |phi|^2 only, and a constant added to V_ext, leaves V_tot'''' unchanged
+        potential = qcd_alp_potential(self.hat_mass, self.theta, self.data['B_0'], self.f_pi, self.f_a,
+                                      self.data['anomaly_mass_squared'], self.alp)
+        constant = sp.Symbol('C', real=True)
+        self.assertEqual(potential_derivative_at_zero(potential + constant, self.alp, 4),
+                         potential_derivative_at_zero(potential, self.alp, 4))
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Scope, conventions and assumptions
 
-LO chiral Lagrangian with an ALP, tree level, in the frame without ALP current sources of the [derivative-coupling removal record](alp-dressed-frame-derivative-coupling-removal.md) (on-shell equivalent to the original frame, exactly in $f_\pi/f_a$). $U=\exp(i\Phi/f_\pi)$, $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$, $\chi=2B_0\widehat M(x)$, $x=a/f_a$, $\widehat M_n=d^n\widehat M/dx^n|_0$ [@Alda:2026nrd]. Pure QCD sources only: no photons, no weak spurions. Natural units, GeV.
+LO chiral Lagrangian with an ALP, tree level, in the frame without ALP current sources of the [derivative-coupling removal record](alp-dressed-frame-derivative-coupling-removal.md) (on-shell equivalent to the original frame, exactly in $f_\pi/f_a$). $U=\exp(i\Phi/f_\pi)$, $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$, $\chi=2B_0\widehat M(x)$, $x=a/f_a$, $\widehat M_n=d^n\widehat M/dx^n|_0$ [@Alda:2026nrd]. Pure QCD sources only: no photons, no weak spurions. Sections 1-2 include only the bare ALP mass term outside the chiral Lagrangian; Section 3 adds a general external ALP potential $V_{\rm ext}(a)$. Natural units, GeV.
 
 Partial waves for $2\to2$ scattering of spinless particles:
 $$
@@ -74,7 +74,7 @@ a_0(aa\to aa)=\frac{f_\pi^2B_0\operatorname{Re}\operatorname{tr}\widehat M_4}{32
 a_0(aP_i\to aP_i)=-\frac{B_0\operatorname{Re}\operatorname{tr}(\widehat M_2\lambda_i^2)}{16\pi f_a^2},\quad
 a_0(P_iP_i\to aa)=-\frac{B_0\operatorname{Re}\operatorname{tr}(\widehat M_2\lambda_i^2)}{32\pi f_a^2}.
 $$
-These are energy independent, so $|\operatorname{Re}a_0|\le\frac12$ gives
+These are energy independent, so $|\operatorname{Re}a_0|\le\frac12$ gives (for $V_{\rm ext}''''(0)=0$; with an external quartic the $aa\to aa$ bound is modified as in Section 3, the other two are unchanged)
 $$
 \Big(\frac{f_\pi}{f_a}\Big)^4\le\frac{16\pi f_\pi^2}{B_0|\operatorname{Re}\operatorname{tr}\widehat M_4|},\qquad
 \Big(\frac{f_\pi}{f_a}\Big)^2\le\frac{8\pi f_\pi^2}{B_0|\operatorname{Re}\operatorname{tr}(\widehat M_2\lambda_i^2)|}\ (aP_i),\qquad
@@ -99,11 +99,59 @@ $$
 $$
 For $c_q^A=0$ (only the linear pseudoscalar spurion) $\widehat M_n=0$ for $n\ge2$ and these contact bounds are absent at this order.
 
-**Illustration** (inputs: $c_u=1$, $c_d=c_s=0$, $c_q^P=0$; $m_u=2.16$ MeV, $m_d=4.70$ MeV, $B_0=m_{\pi^0}^2/(m_u+m_d)=2.656$ GeV, $f_\pi=92.07$ MeV): $f_\pi/f_a\le1.47$ ($aa\to aa$), $3.05$ ($a\pi_3\to a\pi_3$), $4.31$ ($\pi_3\pi_3\to aa$). Here $P_3$ is the $\lambda_3$ field, not the physical $\pi^0$. At $f_\pi/f_a\simeq1.5$ the mass mixing $|M^2_{3a}|\sim(f_\pi/f_a)\,2B_0m_u\approx0.017$ GeV$^2\approx m_\pi^2$, so the no-mixing approximation requires $|m_a^2-m_\pi^2|\gg0.02$ GeV$^2$; choosing $c_G=-1$ ($c_{GA}=0$) removes the topological mixing with $\eta_0$.
+**Illustration** (inputs: $c_u=1$, $c_d=c_s=0$, $c_q^P=0$; $m_u=2.16$ MeV, $m_d=4.70$ MeV, $B_0=m_{\pi^0}^2/(m_u+m_d)=2.656$ GeV, $f_\pi=92.07$ MeV; no external ALP potential beyond the mass term, $V_{\rm ext}''''(0)=0$, see Section 3): $f_\pi/f_a\le1.47$ ($aa\to aa$), $3.05$ ($a\pi_3\to a\pi_3$), $4.31$ ($\pi_3\pi_3\to aa$). Here $P_3$ is the $\lambda_3$ field, not the physical $\pi^0$. At $f_\pi/f_a\simeq1.5$ the mass mixing $|M^2_{3a}|\sim(f_\pi/f_a)\,2B_0m_u\approx0.017$ GeV$^2\approx m_\pi^2$, so the no-mixing approximation requires $|m_a^2-m_\pi^2|\gg0.02$ GeV$^2$; choosing $c_G=-1$ ($c_{GA}=0$) removes the topological mixing with $\eta_0$.
+
+## 3. External ALP potential (H5)
+
+**Setup (assumption, stated).** Besides the LO chiral Lagrangian, the ALP may have a potential $V_{\rm ext}(a)$ not induced by QCD, a general function of $a$ only (no mesons). It contains the bare mass term $\frac12m_{a,0}^2a^2$ used elsewhere in this project. The total ALP potential is
+$$
+V_{\rm tot}(a)=V_{\rm QCD}(a)+V_{\rm ext}(a),\qquad
+V_{\rm QCD}(a)=-f_\pi^2B_0\operatorname{Re}\operatorname{tr}\widehat M(a/f_a)+\frac{f_\pi^2m_0^2}{N_f}\,\widehat\Theta(a/f_a)^2,
+$$
+i.e. $V_{\rm QCD}=-\mathcal L_{\rm LO}|_{P=0}$ in the dressed frame ($\frac{f_\pi^2}4\langle\chi_+\rangle=f_\pi^2B_0\operatorname{Re}\langle\widehat MU^\dagger\rangle$ and $X_{TC}=-2\widehat\Theta$ at $P=0$). The vacuum is assumed at $a=0$: $V_{\rm tot}'(0)=0$ (for CP-conserving sources $V_{\rm QCD}'(0)=0$, so this requires $V_{\rm ext}'(0)=0$). Mass mixing with mesons is neglected (same approximation as Section 2).
+
+**Feynman rules and normalization.** Pure-ALP vertices are $\mathcal V_{a^n}=\partial^n\mathcal L/\partial a^n|_0=-V_{\rm tot}^{(n)}(0)$; the Feynman rule is $i\mathcal V$, the propagator $i/(q^2-m_a^2)$ and $i\mathcal M$ is the sum of diagrams. The S wave uses $(a_0)_{fi}=\frac{N_iN_f}{32\pi}\int_{-1}^1d\cos\theta\,\mathcal M_{fi}$ with $N_i=N_f=1/\sqrt2$ for the $aa$ states.
+
+**Contact term.** With $V_{\rm tot}'''(0)=0$: $\mathcal M(aa\to aa)=-V_{\rm tot}''''(0)$ and
+$$
+a_0(aa\to aa)=\frac12\cdot\frac{2\,\mathcal M}{32\pi}=-\frac{1}{32\pi}\frac{d^4V_{\rm tot}}{da^4}\Big|_0,\qquad
+|\operatorname{Re}a_0|\le\tfrac12\iff\Big|\frac{d^4V_{\rm tot}}{da^4}\Big|_0\Big|\le16\pi .
+$$
+**Confirmed** (sign and identical-particle factor). For $V_{\rm ext}''''=0$ and linear $\widehat\Theta$, $-V_{\rm QCD}''''(0)=f_\pi^2B_0\operatorname{Re}\operatorname{tr}\widehat M_4/f_a^4=\mathcal V_{aaaa}$, reproducing $a_0(aa\to aa)$ of Section 2. For non-linear $\widehat\Theta$ the script gives $-V_{\rm QCD}''''(0)=\frac{f_\pi^2B_0}{f_a^4}\operatorname{Re}\operatorname{tr}\widehat M_4-\frac{f_\pi^2m_0^2}{N_ff_a^4}\sum_{r=0}^4\binom4r\widehat\Theta_r\widehat\Theta_{4-r}$, in agreement with Section 2.
+
+**ALP mass.** $M^2_{aa}=V_{\rm QCD}''(0)+V_{\rm ext}''(0)$; with $V_{\rm ext}=\frac12m_{a,0}^2a^2$ this is the $M^2_{aa}$ of `quadratic_blocks` (checked). Only $V_{\rm ext}''''(0)$ enters the contact bound; $V_{\rm ext}''(0)$ changes the ALP mass and, through it, the mixing, but not the contact vertex. Higher derivatives $V^{(n\ge5)}$ do not enter $2\to2$ at tree level.
+
+**Cubic term and ALP exchange.** A cubic $V_{\rm tot}'''(0)\neq0$ requires CP violation (the ALP is CP odd) or a $V_{\rm ext}$ without definite parity in $a$; for CP-conserving QCD sources $V_{\rm QCD}'''(0)=0$, so then $V_{\rm tot}'''=V_{\rm ext}'''$. It adds $s$-, $t$-, $u$-channel ALP exchange:
+$$
+\mathcal M(aa\to aa)=-V_{\rm tot}''''-\big(V_{\rm tot}'''\big)^2\Big[\frac1{s-m_a^2}+\frac1{t-m_a^2}+\frac1{u-m_a^2}\Big],\quad u=4m_a^2-s-t,
+$$
+$$
+a_0(aa\to aa)=\frac1{32\pi}\Big[-V_{\rm tot}''''-\frac{(V_{\rm tot}''')^2}{s-m_a^2}+\frac{2(V_{\rm tot}''')^2}{s-4m_a^2}\ln\frac{s-3m_a^2}{m_a^2}\Big]\qquad(s>4m_a^2),
+$$
+(derivatives at $a=0$). The exchange part decreases like $\ln s/s$, so for $s\gg m_a^2$ and $s\gg(V_{\rm tot}''')^2/|V_{\rm tot}''''|$ the bound $|V_{\rm tot}''''|\le16\pi$ is unchanged; at $s=4m_a^2$ the wave is $\frac1{32\pi}[-V_{\rm tot}''''+\frac53(V_{\rm tot}''')^2/m_a^2]$, but there $\sigma\neq1$ and the bound $|\operatorname{Re}a_0|\le\frac12$ is not the right condition. The bounds below assume $V_{\rm tot}'''(0)=0$ or the large-$s$ regime.
+
+**Mixed channels.** $V_{\rm ext}$ contains no mesons, so the contact vertices $aP\to aP$ and $PP\to aa$ and their S waves are unchanged. Exchange diagrams with $V_{\rm ext}'''$ in these channels need an $aaP$ or $PPa$ vertex, which vanishes for CP-conserving QCD sources (Section 2). With mass mixing included, $V_{\rm ext}''$ changes the pole vectors and thus all channels; not analysed.
+
+**General bound.** For linear $\widehat\Theta$ and $V_{\rm tot}'''=0$:
+$$
+\Big|\frac{f_\pi^2B_0\operatorname{Re}\operatorname{tr}\widehat M_4}{f_a^4}-V_{\rm ext}''''(0)\Big|\le16\pi,
+$$
+with $V_{\rm ext}''''$ dimensionless.
+
+**Specialization $c_q^P=0$, diagonal $c_q^A=\operatorname{diag}(c_u,c_d,c_s)$.** $\operatorname{tr}\widehat M_4=16\sum_qm_qc_q^4\ge0$, so the condition reads $\big|16B_0\sum_qm_qc_q^4\,(f_\pi/f_a)^4/f_\pi^2-V_{\rm ext}''''(0)\big|\le16\pi$. Solving for $f_\pi/f_a>0$:
+- $V_{\rm ext}''''(0)<-16\pi$: no solution (the external quartic alone violates the bound);
+- $|V_{\rm ext}''''(0)|\le16\pi$: $\displaystyle\frac{f_\pi}{f_a}\le\Big(\frac{f_\pi^2\,[16\pi+V_{\rm ext}''''(0)]}{16B_0\sum_qm_qc_q^4}\Big)^{1/4}$, which for $V_{\rm ext}''''=0$ is the bound $(\pi f_\pi^2/(B_0\sum_qm_qc_q^4))^{1/4}$ of Section 2;
+- $V_{\rm ext}''''(0)>16\pi$: $\displaystyle\Big(\frac{f_\pi^2\,[V_{\rm ext}''''(0)-16\pi]}{16B_0\sum_qm_qc_q^4}\Big)^{1/4}\le\frac{f_\pi}{f_a}\le\Big(\frac{f_\pi^2\,[V_{\rm ext}''''(0)+16\pi]}{16B_0\sum_qm_qc_q^4}\Big)^{1/4}$.
+
+The last case is a cancellation between the QCD quartic ($-V_{\rm QCD}''''>0$ here) and a positive $V_{\rm ext}''''$; the allowed window in $(f_\pi/f_a)^4$ has relative width $32\pi/V_{\rm ext}''''(0)$, so large $f_\pi/f_a$ at large $V_{\rm ext}''''$ requires tuning $V_{\rm ext}''''$ against the QCD term. A cosine potential $\Lambda^4[1-\cos(a/f)]$ has $V''''(0)=-\Lambda^4/f^4<0$ and adds to the QCD term instead of cancelling it (the QCD potential for $c_q^P=0$, $-f_\pi^2B_0\sum_qm_q\cos(2c_qa/f_a)$, is of the same type). Only a positive quartic (for example a bare $\lambda_aa^4/4!$ with $\lambda_a>0$) can compensate.
+
+**a-independent terms.** Terms of $V_{\rm ext}$ that do not depend on $a$ do not contribute. Example: if the ALP is the phase of a complex field, $\phi=(v+\sigma)e^{ia/v}/\sqrt2$, then $-\lambda|\phi|^4=-\lambda(v+\sigma)^4/4$ and $\partial_a^4$ of it vanishes at fixed $\sigma$ (checked symbolically). The exchange of $\sigma$ through the couplings of the kinetic term $\frac12(v+\sigma)^2(\partial a)^2/v^2$ is a separate, momentum-dependent effect, treated in the Murayama-model record `memory/alp/shared/murayama-alp-unitarity.md` (being written in parallel).
+
+**Illustration** (inputs of Section 2, $c_u=1$, $c_q^P=0$): allowed $f_\pi/f_a$ is $[0,1.468]$ for $V_{\rm ext}''''=0$; $[0,1.624]$ for $8\pi$; $[0,1.234]$ for $-8\pi$; $\{0\}$ for $-16\pi$; $[1.464,1.930]$ for $V_{\rm ext}''''=100$ (cancellation window). These are illustrative numbers, not predictions.
 
 ## Verification
 
-Script [`derive_alp_dressed_frame_unitarity.py`](../../../scripts/derive_alp_dressed_frame_unitarity.py); tests `H3HighEnergy` and `H4ContactTerms` in `scripts/test_derive_alp_dressed_frame_unitarity.py`: closed four-meson vertex vs CCWZ generator; momentum independence of ALP vertices; largest eigenvalues (U(3), SU(3): 3; SU(2): 2) to $10^{-10}$; exact singlet waves with common mass for SU(2), SU(3); eigenvalue invariance for an exact rational Cayley orthogonal $O$ and for the dressed pole vectors at $f_\pi/f_a=1,3$; full pole amplitude at $s=2000,8000$ GeV$^2$ minus the four-meson contraction stays constant (the $O(s^0)$ part); closed-form constant and topological vertices vs CCWZ generator (non-diagonal CP-conserving sources); vanishing cubic vertices; pole amplitudes without mixing equal the contact formulas; bound formulas and numbers; dependence of $\widehat M_2$ on $c_q^A,c_q^P$ separately. All pass.
+Script [`derive_alp_dressed_frame_unitarity.py`](../../../scripts/derive_alp_dressed_frame_unitarity.py); tests `H3HighEnergy` and `H4ContactTerms` in `scripts/test_derive_alp_dressed_frame_unitarity.py`: closed four-meson vertex vs CCWZ generator; momentum independence of ALP vertices; largest eigenvalues (U(3), SU(3): 3; SU(2): 2) to $10^{-10}$; exact singlet waves with common mass for SU(2), SU(3); eigenvalue invariance for an exact rational Cayley orthogonal $O$ and for the dressed pole vectors at $f_\pi/f_a=1,3$; full pole amplitude at $s=2000,8000$ GeV$^2$ minus the four-meson contraction stays constant (the $O(s^0)$ part); closed-form constant and topological vertices vs CCWZ generator (non-diagonal CP-conserving sources); vanishing cubic vertices; pole amplitudes without mixing equal the contact formulas; bound formulas and numbers; dependence of $\widehat M_2$ on $c_q^A,c_q^P$ separately. Test class `H5ExternalPotential`: $-\partial_a^nV_{\rm QCD}(0)$ ($n=3,4$, non-linear $\widehat\Theta$, non-diagonal sources) equals the $n$-ALP vertex of the joint-vertex code, and $M^2_{aa}=V_{\rm tot}''(0)$ with $V_{\rm ext}=\frac12m_{a,0}^2a^2$; the closed-form amplitude with exchange equals `projected_amplitude` for a one-field theory with vertices $-V_{\rm tot}''',-V_{\rm tot}''''$ (sign of the Feynman rule); the closed-form S wave equals the numerical projection with $N=1/\sqrt2$ (to $10^{-25}$) and tends to $-V_{\rm tot}''''/(32\pi)$; the bound interval for both signs of the QCD coefficient, the cancellation window, and $1.468$ at $V_{\rm ext}''''=0$; $\partial_a^4(-\lambda|\phi|^4)=0$ in the phase model. All pass.
 
 ```sh
 .venv/bin/python scripts/derive_alp_dressed_frame_unitarity.py
