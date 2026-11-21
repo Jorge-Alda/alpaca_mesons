@@ -2,7 +2,7 @@
 title: Limits of the LO truncation of the ALP-meson spectrum
 status: mixed
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-21
 bibtex_keys: [Alda:2026nrd]
 provenance: assumption
 ---
@@ -33,6 +33,10 @@ The LO result should be flagged as outside the controlled domain in the followin
 5. A near-vanishing of the vacuum-stability margin ([stability record](alp-lo-stability-conditions.md)).
 
 Consequences: the sum $\sum_nv^{(n)}v^{(n)\mathsf T}=K^{-1}$ and the linear algebra remain valid in these cases, but whether the LO Lagrangian describes the physical system there is not decided by this analysis.
+
+## Derived replacements for item 1
+
+Item 1 is superseded in part by derived results. The kinetic mixing $K_{ia}$ can be removed exactly by an ALP-dependent chiral rotation ([derivative-coupling removal](alp-dressed-frame-derivative-coupling-removal.md)), so $|K_{ia}|\gtrsim1$ alone does not signal a failure. Its tree-level replacement is the set of bounds on $f_\pi/f_a$ from constant ALP contact amplitudes in the [partial-wave unitarity record](alp-lo-partial-wave-unitarity.md). Its one-loop replacement is the loop-to-tree ratios of the [loop power-counting record](alp-loop-power-counting.md).
 
 ## Verification status
 

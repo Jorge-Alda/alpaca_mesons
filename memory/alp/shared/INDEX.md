@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-20
+updated: 2026-11-21
 bibtex_keys: []
 provenance: assumption
 ---
@@ -33,6 +33,10 @@ provenance: assumption
 - [alp-lo-near-degeneracy-two-level.md](alp-lo-near-degeneracy-two-level.md) — Detection of near-degenerate poles, degenerate-subspace output and the two-level mixing formula.
 - [alp-lo-pole-tracking.md](alp-lo-pole-tracking.md) — Continuity labelling of poles along parameter scans, avoided crossings and ambiguity of the ALP-like label.
 - [alp-lo-truncation-limits.md](alp-lo-truncation-limits.md) — Conditions where the LO model is not reliable and what is deferred (NLO, loops, resonances, complex poles).
+- [alp-dressed-frame-derivative-coupling-removal.md](alp-dressed-frame-derivative-coupling-removal.md) — Exact removal of the ALP derivative couplings by an ALP-dependent chiral rotation, and on-shell equality of tree amplitudes in both frames at finite $f_\pi/f_a$.
+- [alp-lo-partial-wave-unitarity.md](alp-lo-partial-wave-unitarity.md) — Tree-level S-wave unitarity: $f_\pi/f_a$-independent scale from four-meson growth, and upper bounds on $f_\pi/f_a$ from constant ALP contact amplitudes.
+- [alp-loop-power-counting.md](alp-loop-power-counting.md) — One-loop size of diagrams with ALP lines relative to tree, their powers of $f_\pi/f_a$, and the values of $f_\pi/f_a$ where they reach tree size.
+- [alp-singlet-derivative-terms-energy-growth.md](alp-singlet-derivative-terms-energy-growth.md) — Beyond-LO singlet-source terms of Kaiser:1998ds that give energy-growing ALP amplitudes, with unknown coefficients.
 - [alp-single-pole-alignment.md](alp-single-pole-alignment.md) — Shift that decouples the ALP from the mesons at one selected pole, its regularity condition and exceptional poles.
 - [alp-multi-pole-alignment.md](alp-multi-pole-alignment.md) — Conditions for aligning several poles with shift-type and general field changes, and simultaneous diagonalization of $(K,M^2)$.
 - [alp-pole-alignment-chiral-generator.md](alp-pole-alignment-chiral-generator.md) — Pole-alignment shift as the linear part of a constant-generator chiral redefinition, with the generator-to-$w_i^{(a)}$ relation.

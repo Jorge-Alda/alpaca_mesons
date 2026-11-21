@@ -21,6 +21,13 @@
 - Pending decision (user): $w_k^{(r)}$ still appears in the draft's pole-direction, chiral-shift and eq:murayama-T definitions, and $\Omega_r=\sum_kw_k^{(r)}\lambda_k$ in [radial-decay-polar-cartesian-general-sources.md](alp/shared/radial-decay-polar-cartesian-general-sources.md) and its script.
 - Next step: numerical widths of the only-up model with $\sigma$ exchange as a function of $m_\sigma$ (plots in `plots/murayama_3P.pdf` still omit it); treat the $\sigma$ width when $m_\sigma<m_a-m_r$ (currently raises `ValueError`).
 
+## 1d. Validity of the LO theory at finite $f_\pi/f_a$
+
+- Removal of ALP derivative couplings and on-shell frame equality ([record](alp/shared/alp-dressed-frame-derivative-coupling-removal.md)): memory DONE, latex MISSING
+- Tree-level S-wave unitarity ([record](alp/shared/alp-lo-partial-wave-unitarity.md)): memory DONE, latex MISSING
+- One-loop power counting with ALP lines ([record](alp/shared/alp-loop-power-counting.md)) and beyond-LO singlet terms ([record](alp/shared/alp-singlet-derivative-terms-energy-growth.md)): memory DONE, latex MISSING
+- Next step: coupled-channel S-wave analysis that includes the constant ALP entries together with the growing $PP\to PP$ entries, exact in the mixing. Also decide how to express the $O(x^2)$ dressed sources, which depend on $c_q^A$ and $c_q^P$ separately (user decision). Then compute the full one-loop ALP-meson self-energies including the $aP$ bubbles.
+
 ## 2. Interactions with Vector mesons
 
 ### 2.1 Even-parity sector

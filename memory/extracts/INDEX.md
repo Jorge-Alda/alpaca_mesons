@@ -2,7 +2,7 @@
 title: Literature extracts index
 status: literature
 created: 2026-10-01
-updated: 2026-11-13
+updated: 2026-11-21
 bibtex_keys: []
 provenance: literature
 ---
@@ -84,3 +84,7 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Pelaez:2019eqa](Pelaez:2019eqa/INDEX.md) — full Madrid isovector P-wave parameterization with 2024 corrected coefficients for KT phase inputs.
 - [Colangelo:2018mtw](Colangelo:2018mtw/INDEX.md) — updated Roy-equation P-wave phase input fitted to $e^+e^-\to\pi^+\pi^-$ data and its uncertainty/continuation treatment.
 - [DiLuzio:2026poh](DiLuzio:2026poh/INDEX.md) — dynamical Peccei–Quinn field models of a QCD-scale axion.
+- [Murayama:2026ioh](Murayama:2026ioh/INDEX.md) — GeV-scale QCD axion model with a Peccei–Quinn charge only on the right-handed up quark.
+- [Weinberg:1966kf](Weinberg:1966kf/INDEX.md) — leading-order $\pi\pi$ S-wave amplitudes, isospin channels and normalization (pre-arXiv paper; full text unverified).
+- [Chivukula:1992gi](Chivukula:1992gi/INDEX.md) — $SU(N)$ Goldstone scattering at leading order: S-wave channel amplitudes, largest singlet eigenvalue and unitarity bound $\sim4\pi f/\sqrt{N}$.
+- [Georgi:1986df](Georgi:1986df/INDEX.md) — derivative versus anomaly-induced axion couplings (pre-arXiv paper; abstract-level only).
