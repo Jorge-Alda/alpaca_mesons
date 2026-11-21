@@ -8,6 +8,15 @@ from derive_alp_three_pseudoscalar_topological_vertices import topological_verte
 
 
 class TopologicalVertices(unittest.TestCase):
+    def test_general_source_quartic_constant(self):
+        expression = topological_vertex(4, general_source=True)
+        symbols = {symbol.name: symbol for symbol in expression.free_symbols}
+        result = sp.diff(expression, symbols['Theta_0'], symbols['Theta_4'])
+        expected = (-2 * symbols['f_pi']**2 * symbols['m_0_squared']
+                    * sp.prod(symbols[f'xi_{n}'] for n in range(4))
+                    / (symbols['N_f'] * symbols['f_a']**4))
+        self.assertEqual(sp.simplify(result - expected), 0)
+
     def test_against_joint_ccwz_expansion(self):
         matrices = [sp.diag(1, 2), sp.diag(-1, 3), sp.diag(2, -2), sp.diag(1, -3)]
         components = [sp.Rational(2, 3), sp.Rational(-1, 2), 1, sp.Rational(3, 5)]

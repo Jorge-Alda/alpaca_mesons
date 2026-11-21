@@ -102,7 +102,7 @@ $$
 -\frac{B_0}{2f_a^2}\sum_{r}\xi_r\big\langle S_2'\{\lambda_s,\lambda_t\}\big\rangle
 +\frac{B_0f_\pi}{f_a^3}\sum_{r}\xi_s\xi_t\big\langle P_3'\,\lambda_r\big\rangle\Big]\\
 &+\frac{B_0f_\pi^2}{f_a^4}\,\xi_a\xi_i\xi_j\xi_k\big\langle S_4'\big\rangle
- -\frac{f_\pi m_0^2\Theta_3'}{N_ff_a^3}\sum_{r\in\{i,j,k\}}\operatorname{tr}(\lambda_r)\prod_{s\in\{i,j,k\},\,s\ne r}\xi_s
+ -\frac{f_\pi m_0^2\Theta_3'}{N_ff_a^3}\xi_a\sum_{r\in\{i,j,k\}}\operatorname{tr}(\lambda_r)\prod_{s\in\{i,j,k\},\,s\ne r}\xi_s
  -\frac{f_\pi^2m_0^2}{N_ff_a^4}\bigl(8\Theta_1'\Theta_3'+6(\Theta_2')^2\bigr)\xi_a\xi_i\xi_j\xi_k .
 \end{aligned}}
 $$
@@ -201,7 +201,7 @@ In route 1 the same order is $\mathcal V^{(4)}$ on the derivative-source-free co
 
 [`scripts/derive_alp_finite_mixing_three_pseudoscalars.py`](../../../scripts/derive_alp_finite_mixing_three_pseudoscalars.py) imports $\mathcal V^{(3)}$, $\mathcal V^{(4)}$, the source derivatives and the matrix inverse from [`scripts/derive_alp_finite_three_pion.py`](../../../scripts/derive_alp_finite_three_pion.py), the joint CCWZ expansion from [`scripts/derive_alp_lo_joint_vertices.py`](../../../scripts/derive_alp_lo_joint_vertices.py) and the pole solver from [`scripts/solve_alp_meson_spectrum.py`](../../../scripts/solve_alp_meson_spectrum.py). It checks the quantities used here: the congruence and the vanishing meson–ALP entry at the parent pole; the aligned source derivatives; the aligned contact and cubic vertices against the joint CCWZ expansion; the exact three-pion substitutions; the route comparison at LO poles of one source choice; the multiplicities; and the weak limits.
 
-The nonlinear singlet-potential additions in step 3 are derived by [`scripts/derive_alp_three_pseudoscalar_topological_vertices.py`](../../../scripts/derive_alp_three_pseudoscalar_topological_vertices.py) and compared with the joint CCWZ vertices by [`scripts/test_derive_alp_three_pseudoscalar_topological_vertices.py`](../../../scripts/test_derive_alp_three_pseudoscalar_topological_vertices.py). Generic unprimed $C_{V,n}$ and $C_{A,n}$ enter the amplitude through the transport recursion for $\widehat M_n$ and $\widehat\Theta_n$; the zero primed higher derivative currents are specific to the intermediate derivative-source-free representation followed by pole alignment.
+The nonlinear singlet-potential additions in step 3 are derived by [`scripts/derive_alp_three_pseudoscalar_topological_vertices.py`](../../../scripts/derive_alp_three_pseudoscalar_topological_vertices.py) and compared with the joint CCWZ vertices by [`scripts/test_derive_alp_three_pseudoscalar_topological_vertices.py`](../../../scripts/test_derive_alp_three_pseudoscalar_topological_vertices.py). For the singlet potential $-f_\pi^2m_0^2[\langle\Phi\rangle/f_\pi+2\Theta'(a/f_a)]^2/(4N_f)$, the script also differentiates the general source through fourth order. If $\Theta'_0\ne0$, add $2\Theta'_0\Theta'_4$ to the last parenthesized factor in the quartic expression. The test verifies its coefficient. Generic unprimed $C_{V,n}$ and $C_{A,n}$ enter the amplitude through the transport recursion for $\widehat M_n$ and $\widehat\Theta_n$; the zero primed higher derivative currents are specific to the intermediate derivative-source-free representation followed by pole alignment.
 
 Limits:
 
@@ -216,5 +216,5 @@ Limits:
 .venv/bin/python scripts/derive_alp_finite_mixing_three_pseudoscalars.py --test
 .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_finite_mixing_three_pseudoscalars.py
 .venv/bin/python scripts/derive_alp_three_pseudoscalar_topological_vertices.py
-.venv/bin/python -m unittest scripts.test_derive_alp_three_pseudoscalar_topological_vertices
+.venv/bin/python -m unittest discover -s scripts -p test_derive_alp_three_pseudoscalar_topological_vertices.py
 ```

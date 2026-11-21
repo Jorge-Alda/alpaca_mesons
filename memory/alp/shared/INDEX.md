@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-18
+updated: 2026-11-20
 bibtex_keys: []
 provenance: assumption
 ---
@@ -17,6 +17,7 @@ provenance: assumption
 - [alp-lo-mass-sum-rules.md](alp-lo-mass-sum-rules.md) — Exact LO relations: charged-meson zero shift, exact $K^0$ pole, trace and product rules for the finite-mixing poles.
 - [alp-lo-neutral-block-reduction.md](alp-lo-neutral-block-reduction.md) — Minimal neutral block ($6\times6$, $5\times5$, $4\times4$), CP condition on the $d$-$s$ entries and the exact $K^0$ pole with no ALP component.
 - [alp-lo-finite-mixing-operator-inverse.md](alp-lo-finite-mixing-operator-inverse.md) — Analytic LO overlap $w^{(a)}_i(s)$ from $\mathbb M_{a,0}^{-1}$, secular equation $F(s)=0$ and normalization $N=F'$.
+- [alp-finite-pole-vector-normalization-check.md](alp-finite-pole-vector-normalization-check.md) — Symbolic check that $v^{(r)T}Kv^{(r)}=1$ in trace form agrees with the pole norm $N(s)$ for generic Hermitian $c_q^A$ and $\mathbb M_a^{-1}(\mathcal C)$.
 - [alp-lo-pole-solver.md](alp-lo-pole-solver.md) — Poles, $K$-orthonormal pole vectors and residues of $D(s)=sK-M^2$ by Cholesky reduction, and the link to the $(w,1)$ normalization.
 - [alp-lo-exact-pole-equations.md](alp-lo-exact-pole-equations.md) — Exact meson and ALP pole equations for finite $f_\pi/f_a$: Schur complement, canonical frame in invariants, ALP equation with $\mathbb M_s^{-1}$, explicit degree-6 secular polynomial for diagonal $\chi_0$.
 - [alp-lo-diagonal-chi0-meson-poles.md](alp-lo-diagonal-chi0-meson-poles.md) — Explicit exact pole equations of $\pi^0$, $\eta$, $\eta'$ for diagonal $\chi_0$: unmixed masses, secular polynomial, residues and per-meson equations.
@@ -39,6 +40,7 @@ provenance: assumption
 - [alp-shift-symmetric-quark-eft-operators.md](alp-shift-symmetric-quark-eft-operators.md) — Partonic quark-bilinear generators at fixed ALP insertion number and canonical dimension.
 - [alp-general-chiral-redefinition-invariants.md](alp-general-chiral-redefinition-invariants.md) — QCD, quark masses, and at-most-one-ALP-derivative interactions under arbitrary-order $g_L,g_R$ transformations.
 - [alp-chiral-source-transformations.md](alp-chiral-source-transformations.md) — Meson source transformations, transport representation and singlet topological shift under finite chiral redefinitions.
+- [alp-aligned-mass-anticommutators.md](alp-aligned-mass-anticommutators.md) — Exact aligned mass-source derivatives expressed as nested anticommutators.
 - [alp-dressed-mass-first-order-invariants.md](alp-dressed-mass-first-order-invariants.md) — $O(1/f_a)$ expansion of the dressed mass function $\widehat M$ and its match to $c_q^{VS}$, $c_q^{AP}$ of Alda:2026nrd, including what $\widehat M_1$ cannot see.
 - [alp-dressed-topological-invariant.md](alp-dressed-topological-invariant.md) — Dressed gluonic coefficient $\widehat\Theta$, recovery of $c_{GA}$, vacuum-angle slope and Alda:2026nrd's tadpole source $C$.
 - [alp-dressed-mass-second-order-invariants.md](alp-dressed-mass-second-order-invariants.md) — Second-order dressed sources $\widehat S_2$, $\widehat P_2$ as nested commutators of $S_n$, $P_n$, $C_{R,n}$, $C_{L,n}$, and their real-mass and Alda:2026nrd specializations.
