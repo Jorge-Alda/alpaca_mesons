@@ -24,7 +24,7 @@ Conventions for every task: notation and invariants as in the existing records (
 ## 5. Crossing equation
 
 - [x] 5.1 Derive the projected one-loop size estimate for $a\to P_{n_1}P_{n_2}P_{n_3}$ from the dressed vertices and pole projections. Derive the implicit equation for the $f_\pi/f_a$ at which the leading estimate divided by the exact tree amplitude in magnitude equals $R_{\max}$, using the invariants, the unmixed masses, $m_a$, $f_\pi$, $B_0$, $m_0^2$, the on-shell kinematic invariants and the loop factor, for general positive $R_{\max}$. Verify the powers of $\epsilon$ and the invariant contractions symbolically.
-- [ ] 5.2 Consolidate the implicit crossing equation, its criterion value, the naturalness assumption and the loop classes that contribute. Verify that every symbol is defined in an existing record or flagged for approval.
+- [x] 5.2 Consolidate the implicit crossing equation, its criterion value, the naturalness assumption and the loop classes that contribute. Verify that every symbol is defined in an existing record or flagged for approval.
 
 ## 6. Validity and limits
 
