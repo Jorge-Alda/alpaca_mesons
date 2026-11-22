@@ -2,7 +2,7 @@
 title: ALP memory index
 status: mixed
 created: 2026-10-01
-updated: 2026-11-21
+updated: 2026-11-22
 bibtex_keys: []
 provenance: assumption
 ---

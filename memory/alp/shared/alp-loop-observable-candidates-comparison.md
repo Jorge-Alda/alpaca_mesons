@@ -109,6 +109,7 @@ $$
   - *Conjecture:* the parts that come from the meson components of $A$ and from the ALP components of the meson lines (coefficients with $Y$ and $1/(m_A^2-m_P^2)$), and the $A_0(m_P^2)$ logarithms, which are not analytic in $m_q$, are not of that form.
   - *Conjecture:* in the decay region the invariant masses satisfy $s_{ij}<(m_A+m_P)^2$, so $\bar B(s_{ij};m_A,m_P)$ and $\bar B(s_{ij};m_A,m_A)$ are real and analytic in $s_{ij}$. Their Taylor polynomials could then be reproduced by beyond-LO derivative operators with $x$-dependent coefficients ([singlet-derivative record](alp-singlet-derivative-terms-energy-growth.md)). Behaviour that is not analytic in $s$ appears only in crossed channels above the $AP$ threshold.
   - Remark: the tree term of any single ALP observable is linear in free invariants. "Absorbed into a free parameter" therefore has content only if it is read as "absorbed by a local counterterm polynomial in the Lagrangian parameters". Fixing this reading of test (c) is left to task 1.2.
+  - Follow-up (task 1.2): the reading of test (c), the absorbed parts and the selected coefficients are in the [selection record](alp-loop-observable-selection-a-to-3pi0.md). There, the bubble conjecture above is resolved: local operators with at most four derivatives reproduce only a constant and a multiple of $\sum s_{ij}^2$, not the full $s_{ij}$ dependence of the bubbles.
 
 ## Comparison against tests (a)–(d)
 
