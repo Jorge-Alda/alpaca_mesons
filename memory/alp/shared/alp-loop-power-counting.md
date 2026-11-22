@@ -9,6 +9,8 @@ provenance: analytical-derivation
 
 # One-loop power counting for ALP lines in the LO ALP-meson theory at finite $f_\pi/f_a$
 
+**Superseded crossing values.** The representative-dependent numbers in [L4](#l4-regime-map) are retained as calculations for the stated source and approximations. For the finite-mixing reliability estimate use the [dressed-frame vertex counting](alp-dressed-vertex-power-counting-invariants.md), the [implicit crossing with the exact tree amplitude](alp-loop-crossing-exact-tree-condition.md#accepted-crossing-equation), and its [domain of validity](alp-loop-crossing-validity.md).
+
 ## Conventions and units
 
 Units GeV. $x=a/f_a$, $U=u^2=\exp(i\Phi/f_\pi)$, $\Phi=\sum_i\lambda_iP_i$, $\operatorname{tr}(\lambda_i\lambda_j)=2\delta_{ij}$, $N_f=3$, notation of [@Alda:2026nrd]. Neutral fields in the flavour basis: $\lambda_q=\sqrt2\,E_{qq}$ ($P_u,P_d,P_s$); charged pairs $\Phi_{qq'}=\sqrt2\,\phi_{qq'}$. Vertices $V^L$ are derivatives of the Lagrangian (amputated, without the factor $i$), all momenta incoming.

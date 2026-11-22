@@ -2,12 +2,14 @@
 title: Loop-to-tree crossing values of f_pi/f_a for ALP lines with physical inputs
 status: numerical
 created: 2026-11-21
-updated: 2026-11-21
+updated: 2026-11-22
 bibtex_keys: [Alda:2026nrd, Gasser:1983yg]
 provenance: numerical-computation
 ---
 
 # Loop-to-tree crossing values of $f_\pi/f_a$ for ALP lines with physical inputs
+
+**Superseded crossing values.** The numerical values below describe the fixed coupling representative and unmixed approximation used here. The current finite-mixing reliability criterion compares the [projected one-loop size](alp-three-meson-one-loop-estimate.md) with the exact on-shell tree amplitude through the [implicit crossing equation](alp-loop-crossing-exact-tree-condition.md#accepted-crossing-equation). Its [validity conditions](alp-loop-crossing-validity.md) apply to that comparison.
 
 **Status note (2026-11-21):** this record uses a representative of the ALP couplings ($c_q^P=0$, fixed $c_q^A$) and off-shell flavour-basis entries in the unmixed approximation. The frame-invariant definition (pole-mass shift, dressed invariants only) is in the [invariant crossing record](alp-invariant-loop-crossing-meson-poles.md); class (i) here corresponds to its class A with $\widehat S_2=-4c^2m_q$ and $Y=0$.
 
