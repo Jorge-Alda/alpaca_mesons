@@ -100,7 +100,7 @@ The meson propagator at order $\epsilon^0$, $\Delta=(k^2-M^2_{\rm unmixed})^{-1}
 
 ## Result 4: loop classes of the amplitude
 
-All entries are relative to the leading tree term, whose contraction is the quartic vertex with one end on $A$ ([tree record](alp-finite-mixing-three-meson-tree.md), "Leading term"). The loop factor is written as $m^2/(16\pi^2f^2)$; the mass $m$ listed is the scale that appears in the loop function or the vertices, and which one is used in the estimate is fixed in task 3.2.
+All entries are relative to the leading tree term, whose contraction is the quartic vertex with one end on $A$ ([tree record](alp-finite-mixing-three-meson-tree.md), "Leading term"). The loop factor is $m^2/(16\pi^2f^2)$. The [naturalness record](alp-loop-naturalness-assumption.md) gives the prescription for the scale $m$ in each class.
 
 | class | extra ALP ends | power of $\epsilon$ (relative to tree) | loop factor | invariant contraction |
 |---|---|---|---|---|
