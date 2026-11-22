@@ -26,6 +26,8 @@
 - Removal of ALP derivative couplings and on-shell frame equality ([record](alp/shared/alp-dressed-frame-derivative-coupling-removal.md)): memory DONE, latex MISSING
 - Tree-level S-wave unitarity ([record](alp/shared/alp-lo-partial-wave-unitarity.md)): memory DONE, latex MISSING
 - One-loop power counting with ALP lines ([record](alp/shared/alp-loop-power-counting.md)) and beyond-LO singlet terms ([record](alp/shared/alp-singlet-derivative-terms-energy-growth.md)): memory DONE, latex MISSING
+- Loop-to-tree crossing at finite mixing (OpenSpec change `estimate-loop-tree-crossing-finite-mixing`): task 1.1, comparison of four candidate observables against tests (a)-(d) with exact leading powers of $\epsilon$ and frame behaviour ([record](alp/shared/alp-loop-observable-candidates-comparison.md)): memory DONE. Open: the pure-ALP tadpole of the amplitude is exactly a shift of $\widehat P_1$, which weakens design D3; the non-absorbability of the mixing-induced pieces is a conjecture.
+- Next step (this change): task 1.2, select the observable or state that none passes, after fixing the reading of test (c) (absorption by a local counterterm polynomial in the Lagrangian parameters) and checking the conjectured non-absorbable pieces; consult the brainstormer on whether D3 must be revised.
 - Next step: coupled-channel S-wave analysis that includes the constant ALP entries together with the growing $PP\to PP$ entries, exact in the mixing. Also decide how to express the $O(x^2)$ dressed sources, which depend on $c_q^A$ and $c_q^P$ separately (user decision). Then compute the full one-loop ALP-meson self-energies including the $aP$ bubbles.
 
 ## 2. Interactions with Vector mesons

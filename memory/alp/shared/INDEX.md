@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-21
+updated: 2026-11-22
 bibtex_keys: []
 provenance: assumption
 ---
@@ -36,6 +36,9 @@ provenance: assumption
 - [alp-dressed-frame-derivative-coupling-removal.md](alp-dressed-frame-derivative-coupling-removal.md) — Exact removal of the ALP derivative couplings by an ALP-dependent chiral rotation, and on-shell equality of tree amplitudes in both frames at finite $f_\pi/f_a$.
 - [alp-lo-partial-wave-unitarity.md](alp-lo-partial-wave-unitarity.md) — Tree-level S-wave unitarity: $f_\pi/f_a$-independent scale from four-meson growth, and upper bounds on $f_\pi/f_a$ from constant ALP contact amplitudes.
 - [alp-loop-power-counting.md](alp-loop-power-counting.md) — One-loop size of diagrams with ALP lines relative to tree, their powers of $f_\pi/f_a$, and the values of $f_\pi/f_a$ where they reach tree size.
+- [alp-loop-crossing-physical-inputs.md](alp-loop-crossing-physical-inputs.md) — Loop-to-tree crossing values of $f_\pi/f_a$ with physical inputs for a fixed representative of the ALP couplings (representative dependent; see the invariant record below).
+- [alp-invariant-loop-crossing-meson-poles.md](alp-invariant-loop-crossing-meson-poles.md) — One-loop ALP contributions to the meson pole masses in terms of the dressed invariants, their invariance under constant axial redefinitions, and the resulting values of $f_\pi/f_a$ where they reach tree size.
+- [alp-loop-observable-candidates-comparison.md](alp-loop-observable-candidates-comparison.md) — Meson pole mass, mixing entry, ALP-like pole mass and $A\to3\pi^0$ amplitude tested for frame invariance, order in $1/f_a$, absorption and inputs, with exact leading powers of $f_\pi/f_a$ of tree and one-loop classes (no selection).
 - [alp-singlet-derivative-terms-energy-growth.md](alp-singlet-derivative-terms-energy-growth.md) — Beyond-LO singlet-source terms of Kaiser:1998ds that give energy-growing ALP amplitudes, with unknown coefficients.
 - [alp-single-pole-alignment.md](alp-single-pole-alignment.md) — Shift that decouples the ALP from the mesons at one selected pole, its regularity condition and exceptional poles.
 - [alp-multi-pole-alignment.md](alp-multi-pole-alignment.md) — Conditions for aligning several poles with shift-type and general field changes, and simultaneous diagonalization of $(K,M^2)$.
