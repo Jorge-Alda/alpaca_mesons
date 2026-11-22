@@ -15,7 +15,7 @@ Conventions for every task: notation and invariants as in the existing records (
 
 - [x] 3.1 Derive, in matrix notation, the power counting of the dressed-frame vertices: the power of $\epsilon$ per closed ALP line, the loop factor and the dimensionless invariant contraction for each loop class, reusing `alp-loop-power-counting.md` and `alp-invariant-loop-crossing-meson-poles.md`. Verify the vertex scalings against the explicit fourth-order Lagrangian of the existing scripts, without evaluating any loop integral.
 - [x] 3.2 State the naturalness assumption and the loop factor used (design D3). Verify that every symbol is defined in an existing record or flagged for approval.
-- [ ] 3.3 List the cancellations that make the estimate overestimate the neglected term, among classes at equal power of $\epsilon$ and from relations among the invariants. Verify each condition on an exact rational example.
+- [x] 3.3 List the cancellations that make the estimate overestimate the neglected term, among classes at equal power of $\epsilon$ and from relations among the invariants. Verify each condition symbolically, keeping physical parameters unevaluated.
 
 ## 4. Invariance
 
