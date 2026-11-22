@@ -44,6 +44,7 @@ provenance: assumption
 - [alp-dressed-vertex-power-counting-invariants.md](alp-dressed-vertex-power-counting-invariants.md) — Dressed-frame vertices in $\widehat S_n$, $\widehat P_n$, $\widehat\Theta_n$, the power of $\epsilon$ per ALP end and per closed ALP-like line, and the loop classes of an on-shell ALP amplitude with their loop factors and invariant contractions (no loop integral).
 - [alp-loop-naturalness-assumption.md](alp-loop-naturalness-assumption.md) — Naturalness assumption and class-dependent loop scales for estimating the next-order correction to an on-shell ALP amplitude.
 - [alp-loop-estimate-cancellations.md](alp-loop-estimate-cancellations.md) — Conditions for cancellation of equal-power loop contributions and zeros of their invariant contractions, with symbolic checks.
+- [alp-loop-estimate-frame-invariance.md](alp-loop-estimate-frame-invariance.md) — Symbolic check of the loop-to-tree estimate under a constant axial redefinition.
 - [alp-singlet-derivative-terms-energy-growth.md](alp-singlet-derivative-terms-energy-growth.md) — Beyond-LO singlet-source terms of Kaiser:1998ds that give energy-growing ALP amplitudes, with unknown coefficients.
 - [alp-single-pole-alignment.md](alp-single-pole-alignment.md) — Shift that decouples the ALP from the mesons at one selected pole, its regularity condition and exceptional poles.
 - [alp-multi-pole-alignment.md](alp-multi-pole-alignment.md) — Conditions for aligning several poles with shift-type and general field changes, and simultaneous diagonalization of $(K,M^2)$.

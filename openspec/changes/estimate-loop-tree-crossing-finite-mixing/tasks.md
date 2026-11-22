@@ -19,7 +19,7 @@ Conventions for every task: notation and invariants as in the existing records (
 
 ## 4. Invariance
 
-- [ ] 4.1 Check, in exact arithmetic, that the invariant contractions and the loop-to-tree ratio are unchanged under a constant axial redefinition, using the frame-change tools of the existing scripts. Verify that the test fails if a non-invariant quantity (for example the off-shell tadpole entry) is substituted.
+- [x] 4.1 Check, in exact arithmetic, that the invariant contractions and the loop-to-tree ratio are unchanged under a constant axial redefinition, using the frame-change tools of the existing scripts. Verify that the test fails if a non-invariant quantity (for example the off-shell tadpole entry) is substituted.
 
 ## 5. Crossing formula
 
