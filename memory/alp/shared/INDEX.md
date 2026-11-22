@@ -46,6 +46,9 @@ provenance: assumption
 - [alp-loop-estimate-cancellations.md](alp-loop-estimate-cancellations.md) — Conditions for cancellation of equal-power loop contributions and zeros of their invariant contractions, with symbolic checks.
 - [alp-loop-estimate-frame-invariance.md](alp-loop-estimate-frame-invariance.md) — Symbolic check of the loop-to-tree estimate under a constant axial redefinition.
 - [alp-loop-crossing-exact-tree-condition.md](alp-loop-crossing-exact-tree-condition.md) — Crossing equation with the exact tree amplitude and the condition for its leading-coefficient inversion.
+- [alp-three-meson-one-loop-estimate.md](alp-three-meson-one-loop-estimate.md) — Projected three-meson loop-size estimate, including exchange, external poles, vacuum shift and the leading mixing-dependent contribution.
+- [alp-three-meson-loop-mixing-expansion.md](alp-three-meson-loop-mixing-expansion.md) — Meson poles and propagators through second order in the mixing at fixed ALP pole mass.
+- [alp-loop-momentum-reduction.md](alp-loop-momentum-reduction.md) — Feynman-parameter shift and angular reduction of momentum-dependent bubble and triangle vertices.
 - [alp-singlet-derivative-terms-energy-growth.md](alp-singlet-derivative-terms-energy-growth.md) — Beyond-LO singlet-source terms of Kaiser:1998ds that give energy-growing ALP amplitudes, with unknown coefficients.
 - [alp-single-pole-alignment.md](alp-single-pole-alignment.md) — Shift that decouples the ALP from the mesons at one selected pole, its regularity condition and exceptional poles.
 - [alp-multi-pole-alignment.md](alp-multi-pole-alignment.md) — Conditions for aligning several poles with shift-type and general field changes, and simultaneous diagonalization of $(K,M^2)$.

@@ -19,7 +19,7 @@ N(m_a^2)=1+2\epsilon^2\left\langle[\mathbb{M}_{m_a^2}^{-1}(\mathcal C)]^2\right\
 $$
 
 - **Reduced exact tree amplitude** is the [pole-projected contact-plus-exchange amplitude](alp-finite-mixing-three-meson-tree.md#result) divided by the external factor $\epsilon/\sqrt{N(m_a^2)}$. Its limit uses the [leading tree coefficient](alp-finite-mixing-three-meson-tree.md#difference-from-the-leading-expansion).
-- **Reduced invariant loop contraction** is the class-dependent contraction after removing the external factor, the internal factor $\epsilon^2/N(m_a^2)$, and the loop scale. For the contraction of a closed line, the [projected quartic and cubic expressions](alp-dressed-vertex-power-counting-invariants.md#result-3-contraction-of-a-closed-alp-like-line-verified) give the vertex factors. The [class table](alp-dressed-vertex-power-counting-invariants.md#result-4-loop-classes-of-the-amplitude) specifies how the other contractions are built from the projected vertices.
+- **Reduced invariant loop contraction** is the class-dependent contraction after removing the external factor, the internal factor $\epsilon^2/N(m_a^2)$, and the loop scale. The [three-meson loop estimate](alp-three-meson-one-loop-estimate.md#extracting-and-estimating-the-leading-coefficient) specifies the projected one-loop amplitude and its leading coefficient. The [class table](alp-dressed-vertex-power-counting-invariants.md#result-4-loop-classes-of-the-amplitude) gives the underlying vertex counting.
 
 Write $\mathcal M^{(0)}$ for the linked exact tree amplitude and $\mathcal M^{(1)}$ for the power-counting estimate of the selected one-loop contribution. For $\epsilon>0$, the two reductions defined above are, respectively,
 $$
@@ -39,7 +39,7 @@ R(\epsilon)=R_{\max},
 R(\epsilon)=O(\epsilon^2).
 $$
 
-The class-5 meson-line mixing insertions have the same leading relative power but their counting uses meson pole overlaps. The criterion here applies to a contribution with one internal ALP-like pole. With several contributions, the crossing is determined by their combined size under the chosen estimate, subject to the [cancellation conditions](alp-loop-estimate-cancellations.md).
+The class-5 meson-line mixing insertions have the same leading relative power but their counting uses meson pole overlaps. The internal normalization factored out in the second reduction applies to a contribution with one internal ALP-like pole. For the combined leading estimate, extract the cubic coefficient of the contributions before this normalization is retained beyond leading order. The [cancellation conditions](alp-loop-estimate-cancellations.md) delimit when the separate sizes can be combined.
 
 ## Dependence on the crossing value of $\epsilon$
 
@@ -52,6 +52,15 @@ D_a(q^2)=q^2-m_a^2+
 $$
 The resolvent difference is generically nonzero. The extra $\epsilon^2$ term remains after the external ALP pole factor has been divided out of the exchange amplitude. The exact contact terms also contain higher powers, for example through the two-ALP-leg vertex and an ALP overlap on a daughter meson. No symmetry in the stated source assumptions forces these effects to cancel against the loop contraction.
 
+Using the combined strict leading loop estimate from the [cubic-coefficient extraction](alp-three-meson-one-loop-estimate.md#extracting-and-estimating-the-leading-coefficient), the equation with the exact tree denominator can also be written as
+$$
+\epsilon^3
+\lim_{\epsilon'\to0^+}
+\frac{\left|\mathcal M^{(1)}(\epsilon')\right|}{(\epsilon')^3}
+=R_{\max}\left|\mathcal M^{(0)}(\epsilon)\right|.
+$$
+Here $\mathcal M^{(1)}$ includes the leading mixing-dependent terms, after removing the ordinary meson chiral correction linear in $\epsilon$. The equation is valid to the retained order in the loop numerator. It assumes a nonzero leading tree coefficient and keeps the exact daughter poles in $\mathcal M^{(0)}(\epsilon)$. The power counting does not fix the number of roots on an allowed kinematic branch.
+
 For an explicit estimate, take the limit of the reduced coefficient as $\epsilon\to0$. Since $N(m_a^2)\to1$ in that limit, the leading reduced coefficient is $\lim_{\epsilon\to0^+}R(\epsilon)/\epsilon^2$. Holding it fixed while retaining the internal ALP pole normalization gives the positive branch
 $$
 \frac{f_\pi}{f_a}
@@ -62,7 +71,15 @@ $$
 -2R_{\max}\left\langle[\mathbb{M}_{m_a^2}^{-1}(\mathcal C)]^2\right\rangle}
 \right]^{1/2}.
 $$
-This branch requires a strictly positive denominator. With the exact tree denominator and the full dependence of the reduced coefficient, the crossing condition is implicit. Selecting a channel, kinematics and the leading loop classes would specify the equation to solve.
+This branch applies to the estimate with a single explicit internal ALP-like line and requires a strictly positive denominator. For the combined estimate truncated at strict leading order on both sides, the positive branch is instead
+$$
+\frac{f_\pi}{f_a}
+=\left[
+\frac{R_{\max}}
+{\displaystyle\lim_{\epsilon\to0^+}R(\epsilon)/\epsilon^2}
+\right]^{1/2}.
+$$
+With the exact tree denominator, the crossing condition is implicit. Selecting the daughter channel and fixing its two independent invariants specifies the remaining root equation.
 
 ## Symbolic check
 

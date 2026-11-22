@@ -47,21 +47,21 @@ The loop-to-tree ratio and the resulting estimate SHALL be shown, with an execut
 
 #### Scenario: Constant axial redefinition
 - **WHEN** the sources are transformed by a constant axial redefinition
-- **THEN** the loop-to-tree ratio and the crossing formula take the same value in both frames
+- **THEN** the loop-to-tree ratio and the solutions of the crossing equation agree in both frames
 
-### Requirement: Closed formula for the crossing
-The record SHALL give a closed formula for the $f_\pi/f_a$ at which the ratio of the leading ALP-line class to the tree quantity reaches the order-one criterion $R_{\max}$, in terms of the invariants, the unmixed masses, $m_a$, $f_\pi$, $B_0$, $m_0^2$ and the loop factor, valid for a general $R_{\max}$. No scan over parameters SHALL be used to obtain or present it.
+### Requirement: Implicit equation for the crossing
+The record SHALL give the implicit equation for the $f_\pi/f_a$ at which the leading loop-size estimate divided by the exact finite-mixing tree amplitude in magnitude reaches $R_{\max}$, with the daughter poles and exchange propagators kept exact in the tree denominator. The result SHALL use the invariants, the unmixed masses, $m_a$, $f_\pi$, $B_0$, $m_0^2$, the on-shell kinematic invariants and the loop factor. It SHALL apply for general positive $R_{\max}$, with no parameter scan.
 
 #### Scenario: Formula against vertex counting
-- **WHEN** the vertex scalings are evaluated with exact rational sources
-- **THEN** the closed formula reproduces the stated powers of $\epsilon$ and the invariant contraction
+- **WHEN** the vertex scalings are checked symbolically
+- **THEN** the implicit equation uses the stated powers of $\epsilon$ and the projected invariant loop contractions
 
 ### Requirement: Validity and limits
 The record SHALL state the conditions of validity (non-degenerate poles, one-loop truncation), the behaviour when the ALP pole approaches a meson pole, and the limit $f_a\to\infty$.
 
 #### Scenario: Near degeneracy
 - **WHEN** the ALP pole is within the mixing entry of a meson pole
-- **THEN** the record states that the closed formula fails and which exact expression replaces it
+- **THEN** the record states where the nondegenerate estimate fails and gives the exact two-level pole expression
 
 ### Requirement: Exclusion of tree-only conditions
 The estimate SHALL NOT be defined by a condition on tree-level quantities only, such as a large mixing angle or partial-wave unitarity.

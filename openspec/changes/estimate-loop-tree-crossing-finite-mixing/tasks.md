@@ -21,10 +21,10 @@ Conventions for every task: notation and invariants as in the existing records (
 
 - [x] 4.1 Check, in exact arithmetic, that the invariant contractions and the loop-to-tree ratio are unchanged under a constant axial redefinition, using the frame-change tools of the existing scripts. Verify that the test fails if a non-invariant quantity (for example the off-shell tadpole entry) is substituted.
 
-## 5. Crossing formula
+## 5. Crossing equation
 
-- [ ] 5.1 Derive the closed formula for the $f_\pi/f_a$ at which the ratio of the leading ALP-line class to the tree equals $R_{\max}$, in the invariants, the unmixed masses, $m_a$, $f_\pi$, $B_0$, $m_0^2$ and the loop factor, for a general $R_{\max}$. Verify that the formula reproduces the stated powers of $\epsilon$ and the invariant contraction at exact rational sources.
-- [ ] 5.2 Write the record with the formula, its criterion value, the naturalness assumption and the loop classes that contribute. Verify that every symbol is defined in an existing record or flagged for approval.
+- [x] 5.1 Derive the projected one-loop size estimate for $a\to P_{n_1}P_{n_2}P_{n_3}$ from the dressed vertices and pole projections. Derive the implicit equation for the $f_\pi/f_a$ at which the leading estimate divided by the exact tree amplitude in magnitude equals $R_{\max}$, using the invariants, the unmixed masses, $m_a$, $f_\pi$, $B_0$, $m_0^2$, the on-shell kinematic invariants and the loop factor, for general positive $R_{\max}$. Verify the powers of $\epsilon$ and the invariant contractions symbolically.
+- [ ] 5.2 Consolidate the implicit crossing equation, its criterion value, the naturalness assumption and the loop classes that contribute. Verify that every symbol is defined in an existing record or flagged for approval.
 
 ## 6. Validity and limits
 

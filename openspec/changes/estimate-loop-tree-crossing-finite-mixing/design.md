@@ -16,7 +16,7 @@ Facts established in earlier work that constrain the design (each is recorded in
 
 **Goals:**
 - State, with written arguments, the observable class for which the loop-to-tree ratio can depend on $\epsilon$.
-- Derive the closed formula for the crossing in the invariants, with the tree part exact in $\epsilon$ and the loop part given by vertex power counting.
+- Derive the implicit crossing equation in the invariants, with the tree part exact in $\epsilon$ and the loop part given by vertex power counting.
 
 **Non-Goals:**
 - Any condition defined by tree-level quantities alone (mixing angle, partial-wave unitarity).
@@ -34,15 +34,15 @@ Facts established in earlier work that constrain the design (each is recorded in
 
 **D4. Frame invariance by explicit check.** The matrix contractions and the ratio are checked under the constant axial redefinition used in the existing scripts, in exact arithmetic. No off-shell entry is used.
 
-**D5. Analytic result first, scripts verify.** The derivation is written in sympy with the closed formula as the output. Exact rational sources are used only to test vertex scalings and identities. No parameter scan is run or presented.
+**D5. Analytic result first, scripts verify.** SymPy verifies the vertex scalings and identities and derives the crossing equation with symbolic physical inputs. No parameter scan is run or presented.
 
-**D6. Criterion value.** The crossing is defined as ratio $=R_{\max}$ with $R_{\max}$ of order one, and the formula is written for general $R_{\max}$ so that the dependence on this choice is explicit.
+**D6. Crossing criterion.** The crossing satisfies $R(\epsilon)=R_{\max}$, where $R(\epsilon)$ is the estimated loop-to-tree magnitude ratio and $R_{\max}$ is a general positive threshold of order one. The accepted result is the implicit equation with the exact tree amplitude, including its $\epsilon$-dependent daughter poles and exchange propagators.
 
 ## Risks / Trade-offs
 
 - [Naturalness overestimates when classes cancel] → state the cancellation conditions and that the estimate does not apply there.
 - [Several loop classes at the same power of $\epsilon$] → report each class and the sum, and the condition under which the sum vanishes.
-- [Near an ALP-meson degeneracy the closed formula fails] → state the condition and give the exact two-level replacement.
+- [Near an ALP-meson degeneracy the loop estimate loses its nondegenerate expansion] → state the condition and give the exact two-level replacement for the pole treatment.
 - [Pole vectors in a frame with exact mixing can be singular for an unmixed pole] → treat the unmixed pole separately.
 - [The estimate is of the size of the correction, not its value] → state that it is an estimate of where the tree-level approximation stops being controlled, not a prediction of the correction.
 
