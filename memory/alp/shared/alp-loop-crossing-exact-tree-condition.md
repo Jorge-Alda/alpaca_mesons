@@ -20,7 +20,7 @@ $$
 =R_{\max}\left|\mathcal M^{(0)}(\epsilon)\right|.
 $$
 
-This equation truncates the loop numerator at its leading mixing-dependent order and keeps the tree denominator exact, including the daughter poles and exchange propagators. The power counting leaves the number of solutions on a given branch open. The criterion $R_{\max}>0$ is a general threshold of order one for the estimated loop-to-tree magnitude ratio. Setting $R_{\max}=1$ compares equal sizes. [Design decision D6](../../../openspec/changes/estimate-loop-tree-crossing-finite-mixing/design.md#decisions).
+This equation truncates the loop numerator at its leading mixing-dependent order and keeps the tree denominator exact, including the daughter poles and exchange propagators. The power counting leaves the number of solutions on a given branch open. The criterion $R_{\max}>0$ is a general threshold of order one for the estimated loop-to-tree magnitude ratio. Setting $R_{\max}=1$ compares equal sizes. [Design decision D6](../../../openspec/changes/estimate-loop-tree-crossing-finite-mixing/design.md#decisions), [validity and limiting cases](alp-loop-crossing-validity.md).
 
 ## Naturalness assumption and contributing classes
 

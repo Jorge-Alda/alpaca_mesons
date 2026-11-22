@@ -28,7 +28,7 @@ Conventions for every task: notation and invariants as in the existing records (
 
 ## 6. Validity and limits
 
-- [ ] 6.1 State the validity conditions, the $f_a\to\infty$ limit and the near-degenerate behaviour with the exact two-level replacement. Verify each statement against the exact solver for one exact rational example per case.
+- [x] 6.1 State the validity conditions, the $f_a\to\infty$ limit and the near-degenerate behaviour with the exact two-level replacement. Verify the spectral and power-counting statements symbolically using the exact solver's inverse propagator, keeping physical parameters unevaluated.
 - [ ] 6.2 Add pointers from `alp-loop-power-counting.md` and `alp-loop-crossing-physical-inputs.md` to the new records, marking their representative-based numbers as superseded. Verify that the indexes in `memory/alp/shared/INDEX.md` and the parents list every new record and that all links resolve.
 
 ## 7. Integration

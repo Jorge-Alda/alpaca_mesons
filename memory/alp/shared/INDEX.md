@@ -46,6 +46,7 @@ provenance: assumption
 - [alp-loop-estimate-cancellations.md](alp-loop-estimate-cancellations.md) — Conditions for cancellation of equal-power loop contributions and zeros of their invariant contractions, with symbolic checks.
 - [alp-loop-estimate-frame-invariance.md](alp-loop-estimate-frame-invariance.md) — Symbolic check of the loop-to-tree estimate under a constant axial redefinition.
 - [alp-loop-crossing-exact-tree-condition.md](alp-loop-crossing-exact-tree-condition.md) — Implicit crossing with the exact tree amplitude, contributing loop classes, criterion and naturalness assumption.
+- [alp-loop-crossing-validity.md](alp-loop-crossing-validity.md) — Domain of the loop-size estimate, fixed-mass decoupling and exact pole treatment near degeneracy.
 - [alp-three-meson-one-loop-estimate.md](alp-three-meson-one-loop-estimate.md) — Projected three-meson loop-size estimate, including exchange, external poles, vacuum shift and the leading mixing-dependent contribution.
 - [alp-three-meson-loop-mixing-expansion.md](alp-three-meson-loop-mixing-expansion.md) — Meson poles and propagators through second order in the mixing at fixed ALP pole mass.
 - [alp-loop-momentum-reduction.md](alp-loop-momentum-reduction.md) — Feynman-parameter shift and angular reduction of momentum-dependent bubble and triangle vertices.
