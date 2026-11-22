@@ -2,7 +2,7 @@
 title: One-loop power counting for ALP lines in the LO ALP-meson theory at finite f_pi/f_a
 status: mixed
 created: 2026-11-21
-updated: 2026-11-21
+updated: 2026-11-22
 bibtex_keys: [Alda:2026nrd, Kaiser:1998ds, Gasser:1983yg, Manohar:1983md]
 provenance: analytical-derivation
 ---
@@ -48,6 +48,8 @@ $$
 V^L_{n_a;i_1\dots i_{n_P}}=\frac{B_0\,f_\pi^{2-n_P}f_a^{-n_a}}{2^{1+n_P}}\sum_{\sigma\in S_{n_P}}\sum_{k=0}^{n_P}\frac{(-i)^{n_P}\langle\lambda_{\sigma_1}\cdots\lambda_{\sigma_k}\widehat M_{n_a}\lambda_{\sigma_{k+1}}\cdots\lambda_{\sigma_{n_P}}\rangle+i^{n_P}\langle\lambda_{\sigma_1}\cdots\lambda_{\sigma_k}\widehat M_{n_a}^\dagger\lambda_{\sigma_{k+1}}\cdots\lambda_{\sigma_{n_P}}\rangle}{k!\,(n_P-k)!},
 $$
 momentum independent. For neutral legs this reduces to $V^L_{q^{n_P}a^{n_a}}=2^{n_P/2}B_0f_\pi^{2-n_P}f_a^{-n_a}\operatorname{Re}[(-i)^{n_P}(\widehat M_{n_a})_{qq}]$. In this convention $\widehat M_n$ is real for even $n$ and imaginary for odd $n$, so only $n_a+n_P$ even survives: there are no cubic vertices, and the one-loop two-point functions are pure tadpoles. The kinetic term $\frac{f_\pi^2}{4}\langle u_\mu u^\mu\rangle$ contains no ALP ($n_a=0$ only; its quartic vertices vanish for commuting neutral fields). With $\widehat\Theta$ linear in $x$, $X_{TC}^2$ is quadratic in the fields: it contributes to $M^2$ only. A nonzero $\widehat\Theta_2$ would add cubic and higher vertices.
+
+**Superseded (2026-11-22):** the parity statement and the absence of cubic vertices above hold only in the representative with constant diagonal $c_q^A$, $c_q^P$. The vertex formula in the invariants $\widehat S_n$, $\widehat P_n$, $\widehat\Theta_n$, with cubic vertices for general sources, is in the [dressed-vertex power-counting record](alp-dressed-vertex-power-counting-invariants.md).
 
 ## L2. One-loop tadpoles
 
@@ -109,6 +111,8 @@ Loop-to-tree ratios for $P_qP_q\to P_qP_q$ (flavour basis, unmixed; tree $V^L_{q
 Rule: since $V_{n_a,n_P}\propto f_\pi^{2}\,f_\pi^{-n_P}f_a^{-n_a}$, a one-loop diagram relative to tree carries one extra $f_\pi^2$ (extra vertex) and $1/f_X^2$ for each end-pair of internal line $X$, times $1/16\pi^2$: bubble ratio $\sim m^2f_\pi^2/(16\pi^2f_{X_1}^2f_{X_2}^2)$; tadpole ratio $\sim m_X^2/(16\pi^2f_X^2)$ with $m_X$ the mass in the loop. The mass scale in the bubbles comes from the vertices ($B_0m_q$), not from $m_a$: tuning $m_a$ does not reduce the $aP$ and $aa$ bubbles.
 
 ## Result table (tadpoles: $|A_0|\to m^2/16\pi^2$; bubbles: $|B_0|\to1$)
+
+**Superseded (2026-11-22):** the closed forms with $c_q^A$, $c_q^P$ in this table and in the L3 table are representative dependent. The loop classes with their powers of $\epsilon$ and invariant contractions are in the [dressed-vertex power-counting record](alp-dressed-vertex-power-counting-invariants.md); the powers of $f_\pi/f_a$ below agree with it.
 
 | loop class | loop factor | power of $f_\pi/f_a$ | closed form (ratio to tree) |
 |---|---|---|---|

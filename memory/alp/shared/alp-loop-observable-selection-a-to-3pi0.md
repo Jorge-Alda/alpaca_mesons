@@ -11,6 +11,21 @@ provenance: analytical-derivation
 
 This record is task 1.2 of the OpenSpec change `estimate-loop-tree-crossing-finite-mixing`. It selects the observable used for the loop-to-tree comparison, names the free parameters that could absorb its one-loop correction, and shows which part of that correction they cannot absorb. The comparison of the four candidates is in the [candidate record](alp-loop-observable-candidates-comparison.md) (task 1.1) and is not repeated.
 
+## Observable class used for the estimate (revised scope, task 1.2)
+
+The estimate of the OpenSpec change `estimate-loop-tree-crossing-finite-mixing` compares the tree amplitude with the power-counting size of the one-loop term, without evaluating any loop. The observable class is an **on-shell ALP-sourced amplitude in which the ALP enters at tree level at first order in $1/f_a$**. Its tree term is exact in $\epsilon$ (task 2.1), and the one-loop size is taken from the vertex scalings (task 3.1).
+
+Reasons, from the [candidate record](alp-loop-observable-candidates-comparison.md):
+
+- **Meson pole mass** fails test (b). Its tree shift and the ALP-tadpole class both scale as $\epsilon^2$, so their ratio does not depend on $\epsilon$ at leading order. It cannot locate a value of $f_\pi/f_a$.
+- **ALP-meson mixing entry** fails test (a). It changes under a constant axial redefinition, even at the pole at one loop.
+- **ALP-like pole mass** fails test (c). $m_{a,0}^2$ absorbs any shift of the pole mass exactly.
+- **On-shell amplitude** passes (a) and (d). It has an ALP at first order in $1/f_a$ at tree level, so ALP-line loops carry extra powers of $\epsilon$. Its absorption is discussed in the Dalitz analysis below.
+
+**The Dalitz and absorption analysis below is not used by the estimate.** It was a one-loop evaluation of specific bubble coefficients and is kept only as a record of the task 1.2 investigation. The estimate does not depend on the bubble selection, on the decision of the order-by-order reading (assumption 4), or on the assumptions $m_u=m_d$ and $\langle\lambda_3\widehat P_1\rangle=0$.
+
+## Earlier selection (superseded for the estimate)
+
 **Selection.** Candidate 4, the on-shell amplitude $\mathcal M(A\to\pi^0\pi^0\pi^0)$, restricted to the coefficients of the bubble functions that have an ALP-like internal line: $\bar B(s_{ij};m_A,m_P)$ with $P=\pi^0,\eta,\eta'$, and $\bar B(s_{ij};m_A,m_A)$. The rest of the one-loop amplitude is either absorbed (all $s_{ij}$-independent parts), or is the usual chiral expansion with ratio $\epsilon^0$ to the tree, which needs fitted constants (meson bubbles).
 
 ## Conventions and units

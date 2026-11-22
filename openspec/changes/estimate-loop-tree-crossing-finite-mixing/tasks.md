@@ -5,15 +5,15 @@ Conventions for every task: notation and invariants as in the existing records (
 ## 1. Choice of observable class
 
 - [x] 1.1 Write the record comparing the meson pole mass, the ALP-meson mixing entry, the ALP-like pole mass and an on-shell ALP-sourced amplitude against the tests (a)-(d) of design D1. Verify with an exact-rational script that, for each candidate, the leading powers of $\epsilon$ of the tree and one-loop terms and its behaviour under a constant axial redefinition match what the record states.
-- [ ] 1.2 State the observable class used for the counting (an on-shell amplitude with the ALP at first order in $1/f_a$ at tree level) with the reasons, from the task 1.1 record, without evaluating any loop. Verify that the record states why the pole-mass candidates are not used, and add to the earlier selection record a pointer stating that its Dalitz and absorption analysis is not used by the estimate.
+- [x] 1.2 State the observable class used for the counting (an on-shell amplitude with the ALP at first order in $1/f_a$ at tree level) with the reasons, from the task 1.1 record, without evaluating any loop. Verify that the record states why the pole-mass candidates are not used, and add to the earlier selection record a pointer stating that its Dalitz and absorption analysis is not used by the estimate.
 
 ## 2. Tree quantity at finite mixing
 
-- [ ] 2.1 Write the exact tree quantity of the chosen class from the finite-mixing pole solution in $\mathbb M_{m_a^2}^{-1}$ and the invariants, without assuming relations among them. Verify against the existing exact solver with exact rational sources at several finite $\epsilon$, and record the difference from its leading expansion.
+- [x] 2.1 Write the exact tree quantity of the chosen class from the finite-mixing pole solution in $\mathbb M_{m_a^2}^{-1}$ and the invariants, without assuming relations among them. Verify against the existing exact solver with exact rational sources at several finite $\epsilon$, and record the difference from its leading expansion.
 
 ## 3. Loop size from power counting
 
-- [ ] 3.1 Derive, in matrix notation, the power counting of the dressed-frame vertices: the power of $\epsilon$ per closed ALP line, the loop factor and the dimensionless invariant contraction for each loop class, reusing `alp-loop-power-counting.md` and `alp-invariant-loop-crossing-meson-poles.md`. Verify the vertex scalings against the explicit fourth-order Lagrangian of the existing scripts, without evaluating any loop integral.
+- [x] 3.1 Derive, in matrix notation, the power counting of the dressed-frame vertices: the power of $\epsilon$ per closed ALP line, the loop factor and the dimensionless invariant contraction for each loop class, reusing `alp-loop-power-counting.md` and `alp-invariant-loop-crossing-meson-poles.md`. Verify the vertex scalings against the explicit fourth-order Lagrangian of the existing scripts, without evaluating any loop integral.
 - [ ] 3.2 State the naturalness assumption and the loop factor used (design D3). Verify that every symbol is defined in an existing record or flagged for approval.
 - [ ] 3.3 List the cancellations that make the estimate overestimate the neglected term, among classes at equal power of $\epsilon$ and from relations among the invariants. Verify each condition on an exact rational example.
 
