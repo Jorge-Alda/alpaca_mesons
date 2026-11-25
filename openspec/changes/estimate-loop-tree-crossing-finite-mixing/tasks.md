@@ -33,7 +33,7 @@ Conventions for every task: notation and invariants as in the existing records (
 
 ## 7. Integration
 
-- [ ] 7.1 Run the new and existing test suites (`derive_alp_invariant_loop_crossing`, `derive_alp_loop_power_counting`, `derive_alp_dressed_frame_unitarity`) and verify that all pass. Record in beads the status of the loop issues under alp-gii that this change touches, without closing them.
+- [x] 7.1 Run the new and existing test suites (`derive_alp_invariant_loop_crossing`, `derive_alp_loop_power_counting`, `derive_alp_dressed_frame_unitarity`) and verify that all pass. Record in beads the status of the loop issues under alp-gii that this change touches, without closing them.
 
 ## Workflow follow-up
 
