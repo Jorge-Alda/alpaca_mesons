@@ -84,3 +84,5 @@ Each child folder is a source-specific extract collection; see its files for the
 - [Pelaez:2019eqa](Pelaez:2019eqa/INDEX.md) — full Madrid isovector P-wave parameterization with 2024 corrected coefficients for KT phase inputs.
 - [Colangelo:2018mtw](Colangelo:2018mtw/INDEX.md) — updated Roy-equation P-wave phase input fitted to $e^+e^-\to\pi^+\pi^-$ data and its uncertainty/continuation treatment.
 - [DiLuzio:2026poh](DiLuzio:2026poh/INDEX.md) — CP-odd axion–meson mass matrix from a dynamical Peccei–Quinn field and its quark-mass spurion.
+- [Tandean:1999nv](Tandean:1999nv/INDEX.md) — leading-order heavy-baryon realization of the 27-plet weak interaction.
+- [AbdEl-Hady:1998qww](AbdEl-Hady:1998qww/INDEX.md) — explicit $|\Delta S|=1$, $|\Delta I|=3/2$ tensor and leading octet-baryon realization.
