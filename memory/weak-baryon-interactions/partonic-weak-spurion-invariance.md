@@ -77,3 +77,5 @@ $$
 In particular, its $(2,3)$ element is $(\bm w_1)_{23}-i\bigl((c_q^V)_{dd}-(c_q^A)_{dd}-(c_q^V)_{ss}+(c_q^A)_{ss}\bigr)$; all other elements equal those of $\bm w_1$. The Hermitian-conjugate matrix has the corresponding conjugate $(3,2)$ element. If $\bm w_1=0$ in the chosen starting parametrization, the invariant vanishes precisely when the left-handed diagonal couplings of $d$ and $s$ are equal. These statements retain the assumption that the other current does not transform.
 
 [weak_partonic_diagonal_couplings.py](../../scripts/weak_partonic_diagonal_couplings.py) calculates the matrix result and its adjoint. Run `.venv/bin/python scripts/weak_partonic_diagonal_couplings.py` or pass `--test` to run its checks.
+
+For the distinction between this illustrative current and the complete non-leptonic four-quark operator, see [non-leptonic operator matching](nonleptonic-operator-matching.md). The single-current assumption alone does not establish the matching to the baryonic octet coefficient.

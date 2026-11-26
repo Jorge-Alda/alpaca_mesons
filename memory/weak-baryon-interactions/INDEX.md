@@ -14,3 +14,5 @@ provenance: literature
 - [One-ALP baryon couplings](one-alp-baryon-couplings.md) — weak contact terms in the no-mixing parametrization with generic baryon matrices.
 
 - [Partonic weak spurion invariance](partonic-weak-spurion-invariance.md) — invariant one-ALP weak coupling and its relation to the baryon contact term.
+
+- [Non-leptonic operator matching](nonleptonic-operator-matching.md) — charged-current four-quark operators and their octet projection.

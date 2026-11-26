@@ -58,3 +58,5 @@ This direct weak vertex is generally nonzero. It vanishes when the displayed com
 The SymPy calculation [weak_baryon_one_alp.py](../../scripts/weak_baryon_one_alp.py) expands the rotation, differentiates to extract the ALP coefficient, substitutes the no-mixing redefinition, and projects on generic baryon matrices. Run `.venv/bin/python scripts/weak_baryon_one_alp.py`; its checks run with `.venv/bin/python scripts/weak_baryon_one_alp.py --test`.
 
 The [partonic weak spurion invariance record](partonic-weak-spurion-invariance.md) derives the general field-redefinition invariant and explains how this result follows when the explicit one-ALP weak coupling vanishes in the starting parametrization.
+
+The matching qualification in [non-leptonic operator matching](nonleptonic-operator-matching.md) applies: the two-coupling form with an ALP-dependent octet spurion assumes that its ALP dependence is represented by the same weak low-energy constants. Independent weak ALP operators can require additional constants.
