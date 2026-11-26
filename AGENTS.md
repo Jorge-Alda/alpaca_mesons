@@ -1,6 +1,7 @@
 # HEP-Ph Research Protocol
 
 Use this repository as a reproducible research record. Load only the protocol section and memory files needed for the current task.
+Try to completely fulfill every request made by the user and only stop when you hit a blocker that requires external intervention. Do not consider blockers anything that is a matter of internal bookkeeping and has no bearing in the physical results.
 
 ## Hierarchical Memory and Retrieval
 

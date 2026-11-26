@@ -2,7 +2,7 @@
 title: Shared ALP decay memory index
 status: mixed
 created: 2026-10-22
-updated: 2026-11-22
+updated: 2026-11-27
 bibtex_keys: []
 provenance: assumption
 ---
@@ -98,3 +98,33 @@ provenance: assumption
 - [murayama-sigma-width-implementation.md](murayama-sigma-width-implementation.md) — Numerical two-pseudoscalar radial widths in the only-up model.
 
 - [murayama-alp-plot-mass-axis.md](murayama-alp-plot-mass-axis.md) — Mass tick placement in only-up ALP decay plots.
+
+- [murayama-radial-loop-six-seven.md](murayama-radial-loop-six-seven.md) — Radial self-energy graph 6.7 vertex product and its symbolic derivation.
+- [murayama-radial-loop-six-one.md](murayama-radial-loop-six-one.md) — Radial bubble graph 6.1 source-trace product and its symbolic derivation.
+- [murayama-loop-repeated-alp-quartic.md](murayama-loop-repeated-alp-quartic.md) — Symbolic source-trace expansion of the quartic vertex with two ALP-like legs.
+- [murayama-radial-loop-class-five-bubbles.md](murayama-radial-loop-class-five-bubbles.md) — Explicit flavour-trace products for radial and ALP bubbles 5.1–5.4.
+- [murayama-radial-loop-class-five-triangles.md](murayama-radial-loop-class-five-triangles.md) — Explicit flavour-trace products for radial and ALP triangles 5.5–5.12.
+- [murayama-radial-loop-class-four-bubbles.md](murayama-radial-loop-class-four-bubbles.md) — Explicit flavour-trace products for radial and meson bubbles 4.1–4.6.
+- [murayama-radial-loop-external-residues.md](murayama-radial-loop-external-residues.md) — Explicit source traces for the external ALP and radial tadpole residues.
+- [murayama-radial-loop-class-two-bubbles.md](murayama-radial-loop-class-two-bubbles.md) — Explicit flavour-trace products for ALP and meson bubbles 2.1–2.5.
+- [murayama-radial-loop-class-four-triangles.md](murayama-radial-loop-class-four-triangles.md) — Explicit flavour-trace products for radial and two-meson triangles 4.7–4.14.
+- [murayama-radial-loop-class-six-meson.md](murayama-radial-loop-class-six-meson.md) — Explicit trace products for two-radial-line diagrams 6.2–6.6.
+- [murayama-radial-loop-class-one-tadpoles.md](murayama-radial-loop-class-one-tadpoles.md) — Explicit flavour-trace products for ALP tadpoles 1.1–1.3.
+- [murayama-loop-trace-permutation-grouping.md](murayama-loop-trace-permutation-grouping.md) — Trace cyclicity and exact permutation grouping for compact diagram expressions.
+- [murayama-loop-generator-trace-products.md](murayama-loop-generator-trace-products.md) — Compact explicit source-trace products for all retained loop graphs using normalized generator sums.
+
+- [murayama-sigma-pipi-loop-tree-and-legs.md](murayama-sigma-pipi-loop-tree-and-legs.md) — Legs, kinematics, charge rule, assumptions (including CP and flavour-diagonal sources) and exact tree of $\sigma\to\pi^+\pi^-$ for generic sources.
+- [murayama-sigma-pipi-loop-vertex-rules.md](murayama-sigma-pipi-loop-vertex-rules.md) — Exact vertex rules up to five legs for generic $\widehat S_{r,s}$, $\widehat P_{r,s}$, checked against the direct expansion of the Lagrangian.
+- [murayama-sigma-pipi-loop-large-epsilon-scaling.md](murayama-sigma-pipi-loop-large-epsilon-scaling.md) — Quadratic Lagrangian, ALP-like pole condition and normalization, exact identities of the meson-line residue, and the large-$\epsilon$ pole data at fixed sources.
+- [murayama-sigma-pipi-loop-large-epsilon-inputs.md](murayama-sigma-pipi-loop-large-epsilon-inputs.md) — Large $\epsilon$ at fixed sources and fixed $\lambda$: assumptions and leading powers of $m_a$, $m_\sigma$, $\mathbb M^{-1}_{m_a^2}(\mathcal C)$, $N$, $v_a$, $\xi_a$, the meson-line residue pieces and the leg factors.
+- [murayama-sigma-pipi-loop-large-epsilon-vertices-tree.md](murayama-sigma-pipi-loop-large-epsilon-vertices-tree.md) — Large $\epsilon$ at fixed sources: powers of every vertex by field-end pattern (generic and $r\le1$ sources) and of the tree $M_0$.
+- [murayama-sigma-pipi-loop-large-epsilon-graphs.md](murayama-sigma-pipi-loop-large-epsilon-graphs.md) — Large $\epsilon$ at fixed sources: leading powers of $T_\Gamma$ and $\delta Z$ of every kept graph, of $M_1^{\rm est}$ and of $R\sim\epsilon^4$, and the D4 check.
+- [murayama-sigma-pipi-loop-up-only-estimate.md](murayama-sigma-pipi-loop-up-only-estimate.md) — Up-only sources: derivation of $M_1^{\rm est}/M_0\to-21B_0m_u\epsilon^4/(64\pi^2f_\pi^2)$ at large $\epsilon$ from graphs 2, 13 and σ4.
+- [murayama-sigma-pipi-loop-meson-line-pieces.md](murayama-sigma-pipi-loop-meson-line-pieces.md) — Which pieces of the meson-line residue (bare generators, ALP-field entry, mixed entries, meson block of the pole) contribute to each kept $\sigma\to\pi^+\pi^-$ graph, and the loop scale of each piece ($m_P$ or $m_a$).
+- [murayama-sigma-pipi-loop-graph-selection.md](murayama-sigma-pipi-loop-graph-selection.md) — Rules for keeping one-loop $\sigma\to\pi^+\pi^-$ graphs at any $\epsilon$: no truncation, exact split of the meson-only chiral background, loop scale per term and largest-magnitude routing.
+- [murayama-sigma-pipi-loop-graph-list.md](murayama-sigma-pipi-loop-graph-list.md) — List of the one-loop $\sigma\to\pi^+\pi^-$ graphs with symmetry factors, internal lines, loop scales of their terms and excluded D4 terms.
+- [murayama-sigma-pipi-loop-traces-1pi.md](murayama-sigma-pipi-loop-traces-1pi.md) — Compact flavour traces of the kept 1PI $\sigma\to\pi^+\pi^-$ graphs, with the largest-magnitude routing per trace product and the routing spread as diagnostic.
+- [murayama-sigma-pipi-loop-traces-external-legs.md](murayama-sigma-pipi-loop-traces-external-legs.md) — Compact traces and residue corrections of the external $\sigma$ and $\pi^\pm$ legs.
+- [murayama-sigma-pipi-loop-estimate.md](murayama-sigma-pipi-loop-estimate.md) — Size estimate $M_1^{\rm est}$ and ratio $R$ of the one-loop $\sigma\to\pi^+\pi^-$ amplitude for generic sources and any $\epsilon$.
+- [murayama-sigma-pipi-loop-frame-invariance.md](murayama-sigma-pipi-loop-frame-invariance.md) — Check of the $\sigma\to\pi^+\pi^-$ loop traces under a constant axial redefinition of the sources.
+- [murayama-sigma-pipi-loop-limits.md](murayama-sigma-pipi-loop-limits.md) — Limits and assumptions of the $\sigma\to\pi^+\pi^-$ loop estimate: thresholds, cancellations (including on-shell ones), scale assignment, routing bound, residue prescription and $\sigma$ tadpole, validity at large $\epsilon$, naturalness.

@@ -2,7 +2,7 @@
 title: Loop-size estimate for a to pi+ pi- pi0 in the up-only radial model: diagrams, vertices and result
 status: numerical
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 bibtex_keys: [Alda:2026nrd, DiLuzio:2026poh, Manohar:1983md]
 provenance: numerical-computation
 ---
@@ -50,7 +50,7 @@ The diagram value $T_d$ is the sum over the internal generator labels of the pro
 
 **Potential part.** For a vertex with legs $x_1,\dots,x_n$, let $R$ be the set of radial legs, $A$ the set of legs contributing their ALP component, and $P$ the set of legs contributing their meson matrix; a leg can have only the roles it has. Let $r=|R|$, $s=|A|$, $m=|P|$ and $X_{rs}=\widehat S_{rs}$ for even $m$, $X_{rs}=\widehat P_{rs}$ for odd $m$:
 $$
-V^{(n)}_{\rm pot}=B_0\sum_{(R,A,P)}r!\,s!\,\epsilon^{r+s}\,\frac{(-1)^{\lfloor m/2\rfloor}}{m!}\prod_{x\in A}\xi_x\sum_{\pi\in S_m}\big\langle X_{rs}\,\lambda_{\pi_1}\cdots\lambda_{\pi_m}\big\rangle .
+V^{(n)}_{\rm pot}=B_0f_\pi^{2-n}\sum_{(R,A,P)}r!\,s!\,\epsilon^{r+s}\,\frac{(-1)^{\lfloor m/2\rfloor}}{m!}\prod_{x\in A}\xi_x\sum_{\pi\in S_m}\big\langle X_{rs}\,\lambda_{\pi_1}\cdots\lambda_{\pi_m}\big\rangle .
 $$
 In the up-only model, the only nonzero sources are, with $r\le1$ and $(r,s)\neq(0,0)$,
 $$
@@ -64,13 +64,15 @@ No source with $r\ge2$ is nonzero.
 
 **Four-meson kinetic part** ($n=4$, all legs with meson matrices):
 $$
-V^{(4)}_{\rm kin}=\frac1{48}\sum_{\pi\in S_4}\big(-k_{\pi_2}\cdot k_{\pi_4}\big)\,\big\langle[\lambda_{\pi_1},\lambda_{\pi_2}][\lambda_{\pi_3},\lambda_{\pi_4}]\big\rangle ,
+V^{(4)}_{\rm kin}=\frac1{48f_\pi^2}\sum_{\pi\in S_4}\big(-k_{\pi_2}\cdot k_{\pi_4}\big)\,\big\langle[\lambda_{\pi_1},\lambda_{\pi_2}][\lambda_{\pi_3},\lambda_{\pi_4}]\big\rangle ,
 $$
 with every product $k_i\cdot k_j$ that contains the loop momentum replaced by $m_d^2$.
 
+**Correction (2026-11-26).** The factors $f_\pi^{2-n}$ in $V^{(n)}_{\rm pot}$, $1/f_\pi^2$ in $V^{(4)}_{\rm kin}$ and $1/f_\pi$, $1/f_\pi^2$ in $C(\sigma)$, $C(\sigma,\sigma)$ were missing in an earlier version of this record. They were restored after the direct expansion of the Lagrangian in [the vertex-rule record](murayama-sigma-pipi-loop-vertex-rules.md) showed the difference for every leg pattern with $n=3,4,5$. The vertex function of [`derive_radial_loop_trace_contractions.py`](../../../scripts/derive_radial_loop_trace_contractions.py) already includes $f_\pi^{2-n}$, so the omission affected only the written formulas.
+
 **ALP kinetic part** ($n\le4$):
 $$
-V_{\rm kin,a}=-\sum_{i<j}\xi_i\xi_j\,k_i\cdot k_j\;C(\text{remaining legs}),\qquad C(\varnothing)=1,\quad C(\sigma)=2\epsilon,\quad C(\sigma,\sigma)=2\epsilon^2,
+V_{\rm kin,a}=-\sum_{i<j}\xi_i\xi_j\,k_i\cdot k_j\;C(\text{remaining legs}),\qquad C(\varnothing)=1,\quad C(\sigma)=\frac{2\epsilon}{f_\pi},\quad C(\sigma,\sigma)=\frac{2\epsilon^2}{f_\pi^2},
 $$
 where $C$ is evaluated on the remaining legs, and $C(\cdot)=1$ for a remaining leg that is not radial.
 
