@@ -100,7 +100,7 @@ class RadialExchange:
 
     Value at (s12, s23) in GeV^2: sum over the channels (r|uv) of
     g_ar(s_uv) g_uv(s_uv)/(m_sigma^2 - s_uv), with the off-shell vertex of
-    memory/alp/three-pseudoscalar/alp-three-pseudoscalar-radial-exchange.md,
+    memory/alp/three-pseudoscalar/finite-mixing/alp-three-pseudoscalar-radial-exchange.md,
         f_a g_xy(q^2) = (B0/2)<S_10 {L_x, L_y}> - (B0 f_pi/f_a)<P_11 (xi_x L_y + xi_y L_x)>
                         - (2 B0 f_pi^2/f_a^2) xi_x xi_y <S_12> + xi_x xi_y (q^2 - m_x^2 - m_y^2),
     on the original polar columns (L_x, xi_x) of the legs.  The columns are those of the

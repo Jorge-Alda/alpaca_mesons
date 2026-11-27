@@ -7,7 +7,7 @@ Tests: .venv/bin/python -m unittest discover -s scripts -p test_verify_alp_lo_sp
 Conventions as in scripts/solve_alp_meson_spectrum.py: D(s) = s K - M^2,
 pole vectors v^(n) with v^(n)T K v^(n) = 1, residues R_n = v^(n) v^(n)T, ALP
 as the last field. The single-pole quantities of
-memory/alp/shared/finite-alp-meson-mixing.md are
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md are
   w^(a)_i(s) = [(M^2_PP - s K_PP)^{-1}]_ij (s K_ja - M^2_ja),
   N_a(s)     = K_aa + 2 K_ia w_i + K_ij w_i w_j   (the pole normalization),
 and the LSZ factor is N_a(m_a^2)^{-1/2}. With v^(n) normalized by K one

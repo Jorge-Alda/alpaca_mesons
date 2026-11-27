@@ -3,7 +3,7 @@
 
 All dimensional inputs are in GeV and GeV squared; the SU(3)-symmetric
 spurion makes the meson block diagonal and permits closed-form exact poles.
-See memory/alp/shared/alp-lo-mass-sum-rules.md and alp-lo-arrow-matrix-spectrum.md.
+See memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-mass-sum-rules.md and alp-lo-arrow-matrix-spectrum.md.
 """
 import sympy as sp
 from derive_alp_lo_mass_sum_rules import (rational_sources, blocks_with_second_order_scalar,

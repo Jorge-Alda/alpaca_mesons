@@ -12,7 +12,7 @@ Peccei-Quinn (PQ) charge matrix N = diag(n_u, n_d, n_s) is real and
 dimensionless (integer in the models used, kept symbolic here). The ALP
 variable x = a/f_a is real and dimensionless.
 
-Memory convention (memory/alp/shared/alp-general-chiral-redefinition-invariants.md):
+Memory convention (memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md):
 the partonic Lagrangian contains
     -bar(q_R) X q_L - bar(q_L) X^dagger q_R = -bar(q) (S - i P gamma_5) q,
 with X(x) = S(x) + i P(x), S and P Hermitian, X(0) = m_q. Right- and
@@ -32,12 +32,12 @@ Inputs
   -m_q exp(i n_q a) bar(q_L) q_R + h.c.
 * memory/extracts/DiLuzio:2026poh/angular-mode-parametrization.md: a is the
   dimensionless phase, a = a_can / f_phi.
-* memory/alp/shared/alp-chiral-source-transformations.md: source
+* memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-chiral-source-transformations.md: source
   transformation laws M' = g_R M g_L^dagger,
   C_R' = g_R C_R g_R^dagger + i g_R d_x g_R^dagger, transport
   d_x W = i C W with W(0) = 1, dressed source hat(M) = W_R^dagger M W_L.
 * memory/extracts/Alda:2026nrd/appendix-a-expansion.md (through
-  memory/alp/shared/alp-dressed-mass-first-order-invariants.md): first-order
+  memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-first-order-invariants.md): first-order
   parametrisation S_1 = i [c^S, m_q], P_1 = {c^P, m_q}.
 
 Assumptions (stated, not derived)

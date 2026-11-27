@@ -36,10 +36,10 @@ conservation allows), and a closed sigma line (class 8, diagrams 8.1-8.2, loop s
 the a and pi0 legs (the sigma sigma pi+ pi- vertex vanishes in the up-only model).  The pi+ slope has the closed form
 d/dp^2 [(1/2) V(l_+, l_-, l_A, l_A)] = -eps^2 [(M^-1)_11 - (M^-1)_22]^2 / (3 N(m_a^2) f_pi^2),
 M^-1 = M^{-1}_{m_a^2}(C).  M0 is the tree of evaluate_explicit_estimate.py in physical units.
-Result record: memory/alp/shared/murayama-radial-up-only-estimate-result.md.
+Result record: memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-radial-up-only-estimate-result.md.
 
 Physical units: every dimensionful quantity in GeV (f_pi, m_q, B0, m_1^2 in GeV^2), with the
-inputs of memory/alp/shared/only-up-finite-mixing-inputs.md (scripts/implementation/only_up_inputs.py).
+inputs of memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/only-up-finite-mixing-inputs.md (scripts/implementation/only_up_inputs.py).
 The quartic coupling lambda is dimensionless; f_a = sqrt(2) m_u / kappa_u, eps = f_pi/f_a.
 Vertices: the vertex formulas of evaluate_explicit_estimate.py are written for f_pi = 1; in
 physical units every term of an n-leg vertex carries f_pi^(2 - n) (the chiral terms
@@ -78,7 +78,7 @@ LOOP_FACTOR = 1 / (16 * math.pi ** 2)        # loop measure d^4k/(2 pi)^4 -> m^4
 # covariant derivative D U = dU - i dx (C_R U - U C_L).  The transports
 # dW/dx = i C W, W(0) = 1, give the dressed source M_hat = W_R^dag M W_L, whose
 # Hermitian parts are S_hat_rs and P_hat_rs, and Theta_hat = Theta + int_0^x tr C_A,
-# C_A = (C_R - C_L)/2 (memory/alp/shared/alp-loop-estimate-frame-invariance.md, in
+# C_A = (C_R - C_L)/2 (memory/alp/loop-corrections/finite-mixing/power-counting-and-validity/crossing-and-validity/alp-loop-estimate-frame-invariance.md, in
 # the sign convention of this script: L contains <chi U^dag + U chi^dag>).
 # Under U = xi U' xi, xi = exp(i kappa x):  M' = xi^dag M xi^dag,
 # C_R' = xi^dag C_R xi - kappa,  C_L' = xi C_L xi^dag + kappa.  Only traceless kappa is

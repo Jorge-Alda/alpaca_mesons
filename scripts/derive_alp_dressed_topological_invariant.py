@@ -29,11 +29,11 @@ hat(Theta)_n = Theta_n + tr C_{A,n-1} (n >= 1), hat(Theta)_1 = c_GA.
 
 Inputs
 ------
-* memory/alp/shared/alp-general-chiral-redefinition-invariants.md:
+* memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md:
   connection law for C_eta, homogeneous law for M, transport W_eta, hat(M),
   and hat(U) = W_R^dagger U W_L.
-* memory/alp/shared/alp-qcd-topological-cp.md: anomaly law for Theta.
-* memory/alp/shared/alp-dressed-mass-first-order-invariants.md:
+* memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-qcd-topological-cp.md: anomaly law for Theta.
+* memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-first-order-invariants.md:
   hat(P)_1 = -{c^AP, m}.
 * memory/extracts/Alda:2026nrd/appendix-a-expansion.md: source
   parametrization M_1 = i[c^S, m] + i{c^P, m}, C_A(0) = c^A, c^AP = c^A - c^P,

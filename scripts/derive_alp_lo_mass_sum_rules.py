@@ -5,9 +5,9 @@ exact K^0 pole, trace sum rule and product rule.
 Run:   .venv/bin/python scripts/derive_alp_lo_mass_sum_rules.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_lo_mass_sum_rules.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md,
-memory/alp/shared/alp-lo-charged-meson-decoupling.md,
-memory/alp/shared/alp-lo-neutral-block-reduction.md):
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md,
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-charged-meson-decoupling.md,
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-neutral-block-reduction.md):
 N_f = 3, Hermitian U(3) generators lambda_0..lambda_8 with
 tr(lambda_i lambda_j) = 2 delta_ij (ordering of scripts/symbolic_utils.py),
 fields Phi = (P_i, a), L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi,
@@ -65,7 +65,7 @@ Derived and checked here (symbolic sources unless stated):
     -r^2 B_0 tr S_2; P_2 does not appear; S_2 = (tr S_2/3) 1, P_2 = 0 gives the
     same blocks as the general S_2, P_2.
 
- 6. Invariant form (memory/alp/shared/alp-dressed-mass-second-order-invariants.md,
+ 6. Invariant form (memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-second-order-invariants.md,
     real quark masses: S_0 = m_q, P_0 = 0, S_1 = i[c^S, m_q], P_1 = {c^P, m_q},
     C_V0 = c^V, C_A0 = c^A). hat S_2 is computed from its definition (Hermitian
     part of the second Taylor coefficient of W_R^dagger M W_L) and compared with
@@ -514,7 +514,7 @@ def dressed_second_order_scalar_from_definition(quark_mass, first_order_scalar, 
 
     M = S + i P with S_0 = m_q, P_0 = 0; vector_couplings = (C_V,0, C_V,1),
     axial_couplings = (C_A,0, C_A,1); C_R = C_V + C_A, C_L = C_V - C_A;
-    W_1 = i C_0, W_2 = i C_1 - C_0^2 (memory/alp/shared/alp-dressed-mass-second-order-invariants.md).
+    W_1 = i C_0, W_2 = i C_1 - C_0^2 (memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-second-order-invariants.md).
     Leibniz rule for the product of three series, coefficients = derivatives at x = 0.
     """
     right = [vector + axial for vector, axial in zip(vector_couplings, axial_couplings)]
@@ -533,7 +533,7 @@ def dressed_second_order_scalar_from_definition(quark_mass, first_order_scalar, 
 
 def dressed_second_order_scalar_closed_form(quark_mass, first_order_scalar, first_order_pseudoscalar,
                                             second_order_scalar, vector_couplings, axial_couplings):
-    """Specialization to real quark masses of memory/alp/shared/alp-dressed-mass-second-order-invariants.md:
+    """Specialization to real quark masses of memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-second-order-invariants.md:
     hat S_2 = S_2 - 2i[C_V0, S_1] + 2{C_A0, P_1} - i[C_V1, m_q] - [C_V0,[C_V0,m_q]] - {C_A0,{C_A0,m_q}}."""
     vector_0, vector_1 = vector_couplings
     axial_0 = axial_couplings[0]

@@ -4,8 +4,8 @@
 Run:   .venv/bin/python scripts/solve_alp_meson_spectrum.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_solve_alp_meson_spectrum.py
 
-Conventions (Alda:2026nrd, memory/alp/shared/finite-alp-meson-mixing.md and
-memory/alp/shared/alp-inverse-propagator-congruence.md): the fields are
+Conventions (Alda:2026nrd, memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md and
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-inverse-propagator-congruence.md): the fields are
 Phi_I = (P_i, a), the quadratic Lagrangian is
 L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi and the inverse propagator is
 D(s) = s K - M^2. K and M^2 are real symmetric constant matrices; K must be

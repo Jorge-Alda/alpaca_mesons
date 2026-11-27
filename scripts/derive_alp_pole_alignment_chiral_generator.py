@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/derive_alp_pole_alignment_chiral_generator.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_pole_alignment_chiral_generator.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/alp-chiral-source-transformations.md,
+Conventions (Alda:2026nrd; memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-chiral-source-transformations.md,
 alp-general-chiral-redefinition-invariants.md, finite-alp-meson-mixing.md):
 x = a/f_a, U = exp(i Phi/f_pi), Phi = P_i lambda_i with the nine U(3)
 generators, tr(lambda_i lambda_j) = 2 delta_ij, lambda_0 = sqrt(2/3) 1.
@@ -116,7 +116,7 @@ def quadratic_hessian(data, axial_source, mass_source_coefficients, topological_
 
 
 def record_blocks(data):
-    """K and M^2 blocks as written in memory/alp/shared/finite-alp-meson-mixing.md."""
+    """K and M^2 blocks as written in memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md."""
     generators = u3_generators()
     f_pi, f_a, chi_0 = data["f_pi"], data["f_a"], data["chi_0"]
     axial_overlap = [f_pi / f_a * (data["c_A"] * g).trace() for g in generators]

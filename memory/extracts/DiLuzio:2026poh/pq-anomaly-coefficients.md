@@ -19,7 +19,7 @@ These coefficients describe the PQ transformations of the quarks in Eq. (3). In 
 
 ## Mapping to the Alda:2026nrd invariants
 
-Identify $x=a/f_a$ in Alda:2026nrd with the $2\pi$-periodic phase of DiLuzio:2026poh. At the radial vacuum, the source multiplying $-\bar q_R M q_L$ in Alda:2026nrd is the conjugate of the mass matrix in DiLuzio:2026poh, so $\widehat M_{qq}(x)=m_q e^{-in_qx}$ in the mass-phase basis. In that basis the axial-current and explicit ALP gauge coefficients vanish, giving $c_{GA}=c_{\gamma A}=0$. From $\widehat P_1=-\{c_q^{AP},m_q\}$ one obtains $c_q^{AP}=\operatorname{diag}(n_u,n_d,n_s)/2$. See the [mass invariant](../../alp/shared/alp-dressed-mass-first-order-invariants.md).
+Identify $x=a/f_a$ in Alda:2026nrd with the $2\pi$-periodic phase of DiLuzio:2026poh. At the radial vacuum, the source multiplying $-\bar q_R M q_L$ in Alda:2026nrd is the conjugate of the mass matrix in DiLuzio:2026poh, so $\widehat M_{qq}(x)=m_q e^{-in_qx}$ in the mass-phase basis. In that basis the axial-current and explicit ALP gauge coefficients vanish, giving $c_{GA}=c_{\gamma A}=0$. From $\widehat P_1=-\{c_q^{AP},m_q\}$ one obtains $c_q^{AP}=\operatorname{diag}(n_u,n_d,n_s)/2$. See the [mass invariant](../../alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-first-order-invariants.md).
 
 With $c_q^{AP}=c_q^A-c_q^P$, the invariant color combination is
 $$
@@ -32,4 +32,4 @@ N_{\mathrm{DW}}=2|c_{GP}|,\qquad
 \frac{E}{N}=\frac{c_{\gamma A}-2N_c\operatorname{tr}(Q^2c_q^{AP})}{c_{GP}}
 \quad (c_{GP}\ne 0).
 $$
-For $(n_u,n_d,n_s)=(1,0,0)$, $c_{GP}=-1/2$ and the numerator is $-4/3$. These values reproduce $N_{\mathrm{DW}}=1$ and $E/N=8/3$. The factor in the domain-wall formula uses the full $2\pi$ period of $x$. A common rescaling of the linear coefficients cancels in the ratio. See the [color invariant](../../alp/shared/alp-dressed-topological-invariant.md) and the [photon invariant](../../alp/photon/alp-dressed-photon-invariant.md).
+For $(n_u,n_d,n_s)=(1,0,0)$, $c_{GP}=-1/2$ and the numerator is $-4/3$. These values reproduce $N_{\mathrm{DW}}=1$ and $E/N=8/3$. The factor in the domain-wall formula uses the full $2\pi$ period of $x$. A common rescaling of the linear coefficients cancels in the ratio. See the [color invariant](../../alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-topological-invariant.md) and the [photon invariant](../../alp/photon/alp-dressed-photon-invariant.md).

@@ -3,10 +3,10 @@
 
 Run:   .venv/bin/python scripts/derive_alp_meson_mass_shifts_exact.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_meson_mass_shifts_exact.py
-Record: memory/alp/shared/alp-lo-exact-pole-equations.md
+Record: memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-exact-pole-equations.md
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md,
-memory/alp/shared/alp-lo-mass-sum-rules.md): N_f = 3, neutral basis
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md,
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-mass-sum-rules.md): N_f = 3, neutral basis
 (P_3, P_8, P_0, P_6, P_7, a), tr(lambda_i lambda_j) = 2 delta_ij, D(s) = s K - M^2,
 epsilon = f_pi/f_a, M^2_aa = m_a0^2 + epsilon^2 (2 m_0^2 c_G^2/N_f - B_0 tr S_2).
 Flavour-space objects of the second-order script: 𝕄_s(X) = {chi_0, X}/2 + (m_0^2/N_f) tr(X) 1 - s X,

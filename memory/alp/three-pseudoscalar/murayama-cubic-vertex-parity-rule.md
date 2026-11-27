@@ -15,22 +15,22 @@ $$
 \quad\Longleftrightarrow\quad
 \widehat S_{rs}=0\ \text{for odd } s,\qquad \widehat P_{rs}=0\ \text{for even } s .
 $$
-The rule holds in the original coordinates and in the basis without ALP–meson mixing of the draft (`eq:murayama-chiral-shift`, `eq:murayama-T`). Then $\mathcal V^{(3)}\equiv0$ and the term $\sum\mathcal V^{(3)}G\,\mathcal V^{(3)}$ of the [radial-exchange record](alp-three-pseudoscalar-radial-exchange.md) is absent; only the contact $\mathcal V^{(4)}$ and the $\sigma$ exchange remain. The condition is intrinsic parity of the ALP couplings, not flavour conservation.
+The rule holds in the original coordinates and in the basis without ALP–meson mixing of the draft (`eq:murayama-chiral-shift`, `eq:murayama-T`). Then $\mathcal V^{(3)}\equiv0$ and the term $\sum\mathcal V^{(3)}G\,\mathcal V^{(3)}$ of the [radial-exchange record](finite-mixing/alp-three-pseudoscalar-radial-exchange.md) is absent; only the contact $\mathcal V^{(4)}$ and the $\sigma$ exchange remain. The condition is intrinsic parity of the ALP couplings, not flavour conservation.
 
 ## Conventions and units
 
-Conventions of Alda:2026nrd [@Alda:2026nrd] and of the [radial-exchange record](alp-three-pseudoscalar-radial-exchange.md): $\widehat M(a,\sigma)=\widehat S+i\widehat P=\sum_{r,s}(\widehat S_{rs}+i\widehat P_{rs})(\sigma/f_a)^r(a/f_a)^s$, $\Phi=\sum_kP_k\lambda_k$, $U=e^{i\Phi/f_\pi}$, $\chi=2B_0\widehat M$. Vertices omit the factor $i$. Masses, fields, $B_0$, $f_\pi$, $f_a$ and source coefficients in GeV.
+Conventions of Alda:2026nrd [@Alda:2026nrd] and of the [radial-exchange record](finite-mixing/alp-three-pseudoscalar-radial-exchange.md): $\widehat M(a,\sigma)=\widehat S+i\widehat P=\sum_{r,s}(\widehat S_{rs}+i\widehat P_{rs})(\sigma/f_a)^r(a/f_a)^s$, $\Phi=\sum_kP_k\lambda_k$, $U=e^{i\Phi/f_\pi}$, $\chi=2B_0\widehat M$. Vertices omit the factor $i$. Masses, fields, $B_0$, $f_\pi$, $f_a$ and source coefficients in GeV.
 
 ## Assumptions
 
-1. Tree level, LO $U(3)$, polar connection-free representative (assumptions 1–4 of the [radial-exchange record](alp-three-pseudoscalar-radial-exchange.md)).
+1. Tree level, LO $U(3)$, polar connection-free representative (assumptions 1–4 of the [radial-exchange record](finite-mixing/alp-three-pseudoscalar-radial-exchange.md)).
 2. The anomalous singlet term $-\tfrac{m_1^2}{12}\langle\Phi\rangle^2$ does not depend on $a$ or $\sigma$ (assumption 3 there). **Not checked:** with an $a$-dependent topological source $\Theta(a)$ the rule additionally needs $\Theta$ odd in $a$.
 
 ## Inputs
 
-- Polar Lagrangian and source expansion: [radial-exchange record](alp-three-pseudoscalar-radial-exchange.md), [general-source radial record](../shared/radial-decay-polar-cartesian-general-sources.md).
-- Change of fields of the chiral shift (no quadratic term): [quartic-vertex record](murayama-unmixed-basis-quartic-vertex.md), section "Check".
-- Only-up coefficients: [only-up radial-decay record](../shared/murayama-sigma-two-pseudoscalar-decays.md).
+- Polar Lagrangian and source expansion: [radial-exchange record](finite-mixing/alp-three-pseudoscalar-radial-exchange.md), [general-source radial record](../radial-mode/couplings-and-decays/finite-mixing/radial-decay-polar-cartesian-general-sources.md).
+- Change of fields of the chiral shift (no quadratic term): [quartic-vertex record](finite-mixing/murayama-unmixed-basis-quartic-vertex.md), section "Check".
+- Only-up coefficients: [only-up radial-decay record](../radial-mode/couplings-and-decays/finite-mixing/murayama-sigma-two-pseudoscalar-decays.md).
 - Draft chiral shift and linear change of fields: `latex/murayama_matching.tex`, `eq:murayama-chiral-shift`, `eq:murayama-T`.
 
 ## Step 1: the $\mathbb Z_2$ transformation
@@ -51,7 +51,7 @@ and it vanishes identically for $S_1=S_3=P_0=P_2=0$. The cubic part of $\langle\
 
 ## Check: the rule in the basis without ALP–meson mixing
 
-- **Basis without ALP–meson mixing.** The chiral shift of `eq:murayama-chiral-shift`, $U=g_RU'g_R$ with $g_R=\exp\big(\tfrac{iaB_0}{f_a}\mathbb M^{-1}_{m_a^2}(\widehat P_{01})\big)$, obeys $g_R(-a)=g_R(a)^\dagger$. Hence $(\Phi',a)\to(-\Phi',-a)$ gives $U\to g_R^\dagger U'^\dagger g_R^\dagger=U^\dagger$, and $\langle\Phi\rangle=\langle\Phi'\rangle+a\tfrac{2B_0f_\pi}{f_a}\langle\mathbb M^{-1}_{m_a^2}(\widehat P_{01})\rangle$ changes sign: the $\mathbb Z_2$ of Step 1 is the same transformation in the new fields. The change of fields of `eq:murayama-T` and the meson-only rotation are linear. The rule therefore holds in the basis without ALP–meson mixing, for external and internal legs. Equivalently, the shift has no quadratic term, so its cubic vertices are those of the original fields with the linear part of the change of fields inserted ([quartic-vertex record](murayama-unmixed-basis-quartic-vertex.md), section "Check"). No coefficients of the transformed source are needed.
+- **Basis without ALP–meson mixing.** The chiral shift of `eq:murayama-chiral-shift`, $U=g_RU'g_R$ with $g_R=\exp\big(\tfrac{iaB_0}{f_a}\mathbb M^{-1}_{m_a^2}(\widehat P_{01})\big)$, obeys $g_R(-a)=g_R(a)^\dagger$. Hence $(\Phi',a)\to(-\Phi',-a)$ gives $U\to g_R^\dagger U'^\dagger g_R^\dagger=U^\dagger$, and $\langle\Phi\rangle=\langle\Phi'\rangle+a\tfrac{2B_0f_\pi}{f_a}\langle\mathbb M^{-1}_{m_a^2}(\widehat P_{01})\rangle$ changes sign: the $\mathbb Z_2$ of Step 1 is the same transformation in the new fields. The change of fields of `eq:murayama-T` and the meson-only rotation are linear. The rule therefore holds in the basis without ALP–meson mixing, for external and internal legs. Equivalently, the shift has no quadratic term, so its cubic vertices are those of the original fields with the linear part of the change of fields inserted ([quartic-vertex record](finite-mixing/murayama-unmixed-basis-quartic-vertex.md), section "Check"). No coefficients of the transformed source are needed.
 
 ## Which sources obey the rule
 
@@ -62,7 +62,7 @@ and it vanishes identically for $S_1=S_3=P_0=P_2=0$. The cubic part of $\langle\
 | only-up plus $\widehat S_{01}=\epsilon\operatorname{diag}(1,-1,0)$ (flavour diagonal, allowed by $\langle\widehat S_{01}\rangle=0$) | violated | $\neq0$ |
 | only-up plus $\widehat P_{02}=\epsilon\operatorname{diag}(0,1,-1)$ (flavour diagonal) | violated | $\neq0$ |
 
-Flavour conservation is therefore neither necessary nor sufficient. In the linear parametrization of Alda:2026nrd the first two orders are $\widehat S_1=-i[c_q^{VS},m_q]$ and $\widehat P_2=-i[c_q^V,\{2c_q^P-c_q^A,m_q\}]-i\{c_q^A,[2c_q^S-c_q^V,m_q]\}$ ([finite-mixing record](alp-finite-mixing-three-pseudoscalar-amplitudes.md)). Both vanish for flavour-diagonal couplings, so there flavour-diagonal couplings satisfy the rule to this order. Higher orders of that parametrization were not checked here.
+Flavour conservation is therefore neither necessary nor sufficient. In the linear parametrization of Alda:2026nrd the first two orders are $\widehat S_1=-i[c_q^{VS},m_q]$ and $\widehat P_2=-i[c_q^V,\{2c_q^P-c_q^A,m_q\}]-i\{c_q^A,[2c_q^S-c_q^V,m_q]\}$ ([finite-mixing record](finite-mixing/alp-finite-mixing-three-pseudoscalar-amplitudes.md)). Both vanish for flavour-diagonal couplings, so there flavour-diagonal couplings satisfy the rule to this order. Higher orders of that parametrization were not checked here.
 
 ## Verification
 

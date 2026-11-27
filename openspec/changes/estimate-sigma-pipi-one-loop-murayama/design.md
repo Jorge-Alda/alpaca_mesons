@@ -2,7 +2,7 @@
 
 ## Context
 
-See proposal.md for motivation. The estimate of `a→π⁺π⁻π⁰` (`memory/alp/shared/murayama-radial-up-only-estimate-result.md`) defines the vertex rules, the legs $(\lambda_x,\xi_x)$, the internal-line rules and the size formula
+See proposal.md for motivation. The estimate of `a→π⁺π⁻π⁰` (`memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-radial-up-only-estimate-result.md`) defines the vertex rules, the legs $(\lambda_x,\xi_x)$, the internal-line rules and the size formula
 $$
 M_1^{\rm est}=\sum_\Gamma S_\Gamma\,\frac{(m_\Gamma^2)^{2-r_\Gamma}}{16\pi^2}\,T_\Gamma .
 $$

@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/verify_alp_weak_mixing_limit.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_verify_alp_weak_mixing_limit.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md and
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md and
 scripts/solve_alp_meson_spectrum.py): fields Phi = (P_i, a) with the ALP last,
 L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi, D(s) = s K - M^2, pole vectors
 v^(n) with v^(n)T K v^(n) = 1. The expansion parameter is
@@ -26,7 +26,7 @@ in epsilon with sympy:
 with c_j(s) = s k_j - mu_j. The pole vectors are built from the exact null
 vectors of D(s) and normalized with K. Results compared with:
   First order (Alda:2026nrd, no-mixing prescription; see
-  memory/alp/baryon/finite-mixing-baryon-couplings.md and
+  memory/alp/baryon/finite-mixing/finite-mixing-baryon-couplings.md and
   memory/extracts/Alda:2026nrd/appendix-a-expansion.md):
     m_a^2 = m_a0^2 + O(epsilon^2), m_n^2 = m_n0^2 + O(epsilon^2),
     ALP-pole meson components v_j = epsilon c_j(m_a0^2)/(m_j^2 - m_a0^2) + O(epsilon^3),

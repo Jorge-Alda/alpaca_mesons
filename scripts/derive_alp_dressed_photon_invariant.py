@@ -54,9 +54,9 @@ Inputs
 ------
 * memory/extracts/Alda:2026nrd/photon-anomaly-normalization.md: photon
   operator normalization, linear anomaly law, and c_gammaA.
-* memory/alp/shared/alp-general-chiral-redefinition-invariants.md:
+* memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md:
   connection law, transport W_eta (dW/dx = i C W, W(0) = 1), hat(M).
-* memory/alp/shared/alp-dressed-topological-invariant.md: hat(Theta) and the
+* memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-topological-invariant.md: hat(Theta) and the
   helper functions imported from derive_alp_dressed_topological_invariant.py.
 * memory/alp/photon/alp-photon-invariant-from-mixing.md: the application
   C_agg = c_gamma + 2 N_c tr[Q^2 (c^A + M_a^{-1}(C))].

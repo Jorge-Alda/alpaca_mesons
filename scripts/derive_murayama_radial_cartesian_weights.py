@@ -8,7 +8,7 @@ Tests:
     PYTHONPATH=scripts .venv/bin/python -m unittest test_derive_murayama_radial_cartesian_weights
 
 What is checked.  The weight given by the size prescription
-(memory/alp/shared/murayama-radial-loop-size-prescription.md) to a loop
+(memory/alp/radial-mode/finite-mixing/loop-estimates/power-counting/murayama-radial-loop-size-prescription.md) to a loop
 class is
     (epsilon/sqrt(N(m_a^2))) * epsilon^p N(m_a^2)^(-n) * m^2/(16 pi^2 f_pi^2) * |c_k|,
 where c_k is built from tree-level vertices with legs on exact poles.  This
@@ -18,8 +18,8 @@ and compares them.  It does not compute any loop integral, scalar loop
 function, loop coefficient, combinatorial factor of a loop diagram, or loop
 amplitude: only vertices and one tree-level four-point amplitude (control).
 
-Model and conventions (memory/alp/shared/murayama-sigma-two-pseudoscalar-decays.md,
-memory/alp/shared/alp-polar-cartesian-amplitude-equivalence.md):
+Model and conventions (memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-sigma-two-pseudoscalar-decays.md,
+memory/alp/decay-amplitudes/vertices-and-kinematics/tree-vertices/finite-mixing/alp-polar-cartesian-amplitude-equivalence.md):
   * Up-only model, f_a = f_phi, theta = 0, Theta_hat = 0.
     f_a phi = (f_a + sigma) exp(i a/f_a)/sqrt(2) = (f_a + s + i p)/sqrt(2).
   * Only the up-quark entry Phi_uu of the neutral meson matrix couples to a,

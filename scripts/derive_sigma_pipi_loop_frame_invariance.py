@@ -4,7 +4,7 @@ Run:
     PYTHONPATH=scripts .venv/bin/python scripts/derive_sigma_pipi_loop_frame_invariance.py
     PYTHONPATH=scripts .venv/bin/python -m unittest test_derive_sigma_pipi_loop_frame_invariance
 
-Conventions (memory/alp/shared/murayama-radial-frame-invariance.md): partonic
+Conventions (memory/alp/radial-mode/finite-mixing/loop-estimates/power-counting/murayama-radial-frame-invariance.md): partonic
 source M = S + i P expanded in y = sigma/f_a and x = a/f_a,
 M(x, y) = sum_{r,s} M_rs y^r x^s, coefficients of mass dimension one (GeV).
 Redefinition g_R = exp(i x kappa), g_L = g_R^dagger, with a constant Hermitian

@@ -4,9 +4,9 @@ no expansion in epsilon = f_pi/f_a and no isospin-limit rotation.
 
 Run:   .venv/bin/python scripts/derive_alp_diagonal_chi0_meson_poles.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_diagonal_chi0_meson_poles.py
-Record: memory/alp/shared/alp-lo-diagonal-chi0-meson-poles.md
+Record: memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-diagonal-chi0-meson-poles.md
 
-Conventions (Alda:2026nrd; memory/alp/shared/alp-lo-exact-pole-equations.md): N_f = 3, neutral basis
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-exact-pole-equations.md): N_f = 3, neutral basis
 (P_3, P_8, P_0, P_6, P_7, a), D(s) = s K - M^2, epsilon = f_pi/f_a, 𝒞 = -{chi_0, c_q^AP}/2 - (m_0^2/N_f) c_GA 1,
 𝕄_s(X) = {chi_0, X}/2 + (m_0^2/N_f) tr(X) 1 - s X, lambda_n the generator of the mass eigenstate n,
 M = M_can,aa (record: M^2_{\\hat a\\hat a,can}). The building blocks are reused from

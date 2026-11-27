@@ -19,7 +19,7 @@ in the Alda:2026nrd normalization (Theta_1 = c_G); Theta_gamma(x) multiplies
 (alpha_em/4pi) F tilde(F) (Theta_gamma,1 = c_gamma). Q = diag(2/3,-1/3,-1/3),
 N_c = 3. All flavor matrices are noncommuting.
 
-Definitions (memory/alp/shared/alp-general-chiral-redefinition-invariants.md):
+Definitions (memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md):
     dW_eta/dx = i C_eta W_eta, W_eta(0) = 1,
     hat(M) = W_R^dagger M W_L, hat(S) = (hat M + hat M^dagger)/2,
     hat(P) = (hat M - hat M^dagger)/(2i),

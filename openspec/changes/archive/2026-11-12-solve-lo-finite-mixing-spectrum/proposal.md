@@ -2,7 +2,7 @@
 
 ## Why
 
-Beads issue alp-sjp.2 (GitHub issue 21) asks for the physical poles, state compositions and residues of the combined neutral pseudoscalar-nonet plus ALP system, with derivative and mass mixing treated together and no expansion in $f_\pi/f_a$. The records [finite-alp-meson-mixing.md](../../../memory/alp/shared/finite-alp-meson-mixing.md) and [alp-inverse-propagator-congruence.md](../../../memory/alp/shared/alp-inverse-propagator-congruence.md) give the LO blocks $K$, $M^2$ and the covariance of $D(s)=sK-M^2$ under $\Phi=T\Phi'$, and alp-sjp.1 is closed. What is missing is a reproducible solver that returns the full spectrum, eigenvectors and residues, checks the weak-mixing limit, and reports where the LO problem is unstable or degenerate. alp-sjp.3, .5 and .6 depend on it.
+Beads issue alp-sjp.2 (GitHub issue 21) asks for the physical poles, state compositions and residues of the combined neutral pseudoscalar-nonet plus ALP system, with derivative and mass mixing treated together and no expansion in $f_\pi/f_a$. The records [finite-alp-meson-mixing.md](../../../memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md) and [alp-inverse-propagator-congruence.md](../../../memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-inverse-propagator-congruence.md) give the LO blocks $K$, $M^2$ and the covariance of $D(s)=sK-M^2$ under $\Phi=T\Phi'$, and alp-sjp.1 is closed. What is missing is a reproducible solver that returns the full spectrum, eigenvectors and residues, checks the weak-mixing limit, and reports where the LO problem is unstable or degenerate. alp-sjp.3, .5 and .6 depend on it.
 
 ## What Changes
 

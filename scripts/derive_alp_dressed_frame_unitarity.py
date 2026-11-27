@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/derive_alp_dressed_frame_unitarity.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_dressed_frame_unitarity.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/alp-general-chiral-redefinition-invariants.md):
+Conventions (Alda:2026nrd; memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md):
   * natural units, masses and momenta in GeV, squared masses and s, t, u in GeV^2;
   * U = exp(i Phi / f_pi), Phi = P_i lambda_i, tr(lambda_i lambda_j) = 2 delta_ij,
     U(3) generators ordered (lambda_0, ..., lambda_8) as in symbolic_utils;

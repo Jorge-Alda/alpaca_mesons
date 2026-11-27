@@ -22,7 +22,7 @@ no value is assumed for any of them.  Meson-sector rationals (meson_sector_input
 module, m_u = m_d) are test inputs used only in S4 and S5.
 
 Loop functions (MSbar, dimensional regularization), the convention of
-derive_alp_invariant_loop_crossing.py and memory/alp/shared/alp-invariant-loop-crossing-meson-poles.md:
+derive_alp_invariant_loop_crossing.py and memory/alp/loop-corrections/finite-mixing/power-counting-and-validity/crossing-and-validity/alp-invariant-loop-crossing-meson-poles.md:
     A0(m^2) = m^2/(16 pi^2) [1 - ln(m^2/mu^2)],
     Bbar(s; m1, m2) = -int_0^1 dz ln[(z m1^2 + (1-z) m2^2 - z(1-z) s - i0)/mu^2].
 In this convention Bbar carries the whole mu dependence of the finite part; the full scalar

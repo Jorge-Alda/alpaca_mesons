@@ -5,7 +5,7 @@ Run:   .venv/bin/python scripts/derive_alp_lo_stability_bound_invariance.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_lo_stability_bound_invariance.py
 
 Question. scripts/derive_alp_lo_stability_bound.py derived, in the convention "quark
-spurion linear in a, no independent a^2 term" (memory/alp/shared/finite-alp-meson-mixing.md),
+spurion linear in a, no independent a^2 term" (memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md),
 
   m_a0^2 >= eps^2 [2 tr(c^P chi_0 c^P)
                    - 2 (m_0^2/N_f)(tr c^P + c_G)^2 / (1 + (m_0^2/N_f) sum_q 1/chi_q)],   eps = f_pi/f_a.
@@ -13,7 +13,7 @@ spurion linear in a, no independent a^2 term" (memory/alp/shared/finite-alp-meso
 Here we test, by exact computation, whether this statement survives ALP-dependent chiral
 field redefinitions g_R(x), g_L(x), x = a/f_a, and write the frame-independent form.
 
-Conventions (Alda:2026nrd; memory/alp/shared/alp-general-chiral-redefinition-invariants.md,
+Conventions (Alda:2026nrd; memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md,
 alp-chiral-source-transformations.md, alp-pole-alignment-chiral-generator.md,
 alp-dressed-mass-first-order-invariants.md, alp-dressed-topological-invariant.md):
  * N_f = 3, nine Hermitian U(3) generators, tr(lambda_i lambda_j) = 2 delta_ij, ordered

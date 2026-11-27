@@ -3,7 +3,7 @@
 
 Model: DiLuzio:2026poh (dynamical Peccei-Quinn field), polar coordinates, general Hermitian
 source coefficients, conventions of Alda:2026nrd and of
-memory/alp/shared/radial-decay-polar-cartesian-general-sources.md:
+memory/alp/radial-mode/couplings-and-decays/finite-mixing/radial-decay-polar-cartesian-general-sources.md:
 
 * M(a, sigma) = S + i P, S = sum_{r,s} S_rs (sigma/f_a)^r (a/f_a)^s (same for P); the
   coefficients are Hermitian 3x3 matrices of mass dimension one.

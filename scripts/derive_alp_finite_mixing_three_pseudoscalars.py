@@ -14,7 +14,7 @@ M_s(X) = B_0{X,m_q} + (m_0^2/N_f) <X> 1 - s X, with inverse M_s^{-1}(C), used at
 s = m_a^2 (parent) and s = m_r^2 (daughter r); C = -B_0{m_q,c_q^AP} - (m_0^2/N_f) c_GA 1.
 
 Coordinates are the derivative-source-free CCWZ coordinates of
-memory/alp/three-pseudoscalar/alp-finite-mixing-three-pion-amplitudes.md: K=1,
+memory/alp/three-pseudoscalar/finite-mixing/alp-finite-mixing-three-pion-amplitudes.md: K=1,
 the cubic vertex V3 has no momentum dependence and the quartic vertex is
 V4 = V4_kin + V4_chi. The explicit V3, V4 and the matrix-form inverse of
 M^2 - sK are imported from scripts/derive_alp_finite_three_pion.py.
@@ -31,7 +31,7 @@ with the three pairings (a,1)|(2,3) at s_23, (a,2)|(1,3) at s_13 and
 daughters receive no 1/n! in the amplitude; 1/S belongs to the phase space.
 
 Route 2 (pole-aligned coordinates) applies the transformation of
-memory/alp/shared/alp-lo-pole-aligned-tree-vertices.md with
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-pole-aligned-tree-vertices.md with
 w_i lambda_i = (2 f_pi/f_a) Y, Y = M_{m_a^2}^{-1}(C) at m_a^2, i.e.
 U_df = exp(iaY/f_a) U' exp(iaY/f_a). The sources follow from the laws of
 alp-chiral-source-transformations.md: C_V' = 0, C_A' = -Y, M' = exp(-ixY)
@@ -548,7 +548,7 @@ def weak_mixing_explicit_form(inverse_matrix, axial_pseudoscalar, quark_masses, 
 # ---------------------------------------------------------------------------
 # Pole-aligned coordinates (route 2): transformation taken from the notes
 # ---------------------------------------------------------------------------
-# memory/alp/shared/alp-lo-pole-aligned-tree-vertices.md, step 1, with
+# memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-pole-aligned-tree-vertices.md, step 1, with
 # w_i lambda_i = (2 f_pi/f_a) M_{m_a^2}^{-1}(C) (three-pion record, section 2):
 #   U_df = exp(i a Y/f_a) U' exp(i a Y/f_a),  Y = M_{m_a^2}^{-1}(C).
 # In the convention U' = g_R U g_L^dagger of alp-chiral-source-transformations.md

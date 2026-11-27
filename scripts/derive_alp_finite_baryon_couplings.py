@@ -3,7 +3,7 @@
 Run: .venv/bin/python scripts/derive_alp_finite_baryon_couplings.py
 Tests: .venv/bin/python scripts/derive_alp_finite_baryon_couplings.py --test
 
-Inputs: memory/alp/shared/finite-alp-meson-mixing.md;
+Inputs: memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md;
 memory/nlo/lsz-invariant-split.md; Alda:2026nrd, Sec. V.
 The relative pole eigenvector has original a component one. Use a complete
 Hermitian meson basis tr(lambda_i lambda_j)=2 delta_ij, real symmetric

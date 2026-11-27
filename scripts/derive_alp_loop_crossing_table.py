@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Loop-to-tree crossing values f_pi/f_a for ALP lines with physical inputs.
 
-Recomputes the regime map (section L4) of memory/alp/shared/alp-loop-power-counting.md
+Recomputes the regime map (section L4) of memory/alp/loop-corrections/finite-mixing/power-counting-and-validity/loop-counting/alp-loop-power-counting.md
 with physical inputs, keeping or dropping the MSbar logarithms.
 
 Conventions (Alda:2026nrd; dressed frame and unmixed approximation of the power-counting

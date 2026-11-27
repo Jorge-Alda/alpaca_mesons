@@ -9,7 +9,7 @@ Tests:
 
 No loop integral, scalar loop function, loop coefficient or loop amplitude is
 computed here.  Every loop size enters only through the size prescription of
-memory/alp/shared/murayama-radial-loop-size-prescription.md:
+memory/alp/radial-mode/finite-mixing/loop-estimates/power-counting/murayama-radial-loop-size-prescription.md:
 
     estimate = (epsilon / sqrt(N(m_a^2)))
                * sum over distinct scalar moments of
@@ -19,19 +19,19 @@ memory/alp/shared/murayama-radial-loop-size-prescription.md:
 
 with p_k the power of epsilon relative to the tree and n_k the number of
 internal ALP-like pole normalizations of class k (counting record
-memory/alp/shared/murayama-radial-loop-class-counting.md, whose class numbers
+memory/alp/radial-mode/finite-mixing/loop-estimates/diagram-traces/murayama-radial-loop-class-counting.md, whose class numbers
 are used as dictionary keys below).  c_k is the reduced invariant loop
 contraction of class k, as defined in
-memory/alp/shared/alp-loop-crossing-exact-tree-condition.md: the
+memory/alp/loop-corrections/finite-mixing/power-counting-and-validity/crossing-and-validity/alp-loop-crossing-exact-tree-condition.md: the
 class-dependent contraction after removing the external factor, the internal
 factors and the loop scale.  It depends on epsilon and on the dressed
 phi-valued invariants S_hat_rs, P_hat_rs at the fixed Dalitz point, and is
 kept as an undefined function: it is not evaluated.  The naturalness
-assumption of memory/alp/shared/murayama-radial-naturalness-assumption.md is
+assumption of memory/alp/radial-mode/finite-mixing/loop-estimates/power-counting/murayama-radial-naturalness-assumption.md is
 what makes this magnitude an estimate of the next-order correction.
 
 Conventions and units (Alda:2026nrd, radial-exchange record
-memory/alp/three-pseudoscalar/alp-three-pseudoscalar-radial-exchange.md):
+memory/alp/three-pseudoscalar/finite-mixing/alp-three-pseudoscalar-radial-exchange.md):
   * epsilon = f_pi/f_a (dimensionless, positive); f_pi, masses in GeV;
     squared masses and Dalitz invariants in GeV^2; amplitudes dimensionless.
   * Polar fields, dressed sources M_hat(a, sigma) = S_hat + i P_hat with
@@ -308,7 +308,7 @@ def pair_invariants():
 
 
 def tree_without_radial_exchange():
-    """Exact pole-projected tree of memory/alp/shared/alp-finite-mixing-three-meson-tree.md."""
+    """Exact pole-projected tree of memory/alp/decay-amplitudes/vertices-and-kinematics/tree-vertices/finite-mixing/alp-finite-mixing-three-meson-tree.md."""
     return sp.Function(r'\mathcal{M}^{(0)}_{\mathrm{no}\,\sigma}')(
         EPSILON, PAIR_INVARIANT_12, PAIR_INVARIANT_23)
 

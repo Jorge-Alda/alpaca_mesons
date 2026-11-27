@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/derive_alp_lo_stability_bound.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_lo_stability_bound.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md and
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md and
 scripts/derive_alp_lo_neutral_blocks.py): N_f = 3, Hermitian U(3) generators
 with tr(lambda_i lambda_j) = 2 delta_ij, t_i = tr(lambda_i), chi_0 = 2 B_0 m_q
 diagonal in the quark basis (chi_u, chi_d, chi_s > 0), epsilon = f_pi/f_a,

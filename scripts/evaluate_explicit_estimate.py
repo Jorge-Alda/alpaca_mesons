@@ -8,7 +8,7 @@ flavour traces A_d = tr[V(B_1) W_1 ... V(B_r) W_r] of the listed diagrams, the c
 self-energy slopes of the external-leg residues and the tree M0.  It assigns no loop weight:
 the estimate M1_est = sum_d S_d (m_d^2)^(2 - r_d)/(16 pi^2) A_d in physical units is assembled
 by scripts/estimate_loop_size_dimensionless.py (result record
-memory/alp/shared/murayama-radial-up-only-estimate-result.md).
+memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-radial-up-only-estimate-result.md).
 The diagram list DIAGRAMS is written out below and is the one authoritative list; it contains
 only the diagrams allowed by the selection rules, which
 scripts/enumerate_murayama_up_only_loop_diagrams.py checks.

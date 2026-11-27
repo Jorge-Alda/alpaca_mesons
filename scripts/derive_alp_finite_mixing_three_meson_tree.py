@@ -14,7 +14,7 @@ Minimal use (run from scripts/; exact rational inputs of `verification_inputs`):
 Conventions (Alda:2026nrd): natural units, masses in GeV, squared masses and
 Mandelstam invariants in GeV^2; U = exp(i Phi/f_pi), Phi = P_i lambda_i,
 tr(lambda_i lambda_j) = 2 delta_ij, N_f = 3, x = a/f_a, eps = f_pi/f_a.
-Dressed frame (memory/alp/shared/alp-dressed-frame-derivative-coupling-removal.md):
+Dressed frame (memory/alp/chiral-transformations/source-invariants/dressed-sources/finite-mixing/alp-dressed-frame-derivative-coupling-removal.md):
 K = 1, no ALP currents, mass source chi = 2 B_0 hat M(x),
 hat M(x) = sum_n x^n/n! (hat S_n + i hat P_n), topological coefficient
 hat Theta(x) = sum_n x^n/n! hat Theta_n, LO Lagrangian
@@ -23,7 +23,7 @@ hat Theta(x) = sum_n x^n/n! hat Theta_n, LO Lagrangian
         + (d a)^2/2 - m_{a,0}^2 a^2/2 .
 Vertices are derivatives of L (overall factor i omitted), all momenta
 incoming; the four-leg reduced amplitude is contact minus the three exchanges
--(V3 D(q^2)^{-1} V3) (memory/alp/shared/alp-lo-pole-projected-tree-amplitudes.md),
+-(V3 D(q^2)^{-1} V3) (memory/alp/decay-amplitudes/vertices-and-kinematics/tree-vertices/finite-mixing/alp-lo-pole-projected-tree-amplitudes.md),
 no symmetry factor for identical daughters.
 
 Inputs (decisions of the OpenSpec task 2.1): hat S_0 = m_q diagonal with three

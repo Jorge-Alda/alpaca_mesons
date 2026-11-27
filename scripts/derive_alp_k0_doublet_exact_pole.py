@@ -4,10 +4,10 @@ sum, and the CP-conserving, aligned-phase and CP-violating cases. No expansion i
 
 Run:   .venv/bin/python scripts/derive_alp_k0_doublet_exact_pole.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_k0_doublet_exact_pole.py
-Record: memory/alp/shared/alp-lo-k0-doublet-exact-pole.md
+Record: memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-k0-doublet-exact-pole.md
 
-Conventions (Alda:2026nrd; memory/alp/shared/alp-lo-exact-pole-equations.md,
-memory/alp/shared/alp-lo-neutral-block-reduction.md): chi_0 = diag(x_u, x_d, x_s), m_K0,0^2 = (x_d + x_s)/2,
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-exact-pole-equations.md,
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-neutral-block-reduction.md): chi_0 = diag(x_u, x_d, x_s), m_K0,0^2 = (x_d + x_s)/2,
 𝒞 = -{chi_0, c_q^AP}/2 - (m_0^2/N_f) c_GA 1, 𝕄_s(X) = {chi_0, X}/2 + (m_0^2/N_f) tr(X) 1 - s X.
 The d-s part of a matrix X is the matrix with only the entries X_ds and X_sd = conj(X_ds).
 

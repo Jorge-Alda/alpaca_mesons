@@ -30,10 +30,10 @@ Conventions of Alda:2026nrd [@Alda:2026nrd]: $\bm\Phi=\sum_kP_k\bm\lambda_k$ wit
 
 ## Inputs
 
-- Only-up model, $f_a=\sqrt2m_u/\kappa_u$, quark masses, $f_\pi$, $B_0$, $m_1^2$: [only-up inputs](../shared/only-up-finite-mixing-inputs.md) and `scripts/implementation/only_up_inputs.py`.
-- Source coefficients $\widehat P_{01}=-m_u\,\mathrm{diag}(1,0,0)$, $\widehat S_{02}=-\tfrac{m_u}{2}\mathrm{diag}(1,0,0)$, $c_q^{AP}=\mathrm{diag}(1/2,0,0)$, $c_{GA}=0$; $\mathbb M_s$, pole equation, $N(m^2)$ and the basis without ALP–meson mixing: [radial-mode record](../shared/murayama-sigma-two-pseudoscalar-decays.md), [quartic-vertex record, section Check](../three-pseudoscalar/murayama-unmixed-basis-quartic-vertex.md).
+- Only-up model, $f_a=\sqrt2m_u/\kappa_u$, quark masses, $f_\pi$, $B_0$, $m_1^2$: [only-up inputs](../meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/only-up-finite-mixing-inputs.md) and `scripts/implementation/only_up_inputs.py`.
+- Source coefficients $\widehat P_{01}=-m_u\,\mathrm{diag}(1,0,0)$, $\widehat S_{02}=-\tfrac{m_u}{2}\mathrm{diag}(1,0,0)$, $c_q^{AP}=\mathrm{diag}(1/2,0,0)$, $c_{GA}=0$; $\mathbb M_s$, pole equation, $N(m^2)$ and the basis without ALP–meson mixing: [radial-mode record](../radial-mode/couplings-and-decays/finite-mixing/murayama-sigma-two-pseudoscalar-decays.md), [quartic-vertex record, section Check](../three-pseudoscalar/finite-mixing/murayama-unmixed-basis-quartic-vertex.md).
 - Physical ALP mass: `spectrum` of `scripts/implementation/only_up_decays.py` (finite-mixing pole).
-- Section V couplings and building blocks: [Section V extract](../../extracts/Alda:2026nrd/baryon-couplings.md), [finite-mixing baryon couplings](finite-mixing-baryon-couplings.md).
+- Section V couplings and building blocks: [Section V extract](../../extracts/Alda:2026nrd/baryon-couplings.md), [finite-mixing baryon couplings](finite-mixing/finite-mixing-baryon-couplings.md).
 - $D_B=0.815$, $F_B=0.434$, $S_B=-0.417$ (Alda:2026nrd Eq. baryon_LECs); $\widetilde S_B=0.025$, central value of Eq. stilde_value (naive uncertainty $0.031$, conservative $0.062$) [@Alda:2026nrd].
 - Baryon masses (GeV), PDG 2024 [@ParticleDataGroup:2024cfk]: $p$ 0.93827209, $n$ 0.93956542, $\Lambda$ 1.115683, $\Sigma^+$ 1.18937, $\Sigma^0$ 1.192642, $\Sigma^-$ 1.197449, $\Xi^0$ 1.31486, $\Xi^-$ 1.32171. These values were entered from the PDG summary tables and are not yet in a memory extract.
 
@@ -60,7 +60,7 @@ $$
 c^V_{B_1B_2}=-\frac{\langle c_q^{VS}[\bm\lambda_{B_1}^\dagger,\bm\lambda_{B_2}]\rangle}{\sqrt{N(m_a^2)}}=0,\qquad
 c^A_{B_1B_2}=-\frac{(D_B+F_B)\langle\bm\lambda_{B_1}^\dagger X\bm\lambda_{B_2}\rangle+(D_B-F_B)\langle\bm\lambda_{B_1}^\dagger\bm\lambda_{B_2}X\rangle+(S_B+\widetilde S_B)\langle X\rangle\langle\bm\lambda_{B_1}^\dagger\bm\lambda_{B_2}\rangle}{\sqrt{N(m_a^2)}},
 $$
-with $X=\mathbb M_a^{-1}(\mathcal C)$. This is the pole-basis result of the [finite-mixing record](finite-mixing-baryon-couplings.md); the two bases agree. In the only-up model $X=\mathrm{diag}(X_u,X_d,X_s)$ with ($s=m_a^2$, SymPy)
+with $X=\mathbb M_a^{-1}(\mathcal C)$. This is the pole-basis result of the [finite-mixing record](finite-mixing/finite-mixing-baryon-couplings.md); the two bases agree. In the only-up model $X=\mathrm{diag}(X_u,X_d,X_s)$ with ($s=m_a^2$, SymPy)
 $$
 X_q=\frac{\mathcal C_{qq}-\tfrac{m_1^2}{3}\langle X\rangle}{2B_0m_q-s},\qquad
 \langle X\rangle=\frac{-B_0m_u/(2B_0m_u-s)}{1+\tfrac{m_1^2}{3}\sum_{q'}(2B_0m_{q'}-s)^{-1}}.

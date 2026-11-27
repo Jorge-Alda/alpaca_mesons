@@ -2,7 +2,7 @@
 
 Run: .venv/bin/python scripts/derive_alp_finite_three_pion.py
 Tests: .venv/bin/python scripts/derive_alp_finite_three_pion.py --test
-Inputs: memory/alp/shared/finite-alp-meson-mixing.md;
+Inputs: memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md;
         memory/nlo/lsz-invariant-split.md;
         memory/extracts/Alda:2026nrd/appendix-a-expansion.md.
 Natural units, mostly-minus metric, S=1+iT, tr(lambda_i lambda_j)=2 delta_ij.

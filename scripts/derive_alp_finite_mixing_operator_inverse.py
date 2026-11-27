@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/derive_alp_finite_mixing_operator_inverse.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_finite_mixing_operator_inverse.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md;
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md;
 memory/nlo/lsz-operator-inverse.md). N_f = 3, complete Hermitian U(3) basis
 lambda_i (i = 0..8) with tr(lambda_i lambda_j) = 2 delta_ij, fields
 Phi = (P_i, a), L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi, D(s) = s K - M^2.
@@ -517,7 +517,7 @@ def step_dependence_on_couplings(inputs):
     for any Hermitian delta, keeps c^AP, c_GA and calC fixed. Under it
     M^2_{aa,can} -> M^2_{aa,can} - 2 epsilon^2 [tr(delta {c^P, chi_0}) + tr(chi_0 delta^2)].
     This change is compensated by the a^2 term that the transformed quark
-    spurion acquires (see memory/alp/shared/alp-lo-bare-alp-mass-bound.md);
+    spurion acquires (see memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-bare-alp-mass-bound.md);
     the frame used in this script has no a^2 spurion term, so M^2_{aa,can} changes.
     """
     delta = symbolic_hermitian_matrix("delta")
@@ -748,7 +748,7 @@ def main():
     print("Step 7: N = dD_a/ds")
     print("Step 8c: (c^A, c^P, c_G) -> (c^A + delta, c^P + delta, c_G - tr delta) keeps c^AP, c_GA, calC, N fixed;")
     print("         M^2_{aa,can} -> M^2_{aa,can} - 2 epsilon^2 [tr(delta {c^P, chi_0}) + tr(chi_0 delta^2)], compensated by the a^2 term")
-    print("         the transformed spurion acquires (memory/alp/shared/alp-lo-bare-alp-mass-bound.md);")
+    print("         the transformed spurion acquires (memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/alp-lo-bare-alp-mass-bound.md);")
     print("         this frame has no a^2 spurion term")
     print("Step 9: amplitude numerator V_a + epsilon tr{V [c^A + M_a^{-1}(calC)]}")
     print("\nSymbolic checks (generic Hermitian c^A, c^P, symbolic chi_i, m_0^2, c_G, epsilon, m_a0^2, s):")

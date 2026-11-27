@@ -14,8 +14,8 @@ its reduced contractions c_k stay undefined functions, and only the invariant
 entries from which they are built (frame-invariance script, task 3.4) are
 given their up-only values.
 
-Model (memory/alp/shared/only-up-finite-mixing-inputs.md and
-memory/alp/shared/murayama-sigma-two-pseudoscalar-decays.md):
+Model (memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/only-up-finite-mixing-inputs.md and
+memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-sigma-two-pseudoscalar-decays.md):
   * (n_u, n_d, n_s) = (1, 0, 0), f_a = f_phi, theta = 0, CP-conserving vacuum.
   * m_u = kappa_u f_a / sqrt(2) (DiLuzio:2026poh), hence
         f_a = sqrt(2) m_u / kappa_u,   epsilon = f_pi / f_a = f_pi kappa_u / (sqrt(2) m_u).
@@ -131,7 +131,7 @@ def secular_function(squared_momentum=SQUARED_MOMENTUM, epsilon=EPSILON):
     """F(s) = s + 2 B_0 epsilon^2 [<S_hat_02> + B_0 <P_hat_01 M_s^{-1}(P_hat_01)>].
 
     The ALP-like and meson poles of the neutral block are the zeros of F
-    (memory/alp/shared/murayama-sigma-two-pseudoscalar-decays.md)."""
+    (memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-sigma-two-pseudoscalar-decays.md)."""
     inverse = pole_inverse(flavour_entries('P', 0, 1), squared_momentum)
     return (squared_momentum + 2 * B_ZERO * epsilon**2 * (
         flavour_trace(flavour_entries('S', 0, 2))
@@ -171,7 +171,7 @@ def contact_amplitude():
     """Four-point contact V^(4)_{a123} of the up-only tree.
 
     Kept as an undefined function: its forms are in
-    memory/alp/three-pseudoscalar/murayama-unmixed-basis-quartic-vertex.md, and
+    memory/alp/three-pseudoscalar/finite-mixing/murayama-unmixed-basis-quartic-vertex.md, and
     it vanishes for three distinct neutral daughters
     (murayama-distinct-neutral-contact-cancellation.md)."""
     return sp.Function(r'\mathcal{V}^{(4)}_{a123}')(EPSILON, PAIR_INVARIANT_12, PAIR_INVARIANT_23)

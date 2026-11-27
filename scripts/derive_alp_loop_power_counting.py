@@ -4,7 +4,7 @@
 Conventions (Alda:2026nrd, Kaiser:1998ds):
   * Units: GeV.  x = a/f_a,  U = u^2 = exp(i Phi/f_pi),  Phi = sum_i lambda_i P_i,
     tr(lambda_i lambda_j) = 2 delta_ij.
-  * Dressed frame (input hypothesis, see memory/alp/shared/alp-loop-power-counting.md):
+  * Dressed frame (input hypothesis, see memory/alp/loop-corrections/finite-mixing/power-counting-and-validity/loop-counting/alp-loop-power-counting.md):
     the ALP currents are removed by an x-dependent chiral rotation, so the LO
     Lagrangian is
         L = f^2/4 <u_mu u^mu + chi_+> - f^2 m_0^2/(4 N_f) X_TC^2 + (da)^2/2 - m_a0^2 a^2/2,

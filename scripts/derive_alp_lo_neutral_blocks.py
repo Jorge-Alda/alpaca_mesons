@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/derive_alp_lo_neutral_blocks.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_lo_neutral_blocks.py
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md):
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md):
 N_f = 3, meson matrix sum_i P_i lambda_i with Hermitian U(3) generators
 normalized by tr(lambda_i lambda_j) = 2 delta_ij, indexed (lambda_0, ..., lambda_8)
 as in scripts/symbolic_utils.py. Quadratic Lagrangian

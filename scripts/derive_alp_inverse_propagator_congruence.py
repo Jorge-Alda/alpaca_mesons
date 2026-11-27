@@ -4,7 +4,7 @@
 Run:   .venv/bin/python scripts/derive_alp_inverse_propagator_congruence.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_inverse_propagator_congruence.py
 
-Conventions (Alda:2026nrd, memory/alp/shared/finite-alp-meson-mixing.md):
+Conventions (Alda:2026nrd, memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md):
 fields Phi_I = (P_1, P_2, P_3, a) for N_f = 3 neutral mesons and the ALP,
 L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi, inverse propagator
 D(s) = s K - M^2. The field change is Phi = T Phi' with constant invertible T.

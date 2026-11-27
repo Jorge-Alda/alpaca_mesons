@@ -1,11 +1,11 @@
 """Leading WZW coefficient of a -> gamma P_1 P_2 with finite ALP-meson mixing.
 
 Implements the boxed formula of
-memory/alp/photon-two-pseudoscalar/alp-lo-finite-mixing-wzw-pp-amplitude.md,
+memory/alp/photon-two-pseudoscalar/finite-mixing/alp-lo-finite-mixing-wzw-pp-amplitude.md,
 with the tadpole source and the mass operator of
-memory/alp/photon/alp-lo-finite-mixing-photon-coefficient.md, the pole
-equations of memory/alp/shared/alp-lo-exact-pole-equations.md and the
-K0 doublet of memory/alp/shared/alp-lo-k0-doublet-exact-pole.md. Neutral
+memory/alp/photon/finite-mixing/alp-lo-finite-mixing-photon-coefficient.md, the pole
+equations of memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-exact-pole-equations.md and the
+K0 doublet of memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-k0-doublet-exact-pole.md. Neutral
 kaons in the final state are the flavour states K0 (d sbar) and K0bar
 (s dbar), and K_S = p K0 + q K0bar, K_L = p K0 - q K0bar with the
 conjugated coefficients for final-state bras, as in

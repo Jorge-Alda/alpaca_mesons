@@ -3,10 +3,10 @@
 
 Run:   .venv/bin/python scripts/derive_alp_meson_mass_shifts_second_order.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_meson_mass_shifts_second_order.py
-Record: memory/alp/shared/alp-lo-meson-mass-shift-second-order.md
+Record: memory/alp/meson-mixing/alp-lo-meson-mass-shift-second-order.md
 
-Conventions (Alda:2026nrd; memory/alp/shared/finite-alp-meson-mixing.md,
-memory/alp/shared/alp-lo-weak-mixing-expansion.md): N_f = 3, neutral basis
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md,
+memory/alp/meson-mixing/alp-lo-weak-mixing-expansion.md): N_f = 3, neutral basis
 (P_3, P_8, P_0, P_6, P_7, a), tr(lambda_i lambda_j) = 2 delta_ij,
 D(s) = s K - M^2, epsilon = f_pi/f_a. Blocks from `closed_form_blocks` of
 scripts/derive_alp_lo_neutral_blocks.py. Neutral space: Hermitian 3x3 matrices commuting

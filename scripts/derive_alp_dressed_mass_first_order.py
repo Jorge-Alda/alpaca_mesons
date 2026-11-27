@@ -16,7 +16,7 @@ coefficients are derivatives at x = 0.
 
 Inputs
 ------
-* memory/alp/shared/alp-general-chiral-redefinition-invariants.md:
+* memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md:
   definitions of W_R, W_L, hat(M), M = S + i P, C_R, C_L, and the
   first-order transformation laws of S_1, P_1, C_V0, C_A0 under the constant
   redefinition g_R = exp(i x (delta + kappa)), g_L = exp(i x (delta - kappa)).

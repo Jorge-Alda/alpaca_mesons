@@ -18,4 +18,5 @@ Derivation of the photon coefficient from WZW contact terms and meson mixing.
 - [alp-photon-rcht-blind-direction-audit.md](alp-photon-rcht-blind-direction-audit.md) — real-photon resonance projections with independent ALP spurions and zero current-blind-direction sensitivity.
 - [alp-photon-rcht-completion-plan.md](alp-photon-rcht-completion-plan.md) — assembly, normalization and tests for the missing resonance-corrected physical ALP photon amplitude.
 - [alp-photon-vector-mixing.md](alp-photon-vector-mixing.md) — real-photon VJP and VVP vector-conversion contribution to the Bauer-normalized coefficient, using the provisional one-trace fit.
-- [alp-lo-finite-mixing-photon-coefficient.md](alp-lo-finite-mixing-photon-coefficient.md) — pole-projected LO $a\to\gamma\gamma$ coefficient at finite mixing and its weak-mixing limit.
+
+- [Finite mixing](finite-mixing/INDEX.md) — The leading-order two-photon coefficient with exact ALP–meson pole projections.

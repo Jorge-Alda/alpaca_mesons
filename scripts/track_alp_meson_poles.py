@@ -5,7 +5,7 @@ Run:   .venv/bin/python scripts/track_alp_meson_poles.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_track_alp_meson_poles.py
 
 Conventions as in scripts/solve_alp_meson_spectrum.py (Alda:2026nrd;
-memory/alp/shared/finite-alp-meson-mixing.md): Phi = (P_i, a), ALP last,
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md): Phi = (P_i, a), ALP last,
 pole vectors v^(n) with v^(n)T K v^(n) = 1. The LO path inputs are the
 neutral 6x6 blocks (P_3, P_8, P_0, P_6, P_7, a) of
 derive_alp_lo_neutral_blocks.py, scanned in m_a0^2 (GeV^2) or in

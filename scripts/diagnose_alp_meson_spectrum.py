@@ -5,7 +5,7 @@ Run:   .venv/bin/python scripts/diagnose_alp_meson_spectrum.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_diagnose_alp_meson_spectrum.py
 
 Conventions as in scripts/solve_alp_meson_spectrum.py (Alda:2026nrd;
-memory/alp/shared/finite-alp-meson-mixing.md): Phi = (P_i, a) with the ALP
+memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/quadratic-mixing/finite-alp-meson-mixing.md): Phi = (P_i, a) with the ALP
 last, L_2 = 1/2 dPhi^T K dPhi - 1/2 Phi^T M^2 Phi, poles m_n^2 with
 M^2 v = m^2 K v, v^(n)T K v^(n) = 1, residues R_n = v^(n) v^(n)T. The LO
 input is the neutral 6x6 system (P_3, P_8, P_0, P_6, P_7, a) of

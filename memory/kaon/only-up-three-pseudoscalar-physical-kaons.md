@@ -11,7 +11,7 @@ provenance: numerical-computation
 
 ## Inputs and assumptions
 
-The only-up source and radial exchange are described in [the three-pseudoscalar record](../alp/three-pseudoscalar/murayama-only-up-three-pseudoscalar-amplitude.md). The outgoing-state convention and its complex conjugation are in [the kaon projection](neutral-kaon-amplitude-projection.md). The input $|\epsilon_K|=2.228\times10^{-3}$ and phase $43.52^\circ$ follow [the PDG extract](../extracts/ParticleDataGroup:2024cfk/neutral-kaon-mixing.md) [@ParticleDataGroup:2024cfk]. Identifying the phenomenological decay parameter with the convention-dependent mixing parameter is an approximation; direct CP violation and CPT violation in mixing are neglected. The two neutral kaons use the common leading-order mass; their measured mass splitting and unstable propagation are omitted.
+The only-up source and radial exchange are described in [the three-pseudoscalar record](../alp/three-pseudoscalar/finite-mixing/murayama-only-up-three-pseudoscalar-amplitude.md). The outgoing-state convention and its complex conjugation are in [the kaon projection](neutral-kaon-amplitude-projection.md). The input $|\epsilon_K|=2.228\times10^{-3}$ and phase $43.52^\circ$ follow [the PDG extract](../extracts/ParticleDataGroup:2024cfk/neutral-kaon-mixing.md) [@ParticleDataGroup:2024cfk]. Identifying the phenomenological decay parameter with the convention-dependent mixing parameter is an approximation; direct CP violation and CPT violation in mixing are neglected. The two neutral kaons use the common leading-order mass; their measured mass splitting and unstable propagation are omitted.
 
 ## Method and output
 

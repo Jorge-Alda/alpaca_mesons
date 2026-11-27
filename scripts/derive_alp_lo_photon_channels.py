@@ -15,10 +15,8 @@ dimensionless. All numerical inputs are illustrative rationals, not fits.
 
 Mass operator on the neutral flavour space (Hermitian matrices commuting with Q):
     M_s(X) = {B_0 m_q, X} + (m_0^2/N_f) tr(X) 1 - s X,
-and M_s^{-1}(X) is the matrix Y with M_s(Y) = X (memory/alp/shared/
-alp-lo-exact-pole-equations.md). Its tadpole argument is written with the
-first-order dressed invariants (memory/alp/shared/
-alp-dressed-topological-invariant.md, item 3; alp-dressed-mass-first-order-
+and M_s^{-1}(X) is the matrix Y with M_s(Y) = X (memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-exact-pole-equations.md). Its tadpole argument is written with the
+first-order dressed invariants (memory/alp/chiral-transformations/source-invariants/dressed-sources/alp-dressed-topological-invariant.md, item 3; alp-dressed-mass-first-order-
 invariants.md):
     B_0 hatP_1 - (m_0^2/N_f) hatTheta_1 1,
     hatP_1 = anti-Hermitian part of hatM_1, hatM_1 = M_1 - i(C_{R,0} m_q - m_q C_{L,0}),
@@ -501,7 +499,7 @@ def random_redefinition(seed):
 
 
 def transform_theory(theory, right_coefficients, left_coefficients, second_mass_derivative=None):
-    """Apply the Taylor laws of memory/alp/shared/alp-general-chiral-redefinition-invariants.md.
+    """Apply the Taylor laws of memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md.
 
     C'_{eta,0} = C_{eta,0} + i g_{eta,1}^dagger,  M'_1 = g_{R,1} m_q + M_1 + m_q g_{L,1}^dagger,
     Theta'_1 = Theta_1 - (1/2i) tr(g_{R,1} - g_{L,1}),

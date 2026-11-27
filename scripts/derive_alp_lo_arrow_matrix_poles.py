@@ -4,11 +4,11 @@ approximations for an isolated meson pole and for an isolated ALP pole (no expan
 
 Run:   .venv/bin/python scripts/derive_alp_lo_arrow_matrix_poles.py
 Tests: .venv/bin/python -m unittest discover -s scripts -p test_derive_alp_lo_arrow_matrix_poles.py
-Records: memory/alp/shared/alp-lo-arrow-matrix-spectrum.md (items 1, 2)
-         memory/alp/shared/alp-lo-isolated-meson-pole.md (item 3)
-         memory/alp/shared/alp-lo-isolated-alp-pole.md (item 4)
+Records: memory/alp/meson-mixing/finite-mixing/pole-limits/alp-lo-arrow-matrix-spectrum.md (items 1, 2)
+         memory/alp/meson-mixing/finite-mixing/pole-limits/alp-lo-isolated-meson-pole.md (item 3)
+         memory/alp/meson-mixing/finite-mixing/pole-limits/alp-lo-isolated-alp-pole.md (item 4)
 
-Conventions (Alda:2026nrd; memory/alp/shared/alp-lo-exact-pole-equations.md): N_f = 3, neutral basis
+Conventions (Alda:2026nrd; memory/alp/meson-mixing/finite-mixing/spectrum-and-poles/pole-equations/alp-lo-exact-pole-equations.md): N_f = 3, neutral basis
 (P_3, P_8, P_0, P_6, P_7, a), canonical frame K = 1, M_can^2 from `canonical_mass_matrix_from_sources`.
 lambda_n: generator of the meson mass eigenstate n, 𝕄_0(lambda_n) = m_n0^2 lambda_n, tr(lambda_n lambda_m) = 2 delta_nm;
 𝒞 = -{chi_0, c_q^AP}/2 - (m_0^2/N_f) c_GA 1; M = M_can,aa (record: M^2_{\\hat a\\hat a,can}).

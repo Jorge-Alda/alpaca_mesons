@@ -3,8 +3,7 @@
 This module is a library; it prints nothing.  It is used by the scripts
 derive_sigma_pipi_loop_*.py.
 
-Conventions (Alda:2026nrd, DiLuzio:2026poh; memory/alp/shared/
-radial-decay-polar-cartesian-general-sources.md and
+Conventions (Alda:2026nrd, DiLuzio:2026poh; memory/alp/radial-mode/couplings-and-decays/finite-mixing/radial-decay-polar-cartesian-general-sources.md and
 murayama-radial-up-only-estimate-result.md):
 
 * Natural units, GeV.  epsilon = f_pi / f_a.  N_f = 3, <lambda_i lambda_j> = 2 delta_ij.

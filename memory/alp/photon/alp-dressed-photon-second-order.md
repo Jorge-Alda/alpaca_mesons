@@ -11,7 +11,7 @@ provenance: analytical-derivation
 
 ## Convention
 
-Taylor coefficients are derivatives at $x=0$, $F_n=d^nF/dx^n|_0$ with $x=a/f_a$, as in the [dressed photon record](alp-dressed-photon-invariant.md) and the [second-order mass record](../shared/alp-dressed-mass-second-order-invariants.md).
+Taylor coefficients are derivatives at $x=0$, $F_n=d^nF/dx^n|_0$ with $x=a/f_a$, as in the [dressed photon record](alp-dressed-photon-invariant.md) and the [second-order mass record](../chiral-transformations/source-invariants/dressed-sources/alp-dressed-mass-second-order-invariants.md).
 
 ## Inputs and assumptions
 
@@ -25,7 +25,7 @@ $$
 \boxed{\widehat\Theta_{\gamma,2}=\Theta_{\gamma,2}+2N_c\operatorname{tr}\!\left(Q^2C_{A,1}\right)
 =\Theta_{\gamma,2}+N_c\operatorname{tr}\!\left[Q^2\left(C_{R,1}-C_{L,1}\right)\right].}
 $$
-With $N_c=3$ this is $\Theta_{\gamma,2}+\tfrac83(C_{A,1})_{uu}+\tfrac23\big[(C_{A,1})_{dd}+(C_{A,1})_{ss}\big]$; only diagonal entries enter. As at first order, it is independent of the gluonic $\widehat\Theta_2=\Theta_2+\operatorname{tr}C_{A,1}$ of the [second-order topological record](../shared/alp-dressed-topological-second-order.md), because the weights $2N_cQ_b^2$ are not all equal. The first-order coefficient is $\widehat\Theta_{\gamma,1}=c_\gamma+2N_c\operatorname{tr}(Q^2c_q^A)=c_{\gamma A}$.
+With $N_c=3$ this is $\Theta_{\gamma,2}+\tfrac83(C_{A,1})_{uu}+\tfrac23\big[(C_{A,1})_{dd}+(C_{A,1})_{ss}\big]$; only diagonal entries enter. As at first order, it is independent of the gluonic $\widehat\Theta_2=\Theta_2+\operatorname{tr}C_{A,1}$ of the [second-order topological record](../chiral-transformations/source-invariants/dressed-sources/alp-dressed-topological-second-order.md), because the weights $2N_cQ_b^2$ are not all equal. The first-order coefficient is $\widehat\Theta_{\gamma,1}=c_\gamma+2N_c\operatorname{tr}(Q^2c_q^A)=c_{\gamma A}$.
 
 ## Reproducible calculation and checks
 

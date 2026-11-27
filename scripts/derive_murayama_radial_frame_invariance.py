@@ -4,7 +4,7 @@ Run:
     .venv/bin/python scripts/derive_murayama_radial_frame_invariance.py
     PYTHONPATH=scripts .venv/bin/python -m unittest test_derive_murayama_radial_frame_invariance
 
-Conventions (memory/alp/shared/murayama-sigma-two-pseudoscalar-decays.md):
+Conventions (memory/alp/radial-mode/couplings-and-decays/finite-mixing/murayama-sigma-two-pseudoscalar-decays.md):
 partonic mass term -qbar_R M q_L - h.c., M = S + i P, expanded in the
 dimensionless ratios y = sigma/f_a and x = a/f_a,
     S(x, y) = sum_{r,s} S_rs y^r x^s,   P(x, y) = sum_{r,s} P_rs y^r x^s,
@@ -15,7 +15,7 @@ M_q of DiLuzio:2026poh is its complex conjugate.
 
 Redefinition: g_R = exp(i x kappa), g_L = g_R^dagger, with a constant
 Hermitian axial generator kappa.  The redefinition depends on a only, not on
-sigma.  Transport (memory/alp/shared/alp-general-chiral-redefinition-invariants.md):
+sigma.  Transport (memory/alp/chiral-transformations/source-invariants/finite-transformations/alp-general-chiral-redefinition-invariants.md):
     d/dx W_eta(x, y) = i C_eta(x, y) W_eta(x, y),   W_eta(0, y) = 1,
 i.e. the transport is taken along x at fixed sigma.  Since g does not depend
 on y, W'_eta = g_eta W_eta holds at every fixed y, and the dressed source
