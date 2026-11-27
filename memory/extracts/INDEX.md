@@ -86,3 +86,4 @@ Each child folder is a source-specific extract collection; see its files for the
 - [DiLuzio:2026poh](DiLuzio:2026poh/INDEX.md) — CP-odd axion–meson mass matrix from a dynamical Peccei–Quinn field and its quark-mass spurion.
 - [Tandean:1999nv](Tandean:1999nv/INDEX.md) — leading-order heavy-baryon realization of the 27-plet weak interaction.
 - [AbdEl-Hady:1998qww](AbdEl-Hady:1998qww/INDEX.md) — explicit $|\Delta S|=1$, $|\Delta I|=3/2$ tensor and leading octet-baryon realization.
+- [Gerard:2005yk](Gerard:2005yk/INDEX.md) — leading $U(3)$ pseudoscalar realization of octet, singlet-current, weak-mass and 27-plet $\Delta S=1$ operators.

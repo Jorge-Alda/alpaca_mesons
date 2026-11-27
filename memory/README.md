@@ -15,6 +15,7 @@ Each record is one auditable concept, derivation, calculation, or decision. Reco
 
 - [Plan](plan.md) - Long-term project planning.
 - [ALP](alp/INDEX.md) — ALP derivations and decay calculations organized by pseudoscalar, photon, and vector final states, with related shared conventions and audits.
+- [Weak meson interactions](weak-meson-interactions/INDEX.md) — non-leptonic weak interactions of pseudoscalar mesons.
 - [Weak baryon interactions](weak-baryon-interactions/INDEX.md) — non-leptonic weak interactions of baryons and mesons.
 - [Kaon states](kaon/INDEX.md) — neutral-kaon projections and related selection-rule diagnostics.
 - [K pi rescattering](kpi/INDEX.md) — production kernels, Omnes functions, and isospin breaking.
